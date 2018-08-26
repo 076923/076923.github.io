@@ -68,14 +68,14 @@ dst = cv2.blur(src, (9, 9), anchor=(-1, -1), borderType=cv2.BORDER_DEFAULT)
 
 |          속성          |                의미                |
 |:----------------------:|:----------------------------------:|
-|   cv2.BORDER_CONSTANT  |       iiiiii|abcdefgh|iiiiiii      |
-|  cv2.BORDER_REPLICATE  |       aaaaaa|abcdefgh|hhhhhhh      |
-|   cv2.BORDER_REFLECT   |       fedcba|abcdefgh|hgfedcb      |
-|     cv2.BORDER_WRAP    |       cdefgh|abcdefgh|abcdefg      |
-| cv2.BORDER_REFLECT_101 |       gfedcb|abcdefgh|gfedcba      |
-|  cv2.BORDER_REFLECT101 |       gfedcb|abcdefgh|gfedcba      |
-|   cv2.BORDER_DEFAULT   |       gfedcb|abcdefgh|gfedcba      |
-| cv2.BORDER_TRANSPARENT |       uvwxyz|abcdefgh|ijklmno      |
+|   cv2.BORDER_CONSTANT  |       iiiiii\|abcdefgh\|iiiiiii      |
+|  cv2.BORDER_REPLICATE  |       aaaaaa\|abcdefgh\|hhhhhhh      |
+|   cv2.BORDER_REFLECT   |       fedcba\|abcdefgh\|hgfedcb      |
+|     cv2.BORDER_WRAP    |       cdefgh\|abcdefgh\|abcdefg      |
+| cv2.BORDER_REFLECT_101 |       gfedcb\|abcdefgh\|gfedcba      |
+|  cv2.BORDER_REFLECT101 |       gfedcb\|abcdefgh\|gfedcba      |
+|   cv2.BORDER_DEFAULT   |       gfedcb\|abcdefgh\|gfedcba      |
+| cv2.BORDER_TRANSPARENT |       uvwxyz\|abcdefgh\|ijklmno      |
 |   cv2.BORDER_ISOLATED  | 관심 영역 (ROI) 밖은 고려하지 않음 |
 
 <br>
