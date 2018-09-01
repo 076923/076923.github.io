@@ -67,9 +67,9 @@ canny = cv2.Canny(src, 100, 255)
 
 <br>
 
-`L2그라디언트` : $x^2+y^2$
+`L2그라디언트` : $\sqrt{(dI/dx)^2 + (dI/dy)^2} $
 
-`L1그라디언트` : 0
+`L1그라디언트` : $|dI/dx| + |dI/dy|$
 
 <br>
 <br>
@@ -175,6 +175,6 @@ laplacian = cv2.Laplacian(gray, cv2.CV_8U, ksize=3)
 
 ### Laplacian ###
 
-[![2]({{ site.images }}/Python/opencv/ch14/4/png)]({{ site.images }}/Python/opencv/ch14/4.png)
+[![2]({{ site.images }}/Python/opencv/ch14/4.png)]({{ site.images }}/Python/opencv/ch14/4.png)
 
 
