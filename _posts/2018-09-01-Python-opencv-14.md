@@ -17,7 +17,6 @@ star: true
 [![1]({{ site.images }}/Python/opencv/ch14/1.jpg)]({{ site.images }}/Python/opencv/ch14/1.jpg)
 영상이나 이미지를 `가장자리`를 검출 하기 위해 사용합니다.
 
-
 <br>
 <br>
 
@@ -69,7 +68,7 @@ canny = cv2.Canny(src, 100, 255)
 
 `L2그라디언트` : $\sqrt{(dI/dx)^2 + (dI/dy)^2} $
 
-`L1그라디언트` : $|dI/dx| + |dI/dy|$
+`L1그라디언트` : $\|dI/dx\| + \|dI/dy\|$
 
 <br>
 <br>
@@ -133,7 +132,7 @@ laplacian = cv2.Laplacian(gray, cv2.CV_8U, ksize=3)
 
 <br>
 
-* Tip :  `커널`의 값이 1일 경우, `3x3 Aperture Size를 사용합니다. **(중심값 = -4)**
+* Tip :  `커널`의 값이 1일 경우, `3x3 Aperture Size`를 사용합니다. **(중심값 = -4)**
 
 <br>
 <br>
