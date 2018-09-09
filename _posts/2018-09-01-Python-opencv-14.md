@@ -66,7 +66,7 @@ canny = cv2.Canny(src, 100, 255)
 
 <br>
 
-`L2그라디언트` : $\sqrt{(dI/dx)^2 + (dI/dy)^2} $
+`L2그라디언트` : $\sqrt{(dI/dx)^2 + (dI/dy)^2}$
 
 `L1그라디언트` : $\|dI/dx\| + \|dI/dy\|$
 
