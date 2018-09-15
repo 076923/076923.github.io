@@ -2,8 +2,8 @@
 bg: "opencv.png"
 layout: post
 comments: true
-title:  "Python OpenCV 강좌 : 제 7강 - 확대/축소"
-crawlertitle: "Python OpenCV 강좌 : 제 7강 - 확대/축소"
+title:  "Python OpenCV 강좌 : 제 7강 - 확대 & 축소"
+crawlertitle: "Python OpenCV 강좌 : 제 7강 - 확대 & 축소"
 summary: "Python OpenCV ZoomIn & ZoomOut"
 date: 2018-08-17
 categories: posts
