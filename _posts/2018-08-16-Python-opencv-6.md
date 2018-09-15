@@ -29,9 +29,9 @@ import cv2
 
 src = cv2.imread("Image/ara.jpg", cv2.IMREAD_COLOR)
 
-width, height, channel = src.shape
-matrix = cv2.getRotationMatrix2D((height/2, width/2), 90, 1)
-dst = cv2.warpAffine(src, matrix, (height, width))
+height, width, channel = src.shape
+matrix = cv2.getRotationMatrix2D((width/2, height/2), 90, 1)
+dst = cv2.warpAffine(src, matrix, (width, height))
 
 cv2.imshow("src", src)
 cv2.imshow("dst", dst)
@@ -59,26 +59,26 @@ src = cv2.imread("Image/ara.jpg", cv2.IMREAD_COLOR)
 
 {% highlight Python %}
 
-width, height, channel = src.shape
+height, width, channel = src.shape
 
 {% endhighlight %}
 
-`width, height, channel = src.shape`를 이용하여 해당 이미지의 `너비`, `높이`, `채널`의 값을 저장합니다.
+`height, width, channel = src.shape`를 이용하여 해당 이미지의 `높이`, `너비`, `채널`의 값을 저장합니다.
 
-`너비`와 `높이`를 이용하여 **회전 중심점**을 설정합니다.
+`높이`와 `너비`를 이용하여 **회전 중심점**을 설정합니다.
 
 <br>
 <br>
 
 {% highlight Python %}
 
-matrix = cv2.getRotationMatrix2D((height/2, width/2), 90, 1)
+matrix = cv2.getRotationMatrix2D((width/2, height/2), 90, 1)
 
 {% endhighlight %}
 
 `matrix`에 `회전 배열`을 생성하여 저장합니다.
 
-`cv2.getRotationMatrix2D((중심점 Y좌표, 중심점 X좌표), 각도, 스케일)`을 설정합니다.
+`cv2.getRotationMatrix2D((중심점 X좌표, 중심점 Y좌표), 각도, 스케일)`을 설정합니다.
 
 `중심점`은 `Tuple`형태로 사용하며 회전할 **기준점**을 설정합니다.
 
@@ -91,13 +91,13 @@ matrix = cv2.getRotationMatrix2D((height/2, width/2), 90, 1)
 
 {% highlight Python %}
 
-dst = cv2.warpAffine(src, matrix, (height, width))
+dst = cv2.warpAffine(src, matrix, (width, height))
 
 {% endhighlight %}
 
 결과 이미지로 사용할 `dst`를 선언하고 회전 함수를 적용합니다.
 
-`cv2.warpAffine(원본 이미지, 배열, (결과 이미지 높이, 결과 이미지 너비))`을 의미합니다.
+`cv2.warpAffine(원본 이미지, 배열, (결과 이미지 너비, 결과 이미지 높이))`을 의미합니다.
 
 `결과 이미지의 너비와 높이`로 크기가 선언되며 `배열`에 따라 이미지가 `회전`합니다.
 

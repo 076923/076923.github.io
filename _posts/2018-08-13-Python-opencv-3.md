@@ -93,23 +93,23 @@ cv2.destroyAllWindows()
 
 {% highlight Python %}
 
-width, height, channel = image.shape
-print(width, height, channel)
+height, width channel = image.shape
+print(height, width , channel)
 
 {% endhighlight %}
 
 **결과**
 :    
-1280 1920 3<br>
+1920 1280 3<br>
 <br>
 
-`width, height, channel = image.shape`를 이용하여 해당 이미지의 `너비`, `높이`, `채널`의 값을 확인할 수 있습니다.
+`height, width , channel = image.shape`를 이용하여 해당 이미지의 `높이`, `너비`, `채널`의 값을 확인할 수 있습니다.
 
 이미지의 속성은 `크기`, `정밀도`, `채널`을 주요한 속성으로 사용합니다.
 
 <br>
 
-* `크기` : 이미지의 **너비**와 **높이**를 의미합니다.
+* `크기` : 이미지의 **높이**와 **너비**를 의미합니다.
 * `정밀도` : 이미지의 처리 결과의 **정밀성**을 의미합니다.
 * `채널` : 이미지의 **색상 정보**를 의미합니다. 
 

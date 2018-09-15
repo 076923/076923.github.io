@@ -29,8 +29,8 @@ import cv2
 
 src = cv2.imread("Image/fruits.jpg", cv2.IMREAD_COLOR)
 
-width, height, channel = src.shape
-dst = cv2.pyrUp(src, dstsize=(height*2, width*2), borderType=cv2.BORDER_DEFAULT);
+height, width, channel = src.shape
+dst = cv2.pyrUp(src, dstsize=(width*2, height*2), borderType=cv2.BORDER_DEFAULT);
 dst2 = cv2.pyrDown(src);
 
 cv2.imshow("src", src)
@@ -54,7 +54,7 @@ width, height, channel = src.shape
 
 {% endhighlight %}
 
-`width, height, channel = src.shape`를 이용하여 해당 이미지의 `너비`, `높이`, `채널`의 값을 저장합니다.
+`height, width, channel = src.shape`를 이용하여 해당 이미지의 `높이`, `너비`, `채널`의 값을 저장합니다.
 
 `너비`와 `높이`를 이용하여 **dstsize (결과 이미지 크기)**을 설정합니다.
 
@@ -63,7 +63,7 @@ width, height, channel = src.shape
 
 {% highlight Python %}
 
-dst = cv2.pyrUp(src, dstsize=(height*2, width*2), borderType=cv2.BORDER_DEFAULT);
+dst = cv2.pyrUp(src, dstsize=(width*2, height*2), borderType=cv2.BORDER_DEFAULT);
 
 {% endhighlight %}
 
@@ -90,7 +90,7 @@ dst2 = cv2.pyrDown(src);
 
 `cv2.pyrUp()` 함수와 **동일한 매개변수를** 가집니다.
 
-`결과 이미지 크기`는 `(height/2, width/2)`를 사용해야합니다.
+`결과 이미지 크기`는 `(width/2, height/2)`를 사용해야합니다.
 
 <br>
 <br>
