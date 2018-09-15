@@ -22,7 +22,7 @@ star: true
 <br>
 <br>
 
-### Main Code (1) ###
+### Main Code ###
 ----------
 
 {% highlight Python %}
@@ -97,8 +97,9 @@ r = src[:,:,2]
 `:, :,  n`을 입력할 경우, 이미지 `높이와 너비`를 그대로 반환하고 `n`번째 채널만 반환하여 적용합니다.
 
 <br>
-
 <br>
+
+#### 빈 이미지 ###
 
 {% highlight Python %}
 
