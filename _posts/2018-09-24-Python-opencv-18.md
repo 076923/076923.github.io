@@ -2,9 +2,9 @@
 bg: "opencv.png"
 layout: post
 comments: true
-title:  "Python OpenCV 강좌 : 제 18강 - 채널 분리 & 병합"
-crawlertitle: "Python OpenCV 강좌 : 제 18강 - 채널 분리 & 병합"
-summary: "Python OpenCV Split & Merge"
+title:  "Python OpenCV 강좌 : 제 18강 - Drawing"
+crawlertitle: "Python OpenCV 강좌 : 제 18강 - Drawing"
+summary: "Python OpenCV Drawing"
 date: 2018-09-24
 categories: posts
 tags: ['Python-OpenCV']
@@ -12,7 +12,7 @@ author: 윤대희
 star: true
 ---
 
-### 채널 분리 & 병합  (Split & Merge) ###
+### 그래픽 드로잉 (Drawing) ###
 ----------
 [![1]({{ site.images }}/Python/opencv/ch18/1.png)]({{ site.images }}/Python/opencv/ch18/1.png)
 영상이나 이미지 위에 그래픽을 그리기 위해 사용합니다. `선`, `원`, `사각형` 등을 그릴 수 있습니다.
