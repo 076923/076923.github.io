@@ -17,8 +17,10 @@ star: true
 [![1]({{ site.images }}/Python/opencv/ch19/1.jpg)]({{ site.images }}/Python/opencv/ch19/1.jpg)
 영상이나 이미지 위에 `기하학적으로 변환`하기 위해 사용합니다. 영상이나 이미지를 **펼치거나 좁힐 수 있습니다.**
 
-Tip : `WarpPerspective`의 경우 4개의 점을 매핑합니다. (4개의 점을 이용한 변환)
-Tip : `WarpAffine`의 경우 3개의 점을 매핑합니다. (3개의 점을 이용한 변환)
+<br>
+
+* Tip : `WarpPerspective`의 경우 4개의 점을 매핑합니다. (4개의 점을 이용한 변환)
+* Tip : `WarpAffine`의 경우 3개의 점을 매핑합니다. (3개의 점을 이용한 변환)
 
 <br>
 <br>
