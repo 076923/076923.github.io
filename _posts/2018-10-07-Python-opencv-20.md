@@ -84,7 +84,7 @@ record = False
 
 <br>
 
-* Tip : FourCC(Four Character Code)` : 디지털 미디어 포맷 코드입니다. 즉, 코덱의 인코딩 방식을 의미합니다.
+* Tip : `FourCC(Four Character Code)` : 디지털 미디어 포맷 코드입니다. 즉, **코덱의 인코딩 방식**을 의미합니다.
 
 <br>
 <br>
