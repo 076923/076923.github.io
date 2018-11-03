@@ -15,7 +15,7 @@ author: 윤대희
 ----------
 [![1]({{ site.images }}/ComputerVision/ch4/1.jpg)]({{ site.images }}/ComputerVision/ch4/1.jpg)
 **이미지 파일 형식**은 수백 가지의 종류가 존재합니다. **OpenCV**에서는 `래스터 그래픽스` 이미지 파일 포맷을 쉽게 불러올 수 있습니다.
-가장 많이 사용되는 파일 포맷으로는 `BMP (Bitmap)`, `JPEG (Joint Photographic Experts Group)`, `GIF (Graphics Interchange Format)`, `PNG (Portable Network Graphics)` 등이 존재합니다. 동영상의 경우에는 `AVI (Audio Video Interleave)`, `MP4 (MPEG-4 Part 14)`, WMV (Windows Media Video)` 등이 존재합니다.
+가장 많이 사용되는 파일 포맷으로는 `BMP (Bitmap)`, `JPEG (Joint Photographic Experts Group)`, `GIF (Graphics Interchange Format)`, `PNG (Portable Network Graphics)` 등이 존재합니다. 동영상의 경우에는 `AVI (Audio Video Interleave)`, `MP4 (MPEG-4 Part 14)`, `WMV (Windows Media Video)` 등이 존재합니다.
 
 <br>
 
@@ -23,9 +23,9 @@ author: 윤대희
 * `JPEG` : **1~24 Bit**, 압축율 높음
 * `GIF` : **1~8 Bit**, 무손실 압축
 * `PNG` : **1~48 Bit**, 무손실 압축
-* `AVI` : 다양한 코덱으로 인코딩 가능
-* `MP4` : 고압축, 비디오 품질 높음
-* `WMV` : 고압축, 비디오 품질 낮음
+* `AVI` : **다양한 코덱으로 인코딩 가능**
+* `MP4` : 고압축, **비디오 품질 높음**
+* `WMV` : 고압축, **비디오 품질 낮음**
  
 <br>
 
@@ -38,9 +38,6 @@ author: 윤대희
 <br>
 
 `FPS`는 영상이 바뀌는 속도를 의미합니다. 즉, **화면의 부드러움을 의미합니다.** 화면이 부드럽게 처리되면서 함수를 적용해야합니다. 알고리즘의 처리 속도가 오래걸리는 경우, `FPS`의 값을 적절히 조정하거나 알고리즘을 수정해야합니다. 좋은 알고리즘을 설계하지 못할 경우, `FPS`의 속도를 따라가지 못하여 **오류**나 **지연**이 발생하게 됩니다. 또한, 동영상을 처리함에 있어서 `이미지의 크기`, `정밀도`, `채널`의 값을 적절하게 사용한다면 높은 `FPS`의 값을 가지는 동영상에서도 수준 높은 알고리즘을 구현할 수 있습니다. 
-
-
-
 
 <br>
 <br>
