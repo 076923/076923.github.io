@@ -14,7 +14,7 @@ author: 윤대희
 ### Computer Vision 이란? ###
 ----------
 [![1]({{ site.images }}/ComputerVision/ch1/1.jpg)]({{ site.images }}/ComputerVision/ch1/1.jpg)
-`Computer Vision`이란 카메라나 스캐너 등 영상 입출력 매체를 통하여 입력 받은 이미지나 영상에서 `물체 (Object)`, `전경 (Foreground)`, `배경 (Backgroud)` 등 물체와 주변 환경에 대한 데이터를 분석하여 유의미한 정보를 생성하는 기술입니다.
+`Computer Vision`이란 카메라나 스캐너 등 영상 입출력 매체를 통하여 입력 받은 이미지나 영상에서 `물체 (Object)`, `전경 (Foreground)`, `배경 (Background)` 등 물체와 주변 환경에 대한 데이터를 분석하여 유의미한 정보를 생성하는 기술입니다.
 
 `Image Processing`을 통하여 필요한 정보를 생성합니다. 즉, 컴퓨터의 **시각적인 능력에 판단 능력을 부여**하여 데이터 (이미지, 동영상)를 `가공` 및 `해석`하는데 사용됩니다.
 
