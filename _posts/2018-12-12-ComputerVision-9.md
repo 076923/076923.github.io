@@ -2,8 +2,8 @@
 bg: "theory.jpg"
 layout: post
 comments: true
-title: "Computer Vision Theory : 피쳐 검출"
-crawlertitle: "Computer Vision Theory : 피쳐 검출"
+title: "Computer Vision Theory : 특징 검출"
+crawlertitle: "Computer Vision Theory : 특징 검출"
 summary: "Feature Detection"
 date: 2018-12-12
 categories: posts
@@ -11,10 +11,10 @@ tags: ['Computer Vision']
 author: 윤대희
 ---
 
-### 피쳐 검출 (Feature Detection) ###
+### 특징 검출 (Feature Detection) ###
 ----------
 [![1]({{ site.images }}/ComputerVision/ch9/1.jpg)]({{ site.images }}/ComputerVision/ch9/1.jpg)
-`피쳐 검출 (Feature Detection)`은 이미지 내의 주요한 `특징점`을 검출하는 방법입니다.  해당 특징점이 존재하는 위치를 알려주거나 해당 특징점을 부각시킵니다.
+`특징 검출 (Feature Detection)`은 이미지 내의 주요한 `특징점`을 검출하는 방법입니다.  해당 특징점이 존재하는 위치를 알려주거나 해당 특징점을 부각시킵니다.
 픽셀의 **색상 강도**, **연속성**, **변화량**, **의존성**, **유사성**, **임계점** 등을 사용하여 특징을 파악합니다. 특징 검출을 사용하여 다양한 패턴의 객체를 검출할 수 있습니다.
 
 대표적으로 `가장자리 (Edge)`. `윤곽 (Contours)`, `모서리 (Corner)`, `선 (Line)`, `원 (Circle)` 등이 있습니다.
