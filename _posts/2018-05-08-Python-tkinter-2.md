@@ -91,7 +91,7 @@ label.pack()
 
 |   이름   |                           의미                          |     기본값    |                                          속성                                          |
 |:--------:|:-------------------------------------------------------:|:-------------:|:--------------------------------------------------------------------------------------:|
-|  bitmap  |                라벨에 포함할 기본 이미지                |       -       | info, warring, error, question,   questhead, hourglass, gray12, gray25, gray50, gray75 |
+|  bitmap  |                라벨에 포함할 기본 이미지                |       -       | info, warning, error, question,   questhead, hourglass, gray12, gray25, gray50, gray75 |
 |   image  |                라벨에 포함할 임의 이미지                |       -       |                                            -                                           |
 | compound | 라벨에 문자열과 이미지를 동시에 표시할 때 이미지의 위치 |      none     |                         bottom, center, left, none, right, top                         |
 |   font   |                라벨의 문자열 글꼴 설정               | TkDefaultFont |                                          font                                          |

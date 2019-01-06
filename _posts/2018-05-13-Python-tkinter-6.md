@@ -135,7 +135,7 @@ checkbutton3.pack()
 
 |   이름   |                           의미                          |     기본값    |                                          속성                                          |
 |:--------:|:-------------------------------------------------------:|:-------------:|:--------------------------------------------------------------------------------------:|
-|  bitmap  |                체크버튼에 포함할 기본 이미지                |       -       | info, warring, error, question,   questhead, hourglass, gray12, gray25, gray50, gray75 |
+|  bitmap  |                체크버튼에 포함할 기본 이미지                |       -       | info, warning, error, question,   questhead, hourglass, gray12, gray25, gray50, gray75 |
 |   image  |                체크버튼에 포함할 임의 이미지                |       -       |                                            -                                           |
 |   selectimage  |            [체크버튼의 체크 상태일 때 표시할 임의 이미지](#reference-1)    |       -       |                   -           |
 | compound | 체크버튼에 문자열과 이미지를 동시에 표시할 때 이미지의 위치 |      none     |                         bottom, center, left, none, right, top                         |
