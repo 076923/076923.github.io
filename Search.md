@@ -15,7 +15,7 @@ date: 11/20/2017 3:37:34 PM
 <br>
 <div id="search-container">
 <center>
-<input type="text" id="search-input" placeholder="Search..." style="width:500px;">
+<input type="text" id="search-input" placeholder="Search..." style="width:90%;">
 </center>
 <ul id="results-container"></ul>
 </div>

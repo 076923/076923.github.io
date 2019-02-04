@@ -92,9 +92,9 @@ a {
     
     text-transform: uppercase;
     position: absolute;
-    margin-left: -140px;
-    margin-top: -280px;
-    top: 55%;
+    margin-left: -15%; /* -140px; */
+    /* margin-top: -280px; */
+    top: 280px; /* 55%; */
 }
 
 .list a {
