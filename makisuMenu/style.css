@@ -94,7 +94,7 @@ a {
     position: absolute;
     margin-left: -15%; /* -140px; */
     /* margin-top: -280px; */
-    top: 280px; /* 55%; */
+    top: 15%; /* 55%; */
 }
 
 .list a {
