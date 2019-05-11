@@ -1,0 +1,121 @@
+<!DOCTYPE html><html lang="ko"><head><meta charset="utf-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1">  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-106083039-1"></script> <script> window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments)}; gtag('js', new Date()); gtag('config', 'UA-106083039-1'); </script><title> C# 강좌 : 제 13강 - 클래스 &amp; 메소드 (1)</title><meta name="description" content="클래스(Class)클래스(Class)는 객체 지향 프로그래밍(OOP)에서 특정한 객체를 생성하기 위해서 필드, 속성, 메소드 및 이벤트 등을 정의하는 틀입니다. 그룹화하여 자체 사용자 지정 형식을 만들 수 있는 구문입니다. 클래스는 참조 형식입니다."><link rel="canonical" href="http://localhost:4000/posts/C-13/"><link rel="alternate" type="application/rss+xml" title="YUN DAE HEE" href="http://localhost:4000/feed.xml"><link href='https://fonts.googleapis.com/css?family=PT+Serif:400,400italic,700|Roboto+Condensed:700&subset=latin' rel='stylesheet' type='text/css'><link rel="stylesheet" href="/assets/css/main.css"><meta property="og:url" content="http://localhost:4000/posts/C-13/"><meta property="og:type" content="website"><meta property="og:title" content="C# 강좌 : 제 13강 - 클래스 & 메소드 (1)"><meta property="og:description" content="C# Class & Method (1)"><meta property="og:site_name" content="YUN DAE HEE"><meta name="twitter:card" content="summary"><meta name="twitter:url" content="http://localhost:4000/posts/C-13/"><meta name="twitter:title" content="C# 강좌 : 제 13강 - 클래스 & 메소드 (1)"><meta name="twitter:description" content="C# Class & Method (1)"> <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script> <script> (adsbygoogle = window.adsbygoogle || []).push({ google_ad_client: "ca-pub-1278038564950020", enable_page_level_ads: true }); </script><link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css"><link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/v4-shims.css"><link href="//fonts.googleapis.com/css?family=Source+Sans+Pro:400,700,700italic,400italic" rel="stylesheet" type="text/css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.10.0-alpha/dist/katex.min.css" integrity="sha384-BTL0nVi8DnMrNdMQZG1Ww6yasK9ZGnUxL1ZWukXQ7fygA1py52yPp9W4wrR00VML" crossorigin="anonymous"> <script src="https://cdn.jsdelivr.net/npm/katex@0.10.0-alpha/dist/katex.min.js" integrity="sha384-y6SGsNt7yZECc4Pf86XmQhC4hG2wxL6Upkt9N1efhFxfh6wlxBH0mJiTE8XYclC1" crossorigin="anonymous"></script> <!--mathjax--> <script type="text/x-mathjax-config"> MathJax.Hub.Config({ tex2jax: { inlineMath: [ ['$','$'], ['\((', '\))'] ], displayMath: [ ['$$','$$'] ], processEscapes: true, } }); </script> <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"> </script><meta property="og:image" content="http://localhost:4000/assets/images/Clogo.jpg"><meta name="twitter:image" content="http://localhost:4000/assets/images/Clogo.jpg"> <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script><style type="text/css"> h1 { font-size: 34px; line-height: 1.2; margin: 0.3em 0 10px; } #scrolltotop{position:fixed;bottom:0px;right:0px}#scrolltotop span{width:48px;height:48px;display:block;background:url("https://github.com/076923/076923.github.io/blob/master/assets/images/top.png?raw=true") top no-repeat;margin:0px 15px 10px 0;border-radius:3px;-webkit-transition:all 0.2s ease-out;-moz-transition:all 0.2s ease-out;-o-transition:all 0.2s ease-out;-ms-transition:all 0.2s ease-out;transition:all 0.2s ease-out}#scrolltotop a:hover span{background:url("https://github.com/076923/076923.github.io/blob/master/assets/images/top.png?raw=true") bottom no-repeat}</style><script type="text/javascript">  </script><body><div id="scrolltotop" style="display: block;"><a href="#top"><span></span></a></div><div id="shadow"></div><header class="main-header content-wrapper"> <input type="checkbox" id="menu-checkbox" /><nav class="center-wrapper nav-main"> <a class="blog-logo" href="/">YUN DAE HEE</a> <a href="/search/">Search</a> <a href="/about">About</a> <a href="/posts/">Category</a> <a href="/exercise/">Exercise</a> <a href="https://www.inflearn.com/course/c-opencv/" class="fas fa-leaf" target="_blank"> </a> <label for="menu-checkbox" class="toggle-button" data-open="☰" data-close="☰" onclick></label></nav></header><aside class="sidebar" role="note" style="background-image: url(http://localhost:4000/assets/images/Clogo.jpg)"><div class="cover"><div class="cover-text"><div class="heading"> <a href="/posts/#c#">c#</a></div><p> C# Class & Method (1)</div></div><div id="switcher"></div></aside><main class="content-wrapper"><article class="post"><h1 class="post-title">C# 강좌 : 제 13강 - 클래스 & 메소드 (1)</h1><p class="post-meta"> <time datetime="2017-09-06">2017-09-06</time> &nbsp;/&nbsp; <span>윤대희</span> &nbsp;/&nbsp; <a href="#disqus_thread" data-disqus-identifier="/posts/C#-13">0 Comments</a> <center> <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>  <ins class="adsbygoogle" style="display:inline-block;width:336px;height:280px" data-ad-client="ca-pub-1278038564950020" data-ad-slot="1053182360"></ins> <script> (adsbygoogle = window.adsbygoogle || []).push({}); </script> 　　　 <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>  <ins class="adsbygoogle" style="display:inline-block;width:336px;height:280px" data-ad-client="ca-pub-1278038564950020" data-ad-slot="1300594377"></ins> <script> (adsbygoogle = window.adsbygoogle || []).push({}); </script> </center><div class="post-content"><h3 id="클래스class">클래스(Class)</h3><hr /><p>클래스(Class)는 <strong>객체 지향 프로그래밍(OOP)</strong>에서 특정한 객체를 생성하기 위해서 <code class="highlighter-rouge">필드</code>, <code class="highlighter-rouge">속성</code>, <code class="highlighter-rouge">메소드</code> 및 <code class="highlighter-rouge">이벤트</code> 등을 정의하는 <strong>틀</strong>입니다. <strong>그룹화하여 자체 사용자 지정 형식</strong>을 만들 수 있는 구문입니다. 클래스는 <strong>참조 형식</strong>입니다.<p><br /><p>객체 지향 프로그래밍이란? : <a href="https://076923.github.io/posts/C-1/">1강 바로가기</a><p>참조 형식이란? : <a href="https://076923.github.io/posts/C-9/">9강 바로가기</a><p><br /><h4 id="메소드-method">메소드 (Method)</h4><hr /><p>메소드 (Method)는 <strong>일련의 코드를 하나의 그룹으로 묶은 것</strong>입니다. OOP적 의미에서는 객체의 데이터 처리 방법을 <strong>추상화</strong>한 것입니다. 그룹화된 코드는 메소드의 이름을 호출하는 것으로도 실행됩니다.<p><br /><h4 id="클래스와-메소드-형식">클래스와 메소드 형식</h4><hr /><figure class="highlight"><pre><code class="language-c#" data-lang="c#"><span class="k">class</span> <span class="err">클래스이름</span>
+<span class="err">{</span>
+    <span class="err">필드</span> <span class="err">&amp;</span> <span class="err">속성</span>
+    
+    <span class="err">한정자</span> <span class="err">반환형식</span> <span class="err">메소드이름(사용될</span> <span class="err">매개변수</span> <span class="err">목록)</span>
+    <span class="err">{</span>
+        <span class="err">코드</span> <span class="err">1;</span>
+        <span class="err">코드</span> <span class="err">2;</span>
+        <span class="err">코드</span> <span class="err">3;</span>
+        <span class="err">...</span>
+        <span class="nc">return</span> <span class="err">반환값</span>                
+    <span class="p">}</span>
+<span class="p">}</span></code></pre></figure><p>한정자, 반환형식이란? : <a href="https://076923.github.io/posts/C-3/">3강 바로가기</a><p><br /><h4 id="클래스와-메소드">클래스와 메소드</h4><hr /><p>animal이라는 클래스를 생성하여 select라는 메소드를 만들어보겠습니다.<figure class="highlight"><pre><code class="language-c#" data-lang="c#"><span class="k">class</span> <span class="nc">animal</span>
+<span class="p">{</span>
+    <span class="k">public</span> <span class="kt">string</span> <span class="n">color</span><span class="p">;</span>
+    <span class="k">public</span> <span class="kt">string</span> <span class="n">name</span><span class="p">;</span>
+    
+    <span class="k">public</span> <span class="k">void</span> <span class="k">select</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="n">Console</span><span class="p">.</span><span class="nf">WriteLine</span><span class="p">(</span><span class="s">"동물 : {0}{1}"</span><span class="p">,</span> <span class="n">color</span><span class="p">,</span> <span class="n">name</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span></code></pre></figure><p>출력 창에 <code class="highlighter-rouge">동물 : {색상}{이름}</code>으로 된 문구가 출력된다는걸 알 수 있습니다. 하지만 color와 name 필드에는 아무것도 선언되어 있지않습니다. 이를 생성자를 이용하여 설정할 수 있습니다. 생성자는 아래와 같이 설정할 수 있습니다.<figure class="highlight"><pre><code class="language-c#" data-lang="c#"><span class="k">private</span> <span class="k">void</span> <span class="nf">Form1_Load</span><span class="p">(</span><span class="kt">object</span> <span class="n">sender</span><span class="p">,</span> <span class="n">EventArgs</span> <span class="n">e</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="n">animal</span> <span class="n">ani</span> <span class="p">=</span> <span class="k">new</span> <span class="nf">animal</span><span class="p">();</span>
+
+    <span class="n">ani</span><span class="p">.</span><span class="n">color</span> <span class="p">=</span> <span class="s">"검은"</span><span class="p">;</span>
+    <span class="n">ani</span><span class="p">.</span><span class="n">name</span> <span class="p">=</span> <span class="s">"고양이"</span><span class="p">;</span>
+    <span class="n">ani</span><span class="p">.</span><span class="k">select</span><span class="p">();</span>
+<span class="p">}</span></code></pre></figure><p><strong>실제 출력 값 : 동물 : 검은고양이</strong><br /><p>생성자는 <code class="highlighter-rouge">클래스이름 객체이름 = new 생성자;</code>로 구성되어 있습니다. <code class="highlighter-rouge">ani</code>라는 객체를 생성하며 ani는 animal 클래스와 연결되어 있습니다. <strong>필드를 수정하거나 메소드를 불러올 수 있습니다.</strong><p><br /><figure class="highlight"><pre><code class="language-c#" data-lang="c#"><span class="k">private</span> <span class="k">void</span> <span class="nf">Form1_Load</span><span class="p">(</span><span class="kt">object</span> <span class="n">sender</span><span class="p">,</span> <span class="n">EventArgs</span> <span class="n">e</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="n">ani</span><span class="p">.</span><span class="nf">showing</span><span class="p">(</span><span class="m">40</span><span class="p">,</span> <span class="m">2</span><span class="p">);</span>
+<span class="p">}</span>
+<span class="k">class</span> <span class="nc">animal</span>
+<span class="p">{</span>
+    <span class="k">public</span> <span class="kt">int</span> <span class="n">size</span><span class="p">;</span>
+    <span class="k">public</span> <span class="kt">int</span> <span class="n">age</span><span class="p">;</span>
+
+    <span class="k">public</span> <span class="k">void</span> <span class="nf">showing</span><span class="p">(</span><span class="kt">int</span> <span class="n">order_Size</span><span class="p">,</span> <span class="kt">int</span> <span class="n">order_Age</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="n">size</span> <span class="p">=</span> <span class="n">order_Size</span><span class="p">;</span>
+        <span class="n">age</span> <span class="p">=</span> <span class="n">order_Age</span><span class="p">;</span>
+
+        <span class="k">if</span> <span class="p">(</span><span class="n">size</span> <span class="p">&gt;</span> <span class="m">50</span><span class="p">)</span> <span class="n">Console</span><span class="p">.</span><span class="nf">WriteLine</span><span class="p">(</span><span class="s">"무거운 {0} 살"</span><span class="p">,</span><span class="n">age</span><span class="p">);</span>
+        <span class="k">else</span> <span class="n">Console</span><span class="p">.</span><span class="nf">WriteLine</span><span class="p">(</span><span class="s">"가벼운 {0} 살"</span><span class="p">,</span> <span class="n">age</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span></code></pre></figure><p><strong>실제 출력 값 : 가벼운 2살</strong><br /><p>위와 같이 반환 형식없이 매개변수만을 이용하여 출력값을 바꿔서 출력할 수 있습니다. <code class="highlighter-rouge">order_Size</code>와 <code class="highlighter-rouge">order_Age</code>를 불러와 <code class="highlighter-rouge">size</code>와 <code class="highlighter-rouge">age</code>라는 변수에 값을 넣어줍니다.<figure class="highlight"><pre><code class="language-c#" data-lang="c#"><span class="k">public</span> <span class="kt">int</span> <span class="n">size</span><span class="p">;</span>
+<span class="k">public</span> <span class="kt">int</span> <span class="n">age</span><span class="p">;</span>
+<span class="k">public</span> <span class="k">void</span> <span class="nf">showing2</span><span class="p">(</span><span class="kt">int</span> <span class="n">size</span><span class="p">,</span> <span class="kt">int</span> <span class="n">age</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="k">this</span><span class="p">.</span><span class="n">size</span> <span class="p">=</span> <span class="n">size</span><span class="p">;</span>
+    <span class="k">this</span><span class="p">.</span><span class="n">age</span> <span class="p">=</span> <span class="n">age</span><span class="p">;</span>
+
+    <span class="k">if</span> <span class="p">(</span><span class="n">size</span> <span class="p">&gt;</span> <span class="m">50</span><span class="p">)</span> <span class="n">Console</span><span class="p">.</span><span class="nf">WriteLine</span><span class="p">(</span><span class="s">"무거운 {0} 살"</span><span class="p">,</span> <span class="n">age</span><span class="p">);</span>
+    <span class="k">else</span> <span class="n">Console</span><span class="p">.</span><span class="nf">WriteLine</span><span class="p">(</span><span class="s">"가벼운 {0} 살"</span><span class="p">,</span> <span class="n">age</span><span class="p">);</span>
+<span class="p">}</span></code></pre></figure><p><code class="highlighter-rouge">매개변수</code>와 <code class="highlighter-rouge">필드</code>의 <strong>이름을 같게 해도 사용할 수 있습니다.</strong> 단, <code class="highlighter-rouge">this</code>라는 키워드를 이용해야합니다. <code class="highlighter-rouge">this</code> 키워드를 이용하게되면 동일한 개체의 다른 생성자를 호출 할 수도 있습니다. <code class="highlighter-rouge">this.size</code>, <code class="highlighter-rouge">this.age</code> 뿐만 아니라 <code class="highlighter-rouge">this.select()</code>도 호출 할 수 있습니다.<p><br /><h2 id="코드">코드</h2><figure class="highlight"><pre><code class="language-c#" data-lang="c#"><span class="k">using</span> <span class="nn">System</span><span class="p">;</span>
+<span class="k">using</span> <span class="nn">System.Collections.Generic</span><span class="p">;</span>
+<span class="k">using</span> <span class="nn">System.ComponentModel</span><span class="p">;</span>
+<span class="k">using</span> <span class="nn">System.Data</span><span class="p">;</span>
+<span class="k">using</span> <span class="nn">System.Drawing</span><span class="p">;</span>
+<span class="k">using</span> <span class="nn">System.Linq</span><span class="p">;</span>
+<span class="k">using</span> <span class="nn">System.Text</span><span class="p">;</span>
+<span class="k">using</span> <span class="nn">System.Threading.Tasks</span><span class="p">;</span>
+<span class="k">using</span> <span class="nn">System.Windows.Forms</span><span class="p">;</span>
+
+<span class="k">namespace</span> <span class="nn">test</span>
+<span class="p">{</span>
+    <span class="k">public</span> <span class="k">partial</span> <span class="k">class</span> <span class="nc">Form1</span> <span class="p">:</span> <span class="n">Form</span>
+    <span class="p">{</span>
+        <span class="k">public</span> <span class="nf">Form1</span><span class="p">()</span>
+        <span class="p">{</span>
+            <span class="nf">InitializeComponent</span><span class="p">();</span>
+        <span class="p">}</span>
+
+        <span class="k">private</span> <span class="k">void</span> <span class="nf">Form1_Load</span><span class="p">(</span><span class="kt">object</span> <span class="n">sender</span><span class="p">,</span> <span class="n">EventArgs</span> <span class="n">e</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="n">animal</span> <span class="n">ani</span> <span class="p">=</span> <span class="k">new</span> <span class="nf">animal</span><span class="p">();</span>
+
+            <span class="n">ani</span><span class="p">.</span><span class="n">color</span> <span class="p">=</span> <span class="s">"검은"</span><span class="p">;</span>
+            <span class="n">ani</span><span class="p">.</span><span class="n">name</span> <span class="p">=</span> <span class="s">"고양이"</span><span class="p">;</span>
+            <span class="n">ani</span><span class="p">.</span><span class="k">select</span><span class="p">();</span>
+
+            <span class="n">ani</span><span class="p">.</span><span class="n">color</span> <span class="p">=</span> <span class="s">"빨간"</span><span class="p">;</span>
+            <span class="n">ani</span><span class="p">.</span><span class="k">select</span><span class="p">();</span>
+
+            <span class="n">ani</span><span class="p">.</span><span class="nf">showing</span><span class="p">(</span><span class="m">40</span><span class="p">,</span> <span class="m">2</span><span class="p">);</span>
+            <span class="n">ani</span><span class="p">.</span><span class="nf">showing2</span><span class="p">(</span><span class="m">60</span><span class="p">,</span> <span class="m">4</span><span class="p">);</span>
+        <span class="p">}</span>
+        
+        <span class="k">class</span> <span class="nc">animal</span>
+        <span class="p">{</span>
+            <span class="k">public</span> <span class="kt">string</span> <span class="n">color</span><span class="p">;</span>
+            <span class="k">public</span> <span class="kt">string</span> <span class="n">name</span><span class="p">;</span>
+            
+            <span class="k">public</span> <span class="k">void</span> <span class="k">select</span><span class="p">()</span>
+            <span class="p">{</span>
+                <span class="n">Console</span><span class="p">.</span><span class="nf">WriteLine</span><span class="p">(</span><span class="s">"동물 : {0}{1}"</span><span class="p">,</span> <span class="n">color</span><span class="p">,</span> <span class="n">name</span><span class="p">);</span>
+            <span class="p">}</span>
+
+            <span class="k">public</span> <span class="kt">int</span> <span class="n">size</span><span class="p">;</span>
+            <span class="k">public</span> <span class="kt">int</span> <span class="n">age</span><span class="p">;</span>
+
+            <span class="k">public</span> <span class="k">void</span> <span class="nf">showing</span><span class="p">(</span><span class="kt">int</span> <span class="n">order_Size</span><span class="p">,</span> <span class="kt">int</span> <span class="n">order_Age</span><span class="p">)</span>
+            <span class="p">{</span>
+                <span class="n">size</span> <span class="p">=</span> <span class="n">order_Size</span><span class="p">;</span>
+                <span class="n">age</span> <span class="p">=</span> <span class="n">order_Age</span><span class="p">;</span>
+
+                <span class="k">if</span> <span class="p">(</span><span class="n">size</span> <span class="p">&gt;</span> <span class="m">50</span><span class="p">)</span> <span class="n">Console</span><span class="p">.</span><span class="nf">WriteLine</span><span class="p">(</span><span class="s">"무거운 {0} 살"</span><span class="p">,</span><span class="n">age</span><span class="p">);</span>
+                <span class="k">else</span> <span class="n">Console</span><span class="p">.</span><span class="nf">WriteLine</span><span class="p">(</span><span class="s">"가벼운 {0} 살"</span><span class="p">,</span> <span class="n">age</span><span class="p">);</span>
+            <span class="p">}</span>
+
+            <span class="k">public</span> <span class="k">void</span> <span class="nf">showing2</span><span class="p">(</span><span class="kt">int</span> <span class="n">size</span><span class="p">,</span> <span class="kt">int</span> <span class="n">age</span><span class="p">)</span>
+            <span class="p">{</span>
+                <span class="k">this</span><span class="p">.</span><span class="n">size</span> <span class="p">=</span> <span class="n">size</span><span class="p">;</span>
+                <span class="k">this</span><span class="p">.</span><span class="n">age</span> <span class="p">=</span> <span class="n">age</span><span class="p">;</span>
+                
+                <span class="k">if</span> <span class="p">(</span><span class="n">size</span> <span class="p">&gt;</span> <span class="m">50</span><span class="p">)</span> <span class="n">Console</span><span class="p">.</span><span class="nf">WriteLine</span><span class="p">(</span><span class="s">"무거운 {0} 살"</span><span class="p">,</span> <span class="n">age</span><span class="p">);</span>
+                <span class="k">else</span> <span class="n">Console</span><span class="p">.</span><span class="nf">WriteLine</span><span class="p">(</span><span class="s">"가벼운 {0} 살"</span><span class="p">,</span> <span class="n">age</span><span class="p">);</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span></code></pre></figure></div><br> <center> <br> <b>도움이 되셨다면 광고 클릭 부탁드립니다.</b> <br> <br> <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>  <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-1278038564950020" data-ad-slot="6089886621" data-ad-format="auto"></ins> <script> (adsbygoogle = window.adsbygoogle || []).push({}); </script> <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>  <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-1278038564950020" data-ad-slot="6751575064" data-ad-format="auto"></ins> <script> (adsbygoogle = window.adsbygoogle || []).push({}); </script> </center><div class="post-content"><div class="post-links"> <a class="link-to-post" href="/posts/C-14/"> <span class="link-to-post__next">&#10535; &nbsp;Next post</span> <span class="link-to-post__title">C# 강좌 : 제 14강 - 클래스 & 메소드 (2)</span> </a> <a class="link-to-post" href="/posts/C-12/"> <span class="link-to-post__prev">&#10535; &nbsp;Previous post</span> <span class="link-to-post__title">C# 강좌 : 제 12강 - 점프문</span> </a></div></div></article><center><div id="disqus_thread"></div><script> /** * RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS. * LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables */ var disqus_config = function () { this.page.url = "http://localhost:4000/posts/C-13/"; this.page.identifier = "/posts/C#-13"; }; var disqus_shortname = 'https-076923-github-io'; (function() { var d = document, s = d.createElement('script'); s.src = '//' + 'disqus_shortname' + '.disqus.com/embed.js'; s.setAttribute('data-timestamp', +new Date()); (d.head || d.body).appendChild(s); })(); </script> <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript> </center></main><footer class="blog-footer content-wrapper"><p>Copyright&copy; 2017 YUN DAE HEE<br><p>e-mail : 076923@naver.com</footer><script src="/assets/js/scripts.js"></script> <script src="/assets/js/katex_init.js"></script> <script id="dsq-count-scr" src="//https-076923-github-io.disqus.com/count.js" async></script> <script type="text/javascript" src="https://wcs.naver.net/wcslog.js"></script> <script type="text/javascript"> if(!wcs_add) var wcs_add = {}; wcs_add["wa"] = "41e740bc4e3790"; wcs_do(); </script>
