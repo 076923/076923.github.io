@@ -17,7 +17,7 @@ active: Category
 <b><a href="https://076923.github.io/posts/#computer%20vision" class="fab fa-whmcs" style="text-decoration:none"> Theory </a></b>
 <br>
 <b><a href="https://076923.github.io/posts/#c#" class="fab fa-cuttlefish" style="text-decoration:none"> C# </a></b> - 
-<a href="https://076923.github.io/posts/#c#-opencv" class="far fa-bookmark" style="text-decoration:none">OPENCV  </a>
+<a href="https://076923.github.io/posts/#c#-opencvsharp2" class="far fa-bookmark" style="text-decoration:none">OPENCV  </a>
 <a href="https://076923.github.io/posts/#c#-tesseract" class="far fa-bookmark" style="text-decoration:none">TESSERACT  </a>
 <a href="https://076923.github.io/posts/#c#-dynamixel" class="far fa-bookmark" style="text-decoration:none">DYNAMIXEL  </a>
 <br>

@@ -7,7 +7,7 @@ crawlertitle: "C#-OpenCV 예제 : 명함(문서) 인식"
 summary: "C#-OpenCV Document Recognition"
 date: 2018-04-02
 categories: exercise
-tags: ['C#-OpenCV 예제']
+tags: ['C#-OpenCvSharp 예제']
 author: 윤대희
 star: true
 ---

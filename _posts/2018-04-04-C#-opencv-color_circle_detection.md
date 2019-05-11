@@ -7,7 +7,7 @@ crawlertitle: "C#-OpenCV 예제 : 색상 원 검출"
 summary: "C#-OpenCV Color Circle Detection"
 date: 2018-04-04
 categories: exercise
-tags: ['C#-OpenCV 예제']
+tags: ['C#-OpenCvSharp 예제']
 author: 윤대희
 star: true
 ---
