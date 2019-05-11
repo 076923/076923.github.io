@@ -74,7 +74,7 @@ button.pack()
 
 <br>
 <br>
-### Button Method###
+### Button Method ###
 ----------
 
 |    이름    |      의미      |

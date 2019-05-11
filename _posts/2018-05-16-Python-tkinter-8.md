@@ -112,7 +112,7 @@ print("Window Close")
 
 <br>
 <br>
-### Menu Method###
+### Menu Method ###
 ----------
 
 |              이름              |                                       의미                                      |

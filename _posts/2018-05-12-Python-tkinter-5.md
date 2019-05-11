@@ -73,7 +73,7 @@ listbox.pack()
 
 <br>
 <br>
-### Listbox Method###
+### Listbox Method ###
 ----------
 
 |               이름               |                            의미                            |
