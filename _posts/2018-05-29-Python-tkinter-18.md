@@ -71,7 +71,7 @@ text.tag_remove("강조", "1.1", "1.2")
 
 <br>
 <br>
-### Text Method###
+### Text Method ###
 ----------
 
 

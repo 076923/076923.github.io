@@ -121,7 +121,7 @@ treeview.tag_bind("tag1", sequence="<<TreeviewSelect>>", callback=cc)
 <br>
 <br>
 
-### Treeview Method###
+### Treeview Method ###
 ----------
 
 ##### 표 메소드 (1) #####

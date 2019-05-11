@@ -72,7 +72,7 @@ combobox.set("목록 선택")
 
 <br>
 <br>
-### Combobox Method###
+### Combobox Method ###
 ----------
 
 ##### 콤보박스 메소드 #####

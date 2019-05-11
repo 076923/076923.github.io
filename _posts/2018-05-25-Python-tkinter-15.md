@@ -70,7 +70,7 @@ canvas.pack()
 
 <br>
 <br>
-### Canvas Method###
+### Canvas Method ###
 ----------
 
 |                         이름                         |  의미  |                                          설명                                         |
