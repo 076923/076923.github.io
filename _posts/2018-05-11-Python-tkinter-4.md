@@ -75,7 +75,7 @@ label.pack()
 
 <br>
 <br>
-### Entry Method###
+### Entry Method ###
 ----------
 
 |                  이름                  |                              의미                             |

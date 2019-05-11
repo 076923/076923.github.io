@@ -76,7 +76,7 @@ checkbutton3.pack()
 
 <br>
 <br>
-### Checkbutton Method###
+### Checkbutton Method ###
 ----------
 
 |    이름    |      의미      |

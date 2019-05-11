@@ -107,7 +107,7 @@ radio5.pack()
 
 <br>
 <br>
-### Radiobutton Method###
+### Radiobutton Method ###
 ----------
 
 |    이름    |      의미      |
