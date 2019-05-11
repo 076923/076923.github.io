@@ -7,7 +7,7 @@ crawlertitle: "C#-OpenCV 예제 : 공 추적"
 summary: "C#-OpenCV Ball Tracking"
 date: 2018-04-08
 categories: exercise
-tags: ['C#-OpenCV 예제']
+tags: ['C#-OpenCvSharp 예제']
 author: 윤대희
 star: true
 ---
