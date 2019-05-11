@@ -116,7 +116,7 @@ sizegrip.bind("<B1-Motion>", Drag)
 <br>
 <br>
 
-### winfo_ Method###
+### winfo_ Method ###
 ----------
 
 |              이름             |             의미             |                                      속성                                     |

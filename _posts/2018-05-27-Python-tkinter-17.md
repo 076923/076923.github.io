@@ -79,7 +79,7 @@ label.pack()
 
 <br>
 <br>
-### Scale Method###
+### Scale Method ###
 ----------
 
 |           이름          |            의미           |                          설명                          |

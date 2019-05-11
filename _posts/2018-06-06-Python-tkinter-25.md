@@ -96,7 +96,7 @@ spinbox.pack()
 
 <br>
 <br>
-### Spinbox Method###
+### Spinbox Method ###
 ----------
 
 ##### 수치 조정 기입창 메소드 #####

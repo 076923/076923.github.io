@@ -116,7 +116,7 @@ label4.pack()
 
 <br>
 <br>
-### Notebook Method###
+### Notebook Method ###
 ----------
 
 ##### 탭 메뉴 메소드 #####

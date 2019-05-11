@@ -78,7 +78,7 @@ label.pack()
 
 <br>
 <br>
-### Toplevel Method###
+### Toplevel Method ###
 ----------
 
 

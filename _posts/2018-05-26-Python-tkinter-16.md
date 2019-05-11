@@ -86,7 +86,7 @@ frame.pack()
 
 <br>
 <br>
-### Scrollbar Method###
+### Scrollbar Method ###
 ----------
 
 |           이름          |            의미           |                          설명                          |
