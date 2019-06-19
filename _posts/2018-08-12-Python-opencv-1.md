@@ -4,7 +4,7 @@ layout: post
 comments: true
 title:  "Python OpenCV 강좌 : 제 1강 - OpenCV 설치"
 crawlertitle: "Python OpenCV 강좌 : 제 1강 - OpenCV 설치"
-summary: "Python OpenCV 3.4"
+summary: "Python OpenCV 4.1"
 date: 2018-08-12
 categories: posts
 tags: ['Python-OpenCV']
@@ -18,7 +18,7 @@ OpenCV (Open Source Computer Vision)은 `오픈 소스 컴퓨터 비전 라이�
 
 <br>
 
-본 강좌는 `Python-OpenCVSharp 3.4.2`에 맞추어져 있습니다.
+본 강좌는 `Python-OpenCVSharp 4.1.0.25`에 맞추어져 있습니다.
 
 <br>
 
@@ -44,10 +44,10 @@ print(cv2.__version__)
 
 **결과**
 :    
-3.4.2<br>
+4.1.0<br>
 <br>
 
-정상적으로 설치가 완료되었다면 위와 같이 `3.4.2`가 출력되어야합니다.
+정상적으로 설치가 완료되었다면 위와 같이 `4.1.0`가 출력되어야합니다.
 
 
 ### Python 플랫폼 ###
