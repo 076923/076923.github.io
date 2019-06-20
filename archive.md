@@ -39,7 +39,7 @@ active: Category
     {% if post.tags contains t %}
       {% if post.categories contains "posts" %}
       
-<h2 class="category-key" id="{{ t | downcase }}" name={{ t | capitalize }}>{{ t | capitalize }}</h2>
+<h2 class="category-key" id="{{ t | downcase }}">{{ t | capitalize }}</h2>
 
   {% endif %}
   {% endif %}
