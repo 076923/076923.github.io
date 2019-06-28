@@ -1,0 +1,36 @@
+{% assign page_author_name = page.author.name | default: site.author.name | default: nil | escape %}
+{% assign page_author_short_bio = page.author.short_bio | default: site.author.short_bio | default: nil | escape %}
+{% assign page_author_picture = page.author.picture | default: site.author.picture | default: nil | escape %}
+
+{% capture about_url %}{% include get-page-url.html page_ref="about" %}{% endcapture %}
+
+{% if page_author_name %}
+<div class="author-article">
+  <div class="author-picture">
+    <a href="{{ about_url }}">
+      <img src="{{ page.image }}" class="page-image" alt="{{ page_author_name }}">
+    </a>
+  </div>
+
+  <div class="author-bio">
+    <span class="page-title">
+      {{ page.title }}
+    </span>
+    <div>
+      {%if page.tags %}
+        [
+        {% for tag in page.tags %}
+          {{ tag }}
+        {% endfor %}
+        ]
+      {%endif %}
+      - {{ site.author.name }}
+    </div>
+    <div class="post-meta">
+      {% include post-meta-info.html post_date=page.date post_ref=page.ref post_url=page.url %}
+    </div>
+    <!-- <div class="post-meta-list">{{ page_author_short_bio }}</div> -->
+  </div>
+</div>
+{% endif %}
+

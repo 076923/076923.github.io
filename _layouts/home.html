@@ -1,0 +1,18 @@
+---
+layout: default
+---
+
+<div>
+
+  {% for post in site.posts limit: 5 %}
+  <article class="index-page">
+    <h1><a href="{{ post.url }}">{{ post.title }}</a><span class="date">{{ post.date | date: "%Y-%m-%d"  }}</span></h1>
+
+    {{ post.excerpt }}
+    {{ post.content | strip_html | truncatewords: 40 }}
+    <br>
+
+  </article>
+{% endfor %}
+
+</div>

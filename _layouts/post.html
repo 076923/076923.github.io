@@ -1,70 +1,56 @@
 ---
 layout: default
 ---
-<article class="post">
-  
 
-  <h1 class="post-title">{{ page.title }}</h1>
+{% assign count = 0 %}
+{% assign now = -1 %}
+{% assign arr = "" | split: '' %}
+{% assign arr_title = "" | split: '' %}
 
 
-  
-  
-  <p class="post-meta">
-    <time datetime="{{ page.date | date: "%Y-%m-%d" }}">{{ page.date | date: "%Y-%m-%d" }}</time>
-
-    {% if page.author %}
-      &nbsp;/&nbsp;
-      <span>{{ page.author }}</span>
+{% for post in site.posts %}
+  {% if post.tags == page.tags %}
+    {% if post.title == page.title %}
+      {% assign now = count %}
     {% endif %}
-    &nbsp;/&nbsp;
-    <a href="{{ post.url }}#disqus_thread" data-disqus-identifier="{{ page.id }}">0 Comments</a>
-    
-  </p>
 
-    
-  <center>
-  {% include boxad-1.html %} 　　　   {% include boxad-2.html %}
-  </center>
-  
-  
-  <div class="post-content">
-    
+    {% assign count = count | plus: 1 %}
+    {% assign arr = arr | push: post.url %}
+    {% assign arr_title = arr_title | push: post.title %}
+
+  {% endif %}
+{% endfor %}
+
+{% assign next = now | minus:1 %}
+{% assign prev = now | plus:1 %}
+
+{% include article-author-bio-small.html %}
+<article itemscope itemtype="http://schema.org/BlogPosting">
+
+  <div itemprop="articleBody">
     {{ content }}
-
   </div>
-  
-    <br>
-    
-    <center>
-      <br>
-      <b>도움이 되셨다면 광고 클릭 부탁드립니다.</b>
-      <br>
-      <br>
-      {% include ad-1.html %}
-      {% include ad-2.html %}
-    </center>
-  
-  
-   <div class="post-content">
+  <div class="post-content" style="margin-top:4em;">
     <div class="post-links">
-      {% if page.next.url %}
-        <a class="link-to-post" href="{{ page.next.url }}">
-          <span class="link-to-post__next">&#10535; &nbsp;Next post</span>
-          <span class="link-to-post__title">{{ page.next.title }}</span>
-        </a>
-      {% endif %}
-
-      {% if page.previous.url %}
-        <a class="link-to-post" href="{{ page.previous.url }}">
+      {% if prev != arr.size %}
+        <a class="link-to-post" href="{{ arr[prev] }}">
           <span class="link-to-post__prev">&#10535; &nbsp;Previous post</span>
-          <span class="link-to-post__title">{{ page.previous.title }}</span>
+          <span class="link-to-post__title">{{ arr_title[prev] }}</span>
         </a>
       {% endif %}
+      
+      {% if next != -1 %}
+        <a class="link-to-post" href="{{ arr[next] }}">
+          <span class="link-to-post__next">&#10535; &nbsp;Next post</span>
+          <span class="link-to-post__title">{{ arr_title[next] }}</span>
+        </a>
+      {% endif %}
+  
     </div>
-
   </div>
 
 </article>
+
 <center>
-{% include disqus.html %}
+  {% include disqus.html %}
 </center>

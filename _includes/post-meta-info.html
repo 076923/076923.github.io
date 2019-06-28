@@ -1,0 +1,13 @@
+<div>
+  <time datetime="{{ page.date | date: "%Y-%m-%d" }}">{{ page.date | date: "%Y.%m.%d." }}</time>
+  <span style="padding-left: 5px; padding-right: 5px;"> • </span>
+  <span itemprop="readtime">
+    {% capture read_time %}{% include read-time.html %}{% endcapture %}{{ read_time | strip }}
+  </span>
+  <span style="padding-left: 5px; padding-right: 5px;"> • </span>
+  {% assign canonical_url = include.post_url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url %}
+  
+
+  <!-- here comments count -->
+    
+</div>

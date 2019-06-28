@@ -1,4 +1,5 @@
-<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+<!-- <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script> -->
+<script type="text/javascript" src="//code.jquery.com/jquery-3.4.1.min.js"></script>
 <style type="text/css">
 	h1 { font-size: 34px; line-height: 1.2; margin: 0.3em 0 10px; }
 	#scrolltotop{position:fixed;bottom:0px;right:0px}#scrolltotop
@@ -8,8 +9,7 @@
 </style>
 
 <script type="text/javascript">
-<!--
-	jQuery(function($){
+jQuery(function($){
 	$('#scrolltotop').hide();
 	$(function () {
 		$(window).scroll(function () {
@@ -22,10 +22,9 @@
 		$('#scrolltotop a').click(function () {
 			$('body,html').animate({
 				scrollTop: 0
-			}, 1000);
+			}, 200);
 			return false;
 		});
 	});
 });
--->
 </script>
