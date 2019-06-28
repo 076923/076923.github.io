@@ -1,0 +1,18 @@
+{% assign posts=site.posts | where:"ref", page.ref | sort: 'lang' %}
+{% assign this_page_lang = page.lang %}
+{% if posts %}
+{% for post in posts %}
+  {% if post.lang != this_page_lang %}
+  <link rel="alternate" hreflang="{{ post.lang }}" href="{{ post.url | prepend: site.baseurl | prepend: site.url }}" />
+  {% endif %}
+{% endfor %}
+{% endif %}
+
+{% assign pages = site.pages | where:"ref", page.ref | sort: 'lang' %}
+{% if pages %}
+{% for page in pages %}
+  {% if page.lang != this_page_lang %}
+  <link rel="alternate" hreflang="{{ page.lang }}" href="{{ page.url | prepend: site.baseurl | prepend: site.url }}" />
+  {% endif %}
+{% endfor %}
+{% endif %}

@@ -1,19 +1,36 @@
 ---
-bg: "star.gif"
 layout: page
-title: "About"
-crawlertitle: "076923 : About"
+title: About
+tagline: "ABOUT PROGRAMMING : C#, PYTHON, ARDUINO, OPENCV, CAD, ETC."
 permalink: /about
-summary: "Why and how this site was created."
-active: about
-date: 7/20/2017 3:37:34 PM 
+header:
+  image: /assets/patterns/upfeathers.png
+ref: about
+order: 2
 ---
-# About #
-----------
-제 사이트에 방문해주셔서 감사합니다.
 
-연구, 개발 등에 필요한 정보를 공유하고 나누기 위한 목적으로 개설되었습니다.
-기초적인 부분을 다루고 심화적인 부분 또한 어렵게 느끼지 않게 진행해 나가겠습니다.
-많은 도움이 되기를 바랍니다.
+<p style="
+    position: absolute;
+    padding-top: 7%;
+    padding-left: 7%;
+    font-size: xx-large;
+    color: white;
+">개발자: 윤대희</p>
 
-e-mail : 076923@naver.com
+<p style="
+    position: absolute;
+    padding-left: 7%;
+    padding-top: 10%;
+    font-size: x-large;
+    color: navajowhite;
+">E-MAIL : s076923@gmail.com</p>
+
+<iframe src="spaceship.html" style="
+    width: 100%;
+    height: 80vh;
+    border: none;
+"></iframe>
+
+
+<h1><a href="https://www.inflearn.com/course/c-opencv/"  class="fas fa-leaf" style="float:right;">&nbsp;Inflearn</a></h1>
+

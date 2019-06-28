@@ -1,53 +1,63 @@
-# Welcome to Jekyll!
-#
-# This config file is meant for settings that affect your whole blog, values
-# which you are expected to set up once and rarely need to edit after that.
-# For technical reasons, this file is *NOT* reloaded automatically when you use
-# 'jekyll serve'. If you change this file, please restart the server process.
-
 # Site settings
-title: "YUN DAE HEE"
-
-author:
-  head_img: 'rails.jpg'
-
-avatar: 'logo.png'
-favicon: 'favicon.ico'
-
+main: "YUN DAE HEE"
+title: 076923
 email: 076923@naver.com
-description: > # this means to ignore newlines until "baseurl:"
- C#, python, arduino, opencv, CAD 등을 다루며 연구, 개발 등에 필요한 정보를 공유하고 나누기 위한 목적입니다.
-baseurl: "" # the subpath of your site, e.g. /blog
 lang: "ko"
+description: >
+ C#, Python, Arduino, OpenCV, CAD 등을 다루며 연구, 개발 등에 필요한 정보를 공유하고 나누기 위한 목적입니다.
+baseurl: ""
 url: "https://076923.github.io/"
-#url: "http://localhost:4000" # the base hostname & protocol for your site
-twitter_username: 
-github_username:  076923
-disqus_username:  yundaehee
+favicon: 'favicon.ico'
 
 # Build settings
 markdown: kramdown
-relative_permalinks: false
-permalink: /:categories/:title/
 
-# Posts settings
-future: true
-safe: false
-lsi: false
+# Make sure to exclude 'vendor' from the build
+exclude: [vendor, "Gemfile", "Gemfile.lock"]
+
+# permalink: /:categories/:year/:month/:day/:title.html
+# none is equivalent to /:title.html
+# https://jekyllrb.com/docs/permalinks
+permalink: /:title
+
+jekyll-theme-simple-blog:
+  date_format: "%Y-%M-%d"
+
+theme: # leave it empty
+
+header_page_refs: ['coding','posts','about']
+
+plugins:
+  - jekyll-target-blank
+
+target-blank:
+    rel: nofollow
+
+show_post_image_posts_list: false
+
+header:
+  image: /assets/patterns/symphony.png
+
+# social
+author:
+  name: "윤대희"
+  picture: assets/img/profile-60.png
+
+image: /assets/img/profile-225.png
+
+# gitlab on site
+gitlab:
+  owner_url: https://gitlab.com/076923
+
+# github on site
+github:
+  owner_url: https://github.com/076923
+
+variable:
+  read-per-minute: 35
+  reading: "읽는 데"
+  read-time: "분"
+
 disqus: https-076923-github-io
-excerpt_separator: "\n\n"
-
-# Theme settings
-compress_html:
-  comments: ["<!-- ", " -->"]
-  clippings: all
-  endings: all
-
-
-sass:
-  sass_dir: assets/_sass
-  style: compressed
-
-
-images: '/assets/images'
-
+github_username: 076923
+disqus_username: yundaehee

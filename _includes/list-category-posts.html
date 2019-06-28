@@ -1,0 +1,52 @@
+<h2>
+<a href="{{ page.url }}#C#" class="fab fa-cuttlefish" style=" text-decoration:none; padding: 12px; color: #3F51B5; border-color: #2196F3; border-style: inset; border-radius: 50px; border-top-left-radius: unset; border-width: 5px; margin-right: 10px;">&nbsp;C#</a>
+<a href="{{ page.url }}#C#-OpenCvSharp2" class="fas fa-camera-retro" style=" text-decoration:none; padding: 12px; color: #3F51B5; border-color: #2196F3; border-style: inset; border-radius: 50px; border-width: 5px; margin-right: 10px;">&nbsp;OpenCvSharp2</a>
+<a href="{{ page.url }}#C#-Tesseract" class="fas fa-cube" style=" text-decoration:none; padding: 12px; color: #3F51B5; border-color: #2196F3; border-style: inset; border-radius: 50px; border-width: 5px; margin-right: 10px;">&nbsp;Tesseract</a>
+<a href="{{ page.url }}#C#-Dynamixel" class="fas fa-robot" style=" text-decoration:none; padding: 12px; color: #3F51B5; border-color: #2196F3; border-style: inset; border-radius: 50px; border-width: 5px; margin-right: 10px;">&nbsp;Dynamixel</a>
+<a href="{{ page.url }}#C#-OpenCvSharp4" class="fas fa-camera" style=" text-decoration:none; padding: 12px; color: #3F51B5; border-color: #2196F3; border-style: inset; border-radius: 50px; border-width: 5px; margin-right: 10px;">&nbsp;OpenCvSharp4</a>
+<br>
+<a href="{{ page.url }}#Python" class="fab fa-python" style=" text-decoration:none; padding: 12px; color: #E91E63; border-color: #E91E63; border-style: inset; border-radius: 50px; border-top-left-radius: unset; border-width: 5px; margin-right: 10px; margin-top:20px">&nbsp;Python</a>
+<a href="{{ page.url }}#Python-Tkinter" class="fab fa-tumblr" style=" text-decoration:none; padding: 12px; color: #E91E63; border-color: #E91E63; border-style: inset; border-radius: 50px; border-width: 5px; margin-right: 10px;">&nbsp;Tkinter</a>
+<a href="{{ page.url }}#Python-Numpy" class="fas fa-layer-group" style=" text-decoration:none; padding: 12px; color: #E91E63; border-color: #E91E63; border-style: inset; border-radius: 50px; border-width: 5px; margin-right: 10px;">&nbsp;Numpy</a>
+<a href="{{ page.url }}#Python-OpenCV" class="fas fa-video" style=" text-decoration:none; padding: 12px; color: #E91E63; border-color: #E91E63; border-style: inset; border-radius: 50px; border-width: 5px; margin-right: 10px;">&nbsp;OpenCV</a>
+<br>
+<a href="{{ page.url }}#ComputerVision" class="fas fa-book" style=" text-decoration:none; padding: 12px; color: #FFC107; border-color: #FF9800; border-style: inset; border-radius: 50px; border-top-left-radius: unset; border-width: 5px; margin-right: 10px; margin-top:20px">&nbsp;ComputerVision</a>
+<br>
+<a href="{{ page.url }}#C#-Exercise" class="fas fa-vial" style=" text-decoration:none; padding: 12px; color: #3f51b5; border-color: #673AB7; border-style: inset; border-radius: 50px; border-top-left-radius: unset; border-width: 5px; margin-right: 10px; margin-top:60px">&nbsp;C#-Exercise</a>
+<a href="{{ page.url }}#C#-OpenCvSharp-Exercise" class="fas fa-vial" style=" text-decoration:none; padding: 12px; color: #3f51b5; border-color: #673AB7; border-style: inset; border-radius: 50px; border-top-left-radius: unset; border-width: 5px; margin-right: 10px; margin-top:60px">&nbsp;C#-OpenCvSharp-Exercise</a>
+
+<br>
+</h2>
+
+{% for tag in site.tags %}
+  {% assign t = tag | first %}
+  {% assign posts = tag | last %}
+
+  {% for post in posts limit: 1 %}
+    {% if post.tags contains t %}
+      {% if post.categories contains "posts" or "exercise" %}
+        <a name={{ t }}></a>
+        <h2 class="category-key">{{ t }}</h2>
+        <hr>
+      {% endif %}
+    {% endif %}
+  {% endfor %}
+
+  <ul class="year">
+    {% for post in posts %}
+      {% if post.tags contains t %}
+        {% if post.categories contains "posts" or "exercise" %}
+        <li>
+          {% if post.lastmod %}
+            <a href="{{ post.url }}">{{ post.title }}</a> - [<a href="{{ post.url }}#disqus_thread" data-disqus-identifier="{{ post.id }}">0 Comments</a>]
+            <span class="date">{{ post.lastmod | date: "%Y-%m-%d"  }}</span>
+          {% else %}
+            <a href="{{ post.url }}">{{ post.title }} </a> - [<a href="{{ post.url }}#disqus_thread" data-disqus-identifier="{{ post.id }}">0 Comments</a>]
+            <span class="date">{{ post.date | date: "%Y-%m-%d"  }}</span>
+          {% endif %}
+        </li>
+        {% endif %}
+      {% endif %}
+    {% endfor %}
+  </ul>
+{% endfor %}
