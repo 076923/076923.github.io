@@ -2,15 +2,6 @@
 layout: default
 ---
 
-<br>
-<center><strong>도움이 되셨다면 광고 클릭 부탁드립니다.</strong></center>
-<br>
-<br>
-
-{% include adsense_post_bottom.html %}
-
-<br>
-
 {% assign count = 0 %}
 {% assign now = -1 %}
 {% assign arr = "" | split: '' %}
@@ -39,6 +30,16 @@ layout: default
   <div itemprop="articleBody">
     {{ content }}
   </div>
+
+  <br>
+  <center><strong>도움이 되셨다면 광고 클릭 부탁드립니다.</strong></center>
+  <br>
+  <br>
+  
+  {% include adsense_post_bottom.html %}
+  
+  <br>
+
   <div class="post-content" style="margin-top:4em;">
     <div class="post-links">
       {% if prev != arr.size %}
@@ -63,5 +64,5 @@ layout: default
 <center>
   {% include disqus.html %}
 </center>
-
+<br>
 {% include adsense_post_bottom2.html %}
