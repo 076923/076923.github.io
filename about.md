@@ -1,7 +1,7 @@
 ---
 layout: page
 title: About
-tagline: "ABOUT PROGRAMMING : C#, PYTHON, OPENCV, TENSORFLOW, COMPUTER VISION, MACHINE LEARNING, ETC."
+tagline: "C#, Python, OpenCV, Tensorflow, Computer Vision, Machine learning, etc."
 permalink: /about
 header:
   image: /assets/patterns/upfeathers.png
@@ -24,6 +24,14 @@ order: 2
     font-size: x-large;
     color: navajowhite;
 ">E-MAIL : s076923@gmail.com</p>
+
+<p style="
+    position: absolute;
+    padding-left: 7%;
+    padding-top: 14%;
+    font-size: x-large;
+    color: navajowhite;
+">문의사항 및 건의사항이 있으면 메일로 연락 부탁드립니다.</p>
 
 <iframe src="spaceship.html" style="
     width: 100%;
