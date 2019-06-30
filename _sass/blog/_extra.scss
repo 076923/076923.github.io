@@ -295,7 +295,7 @@ article {
   transition: border-color .5s ease-in 0s;
   &:hover { border-color: #0D243B; }
 
-  &__prev, &__next {
+  &__prev, &__next, &__category {
     font-size: .8em;
     color: #333;
     margin: 10px 0;
