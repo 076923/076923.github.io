@@ -390,3 +390,97 @@ div:after{
     transform: translate(-22px,5px) skew(21deg); 
   }
 }
+
+
+
+  
+
+
+
+.about_name{
+  position: absolute;
+  color: white;
+
+  @include large {
+    font-size: xx-large;
+    padding-top: 7%;
+    padding-left: 7%;
+  }
+  
+  @include medium {
+    font-size: 35px;
+    padding-top: 7%;
+    padding-left: 7%;
+  }
+  
+  @include small {
+    font-size: xx-large;
+    padding-top: 7%;
+    padding-left: 7%;
+  }
+}
+
+.about_mail{
+  position: absolute;
+  color: navajowhite;
+
+  @include large {
+    font-size: x-large;
+    padding-left: 7%;
+    padding-top: 10%;
+  }
+  
+  @include medium {
+    font-size: 26px;
+    padding-left: 7%;
+    padding-top: 13%;
+  }
+  
+  @include small {
+    font-size: 16px;
+    padding-left: 7%;
+    padding-top: 17%;
+  }
+}
+
+.about_text{
+  position: absolute;
+  color: navajowhite;
+
+  @include large {
+    font-size: x-large;
+    padding-left: 7%;
+    padding-top: 14%;
+  }
+  
+  @include medium {
+    font-size: 26px;
+    padding-left: 7%;
+    padding-top: 20%;
+    padding-right: 15%
+  }
+  
+  @include small {
+    font-size: large;
+    padding-left: 7%;
+    padding-top: 25%;
+    padding-right: 20%
+  }
+}
+
+.about_iframe {
+  width: 100%;
+  border: none;
+
+  @include large {
+    height: 60vh;
+  }
+  
+  @include medium {
+    height: 50vh;
+  }
+  
+  @include small {
+    height: 40vh;
+  }
+}
