@@ -1,7 +1,7 @@
 ---
 layout: page
 title: About
-tagline: "ABOUT PROGRAMMING : C#, PYTHON, ARDUINO, OPENCV, CAD, ETC."
+tagline: "ABOUT PROGRAMMING : C#, PYTHON, OPENCV, TENSORFLOW, COMPUTER VISION, MACHINE LEARNING, ETC."
 permalink: /about
 header:
   image: /assets/patterns/upfeathers.png
@@ -30,7 +30,10 @@ order: 2
     height: 80vh;
     border: none;
 "></iframe>
-
-
-<h1><a href="https://www.inflearn.com/course/c-opencv/"  class="fas fa-leaf" style="float:right;">&nbsp;Inflearn</a></h1>
-
+<!-- 
+<br>
+<h1><a href="https://www.inflearn.com/course/c-opencv/" class="fas fa-book" style="float:right;">&nbsp;Book</a></h1> -->
+<br>
+<h1><a href="https://www.inflearn.com/course/c-opencv/" class="fas fa-leaf" style="float:right;">&nbsp;Inflearn</a></h1>
+<br>
+<h1><a href="https://open.kakao.com/o/gqW5YRE" class="fas fa-comment-dots" style="float:right;">&nbsp;Kakao Group</a></h1>
