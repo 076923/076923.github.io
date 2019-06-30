@@ -9,7 +9,7 @@ tags: ["C#-OpenCvSharp-Exercise"]
 keywords: Visual Studio, OpenCV, OpenCvSharp2, Ball Tracking
 ref: C#
 category: exercise
-permalink: /exercise/C-opencv-document_recognition/
+permalink: /exercise/C-opencv-ball_tracking/
 comments: true
 ---
 
