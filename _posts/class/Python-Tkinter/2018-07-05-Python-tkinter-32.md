@@ -9,7 +9,7 @@ tags: ['Python-Tkinter']
 keywords: Python, Python tkinter, Python OpenCV, OpenCV With tkinter
 ref: Python-Tkinter
 category: posts
-permalink: /posts/Python-tkinter-31/
+permalink: /posts/Python-tkinter-32/
 comments: true
 ---
 
