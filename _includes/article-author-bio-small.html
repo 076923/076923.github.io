@@ -38,9 +38,7 @@
       </div>
       <script type='text/javascript'>
         //<![CDATA[
-          // // 사용할 앱의 JavaScript 키를 설정해 주세요.
           Kakao.init('3b0ac722458009d5ded834954bdcb1ea');
-          // // 카카오링크 버튼을 생성합니다. 처음 한번만 호출하면 됩니다.
           function sendLink() {
             Kakao.Link.sendDefault({
               objectType: 'feed',
@@ -73,6 +71,14 @@
           }
         //]]>
       </script>
+
+      <div class="naver_share_div">
+        <a href="#" onclick="javascript:window.open('http://share.naver.com/web/shareView.nhn?url=' +encodeURIComponent(document.URL)+'&title='+encodeURIComponent(document.title), 'naversharedialog', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=640,width=480');return false;" target="_blank" alt="Share on Naver" style="text-decoration:none;">
+          <img src="{{ site.images }}/assets/images/naver.png" style="height:22px; vertical-align:sub; margin-right:-4px">
+          <span class="naver_share_span">공유하기</span>
+        </a>
+      </div>
+
     </div>
     <div class="post-meta">
       {% include post-meta-info.html post_date=page.date post_ref=page.ref post_url=page.url %}
