@@ -26,7 +26,53 @@
       {%endif %}
       - {{ site.author.name }}
 
-      <iframe src="https://www.facebook.com/plugins/share_button.php?href={{ page.url | prepend: 'https://076923.github.io/' }}&amp;layout=button&amp;size=small&amp;width=72&amp;height=20&amp;appId" width="72" height="20" style="border:none;overflow:hidden;vertical-align: sub;margin-left: 10px;margin-right: 10px;" scrolling="no" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+      <div class="facebook_share_div">
+        <iframe src="https://www.facebook.com/plugins/share_button.php?href={{ page.url | prepend: 'https://076923.github.io/' }}&amp;layout=button&amp;size=small&amp;width=72&amp;height=20&amp;appId" width="72" height="20" style="border:none;overflow:hidden;vertical-align: sub;padding-left:2px" scrolling="no" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+      </div>
+      <script src="//developers.kakao.com/sdk/js/kakao.min.js"></script>
+      <div class="kakao_share_div">
+        <a id="kakao-link-btn" href="javascript:sendLink()" style="text-decoration:none;vertical-align:sub;">
+          <img src="//developers.kakao.com/assets/img/about/logos/kakaolink/kakaolink_btn_medium.png" style="height:20px;" />
+          <span class="kakao_share_span">공유하기</span>
+        </a>
+      </div>
+      <script type='text/javascript'>
+        //<![CDATA[
+          // // 사용할 앱의 JavaScript 키를 설정해 주세요.
+          Kakao.init('3b0ac722458009d5ded834954bdcb1ea');
+          // // 카카오링크 버튼을 생성합니다. 처음 한번만 호출하면 됩니다.
+          function sendLink() {
+            Kakao.Link.sendDefault({
+              objectType: 'feed',
+              content: {
+                title: '{{ page.title }}',
+                description: '{{ page.tags }}',
+                imageUrl: '{{ page.image | prepend: "https://076923.github.io/"}}',
+                link: {
+                  mobileWebUrl: '{{ page.url | prepend: "https://076923.github.io/" }}',
+                  webUrl: '{{ page.url | prepend: "https://076923.github.io/" }}'
+                }
+              },
+              buttons: [
+                {
+                  title: '웹으로 보기',
+                  link: {
+                    mobileWebUrl: '{{ page.url | prepend: "https://076923.github.io/" }}',
+                    webUrl: '{{ page.url | prepend: "https://076923.github.io/" }}'
+                  }
+                },
+                {
+                  title: '앱으로 보기',
+                  link: {
+                    mobileWebUrl: '{{ page.url | prepend: "https://076923.github.io/" }}',
+                    webUrl: '{{ page.url | prepend: "https://076923.github.io/" }}'
+                  }
+                }
+              ]
+            });
+          }
+        //]]>
+      </script>
     </div>
     <div class="post-meta">
       {% include post-meta-info.html post_date=page.date post_ref=page.ref post_url=page.url %}

@@ -484,3 +484,32 @@ div:after{
     height: 40vh;
   }
 }
+
+.facebook_share_div{
+  width: 72px;
+  display: inline;
+  background: #4267b2;
+  border-radius: 6px;
+  margin-right: 5px;
+  margin-left: 5px;
+
+}
+
+
+.kakao_share_div {
+  width: 72px;
+  height: 20px;
+  padding-left: 2px;
+  display: inline;
+  background: #ffeb00;
+  border-radius: 6px;
+  margin-right: 5px;
+  margin-left: 5px;
+}
+.kakao_share_span{
+  font-size: 12px;
+  color: #3c1e1e;
+  font-weight: bold;
+  vertical-align: text-top;
+  padding: 0px 5px 0px 0px;
+}
