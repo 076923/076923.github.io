@@ -495,7 +495,6 @@ div:after{
 
 }
 
-
 .kakao_share_div {
   width: 72px;
   height: 20px;
@@ -506,10 +505,31 @@ div:after{
   margin-right: 5px;
   margin-left: 5px;
 }
+
 .kakao_share_span{
   font-size: 12px;
   color: #3c1e1e;
   font-weight: bold;
   vertical-align: text-top;
   padding: 0px 5px 0px 0px;
+}
+
+.naver_share_div {
+  width: 72px;
+  height: 20px;
+  padding-left: 2px;
+  display: inline;
+  background: #00c738;
+  border-radius: 6px;
+  margin-right: 5px;
+  margin-left: 5px;
+}
+
+.naver_share_span{
+  font-size: 12px;
+  color: #ffffff;
+  font-weight: bold;
+  vertical-align: text-top;
+  padding: 0px 8px 0px 0px;
+  line-height: 26px;
 }
