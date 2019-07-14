@@ -30,7 +30,7 @@ comments: true
 ## 람다 함수 적용 ##
 ----------
 
-{% highlight Python %}  
+{% highlight Python %}
 
 import tkinter
 
@@ -146,6 +146,7 @@ if __name__  == '__main__':
 16 alpha beta<br>
 32 alpha beta<br>
 64 alpha beta<br>
-128 alpha beta
+128 alpha beta<br>
+...
 
 [22강]: https://076923.github.io/posts/Python-21/
