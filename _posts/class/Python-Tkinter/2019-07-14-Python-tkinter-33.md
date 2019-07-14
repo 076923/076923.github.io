@@ -18,7 +18,7 @@ comments: true
 
 `tkinter`의 `command`에 매개변수를 전달할 수 있습니다.
 
-`람다(lambda) 함수`를 사용해 함수에 여러 매개변수를 전달할 수 있습니다.
+`람다(lambda)` 함수를 사용해 함수에 여러 매개변수를 전달할 수 있습니다.
 
 <br>    
 
@@ -118,7 +118,7 @@ class windows_tkinter:
         button = tkinter.Button(self.window, width=25, height=10, text="버튼", command=lambda: self.command_args(self.arg1, self.arg2, self.arg3))
         button.pack(expand=True, anchor="center")
 
-if __name__  == '__main__':    
+if __name__ == '__main__':    
     window = tkinter.Tk()
     windows_tkinter(window)
     window.mainloop()
@@ -129,7 +129,7 @@ if __name__  == '__main__':
 
 `command_args` 함수를 정의하고, 세 가지의 매개변수를 적용합니다.
 
-여기서, 클래스에서 함수 사용법과 동일하게 `self`는 생략해서 전달합니다.
+클래스에서 함수 사용법과 동일하게 `self`는 생략해서 전달합니다.
 
 * Tip : 클래스로 구현하면 `전역 변수(global)`를 사용하지 않아도 `arg1`을 변경할 수 있습니다.
 
