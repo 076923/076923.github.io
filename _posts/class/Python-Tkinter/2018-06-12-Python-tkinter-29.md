@@ -45,7 +45,7 @@ def Drag(event):
     text["width"]=x-sz_width
     text["height"]=y-sz_height
 
-    if x >= sz_width and y >= sz_height and x < window.winfo_width() and y ㅠ< window.winfo_height():
+    if x >= sz_width and y >= sz_height and x < window.winfo_width() and y < window.winfo_height():
         text.place(x=0, y=0, width=x, height=y)
         sizegrip.place(x=x-sz_width, y=y-sz_height)
 
