@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Python Numpy 강좌 : 제 1강 - 배열 생성 (3)"
+title: "Python Numpy 강좌 : 제 3강 - 배열 생성 (3)"
 tagline: "Python Numpy Array (3)"
 image: /assets/images/numpy.png
 header:
