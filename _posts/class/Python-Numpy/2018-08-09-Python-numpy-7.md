@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Python numpy 강좌 : 제 7강 - 연산"
+title: "Python Numpy 강좌 : 제 7강 - 연산"
 tagline: "Python Numpy calculate"
 image: /assets/images/numpy.png
 header:

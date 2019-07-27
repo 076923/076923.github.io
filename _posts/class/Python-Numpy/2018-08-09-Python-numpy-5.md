@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Python numpy 강좌 : 제 5강 - 슬라이싱"
+title: "Python Numpy 강좌 : 제 5강 - 슬라이싱"
 tagline: "Python Numpy slicing"
 image: /assets/images/numpy.png
 header:

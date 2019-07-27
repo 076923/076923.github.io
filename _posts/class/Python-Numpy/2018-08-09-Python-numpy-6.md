@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Python numpy 강좌 : 제 6강 - 리쉐이프"
+title: "Python Numpy 강좌 : 제 6강 - 리쉐이프"
 tagline: "Python Numpy reshape"
 image: /assets/images/numpy.png
 header:

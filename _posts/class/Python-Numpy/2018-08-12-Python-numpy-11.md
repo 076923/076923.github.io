@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Python numpy 강좌 : 제 11강 - 병합"
+title: "Python Numpy 강좌 : 제 11강 - 병합"
 tagline: "Python Numpy stack"
 image: /assets/images/numpy.png
 header:
