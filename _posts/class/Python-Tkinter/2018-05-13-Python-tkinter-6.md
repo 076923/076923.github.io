@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Python tkinter 강좌 : 제 6강 – Checkbutton"
+title: "Python tkinter 강좌 : 제 6강 - Checkbutton"
 tagline: "Python tkinter Checkbutton"
 image: /assets/images/tkinter.png
 header:

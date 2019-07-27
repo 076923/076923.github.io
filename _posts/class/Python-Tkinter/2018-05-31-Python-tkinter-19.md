@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Python tkinter 강좌 : 제 19강 – LabelFrame"
+title: "Python tkinter 강좌 : 제 19강 - LabelFrame"
 tagline: "Python tkinter LabelFrame"
 image: /assets/images/tkinter.png
 header:

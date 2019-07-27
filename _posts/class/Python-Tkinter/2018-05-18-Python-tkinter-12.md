@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Python tkinter 강좌 : 제 12강 – 위젯 배치 : place"
+title: "Python tkinter 강좌 : 제 12강 - 위젯 배치 : place"
 tagline: "Python tkinter place"
 image: /assets/images/tkinter.png
 header:

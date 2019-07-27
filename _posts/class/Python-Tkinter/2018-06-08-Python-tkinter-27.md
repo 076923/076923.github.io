@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Python tkinter 강좌 : 제 27강 – Progressbar"
+title: "Python tkinter 강좌 : 제 27강 - Progressbar"
 tagline: "Python tkinter Progressbar"
 image: /assets/images/tkinter.png
 header:

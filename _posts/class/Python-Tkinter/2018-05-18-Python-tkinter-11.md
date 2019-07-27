@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Python tkinter 강좌 : 제 11강 – 위젯 배치 : grid"
+title: "Python tkinter 강좌 : 제 11강 - 위젯 배치 : grid"
 tagline: "Python tkinter pack"
 image: /assets/images/tkinter.png
 header:

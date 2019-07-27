@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Python tkinter 강좌 : 제 29강 – Sizegrip"
+title: "Python tkinter 강좌 : 제 29강 - Sizegrip"
 tagline: "Python tkinter Sizegrip"
 image: /assets/images/tkinter.png
 header:

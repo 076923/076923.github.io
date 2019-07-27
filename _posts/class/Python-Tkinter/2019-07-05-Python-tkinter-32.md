@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Python tkinter 강좌 : 제 32강 – OpenCV 적용하기"
+title: "Python tkinter 강좌 : 제 32강 - OpenCV 적용하기"
 tagline: "Python tkinter applying OpenCV"
 image: /assets/images/tkinter.png
 header:
