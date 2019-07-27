@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Python numpy 강좌 : 제 8강 - 매트릭스"
+title: "Python Numpy 강좌 : 제 8강 - 매트릭스"
 tagline: "Python Numpy matrix"
 image: /assets/images/numpy.png
 header:

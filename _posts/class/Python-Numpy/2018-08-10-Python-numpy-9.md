@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Python numpy 강좌 : 제 9강 - 차원 확장"
+title: "Python Numpy 강좌 : 제 9강 - 차원 확장"
 tagline: "Python Numpy newaxis"
 image: /assets/images/numpy.png
 header:

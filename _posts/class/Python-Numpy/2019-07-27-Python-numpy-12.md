@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Python numpy 강좌 : 제 12강 - 브로드캐스팅"
+title: "Python Numpy 강좌 : 제 12강 - 브로드캐스팅"
 tagline: "Python Numpy Broadcasting"
 image: /assets/images/numpy.png
 header:

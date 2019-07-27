@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Python numpy 강좌 : 제 4강 - 등간격"
+title: "Python Numpy 강좌 : 제 4강 - 등간격"
 tagline: "Python Numpy equal interval"
 image: /assets/images/numpy.png
 header:

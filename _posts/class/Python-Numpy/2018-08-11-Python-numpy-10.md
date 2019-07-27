@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Python numpy 강좌 : 제 10강 - 난수"
+title: "Python Numpy 강좌 : 제 10강 - 난수"
 tagline: "Python Numpy random"
 image: /assets/images/numpy.png
 header:
