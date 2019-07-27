@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Python tkinter 강좌 : 제 8강 – Menu"
+title: "Python tkinter 강좌 : 제 8강 - Menu"
 tagline: "Python tkinter Menu"
 image: /assets/images/tkinter.png
 header:

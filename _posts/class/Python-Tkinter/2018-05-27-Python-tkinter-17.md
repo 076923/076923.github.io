@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Python tkinter 강좌 : 제 17강 – Scale"
+title: "Python tkinter 강좌 : 제 17강 - Scale"
 tagline: "Python tkinter Scale"
 image: /assets/images/tkinter.png
 header:

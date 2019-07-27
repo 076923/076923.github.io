@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Python tkinter 강좌 : 제 30강 – Treeview"
+title: "Python tkinter 강좌 : 제 30강 - Treeview"
 tagline: "Python tkinter Treeview"
 image: /assets/images/tkinter.png
 header:

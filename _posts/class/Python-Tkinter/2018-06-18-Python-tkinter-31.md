@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Python tkinter 강좌 : 제 31강 – Separator"
+title: "Python tkinter 강좌 : 제 31강 - Separator"
 tagline: "Python tkinter Separator"
 image: /assets/images/tkinter.png
 header:

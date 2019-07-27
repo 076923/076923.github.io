@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Python tkinter 강좌 : 제 5강 – Listbox"
+title: "Python tkinter 강좌 : 제 5강 - Listbox"
 tagline: "Python tkinter Listbox"
 image: /assets/images/tkinter.png
 header:

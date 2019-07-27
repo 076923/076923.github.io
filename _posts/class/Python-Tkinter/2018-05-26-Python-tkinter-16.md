@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Python tkinter 강좌 : 제 16강 – Scrollbar"
+title: "Python tkinter 강좌 : 제 16강 - Scrollbar"
 tagline: "Python tkinter Scrollbar"
 image: /assets/images/tkinter.png
 header:

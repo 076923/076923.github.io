@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Python tkinter 강좌 : 제 25강 – Spinbox"
+title: "Python tkinter 강좌 : 제 25강 - Spinbox"
 tagline: "Python tkinter Spinbox"
 image: /assets/images/tkinter.png
 header:

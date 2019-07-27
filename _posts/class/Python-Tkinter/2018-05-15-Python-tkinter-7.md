@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Python tkinter 강좌 : 제 7강 – Radiobutton"
+title: "Python tkinter 강좌 : 제 7강 - Radiobutton"
 tagline: "Python tkinter Radiobutton"
 image: /assets/images/tkinter.png
 header:

@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Python tkinter 강좌 : 제 33강 – 매개변수 전달"
+title: "Python tkinter 강좌 : 제 33강 - 매개변수 전달"
 tagline: "Python tkinter command parameter"
 image: /assets/images/tkinter.png
 header:

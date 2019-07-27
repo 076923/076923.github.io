@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Python tkinter 강좌 : 제 23강 – Bind"
+title: "Python tkinter 강좌 : 제 23강 - Bind"
 tagline: "Python tkinter CanvaBinds"
 image: /assets/images/tkinter.png
 header:
