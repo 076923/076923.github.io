@@ -484,3 +484,94 @@ a {
   } // social-icons
 
 }
+
+
+.wikibook {
+  
+  @include large {
+    height: min-content;
+    margin-bottom: 30%;
+  }
+
+  @include medium {
+    height: min-content;
+    margin-bottom: 30%;
+  }
+
+  @include small {
+    height: min-content;
+  }
+
+  h1{
+    text-align: center;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    font-weight: bold;
+    line-height: 1.2;
+
+    @include large {
+      font-size: 30px;
+    }
+  
+    @include medium {
+      font-size: 28px;
+    }
+  
+    @include small {
+      font-size: 26px;
+    }
+  }
+
+  h2{
+    text-align: left;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    font-weight: bold;
+
+    @include large {
+      font-size: 26px;
+    }
+  
+    @include medium {
+      font-size: 25px;
+    }
+  
+    @include small {
+      font-size: 24px;
+    }
+  }
+  
+  p{
+    @include large {
+      font-size: 16px;
+    }
+  
+    @include medium {
+      font-size: 15px;
+    }
+  
+    @include small {
+      font-size: 14px;
+    }
+  }
+
+  img {
+    float: left;
+    padding: 0 3% 0 3%;
+    
+    margin: 0 3% 3% 3%;
+
+    @include large {
+      width: 50%;
+    }
+  
+    @include medium {
+      width: 50%;
+    }
+  
+    @include small {
+      width: 100%;
+    }
+  }
+
+}
