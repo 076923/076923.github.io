@@ -24,5 +24,5 @@ order: 2
 <br>
 <h1><a href="https://open.kakao.com/o/gqW5YRE" class="fas fa-comment-dots" style="float:right;">&nbsp;Kakao Group</a></h1>
 <br>
-<h1><a href="http://www.yes24.com/Product/Goods/77186885?scode=032&OzSrank=2" class="fas fa-book" style="float:right;">&nbsp;OpenCV4 Book</a></h1>
+<h1><a href="https://wikibook.co.kr/opencv4/" class="fas fa-book" style="float:right;">&nbsp;OpenCV4 Book</a></h1>
 <br>
