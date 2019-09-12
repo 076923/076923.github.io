@@ -19,4 +19,4 @@ ref: 404page
 
 <p class="divs">또는 해당 게시물이 업데이트 중입니다. 잠시 후 시도 부탁드립니다.</p>
 
-<p class="divs">이 상황이 반복되는 경우 076923@naver.com로 문의 바랍니다.</p>
+<p class="divs">이 상황이 반복되는 경우 s076923@gmail.com로 문의 바랍니다.</p>
