@@ -9,7 +9,7 @@ tags: ['Python-OpenCV']
 keywords: Python, Python OpenCV, OpenCV Moments, Spatial Moments, Central Moments, Normalized Central Moments, Mass Center
 ref: Python-OpenCV
 category: posts
-permalink: /posts/Python-opencv-24/
+permalink: /posts/Python-opencv-25/
 comments: true
 ---
 
