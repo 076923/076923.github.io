@@ -78,7 +78,7 @@ b6.place(x=0, y=300, relx=0.5, anchor="s")
 <br>
 <br>
 
-## grid Parameter ##
+## place Parameter ##
 ----------
 
 |    이름   |       의미       | 기본값 |              속성             |
