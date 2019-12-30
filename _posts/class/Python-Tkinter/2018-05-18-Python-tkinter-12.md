@@ -18,7 +18,7 @@ comments: true
 
 ![1]({{ site.images }}/assets/images/Python/tkinter/ch12/1.png)
 
-`plaec`을 이용하여 `위젯`들을 배치할 수 있습니다.
+`place`을 이용하여 `위젯`들을 배치할 수 있습니다.
 
 <br>
 <br>
