@@ -1,23 +1,22 @@
 ---
 layout: post
-title: "C# OpenCV 강좌 : 제 23강 - 모폴로지 변환"
-tagline: "C# OpenCV4 Morphological Transformation"
+title: "Python OpenCV 강좌 : 제 26강 - 모폴로지 변환"
+tagline: "Python OpenCV Morphological Transformation"
 image: /assets/images/opencv_logo.png
 header:
   image: /assets/patterns/asanoha-400px.png
-tags: ["C#-OpenCvSharp4"]
-keywords: C#, Visual Studio, OpenCV, OpenCvSharp4, OpenCvSharp4 Morphological Transformation, OpenCvSharp4 Dilate, OpenCvSharp4 Erode, OpenCvSharp4 HConcat, OpenCvSharp4 VConcat
-ref: C#-OpenCvSharp4
+tags: ['Python-OpenCV']
+keywords: Python, Python OpenCV, OpenCV Morphological, OpenCV getStructuringElement, OpenCV dilate, OpenCV erode, OpenCV kernel, Numpy concatenate
+ref: Python-OpenCV
 category: posts
-permalink: /posts/C-opencv4-23/
+permalink: /posts/Python-opencv-26/
 comments: true
 ---
 
 ## 모폴로지 변환(Morphological Transformation) ##
 ----------
 
-![1]({{ site.images }}/assets/images/C/opencv4/ch23/1.jpg)
-
+![1]({{ site.images }}/assets/images/Python/opencv/ch26/1.jpg)
 `모폴로지 변환(Perspective Transformation)`은 영상이나 이미지를 **형태학적 관점에서 접근하는 기법**을 의미합니다.
 
 모폴로지 변환은 주로 영상 내 **픽셀값 대체**에 사용됩니다. 이를 응용해서 `노이즈 제거`, `요소 결합 및 분리`, `강도 피크 검출` 등에 이용할 수 있습니다. 
@@ -74,32 +73,22 @@ comments: true
 ## Main Code ##
 ----------
 
-{% highlight c# %}
+{% highlight Python %}
 
-using System; 
-using OpenCvSharp;
+import numpy as np
+import cv2
 
-namespace Project
-{
-    class Program
-    {
-        static void Main(string[] args)
-        {
-            Mat src = new Mat("nape.jpg");
-            Mat dilate = new Mat();
-            Mat erode = new Mat();
-            Mat dst = new Mat();
+src = cv2.imread('zebra.jpg')
 
-            Mat element = Cv2.GetStructuringElement(MorphShapes.Cross, new Size(5, 5));
-            Cv2.Dilate(src, dilate, element, new Point(2, 2), 3);
-            Cv2.Erode(src, erode, element, new Point(-1, -1), 3);
+kernel = cv2.getStructuringElement(cv2.MORPH_CROSS, (9, 9))
+dilate = cv2.dilate(src, kernel, anchor=(-1, -1), iterations=5)
+erode = cv2.erode(src, kernel, anchor=(-1, -1), iterations=5)
 
-            Cv2.HConcat(new Mat[] { dilate, erode }, dst);
-            Cv2.ImShow("dst", dst);
-            Cv2.WaitKey(0);
-        }   
-    }
-}
+dst = np.concatenate((src, dilate, erode), axis=1)
+
+cv2.imshow('dst', dst)
+cv2.waitKey(0)
+cv2.destroyAllWindows()
 
 {% endhighlight %}
 
@@ -109,37 +98,15 @@ namespace Project
 ## Detailed Code ##
 ----------
 
-{% highlight c# %}
+{% highlight Python %}
 
-Mat src = new Mat("nape.jpg");
-Mat dilate = new Mat();
-Mat erode = new Mat();
-Mat dst = new Mat();
+kernel = cv2.getStructuringElement(cv2.MORPH_CROSS, (9, 9))
 
 {% endhighlight %}
 
-<br>
+`cv2.getStructuringElement()`를 활용해 `구조요소`를 생성합니다.
 
-`new Mat`을 사용해 이미지를 `src`에 할당합니다.
-
-팽창 결과를 저장할 `dilate`와 침식 결과를 저장할 `erode`를 선언합니다.
-
-팽창 연산과 침식 연산 결과를 비교하기 위한 `dst`를 선언합니다.
-
-<br>
-<br>
-
-{% highlight c# %}
-
-Mat element = Cv2.GetStructuringElement(MorphShapes.Cross, new Size(5, 5));
-
-{% endhighlight %}
-
-모폴로지 연산을 진행하기 위해서 `구조요소`를 생성합니다.
-
-`구조 요소 생성 함수(Cv2.GetStructuringElement)`는 `커널의 형태(shape)`와 `커널의 크기(size)`, `고정점(anchor)`를 설정합니다.
-
-`Cv2.GetPerspectiveTransform(커널의 형태, 커널의 크기, 중심점)`로 `구조 요소`을 생성합니다.
+`cv2.getStructuringElement(커널의 형태, 커널의 크기, 중심점)`로 `구조 요소`을 생성합니다.
 
 `커널의 형태`는 `직사각형(Rect)`, `십자가(Cross)`, `타원(Ellipse)`이 있습니다.
 
@@ -154,20 +121,20 @@ Mat element = Cv2.GetStructuringElement(MorphShapes.Cross, new Size(5, 5));
 <br>
 <br>
 
-{% highlight c# %}
+{% highlight Python %}
 
-Cv2.Dilate(src, dilate, element, new Point(2, 2), 3);
-Cv2.Erode(src, erode, element, new Point(-1, -1), 3);
+dilate = cv2.dilate(src, kernel, anchor=(-1, -1), iterations=5)
+erode = cv2.erode(src, kernel, anchor=(-1, -1), iterations=5)
 
 {% endhighlight %}
 
 생성된 구조 요소를 활용해 모폴로지 변환을 적용합니다.
 
-`팽창 함수(Cv2.Dilate)`와 `침식 함수(Cv2.Erode)`로 모폴로지 변환을 진행합니다.
+`팽창 함수(cv2.dilate)`와 `침식 함수(cv2.erode)`로 모폴로지 변환을 진행합니다.
 
-`Cv2.Dilate(원본 배열, 결과 배열, 구조 요소, 고정점, 반복 횟수, 테두리 외삽법, 테두리 색상)`로 팽창 연산을 진행합니다.
+`cv2.dilate(원본 배열, 구조 요소, 고정점, 반복 횟수, 테두리 외삽법, 테두리 색상)`로 팽창 연산을 진행합니다.
 
-`Cv2.Erode(원본 배열, 결과 배열, 구조 요소, 고정점, 반복 횟수, 테두리 외삽법, 테두리 색상)`로 침식 연산을 진행합니다.
+`cv2.erode(원본 배열, 구조 요소, 고정점, 반복 횟수, 테두리 외삽법, 테두리 색상)`로 침식 연산을 진행합니다.
 
 팽창 함수와 침식 함수의 매개변수 순서와 의미는 동일합니다.
 
@@ -180,19 +147,18 @@ Cv2.Erode(src, erode, element, new Point(-1, -1), 3);
 <br>
 <br>
 
-{% highlight c# %}
+{% highlight Python %}
 
-Cv2.HConcat(new Mat[] { dilate, erode }, dst);
+dst = np.concatenate((src, dilate, erode), axis=1)
 
 {% endhighlight %}
 
-`수평 연결 함수(Cv2.HConcat)`로 팽창 결과와 침식 결과를 하나의 이미지로 연결합니다.
+Numpy 함수 중 `연결 함수(np.concatenate)`로 원본 이미지, 팽창 결과, 침식 결과를 하나의 이미지로 연결합니다.
 
-`Cv2.HConcat(연결할 이미지 배열들, 결과 배열)`로 이미지를 연결합니다.
+`np.concatenate(연결할 이미지 배열들, 축 방향)`로 이미지를 연결합니다.
 
-<br>
-
-* Tip : 수직 방향은 `수직 연결 함수(Cv2.VConcat)`로 이미지를 연결할 수 있습니다.
+* Tip : `axis=0`으로 사용할 경우, 세로 방향으로 연결됩니다.
+* Tip : OpenCV의 함수 중, `수평 연결 함수(cv2.hconcat)`와 수직 연결 함수(cv2.vconcat)`로도 이미지를 연결할 수 있습니다.
 
 <br>
 <br>
@@ -200,4 +166,4 @@ Cv2.HConcat(new Mat[] { dilate, erode }, dst);
 ## Result ##
 ----------
 
-![2]({{ site.images }}/assets/images/C/opencv4/ch23/2.jpg)
+![2]({{ site.images }}/assets/images/Python/opencv/ch26/2.jpg)
