@@ -6,7 +6,7 @@ image: /assets/images/opencv_logo.png
 header:
   image: /assets/patterns/asanoha-400px.png
 tags: ['Python-OpenCV']
-keywords: Python, Python OpenCV, OpenCV Hough Transform
+keywords: Python, Python OpenCV, OpenCV Hough Transform, OpenCV HoughCircles, OpenCV Two stage Hough Transform, OpenCV HoughCircles, OpenCV HOUGH_GRADIENT
 ref: Python-OpenCV
 category: posts
 permalink: /posts/Python-opencv-29/
