@@ -63,12 +63,11 @@ cv2.destroyAllWindows()
 {% highlight Python %}
 
 src = cv2.imread("pencils.jpg")
-number1 = np.ones_like(src) * 127
-number2 = np.ones_like(src) * 2
+number = np.ones_like(src) * 127
 
 {% endhighlight %}
 
-`원본 이미지(src)`와 `연산 값(number1, number2)`을 선언합니다.
+`원본 이미지(src)`와 `연산 값(number)`을 선언합니다.
 
 연산 이미지는 `회색 이미지(127, 127, 127)`를 사용합니다.
 
