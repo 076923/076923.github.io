@@ -1,7 +1,7 @@
 ---
 layout: post
-title: "Python OpenCV 강좌 : 제 30강 - 이미지 연산"
-tagline: "Python OpenCV Image Calculation"
+title: "Python OpenCV 강좌 : 제 30강 - 이미지 연산 (1)"
+tagline: "Python OpenCV Image Calculation (1)"
 image: /assets/images/opencv_logo.png
 header:
   image: /assets/patterns/asanoha-400px.png
@@ -150,4 +150,4 @@ number1가 N이라면 $$ [1, 0, 182] + N = [1 + N, 0, 182] $$ 가 됩니다.
 ## Result ##
 ----------
 
-![3]({{ site.images }}/assets/images/Python/opencv/ch30/2.jpg)
+![2]({{ site.images }}/assets/images/Python/opencv/ch30/2.jpg)
