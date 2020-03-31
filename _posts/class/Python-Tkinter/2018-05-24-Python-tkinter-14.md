@@ -13,7 +13,7 @@ permalink: /posts/Python-tkinter-14/
 comments: true
 ---
 
-## Message (메세지) ##
+## Message(메세지) ##
 ----------
 
 `Message`를 이용하여 **여러줄의 문자열을 포함**하기 위한 `메세지`를 생성할 수 있습니다.

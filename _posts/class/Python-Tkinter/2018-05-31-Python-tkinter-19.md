@@ -13,8 +13,6 @@ permalink: /posts/Python-tkinter-19/
 comments: true
 ---
 
-
-
 ## LabelFrame(라벨 프레임) ##
 ----------
 

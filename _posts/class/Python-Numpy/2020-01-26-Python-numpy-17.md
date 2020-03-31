@@ -9,7 +9,7 @@ tags: ['Python-Numpy']
 keywords: Python, Python Numpy, Numpy polyadd, Numpy polysub, Numpy polymul, Numpy polydiv
 ref: Python-Numpy
 category: posts
-permalink: /posts/Python-numpy-16/
+permalink: /posts/Python-numpy-17/
 comments: true
 ---
 
