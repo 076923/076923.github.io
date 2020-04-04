@@ -134,7 +134,6 @@ circles = cv2.HoughCircles(gray, cv2.HOUGH_GRADIENT, 1, 100, param1 = 250, param
 
 {% highlight Python %}
 
-
 for i in circles[0]:
     cv2.circle(dst, (i[0], i[1]), i[2], (255, 255, 255), 5)
 

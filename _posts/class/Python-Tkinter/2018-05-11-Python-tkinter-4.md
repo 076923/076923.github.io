@@ -27,7 +27,7 @@ comments: true
 {% highlight Python %}
 
 import tkinter
-from math import*
+from math import *
 
 window=tkinter.Tk()
 window.title("YUN DAE HEE")
@@ -45,6 +45,7 @@ label=tkinter.Label(window)
 label.pack()
 
 window.mainloop()
+
 {% endhighlight %}
 
 <br>
