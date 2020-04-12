@@ -6,7 +6,7 @@ image: /assets/images/opencv_logo.png
 header:
   image: /assets/patterns/asanoha-400px.png
 tags: ['Python-OpenCV']
-keywords: Python, Python OpenCV, OpenCV Histogram
+keywords: Python, Python OpenCV, OpenCV Histogram, OpenCV BINS, OpenCV DIMS, OpenCV RANGE, OpenCV calcHist, OpenCV normalize
 ref: Python-OpenCV
 category: posts
 permalink: /posts/Python-opencv-33/

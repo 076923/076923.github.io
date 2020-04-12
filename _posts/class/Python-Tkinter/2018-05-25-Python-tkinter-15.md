@@ -77,9 +77,10 @@ canvas.pack()
 
 |                         이름                         |  의미  |                                          설명                                         |
 |:----------------------------------------------------:|:------:|:-------------------------------------------------------------------------------------:|
-|   create_line(x1, y1, x2, x3, ... , xn, yn, option)  |   선   |                (x1, y1), (x2, y2), ..., (xn, yn) 까지 연결되는 선 생성                |
-| create_polygon(x1, y1, x2, x3, ... , xn, yn, option) | 다각형 |             (x1, y1), (x2, y2), ..., (xn, yn) 의 꼭지점을 같는 다각형 생성            |
-|          create_oval(x1, y1, x2, y2, option)         |   원   |                     (x1, y1)에서 (x2, y2)의 크기를 가지는 원 생성                     |
+|   create_line(x1, y1, x2, y2, ... , xn, yn, option)  |   선   |                (x1, y1), (x2, y2), ..., (xn, yn) 까지 연결되는 선 생성                |
+|   create_line(x1, y1, x2, y2, option)                | 사각형 |                (x1, y1)에서 (x2, y2)의 크기를 갖는 사각형 생성                |
+| create_polygon(x1, y1, x2, y2, ... , xn, yn, option) | 다각형 |             (x1, y1), (x2, y2), ..., (xn, yn) 의 꼭지점을 같는 다각형 생성            |
+|          create_oval(x1, y1, x2, y2, option)         |   원   |                     (x1, y1)에서 (x2, y2)의 크기를 갖는 원 생성                     |
 |   create_arc(x1, y1, x2, y2, start, extent, option)  |   호   | (x1, y1)에서 (x2, y2)의 크기를 가지며 `start` 각도부터 `extent`의 각을 지니는 호 생성 |
 |           create_image(x, y, image, option)          | 이미지 |                               (x, y) 위치의 `image` 생성                              |
 

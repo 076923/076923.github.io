@@ -57,6 +57,8 @@ invalid_command=(window.register(value_error), '%P')
 spinbox=tkinter.Spinbox(window, from_ = 0, to = 50, validate = 'all', validatecommand = validate_command, invalidcommand=invalid_command)
 spinbox.pack()
 
+window.mainloop()
+
 {% endhighlight %}
 
 <br>
