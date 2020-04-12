@@ -41,6 +41,7 @@ combobox.pack()
 combobox.set("목록 선택")
 
 window.mainloop()
+
 {% endhighlight %}
 
 <br>
