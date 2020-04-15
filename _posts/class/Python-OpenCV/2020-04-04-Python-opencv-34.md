@@ -9,7 +9,7 @@ tags: ['Python-OpenCV']
 keywords: Python, Python OpenCV, OpenCV Pixel Access
 ref: Python-OpenCV
 category: posts
-permalink: /posts/Python-opencv-33/
+permalink: /posts/Python-opencv-34/
 comments: true
 ---
 
