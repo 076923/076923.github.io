@@ -6,7 +6,7 @@ image: /assets/images/opencv_logo.png
 header:
   image: /assets/patterns/asanoha-400px.png
 tags: ['Python-OpenCV']
-keywords: Python, Python OpenCV, OpenCV Adaptive Threshold, 
+keywords: Python, Python OpenCV, OpenCV Adaptive Threshold, OpenCV ADAPTIVE_THRESH_MEAN_C, OpenCV ADAPTIVE_THRESH_GAUSSIAN_C
 ref: Python-OpenCV
 category: posts
 permalink: /posts/Python-opencv-36/
