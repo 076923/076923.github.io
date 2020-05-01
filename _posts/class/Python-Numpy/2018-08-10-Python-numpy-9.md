@@ -142,7 +142,7 @@ print(reduction)
 &nbsp;[2]<br>
 &nbsp;[3]]<br>
 [[[1]<br>
-&nbsp;&nbsp;[2]<br
+&nbsp;&nbsp;[2]<br>
 &nbsp;&nbsp;[3]]]<br>
 [1 2 3]<br>
 <br>
