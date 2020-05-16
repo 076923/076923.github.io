@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Python OpenCV 강좌 : 제 38강 - ORB(Oriented FAST and Rotated BRIEF)"
-tagline: "Python OpenCV Template Matching"
+tagline: "Python OpenCV Oriented FAST and Rotated BRIEF"
 image: /assets/images/opencv_logo.png
 header:
   image: /assets/patterns/asanoha-400px.png
