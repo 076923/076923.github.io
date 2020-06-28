@@ -6,7 +6,7 @@ image: /assets/images/django.png
 header:
   image: /assets/patterns/asanoha-400px.png
 tags: ['Python-Django']
-keywords: Python, Python Django, Python Django 3, Python Django MTV, Python Django Model, Python Django Template, Python Django View
+keywords: Python, Python Django, Python Django 3, Python Django MTV, Python Django Model, Python Django Template, Python Django View, Python Django REST Framework,  Python DRF, Representational State Transfer
 ref: Python
 category: posts
 permalink: /posts/Python-Django-1/
@@ -66,3 +66,49 @@ python -m django --version
 Django 3.0 이상의 버전은 **Python 3.6**, **Python 3.7**, **Python 3.8**만 공식적으로 지원합니다.
 
 만약, `Python 3.5` 등의 낮은 버전을 사용한다면 Django 2.2나 Django 2.1 등의 낮은 버전을 사용합니다.
+
+<br>
+<br>
+
+## Django Rest Framework 설치 ##
+----------
+
+{% highlight django %}
+
+pip install djangorestframework==3.11.0
+
+{% endhighlight %}
+
+`Django`에는 **REST(Representational State Transfer)** API를 위한 프레임워크가 존재합니다.
+
+이를 `DRF(Django REST Framework)`라고 합니다.
+
+`DRF`는 `pip`를 통하여 설치할 수 있습니다.
+
+<br>
+<br>
+
+
+## Rest API란? ##
+----------
+
+`REST`란 **자원(Resource)**을 정의하고 자원에 대한 **주소(URL)**를 지정하는 방법을 의미합니다.
+
+다음 여섯 가지 조건을 `REST`라고 하며 해당 조건을 지켜 설계된 API를 **Restful API**라고 합니다.
+
+* **Uniform Interface (일관적인 인터페이스)** : HTTP 표준만 따른다면 어떤 언어, 어떤 플랫폼에서도 사용이 가능한 인터페이스 스타일
+* **Client-Server (클라이언트-서버)** : 서버는 API를 제공하고, 클라이언트는 사용자 인증에 관련된 일들을 직접 관리
+* **Stateless (무상태)** : 요청 간 클라이언트의 컨텍스트(context)가 서버에 저장되지 않음
+* **Cacheable (캐시 처리 가능)** : 클라이언트는 응답을 캐싱할 수 있어야 함
+* **Layerd System (계층화)** : 클라이언트는 대상 서버에 직접 연결되었는지, 중간 서버를 통해 연결되었는지를 알 수 없음, 중간 서버는 로드 밸런싱 기능이나 공유 캐시 기능을 제공함으로써 시스템 규모 확장성을 향상시킬 수 있음
+* **Self-descriptiveness (자체 표현 구조)** : Rest API 메시지만 보고도 쉽게 이해할 수 있는 자체 표현 구조로 설계해야 함
+
+<br>
+
+- `자원(Resource)` : URI
+- `행위(Verb)` : HTTP Method (POST, GET, PUT, DELTE)
+- `표현(Representations)` : JSON, XML, TEXT, RSS 등 여러 형태로 응답
+- `서버(Server)` : 자원을 가지고 있는 쪽
+- `클라이언트(Client)` : 자원을 요청하는 쪽
+
+<br>
