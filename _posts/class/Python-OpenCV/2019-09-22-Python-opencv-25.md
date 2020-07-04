@@ -37,7 +37,7 @@ dst = src.copy()
 gray = cv2.cvtColor(src, cv2.COLOR_RGB2GRAY)
 ret, binary = cv2.threshold(gray, 150, 255, cv2.THRESH_BINARY_INV)
 
-contours, hierachy = cv2.findContours(binary, cv2.RETR_CCOMP, cv2.CHAIN_APPROX_NONE)
+contours, hierarchy = cv2.findContours(binary, cv2.RETR_CCOMP, cv2.CHAIN_APPROX_NONE)
 
 for i in contours:
     M = cv2.moments(i)

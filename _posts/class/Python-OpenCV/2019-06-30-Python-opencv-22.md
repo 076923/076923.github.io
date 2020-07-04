@@ -37,7 +37,7 @@ gray = cv2.cvtColor(src, cv2.COLOR_RGB2GRAY)
 ret, binary = cv2.threshold(gray, 0, 255, cv2.THRESH_OTSU)
 binary = cv2.bitwise_not(binary)
 
-contours, hierachy = cv2.findContours(binary, cv2.RETR_LIST, cv2.CHAIN_APPROX_TC89_KCOS)
+contours, hierarchy = cv2.findContours(binary, cv2.RETR_LIST, cv2.CHAIN_APPROX_TC89_KCOS)
 
 for contour in contours:
     epsilon = cv2.arcLength(contour, True) * 0.02
