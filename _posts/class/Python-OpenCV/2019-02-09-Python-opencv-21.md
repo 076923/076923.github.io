@@ -37,12 +37,12 @@ gray = cv2.cvtColor(src, cv2.COLOR_RGB2GRAY)
 ret, binary = cv2.threshold(gray, 127, 255, cv2.THRESH_BINARY)
 binary = cv2.bitwise_not(binary)
 
-contours, hierachy = cv2.findContours(binary, cv2.RETR_CCOMP, cv2.CHAIN_APPROX_NONE)
+contours, hierarchy = cv2.findContours(binary, cv2.RETR_CCOMP, cv2.CHAIN_APPROX_NONE)
 
 for i in range(len(contours)):
     cv2.drawContours(src, [contours[i]], 0, (0, 0, 255), 2)
     cv2.putText(src, str(i), tuple(contours[i][0][0]), cv2.FONT_HERSHEY_COMPLEX, 0.8, (0, 255, 0), 1)
-    print(i, hierachy[0][i])
+    print(i, hierarchy[0][i])
     cv2.imshow("src", src)
     cv2.waitKey(0)
 
@@ -74,7 +74,7 @@ binary = cv2.bitwise_not(binary)
 
 {% highlight Python %}
 
-contours, hierachy = cv2.findContours(binary, cv2.RETR_CCOMP, cv2.CHAIN_APPROX_NONE)
+contours, hierarchy = cv2.findContours(binary, cv2.RETR_CCOMP, cv2.CHAIN_APPROX_NONE)
 
 {% endhighlight %}
 
@@ -95,7 +95,7 @@ contours, hierachy = cv2.findContours(binary, cv2.RETR_CCOMP, cv2.CHAIN_APPROX_N
 for i in range(len(contours)):
     cv2.drawContours(src, [contours[i]], 0, (0, 0, 255), 2)
     cv2.putText(src, str(i), tuple(contours[i][0][0]), cv2.FONT_HERSHEY_COMPLEX, 0.8, (0, 255, 0), 1)
-    print(i, hierachy[0][i])
+    print(i, hierarchy[0][i])
     cv2.imshow("src", src)
     cv2.waitKey(0)
 
@@ -153,9 +153,9 @@ for i in range(len(contours)):
 
 즉, **외곽 윤곽선**, **내곽 윤곽선**, **같은 계층 구조**를 구별할 수 있습니다.
 
-이 정보는 `hierachy`에 담겨있습니다.
+이 정보는 `hierarchy`에 담겨있습니다.
 
-`hierachy`를 출력할 경우 다음과 같은 결과를 반환합니다.
+`hierarchy`를 출력할 경우 다음과 같은 결과를 반환합니다.
 
 {% highlight Python %}
 
@@ -203,7 +203,7 @@ for i in range(len(contours)):
 
 {% endhighlight %}
 
-`print(i, hierachy[0][i])`을 통하여 3개의 윤곽선을 출력한 결과입니다.
+`print(i, hierarchy[0][i])`을 통하여 3개의 윤곽선을 출력한 결과입니다.
 
 다음 윤곽선과 이전 윤곽선의 정보가 `-1`의 값이 아니라면 서로 동등한 계층의 윤곽선입니다.
 

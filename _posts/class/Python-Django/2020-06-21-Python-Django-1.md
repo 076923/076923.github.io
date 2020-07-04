@@ -112,3 +112,19 @@ pip install djangorestframework==3.11.0
 - `클라이언트(Client)` : 자원을 요청하는 쪽
 
 <br>
+<br>
+
+## Django CORS 설치 ##
+----------
+
+{% highlight django %}
+
+pip install django-cors-headers==3.4.0
+
+{% endhighlight %}
+
+`CORS(Cross-Origin Resource Sharing)`란 교차 출처 리소스 공유라는 의미로 **실행 중인 웹 애플리케이션**이 다른 출처의 선택한 자원에 접근할 수 있는 권한을 부여하도록 브라우저에 알려주는 체제입니다.
+
+즉, 외부에서 서버에 접속할 때 `CORS`가 허용되어있지 않다면 `CORS 오류`가 발생합니다.
+
+이를 방지하기 위해 `Django`용 `CORS` 패키지를 설치합니다.
