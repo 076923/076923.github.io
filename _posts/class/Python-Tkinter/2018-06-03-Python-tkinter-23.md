@@ -181,7 +181,7 @@ window.mainloop()
 | \<Return> |   Enter 키가 입력되었을 때   |
 |  \<Cancel>  | Break 키가 입력되었을 때 |
 |  \<Pause>  | Pause 키가 입력되었을 때 |
-|  \<Backspace>  | 백스페이스 키가 입력되었을 때 |
+|  \<BackSpace>  | 백스페이스 키가 입력되었을 때 |
 |  \<Caps_Lock>  | 캡스 락 키가 입력되었을 때 |
 |  \<Escape>  | 이스케이프 키가 입력되었을 때 |
 |  \<Home>  | Home 키가 입력되었을 때 |

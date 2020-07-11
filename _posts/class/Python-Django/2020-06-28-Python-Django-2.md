@@ -49,19 +49,19 @@ django-admin startproject daehee .
 
 ```
 
-`[장고 프로젝트 이름]` : django-admin startproject로 생성한 프로젝트 이름입니다. 프로젝트 실행을 위한 Python 패키지가 저장됩니다.
+`[장고 프로젝트 이름]` : **django-admin startproject**로 생성한 프로젝트 이름입니다. 프로젝트 실행을 위한 Python 패키지가 저장됩니다.
 
 `__init__.py` : 해당 폴더를 패키지로 인식합니다.
 
-`asgi.py` : 현재 프로젝트를 서비스하기 위한 ASGI(Asynchronous Server Gateway Interface) 호환 웹 서버 진입점입니다.
+`asgi.py` : 현재 프로젝트를 서비스하기 위한 **ASGI(Asynchronous Server Gateway Interface)** 호환 웹 서버 진입점입니다.
 
-`settings.py` : 현재 Django 프로젝트의 환경 및 구성을 설정합니다.
+`settings.py` : 현재 Django **프로젝트의 환경 및 구성**을 설정합니다.
 
-`urls.py` : 현재 Django 프로젝트의 URL을 설정합니다.
+`urls.py` : 현재 Django **프로젝트의 URL**을 설정합니다.
 
-`wsgi.py` : 현재 프로젝트를 서비스하기 위한 WSGI(Web Server Gateway Interface) 호환 웹 서버의 진입점입니다.
+`wsgi.py` : 현재 프로젝트를 서비스하기 위한 **WSGI(Web Server Gateway Interface)** 호환 웹 서버의 진입점입니다.
 
-`manage.py` : 현재 Django를 서비스를 실행시키기 위한 커맨드라인의 유틸리티입니다.
+`manage.py` : 현재 Django를 서비스를 실행시키기 위한 **커맨드라인의 유틸리티**입니다.
 
 <br>
 
@@ -121,6 +121,10 @@ Quit the server with CTRL-BREAK.<br>
 
 <br>
 
+* Tip : 기본 포트는 `8000`번에 연결되어 있습니다.
+
+<br>
+
 {% highlight django %}
 
 python manage.py runserver 8080
@@ -133,5 +137,6 @@ python manage.py runserver 뒤에 `0:8080`을 추가해 외부 접속을 허용�
 
 <br>
 
+* Tip : 모든 공용 IP 접속 허용은 `0`을 추가합니다. `0`은 `0.0.0.0`의 축약입니다.
 * Tip : 외부 접속 허용시 `Settgins.py`에서 `ALLOWED_HOST=['*']`로 변경해야합니다.
 * Tip : 마이그레이션 경고는 현재 사용하고 있는 데이터베이스에 반영되지 않아 나타나는 경고입니다.
