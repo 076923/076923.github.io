@@ -6,7 +6,7 @@ image: /assets/images/django.png
 header:
   image: /assets/patterns/asanoha-400px.png
 tags: ['Python-Django']
-keywords: Python, Python Django, Python Django 3, Python Django startapp, 
+keywords: Python, Python Django, Python Django 3, Python Django startapp, Python Django INSTALLED_APPS, Python Django migrate, Python Django showmigrations
 ref: Python
 category: posts
 permalink: /posts/Python-Django-4/
@@ -122,3 +122,94 @@ INSTALLED_APPS = [
 <br>
 
 * Tip : 만약, 앱의 이름을 변경해야 한다면 **앱 내부의 모든 설정** 및 **INSTALLED_APPS**의 설정을 모두 바꾸어야 합니다.
+
+<br>
+<br>
+
+## Django migrate ##
+----------
+
+{% highlight Python %}
+
+python manage.py migrate
+
+{% endhighlight %}
+
+일반적으로 `Model` 클래스의 설계가 완료된 후, 모델에 대응되는 테이블을 데이터베이스에서 생성합니다.
+
+하지만, 모델 클래스를 제외하고도 추가되어야하는 테이블이 존재합니다.
+
+먼저, `python manage.py migrate`을 실행해 기본적인 구조를 적용하도록 합니다.
+
+<br>
+
+{% highlight Python %}
+
+Operations to perform:
+  Apply all migrations: admin, auth, contenttypes, sessions
+Running migrations:
+  Applying contenttypes.0001_initial... OK
+  Applying auth.0001_initial... OK
+  Applying admin.0001_initial... OK
+  Applying admin.0002_logentry_remove_auto_add... OK
+  Applying admin.0003_logentry_add_action_flag_choices... OK
+  Applying contenttypes.0002_remove_content_type_name... OK
+  Applying auth.0002_alter_permission_name_max_length... OK
+  Applying auth.0003_alter_user_email_max_length... OK
+  Applying auth.0004_alter_user_username_opts... OK
+  Applying auth.0005_alter_user_last_login_null... OK
+  Applying auth.0006_require_contenttypes_0002... OK
+  Applying auth.0007_alter_validators_add_error_messages... OK
+  Applying auth.0008_alter_user_username_max_length... OK
+  Applying auth.0009_alter_user_last_name_max_length... OK
+  Applying auth.0010_alter_group_name_max_length... OK
+  Applying auth.0011_update_proxy_permissions... OK
+  Applying sessions.0001_initial... OK
+
+{% endhighlight %}
+
+정상적으로 마이그레이션이 진행되면, 위와 같은 메세지가 띄워집니다.
+
+데이터베이스의 설정이 변경될 때마다 마이그레이션을 진행해야 정상적으로 적용됩니다.
+
+<br>
+
+{% highlight Python %}
+
+python manage.py showmigrations
+
+{% endhighlight %}
+
+마이그레이션이 정상적으로 적용됬는지 확인합니다.
+
+정상적으로 마이그레이션이 적용됐다면, `[X]`로 마이그레이션이 되었다고 표시됩니다.
+
+만약, 마이그레이션이 적용되지 않았다면, `[ ]`로 마이그레이션이 적용되지 않았다고 표시됩니다.
+
+<br>
+
+{% highlight Python %}
+
+admin
+ [X] 0001_initial
+ [X] 0002_logentry_remove_auto_add
+ [X] 0003_logentry_add_action_flag_choices
+auth
+ [X] 0001_initial
+ [X] 0002_alter_permission_name_max_length
+ [X] 0003_alter_user_email_max_length
+ [X] 0004_alter_user_username_opts
+ [X] 0005_alter_user_last_login_null
+ [X] 0006_require_contenttypes_0002
+ [X] 0007_alter_validators_add_error_messages
+ [X] 0008_alter_user_username_max_length
+ [X] 0009_alter_user_last_name_max_length
+ [X] 0010_alter_group_name_max_length
+ [X] 0011_update_proxy_permissions
+contenttypes
+ [X] 0001_initial
+ [X] 0002_remove_content_type_name
+sessions
+ [X] 0001_initial
+
+{% endhighlight %}
