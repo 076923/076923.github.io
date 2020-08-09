@@ -54,7 +54,7 @@ class UserModel(models.Model):
 
 {% endhighlight %}
 
-모델 파일을 위와 같이 정의합니다.
+모델(models.py) 파일을 위와 같이 정의합니다.
 
 `UserModel` 클래스를 생성하며, `models.Model`을 상속합니다.
 
