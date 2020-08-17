@@ -16,7 +16,7 @@ comments: true
 ## Django Start Application ##
 ----------
 
-장고에서 `앱(App)`은`시스템` 및 `데이터베이스` 등을 통해 서비스를 제공하는 **웹 애플리케이션(Web Application)**입니다.
+장고에서 `앱(App)`은 `시스템` 및 `데이터베이스` 등을 통해 서비스를 제공하는 **웹 애플리케이션(Web Application)**입니다.
 
 앱에는 **모델(model)**, **템플릿(template)**, **뷰(view)**를 포함하고 있으며, 여러 앱이 프로젝트를 구성하게 됩니다.
 
