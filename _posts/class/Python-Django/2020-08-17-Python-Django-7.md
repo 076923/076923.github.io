@@ -222,7 +222,7 @@ def validate_age(self, instance):
 
 #### ID 분야
 
-| 모델 핃르 | 매핑 필드 |
+| 모델 필드 | 매핑 필드 |
 |:-:|:-:|
 | models.AutoField | serializers.IntegerField |
 | models.BigAutoField | serializers.IntegerField |
@@ -230,7 +230,7 @@ def validate_age(self, instance):
 
 #### 문자열 분야
 
-| 필드 타입 | 매핑 필드 |
+| 모델 필드 | 매핑 필드 |
 |:-:|:-:|
 | models.CharField | serializers.CharField |
 | models.TextField | serializers.CharField |
@@ -239,7 +239,7 @@ def validate_age(self, instance):
 
 #### 데이터 분야
 
-| 필드 타입 | 매핑 필드 |
+| 모델 필드 | 매핑 필드 |
 |:-:|:-:|
 | models.BinaryField | serializers.Field |
 | models.DecimalField | serializers.DecimalField |
@@ -251,7 +251,7 @@ def validate_age(self, instance):
 
 #### 날짜 및 시간 분야
 
-| 필드 타입 | 매핑 필드 |
+| 모델 필드 | 매핑 필드 |
 |:-:|:-:|
 | models.DateField | serializers.DateField |
 | models.TimeField | serializers.TimeField |
@@ -259,7 +259,7 @@ def validate_age(self, instance):
 
 #### 기타 분야
 
-| 필드 타입 | 매핑 필드 |
+| 모델 필드 | 매핑 필드 |
 |:-:|:-:|
 | models.ImageField | serializers.ImageField |
 | models.FileField | serializers.FileField |
@@ -267,7 +267,7 @@ def validate_age(self, instance):
 
 #### 관계 분야
 
-| 필드 타입 | 매핑 필드 |
+| 모델 필드 | 매핑 필드 |
 |:-:|:-:|
 | OneToOneField | Serializer Class |
 | ForeignKey | Serializer Class |
