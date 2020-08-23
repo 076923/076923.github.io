@@ -6,7 +6,7 @@ image: /assets/images/django.png
 header:
   image: /assets/patterns/asanoha-400px.png
 tags: ['Python-Django']
-keywords: Python, Python Django, Python Django 3, Python Django Serializers, Python Django serializers.py,
+keywords: Python, Python Django, Python Django 3, Python Django Serializers, Python Django serializers.py, Python Django SerializerMethodField, Python Django validate, Python Django ValidationError, Python Django ModelSerializer, Python Django serializers.Field
 ref: Python
 category: posts
 permalink: /posts/Python-Django-7/
