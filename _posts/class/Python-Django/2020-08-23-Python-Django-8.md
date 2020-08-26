@@ -225,7 +225,7 @@ from django.conf.urls import url
 from first_app.views import UserViewSet
 
 urlpatterns = [
-    url('/(?P<uuid>[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12})$', UserViewSet.as_view({ 'get':'retrieve', 'put':'update', 'delete':'destroy'})),
+    url('(?P<uuid>[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12})$', UserViewSet.as_view({ 'get':'retrieve', 'put':'update', 'delete':'destroy'})),
     url('', UserViewSet.as_view({ 'get':'list', 'post':'create'})),
 ]
 
