@@ -7,7 +7,7 @@ header:
   image: /assets/patterns/asanoha-400px.png
 tags: ['Python-Django']
 keywords: Python, Python Django, Python Django 3, Python Django URL, Python Django urls.py, Python Django Protocol, Python Django Host, Python Django Port, Python Django Resource Path, Python Django Query, Python Django Routing, Python Django django.conf.urls, Python Django ViewSet, Python Django urlpatterns, Python Django path, Python Django include, Python Django Regex
-ref: Python
+ref: Python-Django
 category: posts
 permalink: /posts/Python-Django-8/
 comments: true

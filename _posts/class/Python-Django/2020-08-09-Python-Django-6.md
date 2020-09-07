@@ -7,7 +7,7 @@ header:
   image: /assets/patterns/asanoha-400px.png
 tags: ['Python-Django']
 keywords: Python, Python Django, Python Django 3, Python Django View, Python Django views.py, Python Django ViewSet, Python Django queryset, Python Django serializer_class, Python Django create, Python Django list, Python Django retrieve, Python Django update, Python Django destroy, Python Django CRUD, Python Django POST, Python Django GET, Python Django PUT, Python Django DELTE, Python Django exceptions, Python Django Response
-ref: Python
+ref: Python-Django
 category: posts
 permalink: /posts/Python-Django-6/
 comments: true

@@ -7,7 +7,7 @@ header:
   image: /assets/patterns/asanoha-400px.png
 tags: ['Python-Django']
 keywords: Python, Python Django, Python Django 3, Python Django Migration, Python Django Schema, Python Django python manage.py migrate, Python Django python manage.py showmigrations, Python Django python manage.py makemigrations, Python Django no such column, Python Django 
-ref: Python
+ref: Python-Django
 category: posts
 permalink: /posts/Python-Django-9/
 comments: true
