@@ -7,7 +7,7 @@ header:
   image: /assets/patterns/asanoha-400px.png
 tags: ['Python-Django']
 keywords: Python, Python Django, Python Django 3, Python Django setting.py, Python Django BASE_DIR, Python Django SECRET_KEY, Python Django DEBUG, Python Django ALLOWED_HOSTS, Python Django INSTALLED_APPS, Python Django MIDDLEWARE, Python Django ROOT_URLCONF, Python Django TEMPLATES, Python Django WSGI_APPLICATION, Python Django DATABASES, Python Django AUTH_PASSWORD_VALIDATORS, Python Django LANGUAGE_CODE, Python Django TIME_ZONE, Python Django CORS, Python Django MySQL, Python Django PostgreSQL, Python Django AWS RDS
-ref: Python
+ref: Python-Django
 category: posts
 permalink: /posts/Python-Django-3/
 comments: true

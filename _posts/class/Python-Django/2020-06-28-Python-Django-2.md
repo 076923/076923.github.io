@@ -7,7 +7,7 @@ header:
   image: /assets/patterns/asanoha-400px.png
 tags: ['Python-Django']
 keywords: Python, Python Django, Python Django 3, Python Django startproject, Python Django asgi.py, Python Django settings.py, Python Django urls.py, Python Django wsgi.py, Python Django manage.py
-ref: Python
+ref: Python-Django
 category: posts
 permalink: /posts/Python-Django-2/
 comments: true

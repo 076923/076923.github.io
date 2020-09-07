@@ -7,7 +7,7 @@ header:
   image: /assets/patterns/asanoha-400px.png
 tags: ['Python-Django']
 keywords: Python, Python Django, Python Django 3, Python Django Model, Python Django model.py, Python Django Field, Python Django Field Options
-ref: Python
+ref: Python-Django
 category: posts
 permalink: /posts/Python-Django-5/
 comments: true
