@@ -71,6 +71,50 @@ print(whereArray)
 <br>
 <br>
 
+## 복수 조건 ##
+----------
+
+{% highlight Python %}
+
+import numpy as np
+
+array = np.array([
+    [1, 2, 3],
+    [4, 5, 6],
+    [7, 8, 9]
+])
+
+whereAnd = np.where((array > 3) & (array < 7), 0, array)
+whereOr = np.where((array < 3) | (array > 7), 0, array)
+
+print(whereAnd)
+print(whereOr)
+
+{% endhighlight %}
+
+**결과**
+:    
+[[1 2 3]<br>
+&nbsp;[0 0 0]<br>
+&nbsp;[7 8 9]]<br>
+[[0 0 3]<br>
+&nbsp;[4 5 6]<br>
+&nbsp;[7 0 0]]<br>
+<br>
+
+조건 반환 함수의 **조건식**은 **참/거짓**의 형태을 갖습니다.
+
+그러므로, 조건식 내부에 복합 조건을 사용하기 위해서는 `&(AND)`와 `|(OR)`를 적용해 다양한 조건식을 연결할 수 있습니다.
+
+`whereAnd`는 3보다 크고, 7보다 작은 값을 0으로 변경합니다.
+
+`whereOr`는 3보다 작거나, 7보다 큰 값을 0으로 변경합니다.
+
+조건문(if)처럼 `and`나 `or`처럼 사용하여 복잡한 조건식을 구성할 수 있습니다. 
+
+<br>
+<br>
+
 ## 심화 검색 ##
 ----------
 
