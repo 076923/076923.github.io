@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Python Django 강좌 : 제 10강 - 테스트"
+title: "Python Django 강좌 : 제 10강 - Test"
 tagline: "Python Django Test & Debug"
 image: /assets/images/django.png
 header:
@@ -27,7 +27,7 @@ comments: true
 <br>
 <br>
 
-## Django Test ##
+## Django Runserver ##
 ----------
 
 {% highlight python %}
