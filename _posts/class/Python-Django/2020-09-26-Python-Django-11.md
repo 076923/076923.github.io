@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Python Django 강좌 : 제 11강 - Foreign Key"
+title: "Python Django 강좌 : 제 11강 - Foreign Key (1)"
 tagline: "Python Django Foreign Key"
 image: /assets/images/django.png
 header:
