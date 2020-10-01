@@ -23,7 +23,7 @@ comments: true
 즉, 훈련 데이터로부터 하나의 함수를 유추해내기 위한 기계 학습의 한 방법입니다.
 
 지도 학습의 훈련 데이터(train data)는 일반적으로 입력 데이터(input data)에 대한 속성을 `벡터` 형태로 포함하고 있으며, 각각의 벡터에 대해 원하는 결과(label data)가 무엇인지 표시되어 있습니다.
-지도 학습에는 크게 `회귀 분석(Regression)`과 `분류(Classification)`가 있습니다.
+지도 학습에는 크게 `회귀 분석(Regression)`과 `분류(Classification)` 등이 있습니다.
 
 <br>
 <br>
