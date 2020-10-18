@@ -19,7 +19,7 @@ comments: true
 ![1]({{ site.images }}/assets/images/Python/tkinter/ch32/1.png)
 `OpenCV`와 `tkinter`를 결합해 GUI로 표시할 수 있습니다.
 
-이 때 `PIL` 라이브러리를 활용합니다.
+이때 `PIL` 라이브러리를 활용합니다.
 
 `PIL` 모듈은 **Python Imaging Library**로, 다양한 이미지 파일 형식을 지원하는 범용 라이브러리입니다.
 
