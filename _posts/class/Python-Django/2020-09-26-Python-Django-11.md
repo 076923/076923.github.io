@@ -337,7 +337,7 @@ class PostRepresentationSerializer(serializers.ModelSerializer):
 
 현재 필드들(self.fields) 중에서 `post_id`의 필드를 다시 직렬화해 부모의 테이블에서 가져오게 합니다.
 
-이 때, `PostRepresentationSerializer` 클래스를 새로 생성해야합니다.
+이때, `PostRepresentationSerializer` 클래스를 새로 생성해야합니다.
 
 `PostRepresentationSerializer`는 `PostSerializer` 클래스와 형태가 비슷하나, `post` 필드를 사용하지 않습니다.
 
