@@ -85,7 +85,7 @@ _not = cv2.bitwise_not(gray)
 
 `cv2.bitwise(연산 이미지1, 연산 이미지2)`를 이용하여 **비트 연산을 진행합니다.**
 
-`논리곱값(bitwise_and)`, `논리합(bitwise_or)`, `배타적 논리합(bitwise_xor)`, `부정(bitwise_not)` 등으로 연산이 가능합니다.
+`논리곱(bitwise_and)`, `논리합(bitwise_or)`, `배타적 논리합(bitwise_xor)`, `부정(bitwise_not)` 등으로 연산이 가능합니다.
 
 `논리곱 함수`는 두 이미지의 요소별 논리곱을 계산합니다.
 
