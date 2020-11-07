@@ -52,7 +52,7 @@ comments: true
 이 예측 알고리즘을 `모델(Model)`이라 하며, 모델에 새로운 데이터가 입력되었을 때 모델의 예측값으로 결과를 추론할 수 있습니다. 
 데이터를 기반으로 알고리즘을 구성하므로, 통계적인 접근 방법을 사용한다 볼 수 있습니다. 
 
-머신 러닝 알고리즘에는 `지도 학습 (Supervised Learning)`, `비 지도 학습(Unsupervised Learning)`, `강화 학습(Reinforcement learning)`, `심층 학습(Deep Learning)` 등이 있습니다.
+머신 러닝 알고리즘에는 `지도 학습 (Supervised Learning)`, `비지도 학습(Unsupervised Learning)`, `강화 학습(Reinforcement learning)`, `심층 학습(Deep Learning)` 등이 있습니다.
 
 <br>
 <br>
