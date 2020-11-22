@@ -61,8 +61,8 @@ b는 외부에서 영향을 미치는 값으로 `편향성(Bias)`을 의미합�
 
 <br>
 
-* Tip : 독립 변수(X)는 **예측 변수(Predictor Variable)** 또는 **원인 변수(Explanatory Variable)**라고도 부릅니다.
-* Tip : 종속 변수(Y)는 **결과 변수(Outcome Variable)** 또는 **반응 변수(Response Variable)**라고도 부릅니다.
+* Tip : 독립 변수(X)는 **예측 변수(Predictor Variable)** 또는 **원인 변수, 설명 변수(Explanatory Variable)**라고도 부릅니다.
+* Tip : 종속 변수(Y)는 **결과 변수(Outcome Variable)** 또는 **반응 변수, 목적 변수(Response Variable)**라고도 부릅니다.
 
 <br>
 
