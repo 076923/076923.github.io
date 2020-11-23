@@ -75,33 +75,33 @@ canvas.pack()
 ## Canvas Method ##
 ----------
 
-|                         이름                         |  의미  |                                          설명                                         |
+|    이름    |  의미  |       설명      |
 |:----------------------------------------------------:|:------:|:-------------------------------------------------------------------------------------:|
-|   create_line(x1, y1, x2, y2, ... , xn, yn, option)  |   선   |                (x1, y1), (x2, y2), ..., (xn, yn) 까지 연결되는 선 생성                |
-|   create_line(x1, y1, x2, y2, option)                | 사각형 |                (x1, y1)에서 (x2, y2)의 크기를 갖는 사각형 생성                |
-| create_polygon(x1, y1, x2, y2, ... , xn, yn, option) | 다각형 |             (x1, y1), (x2, y2), ..., (xn, yn) 의 꼭지점을 같는 다각형 생성            |
-|          create_oval(x1, y1, x2, y2, option)         |   원   |                     (x1, y1)에서 (x2, y2)의 크기를 갖는 원 생성                     |
+|   create_line(x1, y1, x2, y2, ... , xn, yn, option)  |   선   |  (x1, y1), (x2, y2), ..., (xn, yn) 까지 연결되는 선 생성  |
+|   create_line(x1, y1, x2, y2, option)  | 사각형 |  (x1, y1)에서 (x2, y2)의 크기를 갖는 사각형 생성  |
+| create_polygon(x1, y1, x2, y2, ... , xn, yn, option) | 다각형 |      (x1, y1), (x2, y2), ..., (xn, yn) 의 꼭지점을 같는 다각형 생성     |
+|   create_oval(x1, y1, x2, y2, option)  |   원   |       (x1, y1)에서 (x2, y2)의 크기를 갖는 원 생성       |
 |   create_arc(x1, y1, x2, y2, start, extent, option)  |   호   | (x1, y1)에서 (x2, y2)의 크기를 가지며 `start` 각도부터 `extent`의 각을 지니는 호 생성 |
-|           create_image(x, y, image, option)          | 이미지 |                               (x, y) 위치의 `image` 생성                              |
+|    create_image(x, y, image, option)   | 이미지 |          (x, y) 위치의 `image` 생성         |
 
 <br>
 
 * option
 
     - `fill` : 배경 색상
-        
+ 
     - `outline` : 두께 색상
 
     - `width` : 두께
 
     - `fill` : 배경 색상
-        
+ 
     - `anchor` : 위치 지정
 
 <br>
 
 * Tip : 이외에도 여러 `option`이 존재
-        
+ 
 <br>
 <br>
 
@@ -111,14 +111,14 @@ canvas.pack()
 ## 캔버스 형태 설정 ##
 
 
-|      이름      |               의미               |      기본값      |                    속성                    |
-|:--------------:|:--------------------------------:|:----------------:|:------------------------------------------:|
-|      width     |            캔버스의 너비           |         378        |                    상수                    |
-|      height      |            캔버스의 높이           |         265         |                    상수                    |
-|     relief     |        캔버스의 테두리 모양        |       flat       | flat, groove, raised, ridge, solid, sunken |
-| borderwidth=bd |        캔버스의 테두리 두께        |         0       |                    상수                    |
-|  background=bg |           캔버스의 배경 색상          | SystemButtonFace |                    color                   |
-|  offset  |           캔버스의 오프셋 설정  | 0,0 |                    `x, y`, n, e, w, s, ne, nw, se, sw  |
+| 이름 | 의미 | 기본값 | 속성 |
+|:------:|:---------:|:--------:|:-----:|
+| width | 캔버스의 너비 | 378 | 상수 |
+| height | 캔버스의 높이 | 265  | 상수 |
+| relief | 캔버스의 테두리 모양 | flat | flat, groove, raised, ridge, solid, sunken |
+| borderwidth=bd | 캔버스의 테두리 두께 | 0 | 상수 |
+| background=bg | 캔버스의 배경 색상 | SystemButtonFace | color |
+| offset | 캔버스의 오프셋 설정  | 0,0 | x, y, n, e, w, s, ne, nw, se, sw |
 
 <br>
 <br>
@@ -126,15 +126,15 @@ canvas.pack()
 ## 캔버스 형식 설정 ##
 
 
-|   이름   |                           의미                          |     기본값    |                                          속성                                          |
+|   이름   |      의미     |     기본값    |       속성       |
 |:--------:|:-------------------------------------------------------:|:-------------:|:--------------------------------------------------------------------------------------:|
-|  cursor  |                 캔버스의 마우스 커서 모양                 |       -       |                                    [커서 속성](#reference-1)                                   |
-|   xscrollcommand   |                캔버스의 가로스크롤 위젯 적용               | - |                                          Scrollbar위젯.set                                          |
-|   yscrollcommand   |                캔버스의 세로스크롤 위젯 적용               | - |                                          Scrollbar위젯.set                                          |
-|   xscrollincrement |                캔버스 가로스크롤의 증가량               | 0 |   상수         |
-|   yscrollincrement |                캔버스 가로스크롤의 증가량               | 0 |   상수         |
-|   scrollregion  |                캔버스 스크롤 영역 크기 설정              | - |   n, e, w, s         |
-|   confine   |                캔버스의 스크롤 영역 내 제한              | True |   Boolean         |
+|  cursor  |   캔버스의 마우스 커서 모양   |       -       |        [커서 속성](#reference-1)       |
+|   xscrollcommand   |  캔버스의 가로스크롤 위젯 적용        | - |       Scrollbar위젯.set       |
+|   yscrollcommand   |  캔버스의 세로스크롤 위젯 적용        | - |       Scrollbar위젯.set       |
+|   xscrollincrement |  캔버스 가로스크롤의 증가량        | 0 |   상수  |
+|   yscrollincrement |  캔버스 가로스크롤의 증가량        | 0 |   상수  |
+|   scrollregion  |  캔버스 스크롤 영역 크기 설정       | - |   n, e, w, s  |
+|   confine   |  캔버스의 스크롤 영역 내 제한       | True |   Boolean  |
 
 
 
@@ -144,11 +144,11 @@ canvas.pack()
 ## 캔버스 하이라이트 설정 ##
 
 
-|         이름        |              의미              |       기본값      | 속성 |
+|  이름 |       의미       |       기본값      | 속성 |
 |:-------------------:|:------------------------------:|:-----------------:|:----:|
 |    highlightcolor   |    캔버스가 선택되었을 때 색상   | SystemWindowFrame |  color  |
 | highlightbackground | 캔버스가 선택되지 않았을 때 색상 |  SystemButtonFace |  color  |
-|  highlightthickness |    캔버스가 선택되었을 때 두께 [(두께 설정)](#reference-2)     |         0         | 상수 |
+|  highlightthickness |    캔버스가 선택되었을 때 두께 [(두께 설정)](#reference-2)     |  0  | 상수 |
 
 <br>
 <br>
@@ -156,7 +156,7 @@ canvas.pack()
 ## 캔버스 동작 설정 ##
 
 
-|         이름        |              의미              |       기본값      | 속성 |
+|  이름 |       의미       |       기본값      | 속성 |
 |:-------------------:|:------------------------------:|:-----------------:|:----:|
 |    takefocus |    Tab 키를 이용하여 위젯 이동 허용 여부  | True |  Boolean |
 
