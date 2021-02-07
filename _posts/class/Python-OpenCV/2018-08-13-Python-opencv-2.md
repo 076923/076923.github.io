@@ -78,7 +78,9 @@ capture.set(cv2.CAP_PROP_FRAME_HEIGHT, 480)
 
 {% endhighlight %}
 
-`capture.set(propid, value)`을 이용하여 카메라의 속성을 설정할 수 있습니다.
+`카메라 속성 설정 메서드(capture.set)`로 카메라의 속성을 설정합니다.
+
+`capture.set(propid, value)`로 카메라의 `속성(propid)`과 `값(value)`을 설정할 수 있습니다.
 
 `propid`은 변경하려는 **카메라 설정**을 의미합니다.
 
