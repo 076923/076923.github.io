@@ -17,7 +17,18 @@ comments: true
 ----------
 
 ![1]({{ site.images }}/assets/images/Python/opencv/ch3/1.jpg)
-`컴퓨터에 저장된 이미지`를 얻어와 Python에서 출력할 수 있습니다.
+
+OpenCV는 **래스터 그래픽스 이미지 파일 포맷**을 쉽게 불러올 수 있는 별도의 함수를 제공합니다.
+
+이 함수는 불러온 압축 해제된 이미지 데이터 구조에 필요한 메모리 할당과 같은 복잡한 작업을 처리하며, **파일 시그니처(File Signature)**를 읽어 적절한 코덱을 결정합니다.
+
+OpenCV에서 이미지를 불러올 때는 확장자를 확인하는 방식이 아닌 파일 시그니처를 읽어 파일의 포맷을 분석합니다.
+
+파일 시그니처는 `파일 매직 넘버(File Magic Number)`라고도 하며, 각 파일 형식마다 몇 개의 바이트가 지정되어 있습니다.
+
+예를 들어, **PNG** 확장자의 경우 **89 50 4E 47 …** 형태로 파일 헤더에 포함되어 있습니다.
+
+이미지 입력 함수는 운영체제의 코덱을 사용해 운영체제 별로 픽셀값이 다를 수 있습니다. 
 
 <br>
 <br>
@@ -31,7 +42,7 @@ import cv2
 
 image = cv2.imread("Image/lunar.jpg", cv2.IMREAD_ANYCOLOR)
 cv2.imshow("Moon", image)
-cv2.waitKey(0)
+cv2.waitKey()
 cv2.destroyAllWindows()
 
 {% endhighlight %}
@@ -48,13 +59,15 @@ image = cv2.imread("Image/lunar.jpg", cv2.IMREAD_ANYCOLOR)
 
 {% endhighlight %}
 
-`image = cv2.imread("경로", mode)`을 이용하여 이미지를 불러와 변수에 저장할 수 있습니다.
+`이미지 입력 함수(cv2.imread)`를 통해 **로컬 경로**의 이미지 파일을 읽어올 수 있습니다.
 
-`경로`는 **상대 경로** 또는 **절대 경로**를 사용하여 이미지를 불러올 수 있습니다.
+`image = cv2.imread(fileName, flags)`을 `파일 경로(fileName)`의 이미지 파일을 `플래그(flags)` 설정에 따라 불러옵니다.
 
-`mode`은 이미지를 초기에 불러올 때 적용할 **초기 상태**를 의미합니다.
+`파일 경로(fileName)`는 **상대 경로** 또는 **절대 경로**를 사용하여 이미지를 불러옵니다.
 
-* mode
+`flags`은 이미지를 초기에 불러올 때 적용할 **초기 상태**를 의미합니다.
+
+* flags
     - `cv2.IMREAD_UNCHANGED` : 원본 사용
     - `cv2.IMREAD_GRAYSCALE` : 1 채널, 그레이스케일 적용
     - `cv2.IMREAD_COLOR` : 3 채널, BGR 이미지 사용
@@ -72,16 +85,16 @@ image = cv2.imread("Image/lunar.jpg", cv2.IMREAD_ANYCOLOR)
 {% highlight Python %}
 
 cv2.imshow("Moon", image)
-cv2.waitKey(0)
+cv2.waitKey()
 cv2.destroyAllWindows()
 
 {% endhighlight %}
 
-`cv2.imshow("윈도우 창 제목", 이미지)`를 이용하여 **윈도우 창**에 **이미지**를 띄웁니다.
+`이미지 표시 함수(cv2.imshow)`와 `키 입력 대기 함수(cv2.waitkey)`로 윈도우 창에 이미지를 띄울 수 있습니다.
 
-`cv2.waitkey(time)`이며 `time`마다 키 입력상태를 받아옵니다. `0`일 경우, 지속적으로 검사하여 **해당 구문을 넘어가지 않습니다.**
+키 입력 대기 함수를 사용하지 않을 경우, 윈도우 창이 유지되지 않고 프로그램이 종료됩니다.
 
-`cv2.destroyAllWindows()`를 이용하여 **모든 윈도우창을 닫습니다.**
+키 입력 이후, `모든 윈도우 창 제거 함수(cv2.destroyAllWindows)`를 이용하여 모든 윈도우 창을 닫습니다.
 
 <br>
 <br>
