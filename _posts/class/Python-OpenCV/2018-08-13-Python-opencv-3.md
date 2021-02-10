@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Python OpenCV 강좌 : 제 3강 - Image 출력"
+title: "Python OpenCV 강좌 : 제 3강 - 이미지 출력"
 tagline: "Python OpenCV Using Image"
 image: /assets/images/opencv_logo.png
 header:
@@ -13,7 +13,7 @@ permalink: /posts/Python-opencv-3/
 comments: true
 ---
 
-## Image 출력 ##
+## 이미지 출력 ##
 ----------
 
 ![1]({{ site.images }}/assets/images/Python/opencv/ch3/1.jpg)
