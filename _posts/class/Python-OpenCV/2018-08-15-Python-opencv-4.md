@@ -18,11 +18,11 @@ comments: true
 
 ![1]({{ site.images }}/assets/images/Python/opencv/ch4/1.jpg)
 
-동영상 파일에서 순차적으로 프레임을 읽어 이미지의 형태로 출력합니다.
+동영상 파일에서 순차적으로 `프레임`을 읽어 이미지의 형태로 출력합니다.
 
 동영상 파일을 읽으려면 컴퓨터에 **동영상 코덱을 읽을 수 있는 라이브러리**가 설치돼 있어야 합니다.
 
-OpenCV는 `FFmpeg`를 지원하므로 AVI나 MP4 등 다양한 형식의 동영상 파일을 손쉽게 읽을 수 있습니다.
+OpenCV는 `FFmpeg`를 지원하므로 **\*.avi**나 **\*.mp4** 등 다양한 형식의 동영상 파일을 손쉽게 읽을 수 있습니다.
 
 이미지 파일 중, `GIF` 확장자는 프레임이 존재하므로, 동영상 파일을 읽는 방법과 동일하게 처리합니다.
 
@@ -64,7 +64,7 @@ capture = cv2.VideoCapture("Image/Star.mp4")
 
 `비디오 출력 클래스(cv2.VideoCapture)`를 통해 **동영상 파일**에서 정보를 받아올 수 있습니다.
 
-`capture = cv2.VideoCapture(fileName)`을 `파일 경로(fileName)`의 동영상 파일을 불러옵니다.
+`capture = cv2.VideoCapture(fileName)`는 `파일 경로(fileName)`의 동영상 파일을 불러옵니다.
 
 앞선, `Python OpenCV 강좌 : 제 2강 - 카메라 출력`에서 사용한 클래스와 동일한 클래스를 사용하며, 진행 방식도 동일합니다.
 
