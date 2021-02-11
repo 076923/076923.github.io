@@ -126,7 +126,7 @@ while cv2.waitKey(33) < 0:
 
 `이미지 표시 함수(cv2.imshow)`를 이용하여 특정 **윈도우 창**에 **이미지**를 띄웁니다.
 
-`cv2.imshow(winname, mat)`으로 윈도우 창의 제목과 이미지를 할당합니다.
+`cv2.imshow(winname, mat)`으로 `윈도우 창의 제목(winname)`과 `이미지(mat)`를 할당합니다.
 
 `winname`은 문자열로 표시하며, 할당한 문자열이 변수와 비슷한 역할을 합니다. 
 

@@ -61,7 +61,7 @@ image = cv2.imread("Image/lunar.jpg", cv2.IMREAD_ANYCOLOR)
 
 `이미지 입력 함수(cv2.imread)`를 통해 **로컬 경로**의 이미지 파일을 읽어올 수 있습니다.
 
-`image = cv2.imread(fileName, flags)`을 `파일 경로(fileName)`의 이미지 파일을 `플래그(flags)` 설정에 따라 불러옵니다.
+`image = cv2.imread(fileName, flags)`는 `파일 경로(fileName)`의 이미지 파일을 `플래그(flags)` 설정에 따라 불러옵니다.
 
 `파일 경로(fileName)`는 **상대 경로** 또는 **절대 경로**를 사용하여 이미지를 불러옵니다.
 
