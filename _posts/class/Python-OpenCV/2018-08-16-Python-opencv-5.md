@@ -61,6 +61,7 @@ src = cv2.imread("Image/glass.jpg", cv2.IMREAD_COLOR)
 `이미지 입력 함수(cv2.imread)`를 통해 원본 이미지로 사용할 `src`를 선언하고 **로컬 경로**에서 이미지 파일을 읽어 옵니다.
 
 <br>
+<br>
 
 {% highlight Python %}
 
@@ -80,6 +81,7 @@ dst = cv2.flip(src, 0)
 
 `flipCode > 0`은 **Y 축 대칭(좌우 대칭)**을 적용합니다.
 
+<br>
 <br>
 
 {% highlight Python %}
