@@ -71,7 +71,7 @@ dst = cv2.flip(src, 0)
 
 `대칭 함수(cv2.flip)`로 이미지를 대칭할 수 있습니다.
 
-`dst = cv2.flip(src, flipCode)`는 `원본 이미지(src)`에 `대칭 축(flipCode)`을 기준으로 대칭한 `결과 이미지(dst)`를 반환합니다.
+`dst = cv2.flip(src, flipCode)`는 `원본 이미지(src)`에 `대칭 축(flipCode)`을 기준으로 대칭한 `출력 이미지(dst)`를 반환합니다.
 
 **대칭 축**은 **상수**를 입력해 대칭할 축을 설정할 수 있습니다.
 
