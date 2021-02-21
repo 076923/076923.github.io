@@ -72,8 +72,9 @@ height, width, channel = src.shape
 
 `height, width, channel = src.shape`를 이용하여 해당 이미지의 `높이`, `너비`, `채널`의 값을 저장합니다.
 
-`너비`와 `높이`를 이용하여 **결과 이미지 크기**를 설정할 수 있습니다.
+`너비`와 `높이`를 이용하여 **출력 이미지 크기**를 설정할 수 있습니다.
 
+<br>
 <br>
 
 {% highlight Python %}
@@ -84,7 +85,7 @@ dst = cv2.pyrUp(src, dstsize=(width * 2, height * 2), borderType=cv2.BORDER_DEFA
 
 `이미지 확대 함수(cv2.pyrUp)`로 이미지를 2배 확대할 수 있습니다.
 
-`dst = cv2.pyrUp(src, dstSize, borderType)`는 `입력 이미지(src)`, `출력 이미지 크기(dstSize)`, `테두리 외삽법(borderType)`으로 `결과 이미지(dst)`을 생성합니다.
+`dst = cv2.pyrUp(src, dstSize, borderType)`는 `입력 이미지(src)`, `출력 이미지 크기(dstSize)`, `테두리 외삽법(borderType)`으로 `출력 이미지(dst)`을 생성합니다.
 
 `출력 이미지 크기(dstSize)`는 매우 세밀한 크기 조정을 필요로 할때 사용합니다.
 
@@ -96,6 +97,7 @@ $$ \left | dstSize.width - src.cols × 2 \right | \leq (dstSize.width \ mod \ 2)
 
 $$ \left | dstSize.height - src.rows × 2 \right | \leq (dstSize.height \ mod \ 2) $$
 
+<br>
 <br>
 
 `테두리 외삽법(borderType)`은 이미지를 `확대`하거나 `축소`할 경우, 이미지 영역 밖의 픽셀은 `추정`해 값을 할당해야 합니다.
@@ -113,7 +115,7 @@ dst2 = cv2.pyrDown(src)
 
 `이미지 축소 함수(cv2.pyrUp)`로 이미지를 2배 축소할 수 있습니다.
 
-`dst = cv2.pyrDown(src, dstSize, borderType)`는 `입력 이미지(src)`, `출력 이미지 크기(dstSize)`, `테두리 외삽법(borderType)`으로 `결과 이미지(dst)`을 생성합니다.
+`dst = cv2.pyrDown(src, dstSize, borderType)`는 `입력 이미지(src)`, `출력 이미지 크기(dstSize)`, `테두리 외삽법(borderType)`으로 `출력 이미지(dst)`을 생성합니다.
 
 `출력 이미지 크기(dstSize)`는 이미지 확대 함수에서 사용되는 방법과 동일하며, 다음과 같은 조건을 만족하는 출력 이미지 크기만 사용할 수 있습니다.
 
@@ -122,7 +124,6 @@ dst2 = cv2.pyrDown(src)
 $$ \left | dstSize.width × 2 - src.cols \right | \leq 2 $$
 
 $$ \left | dstSize.height × 2 - src.rows \right | \leq 2 $$
-
 
 <br>
 <br>
