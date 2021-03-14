@@ -18,7 +18,7 @@ comments: true
 
 ![1]({{ site.images }}/assets/images/Python/opencv/ch11/1.jpg)
 
-`역상`은 영상이나 이미지를 **반전 된 색상**으로 변환하기 위해서 사용합니다.
+`역상(Reverse Image)`은 영상이나 이미지를 **반전 된 색상**으로 변환하기 위해서 사용합니다.
 
 픽셀 단위마다 `비트 연산(Bitwise Operation)`을 적용하는데, 그중 **NOT 연산**을 적용합니다.
 
@@ -63,7 +63,6 @@ cv2.destroyAllWindows()
 dst = cv2.bitwise_not(src)
 
 {% endhighlight %}
-
 
 `NOT 연산 함수(cv2.bitwise_not)`로 이미지에 NOT 연산을 적용할 수 있습니다.
 
