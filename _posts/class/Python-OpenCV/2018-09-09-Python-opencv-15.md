@@ -6,7 +6,7 @@ image: /assets/images/opencv_logo.png
 header:
   image: /assets/patterns/asanoha-400px.png
 tags: ['Python-OpenCV']
-keywords: Python, Python OpenCV, OpenCV HSV
+keywords: Python, Python OpenCV, OpenCV HSV, OpenCV Hue, OpenCV Saturation, OpenCV Value
 ref: Python-OpenCV
 category: posts
 permalink: /posts/Python-opencv-15/
@@ -77,9 +77,13 @@ h, s, v = cv2.split(hsv)
 
 {% endhighlight %}
 
-초기 속성은 `BGR`이므로, `cv2.cvtColor()`를 이용하여 `HSV`채널로 변경합니다.
+`색상 공간 변환 함수(cv2.cvtcolor)`로 이미지의 색상 공간을 `BGR`에서 `HSV`로 변경합니다.
 
-각각의 속성으로 분할하기 위해서 `cv2.split()`을 이용하여 채널을 분리합니다.
+각각의 채널로 분리하기 위해서 `채널 분리 함수(cv2.split)`를 적용합니다.
+
+`mv = cv2.threshold(src)`는 `입력 이미지(src)`의 채널을 분리하여 `배열(mv)`의 형태로 반환합니다.
+
+<br>
 
 * Tip : 분리된 채널들은 `단일 채널`이므로 흑백의 색상으로만 표현됩니다.
 
@@ -124,7 +128,7 @@ orange = cv2.bitwise_and(hsv, hsv, mask = h)
 orange = cv2.cvtColor(orange, cv2.COLOR_HSV2BGR)
 
 cv2.imshow("orange", orange)
-cv2.waitKey(0)
+cv2.waitKey()
 cv2.destroyAllWindows()
 
 {% endhighlight %}
@@ -143,21 +147,23 @@ orange = cv2.cvtColor(orange, cv2.COLOR_HSV2BGR)
 
 {% endhighlight %}
 
-`Hue`의 범위를 조정하여 **특정 색상만 출력**할 수 있습니다.
+`Hue`의 범위를 조정하여 **특정 색상의 범위만 출력**할 수 있습니다.
 
-`cv2.inRange(단일 채널 이미지, 최솟값, 최댓값)`을 이용하여 범위를 설정합니다.
+`배열 요소의 범위 설정 함수(cv2.inRange)`로 입력된 배열의 특정 범위 영역만 추출할 수 있습니다.
 
-`주황색`은 약 `8~20` 범위를 갖습니다.
+`dst = cv2.inRange(src, lowerb, upperb)`는 `입력 이미지(src)`의 `낮은 범위(lowerb)`에서 `높은 범위(upperb)` 사이의 요소를 추출합니다.
 
-이 후, 해당 `마스크`를 **이미지 위에 덧씌워 해당 부분만 출력합니다.**
+`주황색`은 약 **8 ~ 20** 범위를 갖습니다.
 
-`cv2.bitwise_and(원본, 원본, mask = 단일 채널 이미지)`를 이용하여 `마스크`만 덧씌웁니다.
+이후, 해당 추출한 영역을 `마스크`로 사용해 **이미지 위에 덧씌워 해당 부분만 출력합니다.**
 
-이 후, 다시 `HSV` 속성에서 `BGR` 속성으로 변경합니다.
+`비트 연산 AND(cv2.bitwise_and)`로 간단하게 마스크를 덧씌울 수 있습니다.
 
-* 색상 (Hue) : 0 ~ 180의 값을 지닙니다.
-* 채도 (Saturation) : 0 ~ 255의 값을 지닙니다.
-* 명도 (Value) : 0 ~ 255의 값을 지닙니다.
+`dst = cv2.bitwise_and(src1, src2, mask)`는 `입력 이미지1(src1)`과 `입력 이미지2(src2)`의 픽셀의 이진값이 동일한 영역만 AND 연산하여 반환합니다.
+
+마스크 영역이 존재한다면 마스크 영역만 AND 연산을 진행합니다.
+
+특정 영역(마스크)의 AND 연산이 완료됐다면 다시 `HSV` 색상 공간에서 `BGR` 색상 공간으로 변경합니다.
 
 <br>
 <br>
