@@ -113,7 +113,7 @@ $$ fy = dsize.height / src.rows $$
 ## Additional Information ##
 ----------
 
-### interpolation 속성 ##
+### interpolation 속성 ###
 
 |          속성          |         의미        |
 |:----------------------:|:-------------------:|
