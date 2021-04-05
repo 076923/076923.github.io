@@ -131,7 +131,7 @@ $$ \left | dstSize.height × 2 - src.rows \right | \leq 2 $$
 ## Additional Information ##
 ----------
 
-## 픽셀 외삽법 종류 ##
+### 픽셀 외삽법 종류 ###
 
 |          속성          |                의미                |
 |:----------------------:|:----------------------------------:|
@@ -148,7 +148,7 @@ $$ \left | dstSize.height × 2 - src.rows \right | \leq 2 $$
 <br>
 <br>
 
-## 함수 추가 정보 ##
+### 함수 추가 정보 ###
 
 `이미지 확대 함수`는 **BORDER_DEFAULT**의 `픽셀 외삽법`만 사용할 수 있습니다. 
 

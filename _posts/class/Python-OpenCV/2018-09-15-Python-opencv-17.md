@@ -98,7 +98,7 @@ inverse = cv2.merge((r, g, b))
 ## Additional Information ##
 ----------
 
-## numpy 형식 채널 분리 ##
+### numpy 형식 채널 분리 ###
 
 {% highlight Python %}
 
@@ -119,7 +119,7 @@ r = src[:, :, 2]
 <br>
 <br>
 
-## 빈 이미지 ##
+### 빈 이미지 ###
 
 {% highlight Python %}
 
