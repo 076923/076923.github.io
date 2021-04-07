@@ -59,6 +59,7 @@
     border: 1px solid $grey-color-light;
     border-radius: 5px;
     text-align: right;
+    z-index: 999;
 
     label[for="nav-trigger"] {
       display: block;
@@ -90,15 +91,16 @@
 
     input:checked ~ .trigger {
       display: block;
-      padding-bottom: 5px;
     }
 
     .trigger {
-      padding-top: 20px;
+      padding-top: 3px;
     }
     .page-link {
       display: block;
       padding: 10px 10px;
+      color: black;
+      text-shadow: 3px 3px 3px #fffff4;
 
       &:last-child {
         margin-bottom: 10px;

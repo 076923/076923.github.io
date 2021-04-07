@@ -10,7 +10,7 @@
         <center>
         <input class="search__bar" type="text" id="search-input" placeholder="Search..." style="margin-top:0.8em">
           
-        <div style="position: relative;left:calc(127.578px + 5.5%)">
+        <div style="position: relative;">
           <ul class="search__results" id="results-container"></ul>
         </div>
         </center>
@@ -48,7 +48,7 @@
         </label>
 
         <div class="trigger">
-          <a class="page-link" href="{{ my_page.url }}docs">Docs</a>
+          <a class="page-link" href="https://076923.github.io/docs/">Docs</a>
           {% for ref in page_refs %}
             {% assign my_page = site.pages | where: "ref", ref | first %}
             {% if my_page.title %}
