@@ -62,7 +62,7 @@ map2, map1 = np.indices((height, width), dtype=np.float32)
 
 {% endhighlight %}
 
-`색인 배열 생성 함수(np.indices)`을 활용하여 원본 이미지 크기와 동일한 색인 배열을 생성합니다.
+`색인 배열 생성 함수(np.indices)`을 활용해 원본 이미지 크기와 동일한 색인 배열을 생성합니다.
 
 `np.indices((높이, 너비), 정밀도)`를 의미하며, **Y축 좌표 색인 행렬**, **X축 좌표 색인 행렬**을 반환합니다.
 
