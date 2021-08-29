@@ -34,7 +34,7 @@ comments: true
 
 import cv2
 
-src = cv2.imread("1.jpg")
+src = cv2.imread("beach.jpg")
 dst = cv2.applyColorMap(src, cv2.COLORMAP_OCEAN)
 
 cv2.imshow("dst", dst)
