@@ -8,1832 +8,2738 @@
 
 <url>
    <loc>https://076923.github.io/</loc>
-   <lastmod>2021-08-28T09:39:54+00:00</lastmod>
+   <lastmod>2021-08-29T08:02:06+00:00</lastmod>
    <changefreq>always</changefreq>
    <priority>1.0000</priority>
 </url>
 <url>
    <loc>https://076923.github.io/feed.xml</loc>
-   <lastmod>2021-08-28T10:25:30+00:00</lastmod>
+   <lastmod>2021-09-20T08:02:35+00:00</lastmod>
+   <changefreq>always</changefreq>
+   <priority>0.8000</priority>
+</url>
+<url>
+   <loc>https://076923.github.io/docs/</loc>
+   <lastmod>2021-09-18T11:40:47+00:00</lastmod>
    <changefreq>always</changefreq>
    <priority>0.8000</priority>
 </url>
 <url>
    <loc>https://076923.github.io/posts/</loc>
-   <lastmod>2021-08-28T09:39:54+00:00</lastmod>
+   <lastmod>2021-08-29T08:02:06+00:00</lastmod>
    <changefreq>always</changefreq>
    <priority>0.8000</priority>
 </url>
 <url>
    <loc>https://076923.github.io/about</loc>
-   <lastmod>2021-08-28T09:39:54+00:00</lastmod>
+   <lastmod>2021-08-29T08:02:06+00:00</lastmod>
+   <changefreq>always</changefreq>
+   <priority>0.8000</priority>
+</url>
+<url>
+   <loc>https://076923.github.io/posts/Python-45/</loc>
+   <lastmod>2021-08-29T08:02:07+00:00</lastmod>
    <changefreq>always</changefreq>
    <priority>0.8000</priority>
 </url>
 <url>
    <loc>https://076923.github.io/posts/Python-opencv-42/</loc>
-   <lastmod>2021-08-28T09:39:54+00:00</lastmod>
+   <lastmod>2021-08-29T08:02:07+00:00</lastmod>
    <changefreq>always</changefreq>
    <priority>0.8000</priority>
 </url>
 <url>
    <loc>https://076923.github.io/posts/Python-opencv-41/</loc>
-   <lastmod>2021-08-28T09:39:54+00:00</lastmod>
+   <lastmod>2021-08-29T08:02:07+00:00</lastmod>
    <changefreq>always</changefreq>
    <priority>0.8000</priority>
 </url>
 <url>
    <loc>https://076923.github.io/posts/Python-opencv-40/</loc>
-   <lastmod>2021-08-28T09:39:54+00:00</lastmod>
+   <lastmod>2021-08-29T08:02:07+00:00</lastmod>
    <changefreq>always</changefreq>
    <priority>0.8000</priority>
 </url>
 <url>
    <loc>https://076923.github.io/posts/Python-opencv-39/</loc>
-   <lastmod>2021-08-28T09:39:54+00:00</lastmod>
+   <lastmod>2021-08-29T08:02:07+00:00</lastmod>
    <changefreq>always</changefreq>
    <priority>0.8000</priority>
 </url>
 <url>
    <loc>https://076923.github.io/posts/AI-4/</loc>
-   <lastmod>2021-08-28T09:39:54+00:00</lastmod>
+   <lastmod>2021-08-29T08:02:07+00:00</lastmod>
    <changefreq>always</changefreq>
    <priority>0.8000</priority>
 </url>
 <url>
-   <loc>https://076923.github.io/posts/AI-3/</loc>
-   <lastmod>2021-08-28T09:39:54+00:00</lastmod>
+   <loc>https://076923.github.io/404</loc>
+   <lastmod>2021-08-29T08:02:06+00:00</lastmod>
    <changefreq>always</changefreq>
    <priority>0.8000</priority>
 </url>
 <url>
-   <loc>https://076923.github.io/posts/Python-Django-13/</loc>
-   <lastmod>2021-08-28T09:39:54+00:00</lastmod>
+   <loc>https://076923.github.io/docs/index</loc>
+   <lastmod>2021-09-18T11:40:47+00:00</lastmod>
+   <changefreq>always</changefreq>
+   <priority>0.8000</priority>
+</url>
+<url>
+   <loc>https://076923.github.io/docs/opencv4</loc>
+   <lastmod>2021-09-18T11:40:47+00:00</lastmod>
+   <changefreq>always</changefreq>
+   <priority>0.8000</priority>
+</url>
+<url>
+   <loc>https://076923.github.io/docs/support</loc>
+   <lastmod>2021-09-18T11:40:47+00:00</lastmod>
    <changefreq>always</changefreq>
    <priority>0.8000</priority>
 </url>
 <url>
    <loc>https://076923.github.io/posts/C-39/</loc>
-   <lastmod>2021-08-28T09:39:54+00:00</lastmod>
+   <lastmod>2021-08-29T08:02:07+00:00</lastmod>
    <changefreq>always</changefreq>
-   <priority>0.6400</priority>
+   <priority>0.8000</priority>
 </url>
 <url>
    <loc>https://076923.github.io/posts/C-38/</loc>
-   <lastmod>2021-08-28T09:39:54+00:00</lastmod>
+   <lastmod>2021-08-29T08:02:07+00:00</lastmod>
    <changefreq>always</changefreq>
-   <priority>0.6400</priority>
+   <priority>0.8000</priority>
 </url>
 <url>
    <loc>https://076923.github.io/posts/C-37/</loc>
-   <lastmod>2021-08-28T09:39:54+00:00</lastmod>
+   <lastmod>2021-08-29T08:02:07+00:00</lastmod>
    <changefreq>always</changefreq>
-   <priority>0.6400</priority>
+   <priority>0.8000</priority>
 </url>
 <url>
    <loc>https://076923.github.io/posts/C-36/</loc>
-   <lastmod>2021-08-28T09:39:54+00:00</lastmod>
+   <lastmod>2021-08-29T08:02:07+00:00</lastmod>
    <changefreq>always</changefreq>
-   <priority>0.6400</priority>
+   <priority>0.8000</priority>
 </url>
 <url>
    <loc>https://076923.github.io/posts/C-35/</loc>
-   <lastmod>2021-08-28T09:39:54+00:00</lastmod>
+   <lastmod>2021-08-29T08:02:07+00:00</lastmod>
    <changefreq>always</changefreq>
-   <priority>0.6400</priority>
+   <priority>0.8000</priority>
 </url>
 <url>
    <loc>https://076923.github.io/posts/C-34/</loc>
-   <lastmod>2021-08-28T09:39:54+00:00</lastmod>
+   <lastmod>2021-08-29T08:02:07+00:00</lastmod>
    <changefreq>always</changefreq>
-   <priority>0.6400</priority>
+   <priority>0.8000</priority>
 </url>
 <url>
    <loc>https://076923.github.io/posts/C-33/</loc>
-   <lastmod>2021-08-28T09:39:54+00:00</lastmod>
+   <lastmod>2021-08-29T08:02:07+00:00</lastmod>
    <changefreq>always</changefreq>
-   <priority>0.6400</priority>
+   <priority>0.8000</priority>
 </url>
 <url>
    <loc>https://076923.github.io/posts/C-32/</loc>
-   <lastmod>2021-08-28T09:39:54+00:00</lastmod>
+   <lastmod>2021-08-29T08:02:07+00:00</lastmod>
    <changefreq>always</changefreq>
-   <priority>0.6400</priority>
+   <priority>0.8000</priority>
 </url>
 <url>
    <loc>https://076923.github.io/posts/C-31/</loc>
-   <lastmod>2021-08-28T09:39:54+00:00</lastmod>
+   <lastmod>2021-08-29T08:02:07+00:00</lastmod>
    <changefreq>always</changefreq>
-   <priority>0.6400</priority>
+   <priority>0.8000</priority>
 </url>
 <url>
    <loc>https://076923.github.io/posts/C-30/</loc>
-   <lastmod>2021-08-28T09:39:54+00:00</lastmod>
+   <lastmod>2021-08-29T08:02:07+00:00</lastmod>
    <changefreq>always</changefreq>
-   <priority>0.6400</priority>
+   <priority>0.8000</priority>
 </url>
 <url>
    <loc>https://076923.github.io/posts/C-29/</loc>
-   <lastmod>2021-08-28T09:39:54+00:00</lastmod>
+   <lastmod>2021-08-29T08:02:07+00:00</lastmod>
    <changefreq>always</changefreq>
-   <priority>0.6400</priority>
+   <priority>0.8000</priority>
 </url>
 <url>
    <loc>https://076923.github.io/posts/C-28/</loc>
-   <lastmod>2021-08-28T09:39:54+00:00</lastmod>
+   <lastmod>2021-08-29T08:02:07+00:00</lastmod>
    <changefreq>always</changefreq>
-   <priority>0.6400</priority>
+   <priority>0.8000</priority>
 </url>
 <url>
    <loc>https://076923.github.io/posts/C-27/</loc>
-   <lastmod>2021-08-28T09:39:54+00:00</lastmod>
+   <lastmod>2021-08-29T08:02:07+00:00</lastmod>
    <changefreq>always</changefreq>
-   <priority>0.6400</priority>
+   <priority>0.8000</priority>
 </url>
 <url>
    <loc>https://076923.github.io/posts/C-26/</loc>
-   <lastmod>2021-08-28T09:39:54+00:00</lastmod>
+   <lastmod>2021-08-29T08:02:07+00:00</lastmod>
    <changefreq>always</changefreq>
-   <priority>0.6400</priority>
+   <priority>0.8000</priority>
 </url>
 <url>
    <loc>https://076923.github.io/posts/C-25/</loc>
-   <lastmod>2021-08-28T09:39:54+00:00</lastmod>
+   <lastmod>2021-08-29T08:02:07+00:00</lastmod>
    <changefreq>always</changefreq>
-   <priority>0.6400</priority>
+   <priority>0.8000</priority>
 </url>
 <url>
    <loc>https://076923.github.io/posts/C-24/</loc>
-   <lastmod>2021-08-28T09:39:54+00:00</lastmod>
+   <lastmod>2021-08-29T08:02:07+00:00</lastmod>
    <changefreq>always</changefreq>
-   <priority>0.6400</priority>
+   <priority>0.8000</priority>
 </url>
 <url>
    <loc>https://076923.github.io/posts/C-23/</loc>
-   <lastmod>2021-08-28T09:39:54+00:00</lastmod>
+   <lastmod>2021-08-29T08:02:07+00:00</lastmod>
    <changefreq>always</changefreq>
-   <priority>0.6400</priority>
+   <priority>0.8000</priority>
 </url>
 <url>
    <loc>https://076923.github.io/posts/C-22/</loc>
-   <lastmod>2021-08-28T09:39:54+00:00</lastmod>
+   <lastmod>2021-08-29T08:02:07+00:00</lastmod>
    <changefreq>always</changefreq>
-   <priority>0.6400</priority>
+   <priority>0.8000</priority>
 </url>
 <url>
    <loc>https://076923.github.io/posts/C-21/</loc>
-   <lastmod>2021-08-28T09:39:54+00:00</lastmod>
+   <lastmod>2021-08-29T08:02:07+00:00</lastmod>
    <changefreq>always</changefreq>
-   <priority>0.6400</priority>
+   <priority>0.8000</priority>
 </url>
 <url>
    <loc>https://076923.github.io/posts/C-20/</loc>
-   <lastmod>2021-08-28T09:39:54+00:00</lastmod>
+   <lastmod>2021-08-29T08:02:07+00:00</lastmod>
    <changefreq>always</changefreq>
-   <priority>0.6400</priority>
+   <priority>0.8000</priority>
 </url>
 <url>
    <loc>https://076923.github.io/posts/C-19/</loc>
-   <lastmod>2021-08-28T09:39:54+00:00</lastmod>
+   <lastmod>2021-08-29T08:02:07+00:00</lastmod>
    <changefreq>always</changefreq>
-   <priority>0.6400</priority>
+   <priority>0.8000</priority>
 </url>
 <url>
    <loc>https://076923.github.io/posts/C-18/</loc>
-   <lastmod>2021-08-28T09:39:54+00:00</lastmod>
+   <lastmod>2021-08-29T08:02:07+00:00</lastmod>
    <changefreq>always</changefreq>
-   <priority>0.6400</priority>
+   <priority>0.8000</priority>
 </url>
 <url>
    <loc>https://076923.github.io/posts/C-17/</loc>
-   <lastmod>2021-08-28T09:39:54+00:00</lastmod>
+   <lastmod>2021-08-29T08:02:07+00:00</lastmod>
    <changefreq>always</changefreq>
-   <priority>0.6400</priority>
+   <priority>0.8000</priority>
 </url>
 <url>
    <loc>https://076923.github.io/posts/C-16/</loc>
-   <lastmod>2021-08-28T09:39:54+00:00</lastmod>
+   <lastmod>2021-08-29T08:02:07+00:00</lastmod>
    <changefreq>always</changefreq>
-   <priority>0.6400</priority>
+   <priority>0.8000</priority>
 </url>
 <url>
    <loc>https://076923.github.io/posts/C-15/</loc>
-   <lastmod>2021-08-28T09:39:54+00:00</lastmod>
+   <lastmod>2021-08-29T08:02:07+00:00</lastmod>
    <changefreq>always</changefreq>
-   <priority>0.6400</priority>
+   <priority>0.8000</priority>
 </url>
 <url>
    <loc>https://076923.github.io/posts/C-14/</loc>
-   <lastmod>2021-08-28T09:39:54+00:00</lastmod>
+   <lastmod>2021-08-29T08:02:07+00:00</lastmod>
    <changefreq>always</changefreq>
-   <priority>0.6400</priority>
+   <priority>0.8000</priority>
 </url>
 <url>
    <loc>https://076923.github.io/posts/C-13/</loc>
-   <lastmod>2021-08-28T09:39:54+00:00</lastmod>
+   <lastmod>2021-08-29T08:02:07+00:00</lastmod>
    <changefreq>always</changefreq>
-   <priority>0.6400</priority>
+   <priority>0.8000</priority>
 </url>
 <url>
    <loc>https://076923.github.io/posts/C-12/</loc>
-   <lastmod>2021-08-28T09:39:54+00:00</lastmod>
+   <lastmod>2021-08-29T08:02:07+00:00</lastmod>
    <changefreq>always</changefreq>
-   <priority>0.6400</priority>
+   <priority>0.8000</priority>
 </url>
 <url>
    <loc>https://076923.github.io/posts/C-11/</loc>
-   <lastmod>2021-08-28T09:39:54+00:00</lastmod>
+   <lastmod>2021-08-29T08:02:07+00:00</lastmod>
    <changefreq>always</changefreq>
-   <priority>0.6400</priority>
+   <priority>0.8000</priority>
 </url>
 <url>
    <loc>https://076923.github.io/posts/C-10/</loc>
-   <lastmod>2021-08-28T09:39:54+00:00</lastmod>
+   <lastmod>2021-08-29T08:02:07+00:00</lastmod>
    <changefreq>always</changefreq>
-   <priority>0.6400</priority>
+   <priority>0.8000</priority>
 </url>
 <url>
    <loc>https://076923.github.io/posts/C-9/</loc>
-   <lastmod>2021-08-28T09:39:54+00:00</lastmod>
+   <lastmod>2021-08-29T08:02:07+00:00</lastmod>
    <changefreq>always</changefreq>
-   <priority>0.6400</priority>
+   <priority>0.8000</priority>
 </url>
 <url>
    <loc>https://076923.github.io/posts/C-8/</loc>
-   <lastmod>2021-08-28T09:39:54+00:00</lastmod>
+   <lastmod>2021-08-29T08:02:07+00:00</lastmod>
    <changefreq>always</changefreq>
-   <priority>0.6400</priority>
+   <priority>0.8000</priority>
 </url>
 <url>
    <loc>https://076923.github.io/posts/C-7/</loc>
-   <lastmod>2021-08-28T09:39:54+00:00</lastmod>
+   <lastmod>2021-08-29T08:02:07+00:00</lastmod>
    <changefreq>always</changefreq>
-   <priority>0.6400</priority>
+   <priority>0.8000</priority>
 </url>
 <url>
    <loc>https://076923.github.io/posts/C-6/</loc>
-   <lastmod>2021-08-28T09:39:54+00:00</lastmod>
+   <lastmod>2021-08-29T08:02:07+00:00</lastmod>
    <changefreq>always</changefreq>
-   <priority>0.6400</priority>
+   <priority>0.8000</priority>
 </url>
 <url>
    <loc>https://076923.github.io/posts/C-5/</loc>
-   <lastmod>2021-08-28T09:39:54+00:00</lastmod>
+   <lastmod>2021-08-29T08:02:07+00:00</lastmod>
    <changefreq>always</changefreq>
-   <priority>0.6400</priority>
+   <priority>0.8000</priority>
 </url>
 <url>
    <loc>https://076923.github.io/posts/C-4/</loc>
-   <lastmod>2021-08-28T09:39:54+00:00</lastmod>
+   <lastmod>2021-08-29T08:02:07+00:00</lastmod>
    <changefreq>always</changefreq>
-   <priority>0.6400</priority>
+   <priority>0.8000</priority>
 </url>
 <url>
    <loc>https://076923.github.io/posts/C-3/</loc>
-   <lastmod>2021-08-28T09:39:54+00:00</lastmod>
+   <lastmod>2021-08-29T08:02:07+00:00</lastmod>
    <changefreq>always</changefreq>
-   <priority>0.6400</priority>
+   <priority>0.8000</priority>
 </url>
 <url>
    <loc>https://076923.github.io/posts/C-2/</loc>
-   <lastmod>2021-08-28T09:39:54+00:00</lastmod>
+   <lastmod>2021-08-29T08:02:07+00:00</lastmod>
    <changefreq>always</changefreq>
-   <priority>0.6400</priority>
+   <priority>0.8000</priority>
 </url>
 <url>
    <loc>https://076923.github.io/posts/C-1/</loc>
-   <lastmod>2021-08-28T09:39:54+00:00</lastmod>
+   <lastmod>2021-08-29T08:02:07+00:00</lastmod>
    <changefreq>always</changefreq>
-   <priority>0.6400</priority>
+   <priority>0.8000</priority>
 </url>
 <url>
    <loc>https://076923.github.io/exercise/C-SpalshScreen/</loc>
-   <lastmod>2021-08-28T09:39:54+00:00</lastmod>
+   <lastmod>2021-08-29T08:02:07+00:00</lastmod>
    <changefreq>always</changefreq>
-   <priority>0.6400</priority>
+   <priority>0.8000</priority>
 </url>
 <url>
    <loc>https://076923.github.io/exercise/C-tabmenu/</loc>
-   <lastmod>2021-08-28T09:39:54+00:00</lastmod>
+   <lastmod>2021-08-29T08:02:07+00:00</lastmod>
    <changefreq>always</changefreq>
-   <priority>0.6400</priority>
+   <priority>0.8000</priority>
 </url>
 <url>
    <loc>https://076923.github.io/exercise/C-inputbox/</loc>
-   <lastmod>2021-08-28T09:39:54+00:00</lastmod>
+   <lastmod>2021-08-29T08:02:07+00:00</lastmod>
    <changefreq>always</changefreq>
-   <priority>0.6400</priority>
+   <priority>0.8000</priority>
 </url>
 <url>
    <loc>https://076923.github.io/posts/C-opencv-61/</loc>
-   <lastmod>2021-08-28T09:39:54+00:00</lastmod>
+   <lastmod>2021-08-29T08:02:07+00:00</lastmod>
    <changefreq>always</changefreq>
-   <priority>0.6400</priority>
+   <priority>0.8000</priority>
 </url>
 <url>
    <loc>https://076923.github.io/posts/C-opencv-60/</loc>
-   <lastmod>2021-08-28T09:39:54+00:00</lastmod>
+   <lastmod>2021-08-29T08:02:07+00:00</lastmod>
    <changefreq>always</changefreq>
-   <priority>0.6400</priority>
+   <priority>0.8000</priority>
 </url>
 <url>
    <loc>https://076923.github.io/posts/C-opencv-59/</loc>
-   <lastmod>2021-08-28T09:39:54+00:00</lastmod>
+   <lastmod>2021-08-29T08:02:07+00:00</lastmod>
    <changefreq>always</changefreq>
-   <priority>0.6400</priority>
+   <priority>0.8000</priority>
 </url>
 <url>
    <loc>https://076923.github.io/posts/C-opencv-58/</loc>
-   <lastmod>2021-08-28T09:39:54+00:00</lastmod>
+   <lastmod>2021-08-29T08:02:07+00:00</lastmod>
    <changefreq>always</changefreq>
-   <priority>0.6400</priority>
+   <priority>0.8000</priority>
 </url>
 <url>
    <loc>https://076923.github.io/posts/C-opencv-57/</loc>
-   <lastmod>2021-08-28T09:39:54+00:00</lastmod>
+   <lastmod>2021-08-29T08:02:07+00:00</lastmod>
    <changefreq>always</changefreq>
-   <priority>0.6400</priority>
+   <priority>0.8000</priority>
 </url>
 <url>
    <loc>https://076923.github.io/posts/C-opencv-56/</loc>
-   <lastmod>2021-08-28T09:39:54+00:00</lastmod>
+   <lastmod>2021-08-29T08:02:07+00:00</lastmod>
    <changefreq>always</changefreq>
-   <priority>0.6400</priority>
+   <priority>0.8000</priority>
 </url>
 <url>
    <loc>https://076923.github.io/posts/C-opencv-55/</loc>
-   <lastmod>2021-08-28T09:39:54+00:00</lastmod>
+   <lastmod>2021-08-29T08:02:07+00:00</lastmod>
    <changefreq>always</changefreq>
-   <priority>0.6400</priority>
+   <priority>0.8000</priority>
 </url>
 <url>
    <loc>https://076923.github.io/posts/C-opencv-54/</loc>
-   <lastmod>2021-08-28T09:39:54+00:00</lastmod>
+   <lastmod>2021-08-29T08:02:07+00:00</lastmod>
    <changefreq>always</changefreq>
-   <priority>0.6400</priority>
+   <priority>0.8000</priority>
 </url>
 <url>
    <loc>https://076923.github.io/posts/C-opencv-53/</loc>
-   <lastmod>2021-08-28T09:39:54+00:00</lastmod>
+   <lastmod>2021-08-29T08:02:07+00:00</lastmod>
    <changefreq>always</changefreq>
-   <priority>0.6400</priority>
+   <priority>0.8000</priority>
 </url>
 <url>
    <loc>https://076923.github.io/posts/C-opencv-52/</loc>
-   <lastmod>2021-08-28T09:39:54+00:00</lastmod>
+   <lastmod>2021-08-29T08:02:07+00:00</lastmod>
    <changefreq>always</changefreq>
-   <priority>0.6400</priority>
+   <priority>0.8000</priority>
 </url>
 <url>
    <loc>https://076923.github.io/posts/C-opencv-51/</loc>
-   <lastmod>2021-08-28T09:39:54+00:00</lastmod>
+   <lastmod>2021-08-29T08:02:07+00:00</lastmod>
    <changefreq>always</changefreq>
-   <priority>0.6400</priority>
+   <priority>0.8000</priority>
 </url>
 <url>
    <loc>https://076923.github.io/posts/C-opencv-50/</loc>
-   <lastmod>2021-08-28T09:39:54+00:00</lastmod>
+   <lastmod>2021-08-29T08:02:07+00:00</lastmod>
    <changefreq>always</changefreq>
-   <priority>0.6400</priority>
+   <priority>0.8000</priority>
 </url>
 <url>
    <loc>https://076923.github.io/posts/C-opencv-49/</loc>
-   <lastmod>2021-08-28T09:39:54+00:00</lastmod>
+   <lastmod>2021-08-29T08:02:07+00:00</lastmod>
    <changefreq>always</changefreq>
-   <priority>0.6400</priority>
+   <priority>0.8000</priority>
 </url>
 <url>
    <loc>https://076923.github.io/posts/C-opencv-48/</loc>
-   <lastmod>2021-08-28T09:39:54+00:00</lastmod>
+   <lastmod>2021-08-29T08:02:07+00:00</lastmod>
    <changefreq>always</changefreq>
-   <priority>0.6400</priority>
+   <priority>0.8000</priority>
 </url>
 <url>
    <loc>https://076923.github.io/posts/C-opencv-47/</loc>
-   <lastmod>2021-08-28T09:39:54+00:00</lastmod>
+   <lastmod>2021-08-29T08:02:07+00:00</lastmod>
    <changefreq>always</changefreq>
-   <priority>0.6400</priority>
+   <priority>0.8000</priority>
 </url>
 <url>
    <loc>https://076923.github.io/posts/C-opencv-46/</loc>
-   <lastmod>2021-08-28T09:39:54+00:00</lastmod>
+   <lastmod>2021-08-29T08:02:07+00:00</lastmod>
    <changefreq>always</changefreq>
-   <priority>0.6400</priority>
+   <priority>0.8000</priority>
 </url>
 <url>
    <loc>https://076923.github.io/posts/C-opencv-45/</loc>
-   <lastmod>2021-08-28T09:39:54+00:00</lastmod>
+   <lastmod>2021-08-29T08:02:07+00:00</lastmod>
    <changefreq>always</changefreq>
-   <priority>0.6400</priority>
+   <priority>0.8000</priority>
 </url>
 <url>
    <loc>https://076923.github.io/posts/C-opencv-44/</loc>
-   <lastmod>2021-08-28T09:39:54+00:00</lastmod>
+   <lastmod>2021-08-29T08:02:07+00:00</lastmod>
    <changefreq>always</changefreq>
-   <priority>0.6400</priority>
+   <priority>0.8000</priority>
 </url>
 <url>
    <loc>https://076923.github.io/posts/C-opencv-43/</loc>
-   <lastmod>2021-08-28T09:39:54+00:00</lastmod>
+   <lastmod>2021-08-29T08:02:07+00:00</lastmod>
    <changefreq>always</changefreq>
-   <priority>0.6400</priority>
+   <priority>0.8000</priority>
 </url>
 <url>
    <loc>https://076923.github.io/posts/C-opencv-42/</loc>
-   <lastmod>2021-08-28T09:39:54+00:00</lastmod>
+   <lastmod>2021-08-29T08:02:07+00:00</lastmod>
    <changefreq>always</changefreq>
-   <priority>0.6400</priority>
+   <priority>0.8000</priority>
 </url>
 <url>
    <loc>https://076923.github.io/posts/C-opencv-41/</loc>
-   <lastmod>2021-08-28T09:39:54+00:00</lastmod>
+   <lastmod>2021-08-29T08:02:07+00:00</lastmod>
    <changefreq>always</changefreq>
-   <priority>0.6400</priority>
+   <priority>0.8000</priority>
 </url>
 <url>
    <loc>https://076923.github.io/posts/C-opencv-40/</loc>
-   <lastmod>2021-08-28T09:39:54+00:00</lastmod>
+   <lastmod>2021-08-29T08:02:07+00:00</lastmod>
    <changefreq>always</changefreq>
-   <priority>0.6400</priority>
+   <priority>0.8000</priority>
 </url>
 <url>
    <loc>https://076923.github.io/posts/C-opencv-39/</loc>
-   <lastmod>2021-08-28T09:39:54+00:00</lastmod>
+   <lastmod>2021-08-29T08:02:07+00:00</lastmod>
    <changefreq>always</changefreq>
-   <priority>0.6400</priority>
+   <priority>0.8000</priority>
 </url>
 <url>
    <loc>https://076923.github.io/posts/C-opencv-38/</loc>
-   <lastmod>2021-08-28T09:39:54+00:00</lastmod>
+   <lastmod>2021-08-29T08:02:07+00:00</lastmod>
    <changefreq>always</changefreq>
-   <priority>0.6400</priority>
+   <priority>0.8000</priority>
 </url>
 <url>
    <loc>https://076923.github.io/posts/C-opencv-37/</loc>
-   <lastmod>2021-08-28T09:39:54+00:00</lastmod>
+   <lastmod>2021-08-29T08:02:07+00:00</lastmod>
    <changefreq>always</changefreq>
-   <priority>0.6400</priority>
+   <priority>0.8000</priority>
 </url>
 <url>
    <loc>https://076923.github.io/posts/C-opencv-36/</loc>
-   <lastmod>2021-08-28T09:39:54+00:00</lastmod>
+   <lastmod>2021-08-29T08:02:07+00:00</lastmod>
    <changefreq>always</changefreq>
-   <priority>0.6400</priority>
+   <priority>0.8000</priority>
 </url>
 <url>
    <loc>https://076923.github.io/posts/C-opencv-35/</loc>
-   <lastmod>2021-08-28T09:39:54+00:00</lastmod>
+   <lastmod>2021-08-29T08:02:07+00:00</lastmod>
    <changefreq>always</changefreq>
-   <priority>0.6400</priority>
+   <priority>0.8000</priority>
 </url>
 <url>
    <loc>https://076923.github.io/posts/C-opencv-34/</loc>
-   <lastmod>2021-08-28T09:39:54+00:00</lastmod>
+   <lastmod>2021-08-29T08:02:07+00:00</lastmod>
    <changefreq>always</changefreq>
-   <priority>0.6400</priority>
+   <priority>0.8000</priority>
 </url>
 <url>
    <loc>https://076923.github.io/posts/C-opencv-33/</loc>
-   <lastmod>2021-08-28T09:39:54+00:00</lastmod>
+   <lastmod>2021-08-29T08:02:07+00:00</lastmod>
    <changefreq>always</changefreq>
-   <priority>0.6400</priority>
+   <priority>0.8000</priority>
 </url>
 <url>
    <loc>https://076923.github.io/posts/C-opencv-32/</loc>
-   <lastmod>2021-08-28T09:39:54+00:00</lastmod>
+   <lastmod>2021-08-29T08:02:07+00:00</lastmod>
    <changefreq>always</changefreq>
-   <priority>0.6400</priority>
+   <priority>0.8000</priority>
 </url>
 <url>
    <loc>https://076923.github.io/posts/C-opencv-31/</loc>
-   <lastmod>2021-08-28T09:39:54+00:00</lastmod>
+   <lastmod>2021-08-29T08:02:07+00:00</lastmod>
    <changefreq>always</changefreq>
-   <priority>0.6400</priority>
+   <priority>0.8000</priority>
 </url>
 <url>
    <loc>https://076923.github.io/posts/C-opencv-30/</loc>
-   <lastmod>2021-08-28T09:39:54+00:00</lastmod>
+   <lastmod>2021-08-29T08:02:07+00:00</lastmod>
    <changefreq>always</changefreq>
-   <priority>0.6400</priority>
+   <priority>0.8000</priority>
 </url>
 <url>
    <loc>https://076923.github.io/posts/C-opencv-29/</loc>
-   <lastmod>2021-08-28T09:39:54+00:00</lastmod>
+   <lastmod>2021-08-29T08:02:07+00:00</lastmod>
    <changefreq>always</changefreq>
-   <priority>0.6400</priority>
+   <priority>0.8000</priority>
 </url>
 <url>
    <loc>https://076923.github.io/posts/C-opencv-28/</loc>
-   <lastmod>2021-08-28T09:39:54+00:00</lastmod>
+   <lastmod>2021-08-29T08:02:07+00:00</lastmod>
    <changefreq>always</changefreq>
-   <priority>0.6400</priority>
+   <priority>0.8000</priority>
 </url>
 <url>
    <loc>https://076923.github.io/posts/C-opencv-27/</loc>
-   <lastmod>2021-08-28T09:39:54+00:00</lastmod>
+   <lastmod>2021-08-29T08:02:07+00:00</lastmod>
    <changefreq>always</changefreq>
-   <priority>0.6400</priority>
+   <priority>0.8000</priority>
 </url>
 <url>
    <loc>https://076923.github.io/posts/C-opencv-26/</loc>
-   <lastmod>2021-08-28T09:39:54+00:00</lastmod>
+   <lastmod>2021-08-29T08:02:07+00:00</lastmod>
    <changefreq>always</changefreq>
-   <priority>0.6400</priority>
+   <priority>0.8000</priority>
 </url>
 <url>
    <loc>https://076923.github.io/posts/C-opencv-25/</loc>
-   <lastmod>2021-08-28T09:39:54+00:00</lastmod>
+   <lastmod>2021-08-29T08:02:07+00:00</lastmod>
    <changefreq>always</changefreq>
-   <priority>0.6400</priority>
+   <priority>0.8000</priority>
 </url>
 <url>
    <loc>https://076923.github.io/posts/C-opencv-24/</loc>
-   <lastmod>2021-08-28T09:39:54+00:00</lastmod>
+   <lastmod>2021-08-29T08:02:07+00:00</lastmod>
    <changefreq>always</changefreq>
-   <priority>0.6400</priority>
+   <priority>0.8000</priority>
 </url>
 <url>
    <loc>https://076923.github.io/posts/C-opencv-23/</loc>
-   <lastmod>2021-08-28T09:39:54+00:00</lastmod>
+   <lastmod>2021-08-29T08:02:07+00:00</lastmod>
    <changefreq>always</changefreq>
-   <priority>0.6400</priority>
+   <priority>0.8000</priority>
 </url>
 <url>
    <loc>https://076923.github.io/posts/C-opencv-22/</loc>
-   <lastmod>2021-08-28T09:39:54+00:00</lastmod>
+   <lastmod>2021-08-29T08:02:07+00:00</lastmod>
    <changefreq>always</changefreq>
-   <priority>0.6400</priority>
+   <priority>0.8000</priority>
 </url>
 <url>
    <loc>https://076923.github.io/posts/C-opencv-21/</loc>
-   <lastmod>2021-08-28T09:39:54+00:00</lastmod>
+   <lastmod>2021-08-29T08:02:07+00:00</lastmod>
    <changefreq>always</changefreq>
-   <priority>0.6400</priority>
+   <priority>0.8000</priority>
 </url>
 <url>
    <loc>https://076923.github.io/posts/C-opencv-20/</loc>
-   <lastmod>2021-08-28T09:39:54+00:00</lastmod>
+   <lastmod>2021-08-29T08:02:07+00:00</lastmod>
    <changefreq>always</changefreq>
-   <priority>0.6400</priority>
+   <priority>0.8000</priority>
 </url>
 <url>
    <loc>https://076923.github.io/posts/C-opencv-19/</loc>
-   <lastmod>2021-08-28T09:39:54+00:00</lastmod>
+   <lastmod>2021-08-29T08:02:07+00:00</lastmod>
    <changefreq>always</changefreq>
-   <priority>0.6400</priority>
+   <priority>0.8000</priority>
 </url>
 <url>
    <loc>https://076923.github.io/posts/C-opencv-18/</loc>
-   <lastmod>2021-08-28T09:39:54+00:00</lastmod>
+   <lastmod>2021-08-29T08:02:07+00:00</lastmod>
    <changefreq>always</changefreq>
-   <priority>0.6400</priority>
+   <priority>0.8000</priority>
 </url>
 <url>
    <loc>https://076923.github.io/posts/C-opencv-17/</loc>
-   <lastmod>2021-08-28T09:39:54+00:00</lastmod>
+   <lastmod>2021-08-29T08:02:07+00:00</lastmod>
    <changefreq>always</changefreq>
-   <priority>0.6400</priority>
+   <priority>0.8000</priority>
 </url>
 <url>
    <loc>https://076923.github.io/posts/C-opencv-16/</loc>
-   <lastmod>2021-08-28T09:39:54+00:00</lastmod>
+   <lastmod>2021-08-29T08:02:07+00:00</lastmod>
    <changefreq>always</changefreq>
-   <priority>0.6400</priority>
+   <priority>0.8000</priority>
 </url>
 <url>
    <loc>https://076923.github.io/posts/C-opencv-15/</loc>
-   <lastmod>2021-08-28T09:39:54+00:00</lastmod>
+   <lastmod>2021-08-29T08:02:07+00:00</lastmod>
    <changefreq>always</changefreq>
-   <priority>0.6400</priority>
+   <priority>0.8000</priority>
 </url>
 <url>
    <loc>https://076923.github.io/posts/C-opencv-14/</loc>
-   <lastmod>2021-08-28T09:39:54+00:00</lastmod>
+   <lastmod>2021-08-29T08:02:07+00:00</lastmod>
    <changefreq>always</changefreq>
-   <priority>0.6400</priority>
+   <priority>0.8000</priority>
 </url>
 <url>
    <loc>https://076923.github.io/posts/C-opencv-13/</loc>
-   <lastmod>2021-08-28T09:39:54+00:00</lastmod>
+   <lastmod>2021-08-29T08:02:07+00:00</lastmod>
    <changefreq>always</changefreq>
-   <priority>0.6400</priority>
+   <priority>0.8000</priority>
 </url>
 <url>
    <loc>https://076923.github.io/posts/C-opencv-12/</loc>
-   <lastmod>2021-08-28T09:39:54+00:00</lastmod>
+   <lastmod>2021-08-29T08:02:07+00:00</lastmod>
    <changefreq>always</changefreq>
-   <priority>0.6400</priority>
+   <priority>0.8000</priority>
 </url>
 <url>
    <loc>https://076923.github.io/posts/C-opencv-11/</loc>
-   <lastmod>2021-08-28T09:39:54+00:00</lastmod>
+   <lastmod>2021-08-29T08:02:07+00:00</lastmod>
    <changefreq>always</changefreq>
-   <priority>0.6400</priority>
+   <priority>0.8000</priority>
 </url>
 <url>
    <loc>https://076923.github.io/posts/C-opencv-10/</loc>
-   <lastmod>2021-08-28T09:39:54+00:00</lastmod>
+   <lastmod>2021-08-29T08:02:07+00:00</lastmod>
    <changefreq>always</changefreq>
-   <priority>0.6400</priority>
+   <priority>0.8000</priority>
 </url>
 <url>
    <loc>https://076923.github.io/posts/C-opencv-9/</loc>
-   <lastmod>2021-08-28T09:39:54+00:00</lastmod>
+   <lastmod>2021-08-29T08:02:07+00:00</lastmod>
    <changefreq>always</changefreq>
-   <priority>0.6400</priority>
+   <priority>0.8000</priority>
 </url>
 <url>
    <loc>https://076923.github.io/posts/C-opencv-8/</loc>
-   <lastmod>2021-08-28T09:39:54+00:00</lastmod>
+   <lastmod>2021-08-29T08:02:07+00:00</lastmod>
    <changefreq>always</changefreq>
-   <priority>0.6400</priority>
+   <priority>0.8000</priority>
 </url>
 <url>
    <loc>https://076923.github.io/posts/C-opencv-7/</loc>
-   <lastmod>2021-08-28T09:39:54+00:00</lastmod>
+   <lastmod>2021-08-29T08:02:07+00:00</lastmod>
    <changefreq>always</changefreq>
-   <priority>0.6400</priority>
+   <priority>0.8000</priority>
 </url>
 <url>
    <loc>https://076923.github.io/posts/C-opencv-6/</loc>
-   <lastmod>2021-08-28T09:39:54+00:00</lastmod>
+   <lastmod>2021-08-29T08:02:07+00:00</lastmod>
    <changefreq>always</changefreq>
-   <priority>0.6400</priority>
+   <priority>0.8000</priority>
 </url>
 <url>
    <loc>https://076923.github.io/posts/C-opencv-5/</loc>
-   <lastmod>2021-08-28T09:39:54+00:00</lastmod>
+   <lastmod>2021-08-29T08:02:07+00:00</lastmod>
    <changefreq>always</changefreq>
-   <priority>0.6400</priority>
+   <priority>0.8000</priority>
 </url>
 <url>
    <loc>https://076923.github.io/posts/C-opencv-4/</loc>
-   <lastmod>2021-08-28T09:39:54+00:00</lastmod>
+   <lastmod>2021-08-29T08:02:07+00:00</lastmod>
    <changefreq>always</changefreq>
-   <priority>0.6400</priority>
+   <priority>0.8000</priority>
 </url>
 <url>
    <loc>https://076923.github.io/posts/C-opencv-3/</loc>
-   <lastmod>2021-08-28T09:39:54+00:00</lastmod>
+   <lastmod>2021-08-29T08:02:07+00:00</lastmod>
    <changefreq>always</changefreq>
-   <priority>0.6400</priority>
+   <priority>0.8000</priority>
 </url>
 <url>
    <loc>https://076923.github.io/posts/C-opencv-2/</loc>
-   <lastmod>2021-08-28T09:39:54+00:00</lastmod>
+   <lastmod>2021-08-29T08:02:07+00:00</lastmod>
    <changefreq>always</changefreq>
-   <priority>0.6400</priority>
+   <priority>0.8000</priority>
 </url>
 <url>
    <loc>https://076923.github.io/posts/C-opencv-1/</loc>
-   <lastmod>2021-08-28T09:39:54+00:00</lastmod>
+   <lastmod>2021-08-29T08:02:07+00:00</lastmod>
    <changefreq>always</changefreq>
-   <priority>0.6400</priority>
+   <priority>0.8000</priority>
 </url>
 <url>
    <loc>https://076923.github.io/posts/C-tesseract-3/</loc>
-   <lastmod>2021-08-28T09:39:54+00:00</lastmod>
+   <lastmod>2021-08-29T08:02:07+00:00</lastmod>
    <changefreq>always</changefreq>
-   <priority>0.6400</priority>
+   <priority>0.8000</priority>
 </url>
 <url>
    <loc>https://076923.github.io/posts/C-tesseract-2/</loc>
-   <lastmod>2021-08-28T09:39:54+00:00</lastmod>
+   <lastmod>2021-08-29T08:02:07+00:00</lastmod>
    <changefreq>always</changefreq>
-   <priority>0.6400</priority>
+   <priority>0.8000</priority>
 </url>
 <url>
    <loc>https://076923.github.io/posts/C-tesseract-1/</loc>
-   <lastmod>2021-08-28T09:39:54+00:00</lastmod>
+   <lastmod>2021-08-29T08:02:07+00:00</lastmod>
    <changefreq>always</changefreq>
-   <priority>0.6400</priority>
+   <priority>0.8000</priority>
 </url>
 <url>
    <loc>https://076923.github.io/posts/C-dynamixel-3/</loc>
-   <lastmod>2021-08-28T09:39:54+00:00</lastmod>
+   <lastmod>2021-08-29T08:02:07+00:00</lastmod>
    <changefreq>always</changefreq>
-   <priority>0.6400</priority>
+   <priority>0.8000</priority>
 </url>
 <url>
    <loc>https://076923.github.io/posts/C-dynamixel-2/</loc>
-   <lastmod>2021-08-28T09:39:54+00:00</lastmod>
+   <lastmod>2021-08-29T08:02:07+00:00</lastmod>
    <changefreq>always</changefreq>
-   <priority>0.6400</priority>
+   <priority>0.8000</priority>
 </url>
 <url>
    <loc>https://076923.github.io/posts/C-dynamixel-1/</loc>
-   <lastmod>2021-08-28T09:39:54+00:00</lastmod>
+   <lastmod>2021-08-29T08:02:07+00:00</lastmod>
    <changefreq>always</changefreq>
-   <priority>0.6400</priority>
+   <priority>0.8000</priority>
 </url>
 <url>
    <loc>https://076923.github.io/posts/Python-44/</loc>
-   <lastmod>2021-08-28T09:39:54+00:00</lastmod>
+   <lastmod>2021-08-29T08:02:07+00:00</lastmod>
    <changefreq>always</changefreq>
-   <priority>0.6400</priority>
+   <priority>0.8000</priority>
 </url>
 <url>
    <loc>https://076923.github.io/posts/Python-43/</loc>
-   <lastmod>2021-08-28T09:39:54+00:00</lastmod>
+   <lastmod>2021-08-29T08:02:07+00:00</lastmod>
    <changefreq>always</changefreq>
-   <priority>0.6400</priority>
+   <priority>0.8000</priority>
 </url>
 <url>
    <loc>https://076923.github.io/posts/Python-42/</loc>
-   <lastmod>2021-08-28T09:39:54+00:00</lastmod>
+   <lastmod>2021-08-29T08:02:07+00:00</lastmod>
    <changefreq>always</changefreq>
-   <priority>0.6400</priority>
+   <priority>0.8000</priority>
 </url>
 <url>
    <loc>https://076923.github.io/posts/Python-41/</loc>
-   <lastmod>2021-08-28T09:39:54+00:00</lastmod>
+   <lastmod>2021-08-29T08:02:07+00:00</lastmod>
    <changefreq>always</changefreq>
-   <priority>0.6400</priority>
+   <priority>0.8000</priority>
 </url>
 <url>
    <loc>https://076923.github.io/posts/Python-40/</loc>
-   <lastmod>2021-08-28T09:39:54+00:00</lastmod>
+   <lastmod>2021-08-29T08:02:07+00:00</lastmod>
    <changefreq>always</changefreq>
-   <priority>0.6400</priority>
+   <priority>0.8000</priority>
 </url>
 <url>
    <loc>https://076923.github.io/posts/Python-39/</loc>
-   <lastmod>2021-08-28T09:39:54+00:00</lastmod>
+   <lastmod>2021-08-29T08:02:07+00:00</lastmod>
    <changefreq>always</changefreq>
-   <priority>0.6400</priority>
+   <priority>0.8000</priority>
 </url>
 <url>
    <loc>https://076923.github.io/posts/Python-38/</loc>
-   <lastmod>2021-08-28T09:39:54+00:00</lastmod>
+   <lastmod>2021-08-29T08:02:07+00:00</lastmod>
    <changefreq>always</changefreq>
-   <priority>0.6400</priority>
+   <priority>0.8000</priority>
 </url>
 <url>
    <loc>https://076923.github.io/posts/Python-37/</loc>
-   <lastmod>2021-08-28T09:39:54+00:00</lastmod>
+   <lastmod>2021-08-29T08:02:07+00:00</lastmod>
    <changefreq>always</changefreq>
-   <priority>0.6400</priority>
+   <priority>0.8000</priority>
 </url>
 <url>
    <loc>https://076923.github.io/posts/Python-36/</loc>
-   <lastmod>2021-08-28T09:39:54+00:00</lastmod>
+   <lastmod>2021-08-29T08:02:07+00:00</lastmod>
    <changefreq>always</changefreq>
-   <priority>0.6400</priority>
+   <priority>0.8000</priority>
 </url>
 <url>
    <loc>https://076923.github.io/posts/Python-35/</loc>
-   <lastmod>2021-08-28T09:39:54+00:00</lastmod>
+   <lastmod>2021-08-29T08:02:07+00:00</lastmod>
    <changefreq>always</changefreq>
-   <priority>0.6400</priority>
+   <priority>0.8000</priority>
 </url>
 <url>
    <loc>https://076923.github.io/posts/Python-34/</loc>
-   <lastmod>2021-08-28T09:39:54+00:00</lastmod>
+   <lastmod>2021-08-29T08:02:07+00:00</lastmod>
    <changefreq>always</changefreq>
-   <priority>0.6400</priority>
+   <priority>0.8000</priority>
 </url>
 <url>
    <loc>https://076923.github.io/posts/Python-33/</loc>
-   <lastmod>2021-08-28T09:39:54+00:00</lastmod>
+   <lastmod>2021-08-29T08:02:07+00:00</lastmod>
    <changefreq>always</changefreq>
-   <priority>0.6400</priority>
+   <priority>0.8000</priority>
 </url>
 <url>
    <loc>https://076923.github.io/posts/Python-32/</loc>
-   <lastmod>2021-08-28T09:39:54+00:00</lastmod>
+   <lastmod>2021-08-29T08:02:07+00:00</lastmod>
    <changefreq>always</changefreq>
-   <priority>0.6400</priority>
+   <priority>0.8000</priority>
 </url>
 <url>
    <loc>https://076923.github.io/posts/Python-31/</loc>
-   <lastmod>2021-08-28T09:39:54+00:00</lastmod>
+   <lastmod>2021-08-29T08:02:07+00:00</lastmod>
    <changefreq>always</changefreq>
-   <priority>0.6400</priority>
+   <priority>0.8000</priority>
 </url>
 <url>
    <loc>https://076923.github.io/posts/Python-30/</loc>
-   <lastmod>2021-08-28T09:39:54+00:00</lastmod>
+   <lastmod>2021-08-29T08:02:07+00:00</lastmod>
    <changefreq>always</changefreq>
-   <priority>0.6400</priority>
+   <priority>0.8000</priority>
 </url>
 <url>
    <loc>https://076923.github.io/posts/Python-29/</loc>
-   <lastmod>2021-08-28T09:39:54+00:00</lastmod>
+   <lastmod>2021-08-29T08:02:07+00:00</lastmod>
    <changefreq>always</changefreq>
-   <priority>0.6400</priority>
+   <priority>0.8000</priority>
 </url>
 <url>
    <loc>https://076923.github.io/posts/Python-28/</loc>
-   <lastmod>2021-08-28T09:39:54+00:00</lastmod>
+   <lastmod>2021-08-29T08:02:07+00:00</lastmod>
    <changefreq>always</changefreq>
-   <priority>0.6400</priority>
+   <priority>0.8000</priority>
 </url>
 <url>
    <loc>https://076923.github.io/posts/Python-27/</loc>
-   <lastmod>2021-08-28T09:39:54+00:00</lastmod>
+   <lastmod>2021-08-29T08:02:07+00:00</lastmod>
    <changefreq>always</changefreq>
-   <priority>0.6400</priority>
+   <priority>0.8000</priority>
 </url>
 <url>
    <loc>https://076923.github.io/posts/Python-26/</loc>
-   <lastmod>2021-08-28T09:39:54+00:00</lastmod>
+   <lastmod>2021-08-29T08:02:07+00:00</lastmod>
    <changefreq>always</changefreq>
-   <priority>0.6400</priority>
+   <priority>0.8000</priority>
 </url>
 <url>
    <loc>https://076923.github.io/posts/Python-25/</loc>
-   <lastmod>2021-08-28T09:39:54+00:00</lastmod>
+   <lastmod>2021-08-29T08:02:07+00:00</lastmod>
    <changefreq>always</changefreq>
-   <priority>0.6400</priority>
+   <priority>0.8000</priority>
 </url>
 <url>
    <loc>https://076923.github.io/posts/Python-24/</loc>
-   <lastmod>2021-08-28T09:39:54+00:00</lastmod>
+   <lastmod>2021-08-29T08:02:07+00:00</lastmod>
    <changefreq>always</changefreq>
-   <priority>0.6400</priority>
+   <priority>0.8000</priority>
 </url>
 <url>
    <loc>https://076923.github.io/posts/Python-23/</loc>
-   <lastmod>2021-08-28T09:39:54+00:00</lastmod>
+   <lastmod>2021-08-29T08:02:07+00:00</lastmod>
    <changefreq>always</changefreq>
-   <priority>0.6400</priority>
+   <priority>0.8000</priority>
 </url>
 <url>
    <loc>https://076923.github.io/posts/Python-22/</loc>
-   <lastmod>2021-08-28T09:39:54+00:00</lastmod>
+   <lastmod>2021-08-29T08:02:07+00:00</lastmod>
    <changefreq>always</changefreq>
-   <priority>0.6400</priority>
+   <priority>0.8000</priority>
 </url>
 <url>
    <loc>https://076923.github.io/posts/Python-21/</loc>
-   <lastmod>2021-08-28T09:39:54+00:00</lastmod>
+   <lastmod>2021-08-29T08:02:07+00:00</lastmod>
    <changefreq>always</changefreq>
-   <priority>0.6400</priority>
+   <priority>0.8000</priority>
 </url>
 <url>
    <loc>https://076923.github.io/posts/Python-20/</loc>
-   <lastmod>2021-08-28T09:39:54+00:00</lastmod>
+   <lastmod>2021-08-29T08:02:07+00:00</lastmod>
    <changefreq>always</changefreq>
-   <priority>0.6400</priority>
+   <priority>0.8000</priority>
 </url>
 <url>
    <loc>https://076923.github.io/posts/Python-19/</loc>
-   <lastmod>2021-08-28T09:39:54+00:00</lastmod>
+   <lastmod>2021-08-29T08:02:07+00:00</lastmod>
    <changefreq>always</changefreq>
-   <priority>0.6400</priority>
+   <priority>0.8000</priority>
 </url>
 <url>
    <loc>https://076923.github.io/posts/Python-18/</loc>
-   <lastmod>2021-08-28T09:39:54+00:00</lastmod>
+   <lastmod>2021-08-29T08:02:07+00:00</lastmod>
    <changefreq>always</changefreq>
-   <priority>0.6400</priority>
+   <priority>0.8000</priority>
 </url>
 <url>
    <loc>https://076923.github.io/posts/Python-17/</loc>
-   <lastmod>2021-08-28T09:39:54+00:00</lastmod>
+   <lastmod>2021-08-29T08:02:07+00:00</lastmod>
    <changefreq>always</changefreq>
-   <priority>0.6400</priority>
+   <priority>0.8000</priority>
 </url>
 <url>
    <loc>https://076923.github.io/posts/Python-16/</loc>
-   <lastmod>2021-08-28T09:39:54+00:00</lastmod>
+   <lastmod>2021-08-29T08:02:07+00:00</lastmod>
    <changefreq>always</changefreq>
-   <priority>0.6400</priority>
+   <priority>0.8000</priority>
 </url>
 <url>
    <loc>https://076923.github.io/posts/Python-15/</loc>
-   <lastmod>2021-08-28T09:39:54+00:00</lastmod>
+   <lastmod>2021-08-29T08:02:07+00:00</lastmod>
    <changefreq>always</changefreq>
-   <priority>0.6400</priority>
+   <priority>0.8000</priority>
 </url>
 <url>
    <loc>https://076923.github.io/posts/Python-14/</loc>
-   <lastmod>2021-08-28T09:39:54+00:00</lastmod>
+   <lastmod>2021-08-29T08:02:07+00:00</lastmod>
    <changefreq>always</changefreq>
-   <priority>0.6400</priority>
+   <priority>0.8000</priority>
 </url>
 <url>
    <loc>https://076923.github.io/posts/Python-13/</loc>
-   <lastmod>2021-08-28T09:39:54+00:00</lastmod>
+   <lastmod>2021-08-29T08:02:07+00:00</lastmod>
    <changefreq>always</changefreq>
-   <priority>0.6400</priority>
+   <priority>0.8000</priority>
 </url>
 <url>
    <loc>https://076923.github.io/posts/Python-12/</loc>
-   <lastmod>2021-08-28T09:39:54+00:00</lastmod>
+   <lastmod>2021-08-29T08:02:07+00:00</lastmod>
    <changefreq>always</changefreq>
-   <priority>0.6400</priority>
+   <priority>0.8000</priority>
 </url>
 <url>
    <loc>https://076923.github.io/posts/Python-11/</loc>
-   <lastmod>2021-08-28T09:39:54+00:00</lastmod>
+   <lastmod>2021-08-29T08:02:07+00:00</lastmod>
    <changefreq>always</changefreq>
-   <priority>0.6400</priority>
+   <priority>0.8000</priority>
 </url>
 <url>
    <loc>https://076923.github.io/posts/Python-10/</loc>
-   <lastmod>2021-08-28T09:39:54+00:00</lastmod>
+   <lastmod>2021-08-29T08:02:07+00:00</lastmod>
    <changefreq>always</changefreq>
-   <priority>0.6400</priority>
+   <priority>0.8000</priority>
 </url>
 <url>
    <loc>https://076923.github.io/posts/Python-9/</loc>
-   <lastmod>2021-08-28T09:39:54+00:00</lastmod>
+   <lastmod>2021-08-29T08:02:07+00:00</lastmod>
    <changefreq>always</changefreq>
-   <priority>0.6400</priority>
+   <priority>0.8000</priority>
 </url>
 <url>
    <loc>https://076923.github.io/posts/Python-8/</loc>
-   <lastmod>2021-08-28T09:39:54+00:00</lastmod>
+   <lastmod>2021-08-29T08:02:07+00:00</lastmod>
    <changefreq>always</changefreq>
-   <priority>0.6400</priority>
+   <priority>0.8000</priority>
 </url>
 <url>
    <loc>https://076923.github.io/posts/Python-7/</loc>
-   <lastmod>2021-08-28T09:39:54+00:00</lastmod>
+   <lastmod>2021-08-29T08:02:07+00:00</lastmod>
    <changefreq>always</changefreq>
-   <priority>0.6400</priority>
+   <priority>0.8000</priority>
 </url>
 <url>
    <loc>https://076923.github.io/posts/Python-6/</loc>
-   <lastmod>2021-08-28T09:39:54+00:00</lastmod>
+   <lastmod>2021-08-29T08:02:07+00:00</lastmod>
    <changefreq>always</changefreq>
-   <priority>0.6400</priority>
+   <priority>0.8000</priority>
 </url>
 <url>
    <loc>https://076923.github.io/posts/Python-5/</loc>
-   <lastmod>2021-08-28T09:39:54+00:00</lastmod>
+   <lastmod>2021-08-29T08:02:07+00:00</lastmod>
    <changefreq>always</changefreq>
-   <priority>0.6400</priority>
+   <priority>0.8000</priority>
 </url>
 <url>
    <loc>https://076923.github.io/posts/Python-4/</loc>
-   <lastmod>2021-08-28T09:39:54+00:00</lastmod>
+   <lastmod>2021-08-29T08:02:07+00:00</lastmod>
    <changefreq>always</changefreq>
-   <priority>0.6400</priority>
+   <priority>0.8000</priority>
 </url>
 <url>
    <loc>https://076923.github.io/posts/Python-3/</loc>
-   <lastmod>2021-08-28T09:39:54+00:00</lastmod>
+   <lastmod>2021-08-29T08:02:07+00:00</lastmod>
    <changefreq>always</changefreq>
-   <priority>0.6400</priority>
+   <priority>0.8000</priority>
 </url>
 <url>
    <loc>https://076923.github.io/posts/Python-2/</loc>
-   <lastmod>2021-08-28T09:39:54+00:00</lastmod>
+   <lastmod>2021-08-29T08:02:07+00:00</lastmod>
    <changefreq>always</changefreq>
-   <priority>0.6400</priority>
+   <priority>0.8000</priority>
 </url>
 <url>
    <loc>https://076923.github.io/posts/Python-1/</loc>
-   <lastmod>2021-08-28T09:39:54+00:00</lastmod>
+   <lastmod>2021-08-29T08:02:07+00:00</lastmod>
    <changefreq>always</changefreq>
-   <priority>0.6400</priority>
+   <priority>0.8000</priority>
 </url>
 <url>
    <loc>https://076923.github.io/exercise/C-opencv-ball_tracking/</loc>
-   <lastmod>2021-08-28T09:39:54+00:00</lastmod>
+   <lastmod>2021-08-29T08:02:07+00:00</lastmod>
    <changefreq>always</changefreq>
-   <priority>0.6400</priority>
+   <priority>0.8000</priority>
 </url>
 <url>
    <loc>https://076923.github.io/exercise/C-opencv-color_circle_detection/</loc>
-   <lastmod>2021-08-28T09:39:54+00:00</lastmod>
+   <lastmod>2021-08-29T08:02:07+00:00</lastmod>
    <changefreq>always</changefreq>
-   <priority>0.6400</priority>
+   <priority>0.8000</priority>
 </url>
 <url>
    <loc>https://076923.github.io/exercise/C-opencv-document_recognition/</loc>
-   <lastmod>2021-08-28T09:39:54+00:00</lastmod>
+   <lastmod>2021-08-29T08:02:07+00:00</lastmod>
    <changefreq>always</changefreq>
-   <priority>0.6400</priority>
+   <priority>0.8000</priority>
 </url>
 <url>
    <loc>https://076923.github.io/posts/Python-tkinter-33/</loc>
-   <lastmod>2021-08-28T09:39:54+00:00</lastmod>
+   <lastmod>2021-08-29T08:02:07+00:00</lastmod>
    <changefreq>always</changefreq>
-   <priority>0.6400</priority>
+   <priority>0.8000</priority>
 </url>
 <url>
    <loc>https://076923.github.io/posts/Python-tkinter-32/</loc>
-   <lastmod>2021-08-28T09:39:54+00:00</lastmod>
+   <lastmod>2021-08-29T08:02:07+00:00</lastmod>
    <changefreq>always</changefreq>
-   <priority>0.6400</priority>
+   <priority>0.8000</priority>
 </url>
 <url>
    <loc>https://076923.github.io/posts/Python-tkinter-31/</loc>
-   <lastmod>2021-08-28T09:39:54+00:00</lastmod>
+   <lastmod>2021-08-29T08:02:07+00:00</lastmod>
    <changefreq>always</changefreq>
-   <priority>0.6400</priority>
+   <priority>0.8000</priority>
 </url>
 <url>
    <loc>https://076923.github.io/posts/Python-tkinter-30/</loc>
-   <lastmod>2021-08-28T09:39:54+00:00</lastmod>
+   <lastmod>2021-08-29T08:02:07+00:00</lastmod>
    <changefreq>always</changefreq>
-   <priority>0.6400</priority>
+   <priority>0.8000</priority>
 </url>
 <url>
    <loc>https://076923.github.io/posts/Python-tkinter-29/</loc>
-   <lastmod>2021-08-28T09:39:54+00:00</lastmod>
+   <lastmod>2021-08-29T08:02:07+00:00</lastmod>
    <changefreq>always</changefreq>
-   <priority>0.6400</priority>
+   <priority>0.8000</priority>
 </url>
 <url>
    <loc>https://076923.github.io/posts/Python-tkinter-28/</loc>
-   <lastmod>2021-08-28T09:39:54+00:00</lastmod>
+   <lastmod>2021-08-29T08:02:07+00:00</lastmod>
    <changefreq>always</changefreq>
-   <priority>0.6400</priority>
+   <priority>0.8000</priority>
 </url>
 <url>
    <loc>https://076923.github.io/posts/Python-tkinter-27/</loc>
-   <lastmod>2021-08-28T09:39:54+00:00</lastmod>
+   <lastmod>2021-08-29T08:02:07+00:00</lastmod>
    <changefreq>always</changefreq>
-   <priority>0.6400</priority>
+   <priority>0.8000</priority>
 </url>
 <url>
    <loc>https://076923.github.io/posts/Python-tkinter-26/</loc>
-   <lastmod>2021-08-28T09:39:54+00:00</lastmod>
+   <lastmod>2021-08-29T08:02:07+00:00</lastmod>
    <changefreq>always</changefreq>
-   <priority>0.6400</priority>
+   <priority>0.8000</priority>
 </url>
 <url>
    <loc>https://076923.github.io/posts/Python-tkinter-25/</loc>
-   <lastmod>2021-08-28T09:39:54+00:00</lastmod>
+   <lastmod>2021-08-29T08:02:07+00:00</lastmod>
    <changefreq>always</changefreq>
-   <priority>0.6400</priority>
+   <priority>0.8000</priority>
 </url>
 <url>
    <loc>https://076923.github.io/posts/Python-tkinter-24/</loc>
-   <lastmod>2021-08-28T09:39:54+00:00</lastmod>
+   <lastmod>2021-08-29T08:02:07+00:00</lastmod>
    <changefreq>always</changefreq>
-   <priority>0.6400</priority>
+   <priority>0.8000</priority>
 </url>
 <url>
    <loc>https://076923.github.io/posts/Python-tkinter-23/</loc>
-   <lastmod>2021-08-28T09:39:54+00:00</lastmod>
+   <lastmod>2021-08-29T08:02:07+00:00</lastmod>
    <changefreq>always</changefreq>
-   <priority>0.6400</priority>
+   <priority>0.8000</priority>
 </url>
 <url>
    <loc>https://076923.github.io/posts/Python-tkinter-22/</loc>
-   <lastmod>2021-08-28T09:39:54+00:00</lastmod>
+   <lastmod>2021-08-29T08:02:07+00:00</lastmod>
    <changefreq>always</changefreq>
-   <priority>0.6400</priority>
+   <priority>0.8000</priority>
 </url>
 <url>
    <loc>https://076923.github.io/posts/Python-tkinter-21/</loc>
-   <lastmod>2021-08-28T09:39:54+00:00</lastmod>
+   <lastmod>2021-08-29T08:02:07+00:00</lastmod>
    <changefreq>always</changefreq>
-   <priority>0.6400</priority>
+   <priority>0.8000</priority>
 </url>
 <url>
    <loc>https://076923.github.io/posts/Python-tkinter-20/</loc>
-   <lastmod>2021-08-28T09:39:54+00:00</lastmod>
+   <lastmod>2021-08-29T08:02:07+00:00</lastmod>
    <changefreq>always</changefreq>
-   <priority>0.6400</priority>
+   <priority>0.8000</priority>
 </url>
 <url>
    <loc>https://076923.github.io/posts/Python-tkinter-19/</loc>
-   <lastmod>2021-08-28T09:39:54+00:00</lastmod>
+   <lastmod>2021-08-29T08:02:07+00:00</lastmod>
    <changefreq>always</changefreq>
-   <priority>0.6400</priority>
+   <priority>0.8000</priority>
 </url>
 <url>
    <loc>https://076923.github.io/posts/Python-tkinter-18/</loc>
-   <lastmod>2021-08-28T09:39:54+00:00</lastmod>
+   <lastmod>2021-08-29T08:02:07+00:00</lastmod>
    <changefreq>always</changefreq>
-   <priority>0.6400</priority>
+   <priority>0.8000</priority>
 </url>
 <url>
    <loc>https://076923.github.io/posts/Python-tkinter-17/</loc>
-   <lastmod>2021-08-28T09:39:54+00:00</lastmod>
+   <lastmod>2021-08-29T08:02:07+00:00</lastmod>
    <changefreq>always</changefreq>
-   <priority>0.6400</priority>
+   <priority>0.8000</priority>
 </url>
 <url>
    <loc>https://076923.github.io/posts/Python-tkinter-16/</loc>
-   <lastmod>2021-08-28T09:39:54+00:00</lastmod>
+   <lastmod>2021-08-29T08:02:07+00:00</lastmod>
    <changefreq>always</changefreq>
-   <priority>0.6400</priority>
+   <priority>0.8000</priority>
 </url>
 <url>
    <loc>https://076923.github.io/posts/Python-tkinter-15/</loc>
-   <lastmod>2021-08-28T09:39:54+00:00</lastmod>
+   <lastmod>2021-08-29T08:02:07+00:00</lastmod>
    <changefreq>always</changefreq>
-   <priority>0.6400</priority>
+   <priority>0.8000</priority>
 </url>
 <url>
    <loc>https://076923.github.io/posts/Python-tkinter-14/</loc>
-   <lastmod>2021-08-28T09:39:54+00:00</lastmod>
+   <lastmod>2021-08-29T08:02:07+00:00</lastmod>
    <changefreq>always</changefreq>
-   <priority>0.6400</priority>
+   <priority>0.8000</priority>
 </url>
 <url>
    <loc>https://076923.github.io/posts/Python-tkinter-13/</loc>
-   <lastmod>2021-08-28T09:39:54+00:00</lastmod>
+   <lastmod>2021-08-29T08:02:07+00:00</lastmod>
    <changefreq>always</changefreq>
-   <priority>0.6400</priority>
+   <priority>0.8000</priority>
 </url>
 <url>
    <loc>https://076923.github.io/posts/Python-tkinter-12/</loc>
-   <lastmod>2021-08-28T09:39:54+00:00</lastmod>
+   <lastmod>2021-08-29T08:02:07+00:00</lastmod>
    <changefreq>always</changefreq>
-   <priority>0.6400</priority>
+   <priority>0.8000</priority>
 </url>
 <url>
    <loc>https://076923.github.io/posts/Python-tkinter-11/</loc>
-   <lastmod>2021-08-28T09:39:54+00:00</lastmod>
+   <lastmod>2021-08-29T08:02:07+00:00</lastmod>
    <changefreq>always</changefreq>
-   <priority>0.6400</priority>
+   <priority>0.8000</priority>
 </url>
 <url>
    <loc>https://076923.github.io/posts/Python-tkinter-10/</loc>
-   <lastmod>2021-08-28T09:39:54+00:00</lastmod>
+   <lastmod>2021-08-29T08:02:07+00:00</lastmod>
    <changefreq>always</changefreq>
-   <priority>0.6400</priority>
+   <priority>0.8000</priority>
 </url>
 <url>
    <loc>https://076923.github.io/posts/Python-tkinter-9/</loc>
-   <lastmod>2021-08-28T09:39:54+00:00</lastmod>
+   <lastmod>2021-08-29T08:02:07+00:00</lastmod>
    <changefreq>always</changefreq>
-   <priority>0.6400</priority>
+   <priority>0.8000</priority>
 </url>
 <url>
    <loc>https://076923.github.io/posts/Python-tkinter-8/</loc>
-   <lastmod>2021-08-28T09:39:54+00:00</lastmod>
+   <lastmod>2021-08-29T08:02:07+00:00</lastmod>
    <changefreq>always</changefreq>
-   <priority>0.6400</priority>
+   <priority>0.8000</priority>
 </url>
 <url>
    <loc>https://076923.github.io/posts/Python-tkinter-7/</loc>
-   <lastmod>2021-08-28T09:39:54+00:00</lastmod>
+   <lastmod>2021-08-29T08:02:07+00:00</lastmod>
    <changefreq>always</changefreq>
-   <priority>0.6400</priority>
+   <priority>0.8000</priority>
 </url>
 <url>
    <loc>https://076923.github.io/posts/Python-tkinter-6/</loc>
-   <lastmod>2021-08-28T09:39:54+00:00</lastmod>
+   <lastmod>2021-08-29T08:02:07+00:00</lastmod>
    <changefreq>always</changefreq>
-   <priority>0.6400</priority>
+   <priority>0.8000</priority>
 </url>
 <url>
    <loc>https://076923.github.io/posts/Python-tkinter-5/</loc>
-   <lastmod>2021-08-28T09:39:54+00:00</lastmod>
+   <lastmod>2021-08-29T08:02:07+00:00</lastmod>
    <changefreq>always</changefreq>
-   <priority>0.6400</priority>
+   <priority>0.8000</priority>
 </url>
 <url>
    <loc>https://076923.github.io/posts/Python-tkinter-4/</loc>
-   <lastmod>2021-08-28T09:39:54+00:00</lastmod>
+   <lastmod>2021-08-29T08:02:07+00:00</lastmod>
    <changefreq>always</changefreq>
-   <priority>0.6400</priority>
+   <priority>0.8000</priority>
 </url>
 <url>
    <loc>https://076923.github.io/posts/Python-tkinter-3/</loc>
-   <lastmod>2021-08-28T09:39:54+00:00</lastmod>
+   <lastmod>2021-08-29T08:02:07+00:00</lastmod>
    <changefreq>always</changefreq>
-   <priority>0.6400</priority>
+   <priority>0.8000</priority>
 </url>
 <url>
    <loc>https://076923.github.io/posts/Python-tkinter-2/</loc>
-   <lastmod>2021-08-28T09:39:54+00:00</lastmod>
+   <lastmod>2021-08-29T08:02:07+00:00</lastmod>
    <changefreq>always</changefreq>
-   <priority>0.6400</priority>
+   <priority>0.8000</priority>
 </url>
 <url>
    <loc>https://076923.github.io/posts/Python-tkinter-1/</loc>
-   <lastmod>2021-08-28T09:39:54+00:00</lastmod>
+   <lastmod>2021-08-29T08:02:07+00:00</lastmod>
    <changefreq>always</changefreq>
-   <priority>0.6400</priority>
+   <priority>0.8000</priority>
 </url>
 <url>
    <loc>https://076923.github.io/posts/Python-numpy-17/</loc>
-   <lastmod>2021-08-28T09:39:54+00:00</lastmod>
+   <lastmod>2021-08-29T08:02:07+00:00</lastmod>
    <changefreq>always</changefreq>
-   <priority>0.6400</priority>
+   <priority>0.8000</priority>
 </url>
 <url>
    <loc>https://076923.github.io/posts/Python-numpy-16/</loc>
-   <lastmod>2021-08-28T09:39:54+00:00</lastmod>
+   <lastmod>2021-08-29T08:02:07+00:00</lastmod>
    <changefreq>always</changefreq>
-   <priority>0.6400</priority>
+   <priority>0.8000</priority>
 </url>
 <url>
    <loc>https://076923.github.io/posts/Python-numpy-15/</loc>
-   <lastmod>2021-08-28T09:39:54+00:00</lastmod>
+   <lastmod>2021-08-29T08:02:07+00:00</lastmod>
    <changefreq>always</changefreq>
-   <priority>0.6400</priority>
+   <priority>0.8000</priority>
 </url>
 <url>
    <loc>https://076923.github.io/posts/Python-numpy-14/</loc>
-   <lastmod>2021-08-28T09:39:54+00:00</lastmod>
+   <lastmod>2021-08-29T08:02:07+00:00</lastmod>
    <changefreq>always</changefreq>
-   <priority>0.6400</priority>
+   <priority>0.8000</priority>
 </url>
 <url>
    <loc>https://076923.github.io/posts/Python-numpy-13/</loc>
-   <lastmod>2021-08-28T09:39:54+00:00</lastmod>
+   <lastmod>2021-08-29T08:02:07+00:00</lastmod>
    <changefreq>always</changefreq>
-   <priority>0.6400</priority>
+   <priority>0.8000</priority>
 </url>
 <url>
    <loc>https://076923.github.io/posts/Python-numpy-12/</loc>
-   <lastmod>2021-08-28T09:39:54+00:00</lastmod>
+   <lastmod>2021-08-29T08:02:07+00:00</lastmod>
    <changefreq>always</changefreq>
-   <priority>0.6400</priority>
+   <priority>0.8000</priority>
 </url>
 <url>
    <loc>https://076923.github.io/posts/Python-numpy-11/</loc>
-   <lastmod>2021-08-28T09:39:54+00:00</lastmod>
+   <lastmod>2021-08-29T08:02:07+00:00</lastmod>
    <changefreq>always</changefreq>
-   <priority>0.6400</priority>
+   <priority>0.8000</priority>
 </url>
 <url>
    <loc>https://076923.github.io/posts/Python-numpy-10/</loc>
-   <lastmod>2021-08-28T09:39:54+00:00</lastmod>
+   <lastmod>2021-08-29T08:02:07+00:00</lastmod>
    <changefreq>always</changefreq>
-   <priority>0.6400</priority>
+   <priority>0.8000</priority>
 </url>
 <url>
    <loc>https://076923.github.io/posts/Python-numpy-9/</loc>
-   <lastmod>2021-08-28T09:39:54+00:00</lastmod>
+   <lastmod>2021-08-29T08:02:07+00:00</lastmod>
    <changefreq>always</changefreq>
-   <priority>0.6400</priority>
+   <priority>0.8000</priority>
 </url>
 <url>
    <loc>https://076923.github.io/posts/Python-numpy-8/</loc>
-   <lastmod>2021-08-28T09:39:54+00:00</lastmod>
+   <lastmod>2021-08-29T08:02:07+00:00</lastmod>
    <changefreq>always</changefreq>
-   <priority>0.6400</priority>
+   <priority>0.8000</priority>
 </url>
 <url>
    <loc>https://076923.github.io/posts/Python-numpy-7/</loc>
-   <lastmod>2021-08-28T09:39:54+00:00</lastmod>
+   <lastmod>2021-08-29T08:02:07+00:00</lastmod>
    <changefreq>always</changefreq>
-   <priority>0.6400</priority>
+   <priority>0.8000</priority>
 </url>
 <url>
    <loc>https://076923.github.io/posts/Python-numpy-6/</loc>
-   <lastmod>2021-08-28T09:39:54+00:00</lastmod>
+   <lastmod>2021-08-29T08:02:07+00:00</lastmod>
    <changefreq>always</changefreq>
-   <priority>0.6400</priority>
+   <priority>0.8000</priority>
 </url>
 <url>
    <loc>https://076923.github.io/posts/Python-numpy-5/</loc>
-   <lastmod>2021-08-28T09:39:54+00:00</lastmod>
+   <lastmod>2021-08-29T08:02:07+00:00</lastmod>
    <changefreq>always</changefreq>
-   <priority>0.6400</priority>
+   <priority>0.8000</priority>
 </url>
 <url>
    <loc>https://076923.github.io/posts/Python-numpy-4/</loc>
-   <lastmod>2021-08-28T09:39:54+00:00</lastmod>
+   <lastmod>2021-08-29T08:02:07+00:00</lastmod>
    <changefreq>always</changefreq>
-   <priority>0.6400</priority>
+   <priority>0.8000</priority>
 </url>
 <url>
    <loc>https://076923.github.io/posts/Python-numpy-3/</loc>
-   <lastmod>2021-08-28T09:39:54+00:00</lastmod>
+   <lastmod>2021-08-29T08:02:07+00:00</lastmod>
    <changefreq>always</changefreq>
-   <priority>0.6400</priority>
+   <priority>0.8000</priority>
 </url>
 <url>
    <loc>https://076923.github.io/posts/Python-numpy-2/</loc>
-   <lastmod>2021-08-28T09:39:54+00:00</lastmod>
+   <lastmod>2021-08-29T08:02:07+00:00</lastmod>
    <changefreq>always</changefreq>
-   <priority>0.6400</priority>
+   <priority>0.8000</priority>
 </url>
 <url>
    <loc>https://076923.github.io/posts/Python-numpy-1/</loc>
-   <lastmod>2021-08-28T09:39:54+00:00</lastmod>
+   <lastmod>2021-08-29T08:02:07+00:00</lastmod>
    <changefreq>always</changefreq>
-   <priority>0.6400</priority>
+   <priority>0.8000</priority>
 </url>
 <url>
    <loc>https://076923.github.io/posts/Python-opencv-38/</loc>
-   <lastmod>2021-08-28T09:39:54+00:00</lastmod>
+   <lastmod>2021-08-29T08:02:07+00:00</lastmod>
    <changefreq>always</changefreq>
-   <priority>0.6400</priority>
+   <priority>0.8000</priority>
 </url>
 <url>
    <loc>https://076923.github.io/posts/Python-opencv-37/</loc>
-   <lastmod>2021-08-28T09:39:54+00:00</lastmod>
+   <lastmod>2021-08-29T08:02:07+00:00</lastmod>
    <changefreq>always</changefreq>
-   <priority>0.6400</priority>
+   <priority>0.8000</priority>
 </url>
 <url>
    <loc>https://076923.github.io/posts/Python-opencv-36/</loc>
-   <lastmod>2021-08-28T09:39:54+00:00</lastmod>
+   <lastmod>2021-08-29T08:02:07+00:00</lastmod>
    <changefreq>always</changefreq>
-   <priority>0.6400</priority>
+   <priority>0.8000</priority>
 </url>
 <url>
    <loc>https://076923.github.io/posts/Python-opencv-35/</loc>
-   <lastmod>2021-08-28T09:39:54+00:00</lastmod>
+   <lastmod>2021-08-29T08:02:07+00:00</lastmod>
    <changefreq>always</changefreq>
-   <priority>0.6400</priority>
+   <priority>0.8000</priority>
 </url>
 <url>
    <loc>https://076923.github.io/posts/Python-opencv-34/</loc>
-   <lastmod>2021-08-28T09:39:54+00:00</lastmod>
+   <lastmod>2021-08-29T08:02:07+00:00</lastmod>
    <changefreq>always</changefreq>
-   <priority>0.6400</priority>
+   <priority>0.8000</priority>
 </url>
 <url>
    <loc>https://076923.github.io/posts/Python-opencv-33/</loc>
-   <lastmod>2021-08-28T09:39:54+00:00</lastmod>
+   <lastmod>2021-08-29T08:02:07+00:00</lastmod>
    <changefreq>always</changefreq>
-   <priority>0.6400</priority>
+   <priority>0.8000</priority>
 </url>
 <url>
    <loc>https://076923.github.io/posts/Python-opencv-32/</loc>
-   <lastmod>2021-08-28T09:39:54+00:00</lastmod>
+   <lastmod>2021-08-29T08:02:07+00:00</lastmod>
    <changefreq>always</changefreq>
-   <priority>0.6400</priority>
+   <priority>0.8000</priority>
 </url>
 <url>
    <loc>https://076923.github.io/posts/Python-opencv-31/</loc>
-   <lastmod>2021-08-28T09:39:54+00:00</lastmod>
+   <lastmod>2021-08-29T08:02:07+00:00</lastmod>
    <changefreq>always</changefreq>
-   <priority>0.6400</priority>
+   <priority>0.8000</priority>
 </url>
 <url>
    <loc>https://076923.github.io/posts/Python-opencv-30/</loc>
-   <lastmod>2021-08-28T09:39:54+00:00</lastmod>
+   <lastmod>2021-08-29T08:02:07+00:00</lastmod>
    <changefreq>always</changefreq>
-   <priority>0.6400</priority>
+   <priority>0.8000</priority>
 </url>
 <url>
    <loc>https://076923.github.io/posts/Python-opencv-29/</loc>
-   <lastmod>2021-08-28T09:39:54+00:00</lastmod>
+   <lastmod>2021-08-29T08:02:07+00:00</lastmod>
    <changefreq>always</changefreq>
-   <priority>0.6400</priority>
+   <priority>0.8000</priority>
 </url>
 <url>
    <loc>https://076923.github.io/posts/Python-opencv-28/</loc>
-   <lastmod>2021-08-28T09:39:54+00:00</lastmod>
+   <lastmod>2021-08-29T08:02:07+00:00</lastmod>
    <changefreq>always</changefreq>
-   <priority>0.6400</priority>
+   <priority>0.8000</priority>
 </url>
 <url>
    <loc>https://076923.github.io/posts/Python-opencv-27/</loc>
-   <lastmod>2021-08-28T09:39:54+00:00</lastmod>
+   <lastmod>2021-08-29T08:02:07+00:00</lastmod>
    <changefreq>always</changefreq>
-   <priority>0.6400</priority>
+   <priority>0.8000</priority>
 </url>
 <url>
    <loc>https://076923.github.io/posts/Python-opencv-26/</loc>
-   <lastmod>2021-08-28T09:39:54+00:00</lastmod>
+   <lastmod>2021-08-29T08:02:07+00:00</lastmod>
    <changefreq>always</changefreq>
-   <priority>0.6400</priority>
+   <priority>0.8000</priority>
 </url>
 <url>
    <loc>https://076923.github.io/posts/Python-opencv-25/</loc>
-   <lastmod>2021-08-28T09:39:54+00:00</lastmod>
+   <lastmod>2021-08-29T08:02:07+00:00</lastmod>
    <changefreq>always</changefreq>
-   <priority>0.6400</priority>
+   <priority>0.8000</priority>
 </url>
 <url>
    <loc>https://076923.github.io/posts/Python-opencv-24/</loc>
-   <lastmod>2021-08-28T09:39:54+00:00</lastmod>
+   <lastmod>2021-08-29T08:02:07+00:00</lastmod>
    <changefreq>always</changefreq>
-   <priority>0.6400</priority>
+   <priority>0.8000</priority>
 </url>
 <url>
    <loc>https://076923.github.io/posts/Python-opencv-23/</loc>
-   <lastmod>2021-08-28T09:39:54+00:00</lastmod>
+   <lastmod>2021-08-29T08:02:07+00:00</lastmod>
    <changefreq>always</changefreq>
-   <priority>0.6400</priority>
+   <priority>0.8000</priority>
 </url>
 <url>
    <loc>https://076923.github.io/posts/Python-opencv-22/</loc>
-   <lastmod>2021-08-28T09:39:54+00:00</lastmod>
+   <lastmod>2021-08-29T08:02:07+00:00</lastmod>
    <changefreq>always</changefreq>
-   <priority>0.6400</priority>
+   <priority>0.8000</priority>
 </url>
 <url>
    <loc>https://076923.github.io/posts/Python-opencv-21/</loc>
-   <lastmod>2021-08-28T09:39:54+00:00</lastmod>
+   <lastmod>2021-08-29T08:02:07+00:00</lastmod>
    <changefreq>always</changefreq>
-   <priority>0.6400</priority>
+   <priority>0.8000</priority>
 </url>
 <url>
    <loc>https://076923.github.io/posts/Python-opencv-20/</loc>
-   <lastmod>2021-08-28T09:39:54+00:00</lastmod>
+   <lastmod>2021-08-29T08:02:07+00:00</lastmod>
    <changefreq>always</changefreq>
-   <priority>0.6400</priority>
+   <priority>0.8000</priority>
 </url>
 <url>
    <loc>https://076923.github.io/posts/Python-opencv-19/</loc>
-   <lastmod>2021-08-28T09:39:54+00:00</lastmod>
+   <lastmod>2021-08-29T08:02:07+00:00</lastmod>
    <changefreq>always</changefreq>
-   <priority>0.6400</priority>
+   <priority>0.8000</priority>
 </url>
 <url>
    <loc>https://076923.github.io/posts/Python-opencv-18/</loc>
-   <lastmod>2021-08-28T09:39:54+00:00</lastmod>
+   <lastmod>2021-08-29T08:02:07+00:00</lastmod>
    <changefreq>always</changefreq>
-   <priority>0.6400</priority>
+   <priority>0.8000</priority>
 </url>
 <url>
    <loc>https://076923.github.io/posts/Python-opencv-17/</loc>
-   <lastmod>2021-08-28T09:39:54+00:00</lastmod>
+   <lastmod>2021-08-29T08:02:07+00:00</lastmod>
    <changefreq>always</changefreq>
-   <priority>0.6400</priority>
+   <priority>0.8000</priority>
 </url>
 <url>
    <loc>https://076923.github.io/posts/Python-opencv-16/</loc>
-   <lastmod>2021-08-28T09:39:54+00:00</lastmod>
+   <lastmod>2021-08-29T08:02:07+00:00</lastmod>
    <changefreq>always</changefreq>
-   <priority>0.6400</priority>
+   <priority>0.8000</priority>
 </url>
 <url>
    <loc>https://076923.github.io/posts/Python-opencv-15/</loc>
-   <lastmod>2021-08-28T09:39:54+00:00</lastmod>
+   <lastmod>2021-08-29T08:02:07+00:00</lastmod>
    <changefreq>always</changefreq>
-   <priority>0.6400</priority>
+   <priority>0.8000</priority>
 </url>
 <url>
    <loc>https://076923.github.io/posts/Python-opencv-14/</loc>
-   <lastmod>2021-08-28T09:39:54+00:00</lastmod>
+   <lastmod>2021-08-29T08:02:07+00:00</lastmod>
    <changefreq>always</changefreq>
-   <priority>0.6400</priority>
+   <priority>0.8000</priority>
 </url>
 <url>
    <loc>https://076923.github.io/posts/Python-opencv-13/</loc>
-   <lastmod>2021-08-28T09:39:54+00:00</lastmod>
+   <lastmod>2021-08-29T08:02:07+00:00</lastmod>
    <changefreq>always</changefreq>
-   <priority>0.6400</priority>
+   <priority>0.8000</priority>
 </url>
 <url>
    <loc>https://076923.github.io/posts/Python-opencv-12/</loc>
-   <lastmod>2021-08-28T09:39:54+00:00</lastmod>
+   <lastmod>2021-08-29T08:02:07+00:00</lastmod>
    <changefreq>always</changefreq>
-   <priority>0.6400</priority>
+   <priority>0.8000</priority>
 </url>
 <url>
    <loc>https://076923.github.io/posts/Python-opencv-11/</loc>
-   <lastmod>2021-08-28T09:39:54+00:00</lastmod>
+   <lastmod>2021-08-29T08:02:07+00:00</lastmod>
    <changefreq>always</changefreq>
-   <priority>0.6400</priority>
+   <priority>0.8000</priority>
 </url>
 <url>
    <loc>https://076923.github.io/posts/Python-opencv-10/</loc>
-   <lastmod>2021-08-28T09:39:54+00:00</lastmod>
+   <lastmod>2021-08-29T08:02:07+00:00</lastmod>
    <changefreq>always</changefreq>
-   <priority>0.6400</priority>
+   <priority>0.8000</priority>
 </url>
 <url>
    <loc>https://076923.github.io/posts/Python-opencv-9/</loc>
-   <lastmod>2021-08-28T09:39:54+00:00</lastmod>
+   <lastmod>2021-08-29T08:02:07+00:00</lastmod>
    <changefreq>always</changefreq>
-   <priority>0.6400</priority>
+   <priority>0.8000</priority>
 </url>
 <url>
    <loc>https://076923.github.io/posts/Python-opencv-8/</loc>
-   <lastmod>2021-08-28T09:39:54+00:00</lastmod>
+   <lastmod>2021-08-29T08:02:07+00:00</lastmod>
    <changefreq>always</changefreq>
-   <priority>0.6400</priority>
+   <priority>0.8000</priority>
 </url>
 <url>
    <loc>https://076923.github.io/posts/Python-opencv-7/</loc>
-   <lastmod>2021-08-28T09:39:54+00:00</lastmod>
+   <lastmod>2021-08-29T08:02:07+00:00</lastmod>
    <changefreq>always</changefreq>
-   <priority>0.6400</priority>
+   <priority>0.8000</priority>
 </url>
 <url>
    <loc>https://076923.github.io/posts/Python-opencv-6/</loc>
-   <lastmod>2021-08-28T09:39:54+00:00</lastmod>
+   <lastmod>2021-08-29T08:02:07+00:00</lastmod>
    <changefreq>always</changefreq>
-   <priority>0.6400</priority>
+   <priority>0.8000</priority>
 </url>
 <url>
    <loc>https://076923.github.io/posts/Python-opencv-5/</loc>
-   <lastmod>2021-08-28T09:39:54+00:00</lastmod>
+   <lastmod>2021-08-29T08:02:07+00:00</lastmod>
    <changefreq>always</changefreq>
-   <priority>0.6400</priority>
+   <priority>0.8000</priority>
 </url>
 <url>
    <loc>https://076923.github.io/posts/Python-opencv-4/</loc>
-   <lastmod>2021-08-28T09:39:54+00:00</lastmod>
+   <lastmod>2021-08-29T08:02:07+00:00</lastmod>
    <changefreq>always</changefreq>
-   <priority>0.6400</priority>
+   <priority>0.8000</priority>
 </url>
 <url>
    <loc>https://076923.github.io/posts/Python-opencv-3/</loc>
-   <lastmod>2021-08-28T09:39:54+00:00</lastmod>
+   <lastmod>2021-08-29T08:02:07+00:00</lastmod>
    <changefreq>always</changefreq>
-   <priority>0.6400</priority>
+   <priority>0.8000</priority>
 </url>
 <url>
    <loc>https://076923.github.io/posts/Python-opencv-2/</loc>
-   <lastmod>2021-08-28T09:39:54+00:00</lastmod>
+   <lastmod>2021-08-29T08:02:07+00:00</lastmod>
    <changefreq>always</changefreq>
-   <priority>0.6400</priority>
+   <priority>0.8000</priority>
 </url>
 <url>
    <loc>https://076923.github.io/posts/Python-opencv-1/</loc>
-   <lastmod>2021-08-28T09:39:54+00:00</lastmod>
+   <lastmod>2021-08-29T08:02:07+00:00</lastmod>
    <changefreq>always</changefreq>
-   <priority>0.6400</priority>
+   <priority>0.8000</priority>
 </url>
 <url>
    <loc>https://076923.github.io/posts/ComputerVision-12/</loc>
-   <lastmod>2021-08-28T09:39:54+00:00</lastmod>
+   <lastmod>2021-08-29T08:02:07+00:00</lastmod>
    <changefreq>always</changefreq>
-   <priority>0.6400</priority>
+   <priority>0.8000</priority>
 </url>
 <url>
    <loc>https://076923.github.io/posts/ComputerVision-11/</loc>
-   <lastmod>2021-08-28T09:39:54+00:00</lastmod>
+   <lastmod>2021-08-29T08:02:07+00:00</lastmod>
    <changefreq>always</changefreq>
-   <priority>0.6400</priority>
+   <priority>0.8000</priority>
 </url>
 <url>
    <loc>https://076923.github.io/posts/ComputerVision-10/</loc>
-   <lastmod>2021-08-28T09:39:54+00:00</lastmod>
+   <lastmod>2021-08-29T08:02:07+00:00</lastmod>
    <changefreq>always</changefreq>
-   <priority>0.6400</priority>
+   <priority>0.8000</priority>
 </url>
 <url>
    <loc>https://076923.github.io/posts/ComputerVision-9/</loc>
-   <lastmod>2021-08-28T09:39:54+00:00</lastmod>
+   <lastmod>2021-08-29T08:02:07+00:00</lastmod>
    <changefreq>always</changefreq>
-   <priority>0.6400</priority>
+   <priority>0.8000</priority>
 </url>
 <url>
    <loc>https://076923.github.io/posts/ComputerVision-8/</loc>
-   <lastmod>2021-08-28T09:39:54+00:00</lastmod>
+   <lastmod>2021-08-29T08:02:07+00:00</lastmod>
    <changefreq>always</changefreq>
-   <priority>0.6400</priority>
+   <priority>0.8000</priority>
 </url>
 <url>
    <loc>https://076923.github.io/posts/ComputerVision-7/</loc>
-   <lastmod>2021-08-28T09:39:54+00:00</lastmod>
+   <lastmod>2021-08-29T08:02:07+00:00</lastmod>
    <changefreq>always</changefreq>
-   <priority>0.6400</priority>
+   <priority>0.8000</priority>
 </url>
 <url>
    <loc>https://076923.github.io/posts/ComputerVision-6/</loc>
-   <lastmod>2021-08-28T09:39:54+00:00</lastmod>
+   <lastmod>2021-08-29T08:02:07+00:00</lastmod>
    <changefreq>always</changefreq>
-   <priority>0.6400</priority>
+   <priority>0.8000</priority>
 </url>
 <url>
    <loc>https://076923.github.io/posts/ComputerVision-5/</loc>
-   <lastmod>2021-08-28T09:39:54+00:00</lastmod>
+   <lastmod>2021-08-29T08:02:07+00:00</lastmod>
    <changefreq>always</changefreq>
-   <priority>0.6400</priority>
+   <priority>0.8000</priority>
 </url>
 <url>
    <loc>https://076923.github.io/posts/ComputerVision-4/</loc>
-   <lastmod>2021-08-28T09:39:54+00:00</lastmod>
+   <lastmod>2021-08-29T08:02:07+00:00</lastmod>
    <changefreq>always</changefreq>
-   <priority>0.6400</priority>
+   <priority>0.8000</priority>
 </url>
 <url>
    <loc>https://076923.github.io/posts/ComputerVision-3/</loc>
-   <lastmod>2021-08-28T09:39:54+00:00</lastmod>
+   <lastmod>2021-08-29T08:02:07+00:00</lastmod>
    <changefreq>always</changefreq>
-   <priority>0.6400</priority>
+   <priority>0.8000</priority>
 </url>
 <url>
    <loc>https://076923.github.io/posts/ComputerVision-2/</loc>
-   <lastmod>2021-08-28T09:39:54+00:00</lastmod>
+   <lastmod>2021-08-29T08:02:07+00:00</lastmod>
    <changefreq>always</changefreq>
-   <priority>0.6400</priority>
+   <priority>0.8000</priority>
 </url>
 <url>
    <loc>https://076923.github.io/posts/ComputerVision-1/</loc>
-   <lastmod>2021-08-28T09:39:54+00:00</lastmod>
+   <lastmod>2021-08-29T08:02:07+00:00</lastmod>
    <changefreq>always</changefreq>
-   <priority>0.6400</priority>
+   <priority>0.8000</priority>
 </url>
 <url>
    <loc>https://076923.github.io/posts/C-opencv4-23/</loc>
-   <lastmod>2021-08-28T09:39:54+00:00</lastmod>
+   <lastmod>2021-08-29T08:02:07+00:00</lastmod>
    <changefreq>always</changefreq>
-   <priority>0.6400</priority>
+   <priority>0.8000</priority>
 </url>
 <url>
    <loc>https://076923.github.io/posts/C-opencv4-22/</loc>
-   <lastmod>2021-08-28T09:39:54+00:00</lastmod>
+   <lastmod>2021-08-29T08:02:07+00:00</lastmod>
    <changefreq>always</changefreq>
-   <priority>0.6400</priority>
+   <priority>0.8000</priority>
 </url>
 <url>
    <loc>https://076923.github.io/posts/C-opencv4-21/</loc>
-   <lastmod>2021-08-28T09:39:54+00:00</lastmod>
+   <lastmod>2021-08-29T08:02:07+00:00</lastmod>
    <changefreq>always</changefreq>
-   <priority>0.6400</priority>
+   <priority>0.8000</priority>
 </url>
 <url>
    <loc>https://076923.github.io/posts/C-opencv4-20/</loc>
-   <lastmod>2021-08-28T09:39:54+00:00</lastmod>
+   <lastmod>2021-08-29T08:02:07+00:00</lastmod>
    <changefreq>always</changefreq>
-   <priority>0.6400</priority>
+   <priority>0.8000</priority>
 </url>
 <url>
    <loc>https://076923.github.io/posts/C-opencv4-19/</loc>
-   <lastmod>2021-08-28T09:39:54+00:00</lastmod>
+   <lastmod>2021-08-29T08:02:07+00:00</lastmod>
    <changefreq>always</changefreq>
-   <priority>0.6400</priority>
+   <priority>0.8000</priority>
 </url>
 <url>
    <loc>https://076923.github.io/posts/C-opencv4-18/</loc>
-   <lastmod>2021-08-28T09:39:54+00:00</lastmod>
+   <lastmod>2021-08-29T08:02:07+00:00</lastmod>
    <changefreq>always</changefreq>
-   <priority>0.6400</priority>
+   <priority>0.8000</priority>
 </url>
 <url>
    <loc>https://076923.github.io/posts/C-opencv4-17/</loc>
-   <lastmod>2021-08-28T09:39:54+00:00</lastmod>
+   <lastmod>2021-08-29T08:02:07+00:00</lastmod>
    <changefreq>always</changefreq>
-   <priority>0.6400</priority>
+   <priority>0.8000</priority>
 </url>
 <url>
    <loc>https://076923.github.io/posts/C-opencv4-16/</loc>
-   <lastmod>2021-08-28T09:39:54+00:00</lastmod>
+   <lastmod>2021-08-29T08:02:07+00:00</lastmod>
    <changefreq>always</changefreq>
-   <priority>0.6400</priority>
+   <priority>0.8000</priority>
 </url>
 <url>
    <loc>https://076923.github.io/posts/C-opencv4-15/</loc>
-   <lastmod>2021-08-28T09:39:54+00:00</lastmod>
+   <lastmod>2021-08-29T08:02:07+00:00</lastmod>
    <changefreq>always</changefreq>
-   <priority>0.6400</priority>
+   <priority>0.8000</priority>
 </url>
 <url>
    <loc>https://076923.github.io/posts/C-opencv4-14/</loc>
-   <lastmod>2021-08-28T09:39:54+00:00</lastmod>
+   <lastmod>2021-08-29T08:02:07+00:00</lastmod>
    <changefreq>always</changefreq>
-   <priority>0.6400</priority>
+   <priority>0.8000</priority>
 </url>
 <url>
    <loc>https://076923.github.io/posts/C-opencv4-13/</loc>
-   <lastmod>2021-08-28T09:39:54+00:00</lastmod>
+   <lastmod>2021-08-29T08:02:07+00:00</lastmod>
    <changefreq>always</changefreq>
-   <priority>0.6400</priority>
+   <priority>0.8000</priority>
 </url>
 <url>
    <loc>https://076923.github.io/posts/C-opencv4-12/</loc>
-   <lastmod>2021-08-28T09:39:54+00:00</lastmod>
+   <lastmod>2021-08-29T08:02:07+00:00</lastmod>
    <changefreq>always</changefreq>
-   <priority>0.6400</priority>
+   <priority>0.8000</priority>
 </url>
 <url>
    <loc>https://076923.github.io/posts/C-opencv4-11/</loc>
-   <lastmod>2021-08-28T09:39:54+00:00</lastmod>
+   <lastmod>2021-08-29T08:02:07+00:00</lastmod>
    <changefreq>always</changefreq>
-   <priority>0.6400</priority>
+   <priority>0.8000</priority>
 </url>
 <url>
    <loc>https://076923.github.io/posts/C-opencv4-10/</loc>
-   <lastmod>2021-08-28T09:39:54+00:00</lastmod>
+   <lastmod>2021-08-29T08:02:07+00:00</lastmod>
    <changefreq>always</changefreq>
-   <priority>0.6400</priority>
+   <priority>0.8000</priority>
 </url>
 <url>
    <loc>https://076923.github.io/posts/C-opencv4-9/</loc>
-   <lastmod>2021-08-28T09:39:54+00:00</lastmod>
+   <lastmod>2021-08-29T08:02:07+00:00</lastmod>
    <changefreq>always</changefreq>
-   <priority>0.6400</priority>
+   <priority>0.8000</priority>
 </url>
 <url>
    <loc>https://076923.github.io/posts/C-opencv4-8/</loc>
-   <lastmod>2021-08-28T09:39:54+00:00</lastmod>
+   <lastmod>2021-08-29T08:02:07+00:00</lastmod>
    <changefreq>always</changefreq>
-   <priority>0.6400</priority>
+   <priority>0.8000</priority>
 </url>
 <url>
    <loc>https://076923.github.io/posts/C-opencv4-7/</loc>
-   <lastmod>2021-08-28T09:39:54+00:00</lastmod>
+   <lastmod>2021-08-29T08:02:07+00:00</lastmod>
    <changefreq>always</changefreq>
-   <priority>0.6400</priority>
+   <priority>0.8000</priority>
 </url>
 <url>
    <loc>https://076923.github.io/posts/C-opencv4-6/</loc>
-   <lastmod>2021-08-28T09:39:54+00:00</lastmod>
+   <lastmod>2021-08-29T08:02:07+00:00</lastmod>
    <changefreq>always</changefreq>
-   <priority>0.6400</priority>
+   <priority>0.8000</priority>
 </url>
 <url>
    <loc>https://076923.github.io/posts/C-opencv4-5/</loc>
-   <lastmod>2021-08-28T09:39:54+00:00</lastmod>
+   <lastmod>2021-08-29T08:02:07+00:00</lastmod>
    <changefreq>always</changefreq>
-   <priority>0.6400</priority>
+   <priority>0.8000</priority>
 </url>
 <url>
    <loc>https://076923.github.io/posts/C-opencv4-4/</loc>
-   <lastmod>2021-08-28T09:39:54+00:00</lastmod>
+   <lastmod>2021-08-29T08:02:07+00:00</lastmod>
    <changefreq>always</changefreq>
-   <priority>0.6400</priority>
+   <priority>0.8000</priority>
 </url>
 <url>
    <loc>https://076923.github.io/posts/C-opencv4-3/</loc>
-   <lastmod>2021-08-28T09:39:54+00:00</lastmod>
+   <lastmod>2021-08-29T08:02:07+00:00</lastmod>
    <changefreq>always</changefreq>
-   <priority>0.6400</priority>
+   <priority>0.8000</priority>
 </url>
 <url>
    <loc>https://076923.github.io/posts/C-opencv4-2/</loc>
-   <lastmod>2021-08-28T09:39:54+00:00</lastmod>
+   <lastmod>2021-08-29T08:02:07+00:00</lastmod>
    <changefreq>always</changefreq>
-   <priority>0.6400</priority>
+   <priority>0.8000</priority>
 </url>
 <url>
    <loc>https://076923.github.io/posts/C-opencv4-1/</loc>
-   <lastmod>2021-08-28T09:39:54+00:00</lastmod>
+   <lastmod>2021-08-29T08:02:07+00:00</lastmod>
    <changefreq>always</changefreq>
-   <priority>0.6400</priority>
+   <priority>0.8000</priority>
+</url>
+<url>
+   <loc>https://076923.github.io/posts/Python-Django-13/</loc>
+   <lastmod>2021-08-29T08:02:07+00:00</lastmod>
+   <changefreq>always</changefreq>
+   <priority>0.8000</priority>
 </url>
 <url>
    <loc>https://076923.github.io/posts/Python-Django-12/</loc>
-   <lastmod>2021-08-28T09:39:54+00:00</lastmod>
+   <lastmod>2021-08-29T08:02:07+00:00</lastmod>
    <changefreq>always</changefreq>
-   <priority>0.6400</priority>
+   <priority>0.8000</priority>
 </url>
 <url>
    <loc>https://076923.github.io/posts/Python-Django-11/</loc>
-   <lastmod>2021-08-28T09:39:54+00:00</lastmod>
+   <lastmod>2021-08-29T08:02:07+00:00</lastmod>
    <changefreq>always</changefreq>
-   <priority>0.6400</priority>
+   <priority>0.8000</priority>
 </url>
 <url>
    <loc>https://076923.github.io/posts/Python-Django-10/</loc>
-   <lastmod>2021-08-28T09:39:54+00:00</lastmod>
+   <lastmod>2021-08-29T08:02:07+00:00</lastmod>
    <changefreq>always</changefreq>
-   <priority>0.6400</priority>
+   <priority>0.8000</priority>
 </url>
 <url>
    <loc>https://076923.github.io/posts/Python-Django-9/</loc>
-   <lastmod>2021-08-28T09:39:54+00:00</lastmod>
+   <lastmod>2021-08-29T08:02:07+00:00</lastmod>
    <changefreq>always</changefreq>
-   <priority>0.6400</priority>
+   <priority>0.8000</priority>
 </url>
 <url>
    <loc>https://076923.github.io/posts/Python-Django-8/</loc>
-   <lastmod>2021-08-28T09:39:54+00:00</lastmod>
+   <lastmod>2021-08-29T08:02:07+00:00</lastmod>
    <changefreq>always</changefreq>
-   <priority>0.6400</priority>
+   <priority>0.8000</priority>
 </url>
 <url>
    <loc>https://076923.github.io/posts/Python-Django-7/</loc>
-   <lastmod>2021-08-28T09:39:54+00:00</lastmod>
+   <lastmod>2021-08-29T08:02:07+00:00</lastmod>
    <changefreq>always</changefreq>
-   <priority>0.6400</priority>
+   <priority>0.8000</priority>
 </url>
 <url>
    <loc>https://076923.github.io/posts/Python-Django-6/</loc>
-   <lastmod>2021-08-28T09:39:54+00:00</lastmod>
+   <lastmod>2021-08-29T08:02:07+00:00</lastmod>
    <changefreq>always</changefreq>
-   <priority>0.6400</priority>
+   <priority>0.8000</priority>
 </url>
 <url>
    <loc>https://076923.github.io/posts/Python-Django-5/</loc>
-   <lastmod>2021-08-28T09:39:54+00:00</lastmod>
+   <lastmod>2021-08-29T08:02:07+00:00</lastmod>
    <changefreq>always</changefreq>
-   <priority>0.6400</priority>
+   <priority>0.8000</priority>
 </url>
 <url>
    <loc>https://076923.github.io/posts/Python-Django-4/</loc>
-   <lastmod>2021-08-28T09:39:54+00:00</lastmod>
+   <lastmod>2021-08-29T08:02:07+00:00</lastmod>
    <changefreq>always</changefreq>
-   <priority>0.6400</priority>
+   <priority>0.8000</priority>
 </url>
 <url>
    <loc>https://076923.github.io/posts/Python-Django-3/</loc>
-   <lastmod>2021-08-28T09:39:54+00:00</lastmod>
+   <lastmod>2021-08-29T08:02:07+00:00</lastmod>
    <changefreq>always</changefreq>
-   <priority>0.6400</priority>
+   <priority>0.8000</priority>
 </url>
 <url>
    <loc>https://076923.github.io/posts/Python-Django-2/</loc>
-   <lastmod>2021-08-28T09:39:54+00:00</lastmod>
+   <lastmod>2021-08-29T08:02:07+00:00</lastmod>
    <changefreq>always</changefreq>
-   <priority>0.6400</priority>
+   <priority>0.8000</priority>
 </url>
 <url>
    <loc>https://076923.github.io/posts/Python-Django-1/</loc>
-   <lastmod>2021-08-28T09:39:54+00:00</lastmod>
+   <lastmod>2021-08-29T08:02:07+00:00</lastmod>
    <changefreq>always</changefreq>
-   <priority>0.6400</priority>
+   <priority>0.8000</priority>
+</url>
+<url>
+   <loc>https://076923.github.io/posts/AI-3/</loc>
+   <lastmod>2021-08-29T08:02:07+00:00</lastmod>
+   <changefreq>always</changefreq>
+   <priority>0.8000</priority>
 </url>
 <url>
    <loc>https://076923.github.io/posts/AI-2/</loc>
-   <lastmod>2021-08-28T09:39:54+00:00</lastmod>
+   <lastmod>2021-08-29T08:02:07+00:00</lastmod>
    <changefreq>always</changefreq>
-   <priority>0.6400</priority>
+   <priority>0.8000</priority>
 </url>
 <url>
    <loc>https://076923.github.io/posts/AI-1/</loc>
-   <lastmod>2021-08-28T09:39:54+00:00</lastmod>
+   <lastmod>2021-08-29T08:02:07+00:00</lastmod>
    <changefreq>always</changefreq>
-   <priority>0.6400</priority>
+   <priority>0.8000</priority>
 </url>
 <url>
    <loc>https://076923.github.io/spaceship.html</loc>
-   <lastmod>2021-08-28T09:39:38+00:00</lastmod>
+   <lastmod>2021-08-29T08:01:49+00:00</lastmod>
    <changefreq>always</changefreq>
-   <priority>0.6400</priority>
+   <priority>0.8000</priority>
+</url>
+<url>
+   <loc>https://076923.github.io/docs/TermCriteria</loc>
+   <lastmod>2021-09-18T11:40:47+00:00</lastmod>
+   <changefreq>always</changefreq>
+   <priority>0.8000</priority>
+</url>
+<url>
+   <loc>https://076923.github.io/docs/applyColorMap</loc>
+   <lastmod>2021-09-18T11:40:47+00:00</lastmod>
+   <changefreq>always</changefreq>
+   <priority>0.8000</priority>
+</url>
+<url>
+   <loc>https://076923.github.io/docs/ColormapTypes</loc>
+   <lastmod>2021-09-18T11:40:47+00:00</lastmod>
+   <changefreq>always</changefreq>
+   <priority>0.8000</priority>
+</url>
+<url>
+   <loc>https://076923.github.io/docs/imread</loc>
+   <lastmod>2021-09-18T11:40:47+00:00</lastmod>
+   <changefreq>always</changefreq>
+   <priority>0.8000</priority>
+</url>
+<url>
+   <loc>https://076923.github.io/docs/imwrite</loc>
+   <lastmod>2021-09-18T11:40:47+00:00</lastmod>
+   <changefreq>always</changefreq>
+   <priority>0.8000</priority>
+</url>
+<url>
+   <loc>https://076923.github.io/docs/imreadmulti</loc>
+   <lastmod>2021-09-18T11:40:47+00:00</lastmod>
+   <changefreq>always</changefreq>
+   <priority>0.8000</priority>
+</url>
+<url>
+   <loc>https://076923.github.io/docs/imwritemulti</loc>
+   <lastmod>2021-09-18T11:40:47+00:00</lastmod>
+   <changefreq>always</changefreq>
+   <priority>0.8000</priority>
+</url>
+<url>
+   <loc>https://076923.github.io/docs/imdecode</loc>
+   <lastmod>2021-09-18T11:40:47+00:00</lastmod>
+   <changefreq>always</changefreq>
+   <priority>0.8000</priority>
+</url>
+<url>
+   <loc>https://076923.github.io/docs/imencode</loc>
+   <lastmod>2021-09-18T11:40:47+00:00</lastmod>
+   <changefreq>always</changefreq>
+   <priority>0.8000</priority>
+</url>
+<url>
+   <loc>https://076923.github.io/docs/haveImageReader</loc>
+   <lastmod>2021-09-18T11:40:47+00:00</lastmod>
+   <changefreq>always</changefreq>
+   <priority>0.8000</priority>
+</url>
+<url>
+   <loc>https://076923.github.io/docs/haveImageWriter</loc>
+   <lastmod>2021-09-18T11:40:47+00:00</lastmod>
+   <changefreq>always</changefreq>
+   <priority>0.8000</priority>
+</url>
+<url>
+   <loc>https://076923.github.io/docs/VideoCapture</loc>
+   <lastmod>2021-09-18T11:40:47+00:00</lastmod>
+   <changefreq>always</changefreq>
+   <priority>0.8000</priority>
+</url>
+<url>
+   <loc>https://076923.github.io/docs/VideoCapture-open</loc>
+   <lastmod>2021-09-18T11:40:47+00:00</lastmod>
+   <changefreq>always</changefreq>
+   <priority>0.8000</priority>
+</url>
+<url>
+   <loc>https://076923.github.io/docs/VideoCapture-read</loc>
+   <lastmod>2021-09-18T11:40:47+00:00</lastmod>
+   <changefreq>always</changefreq>
+   <priority>0.8000</priority>
+</url>
+<url>
+   <loc>https://076923.github.io/docs/VideoCapture-grab</loc>
+   <lastmod>2021-09-18T11:40:47+00:00</lastmod>
+   <changefreq>always</changefreq>
+   <priority>0.8000</priority>
+</url>
+<url>
+   <loc>https://076923.github.io/docs/VideoCapture-retrieve</loc>
+   <lastmod>2021-09-18T11:40:47+00:00</lastmod>
+   <changefreq>always</changefreq>
+   <priority>0.8000</priority>
+</url>
+<url>
+   <loc>https://076923.github.io/docs/VideoCapture-isOpened</loc>
+   <lastmod>2021-09-18T11:40:47+00:00</lastmod>
+   <changefreq>always</changefreq>
+   <priority>0.8000</priority>
+</url>
+<url>
+   <loc>https://076923.github.io/docs/VideoCapture-set</loc>
+   <lastmod>2021-09-18T11:40:47+00:00</lastmod>
+   <changefreq>always</changefreq>
+   <priority>0.8000</priority>
+</url>
+<url>
+   <loc>https://076923.github.io/docs/VideoCapture-get</loc>
+   <lastmod>2021-09-18T11:40:47+00:00</lastmod>
+   <changefreq>always</changefreq>
+   <priority>0.8000</priority>
+</url>
+<url>
+   <loc>https://076923.github.io/docs/VideoCapture-getBackendName</loc>
+   <lastmod>2021-09-18T11:40:47+00:00</lastmod>
+   <changefreq>always</changefreq>
+   <priority>0.8000</priority>
+</url>
+<url>
+   <loc>https://076923.github.io/docs/VideoCapture-release</loc>
+   <lastmod>2021-09-18T11:40:47+00:00</lastmod>
+   <changefreq>always</changefreq>
+   <priority>0.8000</priority>
+</url>
+<url>
+   <loc>https://076923.github.io/docs/VideoWriter</loc>
+   <lastmod>2021-09-18T11:40:47+00:00</lastmod>
+   <changefreq>always</changefreq>
+   <priority>0.8000</priority>
+</url>
+<url>
+   <loc>https://076923.github.io/docs/VideoWriter-open</loc>
+   <lastmod>2021-09-18T11:40:47+00:00</lastmod>
+   <changefreq>always</changefreq>
+   <priority>0.8000</priority>
+</url>
+<url>
+   <loc>https://076923.github.io/docs/VideoWriter-write</loc>
+   <lastmod>2021-09-18T11:40:47+00:00</lastmod>
+   <changefreq>always</changefreq>
+   <priority>0.8000</priority>
+</url>
+<url>
+   <loc>https://076923.github.io/docs/VideoWriter-isOpened</loc>
+   <lastmod>2021-09-18T11:40:47+00:00</lastmod>
+   <changefreq>always</changefreq>
+   <priority>0.8000</priority>
+</url>
+<url>
+   <loc>https://076923.github.io/docs/VideoWriter-fourcc</loc>
+   <lastmod>2021-09-18T11:40:47+00:00</lastmod>
+   <changefreq>always</changefreq>
+   <priority>0.8000</priority>
+</url>
+<url>
+   <loc>https://076923.github.io/docs/VideoWriter-set</loc>
+   <lastmod>2021-09-18T11:40:47+00:00</lastmod>
+   <changefreq>always</changefreq>
+   <priority>0.8000</priority>
+</url>
+<url>
+   <loc>https://076923.github.io/docs/VideoWriter-get</loc>
+   <lastmod>2021-09-18T11:40:47+00:00</lastmod>
+   <changefreq>always</changefreq>
+   <priority>0.8000</priority>
+</url>
+<url>
+   <loc>https://076923.github.io/docs/VideoWriter-getBackendName</loc>
+   <lastmod>2021-09-18T11:40:47+00:00</lastmod>
+   <changefreq>always</changefreq>
+   <priority>0.8000</priority>
+</url>
+<url>
+   <loc>https://076923.github.io/docs/VideoWriter-release</loc>
+   <lastmod>2021-09-18T11:40:47+00:00</lastmod>
+   <changefreq>always</changefreq>
+   <priority>0.8000</priority>
+</url>
+<url>
+   <loc>https://076923.github.io/docs/imageExt</loc>
+   <lastmod>2021-09-18T11:40:47+00:00</lastmod>
+   <changefreq>always</changefreq>
+   <priority>0.8000</priority>
+</url>
+<url>
+   <loc>https://076923.github.io/docs/FourCC</loc>
+   <lastmod>2021-09-18T11:40:47+00:00</lastmod>
+   <changefreq>always</changefreq>
+   <priority>0.8000</priority>
+</url>
+<url>
+   <loc>https://076923.github.io/docs/imreadModes</loc>
+   <lastmod>2021-09-18T11:40:47+00:00</lastmod>
+   <changefreq>always</changefreq>
+   <priority>0.8000</priority>
+</url>
+<url>
+   <loc>https://076923.github.io/docs/imageEncodingParam</loc>
+   <lastmod>2021-09-18T11:40:47+00:00</lastmod>
+   <changefreq>always</changefreq>
+   <priority>0.8000</priority>
+</url>
+<url>
+   <loc>https://076923.github.io/docs/imwritePNGFlags</loc>
+   <lastmod>2021-09-18T11:40:47+00:00</lastmod>
+   <changefreq>always</changefreq>
+   <priority>0.8000</priority>
+</url>
+<url>
+   <loc>https://076923.github.io/docs/imwriteEXRTypeFlags</loc>
+   <lastmod>2021-09-18T11:40:47+00:00</lastmod>
+   <changefreq>always</changefreq>
+   <priority>0.8000</priority>
+</url>
+<url>
+   <loc>https://076923.github.io/docs/imwritePAMFlags</loc>
+   <lastmod>2021-09-18T11:40:47+00:00</lastmod>
+   <changefreq>always</changefreq>
+   <priority>0.8000</priority>
+</url>
+<url>
+   <loc>https://076923.github.io/docs/VideoCaptureAPIs</loc>
+   <lastmod>2021-09-18T11:40:47+00:00</lastmod>
+   <changefreq>always</changefreq>
+   <priority>0.8000</priority>
+</url>
+<url>
+   <loc>https://076923.github.io/docs/VideoCaptureProperties</loc>
+   <lastmod>2021-09-18T11:40:47+00:00</lastmod>
+   <changefreq>always</changefreq>
+   <priority>0.8000</priority>
+</url>
+<url>
+   <loc>https://076923.github.io/docs/VideoWriterProperties</loc>
+   <lastmod>2021-09-18T11:40:47+00:00</lastmod>
+   <changefreq>always</changefreq>
+   <priority>0.8000</priority>
+</url>
+<url>
+   <loc>https://076923.github.io/docs/imshow</loc>
+   <lastmod>2021-09-18T11:40:47+00:00</lastmod>
+   <changefreq>always</changefreq>
+   <priority>0.8000</priority>
+</url>
+<url>
+   <loc>https://076923.github.io/docs/waitKey</loc>
+   <lastmod>2021-09-18T11:40:47+00:00</lastmod>
+   <changefreq>always</changefreq>
+   <priority>0.8000</priority>
+</url>
+<url>
+   <loc>https://076923.github.io/docs/waitKeyEx</loc>
+   <lastmod>2021-09-18T11:40:47+00:00</lastmod>
+   <changefreq>always</changefreq>
+   <priority>0.8000</priority>
+</url>
+<url>
+   <loc>https://076923.github.io/docs/selectROI</loc>
+   <lastmod>2021-09-18T11:40:47+00:00</lastmod>
+   <changefreq>always</changefreq>
+   <priority>0.8000</priority>
+</url>
+<url>
+   <loc>https://076923.github.io/docs/selectROIs</loc>
+   <lastmod>2021-09-18T11:40:47+00:00</lastmod>
+   <changefreq>always</changefreq>
+   <priority>0.8000</priority>
+</url>
+<url>
+   <loc>https://076923.github.io/docs/namedWindow</loc>
+   <lastmod>2021-09-18T11:40:47+00:00</lastmod>
+   <changefreq>always</changefreq>
+   <priority>0.8000</priority>
+</url>
+<url>
+   <loc>https://076923.github.io/docs/setWindowTitle</loc>
+   <lastmod>2021-09-18T11:40:47+00:00</lastmod>
+   <changefreq>always</changefreq>
+   <priority>0.8000</priority>
+</url>
+<url>
+   <loc>https://076923.github.io/docs/moveWindow</loc>
+   <lastmod>2021-09-18T11:40:47+00:00</lastmod>
+   <changefreq>always</changefreq>
+   <priority>0.8000</priority>
+</url>
+<url>
+   <loc>https://076923.github.io/docs/resizeWindow</loc>
+   <lastmod>2021-09-18T11:40:47+00:00</lastmod>
+   <changefreq>always</changefreq>
+   <priority>0.8000</priority>
+</url>
+<url>
+   <loc>https://076923.github.io/docs/setWindowProperty</loc>
+   <lastmod>2021-09-18T11:40:47+00:00</lastmod>
+   <changefreq>always</changefreq>
+   <priority>0.8000</priority>
+</url>
+<url>
+   <loc>https://076923.github.io/docs/getWindowProperty</loc>
+   <lastmod>2021-09-18T11:40:47+00:00</lastmod>
+   <changefreq>always</changefreq>
+   <priority>0.8000</priority>
+</url>
+<url>
+   <loc>https://076923.github.io/docs/getWindowImageRect</loc>
+   <lastmod>2021-09-18T11:40:47+00:00</lastmod>
+   <changefreq>always</changefreq>
+   <priority>0.8000</priority>
+</url>
+<url>
+   <loc>https://076923.github.io/docs/destroyWindow</loc>
+   <lastmod>2021-09-18T11:40:47+00:00</lastmod>
+   <changefreq>always</changefreq>
+   <priority>0.8000</priority>
+</url>
+<url>
+   <loc>https://076923.github.io/docs/destroyAllWindows</loc>
+   <lastmod>2021-09-18T11:40:47+00:00</lastmod>
+   <changefreq>always</changefreq>
+   <priority>0.8000</priority>
+</url>
+<url>
+   <loc>https://076923.github.io/docs/setMouseCallback</loc>
+   <lastmod>2021-09-18T11:40:47+00:00</lastmod>
+   <changefreq>always</changefreq>
+   <priority>0.8000</priority>
+</url>
+<url>
+   <loc>https://076923.github.io/docs/createTrackbar</loc>
+   <lastmod>2021-09-18T11:40:47+00:00</lastmod>
+   <changefreq>always</changefreq>
+   <priority>0.8000</priority>
+</url>
+<url>
+   <loc>https://076923.github.io/docs/setTrackbarMax</loc>
+   <lastmod>2021-09-18T11:40:47+00:00</lastmod>
+   <changefreq>always</changefreq>
+   <priority>0.8000</priority>
+</url>
+<url>
+   <loc>https://076923.github.io/docs/setTrackbarMin</loc>
+   <lastmod>2021-09-18T11:40:47+00:00</lastmod>
+   <changefreq>always</changefreq>
+   <priority>0.8000</priority>
+</url>
+<url>
+   <loc>https://076923.github.io/docs/setTrackbarPos</loc>
+   <lastmod>2021-09-18T11:40:47+00:00</lastmod>
+   <changefreq>always</changefreq>
+   <priority>0.8000</priority>
+</url>
+<url>
+   <loc>https://076923.github.io/docs/getTrackbarPos</loc>
+   <lastmod>2021-09-18T11:40:47+00:00</lastmod>
+   <changefreq>always</changefreq>
+   <priority>0.8000</priority>
+</url>
+<url>
+   <loc>https://076923.github.io/docs/WindowFlags</loc>
+   <lastmod>2021-09-18T11:40:47+00:00</lastmod>
+   <changefreq>always</changefreq>
+   <priority>0.8000</priority>
+</url>
+<url>
+   <loc>https://076923.github.io/docs/WindowPropertyFlags</loc>
+   <lastmod>2021-09-18T11:40:47+00:00</lastmod>
+   <changefreq>always</changefreq>
+   <priority>0.8000</priority>
+</url>
+<url>
+   <loc>https://076923.github.io/docs/MouseCallback</loc>
+   <lastmod>2021-09-18T11:40:47+00:00</lastmod>
+   <changefreq>always</changefreq>
+   <priority>0.8000</priority>
+</url>
+<url>
+   <loc>https://076923.github.io/docs/MouseEventTypes</loc>
+   <lastmod>2021-09-18T11:40:47+00:00</lastmod>
+   <changefreq>always</changefreq>
+   <priority>0.8000</priority>
+</url>
+<url>
+   <loc>https://076923.github.io/docs/MouseEventFlags</loc>
+   <lastmod>2021-09-18T11:40:47+00:00</lastmod>
+   <changefreq>always</changefreq>
+   <priority>0.8000</priority>
+</url>
+<url>
+   <loc>https://076923.github.io/docs/line</loc>
+   <lastmod>2021-09-18T11:40:47+00:00</lastmod>
+   <changefreq>always</changefreq>
+   <priority>0.8000</priority>
+</url>
+<url>
+   <loc>https://076923.github.io/docs/circle</loc>
+   <lastmod>2021-09-18T11:40:47+00:00</lastmod>
+   <changefreq>always</changefreq>
+   <priority>0.8000</priority>
+</url>
+<url>
+   <loc>https://076923.github.io/docs/ellipse</loc>
+   <lastmod>2021-09-18T11:40:47+00:00</lastmod>
+   <changefreq>always</changefreq>
+   <priority>0.8000</priority>
+</url>
+<url>
+   <loc>https://076923.github.io/docs/rectangle</loc>
+   <lastmod>2021-09-18T11:40:47+00:00</lastmod>
+   <changefreq>always</changefreq>
+   <priority>0.8000</priority>
+</url>
+<url>
+   <loc>https://076923.github.io/docs/putText</loc>
+   <lastmod>2021-09-18T11:40:47+00:00</lastmod>
+   <changefreq>always</changefreq>
+   <priority>0.8000</priority>
+</url>
+<url>
+   <loc>https://076923.github.io/docs/drawMarker</loc>
+   <lastmod>2021-09-18T11:40:47+00:00</lastmod>
+   <changefreq>always</changefreq>
+   <priority>0.8000</priority>
+</url>
+<url>
+   <loc>https://076923.github.io/docs/arrowedLine</loc>
+   <lastmod>2021-09-18T11:40:47+00:00</lastmod>
+   <changefreq>always</changefreq>
+   <priority>0.8000</priority>
+</url>
+<url>
+   <loc>https://076923.github.io/docs/drawContours</loc>
+   <lastmod>2021-09-18T11:40:47+00:00</lastmod>
+   <changefreq>always</changefreq>
+   <priority>0.8000</priority>
+</url>
+<url>
+   <loc>https://076923.github.io/docs/polylines</loc>
+   <lastmod>2021-09-18T11:40:47+00:00</lastmod>
+   <changefreq>always</changefreq>
+   <priority>0.8000</priority>
+</url>
+<url>
+   <loc>https://076923.github.io/docs/fillPoly</loc>
+   <lastmod>2021-09-18T11:40:47+00:00</lastmod>
+   <changefreq>always</changefreq>
+   <priority>0.8000</priority>
+</url>
+<url>
+   <loc>https://076923.github.io/docs/fillConvexPoly</loc>
+   <lastmod>2021-09-18T11:40:47+00:00</lastmod>
+   <changefreq>always</changefreq>
+   <priority>0.8000</priority>
+</url>
+<url>
+   <loc>https://076923.github.io/docs/clipLine</loc>
+   <lastmod>2021-09-18T11:40:47+00:00</lastmod>
+   <changefreq>always</changefreq>
+   <priority>0.8000</priority>
+</url>
+<url>
+   <loc>https://076923.github.io/docs/ellipse2Poly</loc>
+   <lastmod>2021-09-18T11:40:47+00:00</lastmod>
+   <changefreq>always</changefreq>
+   <priority>0.8000</priority>
+</url>
+<url>
+   <loc>https://076923.github.io/docs/getFontScaleFromHeight</loc>
+   <lastmod>2021-09-18T11:40:47+00:00</lastmod>
+   <changefreq>always</changefreq>
+   <priority>0.8000</priority>
+</url>
+<url>
+   <loc>https://076923.github.io/docs/getTextSize</loc>
+   <lastmod>2021-09-18T11:40:47+00:00</lastmod>
+   <changefreq>always</changefreq>
+   <priority>0.8000</priority>
+</url>
+<url>
+   <loc>https://076923.github.io/docs/pyrUp</loc>
+   <lastmod>2021-09-18T11:40:47+00:00</lastmod>
+   <changefreq>always</changefreq>
+   <priority>0.8000</priority>
+</url>
+<url>
+   <loc>https://076923.github.io/docs/pyrDown</loc>
+   <lastmod>2021-09-18T11:40:47+00:00</lastmod>
+   <changefreq>always</changefreq>
+   <priority>0.8000</priority>
+</url>
+<url>
+   <loc>https://076923.github.io/docs/pyrMeanShiftFiltering</loc>
+   <lastmod>2021-09-18T11:40:47+00:00</lastmod>
+   <changefreq>always</changefreq>
+   <priority>0.8000</priority>
+</url>
+<url>
+   <loc>https://076923.github.io/docs/filter2D</loc>
+   <lastmod>2021-09-18T11:40:47+00:00</lastmod>
+   <changefreq>always</changefreq>
+   <priority>0.8000</priority>
+</url>
+<url>
+   <loc>https://076923.github.io/docs/sepFilter2D</loc>
+   <lastmod>2021-09-18T11:40:47+00:00</lastmod>
+   <changefreq>always</changefreq>
+   <priority>0.8000</priority>
+</url>
+<url>
+   <loc>https://076923.github.io/docs/boxFilter</loc>
+   <lastmod>2021-09-18T11:40:47+00:00</lastmod>
+   <changefreq>always</changefreq>
+   <priority>0.8000</priority>
+</url>
+<url>
+   <loc>https://076923.github.io/docs/sqrBoxFilter</loc>
+   <lastmod>2021-09-18T11:40:47+00:00</lastmod>
+   <changefreq>always</changefreq>
+   <priority>0.8000</priority>
+</url>
+<url>
+   <loc>https://076923.github.io/docs/bilateralFilter</loc>
+   <lastmod>2021-09-18T11:40:47+00:00</lastmod>
+   <changefreq>always</changefreq>
+   <priority>0.8000</priority>
+</url>
+<url>
+   <loc>https://076923.github.io/docs/getGaborKernel</loc>
+   <lastmod>2021-09-18T11:40:47+00:00</lastmod>
+   <changefreq>always</changefreq>
+   <priority>0.8000</priority>
+</url>
+<url>
+   <loc>https://076923.github.io/docs/getDerivKernels</loc>
+   <lastmod>2021-09-18T11:40:47+00:00</lastmod>
+   <changefreq>always</changefreq>
+   <priority>0.8000</priority>
+</url>
+<url>
+   <loc>https://076923.github.io/docs/getGaussianKernel</loc>
+   <lastmod>2021-09-18T11:40:47+00:00</lastmod>
+   <changefreq>always</changefreq>
+   <priority>0.8000</priority>
+</url>
+<url>
+   <loc>https://076923.github.io/docs/blur</loc>
+   <lastmod>2021-09-18T11:40:47+00:00</lastmod>
+   <changefreq>always</changefreq>
+   <priority>0.8000</priority>
+</url>
+<url>
+   <loc>https://076923.github.io/docs/medianBlur</loc>
+   <lastmod>2021-09-18T11:40:47+00:00</lastmod>
+   <changefreq>always</changefreq>
+   <priority>0.8000</priority>
+</url>
+<url>
+   <loc>https://076923.github.io/docs/GaussianBlur</loc>
+   <lastmod>2021-09-18T11:40:47+00:00</lastmod>
+   <changefreq>always</changefreq>
+   <priority>0.8000</priority>
+</url>
+<url>
+   <loc>https://076923.github.io/docs/Sobel</loc>
+   <lastmod>2021-09-18T11:40:47+00:00</lastmod>
+   <changefreq>always</changefreq>
+   <priority>0.8000</priority>
+</url>
+<url>
+   <loc>https://076923.github.io/docs/Scharr</loc>
+   <lastmod>2021-09-18T11:40:47+00:00</lastmod>
+   <changefreq>always</changefreq>
+   <priority>0.8000</priority>
+</url>
+<url>
+   <loc>https://076923.github.io/docs/Laplacian</loc>
+   <lastmod>2021-09-18T11:40:47+00:00</lastmod>
+   <changefreq>always</changefreq>
+   <priority>0.8000</priority>
+</url>
+<url>
+   <loc>https://076923.github.io/docs/Canny</loc>
+   <lastmod>2021-09-18T11:40:47+00:00</lastmod>
+   <changefreq>always</changefreq>
+   <priority>0.8000</priority>
+</url>
+<url>
+   <loc>https://076923.github.io/docs/spatialGradient</loc>
+   <lastmod>2021-09-18T11:40:47+00:00</lastmod>
+   <changefreq>always</changefreq>
+   <priority>0.8000</priority>
+</url>
+<url>
+   <loc>https://076923.github.io/docs/cvtColor</loc>
+   <lastmod>2021-09-18T11:40:47+00:00</lastmod>
+   <changefreq>always</changefreq>
+   <priority>0.8000</priority>
+</url>
+<url>
+   <loc>https://076923.github.io/docs/cvtColorTwoPlane</loc>
+   <lastmod>2021-09-18T11:40:47+00:00</lastmod>
+   <changefreq>always</changefreq>
+   <priority>0.8000</priority>
+</url>
+<url>
+   <loc>https://076923.github.io/docs/demosaicing</loc>
+   <lastmod>2021-09-18T11:40:47+00:00</lastmod>
+   <changefreq>always</changefreq>
+   <priority>0.8000</priority>
+</url>
+<url>
+   <loc>https://076923.github.io/docs/convertMaps</loc>
+   <lastmod>2021-09-18T11:40:47+00:00</lastmod>
+   <changefreq>always</changefreq>
+   <priority>0.8000</priority>
+</url>
+<url>
+   <loc>https://076923.github.io/docs/resize</loc>
+   <lastmod>2021-09-18T11:40:47+00:00</lastmod>
+   <changefreq>always</changefreq>
+   <priority>0.8000</priority>
+</url>
+<url>
+   <loc>https://076923.github.io/docs/warpAffine</loc>
+   <lastmod>2021-09-18T11:40:47+00:00</lastmod>
+   <changefreq>always</changefreq>
+   <priority>0.8000</priority>
+</url>
+<url>
+   <loc>https://076923.github.io/docs/warpPerspective</loc>
+   <lastmod>2021-09-18T11:40:47+00:00</lastmod>
+   <changefreq>always</changefreq>
+   <priority>0.8000</priority>
+</url>
+<url>
+   <loc>https://076923.github.io/docs/warpPolar</loc>
+   <lastmod>2021-09-18T11:40:47+00:00</lastmod>
+   <changefreq>always</changefreq>
+   <priority>0.8000</priority>
+</url>
+<url>
+   <loc>https://076923.github.io/docs/remap</loc>
+   <lastmod>2021-09-18T11:40:47+00:00</lastmod>
+   <changefreq>always</changefreq>
+   <priority>0.8000</priority>
+</url>
+<url>
+   <loc>https://076923.github.io/docs/linearPolar</loc>
+   <lastmod>2021-09-18T11:40:47+00:00</lastmod>
+   <changefreq>always</changefreq>
+   <priority>0.8000</priority>
+</url>
+<url>
+   <loc>https://076923.github.io/docs/logPolar</loc>
+   <lastmod>2021-09-18T11:40:47+00:00</lastmod>
+   <changefreq>always</changefreq>
+   <priority>0.8000</priority>
+</url>
+<url>
+   <loc>https://076923.github.io/docs/getRectSubPix</loc>
+   <lastmod>2021-09-18T11:40:47+00:00</lastmod>
+   <changefreq>always</changefreq>
+   <priority>0.8000</priority>
+</url>
+<url>
+   <loc>https://076923.github.io/docs/getAffineTransform</loc>
+   <lastmod>2021-09-18T11:40:47+00:00</lastmod>
+   <changefreq>always</changefreq>
+   <priority>0.8000</priority>
+</url>
+<url>
+   <loc>https://076923.github.io/docs/getPerspectiveTransform</loc>
+   <lastmod>2021-09-18T11:40:47+00:00</lastmod>
+   <changefreq>always</changefreq>
+   <priority>0.8000</priority>
+</url>
+<url>
+   <loc>https://076923.github.io/docs/getRotationMatrix2D</loc>
+   <lastmod>2021-09-18T11:40:47+00:00</lastmod>
+   <changefreq>always</changefreq>
+   <priority>0.8000</priority>
+</url>
+<url>
+   <loc>https://076923.github.io/docs/invertAffineTransform</loc>
+   <lastmod>2021-09-18T11:40:47+00:00</lastmod>
+   <changefreq>always</changefreq>
+   <priority>0.8000</priority>
+</url>
+<url>
+   <loc>https://076923.github.io/docs/threshold</loc>
+   <lastmod>2021-09-18T11:40:47+00:00</lastmod>
+   <changefreq>always</changefreq>
+   <priority>0.8000</priority>
+</url>
+<url>
+   <loc>https://076923.github.io/docs/adaptiveThreshold</loc>
+   <lastmod>2021-09-18T11:40:47+00:00</lastmod>
+   <changefreq>always</changefreq>
+   <priority>0.8000</priority>
+</url>
+<url>
+   <loc>https://076923.github.io/docs/grabCut</loc>
+   <lastmod>2021-09-18T11:40:47+00:00</lastmod>
+   <changefreq>always</changefreq>
+   <priority>0.8000</priority>
+</url>
+<url>
+   <loc>https://076923.github.io/docs/watershed</loc>
+   <lastmod>2021-09-18T11:40:47+00:00</lastmod>
+   <changefreq>always</changefreq>
+   <priority>0.8000</priority>
+</url>
+<url>
+   <loc>https://076923.github.io/docs/floodFill</loc>
+   <lastmod>2021-09-18T11:40:47+00:00</lastmod>
+   <changefreq>always</changefreq>
+   <priority>0.8000</priority>
+</url>
+<url>
+   <loc>https://076923.github.io/docs/distanceTransform</loc>
+   <lastmod>2021-09-18T11:40:47+00:00</lastmod>
+   <changefreq>always</changefreq>
+   <priority>0.8000</priority>
+</url>
+<url>
+   <loc>https://076923.github.io/docs/distanceTransformWithLabels</loc>
+   <lastmod>2021-09-18T11:40:47+00:00</lastmod>
+   <changefreq>always</changefreq>
+   <priority>0.8000</priority>
+</url>
+<url>
+   <loc>https://076923.github.io/docs/dilate</loc>
+   <lastmod>2021-09-18T11:40:47+00:00</lastmod>
+   <changefreq>always</changefreq>
+   <priority>0.8000</priority>
+</url>
+<url>
+   <loc>https://076923.github.io/docs/erode</loc>
+   <lastmod>2021-09-18T11:40:47+00:00</lastmod>
+   <changefreq>always</changefreq>
+   <priority>0.8000</priority>
+</url>
+<url>
+   <loc>https://076923.github.io/docs/morphologyEx</loc>
+   <lastmod>2021-09-18T11:40:47+00:00</lastmod>
+   <changefreq>always</changefreq>
+   <priority>0.8000</priority>
+</url>
+<url>
+   <loc>https://076923.github.io/docs/getStructuringElement</loc>
+   <lastmod>2021-09-18T11:40:47+00:00</lastmod>
+   <changefreq>always</changefreq>
+   <priority>0.8000</priority>
+</url>
+<url>
+   <loc>https://076923.github.io/docs/cornerEigenValsAndVecs</loc>
+   <lastmod>2021-09-18T11:40:47+00:00</lastmod>
+   <changefreq>always</changefreq>
+   <priority>0.8000</priority>
+</url>
+<url>
+   <loc>https://076923.github.io/docs/LineTypes</loc>
+   <lastmod>2021-09-18T11:40:47+00:00</lastmod>
+   <changefreq>always</changefreq>
+   <priority>0.8000</priority>
+</url>
+<url>
+   <loc>https://076923.github.io/docs/MarkerTypes</loc>
+   <lastmod>2021-09-18T11:40:47+00:00</lastmod>
+   <changefreq>always</changefreq>
+   <priority>0.8000</priority>
+</url>
+<url>
+   <loc>https://076923.github.io/docs/HersheyFonts</loc>
+   <lastmod>2021-09-18T11:40:47+00:00</lastmod>
+   <changefreq>always</changefreq>
+   <priority>0.8000</priority>
+</url>
+<url>
+   <loc>https://076923.github.io/docs/CriteriaTypes</loc>
+   <lastmod>2021-09-18T11:40:47+00:00</lastmod>
+   <changefreq>always</changefreq>
+   <priority>0.8000</priority>
+</url>
+<url>
+   <loc>https://076923.github.io/docs/InterpolationFlags</loc>
+   <lastmod>2021-09-18T11:40:47+00:00</lastmod>
+   <changefreq>always</changefreq>
+   <priority>0.8000</priority>
+</url>
+<url>
+   <loc>https://076923.github.io/docs/BorderTypes</loc>
+   <lastmod>2021-09-18T11:40:47+00:00</lastmod>
+   <changefreq>always</changefreq>
+   <priority>0.8000</priority>
+</url>
+<url>
+   <loc>https://076923.github.io/docs/ColorConversionCodes</loc>
+   <lastmod>2021-09-18T11:40:47+00:00</lastmod>
+   <changefreq>always</changefreq>
+   <priority>0.8000</priority>
+</url>
+<url>
+   <loc>https://076923.github.io/docs/WarpPolarMode</loc>
+   <lastmod>2021-09-18T11:40:47+00:00</lastmod>
+   <changefreq>always</changefreq>
+   <priority>0.8000</priority>
+</url>
+<url>
+   <loc>https://076923.github.io/docs/DecompTypes</loc>
+   <lastmod>2021-09-18T11:40:47+00:00</lastmod>
+   <changefreq>always</changefreq>
+   <priority>0.8000</priority>
+</url>
+<url>
+   <loc>https://076923.github.io/docs/ThresholdTypes</loc>
+   <lastmod>2021-09-18T11:40:47+00:00</lastmod>
+   <changefreq>always</changefreq>
+   <priority>0.8000</priority>
+</url>
+<url>
+   <loc>https://076923.github.io/docs/AdaptiveThresholdTypes</loc>
+   <lastmod>2021-09-18T11:40:47+00:00</lastmod>
+   <changefreq>always</changefreq>
+   <priority>0.8000</priority>
+</url>
+<url>
+   <loc>https://076923.github.io/docs/GrabCutModes</loc>
+   <lastmod>2021-09-18T11:40:47+00:00</lastmod>
+   <changefreq>always</changefreq>
+   <priority>0.8000</priority>
+</url>
+<url>
+   <loc>https://076923.github.io/docs/FloodFillFlags</loc>
+   <lastmod>2021-09-18T11:40:47+00:00</lastmod>
+   <changefreq>always</changefreq>
+   <priority>0.8000</priority>
+</url>
+<url>
+   <loc>https://076923.github.io/docs/DistanceTypes</loc>
+   <lastmod>2021-09-18T11:40:47+00:00</lastmod>
+   <changefreq>always</changefreq>
+   <priority>0.8000</priority>
+</url>
+<url>
+   <loc>https://076923.github.io/docs/DistanceTransformMasks</loc>
+   <lastmod>2021-09-18T11:40:47+00:00</lastmod>
+   <changefreq>always</changefreq>
+   <priority>0.8000</priority>
+</url>
+<url>
+   <loc>https://076923.github.io/docs/DistanceTransformLabelTypes</loc>
+   <lastmod>2021-09-18T11:40:47+00:00</lastmod>
+   <changefreq>always</changefreq>
+   <priority>0.8000</priority>
+</url>
+<url>
+   <loc>https://076923.github.io/docs/MorphShapes</loc>
+   <lastmod>2021-09-18T11:40:47+00:00</lastmod>
+   <changefreq>always</changefreq>
+   <priority>0.8000</priority>
+</url>
+<url>
+   <loc>https://076923.github.io/docs/MorphTypes</loc>
+   <lastmod>2021-09-18T11:40:47+00:00</lastmod>
+   <changefreq>always</changefreq>
+   <priority>0.8000</priority>
 </url>
 </urlset>
