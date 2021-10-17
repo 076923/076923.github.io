@@ -35,7 +35,7 @@ comments: true
 ## 표준 허프 변환(Standard Hough Transform) & 멀티 스케일 허프 변환(Multi-Scale Hough Transform) ##
 ----------
 
-![2]({{ site.images }}/assets/images/Python/opencv/ch28/2.jpg)
+![2]({{ site.images }}/assets/images/Python/opencv/ch28/2.JPG)
 
 `표준 허프 변환(Standard Hough Transform)`은 **입력 이미지(x, y 평면)** 내의 점 $$ p $$를 지나는 직선의 방정식을 구합니다.
 
