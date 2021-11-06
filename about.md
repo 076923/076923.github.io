@@ -21,7 +21,7 @@ order: 2
 <br>
 <h1><a href="https://www.inflearn.com/course/c-opencv/" class="fas fa-leaf" style="float:right;">&nbsp;Inflearn</a></h1>
 <br>
-<h1><a href="https://wikibook.co.kr/opencv4/" class="fas fa-book" style="float:right;">&nbsp;OpenCV4 Book</a></h1>
+<h1><a href="https://wikibook.co.kr/opencv4-rev/" class="fas fa-book" style="float:right;">&nbsp;OpenCV4 Book</a></h1>
 <br>
 <h1><a href="https://pypi.org/project/python-opencv-utils/" class="fas fa-code" style="float:right;">&nbsp;Python OpenCV Utilities</a></h1>
 <br>
