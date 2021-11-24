@@ -1,2 +1,0 @@
-{% assign thispage = site.pages | where:"ref", include.page_ref | first %}
-{% if thispage %}{{ thispage.url | prepend: site.baseurl }}{% else %}{{ site.baseurl }}/ciaone{% endif %}

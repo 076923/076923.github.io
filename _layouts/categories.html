@@ -1,0 +1,62 @@
+---
+layout: archive
+---
+
+{{ content }}
+
+{% assign categories_max = 0 %}
+{% for category in site.categories %}
+  {% if category[1].size > categories_max %}
+    {% assign categories_max = category[1].size %}
+  {% endif %}
+{% endfor %}
+
+<ul class="taxonomy__index2">
+  {% for i in (1..categories_max) reversed %}
+    {% for category in site.categories %}
+      {% if category[1].size == i %}
+        <li>
+          <div class="title">
+            <h1>{{ category[0] }}</h1> <span class="taxonomy__count">{{ i }}</span>
+          </div>
+
+          {% assign tag = category[0] %}
+          {% assign category_tag = "" | split: ',' %}
+
+          {% for post in site.categories[tag] %}
+            {% assign category_tag = category_tag | push: post.tags %}
+          {% endfor %}
+
+          {% assign uniq_tag = category_tag | uniq | sort_natural %}
+          {% assign site_tag = site.tags %}
+          
+          {% for tag in uniq_tag %}        
+            <li>
+              <a href="/posts/#{{ tag }}">
+                <div class="taxonomy__icon">
+                  {% if site.data.image[tag] %}
+                    <img src={{ site.data.image[tag] }}>
+                    <h2>{{ tag }}</h2>
+                  {% else %}
+                    {% if tag contains "C#" %}
+                      {% assign target = 'C#' %}
+                    {% elsif tag contains "OpenCvSharp2" %}
+                      {% assign target = 'OpenCV' %}
+                    {% endif %}
+                    <img src={{ site.data.image[target] }}>
+                    <h2>{{ tag }}</h2>
+                  {% endif %}
+
+                </div>
+                <span class="taxonomy__count">{{ site_tag[tag].size }}</span>
+              </a>
+            </li>
+          {% endfor %}
+
+        </li>
+      {% endif %}
+    {% endfor %}
+  {% endfor %}
+</ul>
+
+{% include adsense/main-bottom.html %}

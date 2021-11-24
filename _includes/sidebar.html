@@ -1,0 +1,22 @@
+{% if page.author_profile or layout.author_profile or page.sidebar %}
+  <div class="sidebar sticky" id="sidebar sticky">
+  {% if page.sidebar %}
+    {% include navigation_main %}
+  {% endif %}
+
+  {% if page.category %}
+    {% for s in page.category %}
+      {% if s.image %}
+        <img src="{{ s.image | relative_url }}"
+             alt="{% if s.image_alt %}{{ s.image_alt }}{% endif %}">
+      {% endif %}
+      {% if s.title %}<h3>{{ s.title }}</h3>{% endif %}
+      {% if s.text %}{{ s.text | markdownify }}{% endif %}
+      {% if s.nav %}{% include nav_list nav=s.nav %}{% endif %}
+    {% endfor %}
+    {% if page.category %}
+      {% include nav_list nav=page.ref %}
+    {% endif %}
+  {% endif %}
+  </div>
+{% endif %}

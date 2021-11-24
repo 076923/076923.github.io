@@ -1,135 +1,36 @@
-<!DOCTYPE html>
-<html lang= "ko">
+---
+---
 
+<!doctype html>
+<html lang="{{ site.locale | slice: 0,2 | default: "en" }}" class="no-js">
   <head>
-    <!-- External libraries -->
-    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
-    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/lightbox2/2.7.1/css/lightbox.css">
-    <link href="https://fonts.googleapis.com/css?family=Nanum+Brush+Script|Noto+Sans+KR|Noto+Serif+KR&display=swap" rel="stylesheet">
-    
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/v4-shims.css">
-
-    <!-- Non social metatags -->
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <meta name="theme-color" content="#157878">
-
-    {% include gtag.js %}
-    {% include page-title.html %}
-
-    <title>{{ page_title }}</title>
-
-    {% if page.title %}
-      {% assign header_title = page.title | escape %}
-    {% else %}
-      {% assign header_title = site.main | escape %}
-    {% endif %}
-
-    {% if site.gems contains "jekyll-seo-tag" %}
-    <!-- jekyll-seo-tag -->
-    {% else %}
-      {% include social-metatags.html %}
-    {% endif %}
-
-    {% assign canonical_url = page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url %}
-
-    <link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}">
-
-    <link rel="alternate" type="application/rss+xml" title="{{ site.title | escape }}" href="{{ '/feed.xml' }}">
-
-    <link rel="shortcut icon" href="{{ '/favicon.ico' | prepend: site.baseurl }}">
-    <meta name="robots" content="noarchive">
-
-    <!-- <link rel="alternate" media="only screen and (max-width: 640px)" href="">
-    <link rel="alternate" media="handheld" href=""> -->
-
-    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" href="{{ '/assets/css/style.css' | prepend: site.baseurl }}">
-   
-    {% include adsense.html %}
-    {% include topbutton.html %}
+    {% include head.html %}
+    {% include scripts.html %}
+    {% include head/custom.html %}
   </head>
-  <body>
-    <div id="scrolltotop" style="display: block;"><a href="#top"><span></span></a></div> 
-    <div id="shadow"></div>
-    <div class="head_div">
 
-      {% if page.layout == 'home' %}
-        {% assign page-tagline = page.tagline | default: site.description | escape %}
-        {% assign header-padding = "80px" %}
-        {% assign header-padding-bottom = "40px" %}
-      {% else %}
-        {% assign header-padding = "40px" %}
-        {% assign header-padding-bottom = "20px" %}
-      {% endif %}
+  <body class="layout--{{ page.layout | default: layout.layout }}{% if page.classes or layout.classes %}{{ page.classes | default: layout.classes | join: ' ' | prepend: ' ' }}{% endif %}">
+    {% include_cached skip-links.html %}
+    {% include_cached browser-upgrade.html %}
+    {% include_cached masthead.html %}
 
-      {% if page.layout == 'page' or page.layout == 'category' %}
-        {% assign page-tagline = page.tagline | escape %}
-      {% endif %}
-
-      {% if page.layout == 'post' %}
-        {% assign page-tagline = page.tagline | default: page.repository.project_tagline | escape  %}
-      {% endif %}
-
-      <div id="wrapper-canvas" class="head_title"></div>
-      {% include site-header.html %}
-      
-      {% if header_title == "YUN DAE HEE" %}
-        <h1 class="project-name">Daehee Yun</h1>
-        <h2 class="project-tagline">{{ page-tagline }}</h2>
-      {% else %}
-        <h1 class="project-name">{{ header_title }}</h1>
-        <h2 class="project-tagline">{{ page-tagline }}</h2>
-      {% endif %}
-
-
-    </div>
-    <section class="main-content">
-
+    <div class="initial-content">
       {{ content }}
+    </div>
 
-      {% include footer.html %}
+    {% if site.search == true %}
+      <div class="search-content">
+        {% include_cached search/search_form.html %}
+      </div>
+    {% endif %}
 
-    </section>
-    <script id="dsq-count-scr" src="//{{ site.disqus }}.disqus.com/count.js" async></script>
-    <script type="text/javascript">
-      var menu = document.querySelector("nav.site-nav");
-      var checkbox = document.getElementById("nav-trigger");
-
-      // close menu if click outside menu
-      document.addEventListener("click", function(e) {
-        if (menu != e.target &&
-            ! isDescendant(menu, e.target)) {
-          checkbox.checked = false;
-        }
-
-      }, false);
-
-      function isDescendant(parent, child) {
-           var node = child.parentNode;
-           while (node != null) {
-               if (node == parent) {
-                   return true;
-               }
-               node = node.parentNode;
-           }
-           return false;
-      }
-
-    </script>
-
-  <!-- here comments count script -->
-  {% include wcslog.html %}
-  <script src="https://static.codepen.io/assets/common/stopExecutionOnTimeout-de7e2ef6bfefd24b79a3f68b414b87b8db5b08439cac3f1012092b2290c719cd.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/matter-js/0.12.0/matter.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/matter-wrap@0.2.0/build/matter-wrap.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/matter-attractors@0.1.6/build/matter-attractors.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-  <script src="/assets/js/title.js"></script>
-  <!-- <script src="//cdnjs.cloudflare.com/ajax/libs/mathjax/2.5.3/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script> -->
-  <script async src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+    {% include /comments-providers/disqus.html %}
+    
+    <div id="footer" class="page__footer">
+      <footer>
+        {% include footer/custom.html %}
+        {% include_cached footer.html %}
+      </footer>
+    </div>
   </body>
 </html>

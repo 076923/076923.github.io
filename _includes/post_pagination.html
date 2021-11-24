@@ -1,0 +1,37 @@
+{% if page.previous or page.next %}
+
+  {% assign count = 0 %}
+  {% assign now = -1 %}
+  {% assign arr = "" | split: '' %}
+  {% assign arr_title = "" | split: '' %}
+  {% for post in site.posts %}
+    {% if post.tags == page.tags %}
+      {% if post.title == page.title %}
+        {% assign now = count %}
+      {% endif %}
+
+      {% assign count = count | plus: 1 %}
+      {% assign arr = arr | push: post.url %}
+      {% assign arr_title = arr_title | push: post.title %}
+
+    {% endif %}
+  {% endfor %}
+
+  {% assign next = now | minus:1 %}
+  {% assign prev = now | plus:1 %}
+
+  <nav class="pagination">
+    {% if prev != arr.size %}
+      <a href="{{ arr[prev] | relative_url }}" class="pagination--pager" title="{{ page.previous.title | markdownify | strip_html }}">{{ site.data.ui-text[site.locale].pagination_previous | default: "Previous" }}<br>{{ arr_title[prev] }}</a>
+    {% else %}
+      <a href="#" class="pagination--pager disabled">{{ site.data.ui-text[site.locale].pagination_previous | default: "Previous" }}<br>첫 페이지</a>
+    {% endif %}
+    {% if next != -1 %}
+      <a href="{{ arr[next] | relative_url }}" class="pagination--pager" title="{{ page.next.title | markdownify | strip_html }}">{{ site.data.ui-text[site.locale].pagination_next | default: "Next" }}<br>{{ arr_title[next] }}</a>
+    {% else %}
+      <a href="#" class="pagination--pager disabled">{{ site.data.ui-text[site.locale].pagination_next | default: "Next" }}<br>마지막 페이지</a>
+    {% endif %}
+  </nav>
+
+
+{% endif %}
