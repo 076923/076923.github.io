@@ -1,0 +1,39 @@
+<!-- start custom head snippets -->
+<!-- <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script> -->
+<!-- <script>
+    $(window).scroll(function() { 
+        if($(location).attr("pathname").split("/").length > 3){
+            if (document.getElementById("sidebar sticky").className == 'sidebar sticky'){
+                var position = $(window).scrollTop();
+                document.getElementById("sidebar sticky").style.top = - $(window).scrollTop() / ($(document).outerHeight() - $(window).outerHeight()) * 100 + "px"
+            }
+        }        
+    });
+</script> -->
+
+<script>
+$(function () {
+    if ($(location).attr("href").includes("#") && !$(location).attr("href").includes("top")){
+        var headerHeight = $(document.getElementsByClassName("masthead")).outerHeight();
+        var position = $(window).scrollTop() - headerHeight - 12;
+        $("html, body").animate({ scrollTop: position }, 600, "swing");
+    }
+    
+    $(".header-link").on("click", function(e){
+        e.preventDefault();
+        var headerHeight = $(document.getElementsByClassName("masthead")).outerHeight();
+        var href = $(this).attr("href");
+        var target = $(document.getElementById(href.slice(1)));
+        var position = target.offset().top - headerHeight - 12;
+        $("html, body").animate({ scrollTop: position }, 600, "swing");
+    });
+    $(".anchor").on("click", function(e){
+        e.preventDefault();
+        var headerHeight = $(document.getElementsByClassName("masthead")).outerHeight();
+        var href = $(this).attr("href");
+        var target = $(document.getElementById(href.slice(1)));
+        var position = target.offset().top - headerHeight - 12;
+        $("html, body").animate({ scrollTop: position }, 600, "swing");
+    }); 
+});
+</script>

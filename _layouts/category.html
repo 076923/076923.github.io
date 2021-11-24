@@ -1,15 +1,10 @@
 ---
-layout: default
+layout: archive
 ---
-
-{% include adsense_main_top.html %}
-
-<div>
 
 {{ content }}
 
+{% assign entries_layout = page.entries_layout | default: 'list' %}
+<div class="entries-{{ entries_layout }}">
+  {% include posts-category.html taxonomy=page.taxonomy type=entries_layout %}
 </div>
-
-{% include list-category-posts.html category=page.category %}
-
-{% include adsense_main_bottom.html %}

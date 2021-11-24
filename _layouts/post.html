@@ -2,88 +2,82 @@
 layout: default
 ---
 
-{% include adsense_post_top.html %}
-{% assign count = 0 %}
-{% assign now = -1 %}
-{% assign arr = "" | split: '' %}
-{% assign arr_title = "" | split: '' %}
+{% if page.header.overlay_color or page.header.overlay_image or page.header.image %}
+  {% include page__hero.html %}
+{% elsif page.header.video.id and page.header.video.provider %}
+  {% include page__hero_video.html %}
+{% endif %}
 
+{% if page.url != "/" and site.breadcrumbs %}
+  {% unless paginator %}
+    {% include breadcrumbs.html %}
+  {% endunless %}
+{% endif %}
 
-{% for post in site.posts %}
-  {% if post.tags == page.tags %}
-    {% if post.title == page.title %}
-      {% assign now = count %}
-    {% endif %}
-
-    {% assign count = count | plus: 1 %}
-    {% assign arr = arr | push: post.url %}
-    {% assign arr_title = arr_title | push: post.title %}
-
-  {% endif %}
-{% endfor %}
-
-{% assign next = now | minus:1 %}
-{% assign prev = now | plus:1 %}
-
-{% include article-author-bio-small.html %}
-<article itemscope itemtype="http://schema.org/BlogPosting">
-
-  <div itemprop="articleBody">
-    {{ content }}
-  </div>
-  <br>
-  <hr>
-  <div class="wikibook">
-    <img src="{{ site.images }}/assets/images/wikibook.jpg" alt="Book Image">
-    <h1>개정판이 출간됐습니다!</h1>
-    <h2>C#과 파이썬을 활용한 OpenCV 4 프로그래밍 (개정판)</h2>
-    <div>
-      <p>컴퓨터 비전 기초 이론부터 머신러닝을 활용한 영상 처리 프로젝트까지</p>
-      <li style="font-size: smaller;">C#과 파이썬용 OpenCV의 데이터 형식과 행렬 및 배열 연산</li>
-      <li style="font-size: smaller;">이미지/동영상/카메라를 활용한 입출력과 결과 저장</li>
-      <li style="font-size: smaller;">전처리 과정과 정보를 탐색하기 위한 이미지 변형</li>
-      <li style="font-size: smaller;">유의미한 정보를 검출하기 위한 이미지 변환</li>
-      <li style="font-size: smaller;">이미지에서 정보를 검출 및 인식</li>
-      <li style="font-size: smaller;">객체 검출을 포함한 모션 추적</li>
-      <li style="font-size: smaller;">K-means, KNN, SVM 등의 머신러닝 알고리즘 적용 방법</li>
-      <li style="font-size: smaller;">카페(Caffe), 다크넷(Darknet), 텐서플로 모델을 활용한 딥러닝 모듈 적용 방법</li>
-      <li style="font-size: smaller;">Tesseract-OCR과 C# OpenCvSharp4를 활용한 프로젝트</li>
-      <li style="font-size: smaller;">텐서플로와 Python OpenCV4를 활용한 프로젝트</li>
-      <p>윤대희 저 | 위키북스</p>
-      <a href="http://www.yes24.com/Product/Goods/99029275">[yes24 바로가기]</a> <a href="https://www.aladin.co.kr/shop/wproduct.aspx?ItemId=268617710">[알라딘 바로가기]</a> <a href="http://www.kyobobook.co.kr/product/detailViewKor.laf?barcode=9791158392550">[교보문고 바로가기]</a>
-    </div>
-  </div>
-  <br>
-  <br>
-  <hr>
-  <div class="post-content" style="margin-top:30px">
-    <div class="post-links">
-      {% if prev != arr.size %}
-        <a class="link-to-post" href="{{ arr[prev] }}">
-          <span class="link-to-post__prev">&#10535; &nbsp;Previous post</span>
-          <span class="link-to-post__title">{{ arr_title[prev] }}</span>
-        </a>
-      {% endif %}
-      
-      {% if next != -1 %}
-        <a class="link-to-post" href="{{ arr[next] }}">
-          <span class="link-to-post__next">&#10535; &nbsp;Next post</span>
-          <span class="link-to-post__title">{{ arr_title[next] }}</span>
-        </a>
-      {% endif %}
+<div id="main" role="main">
+  {% include sidebar.html %}
   
-    </div>
-  </div>
-  <div class="post-links">
-      <a class="link-to-post" href="/posts/#{{ page.tags }}">
-        <span class="link-to-post__category">&#10535; &nbsp;Return to Category</span>
-        <span class="link-to-post__title">{{ page.tags }} Category</span>
-      </a>
-  </div>
-</article>
+  <article class="page h-entry" itemscope itemtype="https://schema.org/CreativeWork">
+    {% if page.title %}<meta itemprop="headline" content="{{ page.title | markdownify | strip_html | strip_newlines | escape_once }}">{% endif %}
+    {% if page.excerpt %}<meta itemprop="description" content="{{ page.excerpt | markdownify | strip_html | strip_newlines | escape_once }}">{% endif %}
+    {% if page.date %}<meta itemprop="datePublished" content="{{ page.date | date_to_xmlschema }}">{% endif %}
+    {% if page.last_modified_at %}<meta itemprop="dateModified" content="{{ page.last_modified_at | date_to_xmlschema }}">{% endif %}
 
-<center>
-  {% include disqus.html %}
-</center>
-<br>
-{% include adsense_post_bottom.html %}
+    <div class="page__inner-wrap">
+      {% if page.toc %}
+        <aside class="sidebar__right {% if page.toc_sticky %}sticky{% endif %}">
+          <nav class="toc">
+            <header><a href="#"><h4 class="nav__title"><i class="fas fa-{{ page.toc_icon | default: 'file-alt' }}"></i> &nbsp;{{ page.toc_label | default: site.data.ui-text[site.locale].toc_label | default: "On this page" }}</h4></a></header>
+            {% include toc.html sanitize=true html=content h_min=1 h_max=6 class="toc__menu" anchor_class="anchor" skip_no_ids=true %}
+          </nav>
+        </aside>
+      {% endif %}
+      {% unless page.header.overlay_color or page.header.overlay_image %}
+        <header>
+          {% if page.title %}<h1 id="page-title" class="page__title p-name" itemprop="headline">
+            <a href="{{ page.url | absolute_url }}" class="u-url" itemprop="url">{{ page.title | markdownify | remove: "<p>" | remove: "</p>" }}</a>
+          </h1>{% endif %}
+          {% include page__meta.html %}
+        </header>
+      {% endunless %}
+
+      <section class="page__content e-content" itemprop="text">
+        {{ content }}
+        {% if page.link %}<div><a href="{{ page.link }}" class="btn btn--primary">{{ site.data.ui-text[site.locale].ext_link_label | default: "Direct Link" }}</a></div>{% endif %}
+      </section>
+
+      {% if page.share %}{% include social-share.html %}{% endif %}
+
+      {% include post_pagination.html %}
+    </div>
+
+    {% if site.comments.provider and page.comments %}
+      {% include comments.html %}
+    {% endif %}
+    
+    {% if page.id and page.related and site.related_posts.size > 0 %}
+      <div class="page__related">
+        <h2 class="page__related-title">{{ site.data.ui-text[site.locale].related_label | default: "You May Also Enjoy" }}</h2>
+        <div class="grid__wrapper">
+          {% for post in site.related_posts limit:3 %}
+            {% include archive-single.html type="grid" %}
+          {% endfor %}
+        </div>
+      </div>
+    {% elsif page.id and page.related %}
+      <div class="page__related">
+        <h2 class="page__related-title">{{ site.data.ui-text[site.locale].related_label | default: "You May Also Enjoy" }}</h2>
+        <div class="grid__wrapper">
+          {% for post in site.posts limit:3 %}
+            {% if post.id == page.id %}
+              {% continue %}
+            {% endif %}
+            {% include archive-single.html type="grid" %}
+          {% endfor %}
+        </div>
+      </div>
+    {% endif %}
+    {% include adsense/post-bottom.html %}
+  </article>
+
+</div>

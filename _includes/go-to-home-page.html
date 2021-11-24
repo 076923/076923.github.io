@@ -1,6 +1,0 @@
-{% assign home_page = site.pages | where:"ref", "home" | where:"lang", page.lang  | first %}
-{% if home_page %}
-  [{{ site.t[page.lang].go-to-home-page }}]({{ home_page.url | prepend: site.baseurl }})
-{% else %}
-  [{{ site.t[page.lang].go-to-home-page }}]({{ site.baseurl }}/)
-{% endif %}
