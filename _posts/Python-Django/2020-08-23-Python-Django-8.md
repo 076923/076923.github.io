@@ -104,9 +104,8 @@ URL(urls.py) 파일을 위와 같이 정의합니다.
 어떤 **리소스 경로**나 **쿼리**로 접근했을 때, 연결될 뷰를 설정합니다.
 
 <br>
-<br>
 
-## Module
+### Module
 
 {% highlight python %}
 
@@ -120,9 +119,8 @@ from first_app.views import UserViewSet
 `from first_app.views import UserViewSet`는 `first_app` 앱의 `views.py`에서 선언한 UserViewSet 클래스입니다.
 
 <br>
-<br>
 
-## urlpatterns
+### urlpatterns
 
 {% highlight python %}
 
