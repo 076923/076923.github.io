@@ -95,9 +95,8 @@ DRF에서는 `ViewSet`이라는 추상 클래스를 제공합니다.
 `ViewSet` 클래스는 `URL` 설정을 통해서 간단하게 연결할 수 있습니다.
 
 <br>
-<br>
 
-## Module
+### Module
 
 {% highlight python %}
 
@@ -125,9 +124,8 @@ from first_app.serializers import UserSerializer
 **serializers.py는 아직 선언하지 않았으며, 다음 강좌에서 자세히 다룹니다.**
 
 <br>
-<br>
 
-## ModelViewSet
+### ModelViewSet
 
 {% highlight python %}
 
