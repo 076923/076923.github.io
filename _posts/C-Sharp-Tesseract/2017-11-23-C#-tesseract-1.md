@@ -31,7 +31,7 @@ toc: true
 
 ![1]({{ site.images }}/assets/posts/C-Sharp/Tesseract/lecture-1/1.png)
 
-`프로젝트` → `NuGet 패키지 관리(N)...`을 통하여 Tesseract를 쉽게 설치할 수 있습니다.
+`프로젝트` → `NuGet 패키지 관리(N)...`을 통하여 `Tesseract`를 설치할 수 있습니다.
 
 <br>
 
