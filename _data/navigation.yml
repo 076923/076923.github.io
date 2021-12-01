@@ -779,3 +779,11 @@ Exercise-C#-OpenCvSharp2:
         url: "/exercise/C-opencv-color_circle_detection/"
       - title: "볼 트래킹"
         url: "/exercise/C-opencv-ball_tracking/"
+
+Etc-MySQL:
+  - title: "MySQL 강좌 목록"
+    children:
+      - title: "제 1강 - MySQL 소개 및 설치"
+        url: "/posts/mysql-1/"
+      - title: "제 2강 - 데이터베이스"
+        url: "/posts/mysql-2/"

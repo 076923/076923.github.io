@@ -185,38 +185,38 @@ listbox.pack()
 
 <br>
 
+<a id="reference-1"></a>
+
 ### 참고
 
-<a id="reference-1"></a>
+<a id="reference-2"></a>
 
 * `width`, `height`에 `0`을 입력 시, **항목에 맞춰 크기가 설정됨**
 
-<a id="reference-2"></a>
+<a id="reference-3"></a>
 
 * cursor 매개변수
 
     - arrow, based_arrow_down, based_arrow_up, boat, bogosity, bottom_left_corner, bottom_right_corner, bottom_side, bottom_tee, box_spiral, center_ptr, circle, clock,	coffee_mug, cross, cross_reverse, crosshair, diamond_cross, dot, dotbox, double_arrow, draft_large, draft_small, draped_box, exchange, fleur, gobbler, gumby, hand1, hand2, heart, icon, iron_cross, left_ptr, left_side, left_tee, leftbutton, ll_angle, lr_angle, man, middlebutton, mouse, pencil, pirate, plus, question_arrow, right_ptr, right_side, right_tee, rightbutton, rtl_logo, sailboat, sb_down_arrow, sb_h_double_arrow, sb_left_arrow, sb_right_arrow, sb_up_arrow, sb_v_double_arrow, shuttle, sizing, spider, spraycan, star, target, tcross, top_left_arrow, top_left_corner, top_right_corner, top_side, top_tee, trek, ul_angle, umbrella, ur_angle, watch, wait, xterm, X_cursor
 
-<a id="reference-3"></a>
+<a id="reference-4"></a>
 
 * `exportselection`가 `True`일 때 리스트박스가 2개 이상일 경우 1번 리스트 박스에서 항목 선택 후, 2번 리스트 박스에서 항목을 선택하면 1번 **리스트 박스의 항목 선택 상태가 해제된다.** 항목 선택을 유지하고자 할 때 `False`로 사용
 
-<a id="reference-4"></a>
+<a id="reference-5"></a>
 
 * 기본 설정은 `normal` 상태의 설정을 의미함 (`bg`, `fg` 등의 설정)
 
-<a id="reference-5"></a>
+<a id="reference-6"></a>
 
 * `highlightbackground`를 설정하였을 경우, 리스트박스가 선택되지 않았을 때에도 두께가 표시됨
 
-<a id="reference-6"></a>
+<a id="reference-7"></a>
 
 * activestyle 파리미터
     - dotbox : 선택된 항목에 점선 테두리 적용
     - underline : 선택된 항목의 문자열에 밑줄 적용
     - none : 선택된 항목에 블럭처리만 적용
-
-<a id="reference-7"></a>
 
 * selectmode 매개변수
     - browse : 단일 선택, 방향키 이동 시 선택

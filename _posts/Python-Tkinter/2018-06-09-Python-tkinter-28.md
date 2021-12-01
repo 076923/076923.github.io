@@ -194,9 +194,9 @@ label4.pack()
 
 <br>
 
-### 참고
-
 <a id="reference-1"></a>
+
+### 참고
 
 * cursor 매개변수
 

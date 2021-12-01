@@ -144,13 +144,13 @@ panedwindow2.add(bottom)
 
 <br>
 
-### 참고
-
 <a id="reference-1"></a>
 
-* 미 입력시, `width`와 `height`를 `자동 조절`
+### 참고
 
 <a id="reference-2"></a>
+
+* 미 입력시, `width`와 `height`를 `자동 조절`
 
 * cursor 매개변수
 

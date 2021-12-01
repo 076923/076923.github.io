@@ -118,16 +118,16 @@ progressbar.start(50)
 
 <br>
 
+<a id="reference-1"></a>
+
 ### 참고
 
-<a id="reference-1"></a>
+<a id="reference-2"></a>
 
 * mode 매개변수
 
     - `determinate` : 표시기가 처음부터 끝까지 채워짐
     - `indeterminate` : 표시기가 처음부터 끝까지 반복 이동
-
-<a id="reference-2"></a>
 
 * cursor 매개변수
 
