@@ -160,30 +160,30 @@ label.pack()
 
 <br>
 
+<a id="reference-1"></a>
+
 ### 참고
 
-<a id="reference-1"></a>
+<a id="reference-2"></a>
 
 * `tickinterval`를 설정하였을 경우, 수치 조정 바에 `tickinterval` 값 마다 수치가 표시됨
 
-<a id="reference-2"></a>
+<a id="reference-3"></a>
 
 * cursor 매개변수
 
     - arrow, based_arrow_down, based_arrow_up, boat, bogosity, bottom_left_corner, bottom_right_corner, bottom_side, bottom_tee, box_spiral, center_ptr, circle, clock,	coffee_mug, cross, cross_reverse, crosshair, diamond_cross, dot, dotbox, double_arrow, draft_large, draft_small, draped_box, exchange, fleur, gobbler, gumby, hand1, hand2, heart, icon, iron_cross, left_ptr, left_side, left_tee, leftbutton, ll_angle, lr_angle, man, middlebutton, mouse, pencil, pirate, plus, question_arrow, right_ptr, right_side, right_tee, rightbutton, rtl_logo, sailboat, sb_down_arrow, sb_h_double_arrow, sb_left_arrow, sb_right_arrow, sb_up_arrow, sb_v_double_arrow, shuttle, sizing, spider, spraycan, star, target, tcross, top_left_arrow, top_left_corner, top_right_corner, top_side, top_tee, trek, ul_angle, umbrella, ur_angle, watch, wait, xterm, X_cursor
 
-<a id="reference-3"></a>
+<a id="reference-4"></a>
 
 * `highlightbackground`를 설정하였을 경우, 수치 조정 바가 선택되지 않았을 때에도 두께가 표시됨
 
-<a id="reference-4"></a>
+<a id="reference-5"></a>
 
 * `takefocus`가 `True`로 설정한 뒤, `Tab`이 된 상태에서 `Ctrl`키와 `좌우 방향키`를 동시에 눌러 `bigincrement` 의 값 만큼 한 번에 이동됨
 
-<a id="reference-5"></a>
+<a id="reference-6"></a>
 
 * `repeatdelay=100` 일 경우, **누르고 있기 시작한 0.1초 후**에 `command`가 실행됨
-
-<a id="reference-6"></a>
 
 * `repeatdelay=1000`, `repeatinterval=100` 일 경우, **1초 후에 command가 실행되며 0.1초마다 버튼을 뗄 때까지** `command`가 계속 실행됨
