@@ -658,11 +658,13 @@ C#-OpenCvSharp2:
       - title: "제 61강 - 내부 채우기"
         url: "/posts/C-opencv-61/"
    
-C#-GMap:
-  - title: "C# GMap 강좌 목록"
+C#-GMap.NET:
+  - title: "C# GMap.NET 강좌 목록"
     children:
-      - title: "제 1강 - GMap.NET 설치"
+      - title: "제 1강 - 소개 및 설치"
         url: "/posts/C-gmap-1/"
+      - title: "제 2강 - 지도 이동"
+        url: "/posts/C-gmap-2/"
    
 C#-OpenCvSharp4:
   - title: "OpenCvSharp4 강좌 목록"
