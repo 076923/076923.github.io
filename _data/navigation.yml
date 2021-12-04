@@ -665,6 +665,8 @@ C#-GMap.NET:
         url: "/posts/C-gmap-1/"
       - title: "제 2강 - 지도 이동"
         url: "/posts/C-gmap-2/"
+      - title: "제 3강 - 마커 생성 및 삭제"
+        url: "/posts/C-gmap-3/"
    
 C#-OpenCvSharp4:
   - title: "OpenCvSharp4 강좌 목록"
