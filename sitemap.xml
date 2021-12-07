@@ -1,0 +1,70 @@
+---
+layout: null
+---
+
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd"
+        xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+    {% assign lastmod = "2021-12-07T00:00:00+00:00" %}
+    <url>
+        <loc>https://076923.github.io/</loc>
+        <lastmod>{{ lastmod | date_to_xmlschema }}</lastmod>
+        <changefreq>always</changefreq>
+        <priority>1.0000</priority>
+    </url>
+    <url>
+        <loc>https://076923.github.io/feed.xml</loc>
+        <lastmod>{{ lastmod | date_to_xmlschema }}</lastmod>
+        <changefreq>always</changefreq>
+        <priority>0.8000</priority>
+    </url>
+    <url>
+        <loc>https://076923.github.io/docs/</loc>
+        <lastmod>{{ lastmod | date_to_xmlschema }}</lastmod>
+        <changefreq>always</changefreq>
+        <priority>0.8000</priority>
+    </url>
+    <url>
+        <loc>https://076923.github.io/posts/</loc>
+        <lastmod>{{ lastmod | date_to_xmlschema }}</lastmod>
+        <changefreq>always</changefreq>
+        <priority>0.8000</priority>
+    </url>
+    <url>
+        <loc>https://076923.github.io/categories/</loc>
+        <lastmod>{{ lastmod | date_to_xmlschema }}</lastmod>
+        <changefreq>always</changefreq>
+        <priority>0.8000</priority>
+    </url>
+    <url>
+        <loc>https://076923.github.io/guest/</loc>
+        <lastmod>{{ lastmod | date_to_xmlschema }}</lastmod>
+        <changefreq>always</changefreq>
+        <priority>0.8000</priority>
+    </url>
+    <url>
+        <loc>https://076923.github.io/about</loc>
+        <lastmod>{{ lastmod | date_to_xmlschema }}</lastmod>
+        <changefreq>always</changefreq>
+        <priority>0.8000</priority>
+    </url>
+    {% for post in site.posts %}
+    <url>
+        <loc>{{ site.url }}{{ post.url }}</loc>
+        <lastmod>{{ lastmod | date_to_xmlschema }}</lastmod>
+
+        {% if post.sitemap.changefreq == null %}
+        <changefreq>daily</changefreq>
+        {% else %}
+        <changefreq>{{ post.sitemap.changefreq }}</changefreq>
+        {% endif %}
+
+        {% if post.sitemap.priority == null %}
+        <priority>0.7</priority>
+        {% else %}
+        <priority>{{ post.sitemap.priority }}</priority>
+        {% endif %}
+    </url>
+    {% endfor %}
+</urlset>
