@@ -797,3 +797,5 @@ Etc-MySQL:
         url: "/posts/mysql-1/"
       - title: "제 2강 - 데이터베이스"
         url: "/posts/mysql-2/"
+      - title: "제 3강 - 테이블"
+        url: "/posts/mysql-3/"
