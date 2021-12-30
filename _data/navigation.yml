@@ -362,7 +362,7 @@ Python-OpenCV:
         url: "/posts/Python-opencv-20/"
   - title:
     children:
-      - title: "제 21강 - 윤곽섬 검출"
+      - title: "제 21강 - 윤곽선 검출"
         url: "/posts/Python-opencv-21/"
       - title: "제 22강 - 다각형 근사"
         url: "/posts/Python-opencv-22/"
