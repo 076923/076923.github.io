@@ -5,8 +5,6 @@ sidebar: true
 comments: true
 ---
 
-## Guest Book
-
 방문해주셔서 감사합니다.
 
 윤대희 기술 블로그 방명록입니다.
