@@ -56,6 +56,8 @@ docs:
 
   - title: Extras
     children:
+      - title: "Search"
+        url: "/search/"
       - title: "Guest Book"
         url: "/guest/"
       - title: "Kakao Group Chat"
@@ -799,3 +801,5 @@ Etc-MySQL:
         url: "/posts/mysql-2/"
       - title: "제 3강 - 테이블"
         url: "/posts/mysql-3/"
+      - title: "제 4강 - 데이터 삽입"
+        url: "/posts/mysql-4/"
