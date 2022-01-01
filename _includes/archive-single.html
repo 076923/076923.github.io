@@ -24,7 +24,6 @@
         <a href="{{ post.url | relative_url }}" rel="permalink">{{ title }}</a>
       {% endif %}
     </h2>
-    <!-- Meta Tag -->
     <p class="page__meta" style="margin: 0;">
       {% assign categories_sorted = post.categories | sort_natural %}
       <strong><i class="fas fa-fw fa-folder-open" aria-hidden="true"></i> {{ site.data.ui-text[site.locale].categories_label | default: "Categories:" }} </strong>
