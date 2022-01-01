@@ -1,10 +1,8 @@
-<!-- Including InstantSearch.js library and styling -->
 <script src="https://cdn.jsdelivr.net/npm/instantsearch.js@2.3.3/dist/instantsearch.min.js"></script>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/instantsearch.js@2.3.3/dist/instantsearch.min.css">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/instantsearch.js@2.3.3/dist/instantsearch-theme-algolia.min.css">
 
 <script>
-// Instanciating InstantSearch.js with Algolia credentials
 const search = instantsearch({
   appId: '{{ site.algolia.application_id }}',
   apiKey: '{{ site.algolia.search_only_api_key }}',
@@ -32,7 +30,6 @@ const hitTemplate = function(hit) {
   `;
 }
 
-// Adding searchbar and results widgets
 search.addWidget(
   instantsearch.widgets.searchBox({
     container: '.search-searchbar',
@@ -50,7 +47,6 @@ search.addWidget(
   })
 );
 
-// Starting the search only when toggle is clicked
 $(document).ready(function () {
   $(".search__toggle").on("click", function() {
     if(!search.started) {
