@@ -213,7 +213,6 @@ timezone:
 # Plugins (previously gems:)
 plugins:
   - jekyll-paginate
-  - jekyll-sitemap
   - jekyll-gist
   - jekyll-feed
   - jekyll-include-cache
@@ -221,7 +220,6 @@ plugins:
 # mimic GitHub Pages with --safe
 whitelist:
   - jekyll-paginate
-  - jekyll-sitemap
   - jekyll-gist
   - jekyll-feed
   - jekyll-include-cache
