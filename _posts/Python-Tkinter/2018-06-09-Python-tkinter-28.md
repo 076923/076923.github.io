@@ -16,7 +16,7 @@ toc: true
 
 ## Notebook(탭 메뉴)
 
-![1]({{ site.images }}/assets/posts/Python/Tkinter/lecture-28/1.png)
+![1]({{ site.images }}/assets/posts/Python/Tkinter/lecture-28/1.webp){: width="100%" height="100%"}
 
 `Notebook`을 이용하여 **페이지**를 나눌 수 있는 `탭 메뉴`를 생성할 수 있습니다.
 

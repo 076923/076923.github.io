@@ -16,7 +16,7 @@ toc: true
 
 ## 원 검출(Circle Detection)
 
-![1]({{ site.images }}/assets/posts/Python/OpenCV/lecture-29/1.jpg)
+![1]({{ site.images }}/assets/posts/Python/OpenCV/lecture-29/1.webp){: width="100%" height="100%"}
 
 원 검출 알고리즘도 허프 변환 알고리즘 중 하나인 `허프 원 변환(Hough Circle Transform) 알고리즘`을 활용해 원을 검출합니다.
 
@@ -32,7 +32,7 @@ toc: true
 
 <br>
 
-![2]({{ site.images }}/assets/posts/Python/OpenCV/lecture-29/2.jpg)
+![2]({{ site.images }}/assets/posts/Python/OpenCV/lecture-29/2.webp){: width="100%" height="100%"}
 
 3차원 히스토그램에서 돗수가 높은 **(a, b, r)**을 선택합니다. 하지만, 이 방법은 이미지에서 가장 긴 변의 길이가 N이라면 $$ N^3 $$바이트의 메모리를 필요로 합니다.
 
@@ -148,4 +148,4 @@ for i in circles[0]:
 
 ## 출력 결과
 
-![3]({{ site.images }}/assets/posts/Python/OpenCV/lecture-29/3.jpg)
+![3]({{ site.images }}/assets/posts/Python/OpenCV/lecture-29/3.webp){: width="100%" height="100%"}

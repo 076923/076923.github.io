@@ -16,7 +16,7 @@ toc: true
 
 ## 이미지의 세 가지 구성요소
 
-![1]({{ site.images }}/assets/posts/Theory/ComputerVision/lecture-3/1.jpg)
+![1]({{ site.images }}/assets/posts/Theory/ComputerVision/lecture-3/1.webp){: width="100%" height="100%"}
 
 OpenCV를 통한 이미지를 처리시 세 가지의 구성요소가 존재합니다. 이 세 가지의 구성요소는 영상 처리시 가장 중요하게 고려되어야할 속성입니다.
 
@@ -31,7 +31,7 @@ OpenCV를 통한 이미지를 처리시 세 가지의 구성요소가 존재합�
 
 ## 이미지의 크기(Image Size)
 
-![2]({{ site.images }}/assets/posts/Theory/ComputerVision/lecture-3/2.jpg)
+![2]({{ site.images }}/assets/posts/Theory/ComputerVision/lecture-3/2.webp){: width="100%" height="100%"}
 
 먼저 `이미지의 크기`입니다. 이미지의 크기는 해당 필드나 변수에 할당될 이미지의 크기를 설정합니다.
 
@@ -53,13 +53,13 @@ OpenCV에서는 변수나 필드에 설정된 이미지 크기로 원본 이미�
 
 <br>
 
-![7]({{ site.images }}/assets/posts/Theory/ComputerVision/lecture-3/7.jpg)
+![7]({{ site.images }}/assets/posts/Theory/ComputerVision/lecture-3/7.webp){: width="100%" height="100%"}
 
 앞선 이미지를 회전할 경우, 액자의 크기를 변경해주지 않는다면 아래와 같은 현상이 발생합니다.
 
 <br>
 
-![8]({{ site.images }}/assets/posts/Theory/ComputerVision/lecture-3/8.jpg)
+![8]({{ site.images }}/assets/posts/Theory/ComputerVision/lecture-3/8.webp){: width="100%" height="100%"}
 
 원본 이미지에서 반 시계방향으로 `45°` 회전하였을 경우, 각각의 모서리 부분이 잘려나가는 것을 확인 할 수 있습니다.
 
@@ -69,7 +69,7 @@ OpenCV에서는 변수나 필드에 설정된 이미지 크기로 원본 이미�
 
 <br>
 
-![9]({{ site.images }}/assets/posts/Theory/ComputerVision/lecture-3/9.jpg)
+![9]({{ site.images }}/assets/posts/Theory/ComputerVision/lecture-3/9.webp){: width="100%" height="100%"}
 
 액자의 크기까지 재 설정한 경우, 정상적으로 이미지가 잘려나가지 않게 표시되는것을 확인할 수 있습니다. 
 
@@ -78,7 +78,7 @@ OpenCV에서는 변수나 필드에 설정된 이미지 크기로 원본 이미�
 
 ## 정밀도(Bit Depth)
 
-![3]({{ site.images }}/assets/posts/Theory/ComputerVision/lecture-3/3.jpg)
+![3]({{ site.images }}/assets/posts/Theory/ComputerVision/lecture-3/3.webp){: width="100%" height="100%"}
 
 다음으로는 `정밀도`입니다. `비트 깊이`, `색상 깊이`, `색 심도` 등과 동일한 의미를 갖습니다.
 
@@ -131,7 +131,7 @@ OpenCV에서는 `U8`의 값을 가장 많이 사용합니다.
 
 ## 채널(Channel)
 
-![4]({{ site.images }}/assets/posts/Theory/ComputerVision/lecture-3/4.jpg)
+![4]({{ site.images }}/assets/posts/Theory/ComputerVision/lecture-3/4.webp){: width="100%" height="100%"}
 
 마지막으로 `채널`은 그래픽스 이미지의 색상 정보를 포함하고 있습니다.
 
@@ -149,7 +149,7 @@ OpenCV에서는 `U8`의 값을 가장 많이 사용합니다.
 
 <br>
 
-![5]({{ site.images }}/assets/posts/Theory/ComputerVision/lecture-3/5.jpg)
+![5]({{ site.images }}/assets/posts/Theory/ComputerVision/lecture-3/5.webp){: width="100%" height="100%"}
 
 `R의 성분`, `G의 성분`, `B의 성분`만 따로 뽑아내서 출력했지만 `흑백`으로 출력됩니다.
 
@@ -157,7 +157,7 @@ OpenCV에서는 `U8`의 값을 가장 많이 사용합니다.
 
 <br>
 
-![6]({{ site.images }}/assets/posts/Theory/ComputerVision/lecture-3/6.jpg)
+![6]({{ site.images }}/assets/posts/Theory/ComputerVision/lecture-3/6.webp){: width="100%" height="100%"}
 
 이미지에서 파란 부분의 색상 정보를 확인해보겠습니다. 보시는 바와 같이 아무리 파란색이라도 약간의 적색이나 녹색이 포함되어있습니다.
 

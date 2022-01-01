@@ -16,7 +16,7 @@ toc: true
 
 ## Document Recognition
 
-![1]({{ site.images }}/assets/posts/Exercise/C-Sharp/OpenCvSharp2/document_recognition/1.png)
+![1]({{ site.images }}/assets/posts/Exercise/C-Sharp/OpenCvSharp2/document_recognition/1.webp){: width="100%" height="100%"}
 
 **명함이나 문서의 크기를 변환 후 해당 문자를 인식합니다.**
 
@@ -31,7 +31,7 @@ toc: true
 
 ## Step 1 ##
 
-![2]({{ site.images }}/assets/posts/Exercise/C-Sharp/OpenCvSharp2/document_recognition/2.png)
+![2]({{ site.images }}/assets/posts/Exercise/C-Sharp/OpenCvSharp2/document_recognition/2.webp){: width="100%" height="100%"}
 
 1. 관심 채널
 2. 이진화 적용 & 캐니 엣지
@@ -49,7 +49,7 @@ toc: true
 
 ## Step 2
 
-![3]({{ site.images }}/assets/posts/Exercise/C-Sharp/OpenCvSharp2/document_recognition/3.png)
+![3]({{ site.images }}/assets/posts/Exercise/C-Sharp/OpenCvSharp2/document_recognition/3.webp){: width="100%" height="100%"}
 
 1. 검출 좌표 저장
 2. 기하학적 변환
@@ -61,7 +61,7 @@ toc: true
 
 ## Step 3
 
-![4]({{ site.images }}/assets/posts/Exercise/C-Sharp/OpenCvSharp2/document_recognition/4.png)
+![4]({{ site.images }}/assets/posts/Exercise/C-Sharp/OpenCvSharp2/document_recognition/4.webp){: width="100%" height="100%"}
 
 1. tesseract 라이브러리
 2. 영문자 판독
@@ -73,7 +73,7 @@ toc: true
 
 ## Step 4
 
-![5]({{ site.images }}/assets/posts/Exercise/C-Sharp/OpenCvSharp2/document_recognition/5.png)
+![5]({{ site.images }}/assets/posts/Exercise/C-Sharp/OpenCvSharp2/document_recognition/5.webp){: width="100%" height="100%"}
 
 1. foreach문
 2. 아스키 코드 & 유니 코드

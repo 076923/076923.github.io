@@ -16,7 +16,7 @@ toc: true
 
 ## 모폴로지 변환(Morphological Transformation)
 
-![1]({{ site.images }}/assets/posts/Python/OpenCV/lecture-26/1.jpg)
+![1]({{ site.images }}/assets/posts/Python/OpenCV/lecture-26/1.webp){: width="100%" height="100%"}
 
 `모폴로지 변환(Perspective Transformation)`은 영상이나 이미지를 **형태학적 관점에서 접근하는 기법**을 의미합니다.
 
@@ -156,4 +156,4 @@ Numpy 함수 중 `연결 함수(np.concatenate)`로 원본 이미지, 팽창 결
 
 ## 출력 결과
 
-![2]({{ site.images }}/assets/posts/Python/OpenCV/lecture-26/2.jpg)
+![2]({{ site.images }}/assets/posts/Python/OpenCV/lecture-26/2.webp){: width="100%" height="100%"}

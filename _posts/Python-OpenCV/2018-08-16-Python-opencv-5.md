@@ -16,7 +16,7 @@ toc: true
 
 ## 대칭 (Flip, Symmetry)
 
-![1]({{ site.images }}/assets/posts/Python/OpenCV/lecture-5/1.jpg)
+![1]({{ site.images }}/assets/posts/Python/OpenCV/lecture-5/1.webp){: width="100%" height="100%"}
 
 `대칭(Flip)`은 기하학적인 측면에서 **반사(reflection)**의 의미를 갖습니다.
 
@@ -103,4 +103,4 @@ cv2.destroyAllWindows()
 
 ## 출력 결과
 
-![2]({{ site.images }}/assets/posts/Python/OpenCV/lecture-5/2.png)
+![2]({{ site.images }}/assets/posts/Python/OpenCV/lecture-5/2.webp){: width="100%" height="100%"}

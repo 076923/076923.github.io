@@ -16,7 +16,7 @@ toc: true
 
 ## Sizegrip(크기 조절)
 
-![1]({{ site.images }}/assets/posts/Python/Tkinter/lecture-29/1.png)
+![1]({{ site.images }}/assets/posts/Python/Tkinter/lecture-29/1.webp){: width="100%" height="100%"}
 
 `Sizegrip`을 이용하여 **위젯의 크기를 조절**할 수 있는 `크기 조절`를 생성할 수 있습니다.
 

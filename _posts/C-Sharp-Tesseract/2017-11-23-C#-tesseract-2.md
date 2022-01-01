@@ -16,7 +16,7 @@ toc: true
 
 ## Tesseract English OCR ##
 
-![1]({{ site.images }}/assets/posts/C-Sharp/Tesseract/lecture-2/1.png)
+![1]({{ site.images }}/assets/posts/C-Sharp/Tesseract/lecture-2/1.webp){: width="100%" height="100%"}
 
 `Tesseract - OCR`를 이용하여 `Bitmap`으로된 이미지 파일에서 영문자를 인식하여 `string`형식으로 반환하여 인식합니다.
 
@@ -25,7 +25,7 @@ toc: true
 
 ## Tesseract 준비 ##
 
-![2]({{ site.images }}/assets/posts/C-Sharp/Tesseract/lecture-2/2.png)
+![2]({{ site.images }}/assets/posts/C-Sharp/Tesseract/lecture-2/2.webp){: width="100%" height="100%"}
 
 1강에서 설치한 `Tesseract 언어 데이터 파일`을 `프로젝트/bin/Debug`에 저장합니다.
 
@@ -33,7 +33,7 @@ toc: true
 
 <br>
 
-![3]({{ site.images }}/assets/posts/C-Sharp/Tesseract/lecture-2/3.png)
+![3]({{ site.images }}/assets/posts/C-Sharp/Tesseract/lecture-2/3.webp){: width="100%" height="100%"}
 
 `tessdata` 폴더에 위와 같은 `eng.*` 파일이 정상적으로 저장되어있는지 확인합니다.
 
@@ -42,7 +42,7 @@ toc: true
 
 ## 프로젝트 구성
 
-![4]({{ site.images }}/assets/posts/C-Sharp/Tesseract/lecture-2/4.png)
+![4]({{ site.images }}/assets/posts/C-Sharp/Tesseract/lecture-2/4.webp){: width="100%" height="100%"}
 
 `Form`창에 위와 같이 `pictureBox`와 `button`을 배치합니다. `pictureBox`에 이미지를 등록합니다.
 
@@ -146,6 +146,6 @@ MessageBox.Show(texts.GetText());
 
 ## 출력 결과
 
-![5]({{ site.images }}/assets/posts/C-Sharp/Tesseract/lecture-2/5.png)
+![5]({{ site.images }}/assets/posts/C-Sharp/Tesseract/lecture-2/5.webp){: width="100%" height="100%"}
 
 [1강]: https://076923.github.io/posts/C-tesseract-1/

@@ -16,7 +16,7 @@ toc: true
 
 ## 인공 지능(Artificial Intelligence)
 
-![1]({{ site.images }}/assets/posts/Theory/ArtificialIntelligence/lecture-1/1.png)
+![1]({{ site.images }}/assets/posts/Theory/ArtificialIntelligence/lecture-1/1.webp){: width="100%" height="100%"}
 
 인공지능이란 `학습`, `추론`, `인식` 등 인간과 관계된 인지 문제를 컴퓨터 프로그램으로 구현한 기술입니다.
 
@@ -49,7 +49,7 @@ toc: true
 
 ## 머신 러닝(Machine Learning)
 
-![2]({{ site.images }}/assets/posts/Theory/ArtificialIntelligence/lecture-1/2.png)
+![2]({{ site.images }}/assets/posts/Theory/ArtificialIntelligence/lecture-1/2.webp){: width="100%" height="100%"}
 
 `머신 러닝(Machine Learning)`이란 데이터를 기반으로 컴퓨터를 프로그래밍하는 연구 분야입니다.
 
@@ -70,7 +70,7 @@ toc: true
 
 ## 딥 러닝(Deep Learning)
 
-![3]({{ site.images }}/assets/posts/Theory/ArtificialIntelligence/lecture-1/3.png)
+![3]({{ site.images }}/assets/posts/Theory/ArtificialIntelligence/lecture-1/3.webp){: width="100%" height="100%"}
 
 `딥 러닝(Deep Learning)`은 머신 러닝의 기법 중 하나로, 모델이 스스로 데이터의 관계를 파악해 학습합니다.
 

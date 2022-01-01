@@ -16,7 +16,7 @@ toc: true
 
 ## 이미지 연산(Image Calculation)
 
-![1]({{ site.images }}/assets/posts/Theory/ComputerVision/lecture-8/1.jpg)
+![1]({{ site.images }}/assets/posts/Theory/ComputerVision/lecture-8/1.webp){: width="100%" height="100%"}
 
 `이미지 연산(Image Calculation)`란 각 픽셀마다 특정 함수나 수식을 적용하여 변형하는 것을 의미합니다.
 

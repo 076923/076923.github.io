@@ -16,7 +16,7 @@ toc: true
 
 ## 픽셀 접근(Pixel Access)
 
-![1]({{ site.images }}/assets/posts/Python/OpenCV/lecture-34/1.jpg)
+![1]({{ site.images }}/assets/posts/Python/OpenCV/lecture-34/1.webp){: width="100%" height="100%"}
 
 `픽셀 접근`은 이미지 배열에서 특정 좌표에 대한 값을 받아오거나, 변경할 때 사용합니다.
 
@@ -132,7 +132,7 @@ print(access_color)
 
 ## 출력 결과
 
-![2]({{ site.images }}/assets/posts/Python/OpenCV/lecture-34/2.jpg)
+![2]({{ site.images }}/assets/posts/Python/OpenCV/lecture-34/2.webp){: width="100%" height="100%"}
 
 [Python Numpy 4강]: https://076923.github.io/posts/Python-numpy-4/
 [Python Numpy 5강]: https://076923.github.io/posts/Python-numpy-5/

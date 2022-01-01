@@ -16,7 +16,7 @@ toc: true
 
 ## Input Box
 
-![1]({{ site.images }}/assets/posts/Exercise/C-Sharp/C-Sharp/inputbox/1.png)
+![1]({{ site.images }}/assets/posts/Exercise/C-Sharp/C-Sharp/inputbox/1.webp){: width="100%" height="100%"}
 
 이미지를 포함한 `Input Box`를 구현할 수 있습니다.
 

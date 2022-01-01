@@ -240,13 +240,13 @@ urlpatterns = [
 
 ### Post
 
-![1]({{ site.images }}/assets/posts/Python/Django/lecture-11/1.png)
+![1]({{ site.images }}/assets/posts/Python/Django/lecture-11/1.webp){: width="100%" height="100%"}
 
 `post` URL로 이동해, 게시물의 **제목**과 **내용**을 입력합니다.
 
 <br>
 
-![2]({{ site.images }}/assets/posts/Python/Django/lecture-11/2.png)
+![2]({{ site.images }}/assets/posts/Python/Django/lecture-11/2.webp){: width="100%" height="100%"}
 
 두 게시물이 작성되면 위와 같이 표시되는 것을 알 수 있습니다.
 
@@ -256,7 +256,7 @@ urlpatterns = [
 
 ### Comment
 
-![3]({{ site.images }}/assets/posts/Python/Django/lecture-11/3.png)
+![3]({{ site.images }}/assets/posts/Python/Django/lecture-11/3.webp){: width="100%" height="100%"}
 
 `comment` URL로 이동해, 특정 게시물에 댓글의 **내용**을 입력합니다.
 
@@ -266,7 +266,7 @@ urlpatterns = [
 
 <br>
 
-![4]({{ site.images }}/assets/posts/Python/Django/lecture-11/4.png)
+![4]({{ site.images }}/assets/posts/Python/Django/lecture-11/4.webp){: width="100%" height="100%"}
 
 세 개의 댓글이 작성되면 위와 같이 표시되는 것을 알 수 있습니다.
 
@@ -274,7 +274,7 @@ urlpatterns = [
 
 ### Post
 
-![5]({{ site.images }}/assets/posts/Python/Django/lecture-11/5.png)
+![5]({{ site.images }}/assets/posts/Python/Django/lecture-11/5.webp){: width="100%" height="100%"}
 
 이제 다시, `post` URL로 이동하면 게시물마다 어떤 댓글이 달렸는지 확인할 수 있습니다.
 
@@ -339,7 +339,7 @@ class PostRepresentationSerializer(serializers.ModelSerializer):
 
 <br>
 
-![6]({{ site.images }}/assets/posts/Python/Django/lecture-11/6.png)
+![6]({{ site.images }}/assets/posts/Python/Django/lecture-11/6.webp){: width="100%" height="100%"}
 
 다시, `comment` URL로 이동해 결과를 확인한다면 위와 같은 형태로 표시됩니다.
 

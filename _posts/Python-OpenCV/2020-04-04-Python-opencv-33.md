@@ -16,7 +16,7 @@ toc: true
 
 ## 히스토그램(Histogram)
 
-![1]({{ site.images }}/assets/posts/Python/OpenCV/lecture-33/1.jpg)
+![1]({{ site.images }}/assets/posts/Python/OpenCV/lecture-33/1.webp){: width="100%" height="100%"}
 
 `히스토그램`이란 **도수 분포표** 중 하나로 데이터의 분포를 몇 개의 구간으로 나누고 **각 구간에 속하는 데이터를 시각적으로 표현한 막대그래프**입니다.
 
@@ -142,4 +142,4 @@ dst = np.hstack([gray, result])
 
 ## 출력 결과
 
-![2]({{ site.images }}/assets/posts/Python/OpenCV/lecture-33/2.jpg)
+![2]({{ site.images }}/assets/posts/Python/OpenCV/lecture-33/2.webp){: width="100%" height="100%"}

@@ -16,7 +16,7 @@ toc: true
 
 ## 자르기(Slice)
 
-![1]({{ site.images }}/assets/posts/Python/OpenCV/lecture-9/1.jpg)
+![1]({{ site.images }}/assets/posts/Python/OpenCV/lecture-9/1.webp){: width="100%" height="100%"}
 
 `자르기(Slice)`는 영상이나 이미지에서 특정 영역을 잘라내는 연산을 의미하니다.
 
@@ -121,8 +121,8 @@ dst[0:500, 0:500] = roi
 
 ## 출력 결과
 
-![2]({{ site.images }}/assets/posts/Python/OpenCV/lecture-9/2.png)
+![2]({{ site.images }}/assets/posts/Python/OpenCV/lecture-9/2.webp){: width="100%" height="100%"}
 
 <br>
 
-![3]({{ site.images }}/assets/posts/Python/OpenCV/lecture-9/3.png)
+![3]({{ site.images }}/assets/posts/Python/OpenCV/lecture-9/3.webp){: width="100%" height="100%"}

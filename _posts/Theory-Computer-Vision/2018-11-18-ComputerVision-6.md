@@ -16,7 +16,7 @@ toc: true
 
 ## 전처리 알고리즘(Preprocessing Algorithm)
 
-![1]({{ site.images }}/assets/posts/Theory/ComputerVision/lecture-6/1.png)
+![1]({{ site.images }}/assets/posts/Theory/ComputerVision/lecture-6/1.webp){: width="100%" height="100%"}
 
 이미지에는 매우 많은 데이터가 존재합니다.
 
