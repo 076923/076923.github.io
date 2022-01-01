@@ -16,7 +16,7 @@ toc: true
 
 ## 흐림 효과(Blur)
 
-![1]({{ site.images }}/assets/posts/Python/OpenCV/lecture-13/1.jpg)
+![1]({{ site.images }}/assets/posts/Python/OpenCV/lecture-13/1.webp){: width="100%" height="100%"}
 
 `흐림 효과(Blur)`는 **블러링(Blurring)** 또는 **스무딩(Smoothing)**이라 불리며, 노이즈를 줄이거나 외부 영향을 최소화하는 데 사용됩니다.
 
@@ -67,7 +67,7 @@ dst = cv2.blur(src, (9, 9), anchor=(-1, -1), borderType=cv2.BORDER_DEFAULT)
 
 ## 커널(Kernel)
 
-![2]({{ site.images }}/assets/posts/Python/OpenCV/lecture-13/2.png)
+![2]({{ site.images }}/assets/posts/Python/OpenCV/lecture-13/2.webp){: width="100%" height="100%"}
 
 `커널(kernel)`은 이미지에서 **(x, y)의 픽셀과 해당 픽셀 주변을 포함한 작은 크기의 공간**을 의미합니다.
 
@@ -131,4 +131,4 @@ dst = cv2.blur(src, (9, 9), anchor=(-1, -1), borderType=cv2.BORDER_DEFAULT)
 
 ## 출력 결과
 
-![3]({{ site.images }}/assets/posts/Python/OpenCV/lecture-13/3.png)
+![3]({{ site.images }}/assets/posts/Python/OpenCV/lecture-13/3.webp){: width="100%" height="100%"}

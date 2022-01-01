@@ -16,7 +16,7 @@ toc: true
 
 ## 가장자리 검출(Edge)
 
-![1]({{ site.images }}/assets/posts/Python/OpenCV/lecture-14/1.jpg)
+![1]({{ site.images }}/assets/posts/Python/OpenCV/lecture-14/1.webp){: width="100%" height="100%"}
 
 `가장자리(Edge)`는 가장 바깥 부분의 둘레를 의미하며, 객체의 테두리로 볼 수 있습니다.
 
@@ -168,16 +168,16 @@ canny = cv2.Canny(src, 100, 255)
 
 ### Sobel
 
-![3]({{ site.images }}/assets/posts/Python/OpenCV/lecture-14/3.png)
+![3]({{ site.images }}/assets/posts/Python/OpenCV/lecture-14/3.webp){: width="100%" height="100%"}
 
 <br>
 
 ### Laplacian
 
-![4]({{ site.images }}/assets/posts/Python/OpenCV/lecture-14/4.png)
+![4]({{ site.images }}/assets/posts/Python/OpenCV/lecture-14/4.webp){: width="100%" height="100%"}
 
 <br>
 
 ### Canny
 
-![5]({{ site.images }}/assets/posts/Python/OpenCV/lecture-14/2.png)
+![5]({{ site.images }}/assets/posts/Python/OpenCV/lecture-14/2.webp){: width="100%" height="100%"}

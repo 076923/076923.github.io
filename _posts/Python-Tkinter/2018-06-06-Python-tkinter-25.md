@@ -16,7 +16,7 @@ toc: true
 
 ## Spinbox(수치 조정 기입창)
 
-![1]({{ site.images }}/assets/posts/Python/Tkinter/lecture-25/1.png)
+![1]({{ site.images }}/assets/posts/Python/Tkinter/lecture-25/1.webp){: width="100%" height="100%"}
 
 `Spinbox`을 이용하여 **수치를 조정하고 입력**받는 `수치 조정 기입창`를 생성할 수 있습니다.
 

@@ -16,7 +16,7 @@ toc: true
 
 ## 움직임 추적(Motion Tracking)
 
-![1]({{ site.images }}/assets/posts/Theory/ComputerVision/lecture-12/1.jpg)
+![1]({{ site.images }}/assets/posts/Theory/ComputerVision/lecture-12/1.webp){: width="100%" height="100%"}
 
 `움직임 추적(Motion Tracking)`은 비디오의 연속된 이미지(프레임)에서 특정 객체를 찾는 것을 의미합니다.
 

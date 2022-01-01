@@ -17,7 +17,7 @@ toc: true
 ## Dynamixel Setting
 
 
-![1]({{ site.images }}/assets/posts/C-Sharp/Dynamixel/lecture-2/1.PNG)
+![1]({{ site.images }}/assets/posts/C-Sharp/Dynamixel/lecture-2/1.webp){: width="100%" height="100%"}
 
 `Dynamixel`을 설정하기 위해서 로보티즈의 로봇 전용 소프트웨어 `RoboPlus` 프로그램을 설치합니다.
 
@@ -29,19 +29,19 @@ toc: true
 
 <br>
 
-![2]({{ site.images }}/assets/posts/C-Sharp/Dynamixel/lecture-2/2.PNG)
+![2]({{ site.images }}/assets/posts/C-Sharp/Dynamixel/lecture-2/2.webp){: width="100%" height="100%"}
 
 프로그램 상단에서 `포트 설정` 후 `포트 연결` 버튼을 누릅니다.
 
 <br>
 
-![3]({{ site.images }}/assets/posts/C-Sharp/Dynamixel/lecture-2/3.PNG)
+![3]({{ site.images }}/assets/posts/C-Sharp/Dynamixel/lecture-2/3.webp){: width="100%" height="100%"}
 
 `DXL 1.0`에 체크합니다. 그 후, `상세 검색`을 선택한 다음 `검색 시작` 버튼을 눌러 `Dynamixel`을 검색합니다.
 
 <br>
 
-![4]({{ site.images }}/assets/posts/C-Sharp/Dynamixel/lecture-2/4.PNG)
+![4]({{ site.images }}/assets/posts/C-Sharp/Dynamixel/lecture-2/4.webp){: width="100%" height="100%"}
 
 검색 된 `Dynamixel`을 눌러 정보 창을 띄웁니다.
 
@@ -49,7 +49,7 @@ toc: true
 
 <br>
 
-![5]({{ site.images }}/assets/posts/C-Sharp/Dynamixel/lecture-2/5.PNG)
+![5]({{ site.images }}/assets/posts/C-Sharp/Dynamixel/lecture-2/5.webp){: width="100%" height="100%"}
 
 `ID`를 `1`, `통신 속도`를 `1(1000000bps)`로 적용합니다.
 

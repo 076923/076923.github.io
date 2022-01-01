@@ -16,7 +16,7 @@ toc: true
 
 ## 이미지와 동영상의 이해
 
-![1]({{ site.images }}/assets/posts/Theory/ComputerVision/lecture-4/1.jpg)
+![1]({{ site.images }}/assets/posts/Theory/ComputerVision/lecture-4/1.webp){: width="100%" height="100%"}
 
 **이미지 파일 형식**은 수백 가지의 종류가 존재합니다. **OpenCV**에서는 `래스터 그래픽스` 이미지 파일 포맷을 쉽게 불러올 수 있습니다.
 

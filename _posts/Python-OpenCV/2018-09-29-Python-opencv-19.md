@@ -16,7 +16,7 @@ toc: true
 
 ## 기하학적 변환(Geometric Perspective) ##
 
-![1]({{ site.images }}/assets/posts/Python/OpenCV/lecture-19/1.jpg)
+![1]({{ site.images }}/assets/posts/Python/OpenCV/lecture-19/1.webp){: width="100%" height="100%"}
 
 `기하학적 변환(Geometric Transform)`이란 **이미지를 인위적으로 확대, 축소, 위치 변경, 회전, 왜곡하는 등 이미지의 형태를 변환하는 것을 의미합니다.**
 
@@ -121,4 +121,4 @@ dst = cv2.warpPerspective(src, matrix, (width, height))
 
 ## 출력 결과
 
-![2]({{ site.images }}/assets/posts/Python/OpenCV/lecture-19/2.png)
+![2]({{ site.images }}/assets/posts/Python/OpenCV/lecture-19/2.webp){: width="100%" height="100%"}

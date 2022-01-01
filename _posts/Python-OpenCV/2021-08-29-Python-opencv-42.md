@@ -16,7 +16,7 @@ toc: true
 
 ## K-평균 군집화 알고리즘(K-means Clustering Algorithm)
 
-![1]({{ site.images }}/assets/posts/Python/OpenCV/lecture-42/1.jpg)
+![1]({{ site.images }}/assets/posts/Python/OpenCV/lecture-42/1.webp){: width="100%" height="100%"}
 
 `K-평균 군집화 알고리즘(K-means Clustering Algorithm)`은 비지도 학습의 대표적인 알고리즘 중 하나로 `라벨(Label)`이 달려 있지 않은 입력 데이터에 라벨을 달아줍니다.
 
@@ -112,4 +112,4 @@ Numpy의 브로드캐스팅을 적용해 `centers[bestLabels]`를 진행합니�
 
 ## 출력 결과
 
-![2]({{ site.images }}/assets/posts/Python/OpenCV/lecture-42/2.jpg)
+![2]({{ site.images }}/assets/posts/Python/OpenCV/lecture-42/2.webp){: width="100%" height="100%"}

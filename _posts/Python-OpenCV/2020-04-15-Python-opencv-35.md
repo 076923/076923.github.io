@@ -16,7 +16,7 @@ toc: true
 
 ## 트랙 바(Track Bar)
 
-![1]({{ site.images }}/assets/posts/Python/OpenCV/lecture-35/1.jpg)
+![1]({{ site.images }}/assets/posts/Python/OpenCV/lecture-35/1.webp){: width="100%" height="100%"}
 
 `트랙 바`란 스크롤 바의 하나로, 슬라이더 바의 형태를 갖고 있습니다.
 
@@ -186,4 +186,4 @@ cv2.imshow("Trackbar Windows", binary)
 
 ## 출력 결과
 
-![2]({{ site.images }}/assets/posts/Python/OpenCV/lecture-35/2.jpg)
+![2]({{ site.images }}/assets/posts/Python/OpenCV/lecture-35/2.webp){: width="100%" height="100%"}

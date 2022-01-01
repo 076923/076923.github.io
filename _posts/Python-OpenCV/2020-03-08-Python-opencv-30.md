@@ -16,7 +16,7 @@ toc: true
 
 ## 이미지 연산(Image Calculation)
 
-![1]({{ site.images }}/assets/posts/Python/OpenCV/lecture-30/1.jpg)
+![1]({{ site.images }}/assets/posts/Python/OpenCV/lecture-30/1.webp){: width="100%" height="100%"}
 
 이미지 연산은 하나 또는 둘 이상의 이미지에 대해 수학적인 연산을 수행합니다.
 
@@ -144,4 +144,4 @@ number1가 N이라면 $$ [1, 0, 182] + N = [1 + N, 0, 182] $$ 가 됩니다.
 
 ## 출력 결과
 
-![2]({{ site.images }}/assets/posts/Python/OpenCV/lecture-30/2.jpg)
+![2]({{ site.images }}/assets/posts/Python/OpenCV/lecture-30/2.webp){: width="100%" height="100%"}
