@@ -56,6 +56,8 @@ docs:
 
   - title: Extras
     children:
+      - title: "About"
+        url: "/about/"
       - title: "Search"
         url: "/search/"
       - title: "Guest Book"
@@ -803,3 +805,7 @@ Etc-MySQL:
         url: "/posts/mysql-3/"
       - title: "제 4강 - 데이터 삽입"
         url: "/posts/mysql-4/"
+      - title: "제 5강 - 데이터 조회"
+        url: "/posts/mysql-5/"
+      - title: "제 6강 - 데이터 수정"
+        url: "/posts/mysql-6/"

@@ -58,7 +58,7 @@ class UserModel(models.Model):
 
 `UserModel` 클래스를 생성하며, `models.Model`을 상속합니다.
 
-`UserModel` 클래스는 데이터베이스의 테이블 이름을 의미하며, 테이블에는 `first_app_usermodel`로 정의됩니다.
+`UserModel` 클래스는 데이터베이스의 테이블의 이름을 의미하며, 테이블에는 `first_app_usermodel`로 정의됩니다.
 
 `id`는 데이터의 고유한 이름을 의미합니다. `색인(index)`값을 사용할수도 있지만 `UUID(universally unique identifier)`로 사용하도록 하겠습니다.
 
@@ -186,7 +186,7 @@ class UserModel(models.Model):
 | 옵션 | 설명 | 기본값 |
 |:-:|------|:------:|
 | abstract | 추상 클래스 유/무를 설정합니다. | False |
-| db_table | 모델에 사용할 데이터베이스 테이블 이름을 설정합니다. | - |
+| db_table | 모델에 사용할 데이터베이스 테이블의 이름을 설정합니다. | - |
 | managed | 데이터베이스의 생성, 수정, 삭제 등의 권한을 설정합니다. | True |
 | ordering | 객체를 가져올 때의 정렬 순서를 설정합니다. | - |
 | verbose_name | 사람이 읽기 쉬운 객체의 이름을 설정합니다. (단수형으로 작성) | - |
