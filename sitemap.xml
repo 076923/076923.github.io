@@ -9,12 +9,18 @@ layout: null
       xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd"
       xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">	
 
-    {% assign lastmod = "2021-12-31T00:00:00+00:00" %}
+    {% assign lastmod = "2022-01-01T00:00:00+00:00" %}
     <url>
         <loc>https://076923.github.io/</loc>
         <lastmod>{{ lastmod | date_to_xmlschema }}</lastmod>
         <changefreq>always</changefreq>
         <priority>1.0000</priority>
+    </url>
+    <url>
+        <loc>https://076923.github.io/rss.xml</loc>
+        <lastmod>{{ lastmod | date_to_xmlschema }}</lastmod>
+        <changefreq>always</changefreq>
+        <priority>0.8000</priority>
     </url>
     <url>
         <loc>https://076923.github.io/feed.xml</loc>
@@ -47,7 +53,7 @@ layout: null
         <priority>0.8000</priority>
     </url>
     <url>
-        <loc>https://076923.github.io/about</loc>
+        <loc>https://076923.github.io/about/</loc>
         <lastmod>{{ lastmod | date_to_xmlschema }}</lastmod>
         <changefreq>always</changefreq>
         <priority>0.8000</priority>

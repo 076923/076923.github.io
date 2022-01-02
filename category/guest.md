@@ -3,9 +3,8 @@ layout: post
 permalink: /guest/
 sidebar: true
 comments: true
+title: "Guest Book"
 ---
-
-# Guest
 
 방문해주셔서 감사합니다.
 
