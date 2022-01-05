@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Python Django 강좌 : 제 3강 - Django 프로젝트 설정"
+title: "Python Django 강좌 : 제 3강 - 프로젝트 설정"
 tagline: "Python Django Project Settings"
 image: /assets/images/django.png
 header:
