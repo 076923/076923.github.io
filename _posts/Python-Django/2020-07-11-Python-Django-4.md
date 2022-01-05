@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Python Django 강좌 : 제 4강 - Django 애플리케이션 생성"
+title: "Python Django 강좌 : 제 4강 - 애플리케이션 생성"
 tagline: "Python Django Start App"
 image: /assets/images/django.png
 header:

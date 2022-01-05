@@ -174,13 +174,13 @@ Python:
 Python-Django:
   - title: "Django 강좌 목록"
     children:
-      - title: "제 1강 - Django 소개 및 설치"
+      - title: "제 1강 - 소개 및 설치"
         url: "/posts/Python-Django-1/"
-      - title: "제 2강 - Django 프로젝트 생성"
+      - title: "제 2강 - 프로젝트 생성"
         url: "/posts/Python-Django-2/"
-      - title: "제 3강 - Django 프로젝트 설정"
+      - title: "제 3강 - 프로젝트 설정"
         url: "/posts/Python-Django-3/"
-      - title: "제 4강 - Django 애플리케이션 생성"
+      - title: "제 4강 - 애플리케이션 생성"
         url: "/posts/Python-Django-4/"
       - title: "제 5강 - Model"
         url: "/posts/Python-Django-5/"
@@ -797,7 +797,7 @@ Exercise-C#-OpenCvSharp2:
 Etc-MySQL:
   - title: "MySQL 강좌 목록"
     children:
-      - title: "제 1강 - MySQL 소개 및 설치"
+      - title: "제 1강 - 소개 및 설치"
         url: "/posts/mysql-1/"
       - title: "제 2강 - 데이터베이스"
         url: "/posts/mysql-2/"
