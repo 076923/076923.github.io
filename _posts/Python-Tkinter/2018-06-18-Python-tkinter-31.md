@@ -16,7 +16,7 @@ toc: true
 
 ## Separator(구분선)
 
-![1]({{ site.images }}/assets/posts/Python/Tkinter/lecture-31/1.webp){: width="100%" height="100%"}
+![1]({{ site.images }}/assets/posts/Python/Tkinter/lecture-31/1.webp){:class="lazyload" width="100%" height="100%"}
 
 `Separator`를 이용하여 **위젯의 구역**을 나눌 수 있는 `구분선`을 생성할 수 있습니다.
 

@@ -16,7 +16,7 @@ toc: true
 
 ## 비트 연산(Bitwise)
 
-![1]({{ site.images }}/assets/posts/Python/OpenCV/lecture-32/1.webp){: width="100%" height="100%"}
+![1]({{ site.images }}/assets/posts/Python/OpenCV/lecture-32/1.webp){:class="lazyload" width="100%" height="100%"}
 
 비트 연산은 하나 또는 두 이미지에 대해 비트 연산을 수행합니다.
 
@@ -140,4 +140,4 @@ dst = np.concatenate((src, number, dst), axis = 0)
 
 ## 출력 결과
 
-![2]({{ site.images }}/assets/posts/Python/OpenCV/lecture-32/2.webp){: width="100%" height="100%"}
+![2]({{ site.images }}/assets/posts/Python/OpenCV/lecture-32/2.webp){:class="lazyload" width="100%" height="100%"}

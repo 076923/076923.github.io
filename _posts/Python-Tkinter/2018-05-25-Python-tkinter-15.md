@@ -16,7 +16,7 @@ toc: true
 
 ## Canvas(캔버스)
 
-![1]({{ site.images }}/assets/posts/Python/Tkinter/lecture-15/1.webp){: width="100%" height="100%"}
+![1]({{ site.images }}/assets/posts/Python/Tkinter/lecture-15/1.webp){:class="lazyload" width="100%" height="100%"}
 
 `Canvas`을 이용하여 `선`, `다각형`, `원`등을 그리기 위한 `캔버스`을 생성할 수 있습니다.
 

@@ -16,7 +16,7 @@ toc: true
 
 ## 역상(Reverse Image)
 
-![1]({{ site.images }}/assets/posts/Python/OpenCV/lecture-11/1.webp){: width="100%" height="100%"}
+![1]({{ site.images }}/assets/posts/Python/OpenCV/lecture-11/1.webp){:class="lazyload" width="100%" height="100%"}
 
 `역상(Reverse Image)`은 영상이나 이미지를 **반전 된 색상**으로 변환하기 위해서 사용합니다.
 
@@ -74,4 +74,4 @@ dst = cv2.bitwise_not(src)
 
 ## 출력 결과
 
-![2]({{ site.images }}/assets/posts/Python/OpenCV/lecture-11/2.webp){: width="100%" height="100%"}
+![2]({{ site.images }}/assets/posts/Python/OpenCV/lecture-11/2.webp){:class="lazyload" width="100%" height="100%"}

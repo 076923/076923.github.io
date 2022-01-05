@@ -16,7 +16,7 @@ toc: true
 
 ## HSV(Hue, Saturation, Value)
 
-![1]({{ site.images }}/assets/posts/Python/OpenCV/lecture-15/1.webp){: width="100%" height="100%"}
+![1]({{ site.images }}/assets/posts/Python/OpenCV/lecture-15/1.webp){:class="lazyload" width="100%" height="100%"}
 
 `HSV(Hue, Saturation, Value)` 공간은 색상을 표현하기에 간편한 색상 공간입니다.
 
@@ -87,19 +87,19 @@ h, s, v = cv2.split(hsv)
 
 ### Hue
 
-![2]({{ site.images }}/assets/posts/Python/OpenCV/lecture-15/2.webp){: width="100%" height="100%"}
+![2]({{ site.images }}/assets/posts/Python/OpenCV/lecture-15/2.webp){:class="lazyload" width="100%" height="100%"}
 
 <br>
 
 ### Saturation
 
-![3]({{ site.images }}/assets/posts/Python/OpenCV/lecture-15/3.webp){: width="100%" height="100%"}
+![3]({{ site.images }}/assets/posts/Python/OpenCV/lecture-15/3.webp){:class="lazyload" width="100%" height="100%"}
 
 <br>
 
 ### Value
 
-![4]({{ site.images }}/assets/posts/Python/OpenCV/lecture-15/4.webp){: width="100%" height="100%"}
+![4]({{ site.images }}/assets/posts/Python/OpenCV/lecture-15/4.webp){:class="lazyload" width="100%" height="100%"}
 
 <br>
 <br>
@@ -159,4 +159,4 @@ orange = cv2.cvtColor(orange, cv2.COLOR_HSV2BGR)
 
 ## 출력 결과
 
-![2]({{ site.images }}/assets/posts/Python/OpenCV/lecture-15/5.webp){: width="100%" height="100%"}
+![2]({{ site.images }}/assets/posts/Python/OpenCV/lecture-15/5.webp){:class="lazyload" width="100%" height="100%"}

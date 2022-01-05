@@ -16,7 +16,7 @@ toc: true
 
 ## 마우스 콜백(Mouse Callback)
 
-![1]({{ site.images }}/assets/posts/Python/OpenCV/lecture-39/1.webp){: width="100%" height="100%"}
+![1]({{ site.images }}/assets/posts/Python/OpenCV/lecture-39/1.webp){:class="lazyload" width="100%" height="100%"}
 
 `콜백(Callback)` 함수는 매개 변수를 통해 다른 함수를 전달 받고, 이벤트가 발생할 때 **매개 변수에 전달된 함수를 호출**하는 역할을 합니다.
 
@@ -179,4 +179,4 @@ def mouse_event(event, x, y, flags, param):
 
 ## 출력 결과
 
-![2]({{ site.images }}/assets/posts/Python/OpenCV/lecture-39/2.webp){: width="100%" height="100%"}
+![2]({{ site.images }}/assets/posts/Python/OpenCV/lecture-39/2.webp){:class="lazyload" width="100%" height="100%"}

@@ -16,7 +16,7 @@ toc: true
 
 ## 코너 검출(Good Features To Track)
 
-![1]({{ site.images }}/assets/posts/Python/OpenCV/lecture-23/1.webp){: width="100%" height="100%"}
+![1]({{ site.images }}/assets/posts/Python/OpenCV/lecture-23/1.webp){:class="lazyload" width="100%" height="100%"}
 
 영상이나 이미지에서 `코너`를 검출하는 알고리즘입니다.
 
@@ -99,4 +99,4 @@ for i in corners:
 
 ## 출력 결과
 
-![2]({{ site.images }}/assets/posts/Python/OpenCV/lecture-23/2.webp){: width="100%" height="100%"}
+![2]({{ site.images }}/assets/posts/Python/OpenCV/lecture-23/2.webp){:class="lazyload" width="100%" height="100%"}

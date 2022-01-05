@@ -16,7 +16,7 @@ toc: true
 
 ## PanedWindow(내부 윈도우) 
 
-![1]({{ site.images }}/assets/posts/Python/Tkinter/lecture-20/1.webp){: width="100%" height="100%"}
+![1]({{ site.images }}/assets/posts/Python/Tkinter/lecture-20/1.webp){:class="lazyload" width="100%" height="100%"}
 
 `PanedWindow`을 이용하여 **다른 위젯들을 포함**하고 **구역을 나눌 수 있는** `내부 윈도우`를 생성할 수 있습니다.
 

@@ -16,7 +16,7 @@ toc: true
 
 ## 지도 학습(Supervised Learning)
 
-![1]({{ site.images }}/assets/posts/Theory/ArtificialIntelligence/lecture-2/1.webp){: width="100%" height="100%"}
+![1]({{ site.images }}/assets/posts/Theory/ArtificialIntelligence/lecture-2/1.webp){:class="lazyload" width="100%" height="100%"}
 
 지도 학습이란 컴퓨터(알고리즘)에 `훈련 데이터(train data)`와 `레이블(Label)`을 포함시켜 학습을 하는 방법입니다.
 

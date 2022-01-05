@@ -16,7 +16,7 @@ toc: true
 
 ## 모폴로지 연산(Morphological Calculate)
 
-![1]({{ site.images }}/assets/posts/Python/OpenCV/lecture-27/1.webp){: width="100%" height="100%"}
+![1]({{ site.images }}/assets/posts/Python/OpenCV/lecture-27/1.webp){:class="lazyload" width="100%" height="100%"}
 
 `모폴로지 연산(Perspective Calculate)`은 모폴로지 변환의 `팽창(dilation)`과 `침식(erosion)`을 기본 연산으로 사용해 고급 형태학을 적용하는 변환 연산입니다.
 
@@ -200,4 +200,4 @@ dst = cv2.morphologyEx(src, cv2.MORPH_OPEN, kernel, iterations=9)
 
 ## 출력 결과
 
-![2]({{ site.images }}/assets/posts/Python/OpenCV/lecture-27/2.webp){: width="100%" height="100%"}
+![2]({{ site.images }}/assets/posts/Python/OpenCV/lecture-27/2.webp){:class="lazyload" width="100%" height="100%"}

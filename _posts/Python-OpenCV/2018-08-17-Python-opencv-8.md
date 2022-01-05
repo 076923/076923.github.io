@@ -16,7 +16,7 @@ toc: true
 
 ## 크기 조절(Resize)
 
-![1]({{ site.images }}/assets/posts/Python/OpenCV/lecture-8/1.webp){: width="100%" height="100%"}
+![1]({{ site.images }}/assets/posts/Python/OpenCV/lecture-8/1.webp){:class="lazyload" width="100%" height="100%"}
 
 영상이나 이미지의 이미지를 확대하거나 축소하는 연산에서 확인할 수 있듯이 이미지의 크기를 변형하는 것은 단순한 연산이 아닙니다.
 
@@ -134,4 +134,4 @@ $$ fy = dsize.height / src.rows $$
 
 ## 출력 결과
 
-![2]({{ site.images }}/assets/posts/Python/OpenCV/lecture-8/2.webp){: width="100%" height="100%"}
+![2]({{ site.images }}/assets/posts/Python/OpenCV/lecture-8/2.webp){:class="lazyload" width="100%" height="100%"}

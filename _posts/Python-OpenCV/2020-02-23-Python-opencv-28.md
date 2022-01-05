@@ -16,7 +16,7 @@ toc: true
 
 ## 직선 검출(Line Detection)
 
-![1]({{ site.images }}/assets/posts/Python/OpenCV/lecture-28/1.webp){: width="100%" height="100%"}
+![1]({{ site.images }}/assets/posts/Python/OpenCV/lecture-28/1.webp){:class="lazyload" width="100%" height="100%"}
 
 직선 검출 알고리즘은 `허프 변환(Hough Transform)`을 활용해 직선을 검출합니다. 
 
@@ -35,7 +35,7 @@ toc: true
 
 ## 표준 허프 변환(Standard Hough Transform) & 멀티 스케일 허프 변환(Multi-Scale Hough Transform)
 
-![2]({{ site.images }}/assets/posts/Python/OpenCV/lecture-28/2.webp){: width="100%" height="100%"}
+![2]({{ site.images }}/assets/posts/Python/OpenCV/lecture-28/2.webp){:class="lazyload" width="100%" height="100%"}
 
 `표준 허프 변환(Standard Hough Transform)`은 **입력 이미지(x, y 평면)** 내의 점 $$ p $$를 지나는 직선의 방정식을 구합니다.
 
@@ -266,10 +266,10 @@ for i in lines:
 
 ### 멀티 스케일 허프 변환(Multi-Scale Hough Transform)
 
-![3]({{ site.images }}/assets/posts/Python/OpenCV/lecture-28/3.webp){: width="100%" height="100%"}
+![3]({{ site.images }}/assets/posts/Python/OpenCV/lecture-28/3.webp){:class="lazyload" width="100%" height="100%"}
 
 <br>
 
 ### 점진성 확률적 허프 변환(Progressive Probabilistic Hough Transform)
 
-![4]({{ site.images }}/assets/posts/Python/OpenCV/lecture-28/4.webp){: width="100%" height="100%"}
+![4]({{ site.images }}/assets/posts/Python/OpenCV/lecture-28/4.webp){:class="lazyload" width="100%" height="100%"}

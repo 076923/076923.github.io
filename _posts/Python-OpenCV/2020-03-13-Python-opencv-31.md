@@ -16,7 +16,7 @@ toc: true
 
 ## 이미지 연산(Image Calculation) ##
 
-![1]({{ site.images }}/assets/posts/Python/OpenCV/lecture-31/1.webp){: width="100%" height="100%"}
+![1]({{ site.images }}/assets/posts/Python/OpenCV/lecture-31/1.webp){:class="lazyload" width="100%" height="100%"}
 
 이미지 연산은 하나 또는 둘 이상의 이미지에 대해 수학적인 연산을 수행합니다.
 
@@ -141,4 +141,4 @@ dst = np.concatenate((src, number, dst), axis = 0)
 
 ## 출력 결과
 
-![2]({{ site.images }}/assets/posts/Python/OpenCV/lecture-31/2.webp){: width="100%" height="100%"}
+![2]({{ site.images }}/assets/posts/Python/OpenCV/lecture-31/2.webp){:class="lazyload" width="100%" height="100%"}

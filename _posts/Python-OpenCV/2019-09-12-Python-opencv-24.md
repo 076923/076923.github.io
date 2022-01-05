@@ -16,7 +16,7 @@ toc: true
 
 ## 블록 껍질(Convex Hull)
 
-![1]({{ site.images }}/assets/posts/Python/OpenCV/lecture-24/1.webp){: width="100%" height="100%"}
+![1]({{ site.images }}/assets/posts/Python/OpenCV/lecture-24/1.webp){:class="lazyload" width="100%" height="100%"}
 
 `윤곽선(points, contours)`의 **경계면을 둘러싸는 다각형**을 구하는 알고리즘입니다.
 
@@ -95,4 +95,4 @@ for i in contours:
 
 ## 출력 결과
 
-![2]({{ site.images }}/assets/posts/Python/OpenCV/lecture-24/2.webp){: width="100%" height="100%"}
+![2]({{ site.images }}/assets/posts/Python/OpenCV/lecture-24/2.webp){:class="lazyload" width="100%" height="100%"}

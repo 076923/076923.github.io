@@ -16,7 +16,7 @@ toc: true
 
 ## 비지도 학습(Unsupervised Learning)
 
-![1]({{ site.images }}/assets/posts/Theory/ArtificialIntelligence/lecture-3/1.webp){: width="100%" height="100%"}
+![1]({{ site.images }}/assets/posts/Theory/ArtificialIntelligence/lecture-3/1.webp){:class="lazyload" width="100%" height="100%"}
 
 비지도 학습이란 `레이블(Label)`을 포함시키지 않고 데이터에 의해 컴퓨터(알고리즘)이 스스로 학습하는 방법입니다.
 
@@ -49,7 +49,7 @@ toc: true
 
 군집화는 일반적인 정의가 존재하지 않기 때문에, 알고리즘마다 서로 다른 군집을 분류할 수 있습니다.
 
-![2]({{ site.images }}/assets/posts/Theory/ArtificialIntelligence/lecture-3/2.webp){: width="100%" height="100%"}
+![2]({{ site.images }}/assets/posts/Theory/ArtificialIntelligence/lecture-3/2.webp){:class="lazyload" width="100%" height="100%"}
 
 예를 들어, `K-평균 군집화(K-Means Clustering)`는 임의의 **중심점(Centroid)**을 기준으로 최소 거리에 기반한 군집화을 진행합니다.
 
@@ -63,7 +63,7 @@ K-평균 군집화는 중심의 초깃값이 무작위로 정해지며, **K의 �
 
 중심점과 군집 개수로 나누기 때문에, 군집의 크기, 밀도, 형태가 특이하거나 서로 다를 경우 좋지 않은 결과가 나타날 수 있습니다.
 
-![3]({{ site.images }}/assets/posts/Theory/ArtificialIntelligence/lecture-3/3.webp){: width="100%" height="100%"}
+![3]({{ site.images }}/assets/posts/Theory/ArtificialIntelligence/lecture-3/3.webp){:class="lazyload" width="100%" height="100%"}
 
 `밀도 기반 군집화(Density-based spatialclustering of applications with noise, DBSCAN)`는 K-평균 군집화 방식과는 다르게 군집화를 진행합니다.
 
@@ -77,13 +77,13 @@ K-평균 군집화는 중심의 초깃값이 무작위로 정해지며, **K의 �
 
 만약, 핵심 샘플이 아닌 영역은 **이상치**로 간주합니다.
 
-![4]({{ site.images }}/assets/posts/Theory/ArtificialIntelligence/lecture-3/4.webp){: width="100%" height="100%"}
+![4]({{ site.images }}/assets/posts/Theory/ArtificialIntelligence/lecture-3/4.webp){:class="lazyload" width="100%" height="100%"}
 
 밀도 기반 군집화는 **특정 거리**와 **최소 샘플 갯수**로 군집화를 이루므로, 사전에 군집 갯수를 설정하지 않아도 됩니다.
 
 또한, 밀도를 기준으로 군집화하기 때문에 복잡한 분포의 데이터를 분석할 수 있으며, 어떤 군집에도 속하지 않는 이상치를 구분할 수 있습니다. 
 
-![5]({{ site.images }}/assets/posts/Theory/ArtificialIntelligence/lecture-3/5.webp){: width="100%" height="100%"}
+![5]({{ site.images }}/assets/posts/Theory/ArtificialIntelligence/lecture-3/5.webp){:class="lazyload" width="100%" height="100%"}
 
 위 이미지는 같은 데이터를 `K-평균 군집화`와 `밀도 기반 군집화`로 군집화한 결과입니다.
 
@@ -120,7 +120,7 @@ K-평균 군집화는 중심의 초깃값이 무작위로 정해지며, **K의 �
 
 - Tip : 횡단면 데이터란 **동일한 시간**, **동일 기간**에 여러 변수에 대하여 수집된 데이터를 의미합니다.
 
-![6]({{ site.images }}/assets/posts/Theory/ArtificialIntelligence/lecture-3/6.webp){: width="100%" height="100%"}
+![6]({{ site.images }}/assets/posts/Theory/ArtificialIntelligence/lecture-3/6.webp){:class="lazyload" width="100%" height="100%"}
 
 이상치는 위의 이미지에서 `붉은색 지점`이 이상치로 볼 수 있습니다.
 

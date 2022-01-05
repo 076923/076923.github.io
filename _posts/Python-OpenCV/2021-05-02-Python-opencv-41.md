@@ -16,7 +16,7 @@ toc: true
 
 ## 색상 맵(Color Map)
 
-![1]({{ site.images }}/assets/posts/Python/OpenCV/lecture-41/1.webp){: width="100%" height="100%"}
+![1]({{ site.images }}/assets/posts/Python/OpenCV/lecture-41/1.webp){:class="lazyload" width="100%" height="100%"}
 
 `색상 맵(Color Map)`은 입력 이미지에 **순람표(Lookup table)** 구조로 이루어진 데이터를 적용합니다.
 
@@ -87,4 +87,4 @@ userColor_8UC3 = np.linspace(0, 255, num=256 * 3, endpoint=True, retstep=False, 
 
 ## 출력 결과
 
-![2]({{ site.images }}/assets/posts/Python/OpenCV/lecture-41/2.webp){: width="100%" height="100%"}
+![2]({{ site.images }}/assets/posts/Python/OpenCV/lecture-41/2.webp){:class="lazyload" width="100%" height="100%"}
