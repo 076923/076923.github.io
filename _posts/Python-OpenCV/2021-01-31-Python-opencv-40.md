@@ -16,7 +16,7 @@ toc: true
 
 ## 리매핑(Remapping)
 
-![1]({{ site.images }}/assets/posts/Python/OpenCV/lecture-40/1.webp){: width="100%" height="100%"}
+![1]({{ site.images }}/assets/posts/Python/OpenCV/lecture-40/1.webp){:class="lazyload" width="100%" height="100%"}
 
 `리매핑(Remapping)`은 입력 이미지에 기하학적인 변형을 적용하는 방법입니다.
 
@@ -103,4 +103,4 @@ dst = cv2.remap(src, map1, map2, cv2.INTER_CUBIC)
 
 ## 출력 결과
 
-![2]({{ site.images }}/assets/posts/Python/OpenCV/lecture-40/2.webp){: width="100%" height="100%"}
+![2]({{ site.images }}/assets/posts/Python/OpenCV/lecture-40/2.webp){:class="lazyload" width="100%" height="100%"}

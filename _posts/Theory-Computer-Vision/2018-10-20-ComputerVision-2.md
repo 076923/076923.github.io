@@ -16,7 +16,7 @@ toc: true
 
 ## Digital Image Processing 이란?
 
-![1]({{ site.images }}/assets/posts/Theory/ComputerVision/lecture-2/1.webp){: width="100%" height="100%"}
+![1]({{ site.images }}/assets/posts/Theory/ComputerVision/lecture-2/1.webp){:class="lazyload" width="100%" height="100%"}
 
 `Digital Image Processing`이란 디지털 이미지를 신호 처리하는 분야로 이미지로부터 **유의미한 정보를 얻기 위하여 사용되는 일련의 알고리즘**을 의미합니다.
 
@@ -37,7 +37,7 @@ toc: true
 
 ## Digital Image Processing의 시작
 
-![2]({{ site.images }}/assets/posts/Theory/ComputerVision/lecture-2/2.webp){: width="100%" height="100%"}
+![2]({{ site.images }}/assets/posts/Theory/ComputerVision/lecture-2/2.webp){:class="lazyload" width="100%" height="100%"}
 
 이미지 프로세싱(영상 처리)은 1964년 미국의 `제트 추진 연구소(Jet Propulsion Laboratory)`에서 시작되었습니다.
 
@@ -58,7 +58,7 @@ toc: true
 
 ## Digital Image Processing의 분류
 
-![3]({{ site.images }}/assets/posts/Theory/ComputerVision/lecture-2/3.webp){: width="100%" height="100%"}
+![3]({{ site.images }}/assets/posts/Theory/ComputerVision/lecture-2/3.webp){:class="lazyload" width="100%" height="100%"}
 
 이미지 프로세싱은 영상의 모든 형태의 정보처리를 의미하며, 주로 영상의 **인식**과 **이해** 등을 중점적으로 **연구하고 해석**하는 분야입니다.
 

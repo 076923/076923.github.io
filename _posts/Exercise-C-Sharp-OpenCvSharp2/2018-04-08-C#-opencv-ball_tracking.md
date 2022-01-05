@@ -16,7 +16,7 @@ toc: true
 
 ## Ball Tracking
 
-![1]({{ site.images }}/assets/posts/Exercise/C-Sharp/OpenCvSharp2/ball_tracking/1.webp){: width="100%" height="100%"}
+![1]({{ site.images }}/assets/posts/Exercise/C-Sharp/OpenCvSharp2/ball_tracking/1.webp){:class="lazyload" width="100%" height="100%"}
 
 **영상이나 이미지에서 공을 추적합니다.** 움직이는 물체를 검출 할 수 있습니다.
 
@@ -33,7 +33,7 @@ toc: true
 
 ## Step 1
 
-![2]({{ site.images }}/assets/posts/Exercise/C-Sharp/OpenCvSharp2/ball_tracking/2.webp){: width="100%" height="100%"}
+![2]({{ site.images }}/assets/posts/Exercise/C-Sharp/OpenCvSharp2/ball_tracking/2.webp){:class="lazyload" width="100%" height="100%"}
 
 1. 그레이스케일 적용
 2. 블러 & 이진화 적용
@@ -49,7 +49,7 @@ toc: true
 
 ## Step 2
 
-![3]({{ site.images }}/assets/posts/Exercise/C-Sharp/OpenCvSharp2/ball_tracking/3.webp){: width="100%" height="100%"}
+![3]({{ site.images }}/assets/posts/Exercise/C-Sharp/OpenCvSharp2/ball_tracking/3.webp){:class="lazyload" width="100%" height="100%"}
 
 1. 배경 적용
 2. 모폴로지 적용
@@ -64,7 +64,7 @@ toc: true
 
 ## Step 3
 
-![4]({{ site.images }}/assets/posts/Exercise/C-Sharp/OpenCvSharp2/ball_tracking/4.webp){: width="100%" height="100%"}
+![4]({{ site.images }}/assets/posts/Exercise/C-Sharp/OpenCvSharp2/ball_tracking/4.webp){:class="lazyload" width="100%" height="100%"}
 
 1. 배경 병합
 2. 비트 연산 (Or)
@@ -76,7 +76,7 @@ toc: true
 
 ## Step 4 ##
 
-![5]({{ site.images }}/assets/posts/Exercise/C-Sharp/OpenCvSharp2/ball_tracking/5.webp){: width="100%" height="100%"}
+![5]({{ site.images }}/assets/posts/Exercise/C-Sharp/OpenCvSharp2/ball_tracking/5.webp){:class="lazyload" width="100%" height="100%"}
 
 1. 물체 연산
 2. 블러 & 이진화 적용
@@ -93,7 +93,7 @@ toc: true
 
 ### Way - 1
 
-![6]({{ site.images }}/assets/posts/Exercise/C-Sharp/OpenCvSharp2/ball_tracking/6.webp){: width="100%" height="100%"}
+![6]({{ site.images }}/assets/posts/Exercise/C-Sharp/OpenCvSharp2/ball_tracking/6.webp){:class="lazyload" width="100%" height="100%"}
 
 1. 물체 남기기
 2. 비트 연산 (And)
@@ -105,7 +105,7 @@ toc: true
 
 ### Way - 2
 
-![7]({{ site.images }}/assets/posts/Exercise/C-Sharp/OpenCvSharp2/ball_tracking/7.webp){: width="100%" height="100%"}
+![7]({{ site.images }}/assets/posts/Exercise/C-Sharp/OpenCvSharp2/ball_tracking/7.webp){:class="lazyload" width="100%" height="100%"}
 
 1. 물체 추적
 2. 라벨링

@@ -16,7 +16,7 @@ toc: true
 
 ## Splash Screen
 
-![0]({{ site.images }}/assets/posts/Exercise/C-Sharp/C-Sharp/spalshscreen/0.gif){: width="100%" height="100%"}
+![0]({{ site.images }}/assets/posts/Exercise/C-Sharp/C-Sharp/spalshscreen/0.gif){:class="lazyload" width="100%" height="100%"}
 
 Splash Screen이란 프로그램을 시작했을 때, **로딩 중에 표시되는 이미지를 의미**합니다.
 
@@ -27,13 +27,13 @@ Splash Screen이란 프로그램을 시작했을 때, **로딩 중에 표시되�
 
 ## 항목 추가
 
-![1]({{ site.images }}/assets/posts/Exercise/C-Sharp/C-Sharp/spalshscreen/1.webp){: width="100%" height="100%"}
+![1]({{ site.images }}/assets/posts/Exercise/C-Sharp/C-Sharp/spalshscreen/1.webp){:class="lazyload" width="100%" height="100%"}
 
 `프로젝트(P)` → `새 항목 추가(W)`를 눌러 `Splash Screen`이 될 `Form`을 추가합니다.
 
 <br>
 
-![2]({{ site.images }}/assets/posts/Exercise/C-Sharp/C-Sharp/spalshscreen/2.webp){: width="100%" height="100%"}
+![2]({{ site.images }}/assets/posts/Exercise/C-Sharp/C-Sharp/spalshscreen/2.webp){:class="lazyload" width="100%" height="100%"}
 
 `Windows Form`을 선택 한 후 이름을 `SplashForm.cs`으로 변경하고 추가합니다.
 
@@ -44,7 +44,7 @@ Splash Screen이란 프로그램을 시작했을 때, **로딩 중에 표시되�
 
 ### Program.cs
 
-![3]({{ site.images }}/assets/posts/Exercise/C-Sharp/C-Sharp/spalshscreen/3.webp){: width="100%" height="100%"}
+![3]({{ site.images }}/assets/posts/Exercise/C-Sharp/C-Sharp/spalshscreen/3.webp){:class="lazyload" width="100%" height="100%"}
 
 `솔루션 탐색기`에서 `Program.cs`을 더블클릭하여 `프로그램 주 진입점`으로 이동합니다.
 

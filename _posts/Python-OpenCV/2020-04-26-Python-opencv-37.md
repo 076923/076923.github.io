@@ -16,9 +16,9 @@ toc: true
 
 ## 템플릿 매칭(Template Matching)
 
-![1]({{ site.images }}/assets/posts/Python/OpenCV/lecture-37/1.webp){: width="100%" height="100%"}
+![1]({{ site.images }}/assets/posts/Python/OpenCV/lecture-37/1.webp){:class="lazyload" width="100%" height="100%"}
 
-![2]({{ site.images }}/assets/posts/Python/OpenCV/lecture-37/2.webp){: width="100%" height="100%"}
+![2]({{ site.images }}/assets/posts/Python/OpenCV/lecture-37/2.webp){:class="lazyload" width="100%" height="100%"}
 
 `템플릿 매칭`은 **원본 이미지**에서 **템플릿 이미지**와 일치하는 영역을 찾는 알고리즘입니다.
 
@@ -92,12 +92,12 @@ result = cv2.matchTemplate(src, templit, cv2.TM_SQDIFF_NORMED)
 
 |   플래그   |               수식               |
 |:----------:|:--------------------------------:|
-| cv2.TM_SQDIFF | ![3]({{ site.images }}/assets/posts/Python/OpenCV/lecture-37/3.webp){: width="100%" height="100%"} |
-| cv2.TM_SQDIFF_NORMED | ![4]({{ site.images }}/assets/posts/Python/OpenCV/lecture-37/4.webp){: width="100%" height="100%"} |
-| cv2.TM_CCORR | ![5]({{ site.images }}/assets/posts/Python/OpenCV/lecture-37/5.webp){: width="100%" height="100%"} |
-| cv2.TM_CCORR_NORMED | ![6]({{ site.images }}/assets/posts/Python/OpenCV/lecture-37/6.webp){: width="100%" height="100%"} |
-| cv2.TM_CCOEFF | ![7]({{ site.images }}/assets/posts/Python/OpenCV/lecture-37/7.webp){: width="100%" height="100%"}![9]({{ site.images }}/assets/posts/Python/OpenCV/lecture-37/9.webp){: width="100%" height="100%"} |
-| cv2.TM_CCOEFF_NORMED | ![8]({{ site.images }}/assets/posts/Python/OpenCV/lecture-37/8.webp){: width="100%" height="100%"} |
+| cv2.TM_SQDIFF | ![3]({{ site.images }}/assets/posts/Python/OpenCV/lecture-37/3.webp){:class="lazyload" width="100%" height="100%"} |
+| cv2.TM_SQDIFF_NORMED | ![4]({{ site.images }}/assets/posts/Python/OpenCV/lecture-37/4.webp){:class="lazyload" width="100%" height="100%"} |
+| cv2.TM_CCORR | ![5]({{ site.images }}/assets/posts/Python/OpenCV/lecture-37/5.webp){:class="lazyload" width="100%" height="100%"} |
+| cv2.TM_CCORR_NORMED | ![6]({{ site.images }}/assets/posts/Python/OpenCV/lecture-37/6.webp){:class="lazyload" width="100%" height="100%"} |
+| cv2.TM_CCOEFF | ![7]({{ site.images }}/assets/posts/Python/OpenCV/lecture-37/7.webp){:class="lazyload" width="100%" height="100%"}![9]({{ site.images }}/assets/posts/Python/OpenCV/lecture-37/9.webp){:class="lazyload" width="100%" height="100%"} |
+| cv2.TM_CCOEFF_NORMED | ![8]({{ site.images }}/assets/posts/Python/OpenCV/lecture-37/8.webp){:class="lazyload" width="100%" height="100%"} |
 
 <br>
 

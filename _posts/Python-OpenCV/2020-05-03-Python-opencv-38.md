@@ -16,9 +16,9 @@ toc: true
 
 ## ORB(Oriented FAST and Rotated BRIEF)
 
-![1]({{ site.images }}/assets/posts/Python/OpenCV/lecture-38/1.webp){: width="100%" height="100%"}
+![1]({{ site.images }}/assets/posts/Python/OpenCV/lecture-38/1.webp){:class="lazyload" width="100%" height="100%"}
 
-![2]({{ site.images }}/assets/posts/Python/OpenCV/lecture-38/2.webp){: width="100%" height="100%"}
+![2]({{ site.images }}/assets/posts/Python/OpenCV/lecture-38/2.webp){:class="lazyload" width="100%" height="100%"}
 
 `ORB(Oriented FAST and rotated BRIEF) 알고리즘`은 **FAST(Features from Accelerated Segment Test) 알고리즘**, **BRIEF(Binary Robust Independent Elementary Features) 알고리즘**, **해리스 코너 알고리즘**을 결합한 알고리즘입니다.
 
@@ -294,4 +294,4 @@ for i in matches[:100]:
 
 ## 출력 결과
 
-![3]({{ site.images }}/assets/posts/Python/OpenCV/lecture-38/3.webp){: width="100%" height="100%"}
+![3]({{ site.images }}/assets/posts/Python/OpenCV/lecture-38/3.webp){:class="lazyload" width="100%" height="100%"}

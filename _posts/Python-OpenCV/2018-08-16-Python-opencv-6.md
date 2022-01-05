@@ -16,7 +16,7 @@ toc: true
 
 ## 회전(Rotate)
 
-![1]({{ site.images }}/assets/posts/Python/OpenCV/lecture-6/1.webp){: width="100%" height="100%"}
+![1]({{ site.images }}/assets/posts/Python/OpenCV/lecture-6/1.webp){:class="lazyload" width="100%" height="100%"}
 
 `회전(Rotate)`은 선형 변환 중 하나에 포함되며, `회전 변환 행렬(Rotation matrix)`을 통해 변환이 진행됩니다.
 
@@ -115,4 +115,4 @@ dst = cv2.warpAffine(src, matrix, (width, height))
 
 ## 출력 결과
 
-![2]({{ site.images }}/assets/posts/Python/OpenCV/lecture-6/2.webp){: width="100%" height="100%"}
+![2]({{ site.images }}/assets/posts/Python/OpenCV/lecture-6/2.webp){:class="lazyload" width="100%" height="100%"}

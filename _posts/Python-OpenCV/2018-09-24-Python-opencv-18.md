@@ -16,7 +16,7 @@ toc: true
 
 ## 도형 그리기(Drawing)
 
-![1]({{ site.images }}/assets/posts/Python/OpenCV/lecture-18/1.webp){: width="100%" height="100%"}
+![1]({{ site.images }}/assets/posts/Python/OpenCV/lecture-18/1.webp){:class="lazyload" width="100%" height="100%"}
 
 `도형 그리기(Drawing)`는 영상이나 이미지 위에 그래픽을 그려 검출 결과를 시각적으로 표시합니다.
 
@@ -266,4 +266,4 @@ src = cv2.putText(src, "YUNDAEHEE", (900, 600), cv2.FONT_HERSHEY_COMPLEX, 2, (25
 
 ## 출력 결과
 
-![2]({{ site.images }}/assets/posts/Python/OpenCV/lecture-18/1.webp){: width="100%" height="100%"}
+![2]({{ site.images }}/assets/posts/Python/OpenCV/lecture-18/1.webp){:class="lazyload" width="100%" height="100%"}

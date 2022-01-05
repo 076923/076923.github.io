@@ -16,7 +16,7 @@ toc: true
 
 ## Scrollbar(스크롤 바)
 
-![1]({{ site.images }}/assets/posts/Python/Tkinter/lecture-16/1.webp){: width="100%" height="100%"}
+![1]({{ site.images }}/assets/posts/Python/Tkinter/lecture-16/1.webp){:class="lazyload" width="100%" height="100%"}
 
 `Scrollbar`을 이용하여 `위젯`에 `스크롤`을 적용하기 위한 `스크롤바`을 생성할 수 있습니다.
 

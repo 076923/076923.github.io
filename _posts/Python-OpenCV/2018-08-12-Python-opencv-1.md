@@ -75,7 +75,7 @@ print(cv2.__version__)
 
 ## Python 플랫폼
 
-![1]({{ site.images }}/assets/posts/Python/OpenCV/lecture-1/1.webp){: width="100%" height="100%"}
+![1]({{ site.images }}/assets/posts/Python/OpenCV/lecture-1/1.webp){:class="lazyload" width="100%" height="100%"}
 
 본 `Python-OpenCV` 강좌에서 사용될 이미지의 경로는 위와 같습니다.
 
@@ -83,13 +83,13 @@ print(cv2.__version__)
 
 <br>
 
-![2]({{ site.images }}/assets/posts/Python/OpenCV/lecture-1/2.webp){: width="100%" height="100%"}
+![2]({{ site.images }}/assets/posts/Python/OpenCV/lecture-1/2.webp){:class="lazyload" width="100%" height="100%"}
 
 `IDLE`를 사용할 경우, `상대 경로`를 이용하여 `"Image/파일명"`으로 이미지를 불러올 수 있습니다.
 
 <br>
 
-![3]({{ site.images }}/assets/posts/Python/OpenCV/lecture-1/3.webp){: width="100%" height="100%"}
+![3]({{ site.images }}/assets/posts/Python/OpenCV/lecture-1/3.webp){:class="lazyload" width="100%" height="100%"}
 
 `Visual Studio`를 사용할 경우, `절대 경로`를 이용하여 `"D:/Python/Image/파일명"`으로 이미지를 불러올 수 있습니다.
 

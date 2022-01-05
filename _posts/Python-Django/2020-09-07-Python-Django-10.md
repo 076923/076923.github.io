@@ -64,7 +64,7 @@ Quit the server with CTRL-BREAK.<br>
 
 ## Django Test
 
-![1]({{ site.images }}/assets/posts/Python/Django/lecture-10/1.webp){: width="100%" height="100%"}
+![1]({{ site.images }}/assets/posts/Python/Django/lecture-10/1.webp){:class="lazyload" width="100%" height="100%"}
 
 `장고 프로젝트 설정 파일(settings.py)`에서 **DEBUG`를 True로 설정**했다면 원활하게 테스트를 진행할 수 있습니다.
 
@@ -74,7 +74,7 @@ Quit the server with CTRL-BREAK.<br>
 
 <br>
 
-![2]({{ site.images }}/assets/posts/Python/Django/lecture-10/2.webp){: width="100%" height="100%"}
+![2]({{ site.images }}/assets/posts/Python/Django/lecture-10/2.webp){:class="lazyload" width="100%" height="100%"}
 
 정상적인 값을 입력했다면, `View`에서 작성한 `{"message": "Operate successfully"}` 구문이 반환됩니다.
 
@@ -82,7 +82,7 @@ Quit the server with CTRL-BREAK.<br>
 
 <br>
 
-![3]({{ site.images }}/assets/posts/Python/Django/lecture-10/3.webp){: width="100%" height="100%"}
+![3]({{ site.images }}/assets/posts/Python/Django/lecture-10/3.webp){:class="lazyload" width="100%" height="100%"}
 
 필드에 `이메일`, `이름`, `나이`만 작성했지만, 나머지 필드가 모두 입력되어 표시되는 것을 확인할 수 있습니다.
 
@@ -90,7 +90,7 @@ Quit the server with CTRL-BREAK.<br>
 
 <br>
 
-![4]({{ site.images }}/assets/posts/Python/Django/lecture-10/4.webp){: width="100%" height="100%"}
+![4]({{ site.images }}/assets/posts/Python/Django/lecture-10/4.webp){:class="lazyload" width="100%" height="100%"}
 
 `age` 필드의 유효성 검사의 `instance < 19` 조건으로 **회원 가입이 불가능한 나이입니다.**의 메세지가 반환됩니다. 
 
@@ -100,7 +100,7 @@ Quit the server with CTRL-BREAK.<br>
 
 <br>
 
-![5]({{ site.images }}/assets/posts/Python/Django/lecture-10/5.webp){: width="100%" height="100%"}
+![5]({{ site.images }}/assets/posts/Python/Django/lecture-10/5.webp){:class="lazyload" width="100%" height="100%"}
 
 처음에 작성한 데이터의 `id` 필드에서 **835e1ca3-5383-4e2e-a051-fc2b8ad11f5a(UUID)**를 복사해 `URL`에 입력합니다.
 
@@ -245,7 +245,7 @@ print(status_code)
 
 ## Postman Test
 
-![6]({{ site.images }}/assets/posts/Python/Django/lecture-10/6.webp){: width="100%" height="100%"}
+![6]({{ site.images }}/assets/posts/Python/Django/lecture-10/6.webp){:class="lazyload" width="100%" height="100%"}
 
 `포스트맨(Postman)` 애플리케이션을 이용하여 `API` 테스트를 진행할 수 있습니다.
 
@@ -253,7 +253,7 @@ print(status_code)
 
 <br>
 
-![7]({{ site.images }}/assets/posts/Python/Django/lecture-10/7.webp){: width="100%" height="100%"}
+![7]({{ site.images }}/assets/posts/Python/Django/lecture-10/7.webp){:class="lazyload" width="100%" height="100%"}
 
 정상적으로 설치가 완료된 후, `+` 모양의 탭 추가 버튼을 클릭합니다.
 
@@ -261,7 +261,7 @@ print(status_code)
 
 <br>
 
-![8]({{ site.images }}/assets/posts/Python/Django/lecture-10/8.webp){: width="100%" height="100%"}
+![8]({{ site.images }}/assets/posts/Python/Django/lecture-10/8.webp){:class="lazyload" width="100%" height="100%"}
 
 위와 같은 `Untitled Request` 탭이 추가됩니다.
 
@@ -269,7 +269,7 @@ print(status_code)
 
 <br>
 
-![9]({{ site.images }}/assets/posts/Python/Django/lecture-10/9.webp){: width="100%" height="100%"}
+![9]({{ site.images }}/assets/posts/Python/Django/lecture-10/9.webp){:class="lazyload" width="100%" height="100%"}
 
 메서드는 **리스트 박스**를 이용해 설정할 수 있습니다.
 
