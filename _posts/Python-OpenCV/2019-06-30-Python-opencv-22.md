@@ -16,7 +16,7 @@ toc: true
 
 ## 다각형 근사(Approx Poly)
 
-![1]({{ site.images }}/assets/posts/Python/OpenCV/lecture-22/1.webp){:class="lazyload" width="100%" height="100%"}
+<img data-src="{{ site.images }}/assets/posts/Python/OpenCV/lecture-22/1.webp" class="lazyload" width="100%" height="100%"/>
 
 영상이나 이미지의 `윤곽점`을 압축해 다각형으로 근사하기 위해 사용합니다.
 
@@ -128,4 +128,4 @@ for approx in approx_poly:
 
 ## 출력 결과
 
-![2]({{ site.images }}/assets/posts/Python/OpenCV/lecture-22/2.webp){:class="lazyload" width="100%" height="100%"}
+<img data-src="{{ site.images }}/assets/posts/Python/OpenCV/lecture-22/2.webp" class="lazyload" width="100%" height="100%"/>

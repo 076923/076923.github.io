@@ -16,7 +16,7 @@ toc: true
 
 ## Color Circle Detection
 
-![1]({{ site.images }}/assets/posts/Exercise/C-Sharp/OpenCvSharp2/color_circle_detection/1.webp){:class="lazyload" width="100%" height="100%"}
+<img data-src="{{ site.images }}/assets/posts/Exercise/C-Sharp/OpenCvSharp2/color_circle_detection/1.webp" class="lazyload" width="100%" height="100%"/>
 
 **원을 검출하여 색상을 파악합니다.** 다양한 이미지나 동영상에서 색상이 포함된 원을 검출 할 수 있습니다.
 
@@ -33,7 +33,7 @@ toc: true
 
 ## Step 1
 
-![2]({{ site.images }}/assets/posts/Exercise/C-Sharp/OpenCvSharp2/color_circle_detection/2.webp){:class="lazyload" width="100%" height="100%"}
+<img data-src="{{ site.images }}/assets/posts/Exercise/C-Sharp/OpenCvSharp2/color_circle_detection/2.webp" class="lazyload" width="100%" height="100%"/>
 
 1. 이진화 적용
 2. 모폴로지 & 블러
@@ -49,7 +49,7 @@ toc: true
 
 ## Step 2
 
-![3]({{ site.images }}/assets/posts/Exercise/C-Sharp/OpenCvSharp2/color_circle_detection/3.webp){:class="lazyload" width="100%" height="100%"}
+<img data-src="{{ site.images }}/assets/posts/Exercise/C-Sharp/OpenCvSharp2/color_circle_detection/3.webp" class="lazyload" width="100%" height="100%"/>
 
 1. 원 검출
 2. 좌표 저장
@@ -61,7 +61,7 @@ toc: true
 
 ## Step 3
 
-![4]({{ site.images }}/assets/posts/Exercise/C-Sharp/OpenCvSharp2/color_circle_detection/4.webp){:class="lazyload" width="100%" height="100%"}
+<img data-src="{{ site.images }}/assets/posts/Exercise/C-Sharp/OpenCvSharp2/color_circle_detection/4.webp" class="lazyload" width="100%" height="100%"/>
 
 1. 좌표 불러오기
 2. 관심 영역 설정
@@ -73,7 +73,7 @@ toc: true
 
 ## Step 4
 
-![5]({{ site.images }}/assets/posts/Exercise/C-Sharp/OpenCvSharp2/color_circle_detection/5.webp){:class="lazyload" width="100%" height="100%"}
+<img data-src="{{ site.images }}/assets/posts/Exercise/C-Sharp/OpenCvSharp2/color_circle_detection/5.webp" class="lazyload" width="100%" height="100%"/>
 
 1. 구역 설정
 2. 난수 생성
@@ -89,7 +89,7 @@ toc: true
 
 ## Step 5
 
-![6]({{ site.images }}/assets/posts/Exercise/C-Sharp/OpenCvSharp2/color_circle_detection/6.webp){:class="lazyload" width="100%" height="100%"}
+<img data-src="{{ site.images }}/assets/posts/Exercise/C-Sharp/OpenCvSharp2/color_circle_detection/6.webp" class="lazyload" width="100%" height="100%"/>
 
 - 결과 표시
 
@@ -100,7 +100,7 @@ toc: true
 
 ## Step 6
 
-![7]({{ site.images }}/assets/posts/Exercise/C-Sharp/OpenCvSharp2/color_circle_detection/7.webp){:class="lazyload" width="100%" height="100%"}
+<img data-src="{{ site.images }}/assets/posts/Exercise/C-Sharp/OpenCvSharp2/color_circle_detection/7.webp" class="lazyload" width="100%" height="100%"/>
 
 - HDC 적용
 

@@ -16,7 +16,7 @@ toc: true
 
 ## 색상 공간 변환(Convert Color)
 
-![1]({{ site.images }}/assets/posts/Python/OpenCV/lecture-10/1.webp){:class="lazyload" width="100%" height="100%"}
+<img data-src="{{ site.images }}/assets/posts/Python/OpenCV/lecture-10/1.webp" class="lazyload" width="100%" height="100%"/>
 
 `색상 공간 변환(Convert Color)`은 본래의 색상 공간에서 다른 색상 공간으로 변환할 때 사용합니다.
 
@@ -117,5 +117,5 @@ dst = cv2.cvtColor(src, cv2.COLOR_BGR2GRAY)
 
 ## 출력 결과
 
-![2]({{ site.images }}/assets/posts/Python/OpenCV/lecture-10/2.webp){:class="lazyload" width="100%" height="100%"}
+<img data-src="{{ site.images }}/assets/posts/Python/OpenCV/lecture-10/2.webp" class="lazyload" width="100%" height="100%"/>
 

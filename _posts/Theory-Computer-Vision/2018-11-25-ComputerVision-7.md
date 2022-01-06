@@ -16,7 +16,7 @@ toc: true
 
 ## 노이즈 제거(Noise Reduction)
 
-![1]({{ site.images }}/assets/posts/Theory/ComputerVision/lecture-7/1.webp){:class="lazyload" width="100%" height="100%"}
+<img data-src="{{ site.images }}/assets/posts/Theory/ComputerVision/lecture-7/1.webp" class="lazyload" width="100%" height="100%"/>
 
 `노이즈(Nosie)`란 잡음을 뜻하며, 원하지 않는 데이터를 의미합니다. 즉, 다른 데이터를 **간섭**하거나 의도하지 않은 **왜곡**을 의미합니다.
 
@@ -86,7 +86,7 @@ OpenCV를 통하여 불러오는 이미지는 **Bitmap** 형식이므로, 어떤
 
 ## 이미지 복원(Image Restoration)
 
-![2]({{ site.images }}/assets/posts/Theory/ComputerVision/lecture-7/2.webp){:class="lazyload" width="100%" height="100%"}
+<img data-src="{{ site.images }}/assets/posts/Theory/ComputerVision/lecture-7/2.webp" class="lazyload" width="100%" height="100%"/>
 
 `이미지 복원(Image Restoration)`은 `디노이즈(DeNosie)` 영역이 일부 포함됩니다.
 

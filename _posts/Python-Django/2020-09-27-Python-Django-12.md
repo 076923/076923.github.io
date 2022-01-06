@@ -27,7 +27,7 @@ toc: true
 
 ## 요청 데이터
 
-![1]({{ site.images }}/assets/posts/Python/Django/lecture-12/1.webp){:class="lazyload" width="100%" height="100%"}
+<img data-src="{{ site.images }}/assets/posts/Python/Django/lecture-12/1.webp" class="lazyload" width="100%" height="100%"/>
 
 **게시물(post) 데이터**와 댓**글(comment) 데이터**를 함께 받아서 `post` 테이블과 `comment` 테이블에 한 번에 입력해보도록 하겠습니다.
 
@@ -165,6 +165,6 @@ return Response({"message": "Error"}, status=status.HTTP_400_BAD_REQUEST)
 
 <br>
 
-![2]({{ site.images }}/assets/posts/Python/Django/lecture-12/2.webp){:class="lazyload" width="100%" height="100%"}
+<img data-src="{{ site.images }}/assets/posts/Python/Django/lecture-12/2.webp" class="lazyload" width="100%" height="100%"/>
 
 `post` URL로 이동하여 결과를 조회한다면 정상적으로 두 테이블에 저장된 것을 확인할 수 있습니다.

@@ -16,7 +16,7 @@ toc: true
 
 ## Computer Vision이란?
 
-![1]({{ site.images }}/assets/posts/Theory/ComputerVision/lecture-1/1.webp){:class="lazyload" width="100%" height="100%"}
+<img data-src="{{ site.images }}/assets/posts/Theory/ComputerVision/lecture-1/1.webp" class="lazyload" width="100%" height="100%"/>
 
 `컴퓨터 비전(Computer Vision)`이란 컴퓨터나 기계가 **시각적인 역할**을 처리할 수 있도록 연구하는 분야입니다.
 
@@ -45,7 +45,7 @@ toc: true
 
 ## OpenCV
 
-![2]({{ site.images }}/assets/posts/Theory/ComputerVision/lecture-1/2.webp){:class="lazyload" width="100%" height="100%"}
+<img data-src="{{ site.images }}/assets/posts/Theory/ComputerVision/lecture-1/2.webp" class="lazyload" width="100%" height="100%"/>
 
 `OpenCV`는 `Open Source Computer Vision Library` 약어로 오픈 소스 컴퓨터 비전 라이브러리입니다.
 
@@ -76,7 +76,7 @@ OpenCV가 등장하면서 비전 전문가가 아니어도 컴퓨터 비전을 �
 
 ## C.V.에서의 하드웨어 & 소프트웨어의 역할
 
-![3]({{ site.images }}/assets/posts/Theory/ComputerVision/lecture-1/3.webp){:class="lazyload" width="100%" height="100%"}
+<img data-src="{{ site.images }}/assets/posts/Theory/ComputerVision/lecture-1/3.webp" class="lazyload" width="100%" height="100%"/>
 
 컴퓨터는 **하드웨어**와 **소프트웨어**로 구성되어 있습니다. 성능이 좋은 소프트웨어를 구동하기 위해서는 당연히 성능이 좋은 하드웨어가 필요합니다.
 

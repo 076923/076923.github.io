@@ -16,7 +16,7 @@ toc: true
 
 ## 유사성 검출(Similarity Detection)
 
-![1]({{ site.images }}/assets/posts/Theory/ComputerVision/lecture-10/1.webp){:class="lazyload" width="100%" height="100%"}
+<img data-src="{{ site.images }}/assets/posts/Theory/ComputerVision/lecture-10/1.webp" class="lazyload" width="100%" height="100%"/>
 
 `유사성 검출(Similarity Detection)`은 이미지 내의 주요한 `유사 영역`을 검출하는 방법입니다.
 

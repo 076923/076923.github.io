@@ -16,7 +16,7 @@ toc: true
 
 ## 이미지 인식(Image Recognition)
 
-![1]({{ site.images }}/assets/posts/Theory/ComputerVision/lecture-11/1.webp){:class="lazyload" width="100%" height="100%"}
+<img data-src="{{ site.images }}/assets/posts/Theory/ComputerVision/lecture-11/1.webp" class="lazyload" width="100%" height="100%"/>
 
 `이미지 인식(Image Recognition)`은 **객체(Object)**, **장소(Place)**, **얼굴(Face)**, **문자(Character)** 등을 인식하기 위한 방법입니다.
 

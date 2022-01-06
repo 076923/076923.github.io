@@ -809,3 +809,6 @@ Etc-MySQL:
         url: "/posts/mysql-5/"
       - title: "제 6강 - 데이터 수정"
         url: "/posts/mysql-6/"
+      - title: "제 7강 - 데이터 삭제"
+        url: "/posts/mysql-7/"
+      

@@ -16,7 +16,7 @@ toc: true
 
 ## 관심 영역(ROI)
 
-![1]({{ site.images }}/assets/posts/Theory/ComputerVision/lecture-5/1.webp){:class="lazyload" width="100%" height="100%"}
+<img data-src="{{ site.images }}/assets/posts/Theory/ComputerVision/lecture-5/1.webp" class="lazyload" width="100%" height="100%"/>
 
 `관심 영역`이란 이미지 상에서 **관심 있는 영역을 의미**합니다.
 
@@ -41,7 +41,7 @@ toc: true
 
 ## 관심 채널(COI)
 
-![2]({{ site.images }}/assets/posts/Theory/ComputerVision/lecture-5/2.webp){:class="lazyload" width="100%" height="100%"}
+<img data-src="{{ site.images }}/assets/posts/Theory/ComputerVision/lecture-5/2.webp" class="lazyload" width="100%" height="100%"/>
 
 `관심 채널`이란 이미지 상에서 **관심 있는 채널을 의미**합니다.
 

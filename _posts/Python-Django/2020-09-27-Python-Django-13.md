@@ -52,7 +52,7 @@ toc: true
 
 <br>
 
-![1]({{ site.images }}/assets/posts/Python/Django/lecture-13/1.webp){:class="lazyload" width="100%" height="100%"}
+<img data-src="{{ site.images }}/assets/posts/Python/Django/lecture-13/1.webp" class="lazyload" width="100%" height="100%"/>
 
 앞선 예제를 변경하지 않고, 위와 같이 `post` 필드 내부의 값이 문제가 있다면 오류를 반환하지만 데이터베이스에서는 `Post` 데이터와 관련된 데이터는 저장됩니다.
 
@@ -60,7 +60,7 @@ toc: true
 
 <br>
 
-![2]({{ site.images }}/assets/posts/Python/Django/lecture-13/2.webp){:class="lazyload" width="100%" height="100%"}
+<img data-src="{{ site.images }}/assets/posts/Python/Django/lecture-13/2.webp" class="lazyload" width="100%" height="100%"/>
 
 오류가 발생했지만, `post` 테이블에는 값이 저장된 것을 확인할 수 있습니다.
 
@@ -203,9 +203,9 @@ class CommentViewSet(viewsets.ModelViewSet):
 
 <br>
 
-![3]({{ site.images }}/assets/posts/Python/Django/lecture-13/3.webp){:class="lazyload" width="100%" height="100%"}
+<img data-src="{{ site.images }}/assets/posts/Python/Django/lecture-13/3.webp" class="lazyload" width="100%" height="100%"/>
 
-![4]({{ site.images }}/assets/posts/Python/Django/lecture-13/4.webp){:class="lazyload" width="100%" height="100%"}
+<img data-src="{{ site.images }}/assets/posts/Python/Django/lecture-13/4.webp" class="lazyload" width="100%" height="100%"/>
 
 트랜잭션을 적용한 다음, `POST` 요청을 해보도록 하겠습니다.
 

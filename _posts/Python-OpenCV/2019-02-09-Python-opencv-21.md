@@ -16,7 +16,7 @@ toc: true
 
 ## 윤곽선(Contour)
 
-![1]({{ site.images }}/assets/posts/Python/OpenCV/lecture-21/1.webp){:class="lazyload" width="100%" height="100%"}
+<img data-src="{{ site.images }}/assets/posts/Python/OpenCV/lecture-21/1.webp" class="lazyload" width="100%" height="100%"/>
 
 영상이나 이미지의 `윤곽선(컨투어)`을 **검출**하기 위해 사용합니다.
 
@@ -185,7 +185,7 @@ for i in range(len(contours)):
 
 <br>
 
-![2]({{ site.images }}/assets/posts/Python/OpenCV/lecture-21/2.webp){:class="lazyload" width="100%" height="100%"}
+<img data-src="{{ site.images }}/assets/posts/Python/OpenCV/lecture-21/2.webp" class="lazyload" width="100%" height="100%"/>
 
 <br>
 
@@ -218,7 +218,7 @@ for i in range(len(contours)):
 
 ## 출력 결과
 
-![3]({{ site.images }}/assets/posts/Python/OpenCV/lecture-21/3.webp){:class="lazyload" width="100%" height="100%"}
+<img data-src="{{ site.images }}/assets/posts/Python/OpenCV/lecture-21/3.webp" class="lazyload" width="100%" height="100%"/>
 
 <br>
 
