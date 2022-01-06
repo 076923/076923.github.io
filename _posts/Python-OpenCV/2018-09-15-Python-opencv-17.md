@@ -16,7 +16,7 @@ toc: true
 
 ## 채널 분리(Split) 및 병합(Merge)
 
-![1]({{ site.images }}/assets/posts/Python/OpenCV/lecture-17/1.webp){:class="lazyload" width="100%" height="100%"}
+<img data-src="{{ site.images }}/assets/posts/Python/OpenCV/lecture-17/1.webp" class="lazyload" width="100%" height="100%"/>
 
 `채널 분리(Split)`과 `병합(Merge)`은 영상이나 이미지의 색상 공간의 채널을 분리하거나 합치기 위해 사용합니다.
 
@@ -132,28 +132,28 @@ bgz = cv2.merge((b, g, zero))
 
 ### Blue
 
-![2]({{ site.images }}/assets/posts/Python/OpenCV/lecture-17/2.webp){:class="lazyload" width="100%" height="100%"}
+<img data-src="{{ site.images }}/assets/posts/Python/OpenCV/lecture-17/2.webp" class="lazyload" width="100%" height="100%"/>
 
 <br>
 
 ### Green
 
-![3]({{ site.images }}/assets/posts/Python/OpenCV/lecture-17/3.webp){:class="lazyload" width="100%" height="100%"}
+<img data-src="{{ site.images }}/assets/posts/Python/OpenCV/lecture-17/3.webp" class="lazyload" width="100%" height="100%"/>
 
 <br>
 
 ### Red
 
-![4]({{ site.images }}/assets/posts/Python/OpenCV/lecture-17/4.webp){:class="lazyload" width="100%" height="100%"}
+<img data-src="{{ site.images }}/assets/posts/Python/OpenCV/lecture-17/4.webp" class="lazyload" width="100%" height="100%"/>
 
 <br>
 
 ### Inverse
 
-![5]({{ site.images }}/assets/posts/Python/OpenCV/lecture-17/5.webp){:class="lazyload" width="100%" height="100%"}
+<img data-src="{{ site.images }}/assets/posts/Python/OpenCV/lecture-17/5.webp" class="lazyload" width="100%" height="100%"/>
 
 <br>
 
 ### Blue, Green, Zero
 
-![6]({{ site.images }}/assets/posts/Python/OpenCV/lecture-17/6.webp){:class="lazyload" width="100%" height="100%"}
+<img data-src="{{ site.images }}/assets/posts/Python/OpenCV/lecture-17/6.webp" class="lazyload" width="100%" height="100%"/>

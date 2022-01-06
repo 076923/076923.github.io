@@ -16,7 +16,7 @@ toc: true
 
 ## 이미지 피라미드(Image Pyramid)
 
-![1]({{ site.images }}/assets/posts/Python/OpenCV/lecture-7/1.webp){:class="lazyload" width="100%" height="100%"}
+<img data-src="{{ site.images }}/assets/posts/Python/OpenCV/lecture-7/1.webp" class="lazyload" width="100%" height="100%"/>
 
 입력 이미지는 항상 동일한 크기가 아니며 너무 작거나 너무 클 수도 있습니다.
 
@@ -151,4 +151,4 @@ $$ \left | dstSize.height × 2 - src.rows \right | \leq 2 $$
 
 ## 출력 결과
 
-![2]({{ site.images }}/assets/posts/Python/OpenCV/lecture-7/2.webp){:class="lazyload" width="100%" height="100%"}
+<img data-src="{{ site.images }}/assets/posts/Python/OpenCV/lecture-7/2.webp" class="lazyload" width="100%" height="100%"/>

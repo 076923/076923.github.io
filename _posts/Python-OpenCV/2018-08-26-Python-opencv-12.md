@@ -16,7 +16,7 @@ toc: true
 
 ## 이진화(Binary)
 
-![1]({{ site.images }}/assets/posts/Python/OpenCV/lecture-12/1.webp){:class="lazyload" width="100%" height="100%"}
+<img data-src="{{ site.images }}/assets/posts/Python/OpenCV/lecture-12/1.webp" class="lazyload" width="100%" height="100%"/>
 
 `이진화(Binary)`는 어느 지점을 기준으로 값이 높거나 낮은 픽셀의 값을 대상으로 특정 연산을 수행할 때 사용합니다.
 
@@ -94,4 +94,4 @@ ret, dst = cv2.threshold(gray, 100, 255, cv2.THRESH_BINARY)
 
 ## 출력 결과
 
-![2]({{ site.images }}/assets/posts/Python/OpenCV/lecture-12/2.webp){:class="lazyload" width="100%" height="100%"}
+<img data-src="{{ site.images }}/assets/posts/Python/OpenCV/lecture-12/2.webp" class="lazyload" width="100%" height="100%"/>

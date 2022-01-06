@@ -16,7 +16,7 @@ toc: true
 
 ## 배열 병합(addWeighted)
 
-![1]({{ site.images }}/assets/posts/Python/OpenCV/lecture-16/1.webp){:class="lazyload" width="100%" height="100%"}
+<img data-src="{{ site.images }}/assets/posts/Python/OpenCV/lecture-16/1.webp" class="lazyload" width="100%" height="100%"/>
 
 영상이나 이미지에서 `색상`을 검출 할 때, `배열 요소의 범위 설정 함수(cv2.inRange)`의 영역이 한정되어 색상을 설정하는 부분이 제한되어 있습니다.
 
@@ -95,4 +95,4 @@ $$ dst = src1 \times alpha + src2 \times beta + gamma $$
 
 ## 출력 결과
 
-![2]({{ site.images }}/assets/posts/Python/OpenCV/lecture-16/2.webp){:class="lazyload" width="100%" height="100%"}
+<img data-src="{{ site.images }}/assets/posts/Python/OpenCV/lecture-16/2.webp" class="lazyload" width="100%" height="100%"/>

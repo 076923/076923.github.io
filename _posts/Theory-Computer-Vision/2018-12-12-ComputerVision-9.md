@@ -16,7 +16,7 @@ toc: true
 
 ## 특징 검출(Feature Detection)
 
-![1]({{ site.images }}/assets/posts/Theory/ComputerVision/lecture-9/1.webp){:class="lazyload" width="100%" height="100%"}
+<img data-src="{{ site.images }}/assets/posts/Theory/ComputerVision/lecture-9/1.webp" class="lazyload" width="100%" height="100%"/>
 
 `특징 검출(Feature Detection)`은 이미지 내의 주요한 `특징점`을 검출하는 방법입니다.
 

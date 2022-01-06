@@ -112,7 +112,7 @@ Quit the server with CTRL-BREAK.<br>
 
 해당 url로 이동해 서버가 정상적으로 구동되는지 확인합니다.
 
-![1]({{ site.images }}/assets/posts/Python/Django/lecture-2/1.webp){:class="lazyload" width="100%" height="100%"}
+<img data-src="{{ site.images }}/assets/posts/Python/Django/lecture-2/1.webp" class="lazyload" width="100%" height="100%"/>
 
 서버를 종료하려면, `Ctrl + C`키를 눌러 서버를 종료할 수 있습니다.
 

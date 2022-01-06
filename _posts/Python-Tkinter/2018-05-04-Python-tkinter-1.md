@@ -51,7 +51,7 @@ window.mainloop()
 
 <br>
 
-![1]({{ site.images }}/assets/posts/Python/Tkinter/lecture-1/1.webp){:class="lazyload" width="100%" height="100%"}
+<img data-src="{{ site.images }}/assets/posts/Python/Tkinter/lecture-1/1.webp" class="lazyload" width="100%" height="100%"/>
 
 `tkinter.Tk()`를 적용할 경우 가장 기본적인 `윈도우 창`이 생성됩니다.
 
@@ -84,7 +84,7 @@ window.mainloop()
 
 <br>
 
-![2]({{ site.images }}/assets/posts/Python/Tkinter/lecture-1/2.webp){:class="lazyload" width="100%" height="100%"}
+<img data-src="{{ site.images }}/assets/posts/Python/Tkinter/lecture-1/2.webp" class="lazyload" width="100%" height="100%"/>
 
 `윈도우 창`의 이름이 `YUN DAE HEE`로 설정되었으며 `크기`와 `초기 화면 위치`, `윈도우 창의 크기 조절 불가`로 설정된 것을 확인할 수 있습니다.
 
@@ -116,6 +116,6 @@ window.mainloop()
 
 <br>
 
-![3]({{ site.images }}/assets/posts/Python/Tkinter/lecture-1/3.webp){:class="lazyload" width="100%" height="100%"}
+<img data-src="{{ site.images }}/assets/posts/Python/Tkinter/lecture-1/3.webp" class="lazyload" width="100%" height="100%"/>
 
 속성을 설정하지 않아 `기본 속성`으로 설정되어 **가장 최상단에 라벨이 배치된 것을 확인할 수 있습니다.**

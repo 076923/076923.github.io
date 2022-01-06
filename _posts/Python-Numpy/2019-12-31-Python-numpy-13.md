@@ -31,7 +31,7 @@ toc: true
 
 ## 행 우선(Column-Major)
 
-![1]({{ site.images }}/assets/posts/Python/Numpy/lecture-13/1.webp){:class="lazyload" width="100%" height="100%"}
+<img data-src="{{ site.images }}/assets/posts/Python/Numpy/lecture-13/1.webp" class="lazyload" width="100%" height="100%"/>
 
 행 우선 방식은 위 그림과 같이 **행 인덱스가 가장 낮으면서, 열 인덱스가 높아지는 순서**로 정렬됩니다.
 
@@ -46,7 +46,7 @@ toc: true
 
 ## 열 우선(Row-Major)
 
-![2]({{ site.images }}/assets/posts/Python/Numpy/lecture-13/2.webp){:class="lazyload" width="100%" height="100%"}
+<img data-src="{{ site.images }}/assets/posts/Python/Numpy/lecture-13/2.webp" class="lazyload" width="100%" height="100%"/>
 
 열 우선 방식은 위 그림과 같이 **열 인덱스가 가장 낮으면서, 행 인덱스가 높아지는 순서**로 정렬됩니다.
 

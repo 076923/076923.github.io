@@ -16,7 +16,7 @@ toc: true
 
 ## 이미지 출력
 
-![1]({{ site.images }}/assets/posts/Python/OpenCV/lecture-3/1.webp){:class="lazyload" width="100%" height="100%"}
+<img data-src="{{ site.images }}/assets/posts/Python/OpenCV/lecture-3/1.webp" class="lazyload" width="100%" height="100%"/>
 
 OpenCV는 **래스터 그래픽스 이미지 파일 포맷**을 쉽게 불러올 수 있는 별도의 함수를 제공합니다.
 
@@ -131,4 +131,4 @@ print(height, width , channel)
 
 ## 출력 결과
 
-![2]({{ site.images }}/assets/posts/Python/OpenCV/lecture-3/2.webp){:class="lazyload" width="100%" height="100%"}
+<img data-src="{{ site.images }}/assets/posts/Python/OpenCV/lecture-3/2.webp" class="lazyload" width="100%" height="100%"/>

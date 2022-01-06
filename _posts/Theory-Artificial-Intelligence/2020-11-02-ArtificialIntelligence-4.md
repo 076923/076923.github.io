@@ -16,7 +16,7 @@ toc: true
 
 ## 강화 학습(Reinforcement Learning)
 
-![1]({{ site.images }}/assets/posts/Theory/ArtificialIntelligence/lecture-4/1.webp){:class="lazyload" width="100%" height="100%"}
+<img data-src="{{ site.images }}/assets/posts/Theory/ArtificialIntelligence/lecture-4/1.webp" class="lazyload" width="100%" height="100%"/>
 
 `강화 학습(Reinforcement Learning)`은 **머신 러닝(Machine Learning)**의 분야 중 하나로, 행동주의(Behaviorism) 심리학 이론을 토대로 구현된 알고리즘입니다.
 
@@ -45,7 +45,7 @@ toc: true
 
 ## 마르코프 결정 과정(Markov Decision Process, MDP)
 
-![2]({{ site.images }}/assets/posts/Theory/ArtificialIntelligence/lecture-4/2.webp){:class="lazyload" width="100%" height="100%"}
+<img data-src="{{ site.images }}/assets/posts/Theory/ArtificialIntelligence/lecture-4/2.webp" class="lazyload" width="100%" height="100%"/>
 
 강화 학습을 간단한 순서도로 변경한다면 위와 같은 이미지로 표현할 수 있습니다.
 

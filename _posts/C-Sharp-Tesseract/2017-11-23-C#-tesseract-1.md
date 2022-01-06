@@ -16,7 +16,7 @@ toc: true
 
 ## Tesseract
 
-![0]({{ site.images }}/assets/posts/C-Sharp/Tesseract/lecture-1/0.webp){:class="lazyload" width="100%" height="100%"}
+<img data-src="{{ site.images }}/assets/posts/C-Sharp/Tesseract/lecture-1/0.webp" class="lazyload" width="100%" height="100%"/>
 
 `Tesseract - OCR`은 **문자를 판독**해주는 오픈 소스 라이브러리입니다.
 
@@ -29,13 +29,13 @@ toc: true
 
 ## Tesseract 설치
 
-![1]({{ site.images }}/assets/posts/C-Sharp/Tesseract/lecture-1/1.webp){:class="lazyload" width="100%" height="100%"}
+<img data-src="{{ site.images }}/assets/posts/C-Sharp/Tesseract/lecture-1/1.webp" class="lazyload" width="100%" height="100%"/>
 
 `프로젝트` → `NuGet 패키지 관리(N)...`을 통하여 `Tesseract`를 설치할 수 있습니다.
 
 <br>
 
-![2]({{ site.images }}/assets/posts/C-Sharp/Tesseract/lecture-1/2.webp){:class="lazyload" width="100%" height="100%"}
+<img data-src="{{ site.images }}/assets/posts/C-Sharp/Tesseract/lecture-1/2.webp" class="lazyload" width="100%" height="100%"/>
 
 위와 같은 화면이 나오게 되고 `찾아보기`를 눌러 `검색창`에 `tesseract`를 검색합니다.
 

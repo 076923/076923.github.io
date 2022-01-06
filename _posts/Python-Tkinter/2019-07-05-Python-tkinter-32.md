@@ -16,7 +16,7 @@ toc: true
 
 ## OpenCV 적용하기 
 
-![1]({{ site.images }}/assets/posts/Python/Tkinter/lecture-32/1.webp){:class="lazyload" width="100%" height="100%"}
+<img data-src="{{ site.images }}/assets/posts/Python/Tkinter/lecture-32/1.webp" class="lazyload" width="100%" height="100%"/>
 
 `OpenCV`와 `tkinter`를 결합해 GUI로 표시할 수 있습니다.
 
@@ -165,4 +165,4 @@ def convert_to_tkimage():
 
 ## 출력 결과
 
-![2]({{ site.images }}/assets/posts/Python/Tkinter/lecture-32/2.webp){:class="lazyload" width="100%" height="100%"}
+<img data-src="{{ site.images }}/assets/posts/Python/Tkinter/lecture-32/2.webp" class="lazyload" width="100%" height="100%"/>

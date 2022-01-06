@@ -16,7 +16,7 @@ toc: true
 
 ## 캡쳐 및 녹화(Capture & Record)
 
-![1]({{ site.images }}/assets/posts/Python/OpenCV/lecture-20/1.webp){:class="lazyload" width="100%" height="100%"}
+<img data-src="{{ site.images }}/assets/posts/Python/OpenCV/lecture-20/1.webp" class="lazyload" width="100%" height="100%"/>
 영상이나 이미지를 `캡쳐하거나 녹화`하기 위해 사용합니다. 영상이나 이미지를 `연속적 또는 순간적으로 캡쳐하거나 녹화`할 수 있습니다.
 
 <br>

@@ -16,7 +16,7 @@ toc: true
 
 ## 모멘트(Moments)
 
-![1]({{ site.images }}/assets/posts/Python/OpenCV/lecture-25/1.webp){:class="lazyload" width="100%" height="100%"}
+<img data-src="{{ site.images }}/assets/posts/Python/OpenCV/lecture-25/1.webp" class="lazyload" width="100%" height="100%"/>
 
 `윤곽선(contour)`이나 `이미지(array)`의 **0차 모멘트**부터 **3차 모멘트**까지 계산하는 알고리즘입니다.
 
@@ -150,4 +150,4 @@ $$
 
 ## 출력 결과
 
-![2]({{ site.images }}/assets/posts/Python/OpenCV/lecture-25/2.webp){:class="lazyload" width="100%" height="100%"}
+<img data-src="{{ site.images }}/assets/posts/Python/OpenCV/lecture-25/2.webp" class="lazyload" width="100%" height="100%"/>

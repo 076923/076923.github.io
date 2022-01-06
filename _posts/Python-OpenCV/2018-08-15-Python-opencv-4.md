@@ -16,7 +16,7 @@ toc: true
 
 ## 비디오 출력
 
-![1]({{ site.images }}/assets/posts/Python/OpenCV/lecture-4/1.webp){:class="lazyload" width="100%" height="100%"}
+<img data-src="{{ site.images }}/assets/posts/Python/OpenCV/lecture-4/1.webp" class="lazyload" width="100%" height="100%"/>
 
 동영상 파일에서 순차적으로 `프레임`을 읽어 이미지의 형태로 출력합니다.
 
@@ -129,4 +129,4 @@ if(capture.get(cv2.CAP_PROP_POS_FRAMES) == capture.get(cv2.CAP_PROP_FRAME_COUNT)
 
 ## 출력 결과
 
-![2]({{ site.images }}/assets/posts/Python/OpenCV/lecture-4/2.webp){:class="lazyload" width="100%" height="100%"}
+<img data-src="{{ site.images }}/assets/posts/Python/OpenCV/lecture-4/2.webp" class="lazyload" width="100%" height="100%"/>

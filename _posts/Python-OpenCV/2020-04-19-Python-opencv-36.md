@@ -16,7 +16,7 @@ toc: true
 
 ## 적응형 이진화(Adaptive Threshold)
 
-![1]({{ site.images }}/assets/posts/Python/OpenCV/lecture-36/1.webp){:class="lazyload" width="100%" height="100%"}
+<img data-src="{{ site.images }}/assets/posts/Python/OpenCV/lecture-36/1.webp" class="lazyload" width="100%" height="100%"/>
 
 적응형 이진화 알고리즘은 입력 이미지에 따라 `임곗값`이 **스스로 다른 값을 할당할 수 있도록 구성된 이진화 알고리즘**입니다.
 
@@ -118,4 +118,4 @@ $$ T(x, y) = \frac{1}{blockSize^2} \sum_{x_i} \sum_{y_i} I(x+x_i, y+y_i) - C $$
 
 ## 출력 결과
 
-![2]({{ site.images }}/assets/posts/Python/OpenCV/lecture-36/2.webp){:class="lazyload" width="100%" height="100%"}
+<img data-src="{{ site.images }}/assets/posts/Python/OpenCV/lecture-36/2.webp" class="lazyload" width="100%" height="100%"/>
