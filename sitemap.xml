@@ -9,7 +9,7 @@ layout: null
       xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd"
       xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">	
 
-    {% assign lastmod = "2022-01-06T00:00:00+00:00" %}
+    {% assign lastmod = "2022-01-15T00:00:00+00:00" %}
     <url>
         <loc>https://076923.github.io/</loc>
         <lastmod>{{ lastmod | date_to_xmlschema }}</lastmod>
