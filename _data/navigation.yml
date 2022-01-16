@@ -677,6 +677,8 @@ C#-GMap.NET:
         url: "/posts/C-gmap-5/"
       - title: "제 6강 - 이벤트"
         url: "/posts/C-gmap-6/"
+      - title: "제 7강 - 사용자 정의 마커"
+        url: "/posts/C-gmap-7/"
    
 C#-OpenCvSharp4:
   - title: "OpenCvSharp4 강좌 목록"
