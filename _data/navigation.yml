@@ -679,8 +679,10 @@ C#-GMap.NET:
         url: "/posts/C-gmap-6/"
       - title: "제 7강 - 사용자 정의 마커"
         url: "/posts/C-gmap-7/"
-      - title: "제 7강 - 사용자 다각형 마커"
+      - title: "제 8강 - 사용자 다각형 마커"
         url: "/posts/C-gmap-8/"
+      - title: "제 9강 - GeoJSON"
+        url: "/posts/C-gmap-9/"
    
 C#-OpenCvSharp4:
   - title: "OpenCvSharp4 강좌 목록"
