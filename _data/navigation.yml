@@ -414,6 +414,8 @@ Python-OpenCV:
         url: "/posts/Python-opencv-41/"
       - title: "제 42강 - K-평균 군집화 알고리즘"
         url: "/posts/Python-opencv-42/"
+      - title: "제 43강 - K-최근접 이웃 알고리즘"
+        url: "/posts/Python-opencv-43/"
 
 
 C#:

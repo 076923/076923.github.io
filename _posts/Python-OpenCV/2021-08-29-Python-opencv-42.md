@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Python OpenCV 강좌 : 제 42강 - K-평균 군집화 알고리즘"
-tagline: "Python OpenCV Remapping"
+tagline: "Python OpenCV K-means Clustering Algorithm"
 image: /assets/images/opencv.png
 header:
   image: /assets/patterns/asanoha-400px.png
