@@ -46,6 +46,9 @@ docs:
       - title: "Tensorflow 2.x Object Detection"
         url: "https://github.com/076923/Tensorflow-2.0-Object-Detection-API"
         external: "_blank"
+      - title: "AWS Lambda Python OpenCV Layer"
+        url: "https://github.com/076923/aws-lambda-python-opencv-layer"
+        external: "_blank"
 
   - title: Content
     children:
