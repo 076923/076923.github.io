@@ -417,6 +417,11 @@ Python-OpenCV:
       - title: "제 43강 - K-최근접 이웃 알고리즘"
         url: "/posts/Python-opencv-43/"
 
+Python-PyTorch:
+  - title: "PyTorch 강좌 목록"
+    children:
+      - title: "제 1강 - PyTorch 설치"
+        url: "/posts/Python-pytorch-1/"
 
 C#:
   - title: "C# 강좌 목록"

@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Python OpenCV 강좌 : 제 1강 - OpenCV 설치"
-tagline: "Python OpenCV 4.1"
+tagline: "Python OpenCV Install"
 image: /assets/images/opencv.png
 header:
   image: /assets/patterns/asanoha-400px.png
