@@ -427,6 +427,8 @@ Python-PyTorch:
         url: "/posts/Python-pytorch-1/"
       - title: "제 2강 - 텐서(Tensor)"
         url: "/posts/Python-pytorch-2/"
+      - title: "제 3강 - 가설(Hypothesis)"
+        url: "/posts/Python-pytorch-3/"
 
 C#:
   - title: "C# 강좌 목록"
