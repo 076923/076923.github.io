@@ -429,6 +429,8 @@ Python-PyTorch:
         url: "/posts/Python-pytorch-2/"
       - title: "제 3강 - 가설(Hypothesis)"
         url: "/posts/Python-pytorch-3/"
+      - title: "제 4강 - 손실 함수(Loss Function)"
+        url: "/posts/Python-pytorch-4/"
 
 C#:
   - title: "C# 강좌 목록"
