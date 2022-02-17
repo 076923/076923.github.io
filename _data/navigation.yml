@@ -431,6 +431,8 @@ Python-PyTorch:
         url: "/posts/Python-pytorch-3/"
       - title: "제 4강 - 손실 함수(Loss Function)"
         url: "/posts/Python-pytorch-4/"
+      - title: "제 5강 - 최적화(Optimization)"
+        url: "/posts/Python-pytorch-5/"
 
 C#:
   - title: "C# 강좌 목록"
