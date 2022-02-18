@@ -6,7 +6,7 @@ image: /assets/images/pytorch.webp
 header:
   image: /assets/patterns/asanoha-400px.png
 tags: ['PyTorch']
-keywords: Python, Python Pytorch, Pytorch Optimization
+keywords: Python, Python Pytorch, Pytorch Optimization, Pytorch Learning Rate, Pytorch Saddle Point
 ref: Python-PyTorch
 category: Python
 permalink: /posts/Python-pytorch-5/
@@ -113,9 +113,9 @@ $$ H(x) = 0.879x - 0.436 $$
   </tbody>
 </table>
 
-위 데이터는 이미 최적의 **가중치(Weight)**와 **편향(Bias)**을 계산한 결과입니다.
+위 데이터는 `선형 회귀(Linear Regression)`를 활용하여 최적의 **가중치(Weight)**와 **편향(Bias)** 값으로 계산하여 나온 예측값입니다.
 
-그러므로 `비용 함수(Cost Function)`를 활용하여 해당 가중치와 편향에 대한 `비용(Cost)`을 계산했을 때 **다른 가중치(Weight)와 편향(Bias) 값보다 가장 작은 값이 나오게 됩니다.**
+그러므로 `비용 함수(Cost Function)`를 적용했을 때, 위 **가중치(Weight)와 편향(Bias) 값으로 계산한 비용(Cost)은 가장 작은 값이 나오게 됩니다.**
 
 즉, 가중치(Weight)와 편향(Bias)의 값이 `0.879`과 `-0.436`에서 멀어질수록 `비용(Cost)`이 커지게됩니다.
 
@@ -130,20 +130,51 @@ var weight=[-.938,-.5685,.878,1.28,1.649,2.019,2.758],cost=[7437.748047,4691.095
 
 그래프에서 확인할 수 있듯이 **최적의 가중치(Weight)에서는 비용(Cost)이 가장 작아지며, 최적의 가중치에서 멀어질수록 비용(Cost)이 커지는 것을 확인할 수 있습니다.**
 
-이를 수학적으로 바라본다면, 가중치와 비용의 그래프에서 `기울기(Gradient)`가 0에 가까워질 때 최적의 가중치(weight)를 갖게 되는것을 알 수 있습니다.
+이를 수학적으로 바라본다면, 가중치와 비용의 그래프에서 `기울기(Gradient)`가 **0에 가까워질 때 최적의 가중치(weight)를 갖게 되는것을 알 수 있습니다.**
 
 위 그래프를 $$ x^2 $$로 근사한 다음, 특정 지점에서 어떠한 기울기를 갖는지 확인해보도록 하겠습니다.
 
 <center>
 <div id="gradientPlot2" style="width:100%; max-width:600px"></div>
 <script>
-for(var x1Values=[],y1Values=[],x2Values=[-8,-6,-4],y2Values=[60,36,12],x3Values=[-5,0,5],y3Values=[0,0,0],x4Values=[8,6,4],y4Values=[60,36,12],x=-10;x<=10;x+=.1)x1Values.push(x),y1Values.push(eval("x*x"));var datad=[{x:x1Values,y:y1Values,mode:"lines",line:{color:"rgb(210, 210, 210)"},name:"함수: x²"},{x:x2Values,y:y2Values,mode:"lines",line:{color:"rgb(255, 55, 55)"},name:"기울기1"},{x:x3Values,y:y3Values,mode:"lines",line:{color:"rgb(164, 194, 244)"},name:"기울기2"},{x:x4Values,y:y4Values,mode:"lines",line:{color:"rgb(83, 244, 32)"},name:"기울기3"}],layoutd={showlegend:!0,legend:{x:1,xanchor:"right",y:1},xaxis:{title:"Weight"},yaxis:{title:"Cost"}};Plotly.newPlot("gradientPlot2",datad,layoutd);
+for(var x1Values=[],y1Values=[],xnValues=[],ynValues=[],x2Values=[-6],y2Values=[36],x3Values=[-4],y3Values=[16],x4Values=[6],y4Values=[36],x5Values=[0],y5Values=[0],x=-10;x<=10;x+=.1)x1Values.push(x),y1Values.push(eval("x*x")),xnValues.push(x-4),ynValues.push(eval("(x*x)+16"));var datad=[{x:x1Values,y:y1Values,mode:"lines",line:{color:"rgb(40, 40, 40)"},name:"그래프 1"},{x:xnValues,y:ynValues,mode:"lines",line:{color:"rgb(210, 210, 210)", dash:'dashdot'},name:"그래프 2"},{x:x2Values,y:y2Values,mode:"markers",line:{color:"rgb(255, 55, 55)"},name:"지점 1"},{x:x3Values,y:y3Values,mode:"markers",line:{color:"rgb(164, 194, 244)"},name:"지점 2"},{x:x4Values,y:y4Values,mode:"markers",line:{color:"rgb(83, 244, 32)"},name:"지점 3"},{x:x5Values,y:y5Values,mode:"markers",line:{color:"rgb(52, 35, 32)"},name:"지점 4"}],layoutd={showlegend:!0,legend:{x:1,xanchor:"right",y:1},xaxis:{title:"Weight"},yaxis:{title:"Cost"}};Plotly.newPlot("gradientPlot2",datad,layoutd);
 </script>
 </center>
 
-위 그래프 처럼 `기울기2`의 형태를 갖는 지점을 찾기 위해서는 초깃값($$ W_{0} $$)을 설정하고 적합한 가중치를 찾을 수 있을 때까지 반복하게 됩니다.
+위 그래프 처럼 기울기가 0이 되는 `지점4`를 찾기 위해 여러 번의 연산을 진행하게 됩니다.
 
-다음과 같은 공식을 통해, 어느 지점에서 시작하더라도 `극값(Extremum Value)`을 찾을 수 있게 연산이 진행됩니다.
+첫 번째 연산에서는 `지점2`의 위치에 있었다고 가정할 때, `지점2` 하나로는 어떤 형태의 그래프를 가지는지 알 수 없습니다.
+
+첫 번째 연산의 결과가 그래프 상 어느 지점에서 시작하는지는 하나의 지점으로는 알 수 없습니다.
+
+즉, 그래프가 `그래프 1`의 형태를 가질 수 있고, `그래프 2`의 형태도 가질 수 있다는 의미가 됩니다.
+
+그러므로, `지점2`에서 **값을 조금씩 변경해가면서 기울기가 0인 지점을 향해 이동해야합니다.**
+
+현재 지점에서 양의 방향으로 이동해야하는지, 음의 방향으로 이동해야하는지 알 수 없기 때문에 다음과 같은 공식을 적용합니다.
+
+<br>
+
+$$
+\begin{multline}
+\shoveleft W_{0} = \text{Initial Value}\\
+\shoveleft W_{i+1} = W_{i} - \alpha \nabla f(W_{i})
+\end{multline}
+$$
+
+<br>
+
+초깃값($$ W_{0} $$)을 설정하고 다음 가중치($$ W_{1}, W_{2}, ... $$)를 찾습니다.
+
+$$ \nabla f(W_{i}) $$는 위에서 설명한 기울기를 의미합니다.
+
+새로운 가중치는 **기울기의 부호(양수, 음수)와 관계 없이 기울기가 0인 방향으로 학습이 진행됩니다.**
+
+이러한 방식을 통해 기울기가 0을 갖게 되는 가중치를 찾을 수 있을 때까지 반복하게 됩니다.
+
+그러므로 어느 지점에서 시작하더라도 `극값(Extremum Value)`을 찾을 수 있게 연산이 진행됩니다.
+
+이 공식에서 $$ \alpha $$를 곱하여 가중치 결과를 조정하게 되는데, 기울기가 한 번에 이동하는 `간격(Step Size)`을 조정합니다.
 
 <br>
 <br>
@@ -157,11 +188,15 @@ $$
 \end{multline}
 $$
 
+<br>
+
 새로운 `가중치(Weight)`를 구하기 위해서 $$ \alpha $$를 적용하는데 이 값은 `간격(Step Size)`으로 `학습률(Learning Rate)`을 의미합니다.
 
-초깃값($$ W_{0} $$)을 임의의 값으로 설정해주듯이 이 학습률도 임의의 값으로 설정하게 됩니다.
+초깃값($$ W_{0} $$)을 임의의 값으로 설정해주듯이 이 학습률($$ \alpha $$)도 임의의 값으로 설정하게 됩니다.
 
-다음 그래프들은 학습률에 따른 가중치 최적값을 찾아가는 방식을 보여줍니다.
+`학습률(Learning Rate)`에 따라 다음 가중치($$ W_{i+1} $$)의 값이 적절히 조정됩니다.
+
+다음 그래프는 학습률를 각기 다르게 설정했을 때 최적값을 찾아가는 방식을 보여줍니다.
 
 <br>
 
@@ -220,13 +255,13 @@ var c_data=[{x:cx,y:cy,mode:"lines",name:"Weight-Cost"},{x:[-0.079],y:[-0.04],mo
 </script>
 </center>
 
-기울기가 0이 되는 지점인 `극값(Extremum Value)`은 `최댓값`(Global Maximum), `최솟값(Global Minimum)`, `극댓값(Local Maximum)`, `극솟값(Local Minimum)`으로 구분할 수 있습니다.
+기울기가 0이 되는 지점인 `극값(Extremum Value)`은 `최댓값(Global Maximum)`, `최솟값(Global Minimum)`, `극댓값(Local Maximum)`, `극솟값(Local Minimum)`으로 구분할 수 있습니다.
 
 초기 가중치나 학습률을 설정할 때, 시작점이 적절하지 않거나 학습률이 너무 낮다면 `최솟값(Global Minimum)`이 아닌, `극솟값(Local Minimum)`에서 가중치가 결정될 수 있습니다.
 
 또한 `안장점(Saddle Point)`이 존재하는 함수에서도 적절한 가중치를 찾을 수 없게됩니다.
 
-안장점은 다음 그래프 처럼 말의 안장 모양처럼 생긴 그래프를 의미하며, 특정 방향에서 바라볼 경우 극댓값이 되지만 다른 방향에서 보면 극솟값이 되는 지점을 의미합니다.
+안장점은 다음 그래프 처럼 **말의 안장처럼 생긴 그래프**를 의미하며, **특정 방향(아래에서 위로, 위에서 아래로 등)에서 바라볼 경우 극댓값(또는 최댓값)이 되지만 다른 방향에서 보면 극솟값(또는 최솟값)이 되는 지점을 의미합니다.**
 
 <center>
 <div id="saddlePlot" style="width:100%; max-width:600px"></div>
@@ -234,7 +269,7 @@ var c_data=[{x:cx,y:cy,mode:"lines",name:"Weight-Cost"},{x:[-0.079],y:[-0.04],mo
 function getrandom(num){var value=[];for(i=0;i<=num;i++){var rand=Math.random()*2-1;value.push(rand)}
 return value}
 var x=getrandom(1000);var y=getrandom(1000);var z=[];for(var i=0;i<=1000;i++){z.push(x[i]**2-y[i]**2)}
-var trace={opacity:0.5,color:'rgba(80,127,255,0.7)',type:'mesh3d',x:x,y:y,z:z,scene:"scene"};var point={x:[0],y:[0],z:[0],marker:{color:'rgb(255, 34, 22)'},mode:'markers',type:'scatter',name:'Saddle Point',};var s_layout={showlegend:!0,legend:{x:1,xanchor:'right',y:1}};Plotly.newPlot('saddlePlot',[trace,point],s_layout)
+var trace={opacity:0.5,color:'rgba(80,127,255,0.7)',type:'mesh3d',x:x,y:y,z:z,scene:"scene"};var point1={x:[0],y:[0],z:[0],marker:{color:'rgb(255, 34, 22)',size:2},mode:'markers',type:'scatter3d',name:'Saddle Point',};var point2={x:[0],y:[1],z:[-1],marker:{color:'rgb(33, 55, 255)',size:2},mode:'markers',type:'scatter3d',name:'Global Minmum Or Global Maximum'};var s_layout={showlegend:!0,legend:{x:1,xanchor:'right',y:1}};Plotly.newPlot('saddlePlot',[trace,point1,point2],s_layout)
 </script>
 </center>
 
@@ -242,8 +277,6 @@ var trace={opacity:0.5,color:'rgba(80,127,255,0.7)',type:'mesh3d',x:x,y:y,z:z,sc
 
 어떤 최적화 알고리즘을 사용하느냐에 따라 모델의 정확도가 달라지게 됩니다.
 
-최적화 알고리즘은 경사 하강법 이외에도 `모멘텀(Momentum)`, `Adagrad(Adaptive Gradient)`, `Adam(Adaptive Moment Estimation)` 등이 있습니다.
-
-
+최적화 알고리즘은 `경사 하강법(Gradient Descent)` 이외에도 `모멘텀(Momentum)`, `Adagrad(Adaptive Gradient)`, `Adam(Adaptive Moment Estimation)` 등이 있습니다.
 
 [4강]: https://076923.github.io/posts/Python-pytorch-4/
