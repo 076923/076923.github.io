@@ -433,6 +433,8 @@ Python-PyTorch:
         url: "/posts/Python-pytorch-4/"
       - title: "제 5강 - 최적화(Optimization)"
         url: "/posts/Python-pytorch-5/"
+      - title: "제 6강 - 단순 선형 회귀(Simple Linear Regression)"
+        url: "/posts/Python-pytorch-6/"
 
 C#:
   - title: "C# 강좌 목록"
