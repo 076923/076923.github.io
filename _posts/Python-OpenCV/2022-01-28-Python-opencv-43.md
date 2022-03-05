@@ -138,7 +138,9 @@ Fashion-MNIST은 [Zalando Research Gitub][Zalando Research Gitub]에서 다운�
 
 또는 다음 링크에서도 다운로드 할 수 있습니다.
 
-`Fashion-MNIST 다운로드` : [다운로드][Fashion-MNIST]
+> `Fashion-MNIST 다운로드` : [다운로드][Fashion-MNIST]
+
+<br>
 
 데이터 세트는 다음과 같은 형태를 가집니다.
 
