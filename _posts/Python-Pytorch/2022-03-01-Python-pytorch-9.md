@@ -6,7 +6,7 @@ image: /assets/images/pytorch.webp
 header:
   image: /assets/patterns/asanoha-400px.png
 tags: ['PyTorch']
-keywords: Python, Python Pytorch, Pytorch Model
+keywords: Python, Python Pytorch, Pytorch Model, Pytorch nn.Module, Pytorch CustomDataset, Pytorch CustomModel
 ref: Python-PyTorch
 category: Python
 permalink: /posts/Python-pytorch-9/
