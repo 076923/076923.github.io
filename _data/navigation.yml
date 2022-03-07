@@ -441,6 +441,8 @@ Python-PyTorch:
         url: "/posts/Python-pytorch-8/"
       - title: "제 9강 - 모델(Model)"
         url: "/posts/Python-pytorch-9/"
+      - title: "제 10강 - 모델 저장/불러오기(Model Save/Load)"
+        url: "/posts/Python-pytorch-10/"
 
 C#:
   - title: "C# 강좌 목록"
