@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Python Pytorch 강좌 : 제 10강 - 모델 저장/불러오기(Model Save/Load)"
-tagline: "Python PyTorch Model"
+tagline: "Python PyTorch Model Save/Load"
 image: /assets/images/pytorch.webp
 header:
   image: /assets/patterns/asanoha-400px.png
@@ -37,7 +37,7 @@ PyTorch의 `모델(Model)`은 `직렬화(Serialize)`와 `역직렬화(Deserializ
 
 모델 전체를 저장하는 경우에는 학습에 사용된 모델 클래스의 구조와 학습 상태 등을 모두 저장합니다.
 
-모델의 **레이어(Layer) 구조**, **매개 변수(model.parameters)** 등이 모두 기록된 상태로 저장하기 때문에 모델 파일로도 동일한 구조를 구현할 수 있습니다.
+모델의 **계층(Layer) 구조**, **매개 변수(model.parameters)** 등이 모두 기록된 상태로 저장하기 때문에 모델 파일로도 동일한 구조를 구현할 수 있습니다.
 
 <br>
 

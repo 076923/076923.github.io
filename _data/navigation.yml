@@ -443,6 +443,10 @@ Python-PyTorch:
         url: "/posts/Python-pytorch-9/"
       - title: "제 10강 - 모델 저장/불러오기(Model Save/Load)"
         url: "/posts/Python-pytorch-10/"
+  - title:
+    children:
+      - title: "제 11강 - 데이터 세트 분리(Data Set Split)"
+        url: "/posts/Python-pytorch-11/"
 
 C#:
   - title: "C# 강좌 목록"
