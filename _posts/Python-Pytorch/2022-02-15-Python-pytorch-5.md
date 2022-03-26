@@ -122,7 +122,7 @@ $$ H(x) = 0.879x - 0.436 $$
 만약 몇개의 `가중치(Weight)`에 따른 `비용(Cost)`의 값을 2차원 그래프로 표현한다면 다음과 같이 그려질 수 있습니다.
 
 <center>
-<div id="gradientPlot1" style="width:100%; max-width:600px"></div>
+<div id="gradientPlot1" style="width:100%;max-width:600px"></div>
 <script>
 var weight=[-.938,-.5685,.878,1.28,1.649,2.019,2.758],cost=[7437.748047,4691.095215,1.37318,412.835571,1448.183594,3113.864502,8336.227539],g_data=[{x:weight,y:cost,mode:"lines",line:{color:"rgb(210, 210, 210)"}}],g_layout={showlegend:!1,xaxis:{title:"Weight"},yaxis:{title:"Cost"}};Plotly.newPlot("gradientPlot1",g_data,g_layout);
 </script>
@@ -135,7 +135,7 @@ var weight=[-.938,-.5685,.878,1.28,1.649,2.019,2.758],cost=[7437.748047,4691.095
 위 그래프를 $$ x^2 $$로 근사한 다음, 특정 지점에서 어떠한 기울기를 갖는지 확인해보도록 하겠습니다.
 
 <center>
-<div id="gradientPlot2" style="width:100%; max-width:600px"></div>
+<div id="gradientPlot2" style="width:100%;max-width:600px"></div>
 <script>
 for(var x1Values=[],y1Values=[],xnValues=[],ynValues=[],x2Values=[-6],y2Values=[36],x3Values=[-4],y3Values=[16],x4Values=[6],y4Values=[36],x5Values=[0],y5Values=[0],x=-10;x<=10;x+=.1)x1Values.push(x),y1Values.push(eval("x*x")),xnValues.push(x-4),ynValues.push(eval("(x*x)+16"));var datad=[{x:x1Values,y:y1Values,mode:"lines",line:{color:"rgb(40, 40, 40)"},name:"그래프 1"},{x:xnValues,y:ynValues,mode:"lines",line:{color:"rgb(210, 210, 210)", dash:'dashdot'},name:"그래프 2"},{x:x2Values,y:y2Values,mode:"markers",line:{color:"rgb(255, 55, 55)"},name:"지점 1"},{x:x3Values,y:y3Values,mode:"markers",line:{color:"rgb(164, 194, 244)"},name:"지점 2"},{x:x4Values,y:y4Values,mode:"markers",line:{color:"rgb(83, 244, 32)"},name:"지점 3"},{x:x5Values,y:y5Values,mode:"markers",line:{color:"rgb(52, 35, 32)"},name:"지점 4"}],layoutd={showlegend:!0,legend:{x:1,xanchor:"right",y:1},xaxis:{title:"Weight"},yaxis:{title:"Cost"}};Plotly.newPlot("gradientPlot2",datad,layoutd);
 </script>
@@ -203,7 +203,7 @@ $$
 ### 학습률이 적절할 때
 
 <center>
-<div id="stepPlot1" style="width:100%; max-width:600px"></div>
+<div id="stepPlot1" style="width:100%;max-width:600px"></div>
 <script>
 var n1=0,x1=[-6],y1=[36],z1=[-1],t1=[-6],dt1=.03;let fps1,eachNthFrame1,frameCount1;fps1=3,eachNthFrame1=Math.round(1e3/fps1/16.66),frameCount1=eachNthFrame1;for(var x1Values1=[],y1Values1=[],x=-10;x<=10;x+=.1)x1Values1.push(x),y1Values1.push(eval("x*x"));function compute1(e){for(e=0;e<n1;e++)x1[e]=x1[e]-dt1*(2*x1[e]),y1[e]=x1[e]**2}function update1(){n1%75==0&&(x1=[-6],y1=[36]),frameCount1===eachNthFrame1&&(frameCount1=0,compute1(),Plotly.animate("stepPlot1",{data:[{x:x1,y:y1}]},{transition:{duration:0},frame:{duration:0,redraw:!1}}),n1++),frameCount1++,requestAnimationFrame(update1)}Plotly.newPlot("stepPlot1",[{x:x1,y:z1,mode:"markers",marker:{color:"rgb(255, 34, 22)"}},{x:x1Values1,y:y1Values1,mode:"lines",line:{color:"rgb(210, 210, 210)"}}],{xaxis:{range:[-10,10],title:"Weight"},yaxis:{range:[0,60],title:"Cost"},showlegend:!1}),requestAnimationFrame(update1);
 </script>
@@ -212,7 +212,7 @@ var n1=0,x1=[-6],y1=[36],z1=[-1],t1=[-6],dt1=.03;let fps1,eachNthFrame1,frameCou
 ### 학습률이 낮을 때
 
 <center>
-<div id="stepPlot2" style="width:100%; max-width:600px"></div>
+<div id="stepPlot2" style="width:100%;max-width:600px"></div>
 <script>
 var n2=0,x2=[-6],y2=[36],z2=[-1],t2=[-6],dt2=.003;let fps2,eachNthFrame2,frameCount2;fps2=3,eachNthFrame2=Math.round(1e3/fps2/16.66),frameCount2=eachNthFrame2;for(var x1Values2=[],y1Values2=[],x=-10;x<=10;x+=.1)x1Values2.push(x),y1Values2.push(eval("x*x"));function compute2(e){for(e=0;e<n2;e++)x2[e]=x2[e]-dt2*(2*x2[e]),y2[e]=x2[e]**2}function update2(){n2%75==0&&(x2=[-6],y2=[36]),frameCount2===eachNthFrame2&&(frameCount2=0,compute2(),Plotly.animate("stepPlot2",{data:[{x:x2,y:y2}]},{transition:{duration:0},frame:{duration:0,redraw:!1}}),n2++),frameCount2++,requestAnimationFrame(update2)}Plotly.newPlot("stepPlot2",[{x:x2,y:z2,mode:"markers",marker:{color:"rgb(255, 34, 22)"}},{x:x1Values2,y:y1Values2,mode:"lines",line:{color:"rgb(210, 210, 210)"}}],{xaxis:{range:[-10,10],title:"Weight"},yaxis:{range:[0,60],title:"Cost"},showlegend:!1}),requestAnimationFrame(update2);
 </script>
@@ -221,7 +221,7 @@ var n2=0,x2=[-6],y2=[36],z2=[-1],t2=[-6],dt2=.003;let fps2,eachNthFrame2,frameCo
 ### 학습률이 높을 때
 
 <center>
-<div id="stepPlot3" style="width:100%; max-width:600px"></div>
+<div id="stepPlot3" style="width:100%;max-width:600px"></div>
 <script>
 var n3=0,x3=[-6],y3=[36],z3=[-1],t3=[-6],dt3=.02;let fps3,eachNthFrame3,frameCount3;fps3=3,eachNthFrame3=Math.round(1e3/fps3/16.66),frameCount3=eachNthFrame3;for(var x1Values3=[],y1Values3=[],x=-10;x<=10;x+=.1)x1Values3.push(x),y1Values3.push(eval("x*x"));function compute3(e){for(e=0;e<n3;e++)x3[e]=x3[e]-dt3*(2*x3[e]),y3[e]=x3[e]**2,z3[e]=-1*z3[e],t3[e]=x3[e]*z3[e]}function update3(){n3%75==0&&(x3=[-6],y3=[36],z3=[-1],t3=[-6]),frameCount3===eachNthFrame3&&(frameCount3=0,compute3(),Plotly.animate("stepPlot3",{data:[{x:t3,y:y3}]},{transition:{duration:0},frame:{duration:0,redraw:!1}}),n3++),frameCount3++,requestAnimationFrame(update3)}Plotly.newPlot("stepPlot3",[{x:x3,y:z3,mode:"markers",marker:{color:"rgb(255, 34, 22)"}},{x:x1Values3,y:y1Values3,mode:"lines",line:{color:"rgb(210, 210, 210)"}}],{xaxis:{range:[-10,10],title:"Weight"},yaxis:{range:[0,60],title:"Cost"},showlegend:!1}),requestAnimationFrame(update3);
 </script>
@@ -230,7 +230,7 @@ var n3=0,x3=[-6],y3=[36],z3=[-1],t3=[-6],dt3=.02;let fps3,eachNthFrame3,frameCou
 ### 학습률이 너무 높을 때
 
 <center>
-<div id="stepPlot4" style="width:100%; max-width:600px"></div>
+<div id="stepPlot4" style="width:100%;max-width:600px"></div>
 <script>
 var n4=0,x4=[-6],y4=[36],z4=[-1],t4=[-6],dt4=.01;let fps4,eachNthFrame4,frameCount4;fps4=3,eachNthFrame4=Math.round(1e3/fps4/16.66),frameCount4=eachNthFrame4;for(var x1Values4=[],y1Values4=[],x=-10;x<=10;x+=.1)x1Values4.push(x),y1Values4.push(eval("x*x"));function compute4(e){for(e=0;e<n4;e++)x4[e]=x4[e]+dt4*(2*x4[e]),y4[e]=x4[e]**2,z4[e]=-1*z4[e],t4[e]=x4[e]*z4[e]}function update4(){n4%20==0&&(x4=[-6],y4=[36],z4=[-1],t4=[-6]),frameCount4===eachNthFrame4&&(frameCount4=0,compute4(),Plotly.animate("stepPlot4",{data:[{x:t4,y:y4}]},{transition:{duration:0},frame:{duration:0,redraw:!1}}),n4++),frameCount4++,requestAnimationFrame(update4)}Plotly.newPlot("stepPlot4",[{x:x4,y:z4,mode:"markers",marker:{color:"rgb(255, 34, 22)"}},{x:x1Values4,y:y1Values4,mode:"lines",line:{color:"rgb(210, 210, 210)"}}],{xaxis:{range:[-10,10],title:"Weight"},yaxis:{range:[0,60],title:"Cost"},showlegend:!1}),requestAnimationFrame(update4);
 </script>
@@ -248,7 +248,7 @@ var n4=0,x4=[-6],y4=[36],z4=[-1],t4=[-6],dt4=.01;let fps4,eachNthFrame4,frameCou
 만약, `가중치(Weight)`와 `비용(Cost)`이 다음과 같은 그래프의 형태를 지니게 된다면 다음과 같은 이유로 최적화된 값을 찾을 수 없게됩니다.
 
 <center>
-<div id="minimumPlot" style="width:100%; max-width:600px"></div>
+<div id="minimumPlot" style="width:100%;max-width:600px"></div>
 <script>
 var cx=[];var cy=[];for(var x=-1;x<=2.5;x+=0.01){cx.push(x);cy.push(eval("x**5-2*x**4-3*x**3+6*x**2+x"))}
 var c_data=[{x:cx,y:cy,mode:"lines",name:"Weight-Cost"},{x:[-0.079],y:[-0.04],mode:"markers",marker:{color:'rgb(255, 44, 17)',size:10},name:"Global Minimum"},{x:[1.836],y:[1.631],mode:"markers",marker:{color:'rgb(17, 255, 44)',size:10},name:"Local Minimum"}];var c_layout={xaxis:{title:"Weight",autorange:!1,showgrid:!0,zeroline:!1,showline:!0,autotick:!0,ticks:'',showticklabels:!1,range:[-1.5,3,0.01]},yaxis:{title:"Cost",autorange:!1,showgrid:!0,zeroline:!1,showline:!0,autotick:!0,ticks:'',showticklabels:!1,range:[-0.3,5,0.01]}};Plotly.newPlot("minimumPlot",c_data,c_layout)
@@ -264,7 +264,7 @@ var c_data=[{x:cx,y:cy,mode:"lines",name:"Weight-Cost"},{x:[-0.079],y:[-0.04],mo
 안장점은 다음 그래프 처럼 **말의 안장처럼 생긴 그래프**를 의미하며, **특정 방향(아래에서 위로, 위에서 아래로 등)에서 바라볼 경우 극댓값(또는 최댓값)이 되지만 다른 방향에서 보면 극솟값(또는 최솟값)이 되는 지점을 의미합니다.**
 
 <center>
-<div id="saddlePlot" style="width:100%; max-width:600px"></div>
+<div id="saddlePlot" style="width:100%;max-width:600px"></div>
 <script>
 function getrandom(num){var value=[];for(i=0;i<=num;i++){var rand=Math.random()*2-1;value.push(rand)}
 return value}

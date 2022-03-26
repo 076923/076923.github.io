@@ -447,6 +447,8 @@ Python-PyTorch:
     children:
       - title: "제 11강 - 데이터 세트 분리(Data Set Split)"
         url: "/posts/Python-pytorch-11/"
+      - title: "제 12강 - 이진 분류(Binary Classification)"
+        url: "/posts/Python-pytorch-12/"
 
 C#:
   - title: "C# 강좌 목록"
