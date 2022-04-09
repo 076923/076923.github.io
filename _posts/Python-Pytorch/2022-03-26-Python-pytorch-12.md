@@ -6,7 +6,7 @@ image: /assets/images/pytorch.webp
 header:
   image: /assets/patterns/asanoha-400px.png
 tags: ['PyTorch']
-keywords: Python, Python Pytorch, Pytorch Binary Classification
+keywords: Python, Python Pytorch, Pytorch Binary Classification, Pytorch Sigmoid Function, Pytorch Binary Cross Entropy
 ref: Python-PyTorch
 category: Python
 permalink: /posts/Python-pytorch-12/
@@ -17,13 +17,15 @@ plotly: true
 
 ## 이진 분류(Binary Classification)
 
-`이진 분류(Binary Classification)`란 규칙에 따라 입력된 값을 두 그룹으로 분류하는 작업을 의미합니다.
+`이진 분류(Binary Classification)`란 규칙에 따라 입력된 값을 **두 그룹으로 분류하는 작업을 의미합니다.**
 
 구분하려는 결과가 **참(True)** 또는 **거짓(False)**의 형태나 **A 그룹** 또는 **B 그룹**으로 데이터를 나누는 경우를 의미합니다.
 
 분류 결과가 맞다면 `1(True, A 그룹에 포함)`을 반환하며, 아니라면 `0(False, A 그룹에 포함되지 않음)`을 반환하는 형태가 됩니다.
 
 즉, 결과를 이분화하는 작업을 수행합니다. 만약, 분류해야하는 그룹이 3 종류 이상이라면, `다중 분류(Multiclass Classification)`를 의미합니다.
+
+`참(True)` 또는 `거짓(False)`으로 결과를 분류하기 때문에 `논리 회귀(Logistic Regression)` 또는 `논리 분류(Logistic Classification)`라고도 부릅니다. 
 
 <center>
 <div id="classificationPlot" style="width:100%;max-width:700px"></div>

@@ -137,11 +137,15 @@ GPU의 `CUDA Compute Capability`에 맞는 `CUDA Toolkit`으로 설치합니다.
 
 `NVIDIA CUDA 심층 신경망 라이브러리(cuDNN)`는 심층 신경망을 위한 **GPU 가속 프리미티브(GPU-accelerated library of primitives)** 라이브러리입니다.
 
-압축 파일을 다운로드하여, `NVIDIA GPU Computing Toolkit`이 설치된 경로로 파일을 덮어 씌웁니다.
+설치한 `CUDA` 버전과 호환되는 압축 파일을 다운로드하여, `NVIDIA GPU Computing Toolkit`이 설치된 경로로 파일을 덮어 씌웁니다.
 
 `NVIDIA GPU Computing Toolkit/CUDA/{Version}`의 경로입니다.
 
 파일을 모두 덮어 씌웠다면 `환경 변수`에 `경로(Path)`를 등록합니다.
+
+- Tip : CUDA 11.3의 경우 `Download cuDNN v8.2.1 (June 7th, 2021), for CUDA 11.x`로 설치합니다.
+
+> [cuDNN 설치하기][cuDNN]
 
 <br>
 
@@ -197,9 +201,9 @@ print(torch.cuda.is_available())
 
 **결과**
 :    
-1.8.1<br>
-True
-
+1.11.0<br>
+True<br>
+<br>
 
 현재 `PyTorch`의 **버전**과 `GPU` **사용 가능 여부**가 출력됩니다.
 
@@ -214,3 +218,4 @@ True
 [NVIDIA]: https://www.nvidia.com/Download/index.aspx?lang=kr
 [PyTorch]: https://pytorch.org/
 [CUDA]: https://developer.nvidia.com/cuda-toolkit-archive
+[cuDNN]: https://developer.nvidia.com/rdp/cudnn-archive
