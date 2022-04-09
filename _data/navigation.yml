@@ -449,6 +449,8 @@ Python-PyTorch:
         url: "/posts/Python-pytorch-11/"
       - title: "제 12강 - 이진 분류(Binary Classification)"
         url: "/posts/Python-pytorch-12/"
+      - title: "제 13강 - 다중 분류(Multiclass Classification)"
+        url: "/posts/Python-pytorch-13/"
 
 C#:
   - title: "C# 강좌 목록"
