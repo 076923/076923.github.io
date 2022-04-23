@@ -451,6 +451,8 @@ Python-PyTorch:
         url: "/posts/Python-pytorch-12/"
       - title: "제 13강 - 다중 분류(Multiclass Classification)"
         url: "/posts/Python-pytorch-13/"
+      - title: "제 14강 - 퍼셉트론(Perceptron)"
+        url: "/posts/Python-pytorch-14/"
 
 C#:
   - title: "C# 강좌 목록"
