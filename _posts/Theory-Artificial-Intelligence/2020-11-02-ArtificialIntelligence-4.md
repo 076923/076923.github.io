@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Artificial Intelligence Theory : 강화 학습"
+title: "Artificial Intelligence Theory : 강화 학습(Reinforcement Learning)"
 tagline: "Reinforcement Learning"
 image: /assets/images/ai.jpg
 header:

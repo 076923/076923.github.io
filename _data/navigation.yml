@@ -781,12 +781,14 @@ Theory-AI:
     children:
       - title: "인공 지능이란?"
         url: "/posts/AI-1/"
-      - title: "지도 학습"
+      - title: "지도 학습(Supervised Learning)"
         url: "/posts/AI-2/"
-      - title: "비지도 학습"
+      - title: "비지도 학습(Unsupervised Learning)"
         url: "/posts/AI-3/"
-      - title: "강화 학습"
+      - title: "강화 학습(Reinforcement Learning)"
         url: "/posts/AI-4/"
+      - title: "순전파(Forward Propagation) & 역전파(Back Propagation)"
+        url: "/posts/AI-5/"
 
 Theory-ComputerVision:
   - title: "컴퓨터 비전 이론 목록"

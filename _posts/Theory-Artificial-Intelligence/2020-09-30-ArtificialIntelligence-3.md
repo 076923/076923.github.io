@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Artificial Intelligence Theory : 비지도 학습"
+title: "Artificial Intelligence Theory : 비지도 학습(Unsupervised Learning)"
 tagline: "Unsupervised Learning"
 image: /assets/images/ai.jpg
 header:
