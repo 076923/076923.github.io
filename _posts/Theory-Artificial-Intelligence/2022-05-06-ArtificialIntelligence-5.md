@@ -99,6 +99,10 @@ optimizer = optim.SGD(model.parameters(), lr=1)
 
 `학습률(learning_rate)`은 **1**로 설정하여 갱신되는 가중치를 확인하기 쉽게 할당합니다.
 
+> 이진 교차 엔트로피(Binary Cross Entropy Loss)에 대한 자세한 내용은 [제 12강 - 이진 분류(Binary Classification)][12강-2]에서 확인해볼 수 있습니다.
+
+> 최적화 함수(Optimization Function)에 대한 자세한 내용은 [제 5강 - 최적화(Optimization)][5강]에서 확인해볼 수 있습니다.
+
 <br>
 
 <img data-src="{{ site.images }}/assets/posts/Theory/ArtificialIntelligence/lecture-5/1.webp" class="lazyload" width="100%" height="100%"/>
@@ -354,6 +358,43 @@ $$ \begin{align} b_2(2) & = b_2(1) - \alpha\frac{\partial\mathcal{L}}{\partial b
 만약, 배치 크기가 1보다 크다면 행렬로 풀이를 진행합니다.
 
 <br>
+
+### 가중치와 편향 갱신 비교
+
+$$ \begin{align}
+\textbf{Layer #1}\\
+W_1(1) & =0.4352 & W_1(2) & =0.4514 \\
+W_2(1) & =0.1951 & W_2(2) & =0.1848 \\
+W_3(1) & =0.3545 & W_3(2) & =0.3707 \\
+W_4(1) & =0.4835 & W_4(2) & =0.4732 \\
+b_1(1) & =-0.1419 & b_1(2) & =-0.1257 \\
+b_2(1) & =0.0439 & b_2(2) & =0.0336 \\\\
+\textbf{Layer #2}\\
+W_5(1) & =-0.1725 & W_5(2) & =-0.4452 \\
+W_6(1) & =0.1129 & W_6(2) & =-0.1667 \\
+b_3(1) & =-0.3043 & b_3(2) & =-0.7196 \end{align} $$
+
+`계층(Layer)`별로 갱신값을 비교해본다면 위와 같이 정리할 수 있습니다.
+
+`학습률(learning_rate)`을 비교적 큰 `1`로 주었음에도 불구하고, `Layer #1`의 변화량은 `Layer #2`와 비교했을 때 크지 않습니다.
+
+현재 모델에서 사용한 `활성화 함수(Activation Function)`는 `시그모이드(Sigmoid)`를 적용하였습니다.
+
+`시그모이드(Sigmoid)`는 **출력값의 범위를 0 ~ 1 사이로 제한**하기 때문에 역전파(Back Propagation) 과정에서 0에 가까운 기울기가 곱해지게 됩니다. 
+
+그러므로, 역전파 과정에서 입력층의 방향으로 값을 전달하는 과정에서 0에 수렴되는 문제가 발생해 성능이 떨어지게 됩니다.
+
+`출력층(Output Layer)`에 가까운 `Layer #2`는 변화량이 높게되고, `입력층(Input Layer)`에 가까운 `Layer #1`은 변화량이 미미해집니다.
+
+이러한 이유로 **깊은(Deep)** 모델의 `은닉층(Hidden Layer)`에서는 `시그모이드(Sigmoid)`를 **활성화 함수로 사용하지 않습니다.**
+
+> 시그모이드(Sigmoid)에 대한 자세한 내용은 [제 12강 - 이진 분류(Binary Classification)][12강-2]에서 확인해볼 수 있습니다.
+
+<br>
 <br>
 
 * Writer by : 윤대희
+
+[5강]:https://076923.github.io/posts/Python-pytorch-5/
+[12강-1]:https://076923.github.io/posts/Python-pytorch-12/#%EC%9D%B4%EC%A7%84-%EA%B5%90%EC%B0%A8-%EC%97%94%ED%8A%B8%EB%A1%9C%ED%94%BCbinary-cross-entropy
+[12강-2]:https://076923.github.io/posts/Python-pytorch-12/#%EC%8B%9C%EA%B7%B8%EB%AA%A8%EC%9D%B4%EB%93%9C-%ED%95%A8%EC%88%98sigmoid-function
