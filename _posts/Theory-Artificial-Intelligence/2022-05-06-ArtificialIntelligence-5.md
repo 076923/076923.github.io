@@ -155,7 +155,7 @@ $$ \begin{align} \sigma_2 & =\frac{1}{1+e^{-z_2}}\\ & =\frac{1}{1+e^{-0.7225}}\\
 
 <br>
 
-$$ h $$를 계산했다면, 이 값을 입력값으로 사용하여 동일한 방식으로 `가중합(Weighted Sum)`과 `시그모이드(Sigmoid)`가 적용된 값을 계산합니다.
+$$ \sigma $$를 계산했다면, 이 값을 입력값으로 사용하여 동일한 방식으로 `가중합(Weighted Sum)`과 `시그모이드(Sigmoid)`가 적용된 값을 계산합니다.
 
 <div style="display: flex;margin-left: 18px;">
 $$ \begin{align} z_3 & =W_{5}\sigma_{1} + W_{6}\sigma_{2} + b_{3}\\ & =-0.1725\times0.6565 + 0.1129\times0.6731 - 0.3043\\ & =-0.3415 \end{align} $$
@@ -188,7 +188,7 @@ $$ \mathcal{L} $$이 `loss` 변수에 할당됩니다.
 
 ### 역전파(Back Propagation) 풀이
 
-`역전파(Back Propagation)` 과정에서는 `계층(Layer)`의 역순으로 `가중치(Weight)`와 `편향(Bias)`을 갱신(Update)합니다.
+`역전파(Back Propagation)` 과정에서는 `계층(Layer)`의 역순으로 `가중치(Weight)`와 `편향(Bias)`을 `갱신(Update)`합니다.
 
 즉, $$ W_5, W_6, b_3 $$를 갱신한 다음에 $$ W_1, W_2, W_3, W_4, b_1, b_2 $$가 갱신됩니다.
 
@@ -196,7 +196,7 @@ $$ \mathcal{L} $$이 `loss` 변수에 할당됩니다.
 
 그러므로, 갱신된 가중치와 편향의 기울기는 오차가 0이 되는 방향으로 진행하게 됩니다. 
 
-갱신된 가중치나 편향은 위에서 계산된 기울기를 감산했을 때, 변화가 없을 때 까지 반복하게 됩니다.
+갱신된 가중치나 편향은 위에서 계산된 기울기를 감산해, 변화가 없을 때 까지 반복하게 됩니다.
 
 이를 수식으로 표현한다면 다음과 같습니다.
 
@@ -205,6 +205,8 @@ $$
 \shoveleft \therefore W_n(t+1) = W_n(t) - \alpha\frac{\partial\mathcal{L}}{\partial W_n(t)}
 \end{multline}
 $$
+
+<br>
 
 지속적으로 가중치를 갱신하게 되면, $$ \frac{\partial\mathcal{L}}{\partial W_n(t)} $$는 점점 0에 가까워지게 됩니다.
 
@@ -351,7 +353,7 @@ $$ \begin{align} b_2(2) & = b_2(1) - \alpha\frac{\partial\mathcal{L}}{\partial b
 
 모든 가중치와 편향을 갱신하면 학습이 1회 진행되었다고 볼 수 있습니다.
 
-갱신된 가중치와 편향으로 다음 번 학습을 진행하며, 오차(Cost)가 점차 감소하게 됩니다.
+갱신된 가중치와 편향으로 다음 번 학습을 진행하며, **오차(Cost)가 점차 감소하게 됩니다.**
 
 현재 예제에서는 `배치 크기(Batch Size)`를 1로 가정하고 풀이했습니다.
 
