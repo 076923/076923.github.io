@@ -68,7 +68,7 @@ $$ Sigmoid(x) = \frac{1}{1+e^{-x}} $$
 <center>
 <div id="sigmoidPlot" style="width:100%;max-width:700px"></div>
 <script>
-for(var exp1="1/(1+Math.exp(-0.5*x))",exp2="1/(1+Math.exp(-x))",exp3="1/(1+Math.exp(-2*x))",xValues=[],yValues1=[],yValues2=[],yValues3=[],x=-10;x<=10;x+=.1)xValues.push(x),yValues1.push(eval(exp1)),yValues2.push(eval(exp2)),yValues3.push(eval(exp3));var data2=[{x:xValues,y:yValues1,mode:"lines",name:"Sigmoid #1"},{x:xValues,y:yValues2,mode:"lines",name:"Sigmoid #2"},{x:xValues,y:yValues3,mode:"lines",name:"Sigmoid #3"}],layout2={xaxis:{title:"X"},yaxis:{title:"Y"}};Plotly.newPlot("sigmoidPlot",data2,layout2);
+for(var exp1="1/(1+Math.exp(-0.5*x))",exp2="1/(1+Math.exp(-x))",exp3="1/(1+Math.exp(-2*x))",xValues=[],yValues1=[],yValues2=[],yValues3=[],x=-10;x<=10;x+=.1)xValues.push(x),yValues1.push(eval(exp1)),yValues2.push(eval(exp2)),yValues3.push(eval(exp3));var data2=[{x:xValues,y:yValues1,mode:"lines",name:"Sigmoid #1"},{x:xValues,y:yValues2,mode:"lines",name:"Sigmoid #2"},{x:xValues,y:yValues3,mode:"lines",name:"Sigmoid #3"}],layout2={xaxis:{title:"x"},yaxis:{title:"y"}};Plotly.newPlot("sigmoidPlot",data2,layout2);
 </script>
 </center>
 

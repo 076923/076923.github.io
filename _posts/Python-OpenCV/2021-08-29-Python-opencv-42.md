@@ -99,7 +99,7 @@ dst = centers[bestLabels].reshape(src.shape)
 
 `중심값(centers)`은 **flaot32** 형식이므로, **uint8** 형식으로 변환해 Python OpenCV에서 주로 사용하는 형식으로 변경합니다. 
 
-`중심값(centers)`은 **(2, 3)**의 차원을 갖으며, `라벨(bestLabels)`은 **(Width * Height, 1)**의 차원을 갖습니다.
+`중심값(centers)`은 **(2, 3)**의 차원을 가지며, `라벨(bestLabels)`은 **(Width * Height, 1)**의 차원을 갖습니다.
 
 `중심값(centers)`에 할당된 값이 `라벨(bestLabels)`에 매핑할 경우, 시각화를 진행할 수 있습니다.
 

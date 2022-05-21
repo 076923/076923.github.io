@@ -789,6 +789,8 @@ Theory-AI:
         url: "/posts/AI-4/"
       - title: "순전파(Forward Propagation) & 역전파(Back Propagation)"
         url: "/posts/AI-5/"
+      - title: "활성화 함수(Activation Function)"
+        url: "/posts/AI-6/"
 
 Theory-ComputerVision:
   - title: "컴퓨터 비전 이론 목록"
