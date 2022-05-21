@@ -130,9 +130,8 @@ var x=[];var y=[];for(var i=-2;i<=2;i+=0.01){x.push(i);y.push(eval("-i+0.5"))}va
 
 그러므로 해결하고자 하는 문제에 적합한 은닉층의 수로 모델을 구성해야 합니다.
 
-- Tip : `은닉층(Hidden Layer)`의 수가 많아지면 **깊은(Deep)**한 모델이 됩니다.
+- Tip : `은닉층(Hidden Layer)`의 수가 많아지면 **깊은(Deep)** 모델이 됩니다.
 
-<br>
 <br>
 
 
