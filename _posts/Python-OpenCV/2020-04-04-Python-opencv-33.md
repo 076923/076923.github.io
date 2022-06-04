@@ -58,7 +58,7 @@ hist = cv2.calcHist([gray], [0], None, [256], [0, 256])
 cv2.normalize(hist, hist, 0, result.shape[0], cv2.NORM_MINMAX)
 
 for x, y in enumerate(hist):
-    cv2.line(result, (x, result.shape[0]), (x, result.shape[0] - y), 255)
+    cv2.line(result, (int(x), result.shape[0]), (int(x), result.shape[0] - int(y)), 255)
 
 dst = np.hstack([gray, result])
 
@@ -127,7 +127,7 @@ cv2.normalize(hist, hist, 0, result.shape[0], cv2.NORM_MINMAX)
 {% highlight Python %}
 
 for x, y in enumerate(hist):
-    cv2.line(result, (x, result.shape[0]), (x, result.shape[0] - y), 255)
+    cv2.line(result, (int(x), result.shape[0]), (int(x), result.shape[0] - int(y)), 255)
 
 dst = np.hstack([gray, result])
 
