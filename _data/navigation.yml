@@ -791,6 +791,8 @@ Theory-AI:
         url: "/posts/AI-5/"
       - title: "활성화 함수(Activation Function)"
         url: "/posts/AI-6/"
+      - title: "배치 정규화(Batch Normalization)"
+        url: "/posts/AI-7/"
 
 Theory-ComputerVision:
   - title: "컴퓨터 비전 이론 목록"
