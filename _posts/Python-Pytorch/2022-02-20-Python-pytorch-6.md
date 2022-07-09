@@ -54,7 +54,7 @@ learning_rate = 0.005
 for epoch in range(10000):
     y_hat = weight * x + bias
 
-    cost = ((y_hat - y) ** 2).mean()
+    cost = ((y - y_hat) ** 2).mean()
 
     weight = weight - learning_rate * ((y_hat - y) * x).mean()
     bias = bias - learning_rate * (y_hat - y).mean()
@@ -163,11 +163,11 @@ y_hat = weight * x + bias
 
 {% highlight Python %}
 
-cost = ((y_hat - y) ** 2).mean()
+cost = ((y - y_hat) ** 2).mean()
 
 {% endhighlight %}
 
-전체 데이터 세트를 통해 나온  $$ \hat{Y_{i}} $$으로 `비용(Cost)`을 계산합니다.
+전체 데이터 세트를 통해 나온 $$ \hat{Y_{i}} $$으로 `비용(Cost)`을 계산합니다.
 
 학습이 진행될 때 마다 `비용(Cost)`이 감소되는 방향으로 진행되어야 정상적으로 학습이 진행됩니다.
 
