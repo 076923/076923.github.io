@@ -123,16 +123,18 @@ $$ L_{c} $$는 실젯값의 `원-핫 벡터(One-hot Vector)`를 의미합니다.
 
 <br>
 
+<div style="display: flex;margin-left: 18px;">
 $$
-\begin{multline}
-\shoveleft CE = -\sum_{c=1}^{C}L_{c}logP_{c}\\
-\shoveleft CE = -\sum_{c=1}^{3}L_{c}logP_{c}\\
-\shoveleft CE = -(L_{1}logP_{1} + L_{2}logP_{2} + L_{3}logP_{3})\\
-\shoveleft CE = -(0log0.00 + 0log0.07 + 1log0.93)\\
-\shoveleft CE = -log0.93\\
-\shoveleft CE \simeq 0.03\\
-\end{multline}
+\begin{align}
+CE & = -\sum_{c=1}^{C}L_{c}logP_{c}\\\\
+& = -\sum_{c=1}^{3}L_{c}logP_{c}\\\\
+& = -(L_{1}logP_{1} + L_{2}logP_{2} + L_{3}logP_{3})\\\\
+& = -(0log0.00 + 0log0.07 + 1log0.93)\\\\
+& = -log0.93\\\\
+& \simeq 0.03
+\end{align}
 $$
+</div>
 
 `교차 엔트로피(Cross Entropy)`를 통해 입력값을 세 번째 클래스로 학습했을 때, `오차(Cost)`를 계산한다면 $$ 0.03 $$이 됩니다.
 
@@ -140,14 +142,17 @@ $$
 
 <br>
 
+<div style="display: flex;margin-left: 18px;">
 $$
-\begin{multline}
-\shoveleft CE = -(L_{1}logP_{1} + L_{2}logP_{2} + L_{3}logP_{3})\\
-\shoveleft CE = -(0log0.00 + 1log0.07 + 0log0.93)\\
-\shoveleft CE = -log0.07\\
-\shoveleft CE \simeq 1.15\\
-\end{multline}
+\begin{align}
+CE & = -(L_{1}logP_{1} + L_{2}logP_{2} + L_{3}logP_{3})\\\\
+& = -(0log0.00 + 1log0.07 + 0log0.93)\\\\
+& = -log0.07\\\\
+& \simeq 1.15
+\end{align}
 $$
+</div>
+
 
 실젯값과 출력값의 예측이 정확하다면 `오차(Cost)`는 0에 가까워지며, 정확하지 않을수록 오차는 0에서 멀어집니다.
 
