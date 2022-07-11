@@ -141,11 +141,18 @@ for(var xValues2=[],yValues4=[],yValues5=[],x=0;x<=1;x+=.01)xValues2.push(x),yVa
 $$
 \begin{multline}
 \shoveleft BCE \ \text{#1} = - Y_{i} \cdot log (\hat{Y_{i}}) \\ 
-\shoveleft BCE \ \text{#2} = - (1 - Y_{i}) \cdot log (1 - \hat{Y_{i}}) \\ \\
-\shoveleft BCE \ loss = BCE \ \text{#1} + BCE \ \text{#2} \\
-\shoveleft BCE \ loss = - ( Y_{i} \cdot log (\hat{Y_{i}}) + (1 - Y_{i}) \cdot log (1 - \hat{Y_{i}}))
+\shoveleft BCE \ \text{#2} = - (1 - Y_{i}) \cdot log (1 - \hat{Y_{i}}) \\
 \end{multline}
 $$
+
+<div style="display: flex;margin-left: 18px;">
+$$
+\begin{align}
+BCE \ loss & = BCE \ \text{#1} + BCE \ \text{#2} \\
+& = - ( Y_{i} \cdot log (\hat{Y_{i}}) + (1 - Y_{i}) \cdot log (1 - \hat{Y_{i}}))
+\end{align}
+$$
+</div>
 
 <br>
 
@@ -158,16 +165,16 @@ $$
 $$
 \begin{multline}
 \shoveleft BCE \ \text{#1} = - Y_{i} \cdot log (\hat{Y_{i}}) \\ 
-\shoveleft BCE \ \text{#1} = - 1 \cdot log(0.999999999999) \simeq 0\\ 
-\shoveleft BCE \ \text{#1} = - 1 \cdot log(0.000000000001) \simeq 12
+\shoveleft BCE \ \text{#1}_{1} = - 1 \cdot log(0.999999999999) \simeq 0\\ 
+\shoveleft BCE \ \text{#1}_{2} = - 1 \cdot log(0.000000000001) \simeq 12
 \end{multline}
 $$
 
 $$
 \begin{multline}
 \shoveleft BCE \ \text{#2} = - (1 - Y_{i}) \cdot log (1 - \hat{Y_{i}}) \\
-\shoveleft BCE \ \text{#2} = - (1 - 0) \cdot log(0.999999999999) = 0\\ 
-\shoveleft BCE \ \text{#2} = - (1 - 0) \cdot log(0.000000000001) \simeq 12
+\shoveleft BCE \ \text{#2}_{1} = - (1 - 0) \cdot log(0.999999999999) = 0\\ 
+\shoveleft BCE \ \text{#2}_{2} = - (1 - 0) \cdot log(0.000000000001) \simeq 12
 \end{multline}
 $$
 

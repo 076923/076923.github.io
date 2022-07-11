@@ -177,6 +177,64 @@ $$ \nabla f(W_{i}) $$는 위에서 설명한 기울기를 의미합니다.
 이 공식에서 $$ \alpha $$를 곱하여 가중치 결과를 조정하게 되는데, 기울기가 한 번에 이동하는 `간격(Step Size)`을 조정합니다.
 
 <br>
+
+### 가중치 갱신 방법
+
+$$
+\begin{multline}
+\shoveleft W_{0} = \text{Initial Value}\\
+\shoveleft W_{i+1} = W_{i} - \alpha \nabla f(W_{i})
+\end{multline}
+$$
+
+$$ W_{i} $$에서 가중치를 갱신해 $$ W_{i+1} $$을 계산해보도록 하겠습니다.
+
+<br>
+
+`가설(Hypothesis)`은 $$ \hat{Y} = W \times x + b $$로 사용하고, 오차 함수는 `평균 제곱 오차(Mean Squared Error, MSE)`를 적용해 풀이합니다.
+
+가설과 오차 함수를 정리하면 다음과 같습니다.
+
+<br>
+
+$$
+\begin{multline}
+\shoveleft \hat{Y_{i}} = W_{i} \times x + b_{i}\\
+\shoveleft MSE(W,\ b) = \frac{1}{n} \sum_{i=1}^{n} (Y_{i} - \hat{Y_{i}})^2\\
+\end{multline}
+$$
+
+<br>
+
+경사 하강법에 위 값을 적용해 가중치를 갱신합니다.
+
+가중치를 갱신할 예정이므로 $$ W $$에 대해 편미분을 진행합니다.
+
+만약, 편향을 갱신한다면 $$ b $$에 대해 편미분을 진행합니다.
+
+<br>
+
+<div style="display: flex;margin-left: 18px;">
+$$
+\begin{align}
+W_{i+1} & = W_{i} - \alpha \frac{\partial}{\partial W} MSE(W,\ b)\\\\
+& = W_{i} - \alpha \frac{\partial}{\partial W}\{ \frac{1}{n} \sum_{i=1}^{n} ( Y_{i} - \hat{Y_{i}} )^2 \}\\\\
+& = W_{i} - \alpha \frac{\partial}{\partial W}[ \frac{1}{n} \sum_{i=1}^{n} \{ Y_{i} - (W_{i} \times x + b_{i}) \}^2 ]\\\\
+& = W_{i} - \alpha \times \frac{2}{n} \sum_{i=1}^{n} [ \{ Y_{i} - (W_{i} \times x + b_{i}) \} \times (-x) ]\\\\
+& = W_{i} - \alpha \times \frac{2}{n} \sum_{i=1}^{n} \{ (Y_{i} - \hat{Y_{i}}) \times (-x) \}\\\\
+& = W_{i} - \alpha \times \frac{2}{n} \sum_{i=1}^{n} \{ (\hat{Y_{i}} - Y_{i}) \times x \}\\\\
+& = W_{i} - \alpha \times E[ (\hat{Y_{i}} - Y_{i}) \times x ]
+\end{align}
+$$
+</div>
+
+<br>
+
+위와 같은 방법으로 가중치를 갱신할 수 있습니다.
+
+**평균**을 계산하는 과정에서 $$ 2 $$의 값은 **갱신 과정에서 큰 영향을 미치지 않기 때문에 생략하기도 합니다.**
+
+<br>
 <br>
 
 ## 학습률(Learning Rate)
