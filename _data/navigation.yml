@@ -793,6 +793,8 @@ Theory-AI:
         url: "/posts/AI-6/"
       - title: "배치 정규화(Batch Normalization)"
         url: "/posts/AI-7/"
+      - title: "가중치 초기화(Weight Initialization)"
+        url: "/posts/AI-8/"
 
 Theory-ComputerVision:
   - title: "컴퓨터 비전 이론 목록"
