@@ -101,7 +101,7 @@ toc: true
 | Int64 | 부호 있는 64 비트 정수 | torch.int64 | torch.LongTensor | torch.cuda.LongTensor |
 | Float16 | 16 비트 부동 소수점 | torch.float16 | torch.HalfTensor | torch.cuda.HalfTensor |
 | Float32 | 32 비트 부동 소수점 | torch.float32 | torch.FloatTensor | torch.cuda.FloatTens |
-| Float64 | 32 비트 부동 소수점 | torch.float32 | torch.DoubleTensor | torch.cuda.DoubleTensor |
+| Float64 | 64 비트 부동 소수점 | torch.float64 | torch.DoubleTensor | torch.cuda.DoubleTensor |
 | Complex32 | 32 비트 복합 형식 | torch.complex32 | | |
 | Complex64 | 64 비트 복합 형식 | torch.complex64 | | |
 | Complex128 | 128 비트 복합 형식 | torch.complex128 | | |
@@ -275,6 +275,8 @@ tensor([[0.1998]], device='cuda:0')<br>
 
 <br>
 
+### 장치 변환
+
 {% highlight Python %}
 
 import torch
@@ -328,6 +330,8 @@ tensor([1, 2, 3], dtype=torch.uint8)<br>
 `torch.Tensor()` 클래스나 `torch.tensor()`, `torch.from_numpy()` 함수를 통해서 `텐서(Tensor)`로 변환할 수 있습니다. 
 
 <br>
+
+### Tensor 변환
 
 {% highlight Python %}
 

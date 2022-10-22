@@ -65,7 +65,7 @@ $$ H(x) = 0.879x - 0.436 $$
     <tr>
       <td style="text-align: center">4</td>
       <td style="text-align: center">3.92</td>
-      <td style="text-align: center">0.84</td>
+      <td style="text-align: center">3.08</td>
       <td style="text-align: center">0.84</td>
     </tr>
     <tr>
