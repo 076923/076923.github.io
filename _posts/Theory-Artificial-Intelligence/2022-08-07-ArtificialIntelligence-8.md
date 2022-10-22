@@ -92,7 +92,7 @@ $$ std = gain \times \sqrt{\frac{2}{fan_{in} + fan_{out}}} $$
 
 즉, 이전 계층의 노드 수(fan in)와 다음 계층의 노드 수(fan out)에 따라 표준 편차가 계산됩니다.
 
-제이비어 초기화를 사용하게 되는 경우,** 입력 데이터의 분산이 출력 데이터에서 유지되도록 가중치를 초기화**하므로 비선형 활성화(Sigmoid, tanh) 함수 등에서 더 강건(Robust)합니다.
+제이비어 초기화를 사용하게 되는 경우, **입력 데이터의 분산이 출력 데이터에서 유지되도록 가중치를 초기화**하므로 비선형 활성화(Sigmoid, tanh) 함수 등에서 더 강건(Robust)합니다.
 
 - Tip : $$ gain $$은 스케일 값을 의미합니다.
 - Tip : `torch.nn.init._calculate_fan_in_and_fan_out(weight)`를 통해 노드 수를 확인할 수 있습니다.
