@@ -258,7 +258,7 @@ class CustomDataset(Dataset):
 
 `호출 메서드(__getitem__)`에서 `x`값과 `y`값을 반환합니다.
 
-결괏값은 이차 방정식($$ y = W_{1}x^2 + W_{2}x + b) 형태이므로, 반환되는 `x` 값은 $$ x^2, x $$의 구조로 반환합니다.
+결괏값은 이차 방정식($$ y = W_{1}x^2 + W_{2}x + b $$) 형태이므로, 반환되는 `x` 값은 $$ x^2, x $$의 구조로 반환합니다.
 
 `길이 반환 메서드(__len__ )`로 현재 데이터의 길이를 반환합니다.
 
@@ -287,7 +287,7 @@ class CustomModel(nn.Module):
 
 `순방향 메서드(forward)`로 학습 과정을 정의합니다.
 
-이 메서드를 통해 `계층(Layer)`을 통해 처리된 결과가 반환됩니다.
+이 메서드로 `계층(Layer)`에 데이터가 입력돼 처리된 결과가 반환됩니다.
 
 <br>
 
@@ -302,7 +302,7 @@ train_dataloader = DataLoader(train_dataset, batch_size=128, shuffle=True, drop_
 
 `훈련 데이터 세트(train_dataset)`로 `CSV` 파일에서 데이터를 불러옵니다.
 
-이후, `훈련 데이터 로더(train_dataloader)`로 `배치 크기(batch_size)`는 **128**, `데이터 순서 변경(Shuffle)`, 마지막 배치 제거(drop_last)를 **참(True)** 값으로 할당합니다.
+이후, `훈련 데이터 로더(train_dataloader)`로 `배치 크기(batch_size)`는 **128**, `데이터 순서 변경(shuffle)`, 마지막 배치 제거(drop_last)를 **참(True)** 값으로 할당합니다.
 
 <br>
 
@@ -410,7 +410,7 @@ tensor([0.4008], device='cuda:0', requires_grad=True)], Cost : 0.078
 
 {% endhighlight %}
 
-총 10,000번의 학습을 진행하였을 때 `가중치(Weight)`는 각각 `3.1015`, `-1.7032`가 게산되며 `편향(Bais)`은 `0.4008`의 값을 반환하는 것을 확인할 수 있습니다.
+총 10,000번의 학습을 진행하였을 때 `가중치(Weight)`는 각각 `3.1015`, `-1.7032`로 계산되며 `편향(Bias)`은 `0.4008`의 값을 반환하는 것을 확인할 수 있습니다.
 
 데이터 세트는 $$ y = 3.1x^2 - 1.7x + \text{random}(0.01, 0.99) $$로 구성되어 있으므로, 학습이 원활하게 진행된 것을 확인할 수 있습니다.
 
