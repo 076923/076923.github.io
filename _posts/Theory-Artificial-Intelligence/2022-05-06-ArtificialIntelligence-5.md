@@ -18,7 +18,7 @@ toc: true
 
 `순전파(Forward Propagation)`란 입력 데이터를 기반으로 신경망을 따라 `입력층(Input Layer)`부터 `출력층(Output Layer)`까지 차례대로 변수들을 계산하고 `추론(Inference)`한 결과를 의미합니다.
 
-`모델(Model)`에 `입력값(X)`를 입력하여 **순전파(Forward)** 연산을 진행합니다.
+`모델(Model)`에 `입력값`($$ x $$)을 입력하여 **순전파(Forward)** 연산을 진행합니다.
 
 이 과정에서 `계층(Layer)`마다 `가중치(Weight)`와 `편향(Bias)`으로 계산된 값이 `활성화 함수(Activation Function)`에 전달됩니다.
 

@@ -272,7 +272,7 @@ $$ p_{k} = \frac{e^{z_k}}{\sum_{i=1}^{n} e^{z_i} } $$
 
 `분류 모델(Classification Model)`에서 사용되며, [제 13강 - 다중 분류(Multiclass Classification)][13강]에서 자세한 풀이를 확인해 보실 수 있습니다.
 
-이외에도 `소프트민 함수(Softmin Function)`, `로그 소프트맥스 함수(LogSoftmax Function)` 등이 있습니다.
+이외에도 `소프트민 함수(Softmin Function)`, `로그 소프트맥스 함수(Log Softmax Function)` 등이 있습니다.
 
 <br>
 <br>
