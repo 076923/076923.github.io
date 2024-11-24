@@ -82,7 +82,8 @@ baidu_site_verification  :
 analytics:
   provider               : "google" # false (default), "google", "google-universal", "google-gtag", "custom"
   google:
-    tracking_id          : "UA-106083039-1"
+    tracking_id          : "UA-106083039-1" 
+    tag_id               : "G-HPQSBGGMQW"
     anonymize_ip         : # true, false (default)
 
 
