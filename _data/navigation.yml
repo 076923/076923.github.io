@@ -1,41 +1,37 @@
 # main links
 main:
   - title: "Docs"
-    url: "https://076923.github.io/docs/"
+    url: "/docs/"
   - title: "Categories"
     url: /categories/
   - title: "Posts"
     url: /posts/
 
 docs:
-  - title: book
+  - title: Books
     children:
-      - title: "YES24"
-        url: "http://www.yes24.com/Product/Goods/99029275"
+      - title: "데이터·AI 시스템 아키텍트 실무 가이드"
+        url: "https://wikibook.co.kr/data-ai-system/"
         external: "_blank"
-      - title: "Aladin"
-        url: "https://www.aladin.co.kr/shop/wproduct.aspx?ItemId=268617710"
+      - title: "허깅페이스 실전 가이드"
+        url: "https://wikibook.co.kr/hugging-face/"
         external: "_blank"
-      - title: "Ridibooks"
-        url: "https://ridibooks.com/books/1160000034"
+      - title: "파이토치 트랜스포머 심층학습"
+        url: "https://wikibook.co.kr/pytorchtrf/"
         external: "_blank"
-      - title: "Kyobobook"
-        url: "http://www.kyobobook.co.kr/product/detailViewKor.laf?barcode=9791158392550"
-        external: "_blank"
-      - title: "INTERPARK"
-        url: "http://book.interpark.com/product/BookDisplay.do?_method=detail&sc.prdNo=348475772"
+      - title: "OpenCV 4 프로그래밍"
+        url: "https://wikibook.co.kr/opencv4-rev2/"
         external: "_blank"
 
-  - title: lecture
+  - title: Lectures
     children:
       - title: "Inflearn"
         url: "https://www.inflearn.com/course/c-opencv/"
         external: "_blank"
       - title: "Documentation"
-        url: "https://076923.github.io/docs/index"
-        external: "_blank"
+        url: "/docs/index"
 
-  - title: utility 
+  - title: Utilities
     children:
       - title: "Python OpenCV Utils"
         url: "https://pypi.org/project/python-opencv-utils/"
