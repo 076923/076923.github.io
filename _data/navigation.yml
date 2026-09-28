@@ -791,6 +791,8 @@ Theory-AI:
         url: "/posts/AI-7/"
       - title: "가중치 초기화(Weight Initialization)"
         url: "/posts/AI-8/"
+      - title: "과대적합과 정칙화(Overfitting & Regularization)"
+        url: "/posts/AI-9/"
 
 Theory-ComputerVision:
   - title: "컴퓨터 비전 이론 목록"
@@ -821,6 +823,8 @@ Theory-ComputerVision:
         url: "/posts/ComputerVision-11/"
       - title: "움직임 추적"
         url: "/posts/ComputerVision-12/"
+      - title: "3차원 비전"
+        url: "/posts/ComputerVision-13/"
 
 Exercise-C#:
   - title: "C# 예제 목록"
