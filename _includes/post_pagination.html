@@ -1,37 +1,39 @@
-{% if page.previous or page.next %}
+{%- comment -%}
+  같은 강좌(태그) 안에서의 이전/다음 글 내비게이션.
+  site.posts 는 최신순이므로 index+1 이 이전(과거) 글, index-1 이 다음(최신) 글이다.
+{%- endcomment -%}
+{%- assign series_tag = page.tags[0] -%}
+{%- assign series = site.tags[series_tag] -%}
+{%- if series and series.size > 1 -%}
+  {%- assign found = false -%}
+  {%- assign now = 0 -%}
+  {%- for post in series -%}
+    {%- if post.url == page.url -%}
+      {%- assign found = true -%}
+      {%- assign now = forloop.index0 -%}
+      {%- break -%}
+    {%- endif -%}
+  {%- endfor -%}
 
-  {% assign count = 0 %}
-  {% assign now = -1 %}
-  {% assign arr = "" | split: '' %}
-  {% assign arr_title = "" | split: '' %}
-  {% for post in site.posts %}
-    {% if post.tags == page.tags %}
-      {% if post.title == page.title %}
-        {% assign now = count %}
-      {% endif %}
+  {%- if found -%}
+    {%- assign prev_index = now | plus: 1 -%}
+    {%- assign prev_post = series[prev_index] -%}
+    {%- if now > 0 -%}
+      {%- assign next_index = now | minus: 1 -%}
+      {%- assign next_post = series[next_index] -%}
+    {%- endif -%}
 
-      {% assign count = count | plus: 1 %}
-      {% assign arr = arr | push: post.url %}
-      {% assign arr_title = arr_title | push: post.title %}
-
-    {% endif %}
-  {% endfor %}
-
-  {% assign next = now | minus:1 %}
-  {% assign prev = now | plus:1 %}
-
-  <nav class="pagination">
-    {% if prev != arr.size %}
-      <a href="{{ arr[prev] | relative_url }}" class="pagination--pager" title="{{ page.previous.title | markdownify | strip_html }}">{{ site.data.ui-text[site.locale].pagination_previous | default: "Previous" }}<br>{{ arr_title[prev] }}</a>
+  <nav class="pagination" aria-label="같은 강좌의 이전/다음 글">
+    {% if prev_post %}
+      <a href="{{ prev_post.url | relative_url }}" class="pagination--pager" rel="prev" title="{{ prev_post.title | markdownify | strip_html | strip_newlines }}">이전 강좌<small>{{ prev_post.title | markdownify | strip_html | strip_newlines }}</small></a>
     {% else %}
-      <a href="#" class="pagination--pager disabled">{{ site.data.ui-text[site.locale].pagination_previous | default: "Previous" }}<br>첫 페이지</a>
+      <span class="pagination--pager disabled" aria-disabled="true">이전 강좌<small>첫 번째 글입니다</small></span>
     {% endif %}
-    {% if next != -1 %}
-      <a href="{{ arr[next] | relative_url }}" class="pagination--pager" title="{{ page.next.title | markdownify | strip_html }}">{{ site.data.ui-text[site.locale].pagination_next | default: "Next" }}<br>{{ arr_title[next] }}</a>
+    {% if next_post %}
+      <a href="{{ next_post.url | relative_url }}" class="pagination--pager" rel="next" title="{{ next_post.title | markdownify | strip_html | strip_newlines }}">다음 강좌<small>{{ next_post.title | markdownify | strip_html | strip_newlines }}</small></a>
     {% else %}
-      <a href="#" class="pagination--pager disabled">{{ site.data.ui-text[site.locale].pagination_next | default: "Next" }}<br>마지막 페이지</a>
+      <span class="pagination--pager disabled" aria-disabled="true">다음 강좌<small>마지막 글입니다</small></span>
     {% endif %}
   </nav>
-
-
-{% endif %}
+  {%- endif -%}
+{%- endif -%}

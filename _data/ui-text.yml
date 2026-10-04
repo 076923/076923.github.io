@@ -594,17 +594,17 @@ ne-NP:
 # Korean
 # ------
 ko: &DEFAULT_KO
-  skip_links                 :
-  skip_primary_nav           :
-  skip_content               :
-  skip_footer                :
+  skip_links                 : "바로가기"
+  skip_primary_nav           : "주 메뉴로 건너뛰기"
+  skip_content               : "본문으로 건너뛰기"
+  skip_footer                : "푸터로 건너뛰기"
   page                       : "페이지"
-  pagination_previous        : "Previous Page"
-  pagination_next            : "Next Page"
-  breadcrumb_home_label      : "Home"
+  pagination_previous        : "이전"
+  pagination_next            : "다음"
+  breadcrumb_home_label      : "홈"
   breadcrumb_separator       : "/"
-  menu_label                 : "토글 메뉴"
-  search_label               :
+  menu_label                 : "메뉴"
+  search_label               : "검색"
   toc_label                  : "목차"
   ext_link_label             : "직접 링크"
   less_than                  : "최대"
@@ -617,7 +617,7 @@ ko: &DEFAULT_KO
   comments_label             : "댓글 남기기"
   comments_title             : "댓글"
   more_label                 : "더 보기"
-  related_label              : "최근 포스트"
+  related_label              : "함께 보면 좋은 글"
   follow_label               : "Follow:"
   feed_label                 : "Feed"
   powered_by                 : "Powered by"
@@ -636,7 +636,7 @@ ko: &DEFAULT_KO
   comment_success_msg        : "감사합니다! 댓글이 머지된 후 확인하실 수 있습니다."
   comment_error_msg          : "댓글 등록에 문제가 있습니다. 필요 필드를 작성했는지 확인하고 다시 시도하세요."
   loading_label              : "로딩중..."
-  search_label_text          :
+  search_label_text          : "검색"
   search_placeholder_text    : "검색어를 입력하세요..."
   search_algolia_no_results  :
   results_found              : "개 결과 발견"

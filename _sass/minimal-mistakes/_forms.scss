@@ -370,8 +370,8 @@ select:focus {
 }
 
 .image_box {
-  width: 75px;
-  min-width: 75px;
+  width: 4.6875rem; // 75px @16px, 고해상도에서 루트 글꼴과 함께 확대
+  min-width: 4.6875rem;
   margin: auto 1em;
 }
 

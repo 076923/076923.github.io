@@ -1,9 +1,10 @@
+{%- assign gtag_id = site.analytics.google.tag_id | default: site.analytics.google.tracking_id -%}
 <!-- Global Site Tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-HPQSBGGMQW"></script>
+<script async src="https://www.googletagmanager.com/gtag/js?id={{ gtag_id }}"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments)};
   gtag('js', new Date());
 
-  gtag('config', 'G-HPQSBGGMQW');
+  gtag('config', '{{ gtag_id }}'{% if site.analytics.google.anonymize_ip == true %}, { 'anonymize_ip': true }{% endif %});
 </script>

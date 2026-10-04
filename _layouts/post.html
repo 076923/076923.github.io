@@ -24,14 +24,6 @@ layout: default
     {% if page.last_modified_at %}<meta itemprop="dateModified" content="{{ page.last_modified_at | date_to_xmlschema }}">{% endif %}
 
     <div class="page__inner-wrap">
-      {% if page.toc %}
-        <aside class="sidebar__right {% if page.toc_sticky %}sticky{% endif %}">
-          <nav class="toc">
-            <header><a href="#"><h4 class="nav__title"><i class="fas fa-{{ page.toc_icon | default: 'file-alt' }}"></i> &nbsp;{{ page.toc_label | default: site.data.ui-text[site.locale].toc_label | default: "On this page" }}</h4></a></header>
-            {% include toc.html sanitize=true html=content h_min=1 h_max=6 class="toc__menu" anchor_class="anchor" skip_no_ids=true %}
-          </nav>
-        </aside>
-      {% endif %}
       {% unless page.header.overlay_color or page.header.overlay_image %}
         <header>
           {% if page.title %}<h1 id="page-title" class="page__title p-name" itemprop="headline">
@@ -41,6 +33,15 @@ layout: default
         </header>
       {% endunless %}
 
+      {% if page.toc %}
+        <aside class="sidebar__right {% if page.toc_sticky %}sticky{% endif %}">
+          <nav class="toc" aria-label="{{ page.toc_label | default: site.data.ui-text[site.locale].toc_label | default: "On this page" }}">
+            <input id="toc-toggle" class="toc__toggle" type="checkbox">
+            <label for="toc-toggle" class="toc__header"><i class="fas fa-{{ page.toc_icon | default: 'file-alt' }}" aria-hidden="true"></i> &nbsp;{{ page.toc_label | default: site.data.ui-text[site.locale].toc_label | default: "On this page" }}</label>
+            {% include toc.html sanitize=true html=content h_min=1 h_max=6 class="toc__menu" anchor_class="anchor" skip_no_ids=true %}
+          </nav>
+        </aside>
+      {% endif %}
       <section class="page__content e-content" itemprop="text">
         {{ content }}
         {% if page.link %}<div><a href="{{ page.link }}" class="btn btn--primary">{{ site.data.ui-text[site.locale].ext_link_label | default: "Direct Link" }}</a></div>{% endif %}
@@ -55,23 +56,26 @@ layout: default
       {% include comments.html %}
     {% endif %}
     
-    {% if page.id and page.related and site.related_posts.size > 0 %}
+    {% if page.id and page.related %}
+      {%- comment -%} 같은 강좌(태그)의 다른 글을 우선 보여주고, 부족하면 최신 글로 채운다 {%- endcomment -%}
+      {%- assign series_tag = page.tags[0] -%}
+      {%- assign related_pool = site.tags[series_tag] | default: site.posts -%}
+      {%- assign related_items = "" | split: "" -%}
+      {%- for post in related_pool -%}
+        {%- if post.url == page.url or post.hidden -%}{%- continue -%}{%- endif -%}
+        {%- assign related_items = related_items | push: post -%}
+      {%- endfor -%}
+      {%- if related_items.size < 3 -%}
+        {%- for post in site.posts -%}
+          {%- if post.url == page.url or post.hidden or related_items contains post -%}{%- continue -%}{%- endif -%}
+          {%- assign related_items = related_items | push: post -%}
+          {%- if related_items.size >= 3 -%}{%- break -%}{%- endif -%}
+        {%- endfor -%}
+      {%- endif -%}
       <div class="page__related">
         <h2 class="page__related-title">{{ site.data.ui-text[site.locale].related_label | default: "You May Also Enjoy" }}</h2>
         <div class="grid__wrapper">
-          {% for post in site.related_posts limit:3 %}
-            {% include archive-single.html type="grid" %}
-          {% endfor %}
-        </div>
-      </div>
-    {% elsif page.id and page.related %}
-      <div class="page__related">
-        <h2 class="page__related-title">{{ site.data.ui-text[site.locale].related_label | default: "You May Also Enjoy" }}</h2>
-        <div class="grid__wrapper">
-          {% for post in site.posts limit:3 %}
-            {% if post.id == page.id %}
-              {% continue %}
-            {% endif %}
+          {% for post in related_items limit:3 %}
             {% include archive-single.html type="grid" %}
           {% endfor %}
         </div>

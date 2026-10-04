@@ -1,11 +1,11 @@
-<div style="display: flex;align-items: center;margin: 0px;padding: 0px;">
-  <p style="margin: 0px 5px 5px 0px;font-size: 14px;font-weight: bold;text-transform: uppercase;"">Thanks for stargazer:</p>
+<div class="page__footer-star">
+  <p class="page__footer-star-label">Thanks for stargazer:</p>
   <a class="github-button"
     href="https://github.com/076923/076923.github.io"
     data-icon="octicon-star"
     data-size="large"
     data-show-count="true"
-    aria-label="076923 Github">Star</a>
+    aria-label="Star 076923/076923.github.io on GitHub">Star</a>
 </div>
 <div class="page__footer-follow">
   <ul class="social-icons">
@@ -16,7 +16,7 @@
     {% if site.footer.links %}
       {% for link in site.footer.links %}
         {% if link.label and link.url %}
-          <li><a href="{{ link.url }}" rel="nofollow noopener noreferrer"><i class="{{ link.icon | default: 'fas fa-link' }}" aria-hidden="true"></i> {{ link.label }}</a></li>
+          <li><a href="{{ link.url }}" rel="noopener noreferrer"><i class="{{ link.icon | default: 'fas fa-link' }}" aria-hidden="true"></i> {{ link.label }}</a></li>
         {% endif %}
       {% endfor %}
     {% endif %}

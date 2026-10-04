@@ -28,48 +28,55 @@
 
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1278038564950020" crossorigin="anonymous"></script>
 
+{%- comment -%}
+  MathJax는 수식이 쓰이는 포스트 레이아웃에서만 로드한다.
+  (polyfill.io 는 도메인 탈취 이력이 있어 제거. MathJax 3는 폴리필 없이 동작한다.)
+{%- endcomment -%}
+{% if page.layout == "post" or page.math %}
 <script>
   MathJax = {
     tex: {
-    inlineMath: [['$', '$'], ['\\(', '\\)']]
+      inlineMath: [['$', '$'], ['\\(', '\\)']]
     }
   };
-  </script>
-<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+</script>
 <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-<script src="//developers.kakao.com/sdk/js/kakao.min.js"></script>
-<script type='text/javascript'>
-    //<![CDATA[
-      Kakao.init('3b0ac722458009d5ded834954bdcb1ea');
-      function sendLink() {
-        Kakao.Link.sendDefault({
-          objectType: 'feed',
-          content: {
-            title: '{{ page.title }}',
-            description: '{{ page.tags }}',
-            imageUrl: '{{ page.image | prepend: "https://076923.github.io"}}',
-            link: {
-              mobileWebUrl: '{{ page.url | prepend: "https://076923.github.io" }}',
-              webUrl: '{{ page.url | prepend: "https://076923.github.io" }}'
-            }
-          },
-          buttons: [
-            {
-              title: '웹으로 보기',
-              link: {
-                mobileWebUrl: '{{ page.url | prepend: "https://076923.github.io" }}',
-                webUrl: '{{ page.url | prepend: "https://076923.github.io" }}'
-              }
-            },
-            {
-              title: '앱으로 보기',
-              link: {
-                mobileWebUrl: '{{ page.url | prepend: "https://076923.github.io" }}',
-                webUrl: '{{ page.url | prepend: "https://076923.github.io" }}'
-              }
-            }
-          ]
-        });
-      }
-    //]]>
-  </script>
+{% endif %}
+
+{%- comment -%} 카카오 공유: 공유 버튼이 있는 페이지에서만 SDK(v2)를 로드한다. {%- endcomment -%}
+{% if page.share %}
+{%- assign share_url = page.url | absolute_url -%}
+{%- assign share_image = page.header.og_image | default: site.og_image | absolute_url -%}
+<script src="https://t1.kakaocdn.net/kakao_js_sdk/2.7.4/kakao.min.js" crossorigin="anonymous"></script>
+<script>
+  (function () {
+    if (!window.Kakao) { return; }
+    if (!Kakao.isInitialized()) { Kakao.init('3b0ac722458009d5ded834954bdcb1ea'); }
+  })();
+
+  function sendLink() {
+    if (!window.Kakao || !Kakao.Share) { return; }
+    Kakao.Share.sendDefault({
+      objectType: 'feed',
+      content: {
+        title: {{ page.title | jsonify }},
+        description: {{ page.excerpt | default: page.tagline | default: site.description | markdownify | strip_html | strip_newlines | truncate: 100 | jsonify }},
+        imageUrl: {{ share_image | jsonify }},
+        link: {
+          mobileWebUrl: {{ share_url | jsonify }},
+          webUrl: {{ share_url | jsonify }}
+        }
+      },
+      buttons: [
+        {
+          title: '웹으로 보기',
+          link: {
+            mobileWebUrl: {{ share_url | jsonify }},
+            webUrl: {{ share_url | jsonify }}
+          }
+        }
+      ]
+    });
+  }
+</script>
+{% endif %}

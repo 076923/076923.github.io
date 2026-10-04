@@ -1,0 +1,218 @@
+/* ==========================================================================
+   CUSTOM — 사이트 전용 보정 (2026-10 UI 점검 반영)
+   ========================================================================== */
+
+/*
+   앵커 이동 시 고정 헤더 아래로 제목이 숨지 않도록 여백 확보
+   ========================================================================== */
+
+html {
+  scroll-padding-top: 5.5rem;
+}
+
+/*
+   고해상도·대형 모니터(QHD, 4K) 대응
+   - 1920px 를 넘는 뷰포트에서는 루트 글꼴 크기를 뷰포트 폭에 정비례(16px/1920px = 0.8333vw)로 키운다.
+     레이아웃 폭(사이드바, TOC 열 등)이 모두 rem 단위라 FHD(1920px, 16px)에서 보던 화면이
+     그대로 확대된 비율로 보이며, 좌우에 빈 여백이 생기지 않는다. 1920px 이하는 기존(16px)과 동일.
+     예) QHD 2560px → 21.3px, 4K 3840px(100% 배율) → 32px, 4K 150% 배율(CSS 2560px) → 21.3px
+   ========================================================================== */
+
+@media (min-width: 1921px) {
+  html {
+    font-size: clamp(16px, 0.8333vw, 32px);
+  }
+}
+
+/*
+   고정 마스트헤드 (인라인 스타일 → SCSS)
+   ========================================================================== */
+
+.masthead {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  background-color: $background-color;
+}
+
+/*
+   우측 여백 제거
+   - 아카이브(홈·카테고리·포스트 목록) 레이아웃은 우측 TOC 열이 없으므로 예약된 padding 을 없앤다.
+   ========================================================================== */
+
+.archive {
+  @include breakpoint($large) {
+    padding-right: 0;
+  }
+}
+
+/*
+   하단 여백 축소 (푸터 주변 공백)
+   ========================================================================== */
+
+.pagination {
+  margin-bottom: 1.5em;
+}
+
+.archive {
+  margin-bottom: 1em;
+}
+
+.page__footer {
+  margin-top: 1.5em;
+
+  footer {
+    margin-top: 1em;
+    padding-bottom: 1.5em;
+
+    @include breakpoint($x-large) {
+      max-width: 100%;
+    }
+  }
+}
+
+/*
+   포스트 메타 블록
+   ========================================================================== */
+
+.page__meta-group {
+  display: inline-block;
+  margin: 0 1em 0.25em 0;
+}
+
+/*
+   카테고리 페이지
+   ========================================================================== */
+
+.taxonomy__index2 {
+  .title h2 {
+    margin: 0;
+    font-size: $h-size-2;
+  }
+
+  .taxonomy__tags {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  .taxonomy__icon {
+    display: inline-flex;
+    align-items: center;
+
+    img {
+      width: 28px;
+      height: 28px;
+      margin-right: 0.75em;
+      object-fit: contain;
+    }
+
+    h3 {
+      margin: 0;
+      font-size: $type-size-5;
+    }
+  }
+}
+
+/*
+   사이드바 메뉴 그룹 (인라인 스타일 → SCSS)
+   ========================================================================== */
+
+.nav__list .nav__items .nav__group {
+  min-width: 11.25rem; // 180px @16px
+  padding-right: 2em;
+
+  @include breakpoint($large) {
+    float: left;
+  }
+}
+
+.nav__list2 .nav__items2 .nav__group {
+  min-width: 11.25rem; // 180px @16px
+}
+
+/*
+   포스트 목차(TOC): 모바일에서는 접었다 펼 수 있게
+   ========================================================================== */
+
+.toc__toggle {
+  display: none;
+}
+
+.toc__header {
+  display: block;
+  margin: 0;
+  padding: 0.5rem 0.75rem;
+  color: #fff;
+  font-family: $sans-serif-narrow;
+  font-size: $type-size-7;
+  font-weight: bold;
+  background: $primary-color;
+  border-top-left-radius: $border-radius;
+  border-top-right-radius: $border-radius;
+}
+
+@include breakpoint(max-width $large - 1px) {
+  .toc__header {
+    cursor: pointer;
+
+    &::after {
+      content: "\25BE"; /* ▾ */
+      float: right;
+    }
+  }
+
+  .toc .toc__menu {
+    display: none;
+  }
+
+  .toc .toc__toggle:checked ~ .toc__menu {
+    display: block;
+  }
+
+  .toc .toc__toggle:checked + .toc__header::after {
+    content: "\25B4"; /* ▴ */
+  }
+}
+
+/*
+   이전/다음 강좌 (비활성 항목은 span)
+   ========================================================================== */
+
+.pagination--pager.disabled {
+  cursor: default;
+}
+
+.pagination--pager small {
+  display: block;
+  font-weight: normal;
+  font-size: $type-size-6;
+}
+
+/*
+   공유 버튼 (button 요소)
+   ========================================================================== */
+
+button.btn {
+  font: inherit;
+  font-weight: bold;
+  cursor: pointer;
+  vertical-align: baseline;
+}
+
+/*
+   푸터 Star 버튼 영역 (인라인 스타일 → SCSS)
+   ========================================================================== */
+
+.page__footer-star {
+  display: flex;
+  align-items: center;
+  margin: 0 0 0.5em;
+
+  &-label {
+    margin: 0 0.5em 0 0;
+    font-size: 14px;
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+}

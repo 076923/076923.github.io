@@ -25,10 +25,11 @@ url                      : "https://076923.github.io"
 baseurl                  : # the subpath of your site, e.g. "/blog"
 repository               : "076923/076923.github.io" 
 teaser                   : # path of fallback teaser image, e.g. "/assets/images/500x300.png"
+og_image                 : "/assets/images/og-image.png" # 소셜 공유(og:image) 기본 이미지
 logo                     : # path of logo image to display in the masthead, e.g. "/assets/images/88x88.png"
 masthead_title           : "076923" # overrides the website title displayed in the masthead, use " " for no title
 # breadcrumbs            : false # true, false (default)
-words_per_minute         : 30
+words_per_minute         : 200 # 한국어 어절 기준 분당 읽기 속도(읽는 시간 계산용)
 comments:
   provider               : "utterances" # false (default), "disqus", "discourse", "facebook", "staticman", "staticman_v2", "utterances", "giscus", "custom"
   disqus:
@@ -212,9 +213,9 @@ sass:
 
 # Outputting
 permalink: /:categories/:title/
-paginate: 7 # amount of posts to show
+paginate: 10 # amount of posts to show (큰 화면에서 하단 공백이 남지 않도록 7→10)
 paginate_path: /page:num/
-timezone: 
+timezone: Asia/Seoul
 
 
 # Plugins (previously gems:)

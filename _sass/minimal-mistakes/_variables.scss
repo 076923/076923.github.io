@@ -151,15 +151,15 @@ $medium: 768px !default;
 $medium-wide: 900px !default;
 $large: 1024px !default;
 $x-large: 1280px !default;
-$max-width: none !default;
+$max-width: none !default; // 전체 폭 제한 없음 — 좌우 여백 없이 화면을 채운다 (고해상도는 _custom.scss 의 루트 글꼴 확대로 비율 유지)
 
 /*
    Grid
    ========================================================================== */
 
-$right-sidebar-width-narrow: 200px !default;
-$right-sidebar-width: 300px !default;
-$right-sidebar-width-wide: 400px !default;
+$right-sidebar-width-narrow: 12.5rem !default; // 200px @16px
+$right-sidebar-width: 18.75rem !default; // 300px @16px
+$right-sidebar-width-wide: 25rem !default; // 400px @16px
 
 /*
    Other

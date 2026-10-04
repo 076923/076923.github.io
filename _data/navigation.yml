@@ -793,6 +793,8 @@ Theory-AI:
         url: "/posts/AI-8/"
       - title: "과대적합과 정칙화(Overfitting & Regularization)"
         url: "/posts/AI-9/"
+      - title: "최적화 알고리즘(Optimizer)"
+        url: "/posts/AI-10/"
 
 Theory-ComputerVision:
   - title: "컴퓨터 비전 이론 목록"
@@ -825,6 +827,16 @@ Theory-ComputerVision:
         url: "/posts/ComputerVision-12/"
       - title: "3차원 비전"
         url: "/posts/ComputerVision-13/"
+      - title: "이미지 분할"
+        url: "/posts/ComputerVision-14/"
+
+Theory-NLP:
+  - title: "자연어 처리 이론 목록"
+    children:
+      - title: "자연어 처리란?"
+        url: "/posts/NLP-1/"
+      - title: "텍스트 전처리와 토큰화(Text Preprocessing & Tokenization)"
+        url: "/posts/NLP-2/"
 
 Exercise-C#:
   - title: "C# 예제 목록"
