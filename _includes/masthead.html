@@ -8,27 +8,33 @@
           <a class="site-logo" href="{{ '/' | relative_url }}"><img src="{{ logo_path | relative_url }}" alt="{{ site.masthead_title | default: site.title }}"></a>
         {% endunless %}
         <a class="site-title" href="{{ '/' | relative_url }}">
-          {{ site.masthead_title | default: site.title }}
-          {% if site.subtitle %}<span class="site-subtitle">{{ site.subtitle }}</span>{% endif %}
+          <span class="site-title__text">
+            {{ site.masthead_title | default: site.title }}
+            {% if site.subtitle %}<span class="site-subtitle">{{ site.subtitle }}</span>{% endif %}
+          </span>
         </a>
         <ul class="visible-links">
           {%- for link in site.data.navigation.main -%}
+            {%- assign link_url = link.url | relative_url -%}
             <li class="masthead__menu-item">
-              <a href="{{ link.url | relative_url }}"{% if link.description %} title="{{ link.description }}"{% endif %}>{{ link.title }}</a>
+              <a href="{{ link_url }}"{% if link.description %} title="{{ link.description }}"{% endif %}{% if page.url contains link_url %} aria-current="page"{% endif %}>{{ link.title }}</a>
             </li>
           {%- endfor -%}
         </ul>
-        {% if site.search == true %}
-        <button class="search__toggle" type="button">
+        <form class="site-search" action="{{ '/search/' | relative_url }}" method="get" role="search">
+          <label for="site-search-input" class="visually-hidden">{{ site.data.ui-text[site.locale].search_label | default: "Search" }}</label>
+          <i class="fas fa-search site-search__icon" aria-hidden="true"></i>
+          <input id="site-search-input" class="site-search__input" type="search" name="q" placeholder="강좌·개념 검색" autocomplete="off">
+          <span class="site-search__kbd" aria-hidden="true">/</span>
+        </form>
+        <button class="search__toggle__icon" type="button" onclick="location.href='{{ '/search/' | relative_url }}'">
           <span class="visually-hidden">{{ site.data.ui-text[site.locale].search_label | default: "Toggle search" }}</span>
-          <i class="fas fa-search"></i>
+          <i class="fas fa-search" aria-hidden="true"></i>
         </button>
-        {% else %}  
-          <button class="search__toggle__icon" type="button" onclick="location.href='/search/'">
-            <span class="visually-hidden">{{ site.data.ui-text[site.locale].search_label | default: "Toggle search" }}</span>
-            <i class="fas fa-search"></i>
-          </button>
-        {% endif %}
+        <button class="theme-toggle" type="button" aria-label="다크 모드로 전환">
+          <i class="fas fa-moon" aria-hidden="true"></i>
+          <i class="fas fa-sun" aria-hidden="true"></i>
+        </button>
         <button class="greedy-nav__toggle hidden" type="button">
           <span class="visually-hidden">{{ site.data.ui-text[site.locale].menu_label | default: "Toggle menu" }}</span>
           <div class="navicon"></div>

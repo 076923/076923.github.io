@@ -23,7 +23,7 @@
       {%- assign next_post = series[next_index] -%}
     {%- endif -%}
 
-  <nav class="pagination" aria-label="같은 강좌의 이전/다음 글">
+  <nav class="pagination pagination--post" aria-label="같은 강좌의 이전/다음 글">
     {% if prev_post %}
       <a href="{{ prev_post.url | relative_url }}" class="pagination--pager" rel="prev" title="{{ prev_post.title | markdownify | strip_html | strip_newlines }}">이전 강좌<small>{{ prev_post.title | markdownify | strip_html | strip_newlines }}</small></a>
     {% else %}

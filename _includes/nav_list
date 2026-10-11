@@ -1,26 +1,52 @@
-{% assign navigation = site.data.navigation[include.nav] %}
+{%- comment -%}
+  강좌 목록 (포스트 좌측). 그룹(10강 단위)을 하나의 번호 목록으로 펼쳐 보여준다.
+  "제 N강 - 제목" 형식이면 N 과 제목을 분리하고, 아니면 순번을 붙인다.
+{%- endcomment -%}
+{%- assign navigation = site.data.navigation[include.nav] -%}
+{%- assign total = 0 -%}
+{%- assign current = 0 -%}
+{%- for nav in navigation -%}
+  {%- for child in nav.children -%}
+    {%- assign total = total | plus: 1 -%}
+    {%- assign child_url = child.url | relative_url -%}
+    {%- if child_url == page.url -%}{%- assign current = total -%}{%- endif -%}
+  {%- endfor -%}
+{%- endfor -%}
+{%- assign series_title = navigation[0].title | default: include.nav | remove: " 목록" -%}
+{%- if total > 0 -%}
+  {%- assign progress = current | times: 100 | divided_by: total -%}
+{%- else -%}
+  {%- assign progress = 0 -%}
+{%- endif -%}
 
-<nav class="nav__list2" aria-label="{{ include.nav }} 강좌 목록">
-  {% if page.sidebar.title %}<h3 class="nav__title">{{ page.sidebar.title }}</h3>{% endif %}
+<nav class="nav__list2" aria-label="{{ series_title }} 목록">
+  <div class="nav__series-head">
+    <span class="nav__series-title">{{ series_title }}</span>
+    <span class="nav__series-count">{% if current > 0 %}{{ current }} / {% endif %}{{ total }}</span>
+  </div>
+  <div class="nav__series-bar" aria-hidden="true"><span style="width: {{ progress }}%"></span></div>
   <input id="ac-toc" name="accordion-toc" type="checkbox" />
   <label for="ac-toc">{{ site.data.ui-text[site.locale].menu_label | default: "Toggle Menu" }}</label>
-  <ul class="nav__items2">
-    {% for nav in navigation %}
-      <li class="nav__group">
-        {% if nav.url %}
-          <a href="{{ nav.url | relative_url }}"><span class="nav__sub-title">{{ nav.title }}</span></a>
-        {% elsif nav.title %}
-          <span class="nav__sub-title">{{ nav.title }}</span>
-        {% endif %}
-
-        {% if nav.children != null %}
-        <ul>
-          {% for child in nav.children %}
-            <li><a href="{{ child.url | relative_url }}"{% if child.url == page.url %} class="active" aria-current="page"{% endif %}{% if child.external %} target="{{ child.external }}" rel="noopener noreferrer"{% endif %}>{{ child.title }}</a></li>
-          {% endfor %}
-        </ul>
-        {% endif %}
-      </li>
-    {% endfor %}
-  </ul>
+  <ol class="nav__items2">
+    {%- assign n = 0 -%}
+    {%- for nav in navigation -%}
+      {%- for child in nav.children -%}
+        {%- assign n = n | plus: 1 -%}
+        {%- assign child_url = child.url | relative_url -%}
+        {%- assign label = child.title -%}
+        {%- capture num -%}{{ n }}{%- endcapture -%}
+        {%- if child.title contains "제 " and child.title contains "강 - " -%}
+          {%- assign head = child.title | split: " - " | first -%}
+          {%- capture num -%}{{ head | remove: "제 " | remove: "강" | strip }}{%- endcapture -%}
+          {%- assign label = child.title | remove_first: head | remove_first: " - " -%}
+        {%- endif -%}
+        <li>
+          <a class="nav__lecture{% if child_url == page.url %} active{% endif %}" href="{{ child_url }}"{% if child_url == page.url %} aria-current="page"{% endif %}{% if child.external %} target="{{ child.external }}" rel="noopener noreferrer"{% endif %} title="{{ child.title }}">
+            <span class="nav__lecture-no">{% if num.size == 1 %}0{% endif %}{{ num }}</span>
+            <span class="nav__lecture-title">{{ label }}</span>
+          </a>
+        </li>
+      {%- endfor -%}
+    {%- endfor -%}
+  </ol>
 </nav>

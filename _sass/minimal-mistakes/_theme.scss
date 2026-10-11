@@ -1,0 +1,1674 @@
+/* ==========================================================================
+   THEME — 2026-10 리디자인
+   라이트: 프로스티드 글래스 / 다크: 글래스 / 조작 요소: 뉴모피즘 / 읽는 면: 불투명
+
+   - 떠 있는 층(헤더·사이드바·목차·카드·푸터)  → glass
+   - 조작 요소(검색창·버튼·페이지 번호·공유·이전/다음) → neu-up / neu-in(눌린 상태 = 현재 위치)
+   - 읽는 층(포스트 본문·코드 블록)            → 불투명 면
+   크기는 rem 단위라 QHD·4K 에서 루트 글꼴 확대(_custom.scss)와 함께 커진다.
+   색은 모두 아래 CSS 변수로 관리한다. 글자색 미세 조정은 :root / [data-theme="dark"] 값만 바꾸면 된다.
+   ========================================================================== */
+
+/*
+   Tokens
+   ========================================================================== */
+
+:root {
+  color-scheme: light;
+
+  --base: #F3F5F8;
+  --text: #18202F;
+  --text2: #3E4859;
+  --muted: #596377;
+  --divider: rgba(24, 32, 47, 0.12);
+  --nav-link: #5D2D03;
+
+  --accent: #C2410C;
+  --accent-text: #B23C0B;
+  --accent-strong: #C2410C;
+  --chip-bg: rgba(194, 65, 12, 0.09);
+  --chip-text: #B23C0B;
+
+  --blur: 40px;
+  --glass-bg: rgba(255, 255, 255, 0.68);
+  --glass-border: rgba(255, 255, 255, 0.95);
+  --glass-shadow: 0 1px 2px rgba(16, 24, 40, 0.04), 0 12px 32px rgba(16, 24, 40, 0.07);
+  --header-bg: rgba(255, 255, 255, 0.70);
+  --header-shadow: 0 1px 0 rgba(16, 24, 40, 0.05);
+
+  /* 뉴모피즘: 볼록한 면(그라디언트) + 얇은 테두리 + 진한 그림자로 흰 면 위에서도 입체감이 보이게 */
+  --neu-bg: #F1F4F8;
+  --neu-face: linear-gradient(145deg, #FFFFFF 0%, #EDF0F5 100%);
+  --neu-edge: rgba(16, 24, 40, 0.08);
+  --neu-up: 6px 6px 14px rgba(128, 142, 170, 0.45), -6px -6px 14px rgba(255, 255, 255, 0.95);
+  --neu-up-sm: 3px 3px 8px rgba(128, 142, 170, 0.45), -3px -3px 8px rgba(255, 255, 255, 0.95);
+  --neu-up-hover: 8px 8px 18px rgba(128, 142, 170, 0.55), -6px -6px 14px #FFFFFF;
+  --neu-in: inset 3px 3px 7px rgba(128, 142, 170, 0.45), inset -3px -3px 7px rgba(255, 255, 255, 0.95);
+
+  --read: #FFFFFF;
+  --read-border: rgba(16, 24, 40, 0.06);
+  --read-shadow: 0 1px 2px rgba(16, 24, 40, 0.04), 0 16px 40px rgba(16, 24, 40, 0.06);
+  --code-inline-bg: rgba(24, 32, 47, 0.07);
+  --code-shadow: 0 8px 24px rgba(14, 19, 32, 0.18);
+
+  --blob1: rgba(194, 65, 12, 0.16);
+  --blob2: rgba(148, 163, 184, 0.18);
+  --blob3: rgba(194, 65, 12, 0.08);
+  --field-bg: rgba(255, 255, 255, 0.72);
+  --field-border: rgba(24, 32, 47, 0.10);
+  --field-shadow: inset 0 1px 2px rgba(24, 32, 47, 0.05), 0 1px 2px rgba(16, 24, 40, 0.04);
+  --field-focus: rgba(194, 65, 12, 0.45);
+}
+
+html[data-theme="dark"] {
+  color-scheme: dark;
+
+  --base: #11141A;
+  --text: #E8EBF1;
+  --text2: #B6BDCA;
+  --muted: #97A0B0;
+  --divider: rgba(255, 255, 255, 0.10);
+  --nav-link: #B6BDCA;
+
+  --accent: #8F9FE6;
+  --accent-text: #8F9FE6;
+  --accent-strong: #4862D6;
+  --chip-bg: rgba(143, 159, 230, 0.14);
+  --chip-text: #8F9FE6;
+
+  --glass-bg: rgba(30, 35, 45, 0.55);
+  --glass-border: rgba(255, 255, 255, 0.08);
+  --glass-shadow: 0 10px 30px rgba(0, 0, 0, 0.40);
+  --header-bg: rgba(30, 35, 45, 0.55);
+  --header-shadow: 0 10px 30px rgba(0, 0, 0, 0.40);
+
+  --neu-bg: #13161C;
+  --neu-face: linear-gradient(145deg, #2A303C 0%, #1E232C 100%);
+  --neu-edge: rgba(255, 255, 255, 0.08);
+  --neu-up: 6px 6px 14px rgba(0, 0, 0, 0.65), -4px -4px 12px rgba(255, 255, 255, 0.05);
+  --neu-up-sm: 3px 3px 8px rgba(0, 0, 0, 0.65), -3px -3px 8px rgba(255, 255, 255, 0.045);
+  --neu-up-hover: 8px 8px 18px rgba(0, 0, 0, 0.75), -4px -4px 12px rgba(255, 255, 255, 0.06);
+  --neu-in: inset 3px 3px 8px rgba(0, 0, 0, 0.65), inset -2px -2px 6px rgba(255, 255, 255, 0.05);
+
+  --read: #171B22;
+  --read-border: rgba(255, 255, 255, 0.06);
+  --read-shadow: 0 14px 40px rgba(0, 0, 0, 0.45);
+  --code-inline-bg: rgba(255, 255, 255, 0.08);
+  --code-shadow: 0 0 0 1px rgba(255, 255, 255, 0.06);
+
+  --blob1: rgba(52, 92, 220, 0.45);
+  --blob2: rgba(20, 140, 125, 0.35);
+  --blob3: rgba(110, 70, 200, 0.35);
+  --field-bg: rgba(30, 35, 45, 0.60);
+  --field-border: rgba(255, 255, 255, 0.10);
+  --field-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.30);
+  --field-focus: rgba(143, 159, 230, 0.55);
+}
+
+/*
+   Material mixins
+   ========================================================================== */
+
+@mixin glass($bg: var(--glass-bg)) {
+  background: $bg;
+  border: 1px solid var(--glass-border);
+  box-shadow: var(--glass-shadow);
+  -webkit-backdrop-filter: #{"blur(var(--blur)) saturate(160%)"};
+  backdrop-filter: #{"blur(var(--blur)) saturate(160%)"};
+}
+
+@mixin neu-up {
+  background: var(--neu-face);
+  border: 1px solid var(--neu-edge);
+  box-shadow: var(--neu-up);
+}
+
+@mixin neu-up-sm {
+  background: var(--neu-face);
+  border: 1px solid var(--neu-edge);
+  box-shadow: var(--neu-up-sm);
+}
+
+@mixin neu-in {
+  background: var(--neu-bg);
+  border: 1px solid transparent;
+  box-shadow: var(--neu-in);
+}
+
+.sr-only {
+  position: absolute !important;
+  width: 0.0625rem;
+  height: 0.0625rem;
+  padding: 0;
+  margin: -0.0625rem;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/*
+   Page ground — 단색 배경 + 옅은 글로우(글래스가 비칠 대상)
+   ========================================================================== */
+
+html {
+  background-color: var(--base);
+}
+
+body {
+  background: transparent;
+  color: var(--text2);
+
+  &::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    z-index: -1;
+    pointer-events: none;
+    background:
+      radial-gradient(circle at 6% 0%, var(--blob1) 0, rgba(0, 0, 0, 0) 38%),
+      radial-gradient(circle at 100% 42%, var(--blob2) 0, rgba(0, 0, 0, 0) 40%),
+      radial-gradient(circle at 36% 100%, var(--blob3) 0, rgba(0, 0, 0, 0) 40%);
+  }
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: var(--text);
+}
+
+a {
+  color: var(--accent-text);
+
+  &:visited {
+    color: var(--accent-text);
+  }
+
+  &:hover {
+    color: var(--accent);
+  }
+}
+
+::selection {
+  color: #FFFFFF;
+  background: var(--accent-strong);
+}
+
+/*
+   Masthead — 글래스 헤더 (스크롤 시 따라옴)
+   ========================================================================== */
+
+.masthead {
+  z-index: 30;
+  background: var(--header-bg);
+  border-bottom: 1px solid var(--glass-border);
+  box-shadow: var(--header-shadow);
+  -webkit-backdrop-filter: #{"blur(var(--blur)) saturate(160%)"};
+  backdrop-filter: #{"blur(var(--blur)) saturate(160%)"};
+
+  &__inner-wrap {
+    padding: 0.875rem 1.5rem;
+  }
+}
+
+.greedy-nav {
+  gap: 0 0.75rem;
+  background: transparent;
+
+  a,
+  a:visited {
+    color: var(--text2);
+  }
+
+  a:hover {
+    color: var(--text);
+  }
+
+  .site-title {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 0.75rem;
+    margin-right: 1rem;
+    color: var(--text);
+    font-weight: 700;
+  }
+
+  .visible-links {
+    justify-content: flex-start;
+    align-items: center;
+
+    a {
+      margin: 0 0.125rem;
+      padding: 0.5rem 0.875rem;
+      border-radius: 0.625rem;
+      font-size: 0.9375rem;
+      font-weight: 500;
+
+      &:before {
+        display: none;
+      }
+
+      &:hover {
+        background: var(--chip-bg);
+      }
+
+      &[aria-current="page"] {
+        color: var(--accent);
+        background: var(--chip-bg);
+        font-weight: 600;
+      }
+    }
+  }
+
+  .hidden-links {
+    @include glass(var(--read));
+    border-radius: 0.875rem;
+
+    &:before,
+    &:after {
+      display: none;
+    }
+
+    li {
+      border-bottom-color: var(--divider);
+    }
+
+    a:hover {
+      color: var(--accent);
+      background: var(--chip-bg);
+    }
+  }
+}
+
+.site-title__text {
+  display: flex;
+  flex-direction: column;
+  font-size: 1.125rem;
+  line-height: 1.2;
+  letter-spacing: -0.01em;
+}
+
+.site-subtitle {
+  margin-top: 0.125rem;
+  font-size: 0.75rem;
+  font-weight: 400;
+  color: var(--muted);
+}
+
+/* 헤더 검색창 — 눌린(inset) 입력칸, "/" 로 포커스 */
+.site-search {
+  position: relative;
+  flex: 0 1 20rem;
+  min-width: 12rem;
+  margin: 0;
+  padding: 0;
+  background: transparent;
+
+  @include breakpoint(max-width $medium - 1px) {
+    display: none;
+  }
+
+  &__icon {
+    position: absolute;
+    top: 50%;
+    left: 1rem;
+    transform: translateY(-50%);
+    color: var(--muted);
+    font-size: 0.875rem;
+    pointer-events: none;
+  }
+
+  &__input {
+    box-sizing: border-box;
+    width: 100%;
+    height: 2.75rem;
+    margin: 0;
+    padding: 0 3rem 0 2.625rem;
+    @include neu-in;
+    border-radius: 1.375rem;
+    color: var(--text);
+    font-family: inherit;
+    font-size: 0.875rem;
+    outline: none;
+
+    &::placeholder {
+      color: var(--muted);
+    }
+
+    &:focus {
+      box-shadow: var(--neu-in), 0 0 0 2px var(--chip-bg);
+    }
+  }
+
+  &__kbd {
+    position: absolute;
+    top: 50%;
+    right: 0.875rem;
+    transform: translateY(-50%);
+    padding: 0.0625rem 0.4375rem;
+    border: 1px solid var(--divider);
+    border-radius: 0.375rem;
+    font-family: $monospace;
+    font-size: 0.75rem;
+    color: var(--muted);
+    pointer-events: none;
+  }
+}
+
+.search__toggle__icon {
+  color: var(--text2);
+
+  @include breakpoint($medium) {
+    display: none;
+  }
+}
+
+/* 라이트/다크 전환 버튼 */
+.theme-toggle {
+  @include neu-up;
+  display: inline-flex;
+  flex: none;
+  align-items: center;
+  justify-content: center;
+  width: 2.75rem;
+  height: 2.75rem;
+  margin: 0 0 0 0.25rem;
+  padding: 0;
+  border-radius: 50%;
+  color: var(--text2);
+  font-size: 1.0625rem;
+  cursor: pointer;
+
+  &:hover {
+    color: var(--accent);
+  }
+
+  &:active {
+    box-shadow: var(--neu-in);
+  }
+
+  .fa-sun {
+    display: none;
+  }
+}
+
+html[data-theme="dark"] .theme-toggle {
+  .fa-sun {
+    display: inline-block;
+  }
+
+  .fa-moon {
+    display: none;
+  }
+}
+
+.greedy-nav__toggle .navicon,
+.greedy-nav__toggle .navicon:before,
+.greedy-nav__toggle .navicon:after {
+  background: var(--text2);
+}
+
+/*
+   Left sidebar — 글래스 패널
+   ========================================================================== */
+
+#main {
+  padding-top: 0.5rem;
+}
+
+.sidebar {
+  @include glass;
+  box-sizing: border-box;
+  margin-bottom: 1rem;
+  padding: 0.875rem 0.75rem;
+  border-radius: 1.375rem;
+
+  @include breakpoint($large) {
+    opacity: 1;
+
+    /* 내부 스크롤 없이 목록 전체를 보여주면서 스크롤을 따라온다.
+       화면보다 긴 목록은 assets/js/site.js 가 top 값을 조절해,
+       아래로 내릴 땐 목록 끝까지 보인 뒤 붙고, 위로 올릴 땐 목록 처음까지 보인 뒤 붙는다.
+       헤더와의 간격: 1.5rem (CSS 기본값 = 헤더 높이 약 4.5rem + 1.5rem) */
+    margin-top: 1rem;
+
+    &.sticky {
+      top: calc(6rem + 1px);
+      max-height: none;
+      overflow: visible;
+    }
+  }
+
+  > * {
+    margin-top: 0;
+  }
+
+  > * + * {
+    margin-top: 1rem;
+  }
+}
+
+/* 사이트 메뉴 (홈·목록) — 그룹 제목: 아이콘 타일 + 굵은 본문색 / 링크: 들여쓰기 + ›(내부)·↗(외부) */
+.nav__list {
+  margin-bottom: 0;
+
+  .nav__items {
+    font-size: 0.875rem;
+
+    .nav__group {
+      float: none;
+      min-width: 0;
+      padding: 0 0 0.25rem;
+
+      + .nav__group {
+        margin-top: 0.5rem;
+        padding-top: 0.625rem;
+        border-top: 1px solid var(--divider);
+      }
+    }
+  }
+}
+
+.nav__group-title {
+  display: flex;
+  align-items: center;
+  gap: 0.625rem;
+  padding: 0.375rem 0.625rem 0.25rem;
+  font-size: 0.875rem;
+  font-weight: 700;
+  letter-spacing: -0.005em;
+  color: var(--text);
+}
+
+.nav__group-icon {
+  @include neu-up-sm;
+  display: inline-flex;
+  flex: none;
+  align-items: center;
+  justify-content: center;
+  width: 1.75rem;
+  height: 1.75rem;
+  border-radius: 0.5625rem;
+  color: var(--accent);
+  font-size: 0.75rem;
+}
+
+.nav__list .nav__items .nav__group-links {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.nav__list .nav__items a.nav__link {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+  margin: 0.0625rem 0;
+  padding: 0.375rem 0.625rem 0.375rem 3rem;
+  border-radius: 0.625rem;
+  color: var(--nav-link);
+  font-size: 0.875rem;
+  font-weight: 400;
+  text-decoration: none;
+
+  &:hover {
+    background: var(--chip-bg);
+    text-decoration: none;
+  }
+
+  &.active {
+    @include neu-in;
+    margin-left: 0;
+    color: var(--accent);
+    font-weight: 600;
+  }
+}
+
+.nav__link-label {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.nav__link-icon {
+  flex: none;
+  color: var(--muted);
+  font-size: 0.625rem;
+}
+
+/* 강좌 목록 (포스트) */
+.nav__list2 {
+  margin-bottom: 0;
+}
+
+.nav__series-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+  padding: 0.125rem 0.625rem 0.625rem;
+}
+
+.nav__series-title {
+  color: var(--text);
+  font-size: 0.9375rem;
+  font-weight: 700;
+}
+
+.nav__series-count {
+  flex: none;
+  color: var(--muted);
+  font-family: $monospace;
+  font-size: 0.75rem;
+}
+
+.nav__series-bar {
+  @include neu-in;
+  height: 0.375rem;
+  margin: 0 0.625rem 0.75rem;
+  overflow: hidden;
+  border-radius: 0.1875rem;
+
+  span {
+    display: block;
+    height: 100%;
+    border-radius: 0.1875rem;
+    background: var(--accent);
+  }
+}
+
+.nav__list2 .nav__items2 {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  font-size: 0.875rem;
+
+  li {
+    margin: 0;
+  }
+
+  a.nav__lecture {
+    display: flex;
+    font-size: 0.875rem;
+    align-items: center;
+    gap: 0.375rem;
+    margin: 0.125rem 0;
+    padding: 0.4375rem 0.625rem;
+    border-radius: 0.6875rem;
+    color: var(--text2);
+    text-decoration: none;
+
+    &:hover {
+      background: var(--chip-bg);
+    }
+
+    &.active {
+      @include neu-in;
+      margin-left: 0;
+      color: var(--accent);
+      font-weight: 600;
+
+      .nav__lecture-no {
+        color: var(--accent);
+      }
+    }
+  }
+}
+
+.nav__lecture-no {
+  flex: none;
+  width: 1.375rem;
+  color: var(--muted);
+  font-family: $monospace;
+  font-size: 0.75rem;
+}
+
+.nav__lecture-title {
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* 모바일 메뉴 토글 버튼(라벨) */
+.nav__list label,
+.nav__list2 label {
+  @include breakpoint(max-width $large - 1px) {
+    @include neu-up-sm;
+    border-radius: 0.75rem;
+    color: var(--text2);
+  }
+}
+
+/*
+   Home — 최근 포스트 카드 (레이아웃은 기존 유지, 재질만 글래스)
+   ========================================================================== */
+
+.archive__subtitle {
+  display: flex;
+  align-items: baseline;
+  gap: 0.75rem;
+  margin: 0.25rem 0.25rem 1rem;
+  padding: 0;
+  border: 0;
+  color: var(--text);
+  font-size: 1.5rem;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+}
+
+.archive__count {
+  color: var(--muted);
+  font-size: 0.875rem;
+  font-weight: 400;
+}
+
+/* 목록 페이지 최상단 제목 (최근 포스트 / Posts / Categories / Search 등) — 글래스 패널 */
+.archive > .archive__subtitle,
+.archive > .page__title {
+  @include glass;
+  display: flex;
+  align-items: baseline;
+  gap: 0.75rem;
+  margin: 0 0 1rem;
+  padding: 1.125rem 1.5rem;
+  border-radius: 1.375rem;
+  color: var(--text);
+  font-size: 1.5rem;
+  font-weight: 700;
+  line-height: 1.3;
+  letter-spacing: -0.01em;
+}
+
+.card_section {
+  @include glass;
+  gap: 1.375rem;
+  margin-bottom: 1rem;
+  padding: 1.25rem 1.5rem;
+  border-radius: 1.375rem;
+  transition: box-shadow 0.2s ease;
+
+  &:hover {
+    background: var(--glass-bg);
+    box-shadow: var(--glass-shadow), 0 0 0 1px var(--chip-bg);
+  }
+
+  .page__meta {
+    margin: 0;
+  }
+}
+
+.image_box {
+  @include neu-in;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 5rem;
+  min-width: 5rem;
+  height: 5rem;
+  margin: 0;
+  padding: 0.75rem;
+  box-sizing: border-box;
+  border-radius: 1.25rem;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    border-radius: 0.5rem;
+  }
+}
+
+.card_body {
+  flex: 1;
+  min-width: 0;
+}
+
+.card_title {
+  margin: 0 0 0.5rem;
+  font-size: 1.25rem;
+  font-weight: 600;
+  line-height: 1.35;
+  letter-spacing: -0.01em;
+
+  a,
+  a:visited {
+    color: var(--text);
+    text-decoration: none;
+  }
+
+  a:hover {
+    color: var(--accent-text);
+  }
+}
+
+/* 소목차 → 알약 칩 */
+.toc__home {
+  gap: 0.375rem;
+  margin: 0 0 0.6rem;
+
+  a,
+  li ul > li a {
+    margin: 0;
+    padding: 0.1875rem 0.625rem;
+    border-radius: 62.4375rem;
+    background: var(--chip-bg);
+    color: var(--chip-text);
+    font-size: 0.8125rem;
+    font-weight: 500;
+    line-height: 1.6;
+    text-decoration: none;
+    white-space: nowrap;
+
+    &:hover {
+      color: var(--accent);
+    }
+  }
+}
+
+/* 메타 한 줄 (아이콘 + 값) */
+.page__meta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.375rem 1.125rem;
+  color: var(--muted);
+  font-size: 0.8125rem;
+
+  a,
+  a:visited {
+    color: var(--muted);
+    text-decoration: none;
+  }
+
+  a:hover {
+    color: var(--accent-text);
+  }
+
+  /* 아이콘 글리프가 한글보다 약간 위에 그려져서 잉크 중심을 맞춘다 */
+  i {
+    position: relative;
+    top: 0.06em;
+    margin-right: 0;
+  }
+}
+
+.page__meta-group {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  margin: 0;
+  line-height: 1.5;
+}
+
+/* "상위 목록:" 같은 라벨 */
+.page__meta-label {
+  color: var(--text2);
+  font-weight: 600;
+}
+
+/* 테마 기본 .page__taxonomy-item 의 padding·margin-bottom 때문에 분류 값만 위로 떠 있던 것을 정렬 */
+.page__meta .page__taxonomy-item {
+  display: inline;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  background: none;
+  line-height: inherit;
+}
+
+/* 목록 항목 (Posts 페이지, 관련 글) */
+.archive__item-title {
+  color: var(--text);
+
+  a,
+  a:visited {
+    color: var(--text);
+    text-decoration: none;
+  }
+
+  a:hover {
+    color: var(--accent-text);
+  }
+}
+
+.list__item + .list__item .archive__item {
+  padding-top: 1rem;
+  border-top: 1px solid var(--divider);
+}
+
+/*
+   Pagination — 뉴모피즘 버튼, 현재 페이지는 눌린 상태
+   ========================================================================== */
+
+.pagination {
+  ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 0.625rem;
+    margin: 0;
+    padding: 1rem 0 0.25rem;
+  }
+
+  li {
+    float: none;
+    margin: 0;
+
+    a {
+      @include neu-up;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 2.625rem;
+      height: 2.625rem;
+      margin: 0;
+      padding: 0 0.875rem;
+      border-radius: 0.875rem;
+      color: var(--text2);
+      font-size: 0.875rem;
+      font-weight: 500;
+
+      &:hover {
+        color: var(--accent);
+        background: var(--neu-face);
+      }
+
+      &.current,
+      &.current.disabled {
+        @include neu-in;
+        color: var(--accent);
+        font-weight: 700;
+      }
+
+      &.disabled:not(.current) {
+        background: transparent;
+        box-shadow: none;
+        color: var(--muted);
+        opacity: 0.6;
+      }
+    }
+
+    &:first-child a,
+    &:last-child a {
+      border-radius: 0.875rem;
+    }
+  }
+}
+
+/*
+   Categories / Posts 인덱스
+   ========================================================================== */
+
+.taxonomy__index2 {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 22rem), 1fr));
+  gap: 1.25rem;
+  margin: 0.5rem 0 1rem;
+  font-size: 1rem;
+
+  > .taxonomy__category {
+    @include glass;
+    align-self: start;
+    padding: 1rem 1rem 0.75rem;
+    border-radius: 1.375rem;
+  }
+
+  .title {
+    margin: 0 0 0.5rem;
+    padding: 0 0.375rem 0.625rem;
+    border-bottom: 1px solid var(--divider);
+
+    h2 {
+      color: var(--text);
+      font-size: 1.25rem;
+    }
+  }
+
+  a {
+    margin: 0.125rem 0;
+    padding: 0.5rem 0.625rem;
+    border-radius: 0.75rem;
+    color: var(--text2);
+
+    &:hover {
+      background: var(--chip-bg);
+    }
+  }
+
+  .taxonomy__icon h3 {
+    color: var(--text);
+    font-weight: 600;
+  }
+
+  .taxonomy__count {
+    color: var(--muted);
+    font-family: $monospace;
+    font-size: 0.75rem;
+  }
+
+  .taxonomy__tags .taxonomy__count {
+    @include neu-in;
+    padding: 0.125rem 0.625rem;
+    border-radius: 62.4375rem;
+  }
+}
+
+.taxonomy__index {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.625rem;
+  margin: 0.5rem 0 1.5rem;
+  font-size: 0.875rem;
+
+  a {
+    @include neu-up-sm;
+    gap: 0.625rem;
+    padding: 0.4375rem 0.875rem;
+    border-radius: 0.75rem;
+    color: var(--text2);
+
+    &:hover {
+      color: var(--accent);
+    }
+  }
+
+  .taxonomy__count {
+    color: var(--muted);
+    font-family: $monospace;
+    font-size: 0.75rem;
+  }
+}
+
+.taxonomy__section {
+  @include glass;
+  margin-bottom: 1.25rem;
+  padding: 1.125rem 1.375rem;
+  border-radius: 1.375rem;
+
+  .archive__subtitle {
+    font-size: 1.25rem;
+  }
+
+  + .taxonomy__section {
+    margin-top: 0;
+  }
+}
+
+.back-to-top {
+  color: var(--muted);
+  font-size: 0.8125rem;
+}
+
+/*
+   Search 페이지
+   ========================================================================== */
+
+.layout--search {
+  /* 검색 페이지 입력창 — 배경 색을 받아들이는 프로스티드 필드 + 테마 강조색 포커스 */
+  .search-input,
+  #search {
+    box-sizing: border-box;
+    width: 100%;
+    height: 3rem;
+    padding: 0 1.25rem;
+    border: 1px solid var(--field-border);
+    border-radius: 1.5rem;
+    background: var(--field-bg);
+    box-shadow: var(--field-shadow);
+    -webkit-backdrop-filter: #{"blur(var(--blur)) saturate(160%)"};
+    backdrop-filter: #{"blur(var(--blur)) saturate(160%)"};
+    color: var(--text);
+    font-family: inherit;
+    font-size: 0.9375rem;
+    outline: none;
+    transition: border-color 0.15s ease, box-shadow 0.15s ease;
+
+    &::placeholder {
+      color: var(--muted);
+    }
+
+    &:focus {
+      border-color: var(--field-focus);
+      box-shadow: var(--field-shadow), 0 0 0 3px var(--chip-bg);
+    }
+
+    /* 브라우저 자동완성 시 파란 배경 덮기 */
+    &:-webkit-autofill {
+      -webkit-text-fill-color: var(--text);
+      transition: background-color 9999s ease 0s;
+    }
+  }
+
+  .results__found {
+    margin: 1rem 0.25rem 0.75rem;
+    color: var(--muted);
+    font-size: 0.8125rem;
+  }
+
+  .results .list__item {
+    @include glass;
+    margin-bottom: 0.75rem;
+    padding: 1rem 1.25rem;
+    border-radius: 1.125rem;
+
+    .archive__item {
+      padding-top: 0;
+      border-top: 0;
+    }
+  }
+
+  .archive__item-excerpt {
+    color: var(--text2);
+  }
+}
+
+/*
+   Post — 본문은 불투명 면, 목차는 글래스, 조작 요소는 뉴모피즘
+   ========================================================================== */
+
+.layout--post {
+  .page__inner-wrap {
+    box-sizing: border-box;
+    padding: 2.5rem 3rem 2.75rem;
+    border: 1px solid var(--read-border);
+    border-radius: 1.5rem;
+    background: var(--read);
+    box-shadow: var(--read-shadow);
+
+    @include breakpoint(max-width $medium - 1px) {
+      padding: 1.5rem 1.25rem;
+      border-radius: 1.125rem;
+    }
+
+    /* 모바일: 제목 → 목차 → 본문 순서 */
+    @include breakpoint(max-width $large - 1px) {
+      display: flex;
+      flex-direction: column;
+
+      > header { order: 0; }
+      > .sidebar__right { order: 1; margin-top: 1rem; }
+      > * { order: 2; }
+    }
+
+    > header {
+      /* 메타 줄 ↔ 구분선 ↔ 첫 제목 간격을 모두 1.75rem 으로 맞춘다 */
+      display: flow-root;
+      margin-bottom: 1.75rem;
+      padding-bottom: 1.75rem;
+      border-bottom: 1px solid var(--divider);
+
+      .page__meta {
+        float: none;
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  /* 데스크톱: 목차를 본문 면 바깥(오른쪽 열)에 띄운다 */
+  .page__inner-wrap > .sidebar__right {
+    @include breakpoint($large) {
+      margin-right: calc(-1 * #{$right-sidebar-width-narrow} - 3rem - 1px);
+      /* 본문 면 안쪽 여백(2.5rem)+테두리(1px)만큼 끌어올려 좌측 메뉴·본문 카드와 같은 높이에서 시작 */
+      margin-top: calc(-2.5rem - 1px);
+      top: calc(6rem + 1px);
+    }
+
+    @include breakpoint($x-large) {
+      margin-right: calc(-1 * #{$right-sidebar-width} - 3rem - 1px);
+    }
+  }
+
+  .page__comments,
+  .page__related {
+    @include glass;
+    box-sizing: border-box;
+    margin-top: 1.5rem;
+    padding: 1.25rem 1.5rem;
+    border-radius: 1.375rem;
+  }
+
+  .page__related {
+    clear: both;
+    border-top: 1px solid var(--glass-border);
+  }
+
+  /* 본문 면은 float 라서 바로 아래 패널의 margin-top 이 clear 에 흡수된다 → 본문 면 아래쪽 여백으로 간격 확보.
+     본문 ↔ 댓글 ↔ 함께 보면 좋은 글 간격을 모두 1.5rem 으로 통일 */
+  .page__inner-wrap {
+    margin-bottom: 1.5rem;
+  }
+
+  .page__comments-title {
+    margin: 0 0 0.75rem;
+    padding-top: 0;
+    color: var(--text);
+    font-size: 0.9375rem;
+    text-transform: none;
+  }
+}
+
+.page__crumbs {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 0.625rem;
+  color: var(--muted);
+  font-size: 0.8125rem;
+
+  a,
+  a:visited {
+    color: var(--muted);
+    text-decoration: none;
+  }
+
+  a:hover {
+    color: var(--accent-text);
+  }
+}
+
+.page__title {
+  color: var(--text);
+  letter-spacing: -0.02em;
+
+  a,
+  a:visited {
+    color: var(--text);
+    text-decoration: none;
+  }
+}
+
+.page__content {
+  color: var(--text2);
+  line-height: 1.85;
+
+  /* 제목 구분선 바로 아래 첫 요소(대개 첫 h2)는 위 여백 없이 시작 */
+  > :first-child {
+    margin-top: 0;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    color: var(--text);
+  }
+
+  h2 {
+    margin-top: 2.25rem;
+    padding-bottom: 0;
+    border-bottom: 0;
+    letter-spacing: -0.01em;
+  }
+
+  strong {
+    color: var(--text);
+  }
+
+  a,
+  a:visited {
+    color: var(--accent-text);
+  }
+
+  img {
+    border-radius: 0.875rem;
+  }
+
+  blockquote {
+    border-left-color: var(--divider);
+    color: var(--muted);
+  }
+
+  hr {
+    border-color: var(--divider);
+  }
+
+  table {
+    border-color: var(--divider);
+  }
+
+  th,
+  td {
+    border-color: var(--divider);
+  }
+
+  thead {
+    background: transparent;
+  }
+
+  thead th {
+    background: var(--chip-bg);
+    color: var(--text);
+    border-bottom-color: var(--divider);
+  }
+}
+
+/* 인라인 코드: 본문 글꼴 + 옅은 칩 */
+:not(pre) > code {
+  padding: 0.0625rem 0.4375rem;
+  border-radius: 0.4375rem;
+  background: var(--code-inline-bg);
+  color: var(--text);
+  font-family: inherit;
+  font-size: 0.94em;
+}
+
+/* 코드 블록: 두 모드 모두 어두운 단색 면 + 언어 라벨·복사 버튼(assets/js/site.js) */
+div.highlighter-rouge,
+figure.highlight {
+  overflow: hidden;
+  margin: 1.25rem 0 1.5rem;
+  border-radius: 1.125rem;
+  box-shadow: var(--code-shadow);
+  font-size: 0.875rem;
+  line-height: 1.75;
+
+  > pre,
+  pre.highlight {
+    padding: 1rem 1.25rem 1.125rem;
+  }
+}
+
+/* 포스트 대부분이 쓰는 {% highlight %} 는 <figure class="highlight"> 로 출력되는데,
+   테마의 figure 가 flex 라서 헤더가 줄어들어 복사 버튼이 왼쪽에 붙었다 → block 으로 되돌린다 */
+figure.highlight {
+  display: block;
+}
+
+.code-head {
+  box-sizing: border-box;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.5rem 0.75rem 0.5rem 1.125rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.16); // 헤더/코드 구분선 (기존 0.08 → 잘 보이게)
+  background: rgba(255, 255, 255, 0.04); // 헤더 막대를 코드 영역보다 한 톤 밝게
+  color: #9AA6BD;
+  font-family: $monospace;
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+}
+
+.code-copy {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.375rem;
+  height: 1.875rem;
+  padding: 0 0.75rem;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 0.625rem;
+  background: rgba(255, 255, 255, 0.06);
+  color: #C9D2E3;
+  font-family: $sans-serif;
+  font-size: 0.75rem;
+  cursor: pointer;
+
+  &:hover {
+    background: rgba(255, 255, 255, 0.12);
+  }
+}
+
+/* 목차 */
+.toc {
+  @include glass;
+  padding: 1rem 0.75rem 0.875rem;
+  border-radius: 1.375rem;
+  color: var(--text2);
+
+  .active a {
+    background: none;
+    color: inherit;
+  }
+}
+
+.toc__header {
+  display: block;
+  margin: 0;
+  padding: 0.125rem 0.625rem 0.625rem;
+  border-radius: 0;
+  background: none;
+  color: var(--text);
+  font-size: 0.9375rem;
+  font-weight: 700;
+}
+
+.toc__menu {
+  font-size: 0.875rem;
+
+  a {
+    margin: 0.125rem 0;
+    padding: 0.375rem 0.625rem;
+    border: 0;
+    border-radius: 0.6875rem;
+    color: var(--text2);
+    font-weight: 500;
+    line-height: 1.45;
+    text-decoration: none;
+
+    &:hover {
+      color: var(--text);
+      background: var(--chip-bg);
+    }
+  }
+
+  li ul > li a {
+    padding-left: 1.5rem;
+    color: var(--muted);
+    font-size: 0.8125rem;
+    font-weight: 400;
+  }
+
+  li ul li ul > li a {
+    padding-left: 2.25rem;
+  }
+
+  li.active > a,
+  li.active > a:hover {
+    @include neu-in;
+    color: var(--accent);
+    font-weight: 600;
+  }
+}
+
+.toc__progress {
+  margin: 0.875rem 0.625rem 0;
+
+  &-label {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 0.375rem;
+    color: var(--muted);
+    font-size: 0.75rem;
+  }
+
+  &-value {
+    font-family: $monospace;
+  }
+
+  &-track {
+    @include neu-in;
+    height: 0.375rem;
+    overflow: hidden;
+    border-radius: 0.1875rem;
+  }
+
+  &-fill {
+    display: block;
+    width: 0;
+    height: 100%;
+    border-radius: 0.1875rem;
+    background: var(--accent);
+  }
+}
+
+a.toc__top {
+  @include neu-up-sm;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.375rem;
+  height: 2.5rem;
+  margin: 1rem 0.625rem 0.125rem;
+  border-radius: 0.8125rem;
+  color: var(--text2);
+  font-size: 0.8125rem;
+  font-weight: 600;
+  text-decoration: none;
+
+  &:hover {
+    color: var(--accent);
+  }
+}
+
+/* 공유 버튼 */
+.page__share {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.75rem;
+  margin-top: 2.25rem;
+  padding-top: 1.4rem;
+  border-top: 1px solid var(--divider);
+
+  .page__share-title {
+    margin: 0 0.25rem 0 0;
+    color: var(--muted);
+    font-size: 0.8125rem;
+    font-weight: 600;
+    text-transform: none;
+  }
+
+  .btn,
+  .btn:visited,
+  .btn:hover {
+    @include neu-up-sm;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.375rem;
+    height: 2.375rem;
+    margin: 0;
+    padding: 0 1rem;
+    border-radius: 0.75rem;
+    color: var(--text2);
+    font-size: 0.8125rem;
+    font-weight: 600;
+  }
+
+  .btn:hover {
+    color: var(--accent);
+  }
+
+  .btn:active {
+    box-shadow: var(--neu-in);
+  }
+}
+
+/* 이전/다음 강좌 */
+/* 원래 테마는 공유 영역을 float 시켜서 그 아래 요소의 margin-top 이 먹지 않는다 → float 해제 */
+.page .page__inner-wrap .page__share {
+  float: none;
+  clear: both;
+}
+
+.pagination.pagination--post {
+  clear: both;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1.125rem;
+  margin: 2.75rem 0 0;
+  padding: 0;
+  float: none;
+
+  @include breakpoint(max-width $small - 1px) {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .pagination--pager {
+    @include neu-up;
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+    float: none;
+    width: auto;
+    margin: 0;
+    padding: 1.125rem 1.375rem;
+    border-radius: 1.125rem;
+    color: var(--accent);
+    font-size: 0.8125rem;
+    font-weight: 600;
+    text-align: left;
+
+    small {
+      color: var(--text);
+      font-size: 0.9375rem;
+      font-weight: 600;
+      line-height: 1.45;
+    }
+
+    &:last-child {
+      align-items: flex-end;
+      margin-left: 0;
+      text-align: right;
+    }
+
+    &:hover {
+      color: var(--accent);
+      background: var(--neu-face);
+    }
+
+    &.disabled {
+      @include neu-in;
+      color: var(--muted);
+
+      small {
+        color: var(--muted);
+        font-weight: 500;
+      }
+    }
+  }
+}
+
+/*
+   Footer — 글래스 패널
+   ========================================================================== */
+
+.page__footer {
+  margin-top: 1.75rem;
+  background: transparent;
+  color: var(--text2);
+
+  footer {
+    @include glass;
+    box-sizing: border-box;
+    max-width: none;
+    margin: 0 1.5rem 1.5rem;
+    padding: 1.125rem 1.625rem;
+    border-radius: 1.375rem;
+  }
+
+  a,
+  a:visited {
+    color: var(--text2);
+  }
+
+  a:hover {
+    color: var(--accent);
+    text-decoration: none;
+  }
+}
+
+.page__footer-inner {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.875rem 1.5rem;
+  font-size: 0.875rem;
+}
+
+.page__footer-links {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.75rem 1.25rem;
+}
+
+.page__footer-star {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.625rem;
+  margin: 0;
+
+  &-label {
+    margin: 0;
+    color: var(--muted);
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+  }
+
+  /* buttons.js가 만든 버튼(span 또는 iframe)의 인라인 기준선 여백 제거 */
+  > :not(.page__footer-star-label) {
+    display: flex;
+    line-height: 0;
+  }
+
+  iframe {
+    display: block;
+  }
+}
+
+.page__footer-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.375rem;
+}
+
+.page__footer-copyright {
+  color: var(--muted);
+  font-size: 0.8125rem;
+}
+
+/*
+   Misc
+   ========================================================================== */
+
+.notice,
+.notice--info,
+.notice--warning,
+.notice--success,
+.notice--danger {
+  border-radius: 0.875rem;
+}
+
+.utterances {
+  max-width: 100%;
+}
+
+/* 모바일: 목차를 접었을 때는 진행률·맨 위로도 숨긴다 */
+@include breakpoint(max-width $large - 1px) {
+  .toc .toc__progress,
+  .toc .toc__top {
+    display: none;
+  }
+
+  .toc .toc__toggle:checked ~ .toc__progress {
+    display: block;
+  }
+
+  .toc .toc__toggle:checked ~ .toc__top {
+    display: flex;
+  }
+
+  .toc__header {
+    margin-bottom: 0;
+    padding-bottom: 0.125rem;
+  }
+}
+
+/*
+   버튼 눌림감 — 마우스를 올리면 살짝 떠오르고, 누르면 들어간다
+   ========================================================================== */
+
+.pagination li a:not(.disabled),
+.pagination--post a.pagination--pager,
+.page__share .btn,
+.theme-toggle,
+a.toc__top,
+.taxonomy__index a {
+  transition: box-shadow 0.15s ease, transform 0.15s ease, color 0.15s ease;
+
+  &:hover {
+    transform: translateY(-1px);
+    box-shadow: var(--neu-up-hover);
+  }
+
+  &:active {
+    transform: translateY(0);
+    background: var(--neu-bg);
+    box-shadow: var(--neu-in);
+  }
+}

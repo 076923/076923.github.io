@@ -24,8 +24,29 @@ layout: default
     {% if page.last_modified_at %}<meta itemprop="dateModified" content="{{ page.last_modified_at | date_to_xmlschema }}">{% endif %}
 
     <div class="page__inner-wrap">
+      {% if page.toc %}
+        <aside class="sidebar__right {% if page.toc_sticky %}sticky{% endif %}">
+          <nav class="toc" aria-label="{{ page.toc_label | default: site.data.ui-text[site.locale].toc_label | default: "On this page" }}">
+            <input id="toc-toggle" class="toc__toggle" type="checkbox">
+            <label for="toc-toggle" class="toc__header"><i class="fas fa-{{ page.toc_icon | default: 'list-ul' }}" aria-hidden="true"></i> &nbsp;{{ page.toc_label | default: site.data.ui-text[site.locale].toc_label | default: "On this page" }}</label>
+            {% include toc.html sanitize=true html=content h_min=1 h_max=6 class="toc__menu" anchor_class="anchor" skip_no_ids=true %}
+            <div class="toc__progress">
+              <div class="toc__progress-label"><span>읽은 정도</span><span class="toc__progress-value">0%</span></div>
+              <div class="toc__progress-track" aria-hidden="true"><span class="toc__progress-fill"></span></div>
+            </div>
+            <a class="toc__top" href="#"><i class="fas fa-arrow-up" aria-hidden="true"></i>맨 위로</a>
+          </nav>
+        </aside>
+      {% endif %}
       {% unless page.header.overlay_color or page.header.overlay_image %}
         <header>
+          {% if page.categories.size > 0 or page.tags.size > 0 %}
+            <nav class="page__crumbs" aria-label="분류">
+              {% for c in page.categories %}<a href="{{ site.category_archive.path | relative_url }}#{{ c | slugify }}">{{ c }}</a>{% endfor %}
+              {% if page.categories.size > 0 and page.tags.size > 0 %}<span aria-hidden="true">/</span>{% endif %}
+              {% for t in page.tags %}<a href="{{ site.posts_archive.path | relative_url }}#{{ t | slugify }}">{{ t }}</a>{% endfor %}
+            </nav>
+          {% endif %}
           {% if page.title %}<h1 id="page-title" class="page__title p-name" itemprop="headline">
             <a href="{{ page.url | absolute_url }}" class="u-url" itemprop="url">{{ page.title | markdownify | remove: "<p>" | remove: "</p>" }}</a>
           </h1>{% endif %}
@@ -33,15 +54,6 @@ layout: default
         </header>
       {% endunless %}
 
-      {% if page.toc %}
-        <aside class="sidebar__right {% if page.toc_sticky %}sticky{% endif %}">
-          <nav class="toc" aria-label="{{ page.toc_label | default: site.data.ui-text[site.locale].toc_label | default: "On this page" }}">
-            <input id="toc-toggle" class="toc__toggle" type="checkbox">
-            <label for="toc-toggle" class="toc__header"><i class="fas fa-{{ page.toc_icon | default: 'file-alt' }}" aria-hidden="true"></i> &nbsp;{{ page.toc_label | default: site.data.ui-text[site.locale].toc_label | default: "On this page" }}</label>
-            {% include toc.html sanitize=true html=content h_min=1 h_max=6 class="toc__menu" anchor_class="anchor" skip_no_ids=true %}
-          </nav>
-        </aside>
-      {% endif %}
       <section class="page__content e-content" itemprop="text">
         {{ content }}
         {% if page.link %}<div><a href="{{ page.link }}" class="btn btn--primary">{{ site.data.ui-text[site.locale].ext_link_label | default: "Direct Link" }}</a></div>{% endif %}

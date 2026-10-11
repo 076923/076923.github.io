@@ -168,6 +168,18 @@ Python:
         url: "/posts/Python-45/"
       - title: "제 46강 - 프로세스 기반 병렬 처리"
         url: "/posts/Python-46/"
+      - title: "제 47강 - 데코레이터"
+        url: "/posts/Python-47/"
+      - title: "제 48강 - 컨텍스트 매니저"
+        url: "/posts/Python-48/"
+      - title: "제 49강 - 타입 힌트"
+        url: "/posts/Python-49/"
+      - title: "제 50강 - 데이터 클래스"
+        url: "/posts/Python-50/"
+      - title: "제 51강 - 비동기 처리"
+        url: "/posts/Python-51/"
+      - title: "제 52강 - 가상 환경"
+        url: "/posts/Python-52/"
 
        
 Python-Django:

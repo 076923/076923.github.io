@@ -1,30 +1,27 @@
-<div class="page__footer-star">
-  <p class="page__footer-star-label">Thanks for stargazer:</p>
-  <a class="github-button"
-    href="https://github.com/076923/076923.github.io"
-    data-icon="octicon-star"
-    data-size="large"
-    data-show-count="true"
-    aria-label="Star 076923/076923.github.io on GitHub">Star</a>
-</div>
-<div class="page__footer-follow">
-  <ul class="social-icons">
-    {% if site.data.ui-text[site.locale].follow_label %}
-      <li><strong>{{ site.data.ui-text[site.locale].follow_label }}</strong></li>
-    {% endif %}
+<div class="page__footer-inner">
+  <div class="page__footer-links">
+    <span class="page__footer-star">
+      <span class="page__footer-star-label">Thanks for stargazer</span>
+      <a class="github-button"
+        href="https://github.com/076923/076923.github.io"
+        data-icon="octicon-star"
+        data-size="large"
+        data-show-count="true"
+        aria-label="Star 076923/076923.github.io on GitHub">Star</a>
+    </span>
 
     {% if site.footer.links %}
       {% for link in site.footer.links %}
         {% if link.label and link.url %}
-          <li><a href="{{ link.url }}" rel="noopener noreferrer"><i class="{{ link.icon | default: 'fas fa-link' }}" aria-hidden="true"></i> {{ link.label }}</a></li>
+          <a class="page__footer-link" href="{{ link.url }}" rel="noopener noreferrer"><i class="{{ link.icon | default: 'fas fa-link' }}" aria-hidden="true"></i>{{ link.label }}</a>
         {% endif %}
       {% endfor %}
     {% endif %}
 
     {% unless site.atom_feed.hide %}
-      <li><a href="{% if site.atom_feed.path %}{{ site.atom_feed.path }}{% else %}{{ '/feed.xml' | relative_url }}{% endif %}"><i class="fas fa-fw fa-rss-square" aria-hidden="true"></i> {{ site.data.ui-text[site.locale].feed_label | default: "Feed" }}</a></li>
+      <a class="page__footer-link" href="{% if site.atom_feed.path %}{{ site.atom_feed.path }}{% else %}{{ '/feed.xml' | relative_url }}{% endif %}"><i class="fas fa-fw fa-rss-square" aria-hidden="true"></i>{{ site.data.ui-text[site.locale].feed_label | default: "Feed" }}</a>
     {% endunless %}
-  </ul>
-</div>
+  </div>
 
-<div class="page__footer-copyright">Copyright {{ site.time | date: '%Y' }} {{ site.name | default: site.title }} All Rights Reserved.</div>
+  <span class="page__footer-copyright">© {{ site.time | date: '%Y' }} {{ site.name | default: site.title }}. All Rights Reserved.</span>
+</div>

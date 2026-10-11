@@ -1,5 +1,5 @@
 {%- comment -%}
-  포스트 메타 블록(상위 목록 · 하위 목록 · 작성 날짜 · 읽는 시간).
+  포스트 메타 블록(상위 목록 · 하위 목록 · 작성 날짜 · 읽는 시간). 아이콘 + 굵은 라벨 + 값 형태 (예: 상위 목록: Theory).
   archive-home / archive-single / page__meta 에서 공통으로 사용한다.
   Usage: {% include post__meta.html document=post %}
 {%- endcomment -%}
@@ -9,7 +9,7 @@
   {%- assign categories_sorted = document.categories | sort_natural -%}
   {%- if categories_sorted.size > 0 -%}
   <span class="page__meta-group">
-    <strong><i class="fas fa-fw fa-folder-open" aria-hidden="true"></i> {{ site.data.ui-text[site.locale].categories_label | default: "Categories:" }}</strong>
+    <i class="fas fa-fw fa-folder-open" aria-hidden="true"></i><strong class="page__meta-label">{{ site.data.ui-text[site.locale].categories_label | default: "Categories:" }}</strong>
     <span itemprop="keywords">
     {%- for category_word in categories_sorted -%}
       <a href="{{ site.category_archive.path | relative_url }}#{{ category_word | slugify }}" class="page__taxonomy-item p-category" rel="tag">{{ category_word }}</a>{% unless forloop.last %}<span class="sep">, </span>{% endunless %}
@@ -21,7 +21,7 @@
   {%- assign tags_sorted = document.tags | sort_natural -%}
   {%- if tags_sorted.size > 0 -%}
   <span class="page__meta-group">
-    <strong><i class="fas fa-fw fa-tags" aria-hidden="true"></i> {{ site.data.ui-text[site.locale].tags_label | default: "Tags:" }}</strong>
+    <i class="fas fa-fw fa-tags" aria-hidden="true"></i><strong class="page__meta-label">{{ site.data.ui-text[site.locale].tags_label | default: "Tags:" }}</strong>
     <span itemprop="keywords">
     {%- for tag_word in tags_sorted -%}
       <a href="{{ site.posts_archive.path | relative_url }}#{{ tag_word | slugify }}" class="page__taxonomy-item p-category" rel="tag">{{ tag_word }}</a>{% unless forloop.last %}<span class="sep">, </span>{% endunless %}
@@ -32,7 +32,7 @@
 
   {%- if document.date -%}
   <span class="page__meta-group">
-    <strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> {{ site.data.ui-text[site.locale].date_label | default: "Updated:" }}</strong>
+    <i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i><strong class="page__meta-label">{{ site.data.ui-text[site.locale].date_label | default: "Updated:" }}</strong>
     <time class="dt-published" datetime="{{ document.date | date_to_xmlschema }}">{{ document.date | date: date_format }}</time>
   </span>
   {%- endif -%}
@@ -44,7 +44,7 @@
     <i class="far fa-fw fa-clock" aria-hidden="true"></i>
     {%- if words < words_per_minute %} {{ site.data.ui-text[site.locale].less_than | default: "less than" }} 1 {{ site.data.ui-text[site.locale].minute_read | default: "minute read" }}
     {%- elsif words == words_per_minute %} 1 {{ site.data.ui-text[site.locale].minute_read | default: "minute read" }}
-    {%- else %} <strong>읽는 데</strong> {{ words | divided_by: words_per_minute }} {{ site.data.ui-text[site.locale].minute_read | default: "minute read" }}
+    {%- else %} <strong class="page__meta-label">읽는 데</strong> {{ words | divided_by: words_per_minute }} {{ site.data.ui-text[site.locale].minute_read | default: "minute read" }}
     {%- endif %}
   </span>
   {%- endif -%}

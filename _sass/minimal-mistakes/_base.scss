@@ -164,7 +164,7 @@ p > code {
   padding-bottom: 0.1rem;
   padding-right: 0.2rem;
   padding-left: 0.2rem;
-  font-family: "Noto Sans KR";
+  font-family: inherit;
   background: #dfdfdf85;
   // font-weight: bold;
   border-radius: $border-radius;
@@ -173,7 +173,7 @@ li > code {
   padding-bottom: 0.1rem;
   padding-right: 0.2rem;
   padding-left: 0.2rem;
-  font-family: "Noto Sans KR";
+  font-family: inherit;
   background: #dfdfdf85;
   // font-weight: bold;
   border-radius: $border-radius;
