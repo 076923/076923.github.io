@@ -1003,6 +1003,35 @@ html[data-theme="dark"] .theme-toggle {
 }
 
 /*
+   광고 — 다른 패널과 같은 폭·간격, 광고 소재는 패널 가운데
+   ========================================================================== */
+
+.ad-panel {
+  clear: both;
+  box-sizing: border-box;
+  margin: 1.5rem 0 0;
+  padding: 1rem;
+  border: 1px solid transparent;
+  border-radius: 1.375rem;
+  text-align: center;
+
+  /* 광고가 실제로 채워졌을 때만 패널 면을 보여준다 (차단·로딩 중에는 빈 패널 없음) */
+  &:has(ins.adsbygoogle[data-ad-status="filled"]) {
+    @include glass;
+  }
+
+  /* 광고가 없으면 자리째 숨김 */
+  &:has(ins.adsbygoogle[data-ad-status="unfilled"]) {
+    display: none;
+  }
+
+  ins.adsbygoogle {
+    display: block;
+    margin: 0 auto;
+  }
+}
+
+/*
    Search 페이지
    ========================================================================== */
 
