@@ -416,10 +416,19 @@ html[data-theme="dark"] .theme-toggle {
   padding-top: 0.5rem;
 }
 
+/* 본문 마지막 패널 ↔ 푸터 간격을 패널 간격(1.5rem)으로 통일 — 떠 있는 열의 아래 여백 제거 */
+.archive {
+  margin-bottom: 0;
+}
+
 .sidebar {
   @include glass;
   box-sizing: border-box;
   margin-bottom: 1rem;
+
+  @include breakpoint($large) {
+    margin-bottom: 0;
+  }
   padding: 0.875rem 0.75rem;
   border-radius: 1.375rem;
 
@@ -896,6 +905,24 @@ html[data-theme="dark"] .theme-toggle {
       border-radius: 0.875rem;
     }
   }
+}
+
+/* 목록 페이지(홈 등) 페이지네이션 — 카드와 같은 글래스 패널 */
+.archive > .pagination {
+  @include glass;
+  box-sizing: border-box;
+  margin: 0 0 1rem;
+  padding: 0.875rem 1rem;
+  border-radius: 1.375rem;
+
+  ul {
+    padding: 0;
+  }
+}
+
+/* 목록 안의 광고는 카드 간격(1rem)에 맞춘다 */
+.archive > .ad-panel {
+  margin-top: 0;
 }
 
 /*
@@ -1564,7 +1591,7 @@ a.toc__top {
    ========================================================================== */
 
 .page__footer {
-  margin-top: 1.75rem;
+  margin-top: 1.5rem;
   background: transparent;
   color: var(--text2);
 
@@ -1572,7 +1599,7 @@ a.toc__top {
     @include glass;
     box-sizing: border-box;
     max-width: none;
-    margin: 0 1.5rem 1.5rem;
+    margin: 0 1rem 1rem; /* 좌우 끝을 사이드바·본문 패널 끝선(1rem)에 맞춤 */
     padding: 1.125rem 1.625rem;
     border-radius: 1.375rem;
   }
