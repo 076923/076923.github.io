@@ -10,16 +10,16 @@ main:
 docs:
   - title: Books
     children:
-      - title: "데이터·AI 시스템 아키텍트 실무 가이드"
+      - title: "데이터ㆍAI 시스템 아키텍트를 위한 실무 가이드"
         url: "https://wikibook.co.kr/data-ai-system/"
         external: "_blank"
-      - title: "허깅페이스 실전 가이드"
+      - title: "딥러닝 프로젝트를 위한 허깅페이스 실전 가이드"
         url: "https://wikibook.co.kr/hugging-face/"
         external: "_blank"
-      - title: "파이토치 트랜스포머 심층학습"
+      - title: "파이토치 트랜스포머를 활용한 자연어 처리와 컴퓨터비전 심층학습"
         url: "https://wikibook.co.kr/pytorchtrf/"
         external: "_blank"
-      - title: "OpenCV 4 프로그래밍"
+      - title: "C#과 파이썬을 활용한 OpenCV 4 프로그래밍"
         url: "https://wikibook.co.kr/opencv4-rev2/"
         external: "_blank"
 

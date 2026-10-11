@@ -987,8 +987,12 @@ html[data-theme="dark"] .theme-toggle {
   display: flex;
   flex-wrap: wrap;
   gap: 0.625rem;
-  margin: 0.5rem 0 1.5rem;
+  margin: 0 0 1rem; /* 위 제목 패널·아래 섹션 패널과 같은 1rem 간격 */
   font-size: 0.875rem;
+
+  li {
+    margin: 0; /* 기본 li 아래 여백(0.5em)이 마지막 줄 아래 간격을 벌려서 제거 */
+  }
 
   a {
     @include neu-up-sm;
