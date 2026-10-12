@@ -40,11 +40,42 @@
     syncUtterances(theme);
   }
 
+  /* 부드러운 전환: 토글 버튼에서 원이 퍼지며 새 테마가 드러남 (View Transitions API).
+     미지원 브라우저는 색상 transition, '동작 줄이기' 설정 사용자는 즉시 전환 */
+  function switchTheme(theme, origin) {
+    var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (reduce) { applyTheme(theme); return; }
+
+    if (document.startViewTransition) {
+      var x = window.innerWidth - 40, y = 40;
+      if (origin && origin.getBoundingClientRect) {
+        var r = origin.getBoundingClientRect();
+        x = r.left + r.width / 2;
+        y = r.top + r.height / 2;
+      }
+      // 버튼 중심에서 화면의 가장 먼 모서리까지의 거리 = 최종 반지름
+      var radius = Math.hypot(Math.max(x, window.innerWidth - x), Math.max(y, window.innerHeight - y));
+
+      var transition = document.startViewTransition(function () { applyTheme(theme); });
+      transition.ready.then(function () {
+        root.animate(
+          { clipPath: ['circle(0px at ' + x + 'px ' + y + 'px)', 'circle(' + radius + 'px at ' + x + 'px ' + y + 'px)'] },
+          { duration: 550, easing: 'cubic-bezier(.4, 0, .2, 1)', pseudoElement: '::view-transition-new(root)' }
+        );
+      }).catch(function () {});
+      return;
+    }
+
+    root.classList.add('theme-transition');
+    applyTheme(theme);
+    window.setTimeout(function () { root.classList.remove('theme-transition'); }, 400);
+  }
+
   updateToggle(currentTheme());
   document.addEventListener('click', function (e) {
     var btn = e.target.closest ? e.target.closest('.theme-toggle') : null;
     if (!btn) { return; }
-    applyTheme(currentTheme() === 'dark' ? 'light' : 'dark');
+    switchTheme(currentTheme() === 'dark' ? 'light' : 'dark', btn);
   });
 
   /* 2) "/" 로 검색창 포커스 ---------------------------------------------------- */

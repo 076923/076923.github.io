@@ -4,12 +4,12 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <meta name="color-scheme" content="light dark">
 <script>
-  /* 테마 초기화: 저장된 선택 → 없으면 OS 설정. CSS 보다 먼저 실행해 깜빡임을 막는다. */
+  /* 테마 초기화: 저장된 선택 → 없으면 다크. CSS 보다 먼저 실행해 깜빡임을 막는다. */
   (function () {
     var t = null;
     try { t = localStorage.getItem('theme'); } catch (e) {}
     if (t !== 'light' && t !== 'dark') {
-      t = (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) ? 'dark' : 'light';
+      t = 'dark'; // 기본값은 다크 모드 (사용자가 토글로 고르면 그 값을 기억)
     }
     document.documentElement.setAttribute('data-theme', t);
   })();

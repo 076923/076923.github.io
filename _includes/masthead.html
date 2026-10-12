@@ -16,8 +16,15 @@
         <ul class="visible-links">
           {%- for link in site.data.navigation.main -%}
             {%- assign link_url = link.url | relative_url -%}
+            {%- comment -%} Home("/")은 모든 주소에 포함되므로 홈 레이아웃(페이지네이션 포함)일 때만 강조 {%- endcomment -%}
+            {%- assign is_current = false -%}
+            {%- if link.url == "/" -%}
+              {%- if page.layout == "home" -%}{%- assign is_current = true -%}{%- endif -%}
+            {%- elsif page.url contains link_url -%}
+              {%- assign is_current = true -%}
+            {%- endif -%}
             <li class="masthead__menu-item">
-              <a href="{{ link_url }}"{% if link.description %} title="{{ link.description }}"{% endif %}{% if page.url contains link_url %} aria-current="page"{% endif %}>{{ link.title }}</a>
+              <a href="{{ link_url }}"{% if link.description %} title="{{ link.description }}"{% endif %}{% if is_current %} aria-current="page"{% endif %}>{{ link.title }}</a>
             </li>
           {%- endfor -%}
         </ul>

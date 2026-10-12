@@ -1,5 +1,7 @@
 # main links
 main:
+  - title: "Home"
+    url: /
   - title: "Docs"
     url: "/docs/"
   - title: "Categories"
@@ -10,6 +12,7 @@ main:
 docs:
   - title: Books
     children:
+      - title: "팀을 위한 클로드 코드 완벽 가이드"
       - title: "데이터ㆍAI 시스템 아키텍트를 위한 실무 가이드"
         url: "https://wikibook.co.kr/data-ai-system/"
         external: "_blank"

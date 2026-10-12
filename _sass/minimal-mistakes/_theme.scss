@@ -63,7 +63,7 @@
 html[data-theme="dark"] {
   color-scheme: dark;
 
-  --base: #11141A;
+  --base: #0D1015;
   --text: #E8EBF1;
   --text2: #B6BDCA;
   --muted: #97A0B0;
@@ -76,9 +76,10 @@ html[data-theme="dark"] {
   --chip-bg: rgba(143, 159, 230, 0.14);
   --chip-text: #8F9FE6;
 
-  --glass-bg: rgba(30, 35, 45, 0.55);
-  --glass-border: rgba(255, 255, 255, 0.08);
-  --glass-shadow: 0 10px 30px rgba(0, 0, 0, 0.40);
+  /* 패널이 배경과 구분되도록: 면을 한 단계 밝게 + 윗면 하이라이트 + 테두리 */
+  --glass-bg: rgba(42, 49, 63, 0.62);
+  --glass-border: rgba(255, 255, 255, 0.11);
+  --glass-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.06), 0 12px 32px rgba(0, 0, 0, 0.50);
   --header-bg: rgba(30, 35, 45, 0.55);
   --header-shadow: 0 10px 30px rgba(0, 0, 0, 0.40);
 
@@ -90,8 +91,8 @@ html[data-theme="dark"] {
   --neu-up-hover: 8px 8px 18px rgba(0, 0, 0, 0.75), -4px -4px 12px rgba(255, 255, 255, 0.06);
   --neu-in: inset 3px 3px 8px rgba(0, 0, 0, 0.65), inset -2px -2px 6px rgba(255, 255, 255, 0.05);
 
-  --read: #171B22;
-  --read-border: rgba(255, 255, 255, 0.06);
+  --read: #1C212B;
+  --read-border: rgba(255, 255, 255, 0.10);
   --read-shadow: 0 14px 40px rgba(0, 0, 0, 0.45);
   --code-inline-bg: rgba(255, 255, 255, 0.08);
   --code-shadow: 0 0 0 1px rgba(255, 255, 255, 0.06);
@@ -103,6 +104,26 @@ html[data-theme="dark"] {
   --field-border: rgba(255, 255, 255, 0.10);
   --field-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.30);
   --field-focus: rgba(143, 159, 230, 0.55);
+}
+
+/* 라이트/다크 전환 애니메이션 (assets/js/site.js switchTheme) */
+/* 기본 크로스페이드는 끄고, JS 에서 새 화면(new)을 원형 clip-path 로 펼친다 */
+::view-transition-old(root),
+::view-transition-new(root) {
+  animation: none;
+  mix-blend-mode: normal;
+}
+
+::view-transition-new(root) {
+  z-index: 2;
+}
+
+html.theme-transition,
+html.theme-transition *,
+html.theme-transition *::before,
+html.theme-transition *::after {
+  transition: background-color 0.35s ease, color 0.35s ease, border-color 0.35s ease,
+    box-shadow 0.35s ease, fill 0.35s ease !important;
 }
 
 /*
@@ -236,6 +257,9 @@ a {
   .visible-links {
     justify-content: flex-start;
     align-items: center;
+    /* 테마 기본값 overflow:hidden 이 버튼 그림자를 자르지 않게 여유 공간 (레이아웃 위치는 음수 마진으로 유지) */
+    margin: -0.75rem -0.5rem;
+    padding: 0.75rem 0.5rem;
 
     a {
       margin: 0 0.125rem;
@@ -248,13 +272,19 @@ a {
         display: none;
       }
 
+      border: 1px solid transparent;
+      transition: background 0.15s ease, box-shadow 0.15s ease, color 0.15s ease;
+
+      /* 호버: 살짝 떠오르는 뉴모피즘 버튼 */
       &:hover {
-        background: var(--chip-bg);
+        @include neu-up-sm;
+        color: var(--text);
       }
 
+      /* 현재 페이지: 눌린(인셋) 버튼 + 강조색 — 라이트/다크 모두 또렷하게 */
       &[aria-current="page"] {
+        @include neu-in;
         color: var(--accent);
-        background: var(--chip-bg);
         font-weight: 600;
       }
     }
@@ -1591,6 +1621,171 @@ a.toc__top {
 }
 
 /*
+   About · Guest Book 페이지
+   ========================================================================== */
+
+.page--about .page__content {
+  ul.about-stats {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+
+    li {
+      margin: 0;
+    }
+  }
+
+  a.about-btn {
+    text-decoration: none;
+  }
+}
+
+.about-hero {
+  display: flex;
+  align-items: center;
+  gap: 1.75rem;
+  padding: 1.75rem 2rem;
+  border: 1px solid var(--divider);
+  border-radius: 1.25rem;
+  background: linear-gradient(135deg, var(--chip-bg) 0%, rgba(0, 0, 0, 0) 70%);
+
+  &__body {
+    min-width: 0;
+  }
+
+  &__eyebrow {
+    margin: 0 0 0.375rem;
+    color: var(--accent-text);
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  &__name {
+    margin: 0 !important;
+    padding: 0;
+    border: 0;
+    color: var(--text);
+    font-size: 1.75rem;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+
+    span {
+      margin-left: 0.5rem;
+      color: var(--muted);
+      font-size: 1rem;
+      font-weight: 500;
+      letter-spacing: 0;
+    }
+  }
+
+  &__lead {
+    margin: 0.5rem 0 1.125rem;
+    color: var(--text2);
+    font-size: 0.9375rem;
+  }
+
+  &__links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+
+  @include breakpoint(max-width $medium) {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1.125rem;
+    padding: 1.375rem;
+  }
+}
+
+.about-btn {
+  @include neu-up-sm;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 0.875rem;
+  border-radius: 0.75rem;
+  color: var(--text2) !important;
+  font-size: 0.8125rem;
+  font-weight: 500;
+
+  i {
+    color: var(--accent);
+  }
+}
+
+.about-stats {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 0.875rem;
+  margin-top: 1.25rem !important;
+
+  li {
+    @include neu-up-sm;
+    display: flex;
+    flex-direction: column;
+    gap: 0.125rem;
+    padding: 1rem 1.25rem;
+    border-radius: 1rem;
+  }
+
+  strong {
+    color: var(--text);
+    font-size: 1.625rem;
+    font-weight: 700;
+    line-height: 1.2;
+  }
+
+  span {
+    color: var(--muted);
+    font-size: 0.8125rem;
+  }
+
+  @include breakpoint(max-width $medium) {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+/* 목차가 없는 페이지(About, Guest Book 등)는 오른쪽 목차 자리를 비워두지 않고 꽉 채운다 */
+@include breakpoint($large) {
+  article.page:not(:has(.sidebar__right)) {
+    padding-right: 0;
+  }
+}
+
+/* About · Guest Book — 제목 아래 구분선 없이 바로 본문 */
+.page--about .page__inner-wrap > header {
+  margin-bottom: 1.25rem;
+  padding-bottom: 0;
+  border-bottom: 0;
+}
+
+/* Guest Book — 제목만 있는 컴팩트 패널(목록 페이지 제목 패널과 같은 크기) + 댓글창 */
+.layout--post.page--guest .page__inner-wrap {
+  padding: 1.125rem 1.5rem;
+  border-radius: 1.375rem;
+
+  > header {
+    margin: 0;
+    padding: 0;
+    border-bottom: 0;
+  }
+
+  .page__title {
+    margin: 0;
+    font-size: 1.5rem;
+    line-height: 1.3;
+  }
+
+  .page__content:empty,
+  .page__content:not(:has(*)) {
+    display: none;
+  }
+}
+
+/*
    Footer — 글래스 패널
    ========================================================================== */
 
@@ -1718,7 +1913,8 @@ a.toc__top {
 .page__share .btn,
 .theme-toggle,
 a.toc__top,
-.taxonomy__index a {
+.taxonomy__index a,
+a.about-btn {
   transition: box-shadow 0.15s ease, transform 0.15s ease, color 0.15s ease;
 
   &:hover {
