@@ -852,6 +852,12 @@ Theory-NLP:
         url: "/posts/NLP-1/"
       - title: "텍스트 전처리와 토큰화(Text Preprocessing & Tokenization)"
         url: "/posts/NLP-2/"
+      - title: "단어 임베딩(Word Embedding)"
+        url: "/posts/NLP-3/"
+      - title: "순환 신경망(Recurrent Neural Network)"
+        url: "/posts/NLP-4/"
+      - title: "어텐션(Attention)"
+        url: "/posts/NLP-5/"
 
 Exercise-C#:
   - title: "C# 예제 목록"

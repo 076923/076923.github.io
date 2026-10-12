@@ -19,6 +19,7 @@
   --base: #F3F5F8;
   --text: #18202F;
   --text2: #3E4859;
+  --body: #3E4859; /* 본문 일반 글자 */
   --muted: #596377;
   --divider: rgba(24, 32, 47, 0.12);
   --nav-link: #5D2D03;
@@ -66,6 +67,7 @@ html[data-theme="dark"] {
   --base: #0D1015;
   --text: #E8EBF1;
   --text2: #B6BDCA;
+  --body: #DDE2EA; /* 본문 일반 글자 — 어두운 면 위에서 또렷하게 */
   --muted: #97A0B0;
   --divider: rgba(255, 255, 255, 0.10);
   --nav-link: #B6BDCA;
@@ -1272,7 +1274,7 @@ html[data-theme="dark"] .theme-toggle {
 }
 
 .page__content {
-  color: var(--text2);
+  color: var(--body);
   line-height: 1.85;
 
   /* 제목 구분선 바로 아래 첫 요소(대개 첫 h2)는 위 여백 없이 시작 */

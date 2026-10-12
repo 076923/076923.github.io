@@ -2,7 +2,7 @@
 layout: post
 title: "Artificial Intelligence Theory : 순전파(Forward Propagation) & 역전파(Back Propagation)"
 tagline: "Forward Propagation & Back Propagation"
-image: /assets/images/ai.jpg
+image: /assets/images/theory-ai.svg
 header:
   image: /assets/patterns/asanoha-400px.png
 tags: ['AI']

@@ -2,7 +2,7 @@
 layout: post
 title: "Computer Vision Theory : Computer Vision이란?"
 tagline: "Computer Vision이란?"
-image: /assets/images/theory.jpg
+image: /assets/images/theory-cv.svg
 header:
   image: /assets/patterns/asanoha-400px.png
 tags: ['ComputerVision']

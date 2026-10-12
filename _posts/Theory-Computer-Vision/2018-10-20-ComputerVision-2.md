@@ -2,7 +2,7 @@
 layout: post
 title: "Computer Vision Theory : Digital Image Processing이란?"
 tagline: "Digital Image Processing이란?"
-image: /assets/images/theory.jpg
+image: /assets/images/theory-cv.svg
 header:
   image: /assets/patterns/asanoha-400px.png
 tags: ['ComputerVision']

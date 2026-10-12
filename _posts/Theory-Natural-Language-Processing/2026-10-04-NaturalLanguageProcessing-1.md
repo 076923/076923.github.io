@@ -2,7 +2,7 @@
 layout: post
 title: "Natural Language Processing Theory : 자연어 처리란?"
 tagline: "Natural Language Processing"
-image: /assets/images/nlp.jpg
+image: /assets/images/theory-nlp.svg
 header:
   image: /assets/patterns/asanoha-400px.png
 tags: ['NLP']

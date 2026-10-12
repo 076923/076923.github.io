@@ -2,7 +2,7 @@
 layout: post
 title: "Artificial Intelligence Theory : 가중치 초기화(Weight Initialization)"
 tagline: "Weight Initialization"
-image: /assets/images/ai.jpg
+image: /assets/images/theory-ai.svg
 header:
   image: /assets/patterns/asanoha-400px.png
 tags: ['AI']

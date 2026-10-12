@@ -2,7 +2,7 @@
 layout: post
 title: "Computer Vision Theory : 이미지의 세 가지 구성요소"
 tagline: "Three components of the image"
-image: /assets/images/theory.jpg
+image: /assets/images/theory-cv.svg
 header:
   image: /assets/patterns/asanoha-400px.png
 tags: ['ComputerVision']

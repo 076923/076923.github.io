@@ -2,7 +2,7 @@
 layout: post
 title: "Natural Language Processing Theory : 텍스트 전처리와 토큰화(Text Preprocessing & Tokenization)"
 tagline: "Text Preprocessing & Tokenization"
-image: /assets/images/nlp.jpg
+image: /assets/images/theory-nlp.svg
 header:
   image: /assets/patterns/asanoha-400px.png
 tags: ['NLP']

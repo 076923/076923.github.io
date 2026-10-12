@@ -2,7 +2,7 @@
 layout: post
 title: "Computer Vision Theory : 움직임 추적"
 tagline: "Motion Tracking"
-image: /assets/images/theory.jpg
+image: /assets/images/theory-cv.svg
 header:
   image: /assets/patterns/asanoha-400px.png
 tags: ['ComputerVision']

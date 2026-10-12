@@ -2,7 +2,7 @@
 layout: post
 title: "Artificial Intelligence Theory : 활성화 함수(Activation Function)"
 tagline: "Activation Function"
-image: /assets/images/ai.jpg
+image: /assets/images/theory-ai.svg
 header:
   image: /assets/patterns/asanoha-400px.png
 tags: ['AI']
