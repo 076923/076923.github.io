@@ -4,7 +4,7 @@ title: "Python tkinter 강좌 : 제 19강 - LabelFrame"
 tagline: "Python tkinter LabelFrame"
 image: /assets/images/tkinter.png
 tags: ['Tkinter']
-keywords: Python, Python tkinter, tkinter LabelFrame
+keywords: Python, Python tkinter, tkinter LabelFrame, tkinter 라벨 프레임, tkinter labelanchor, tkinter ttk LabelFrame
 ref: Python-Tkinter
 category: Python
 permalink: /posts/Python-tkinter-19/
@@ -14,7 +14,7 @@ toc: true
 
 ## LabelFrame(라벨 프레임)
 
-`LabelFrame`을 이용하여 **다른 위젯들을 포함**하고 `캡션`이 있는 `라벨 프레임`를 생성할 수 있습니다.
+`LabelFrame`을 이용하여 **다른 위젯들을 포함**하고 `캡션`이 있는 `라벨 프레임`을 생성할 수 있습니다.
 
 <br>
 <br>
@@ -80,7 +80,15 @@ label.pack()
 
 `매개변수`를 사용하여 `라벨 프레임의 속성`을 설정합니다.
 
+`라벨 프레임`은 `Frame`과 동일하게 동작하며, 테두리 위에 `text`로 설정한 **캡션(제목)**이 함께 표시됩니다.
+
 `라벨 프레임` 안에 `위젯`이 포함되어 있지 않을 경우, **표시되지 않습니다.**
+
+- Tip : 라벨 프레임 안의 위젯은 `tkinter.Radiobutton(labelframe, ...)`처럼 첫 번째 매개변수에 `라벨 프레임`을 전달하여 포함시킵니다. 자세한 내용은 [13강 바로가기][13강]에서 확인할 수 있습니다.
+
+- Tip : `labelwidget`에 `Label`이나 `Checkbutton` 등의 위젯을 전달하면, 문자열 대신 해당 위젯이 캡션 위치에 표시됩니다. 이 경우 `text`는 무시됩니다.
+
+- Tip : `tkinter.ttk.LabelFrame`도 동일한 용도로 사용할 수 있으며, `text`, `labelanchor`, `labelwidget`, `padding` 등의 매개변수를 지원합니다.
 
 <br>
 <br>
@@ -93,7 +101,7 @@ label.pack()
 |:--------------:|:--------------------------------:|:----------------:|:------------------------------------------:|
 | text |    라벨 프레임에 표시할 문자열     |       -       | - |
 | labelwidget |    라벨 프레임에 표시할 위젯     |       -       | - |
-| labelanchor |    라벨 프레임의 문자열 위치 설정     |       nw       | n, e, w, s, ne, nw, se, sw |
+| labelanchor |    라벨 프레임의 문자열 위치 설정     |       nw       | nw, n, ne, en, e, es, se, s, sw, ws, w, wn |
 
 <br>
 
@@ -103,10 +111,10 @@ label.pack()
 |:--------------:|:--------------------------------:|:----------------:|:------------------------------------------:|
 | width | [라벨 프레임의 너비](#reference-1) | 0 | 상수 |
 | height | [라벨 프레임의 높이](#reference-1) | 0 | 상수 |
-| relief | 라벨 프레임의 테두리 모양 | flat | flat, groove, raised, ridge, solid, sunken |
+| relief | 라벨 프레임의 테두리 모양 | groove | flat, groove, raised, ridge, solid, sunken |
 | borderwidth=bd | 라벨 프레임의 테두리 두께 | 2 | 상수 |
 | background=bg | 라벨 프레임의 배경 색상 | SystemButtonFace | color |
-| foreground=fg | 라벨 프레임의 문자열 색상 | SystemButtonFace | color |
+| foreground=fg | 라벨 프레임의 문자열 색상 | SystemButtonText | color |
 | padx | 라벨 프레임의 테두리와 내용의 가로 여백 | 0 | 상수 |
 | pady | 라벨 프레임의 테두리와 내용의 세로 여백 | 0 | 상수 |
 
@@ -128,9 +136,9 @@ label.pack()
 
 |         이름        |              의미              |       기본값      | 속성 |
 |:-------------------:|:------------------------------:|:-----------------:|:----:|
-|    highlightcolor   |    라벨 프레임이가 선택되었을 때 색상   | SystemWindowFrame |  color  |
-| highlightbackground | 라벨 프레임이가 선택되지 않았을 때 색상 |  SystemButtonFace |  color  |
-|  highlightthickness |    라벨 프레임이가 선택되었을 때 두께 [(두께 설정)](#reference-3)     |         0         | 상수 |
+|    highlightcolor   |    라벨 프레임이 선택되었을 때 색상   | SystemWindowFrame |  color  |
+| highlightbackground | 라벨 프레임이 선택되지 않았을 때 색상 |  SystemButtonFace |  color  |
+|  highlightthickness |    라벨 프레임이 선택되었을 때 두께 [(두께 설정)](#reference-3)     |         0         | 상수 |
 
 <br>
 
@@ -162,3 +170,7 @@ label.pack()
 * `highlightbackground`를 설정하였을 경우, 라벨 프레임이 선택되지 않았을 때에도 두께가 표시됨
 
 * `container`를 `True`로 설정하였을 경우, 라벨 프레임의 내부에 `위젯`이 포함되어 있지 않아야 함
+
+* `labelanchor`는 두 글자로 설정할 경우 **첫 글자가 변, 두 번째 글자가 변 안에서의 위치**를 의미함 `예) en = 동쪽(오른쪽) 변의 북쪽(위쪽)`
+
+[13강]: https://076923.github.io/posts/Python-tkinter-13/

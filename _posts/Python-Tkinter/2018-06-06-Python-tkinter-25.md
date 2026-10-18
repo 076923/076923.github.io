@@ -4,7 +4,7 @@ title: "Python tkinter 강좌 : 제 25강 - Spinbox"
 tagline: "Python tkinter Spinbox"
 image: /assets/images/tkinter.png
 tags: ['Tkinter']
-keywords: Python, Python tkinter, tkinter Spinbox
+keywords: Python, Python tkinter, tkinter Spinbox, tkinter validatecommand, tkinter ttk Spinbox
 ref: Python-Tkinter
 category: Python
 permalink: /posts/Python-tkinter-25/
@@ -96,6 +96,14 @@ spinbox.pack()
 
 `validatecommand`를 이용하여 유효성을 검사하며, `invalidcommand`를 통하여 올바르지 않을 때의 함수를 실행합니다.
 
+`window.register(함수)`로 Python 함수를 `Tcl 명령`으로 등록하고, `'%P'`와 같은 `치환 코드`를 튜플로 함께 전달하면 **값이 바뀔 때마다 함수의 매개변수로 전달**됩니다.
+
+`value_check` 함수가 `True`를 반환하면 입력이 허용되고, `False`를 반환하면 입력이 취소된 뒤 `invalidcommand`의 함수가 실행됩니다.
+
+- Tip : `spinbox.get()`의 반환값은 항상 `문자열(str)`이므로, 숫자로 계산하려면 `int()`나 `float()`로 변환해야 합니다.
+
+- Tip : `Python 3.7` 이상에서는 `tkinter.ttk.Spinbox`도 사용할 수 있습니다. `ttk.Spinbox`는 테마가 적용된 모양을 가지며, `set(값)` 메서드로 값을 변경할 수 있지만 `background`, `buttonbackground` 등의 색상 매개변수는 지원하지 않습니다.
+
 <br>
 <br>
 
@@ -107,8 +115,9 @@ spinbox.pack()
 |:------------------------------:|:----------------:|:-----------------------------------------------:|
 |     insert(index, "문자열")    |    문자열 삽입   |       해당 `index` 위치에 `문자열`을 삽입       |
 | delete(start_index, end_index) |    문자열 삭제   | `start_index`부터 `end_index`까지의 문자열 삭제 |
-|   get(start_index, end_index)  |    문자열 반환   | `start_index`부터 `end_index`까지의 문자열 반환 |
-|          index(index)          |    인덱스 반환   |      `index`가 음수 일 경우, `1.0`으로 반환     |
+|   get()  |    문자열 반환   | 수치 조정 기입창의 현재 값을 `문자열`로 반환 |
+|          index(index)          |    인덱스 반환   |      `end`, `insert` 등의 `index`에 해당하는 위치를 숫자로 반환     |
+|          icursor(index)          |    키보드 커서 이동   |      해당 `index` 위치로 키보드 커서를 이동     |
 |           identify(x, y)         | 요소 식별 |   `x, y` 위치의 위젯 요소 반환 (`entry`, `buttonup`, `buttondown`, `''`)  |
 |           invoke(button)         | 버튼 실행 |  `buttonup` 또는 `buttondown` 실행  |
 
@@ -118,14 +127,16 @@ spinbox.pack()
 
 | 이름 |           의미          |                               설명                               |
 |:----:|:-----------------------:|:----------------------------------------------------------------:|
-|  %d  |      액션 코드 반환     | `삭제=0`, `삽입=1`, `포커스 인=textvariable`, `포커스 아웃=textvariable` |
+|  %d  |      액션 코드 반환     | `삭제=0`, `삽입=1`, `그 외(포커스 이동, textvariable 변경 등)=-1` |
 |  %i  | 텍스트 수정 인덱스 반환 |    `삽입 또는 삭제=해당 index`, `포커스인 또는 포커스 아웃=-1`   |
-|  %P  |      텍스트 부여 값     |               변경이 가능한 경우 텍스트에 부여될 값              |
-|  %s  |  텍스트가 변경되기 전 값  |                 텍스트가 변경되기 전의 유효한 값                 |
-|  %S  |  텍스트 변경된 후 값  |                  텍스트가 변경된 후의 유효한 값                  |
+|  %P  |      텍스트 부여 값     |               변경이 허용될 경우 텍스트에 부여될 값 (변경 후 전체 값)              |
+|  %s  |  텍스트가 변경되기 전 값  |                 텍스트가 변경되기 전의 전체 값                 |
+|  %S  |  삽입 또는 삭제되는 문자열  |                  이번 변경에서 삽입되거나 삭제되는 문자열                  |
 |  %v  |     validate 현재 값    |          수치 조정 기입창의 validate 매개변수의 현재 값          |
-|  %V  |        콜백 확인        |               어떤 호출로 인하여 콜백되었는지 확인               |
+|  %V  |        콜백 확인        |               어떤 호출로 인하여 콜백되었는지 확인 (`focusin`, `focusout`, `key`, `forced`)               |
 |  %W  |       위젯의 이름       |                     호출된 위젯의 이름을 확인                    |
+
+- Tip : 치환 코드로 전달되는 값은 모두 `문자열`입니다. `%d`의 `0`, `1`, `-1`도 `"0"`, `"1"`, `"-1"`로 전달됩니다.
 
 <br>
 <br>
@@ -137,7 +148,7 @@ spinbox.pack()
 |      이름      |               의미               |      기본값      |                    속성                    |
 |:--------------:|:--------------------------------:|:----------------:|:------------------------------------------:|
 | textvariable | 수치 조정 기입창에 표시할 문자열을 가져올 변수 | - | - |
-| justify | 수치 조정 기입창의 문자열이 여러 줄 일 경우 정렬 방법 | left | center, left, right |
+| justify | 수치 조정 기입창의 문자열 정렬 방법 | left | center, left, right |
 
 <br>
 
@@ -147,14 +158,14 @@ spinbox.pack()
 |:--------------:|:--------------------------------:|:----------------:|:------------------------------------------:|
 | width | 수치 조정 기입창의 너비 | 20 | 상수 |
 | relief | 수치 조정 기입창의 테두리 모양 | sunken | flat, groove, raised, ridge, solid, sunken |
-| borderwidth=bd | 수치 조정 기입창의 테두리 두께 | 0 | 상수 |
-| background=bg | 수치 조정 기입창의 배경 색상 | SystemButtonFace | color |
-| foreground=fg | 수치 조정 기입창의 문자열 색상 | SystemButtonFace | color |
+| borderwidth=bd | 수치 조정 기입창의 테두리 두께 | 1 | 상수 |
+| background=bg | 수치 조정 기입창의 배경 색상 | SystemWindow | color |
+| foreground=fg | 수치 조정 기입창의 문자열 색상 | SystemWindowText | color |
 | insertwidth | 수치 조정 기입창의 키보드 커서 너비 | 2 | 상수 |
 | insertborderwidth | 수치 조정 기입창의 키보드 커서 테두리 두께 | 0 | 상수 |
 | insertbackground | 수치 조정 기입창의 키보드 커서 색상 | SystemWindowText | color |
 | selectborderwidth | 수치 조정 기입창의 문자열 블록처리 테두리 두께 | 0 | 상수 |
-| selectbackground | 수치 조정 기입창의 문자열 블록처리 배경 색상 | SystemHighlightText | color |
+| selectbackground | 수치 조정 기입창의 문자열 블록처리 배경 색상 | SystemHighlight | color |
 | selectforeground | 수치 조정 기입창의 문자열 블록처리 문자열 색상 | SystemHighlightText | color |
 | buttonbackground | 수치 조정 기입창의 수치 조정 버튼 배경 색상 | SystemButtonFace | color |
 
@@ -164,7 +175,7 @@ spinbox.pack()
 
 |   이름   |                           의미                          |     기본값    |                                          속성                                          |
 |:--------:|:-------------------------------------------------------:|:-------------:|:--------------------------------------------------------------------------------------:|
-|  font   |       수치 조정 기입창의 문자열 글꼴 설정              |    TkDefaultFont    |      font        |
+|  font   |       수치 조정 기입창의 문자열 글꼴 설정              |    TkTextFont    |      font        |
 |  cursor  |      수치 조정 기입창의 마우스 커서 모양                 |       -       |                                    [커서 속성](#reference-1)                                   |
 |  buttoncursor |    수치 조정 기입창의 수치 조정 버튼 마우스 커서 모양              |       -       |                                    [커서 속성](#reference-1)                                   |
 |   xscrollcommand  |          수치 조정 기입창의 가로스크롤 위젯 적용            | - |          Scrollbar위젯.set |
@@ -172,8 +183,8 @@ spinbox.pack()
 |   to   |           수치 조정 기입창의 최댓값         | 0 |          상수          |
 |   increment |            수치 조정 기입창의 수치 간격            | 1 |          상수          |
 |   values |            수치 조정 기입창의 사용자 정의 수치 값            | - |          [list, tuple 등](#reference-2)            |
-|   format_ |            수치 조정 기입창의 수치 표시 형식            | - |          정밀도 설정          |
-|  exportselection |     수치 조정 기압창의 선택 항목 여부 설정   |    True    |      Boolean        |
+|   format_ |            [수치 조정 기입창의 수치 표시 형식](#reference-7)            | - |          "%너비.소수자릿수f"          |
+|  exportselection |     수치 조정 기입창의 선택 항목 여부 설정   |    True    |      Boolean        |
 
 <br>
 
@@ -184,8 +195,10 @@ spinbox.pack()
 |    state  |    상태 설정  | normal  | normal, readonly, disabled  |
 |    activebackground |    active 상태일 때 수치 조정 기입창의 배경 색상 | SystemButtonFace |  color  |
 |  readonlybackground |   readonly 상태일 때 수치 조정 기입창의 배경 색상   |  SystemButtonFace  |           color          |
-|  disabledbackground |  disabeld 상태일 때 수치 조정 기입창의 배경 색상  |  SystemButtonFace  |           color          |
-| disabledforeground | disabeld 상태일 때 수치 조정 기입창의 문자열 색상 | SystemDisabledText |           color          |
+|  disabledbackground |  disabled 상태일 때 수치 조정 기입창의 배경 색상  |  SystemButtonFace  |           color          |
+| disabledforeground | disabled 상태일 때 수치 조정 기입창의 문자열 색상 | SystemDisabledText |           color          |
+
+- Tip : `state="readonly"`로 설정하면 키보드로 직접 입력할 수 없고, **수치 조정 버튼으로만** 값을 변경할 수 있습니다.
 
 <br>
 
@@ -193,9 +206,9 @@ spinbox.pack()
 
 |         이름        |              의미              |       기본값      | 속성 |
 |:-------------------:|:------------------------------:|:-----------------:|:----:|
-|    highlightcolor   |    수치 조정 기입창이가 선택되었을 때 색상   | SystemWindowFrame |  color  |
-| highlightbackground | 수치 조정 기입창이가 선택되지 않았을 때 색상 |  SystemButtonFace |  color  |
-|  highlightthickness |    수치 조정 기입창이가 선택되었을 때 두께 [(두께 설정)](#reference-3)     |         0         | 상수 |
+|    highlightcolor   |    수치 조정 기입창이 선택되었을 때 색상   | SystemWindowFrame |  color  |
+| highlightbackground | 수치 조정 기입창이 선택되지 않았을 때 색상 |  SystemButtonFace |  color  |
+|  highlightthickness |    수치 조정 기입창이 선택되었을 때 두께 [(두께 설정)](#reference-3)     |         0         | 상수 |
 
 <br>
 
@@ -205,7 +218,7 @@ spinbox.pack()
 |:-------------------:|:------------------------------:|:-----------------:|:----:|
 |    takefocus |    Tab 키를 이용하여 위젯 이동 허용 여부  | False |  Boolean |
 |    command |    수치 조정 기입창에서 수치가 조정될 때 실행하는 메서드(함수)   | - |  메서드, 함수 |
-|    wrap  |  수치 조정 기입창에서 수치가 초과되거나 미만일 경우, 최솟값이나 최댓값으로 변경  | False |  Boolean |
+|    wrap  |  수치 조정 기입창에서 최댓값을 초과하면 최솟값으로, 최솟값 미만이면 최댓값으로 순환  | False |  Boolean |
 |    insertontime |    기입창의 키보드 커서 깜빡임이 보이는 시간   | 600  |  상수(ms) |
 | insertofftime | 기입창의 키보드 커서 깜빡임이 보이지 않는 시간  |  300 |  상수(ms) |
 | repeatdelay | [수치 조정 버튼이 눌러진 상태에서 command 실행까지의 대기 시간](#reference-4)   |  400 |  상수(ms) |
@@ -250,3 +263,7 @@ spinbox.pack()
     - `focusout` : 수치 조정 기입창이 포커스를 잃을 때 validateCommand 실행
     - `key` : 수치 조정 기입창이 수정될 경우 validateCommand 실행
     - `all` : 수치 조정 기입창의 모든 validate에 대해 validateCommand 실행
+
+<a id="reference-7"></a>
+
+* `format_="%5.2f"`로 설정하였을 경우, 수치가 `전체 5자리, 소수점 둘째 자리`까지 표시됨 (`format="%5.2f"`로도 설정 가능)

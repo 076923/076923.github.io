@@ -4,7 +4,7 @@ title: "Python tkinter 강좌 : 제 24강 - Toplevel"
 tagline: "Python tkinter Toplevel"
 image: /assets/images/tkinter.png
 tags: ['Tkinter']
-keywords: Python, Python tkinter, tkinter Toplevel
+keywords: Python, Python tkinter, tkinter Toplevel, tkinter 새 창, tkinter WM_DELETE_WINDOW
 ref: Python-Tkinter
 category: Python
 permalink: /posts/Python-tkinter-24/
@@ -76,6 +76,10 @@ label.pack()
 
 `메인 윈도우 창`에도 동일하게 적용할 수 있습니다.
 
+`외부 윈도우`는 `메인 윈도우 창(Tk)`에 **종속**되므로, 메인 윈도우 창이 닫히면 외부 윈도우도 함께 닫힙니다.
+
+- Tip : 외부 윈도우는 `tkinter.Tk()`를 다시 호출하는 것이 아니라, 반드시 `tkinter.Toplevel()`로 생성합니다. 하나의 프로그램에 `Tk()`를 여러 개 생성하면 `변수(StringVar 등)`와 `이미지`가 공유되지 않아 오류가 발생할 수 있습니다.
+
 <br>
 <br>
 
@@ -84,7 +88,8 @@ label.pack()
 |            이름           |                          의미                          |
 |:-------------------------:|:------------------------------------------------------:|
 |       title("제목")       |               외부 윈도우 창의 제목 설정               |
-|   resizable(너비, 높이)   |            외부 윈도우 창의 너비, 높이 설정            |
+|   geometry("너비x높이+x+y")   |            외부 윈도우 창의 크기와 위치 설정            |
+|   resizable(너비, 높이)   |            외부 윈도우 창의 너비, 높이 조절 가능 여부 설정 (Boolean)            |
 |    maxsize(너비, 높이)    |       외부 윈도우 창의 최대 너비, 최대 높이 설정       |
 |    minsize(너비, 높이)    |       외부 윈도우 창의 최소 너비, 최소 높이 설정       |
 |   aspect(n1, d1, n2, d2)  |  외부 윈도우 창의 너비, 높이 비율 제한 (n1/d1, n2/d2)  |
@@ -92,7 +97,8 @@ label.pack()
 |         iconify()         |            외부 윈도우 창을 아이콘으로 변경            |
 |         withdraw()        |             외부 윈도우 창을 화면에서 제거             |
 |        deiconify()        |                  외부 윈도우 창을 복원                 |
-| overrideredirect(Boolean) |           외부 윈도우 창의 상태 표시줄 유/무           |
+| overrideredirect(Boolean) |           외부 윈도우 창의 제목 표시줄과 테두리 유/무           |
+|         destroy()         |             외부 윈도우 창을 닫고 내부 위젯 제거             |
 |          frame()          |            외부 윈도우 창의 고유 식별자 반환           |
 |           lift()          |             윈도우 겹침 순서를 맨 위로 이동            |
 |          lower()          |            윈도우 겹침 순서를 맨 아래로 이동           |
@@ -101,6 +107,13 @@ label.pack()
 |   positionfrom(컨트롤러)  |                   위치 컨트롤러 설정                   |
 |       group(윈도우)       |               관리 그룹에 윈도우 창 추가               |
 |    protocol(이름, 함수)   |               호출될 함수를 콜백으로 등록              |
+|    grab_set()   |               외부 윈도우 창이 닫히기 전까지 다른 창의 입력 차단              |
+
+* `protocol("WM_DELETE_WINDOW", 함수)` : 창의 **닫기(X) 버튼**을 눌렀을 때 실행할 함수를 등록합니다. 등록된 함수에서 `destroy()`를 호출하지 않으면 창이 닫히지 않습니다.
+
+* `transient(윈도우)` : 외부 윈도우 창이 항상 지정된 윈도우 창의 **위에 표시**되며, 작업 표시줄에 별도로 표시되지 않습니다. `grab_set()`과 함께 사용하면 `대화 상자(Dialog)`처럼 동작합니다.
+
+- Tip : `withdraw()`로 숨긴 창은 `deiconify()`로 다시 표시할 수 있지만, `destroy()`로 닫은 창은 다시 생성해야 합니다.
 
 <br>
 <br>
@@ -168,6 +181,6 @@ label.pack()
 
 <a id="reference-4"></a>
 
-* `highlightbackground`를 설정하였을 경우, 외부 윈도우가이 선택되지 않았을 때에도 두께가 표시됨
+* `highlightbackground`를 설정하였을 경우, 외부 윈도우가 선택되지 않았을 때에도 두께가 표시됨
 
 * `container`를 `True`로 설정하였을 경우, 외부 윈도우의 내부에 `위젯`이 포함되어 있지 않아야 함

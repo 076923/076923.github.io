@@ -117,3 +117,16 @@ b5.pack(expand=True, fill="both")
 * `fill` : 할당된 공간에 맞게 `크기가 변경`됩니다.
 
 * `expand` : 할당되지 않은 `미사용 공간`을 모두 **현재 위젯의 할당된 공간으로 변경합니다.**
+
+- Tip : `expand=True`만 설정하면 위젯은 **할당된 공간의 가운데**에 원래 크기로 놓이며, 공간을 가득 채우려면 `fill="both"`를 함께 설정해야 합니다.
+
+- Tip : 같은 `side`로 배치된 위젯은 **선언한 순서대로** 쌓이며, `pack_forget()`으로 화면에서 제거하고 다시 `pack()`으로 표시할 수 있습니다.
+
+- Tip : 같은 부모 안에서 `pack()`과 `grid()`를 함께 사용하면 `TclError`가 발생합니다. 두 방식을 섞으려면 `Frame`으로 영역을 나눈 뒤, 프레임마다 한 가지 방식만 사용합니다.
+
+- `grid 사용하기` : [11강 바로가기][11강]
+
+- `place 사용하기` : [12강 바로가기][12강]
+
+[11강]: https://076923.github.io/posts/Python-tkinter-11/
+[12강]: https://076923.github.io/posts/Python-tkinter-12/

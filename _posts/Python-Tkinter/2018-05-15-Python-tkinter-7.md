@@ -4,7 +4,7 @@ title: "Python tkinter 강좌 : 제 7강 - Radiobutton"
 tagline: "Python tkinter Radiobutton"
 image: /assets/images/tkinter.png
 tags: ['Tkinter']
-keywords: Python, Python tkinter, tkinter Radiobutton
+keywords: Python, Python tkinter, tkinter Radiobutton, tkinter 라디오버튼, tkinter IntVar, tkinter StringVar
 ref: Python-Tkinter
 category: Python
 permalink: /posts/Python-tkinter-7/
@@ -100,9 +100,15 @@ radio5.pack()
 
 매개변수 중 `value`를 이용하여 `라디오버튼의 값`을 설정할 수 있습니다. `value`의 값이 겹치는 경우 **같이 선택됩니다.**
 
-매개변수 중 `variable`를 이용하여 `tkinter.IntVar()`의 그룹이 같을 경우 하나의 묶음으로 간주하며 'value'의 값이 저장됩니다.
+매개변수 중 `variable`을 이용하여 `tkinter.IntVar()`의 그룹이 같을 경우 하나의 묶음으로 간주하며 `value`의 값이 저장됩니다.
 
 `tkinter.IntVar()`에 저장된 `value` 값은 `변수이름.get()`을 통하여 불러올 수 있습니다.
+
+위의 예제는 `radio1`, `radio2`, `radio3`이 `RadioVariety_1` 그룹, `radio4`, `radio5`가 `RadioVariety_2` 그룹으로 묶여 있으므로, 각 그룹에서 하나씩만 선택할 수 있습니다. `radio1`과 `radio2`는 `value`가 `3`으로 같기 때문에 하나를 선택하면 둘 다 선택된 상태로 표시됩니다.
+
+- Tip : `tkinter.IntVar()`의 초기값은 `0`이므로, `value`가 `0`인 라디오버튼이 없으면 처음에는 아무 버튼도 선택되지 않습니다. `변수이름.set(3)`처럼 `value`와 같은 값을 설정하면 해당 라디오버튼이 **초기 선택 상태**가 됩니다.
+
+- Tip : 문자열을 `value`로 사용하려면 `tkinter.StringVar()`를 제어 변수로 사용합니다.
 
 <br>
 <br>
@@ -113,12 +119,14 @@ radio5.pack()
 |:----------:|:--------------:|
 |  select()  |    체크 상태   |
 | deselect() |    해제 상태   |
-|  invoke()  | 체크 버튼 실행 |
+|  invoke()  | 라디오버튼 실행 |
 |   flash()  |     깜빡임     |
 
 - Tip : `invoke()` : 라디오버튼을 클릭했을 때와 동일한 실행
 
 - Tip : `flash()` : `normal` 상태 배경 색상과 `active` 상태 배경 색상 사이에서 깜빡임
+
+- Tip : `select()`, `deselect()`는 상태만 변경하며 `command`는 실행되지 않습니다. `command`까지 실행하려면 `invoke()`를 사용합니다.
 
 <br>
 <br>
@@ -144,9 +152,9 @@ radio5.pack()
 |      width     |            라디오버튼의 너비           |         0        |                    상수                    |
 |     height     |            라디오버튼의 높이           |         0        |                    상수                    |
 |     relief     |        라디오버튼의 테두리 모양        |       flat       | flat, groove, raised, ridge, solid, sunken |
-|     overrelief      |        라디오버튼에 마우스를 올렸을 때 라디오버튼의 테두리 모양        |       raised       | flat, groove, raised, ridge, solid, sunken |
+|     overrelief      |        라디오버튼에 마우스를 올렸을 때 라디오버튼의 테두리 모양        |       -       | flat, groove, raised, ridge, solid, sunken |
 |  background=bg |           라디오버튼의 배경 색상        | SystemButtonFace |                    color                 |
-|  foreground=fg |          라디오버튼의 문자열 색상         | SystemButtonFace |                    color                   |
+|  foreground=fg |          라디오버튼의 문자열 색상         | SystemWindowText |                    color                   |
 |  selectcolor |          라디오버튼 상태의 배경 색상       | SystemWindow |                    color                   |
 |      padx      | 라디오버튼의 테두리와 내용의 가로 여백 |         1        |                    상수                    |
 |      pady      | 라디오버튼의 테두리와 내용의 세로 여백 |         1        |                    상수                    |
@@ -172,8 +180,8 @@ radio5.pack()
 |:------------------:|:----------------------------------------:|:------------------:|:------------------------:|
 |        state       |                 상태 설정                 |       normal       | [normal](#reference-3), active, disabled |
 |  activebackground  |   active 상태일 때 라디오버튼의 배경 색상   |  SystemButtonFace  |           color          |
-|  activeforeground  |  active 상태일 때 라디오버튼의 문자열 색상  |  SystemButtonText  |           color          |
-| disabledforeground | disabeld 상태일 때 라디오버튼의 문자열 색상 | SystemDisabledText |           color          |
+|  activeforeground  |  active 상태일 때 라디오버튼의 문자열 색상  |  SystemWindowText  |           color          |
+| disabledforeground | disabled 상태일 때 라디오버튼의 문자열 색상 | SystemDisabledText |           color          |
 
 <br>
 
@@ -183,7 +191,7 @@ radio5.pack()
 |:-------------------:|:------------------------------:|:-----------------:|:----:|
 |    highlightcolor   |    라디오버튼이 선택되었을 때 색상   | SystemWindowFrame |  color  |
 | highlightbackground | 라디오버튼이 선택되지 않았을 때 색상 |  SystemButtonFace |  color  |
-|  highlightthickness |    라디오버튼이 선택되었을 때 두께 [(두께 설정)](#reference-4)     |         0         | 상수 |
+|  highlightthickness |    라디오버튼이 선택되었을 때 두께 [(두께 설정)](#reference-4)     |         1         | 상수 |
 
 <br>
 
@@ -192,10 +200,10 @@ radio5.pack()
 |         이름        |              의미              |       기본값      | 속성 |
 |:-------------------:|:------------------------------:|:-----------------:|:----:|
 |    takefocus |    Tab 키를 이용하여 위젯 이동 허용 여부  | True |  Boolean |
-|    command |    라디오버튼이 active 상태일 때 실행하는 메서드(함수)   | - |  메서드, 함수 |
+|    command |    라디오버튼을 클릭했을 때 실행하는 메서드(함수)   | - |  메서드, 함수 |
 |    variable |    라디오버튼의 상태를 저장할 제어 변수   | - |  tkinter.IntVar(), tkinter.StringVar() |
 |    value |     라디오버튼이 가지고 있는 값 | - |  [variable의 속성](#reference-5) |
-|    indicatoron |    라디오버튼의 위젯 일치화 여부 | True|  [Boolean](#reference-6) |
+|    indicatoron |    라디오버튼의 선택 표시(indicator) 표시 여부 | True|  [Boolean](#reference-6) |
 
 <br>
 

@@ -4,7 +4,7 @@ title: "Python tkinter 강좌 : 제 9강 - Menubutton"
 tagline: "Python tkinter Menubutton"
 image: /assets/images/tkinter.png
 tags: ['Tkinter']
-keywords: Python, Python tkinter, tkinter Menubutton
+keywords: Python, Python tkinter, tkinter Menubutton, tkinter 메뉴 버튼, ttk Menubutton
 ref: Python-Tkinter
 category: Python
 permalink: /posts/Python-tkinter-9/
@@ -70,6 +70,12 @@ menubutton["menu"]=menu
 
 마지막으로 메뉴 버튼의 매개변수 중 `menu`를 마지막에 사용하여 `메뉴 버튼과 메뉴`를 연결합니다.
 
+- Tip : `menubutton["menu"]=menu`는 `menubutton.config(menu=menu)`와 같은 의미입니다. 메뉴를 생성할 때 `tkinter.Menu(menubutton, ...)`처럼 `메뉴 버튼`을 상위 위젯으로 지정해야 합니다.
+
+- Tip : `direction`을 이용하여 메뉴가 나타나는 방향을 설정할 수 있으며, 위의 예제는 `direction="right"`로 설정되어 메뉴 버튼의 오른쪽에 메뉴가 표시됩니다.
+
+- Tip : `tkinter.ttk.Menubutton`은 운영체제의 기본 테마가 적용되는 메뉴 버튼이며, 사용 방법은 같습니다.
+
 <br>
 <br>
 
@@ -95,7 +101,7 @@ menubutton["menu"]=menu
 |     height     |            메뉴 버튼의 높이           |         0        |                    상수                    |
 |     relief     |        메뉴 버튼의 테두리 모양        |       flat       | flat, groove, raised, ridge, solid, sunken |
 |  background=bg |           메뉴 버튼의 배경 색상        | SystemButtonFace |                    color                 |
-|  foreground=fg |          메뉴 버튼의 문자열 색상         | SystemButtonFace |                    color                   |
+|  foreground=fg |          메뉴 버튼의 문자열 색상         | SystemButtonText |                    color                   |
 |      padx      | 메뉴 버튼의 테두리와 내용의 가로 여백 |         5        |                    상수                    |
 |      pady      | 메뉴 버튼의 테두리와 내용의 세로 여백 |         4        |                    상수                    |
 
@@ -120,7 +126,7 @@ menubutton["menu"]=menu
 |        state       |                 상태 설정                 |       normal       | [normal](#reference-2), active, disabled |
 |  activebackground  |   active 상태일 때 메뉴 버튼의 배경 색상   |  SystemButtonFace  |           color          |
 |  activeforeground  |  active 상태일 때 메뉴 버튼의 문자열 색상  |  SystemButtonText  |           color          |
-| disabledforeground | disabeld 상태일 때 메뉴 버튼의 문자열 색상 | SystemDisabledText |           color          |
+| disabledforeground | disabled 상태일 때 메뉴 버튼의 문자열 색상 | SystemDisabledText |           color          |
 
 <br>
 
@@ -139,9 +145,9 @@ menubutton["menu"]=menu
 |         이름        |              의미              |       기본값      | 속성 |
 |:-------------------:|:------------------------------:|:-----------------:|:----:|
 |    takefocus |    Tab 키를 이용하여 위젯 이동 허용 여부  | True |  Boolean |
-|    menu  |   메뉴 버튼이 선택되었을 때 나타나는 메뉴 위젯  | -  |  tktiner.Menu() |
+|    menu  |   메뉴 버튼이 선택되었을 때 나타나는 메뉴 위젯  | -  |  tkinter.Menu() |
 |    direction  |   메뉴 버튼이 선택되었을 때 나타나는 메뉴 위젯의 방향  | below |  above, below, left, right, flush |
-|    indicatoron |    메뉴 버튼의 위젯 일치화 여부 | False |  [Boolean](#reference-4) |
+|    indicatoron |    메뉴 버튼의 메뉴 기호(indicator) 표시 여부 | False |  [Boolean](#reference-4) |
 
 <br>
 

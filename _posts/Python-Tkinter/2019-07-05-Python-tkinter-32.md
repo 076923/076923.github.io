@@ -4,7 +4,7 @@ title: "Python tkinter 강좌 : 제 32강 - OpenCV 적용하기"
 tagline: "Python tkinter applying OpenCV"
 image: /assets/images/tkinter.png
 tags: ['Tkinter']
-keywords: Python, Python tkinter, Python OpenCV, OpenCV With tkinter
+keywords: Python, Python tkinter, Python OpenCV, OpenCV With tkinter, Pillow ImageTk, tkinter 이미지 표시
 ref: Python-Tkinter
 category: Python
 permalink: /posts/Python-tkinter-32/
@@ -21,6 +21,10 @@ toc: true
 이때 `PIL` 라이브러리를 활용합니다.
 
 `PIL` 모듈은 **Python Imaging Library**로, 다양한 이미지 파일 형식을 지원하는 범용 라이브러리입니다.
+
+원본 `PIL`은 개발이 중단되었으며, 현재는 호환 라이브러리인 `Pillow`를 설치하여 사용합니다. 설치 후에도 `import PIL`로 동일하게 사용할 수 있습니다.
+
+- Tip : `pip install opencv-python pillow` 명령으로 `OpenCV`와 `Pillow`를 설치할 수 있습니다.
 
 <br>
 <br>
@@ -97,6 +101,8 @@ img = cv2.cvtColor(src, cv2.COLOR_BGR2RGB)
 
 그러므로, **BGR**에서 **RGB**로 변환합니다.
 
+- Tip : `cv2.imread()`는 파일을 찾지 못해도 예외를 발생시키지 않고 `None`을 반환하므로, 이미지 경로가 올바르지 않으면 `cv2.resize()`에서 오류가 발생합니다. 이미지 파일은 **스크립트를 실행하는 경로**에 위치해야 합니다.
+
 <br>
 
 {% highlight Python %}
@@ -154,9 +160,13 @@ def convert_to_tkimage():
 
 `이진화`를 처리한 다음, 앞의 형식과 동일하게 `tkinter`와 호환되는 이미지로 변환합니다.
 
+`binary`는 채널이 하나인 `흑백(단일 채널)` 이미지이므로, **BGR**에서 **RGB**로 변환하지 않고 바로 `Image.fromarray()`에 전달합니다.
+
 이미지를 갱신하기 위해 `config`를 통해 `image` 매개변수를 설정합니다.
 
-또한, `가비지 컬렉터(garbage collector)`가 이미지를 삭제하지 않도록 라벨의 `image` 매개변수에 `imgtk`를 **한 번 더 등록합니다.**
+또한, `가비지 컬렉터(garbage collector)`가 이미지를 삭제하지 않도록 라벨의 `image` 속성에 `imgtk`를 **한 번 더 등록합니다.**
+
+- Tip : `label.image = imgtk`는 `imgtk`의 **참조를 유지하기 위해** 라벨 객체에 추가한 Python 속성입니다. 함수 안에서 생성한 `PhotoImage`는 함수가 끝나면 참조가 사라져 **이미지가 표시되지 않습니다.**
 
 <br>
 <br>

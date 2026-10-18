@@ -4,7 +4,7 @@ title: "Python tkinter 강좌 : 제 26강 - Combobox"
 tagline: "Python tkinter Combobox"
 image: /assets/images/tkinter.png
 tags: ['Tkinter']
-keywords: Python, Python tkinter, tkinter Combobox
+keywords: Python, Python tkinter, tkinter Combobox, tkinter ttk Combobox, tkinter ComboboxSelected, tkinter 드롭다운
 ref: Python-Tkinter
 category: Python
 permalink: /posts/Python-tkinter-26/
@@ -73,6 +73,10 @@ combobox.set("목록 선택")
 
 `매개변수`를 사용하여 `콤보 박스의 속성`을 설정합니다.
 
+`values`에 전달한 목록이 `드롭다운 목록`으로 표시되며, `set()`으로 처음 표시할 문자열을 설정할 수 있습니다.
+
+- Tip : `Combobox`는 `ttk 위젯`이므로 `bg`, `fg` 등 일반 위젯의 색상 매개변수를 직접 사용할 수 없으며, `tkinter.ttk.Style`을 통해 모양을 변경합니다.
+
 <br>
 <br>
 
@@ -82,7 +86,27 @@ combobox.set("목록 선택")
 |:------------------------------:|:----------------:|:-----------------------------------------------:|
 |     set("문자열")    |    표시값 변경 |       콤보 박스의 현재 텍스트 변경       |
 |     get()    |    표시값 반환 |       콤보 박스의 현재 텍스트 반환       |
-| current(index) |    목록 표시   | 해당 `index`의 목록 표시 |
+| current(index) |    목록 선택   | 해당 `index`의 목록을 선택하여 표시 |
+| current() |    선택 index 반환   | 현재 선택된 목록의 `index` 반환 (목록에 없는 값이면 `-1`) |
+
+<br>
+
+## Combobox Event
+
+{% highlight Python %}
+
+def selected(event):
+    print(combobox.current(), combobox.get())
+
+combobox.bind("<<ComboboxSelected>>", selected)
+
+{% endhighlight %}
+
+`드롭다운 목록`에서 항목을 선택하면 `<<ComboboxSelected>>` 가상 이벤트가 발생합니다.
+
+`콤보 박스.bind("<<ComboboxSelected>>", 함수)`를 사용하여 항목이 선택될 때 실행할 `함수`를 설정할 수 있습니다.
+
+- Tip : `set()`이나 키보드 입력으로 값이 바뀔 때는 `<<ComboboxSelected>>` 이벤트가 발생하지 않습니다.
 
 <br>
 <br>
@@ -94,7 +118,8 @@ combobox.set("목록 선택")
 |      이름      |               의미               |      기본값      |                    속성                    |
 |:--------------:|:--------------------------------:|:----------------:|:------------------------------------------:|
 | textvariable | 콤보 박스에 표시할 문자열을 가져올 변수 | - | - |
-| justify | 콤보 박스의 문자열이 여러 줄 일 경우 정렬 방법 | left | center, left, right |
+| justify | 콤보 박스의 문자열 정렬 방법 | left | center, left, right |
+| font | 콤보 박스의 문자열 글꼴 설정 | TkTextFont | font |
 
 <br>
 
@@ -103,7 +128,7 @@ combobox.set("목록 선택")
 |      이름      |               의미               |      기본값      |                    속성                    |
 |:--------------:|:--------------------------------:|:----------------:|:------------------------------------------:|
 | width | 콤보 박스의 너비 | 20 | 상수 |
-| height | 콤보 박스의 드롭 다운 목록이 표시할 개수 | 20 | 상수 |
+| height | 콤보 박스의 드롭 다운 목록이 표시할 개수 | 10 | 상수 |
 
 <br>
 
@@ -115,7 +140,15 @@ combobox.set("목록 선택")
 |  class_  |      클래스 설정                 |       -       |      -    |  
 |   xscrollcommand  |          콤보 박스의 가로스크롤 위젯 적용            | - |          Scrollbar위젯.set |
 |   values |            콤보 박스의 목록 값            | - |          [list, tuple 등](#reference-2)            |
-|  exportselection |     수치 조정 기압창의 선택 항목 여부 설정   |    True    |      Boolean        |
+|  exportselection |     콤보 박스의 선택 항목 여부 설정   |    True    |      Boolean        |
+
+<br>
+
+### 콤보 박스 상태 설정
+
+|         이름        |              의미              |         기본값        | 속성 |
+|:-------------------:|:------------------------------:|:-----------------:|:----:|
+|    state |    상태 설정  | normal |  [normal, readonly, disabled](#reference-4) |
 
 <br>
 
@@ -124,7 +157,7 @@ combobox.set("목록 선택")
 |         이름        |              의미              |         기본값        | 속성 |
 |:-------------------:|:------------------------------:|:-----------------:|:----:|
 |    takefocus |    Tab 키를 이용하여 위젯 이동 허용 여부  | False |  Boolean |
-|    postcommand |    콤보 박스에서 드롭다운 목록을 클릭할 때 실행하는 메서드(함수)   | - |  메서드, 함수 |
+|    postcommand |    콤보 박스의 드롭다운 목록이 펼쳐지기 직전에 실행하는 메서드(함수)   | - |  메서드, 함수 |
 |    validate |    콤보 박스의 유효성 검사 실행 조건  | none |  [none, focus, focusin, focusout, key, all](#reference-3) |
 |    validatecommand |   유효성 검사 평가 함수  | - |  함수 |
 |    invalidcommand |    validateCommand가 False를 반환 할 때 실행할 함수 | - |  함수  |
@@ -153,3 +186,11 @@ combobox.set("목록 선택")
     - `focusout` : 콤보 박스가 포커스를 잃을 때 validateCommand 실행
     - `key` : 콤보 박스가 수정될 경우 validateCommand 실행
     - `all` : 콤보 박스의 모든 validate에 대해 validateCommand 실행
+
+<a id="reference-4"></a>
+
+* state 매개변수
+
+    - `normal` : 드롭다운 목록 선택과 키보드 입력 모두 가능
+    - `readonly` : 드롭다운 목록 선택만 가능하며, 키보드로 직접 입력 불가
+    - `disabled` : 선택과 입력 모두 불가

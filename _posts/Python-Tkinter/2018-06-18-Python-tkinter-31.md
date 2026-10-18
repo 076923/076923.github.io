@@ -4,7 +4,7 @@ title: "Python tkinter 강좌 : 제 31강 - Separator"
 tagline: "Python tkinter Separator"
 image: /assets/images/tkinter.png
 tags: ['Tkinter']
-keywords: Python, Python tkinter, tkinter Separator
+keywords: Python, Python tkinter, tkinter Separator, tkinter ttk Separator, tkinter 구분선
 ref: Python-Tkinter
 category: Python
 permalink: /posts/Python-tkinter-31/
@@ -109,9 +109,13 @@ s3.grid(row=1,column=0, sticky='ns')
 
 `구분선.grid()`의 매개변수에서 `sticky`의 값을 설정하여 할당된 공간 내에서의 `위치를 조정`할 수 있습니다.
 
-`orient`의 속성이 `horizontal`일 경우 `sticky`의 속성은 고정적으로 `ew`입니다.
+`Separator`는 **두께가 1~2 픽셀인 선**이므로, `sticky`로 할당된 공간을 채우지 않으면 선이 거의 보이지 않습니다.
 
-`orient`의 속성이 `vertical`일 경우 `sticky`의 속성은 고정적으로 `ns`입니다.
+`orient`의 속성이 `horizontal`일 경우 `sticky`의 속성은 `ew`로 설정하여 **가로로 늘립니다.**
+
+`orient`의 속성이 `vertical`일 경우 `sticky`의 속성은 `ns`로 설정하여 **세로로 늘립니다.**
+
+- Tip : `pack()`으로 배치할 때는 `구분선.pack(fill="x")`(horizontal) 또는 `구분선.pack(fill="y")`(vertical)로 설정하며, `pady`나 `padx`로 구분선 주변의 여백을 줄 수 있습니다.
 
 <br>
 <br>
@@ -122,7 +126,7 @@ s3.grid(row=1,column=0, sticky='ns')
 
 |   이름   |                           의미                          |     기본값    |               속성                    |
 |:--------:|:-------------------------------------------------------:|:-------------:|:-------------:|
-|  orient |      구분선의 표시 방향   |       -     |    horizontal, vertical |
+|  orient |      구분선의 표시 방향   |       horizontal     |    horizontal, vertical |
 
 <br>
 

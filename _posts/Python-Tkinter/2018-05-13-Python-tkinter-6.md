@@ -4,7 +4,7 @@ title: "Python tkinter 강좌 : 제 6강 - Checkbutton"
 tagline: "Python tkinter Checkbutton"
 image: /assets/images/tkinter.png
 tags: ['Tkinter']
-keywords: Python, Python tkinter, tkinter Checkbutton
+keywords: Python, Python tkinter, tkinter Checkbutton, tkinter 체크버튼, tkinter IntVar, tkinter BooleanVar, tkinter onvalue
 ref: Python-Tkinter
 category: Python
 permalink: /posts/Python-tkinter-6/
@@ -73,6 +73,14 @@ checkbutton3.pack()
 
 매개변수 중 `command`를 이용하여 `사용자 정의 함수 : flash()`을 실행시킬 수 있습니다.
 
+매개변수 중 `variable`을 이용하여 체크버튼의 상태를 저장할 `제어 변수`를 연결합니다. 체크 상태일 때 `onvalue`(기본값 1), 해제 상태일 때 `offvalue`(기본값 0)가 저장되며, `변수이름.get()`을 통하여 불러올 수 있습니다.
+
+- Tip : 위의 예제에서 `checkbutton2`와 `checkbutton3`는 같은 제어 변수 `CheckVariety_2`를 사용하므로, 하나를 체크하면 **다른 하나도 같이 체크됩니다.** 체크버튼마다 상태를 따로 저장하려면 각각 다른 제어 변수를 연결해야 합니다.
+
+- Tip : `제어 변수`는 `tkinter.IntVar()` 외에도 `tkinter.BooleanVar()`, `tkinter.StringVar()` 등을 사용할 수 있으며, `onvalue`와 `offvalue`를 제어 변수의 자료형에 맞게 설정합니다. 예를 들어, `tkinter.StringVar()`와 `onvalue="on"`, `offvalue="off"`를 함께 사용할 수 있습니다.
+
+- Tip : `변수이름.set(1)`을 이용하여 체크버튼의 초기 상태를 `체크 상태`로 설정할 수 있습니다.
+
 <br>
 <br>
 
@@ -91,6 +99,8 @@ checkbutton3.pack()
 - Tip : `invoke()` : 체크버튼을 클릭했을 때와 동일한 실행
 
 - Tip : `flash()` : `normal` 상태 배경 색상과 `active` 상태 배경 색 사이에서 깜빡임
+
+- Tip : `select()`, `deselect()`, `toggle()`은 상태만 변경하며 `command`는 실행되지 않습니다. `command`까지 실행하려면 `invoke()`를 사용합니다.
 
 <br>
 <br>
@@ -116,9 +126,9 @@ checkbutton3.pack()
 |      width     |            체크버튼의 너비           |         0        |                    상수                    |
 |     height     |            체크버튼의 높이           |         0        |                    상수                    |
 |     relief     |        체크버튼의 테두리 모양        |       flat       | flat, groove, raised, ridge, solid, sunken |
-|     overrelief      |        체크버튼에 마우스를 올렸을 때 체크버튼의 테두리 모양        |       raised       | flat, groove, raised, ridge, solid, sunken |
+|     overrelief      |        체크버튼에 마우스를 올렸을 때 체크버튼의 테두리 모양        |       -       | flat, groove, raised, ridge, solid, sunken |
 |  background=bg |           체크버튼의 배경 색상        | SystemButtonFace |                    color                 |
-|  foreground=fg |          체크버튼의 문자열 색상         | SystemButtonFace |                    color                   |
+|  foreground=fg |          체크버튼의 문자열 색상         | SystemWindowText |                    color                   |
 |  selectcolor |          체크버튼 상태의 배경 색       | SystemWindow |                    color                  |
 |      padx      | 체크버튼의 테두리와 내용의 가로 여백 |         1        |                    상수                    |
 |      pady      | 체크버튼의 테두리와 내용의 세로 여백 |         1        |                    상수                    |
@@ -144,8 +154,8 @@ checkbutton3.pack()
 |:------------------:|:----------------------------------------:|:------------------:|:------------------------:|
 |        state       |                 상태 설정                 |       normal       | [normal](#reference-3), active, disabled |
 |  activebackground  |   active 상태일 때 체크버튼의 배경 색상   |  SystemButtonFace  |           color          |
-|  activeforeground  |  active 상태일 때 체크버튼의 문자열 색상  |  SystemButtonText  |           color          |
-| disabledforeground | disabeld 상태일 때 체크버튼의 문자열 색상 | SystemDisabledText |           color          |
+|  activeforeground  |  active 상태일 때 체크버튼의 문자열 색상  |  SystemWindowText  |           color          |
+| disabledforeground | disabled 상태일 때 체크버튼의 문자열 색상 | SystemDisabledText |           color          |
 
 <br>
 
@@ -155,7 +165,7 @@ checkbutton3.pack()
 |:-------------------:|:------------------------------:|:-----------------:|:----:|
 |    highlightcolor   |    체크버튼이 선택되었을 때 색상   | SystemWindowFrame |  color  |
 | highlightbackground | 체크버튼이 선택되지 않았을 때 색상 |  SystemButtonFace |  color  |
-|  highlightthickness |    체크버튼이 선택되었을 때 두께 [(두께 설정)](#reference-4)     |         0         | 상수 |
+|  highlightthickness |    체크버튼이 선택되었을 때 두께 [(두께 설정)](#reference-4)     |         1         | 상수 |
 
 <br>
 
@@ -164,11 +174,11 @@ checkbutton3.pack()
 |         이름        |              의미              |       기본값      | 속성 |
 |:-------------------:|:------------------------------:|:-----------------:|:----:|
 |    takefocus |    Tab 키를 이용하여 위젯 이동 허용 여부  | True |  Boolean |
-|    command |    체크버튼이 active 상태일 때 실행하는 메서드(함수)   | - |  메서드, 함수 |
-|    variable |    체크버튼의 상태를 저장할 제어 변수   | - |  tkinter.IntVar() |
-|    onvalue |    체크버튼이 체크 상태일 때 연결된 제어 변수의 값  | True |  Boolean |
-|    offvalue |    체크버튼이 해제 상태일 때 연결된 제어 변수의 값   | False |  Boolean |
-|    indicatoron |    체크버튼의 위젯 일치화 여부 | True|  [Boolean](#reference-5) |
+|    command |    체크버튼을 클릭했을 때 실행하는 메서드(함수)   | - |  메서드, 함수 |
+|    variable |    체크버튼의 상태를 저장할 제어 변수   | - |  tkinter.IntVar(), tkinter.BooleanVar(), tkinter.StringVar() |
+|    onvalue |    체크버튼이 체크 상태일 때 연결된 제어 변수의 값  | 1 |  variable의 자료형에 맞는 값 |
+|    offvalue |    체크버튼이 해제 상태일 때 연결된 제어 변수의 값   | 0 |  variable의 자료형에 맞는 값 |
+|    indicatoron |    체크버튼의 체크 표시(indicator) 표시 여부 | True|  [Boolean](#reference-5) |
 
 <br>
 

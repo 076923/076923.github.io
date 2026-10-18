@@ -4,7 +4,7 @@ title: "Python tkinter 강좌 : 제 13강 - Frame"
 tagline: "Python tkinter Frame"
 image: /assets/images/tkinter.png
 tags: ['Tkinter']
-keywords: Python, Python tkinter, tkinter Frame
+keywords: Python, Python tkinter, tkinter Frame, tkinter ttk Frame, tkinter 프레임, tkinter 위젯 그룹
 ref: Python-Tkinter
 category: Python
 permalink: /posts/Python-tkinter-13/
@@ -71,6 +71,16 @@ button2.pack(side="left")
 
 위젯의 매개변수 중 `윈도우 창`에서 `프레임 이름`을 이용하여 해당 프레임에 위젯을 `포함`시킬 수 있습니다.
 
+`tkinter.Button(frame1, ...)`과 같이 위젯의 첫 번째 매개변수에 `프레임`을 전달하면, 해당 위젯은 윈도우 창이 아닌 **프레임 안에 배치**됩니다.
+
+프레임 안의 위젯은 프레임을 기준으로 `pack`, `grid`, `place`가 적용되므로, 프레임을 여러 개 사용하면 **복잡한 배치를 구역별로 나누어** 구성할 수 있습니다.
+
+- Tip : `relief`로 테두리 모양을 설정하더라도 `bd(borderwidth)`의 기본값이 `0`이므로, 테두리를 표시하려면 `bd`를 `1` 이상으로 설정해야 합니다.
+
+- Tip : 프레임은 `pack`과 `grid`를 **같은 부모 안에서** 함께 사용할 수 없다는 제약을 피할 때에도 활용됩니다. 프레임마다 서로 다른 배치 방식을 사용할 수 있습니다.
+
+- Tip : `tkinter.ttk.Frame`도 동일한 용도로 사용할 수 있으며, 테마가 적용된 모양으로 표시됩니다. 단, `ttk.Frame`은 `bg` 등의 색상 매개변수를 지원하지 않으며, `style`로 모양을 설정합니다.
+
 <br>
 <br>
 
@@ -83,9 +93,10 @@ button2.pack(side="left")
 |      width     |            [프레임의 너비](#reference-1)                |         0        |                    상수                    |
 |     height     |            [프레임의 높이](#reference-1)                |         0        |                    상수                    |
 |     relief     |        프레임의 테두리 모양        |       flat       | flat, groove, raised, ridge, solid, sunken |
+| borderwidth=bd |        프레임의 테두리 두께        |         0        |                    상수                    |
 |  background=bg |           프레임의 배경 색상        | SystemButtonFace |                    color                 |
-|      padx      | 프레임의 테두리와 내용의 가로 여백 |         1        |                    상수                    |
-|      pady      | 프레임의 테두리와 내용의 세로 여백 |         1        |                    상수                    |
+|      padx      | 프레임의 테두리와 내용의 가로 여백 |         0        |                    상수                    |
+|      pady      | 프레임의 테두리와 내용의 세로 여백 |         0        |                    상수                    |
 
 <br>
 

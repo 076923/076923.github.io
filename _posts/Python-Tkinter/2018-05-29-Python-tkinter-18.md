@@ -4,7 +4,7 @@ title: "Python tkinter 강좌 : 제 18강 - Text"
 tagline: "Python tkinter Text"
 image: /assets/images/tkinter.png
 tags: ['Tkinter']
-keywords: Python, Python tkinter, tkinter Text
+keywords: Python, Python tkinter, tkinter Text, tkinter 텍스트 위젯, tkinter Text insert, tkinter Text get, tkinter Text tag, tkinter 텍스트 인덱스
 ref: Python-Tkinter
 category: Python
 permalink: /posts/Python-tkinter-18/
@@ -14,7 +14,7 @@ toc: true
 
 ## Text(텍스트)
 
-`Text`을 이용하여 `여러 줄`의 `문자열`을 출력하기 위한 `텍스트`를 생성할 수 있습니다.
+`Text`를 이용하여 `여러 줄`의 `문자열`을 입력하거나 출력하기 위한 `텍스트`를 생성할 수 있습니다.
 
 <br>
 <br>
@@ -67,6 +67,16 @@ text.tag_remove("강조", "1.1", "1.2")
 
 `매개변수`를 사용하여 `텍스트의 속성`을 설정합니다.
 
+`insert(index, 문자열)`로 문자열을 삽입하며, 예제에서는 `tkinter.CURRENT`(마우스 포인터와 가장 가까운 위치)에 두 문자열을 차례로 삽입한 뒤, `2.1`(두 번째 줄, 두 번째 문자 앞) 위치에 `갑`을 삽입해 `반갑습니다.`를 완성합니다.
+
+`tag_add`로 첫 번째 줄의 `1.0`부터 `1.6`까지 `강조` 태그를 지정하고, `tag_config`로 태그의 배경 색상을 노란색으로 설정한 뒤, `tag_remove`로 `1.1`부터 `1.2` 사이의 글자 하나만 태그를 제거합니다.
+
+- Tip : `index`는 `"1.0"`처럼 **문자열로 전달하는 것을 권장**합니다. `2.1`과 같이 실수로 전달하면 `2.10`이 `2.1`로 해석되는 등 의도와 다른 위치를 가리킬 수 있습니다.
+
+- Tip : 텍스트의 **모든 내용**을 가져오려면 `text.get("1.0", "end-1c")`를 사용합니다. `"end"`까지 가져오면 텍스트 위젯이 자동으로 추가하는 마지막 줄 바꿈 문자까지 포함됩니다.
+
+- Tip : 사용자가 입력하지 못하도록 하려면 `state="disabled"`로 설정합니다. 단, 이 상태에서는 `insert`, `delete`도 동작하지 않으므로, 코드로 내용을 바꿀 때에는 `state="normal"`로 변경한 뒤 다시 `disabled`로 설정합니다.
+
 <br>
 <br>
 
@@ -79,10 +89,13 @@ text.tag_remove("강조", "1.1", "1.2")
 |     insert(index, "문자열")    |    문자열 삽입   |       해당 `index` 위치에 `문자열`을 삽입       |
 | delete(start_index, end_index) |    문자열 삭제   | `start_index`부터 `end_index`까지의 문자열 삭제 |
 |   get(start_index, end_index)  |    문자열 반환   | `start_index`부터 `end_index`까지의 문자열 반환 |
-|          index(index)          |    인덱스 반환   |      `index`가 음수 일 경우, `1.0`으로 반환     |
-|           see(index)           | 문자열 표시 반환 |   `index` 위치에 텍스트가 표시되면 `True` 반환  |
+|          index(index)          |    인덱스 반환   |      `index` 표현식을 `y.x` 형식의 문자열로 변환하여 반환 `예) index("end") → "3.0"`     |
+|           see(index)           | 문자열 표시 |   `index` 위치의 문자열이 보이도록 텍스트를 스크롤  |
+|           search(패턴, index)  |  문자열 검색  |  `index`부터 `패턴`을 검색하여 처음 발견된 위치의 인덱스 반환, 없을 경우 빈 문자열 반환  |
 
 - Tip : `index`는 `y.x`를 사용, `y줄, x번째 문자`를 의미함 `예) 첫 번째 줄, 첫 번째 문자 = 1.0`
+
+- Tip : 줄 번호는 `1`부터, 문자 번호는 `0`부터 시작하므로 `1.0`이 가장 첫 위치가 됩니다.
 
 <br>
 
@@ -109,26 +122,36 @@ text.tag_remove("강조", "1.1", "1.2")
 |         -         |         `y.0`         |          y 번째 줄 첫 번째 문자         |
 |         -         |        `y.end`        |          y 번째 줄 마지막 문자          |
 |   tkinter.INSERT  |         insert        |             삽입 커서의 위치            |
-|  tkinert.CURRENT  |        current        | 마우스 포인터에 가장 가까운 문자의 위치 |
-|    tkinter.END    |          end          |        텍스트의 마지막 문자 위치        |
-| tkinert.SEL_FIRST |       sel.firs t      |       블록처리 되었을 때의 앞 부분      |
-|  tkinert.SEL_LAST |        sel.last       |       블록처리 되었을 때의 뒷 부분      |
-|         -         | `[마크]` linestart |             마크에서 앞의 행            |
-|         -         |  `[마크]` lineend  |             마크에서 뒤의 행            |
-|         -         | `[마크]` wordstart |            마크에서 단어의 앞           |
+|  tkinter.CURRENT  |        current        | 마우스 포인터에 가장 가까운 문자의 위치 |
+|    tkinter.END    |          end          |        텍스트의 마지막 문자 다음 위치        |
+| tkinter.SEL_FIRST |       sel.first      |       블록처리 되었을 때의 앞 부분      |
+|  tkinter.SEL_LAST |        sel.last       |       블록처리 되었을 때의 뒷 부분      |
+|         -         | `[인덱스] linestart` |             해당 줄의 시작 위치            |
+|         -         |  `[인덱스] lineend`  |             해당 줄의 끝 위치            |
+|         -         | `[인덱스] wordstart` |            해당 위치가 포함된 단어의 시작           |
+|         -         | `[인덱스] wordend` |            해당 위치가 포함된 단어의 끝           |
+|         -         | `[인덱스] + n chars` |            해당 위치에서 `n` 글자 뒤 `예) 1.0 + 3 chars`           |
+|         -         | `[인덱스] - n lines` |            해당 위치에서 `n` 줄 앞 `예) end - 1 lines`           |
 
 - Tip : `3.5 wordstart`로 마크를 사용할 경우, `3번째 줄 5 번째에 포함된 단어`의 앞 부분으로 설정됩니다. 
 
+- Tip : `end`는 텍스트의 **마지막 문자 다음** 위치이므로, `text.insert("end", "문자열")`을 사용하면 문자열이 항상 끝에 추가됩니다.
+
+- Tip : 블록(선택)이 없는 상태에서 `sel.first`, `sel.last`를 사용하면 `TclError`가 발생합니다. `text.tag_ranges("sel")`로 선택 여부를 먼저 확인할 수 있습니다.
+
 <br>
 
-### 텍스트 마크 메서드
+### 텍스트 태그 메서드
 
 |                      이름                      |     의미    |                            설명                           |
 |:----------------------------------------------:|:-----------:|:---------------------------------------------------------:|
 |    tag_add(tagname, start_index, end_index)    |  태그 생성  |    `start_index`부터 `end_index`까지의 `tagname`을 생성   |
 |   tag_remove(tagname, start_index, end_index)  | 태그 제거 | `start_index`부터 `end_index`까지의 `tagname`의 설정 제거 |
 |               tag_delete(tagname)              |  태그 삭제  |               `tagname`의 설정 및 선언 삭제               |
-| tag_config(tagname, 매개변수1, 매개변수2, ...) |  태그 부착  |               `tagname` 범위 만큼 속성 설정               |
+| tag_config(tagname, 매개변수1, 매개변수2, ...) |  태그 속성 설정  |               `tagname` 범위 만큼 속성 설정 `예) background, foreground, font, underline`               |
+| tag_bind(tagname, 이벤트, 함수) |  태그 이벤트 연결  |               `tagname` 범위의 문자열에 마우스 클릭 등의 `이벤트` 연결               |
+
+- Tip : 태그는 범위가 겹칠 수 있으며, 같은 속성이 겹칠 경우 **나중에 생성된 태그**의 속성이 우선 적용됩니다.
 
 <br>
 <br>
@@ -140,7 +163,7 @@ text.tag_remove("강조", "1.1", "1.2")
 |      이름      |               의미               |      기본값      |                    속성                    |
 |:--------------:|:--------------------------------:|:----------------:|:------------------------------------------:|
 |  wrap | [자동 줄 내림 설정 방법](#reference-1)  |        char        |  none, char, word    |
-| tabs |    텍스트의 Tab 간격     |       56       | 상수 |
+| tabs |    텍스트의 Tab 간격     |       -       | 상수 |
 | tabstyle |    텍스트의 Tab 간격 형식     | tabular | tabular, [wordprocessor](#reference-2)|
 | startline |    텍스트의 데이터 저장소에 저장될 시작 줄 |       시작 줄       | 상수 |
 | endline |    텍스트의 데이터 저장소에 저장될 마지막 줄  |       마지막 줄       | 상수 |
@@ -156,15 +179,15 @@ text.tag_remove("강조", "1.1", "1.2")
 |:--------------:|:--------------------------------:|:----------------:|:------------------------------------------:|
 | width | 텍스트의 너비 | 80 | 상수 |
 | height | 텍스트의 높이 | 24 | 상수 |
-| relief | 텍스트의 테두리 모양 | flat | flat, groove, raised, ridge, solid, sunken |
+| relief | 텍스트의 테두리 모양 | sunken | flat, groove, raised, ridge, solid, sunken |
 | borderwidth=bd | 텍스트의 테두리 두께 | 1 | 상수 |
-| background=bg | 텍스트의 배경 색상 | SystemButtonFace | color |
-| foreground=fg | 텍스트의 문자열 색상 | SystemButtonFace | color |
+| background=bg | 텍스트의 배경 색상 | SystemWindow | color |
+| foreground=fg | 텍스트의 문자열 색상 | SystemWindowText | color |
 | insertwidth | 텍스트의 키보드 커서 너비 | 2 | 상수 |
 | insertborderwidth | 텍스트의 키보드 커서 테두리 두께 | 0 | 상수 |
 | insertbackground | 텍스트의 키보드 커서 색상 | SystemWindowText | color |
 | selectborderwidth | 텍스트의 문자열 블록처리 테두리 두께 | 0 | 상수 |
-| selectbackground | 텍스트의 문자열 블록처리 배경 색상 | SystemHighlightText | color |
+| selectbackground | 텍스트의 문자열 블록처리 배경 색상 | SystemHighlight | color |
 | selectforeground | 텍스트의 문자열 블록처리 문자열 색상 | SystemHighlightText | color |
 | inactiveselectbackground | 텍스트의 문자열 블록처리 중 다른 위젯 선택시 블록처리 배경 색상 | - | color |
 | padx | 텍스트의 테두리와 내용의 가로 여백 | 1 | 상수 |
@@ -176,7 +199,7 @@ text.tag_remove("강조", "1.1", "1.2")
 
 |   이름   |                           의미                          |     기본값    |                                          속성                                          |
 |:--------:|:-------------------------------------------------------:|:-------------:|:--------------------------------------------------------------------------------------:|
-|  font   |       텍스트의 문자열 글꼴 설정              |    TkDefaultFont    |      font        |
+|  font   |       텍스트의 문자열 글꼴 설정              |    TkFixedFont    |      font        |
 |  cursor  |      텍스트의 마우스 커서 모양                 |       -       |                                    [커서 속성](#reference-3)                                   |
 |  xscrollcommand |    텍스트의 가로스크롤 객체 적용   |  -    |      Scrollbar위젯.set |
 |  yscrollcommand |  텍스트의 세로스크롤 객체 적용   |   -    |      Scrollbar위젯.set |
@@ -208,10 +231,10 @@ text.tag_remove("강조", "1.1", "1.2")
 
 |         이름        |              의미              |         기본값        | 속성 |
 |:-------------------:|:------------------------------:|:-----------------:|:----:|
-|    takefocus |    Tab 키를 이용하여 위젯 이동 허용 여부  | False |  Boolean |
+|    takefocus |    Tab 키를 이용하여 위젯 이동 허용 여부  | - |  Boolean |
 |    blockcursor |  텍스트의 키보드 커서를 블록으로 사용   | False  |  Boolean |
 |    undo |  [텍스트의 실행 취소 사용 여부](#reference-5)    | False  |  Boolean |
-|    maxundo |  텍스트의 실행 취소 최대 횟수   | -  |  상수 |
+|    maxundo |  텍스트의 실행 취소 최대 횟수, `0`일 경우 제한 없음   | 0  |  상수 |
 |    autoseparators |  [텍스트의 실행 취소 자동 저장 여부](#reference-6)  | True  |  Boolean |
 
 <br>
@@ -231,6 +254,8 @@ text.tag_remove("강조", "1.1", "1.2")
 
 <a id="reference-3"></a>
 
+* `tabs`를 설정하지 않으면 글꼴의 문자 `8`개 너비를 Tab 간격으로 사용함
+
 * `wordprocessor`로 사용할 경우, 워드프로세서 기준 `표준 간격`으로 사용함
 
 <a id="reference-4"></a>
@@ -246,6 +271,6 @@ text.tag_remove("강조", "1.1", "1.2")
 
 <a id="reference-6"></a>
 
-* `Ctrl + Z`를 사용하여 **실행 취소**, `Ctrl + Y`를 사용하여 **다시 실행**
+* `undo=True`로 설정한 경우, `Ctrl + Z`를 사용하여 **실행 취소**, `Ctrl + Y`를 사용하여 **다시 실행**
 
-* `autoseparators`를 `True`로 설정하였을 경우, **단 시간 내에 입력된 문자열을 실행 취소할 때** 기록을 매번 저장하지 않아 모두 지워짐
+* `autoseparators`를 `True`로 설정하였을 경우, 삽입에서 삭제로 바뀌는 등 **편집 동작이 바뀔 때마다 구분자가 자동으로 추가**되어, 연속으로 입력한 문자열이 한 번의 실행 취소로 함께 지워짐

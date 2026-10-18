@@ -256,6 +256,12 @@ Python-Numpy:
         url: "/posts/Python-numpy-16/"
       - title: "제 17강 - 다항식 계산 (2)"
         url: "/posts/Python-numpy-17/"
+      - title: "제 18강 - 정렬"
+        url: "/posts/Python-numpy-18/"
+      - title: "제 19강 - 고유값 및 집합 연산"
+        url: "/posts/Python-numpy-19/"
+      - title: "제 20강 - 파일 입출력"
+        url: "/posts/Python-numpy-20/"
        
 Python-Tkinter:
   - title: "Tkinter 강좌 목록"
@@ -332,6 +338,10 @@ Python-Tkinter:
         url: "/posts/Python-tkinter-32/"
       - title: "제 33강 - 매개변수 전달"
         url: "/posts/Python-tkinter-33/"
+      - title: "제 34강 - 대화 상자"
+        url: "/posts/Python-tkinter-34/"
+      - title: "제 35강 - 주기 실행"
+        url: "/posts/Python-tkinter-35/"
        
 Python-OpenCV:
   - title: "OpenCV 강좌 목록"

@@ -4,7 +4,7 @@ title: "Python tkinter 강좌 : 제 16강 - Scrollbar"
 tagline: "Python tkinter Scrollbar"
 image: /assets/images/tkinter.png
 tags: ['Tkinter']
-keywords: Python, Python tkinter, tkinter Scrollbar
+keywords: Python, Python tkinter, tkinter Scrollbar, tkinter 스크롤바, tkinter yscrollcommand, tkinter yview, tkinter ttk Scrollbar
 ref: Python-Tkinter
 category: Python
 permalink: /posts/Python-tkinter-16/
@@ -16,7 +16,7 @@ toc: true
 
 <img data-src="{{ site.images }}/assets/posts/Python/Tkinter/lecture-16/1.webp" class="lazyload" width="100%" height="100%"/>
 
-`Scrollbar`을 이용하여 `위젯`에 `스크롤`을 적용하기 위한 `스크롤바`을 생성할 수 있습니다.
+`Scrollbar`를 이용하여 `위젯`에 `스크롤`을 적용하기 위한 `스크롤바`를 생성할 수 있습니다.
 
 <br>
 <br>
@@ -73,11 +73,23 @@ frame.pack()
 
 `매개변수`를 사용하여 `스크롤바의 속성`을 설정합니다.
 
-`스크롤바`를 생성 후, `스크롤바의 객체`를 생성하여 `위젯과 위젯을 연결`합니다.
+`스크롤바`를 생성한 후, 스크롤을 적용할 위젯의 `yscrollcommand` 매개변수에 `스크롤바.set`을 연결합니다.
 
-이 후, `command` 매개변수를 `적용할 위젯`과 연결합니다.
+이 후, 스크롤바의 `command` 매개변수를 `적용할 위젯.yview`와 연결합니다.
+
+`스크롤바`와 `위젯`은 **서로를 양방향으로 연결**해야 정상적으로 동작합니다.
+
+- `위젯.yscrollcommand = 스크롤바.set` : 위젯의 내용이 스크롤되면 스크롤바의 위치를 갱신합니다.
+
+- `스크롤바.command = 위젯.yview` : 스크롤바를 움직이면 위젯의 내용을 스크롤합니다.
 
 - Tip : `스크롤바`와 `연결된 위젯`은 각각의 객체이므로 `프레임`으로 **연결하여 사용하는 것을 권장합니다.**
+
+- Tip : 가로 스크롤바는 `orient="horizontal"`로 생성하며, 위젯의 `xscrollcommand`와 스크롤바의 `command=위젯.xview`를 연결합니다.
+
+- Tip : `Listbox`, `Text`, `Canvas` 등 `xscrollcommand`, `yscrollcommand` 매개변수가 있는 위젯에 스크롤바를 연결할 수 있습니다.
+
+- Tip : `tkinter.ttk.Scrollbar`는 운영 체제의 테마가 적용된 스크롤바를 생성하며, 연결 방법은 동일합니다.
 
 <br>
 
@@ -85,9 +97,10 @@ frame.pack()
 
 |           이름          |            의미           |                          설명                          |
 |:-----------------------:|:-------------------------:|:------------------------------------------------------:|
-|           set           |        스크롤 부착        |                  위젯에 스크롤바 적용                  |
-| set(좌측상단, 우측하단) |        스크롤 부착        | 위젯에 스크롤바의 좌측상단 좌표와 우측하단 좌표에 고정 |
-|          get()          | (좌측상단, 우측하단) 반환 |  현재 스크롤바의 좌측상단 좌표와 우측하단 좌표를 반환  |
+|           set(first, last)           |        슬라이더 위치 설정        |  전체 내용 중 현재 보이는 영역의 시작 비율(first)과 끝 비율(last)로 슬라이더의 위치와 크기를 설정, 위젯의 `yscrollcommand`에 연결하여 사용  |
+|          get()          | (first, last) 반환 |  현재 슬라이더의 시작 비율과 끝 비율을 반환  |
+
+- Tip : `first`와 `last`는 `0.0 ~ 1.0` 사이의 비율이며, 예를 들어 `(0.0, 0.2)`는 전체 내용의 **앞부분 20%가 표시되고 있음**을 의미합니다.
         
 <br>
 <br>
@@ -99,7 +112,7 @@ frame.pack()
 |      이름      |               의미               |      기본값      |                    속성                    |
 |:--------------:|:--------------------------------:|:----------------:|:------------------------------------------:|
 |      width     |            스크롤바의 너비           |         17        |                    상수                    |
-|     relief     |        스크롤바의 테두리 모양        |       flat       | flat, groove, raised, ridge, solid, sunken |
+|     relief     |        스크롤바의 테두리 모양        |       sunken       | flat, groove, raised, ridge, solid, sunken |
 | borderwidth=bd |        스크롤바의 테두리 두께        |         0       |                    상수                    |
 |  background=bg |           스크롤바의 배경 색상          | SystemButtonFace |                    color                   |
 |  elementborderwidth |           스크롤 요소의 테두리 두께   | -1 |     상수  |
@@ -138,9 +151,9 @@ frame.pack()
 
 |         이름        |              의미              |       기본값      | 속성 |
 |:-------------------:|:------------------------------:|:-----------------:|:----:|
-|    takefocus |    Tab 키를 이용하여 위젯 이동 허용 여부  | True |  Boolean |
-|    command |    스크롤이 active 상태일 때 실행하는 메서드(함수)   | - |  메서드, 함수 |
-|    jump  | 스크롤이 동작할때 마다 command callback 호출   | False |  Boolean |
+|    takefocus |    Tab 키를 이용하여 위젯 이동 허용 여부  | - |  Boolean |
+|    command |    스크롤바를 움직일 때 실행하는 메서드(함수), 주로 `위젯.yview` 또는 `위젯.xview` 연결   | - |  메서드, 함수 |
+|    jump  | True일 경우, 슬라이더를 드래그하는 중에는 command를 호출하지 않고 **마우스를 뗄 때** 한 번만 호출   | False |  Boolean |
 | repeatdelay | [버튼이 눌러진 상태에서 command 실행까지의 대기 시간](#reference-3)   |  300 |  상수(ms) |
 |  repeatinterval |    [버튼이 눌러진 상태에서 command 실행의 반복 시간](#reference-4)    |         100         | 상수(ms) |
 

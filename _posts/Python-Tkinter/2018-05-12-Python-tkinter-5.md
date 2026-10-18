@@ -4,7 +4,7 @@ title: "Python tkinter 강좌 : 제 5강 - Listbox"
 tagline: "Python tkinter Listbox"
 image: /assets/images/tkinter.png
 tags: ['Tkinter']
-keywords: Python, Python tkinter, tkinter Listbox
+keywords: Python, Python tkinter, tkinter Listbox, tkinter 리스트박스, tkinter curselection, tkinter selectmode
 ref: Python-Tkinter
 category: Python
 permalink: /posts/Python-tkinter-5/
@@ -14,7 +14,7 @@ toc: true
 
 ## Listbox(리스트박스)
 
-`Listbox`을 이용하여 목록을 불러와 `추가`, `제거` 또는 `선택`하기 위한 `리스트박스`를 생성할 수 있습니다
+`Listbox`를 이용하여 목록을 불러와 `추가`, `제거` 또는 `선택`하기 위한 `리스트박스`를 생성할 수 있습니다.
 
 <br>
 <br>
@@ -67,6 +67,14 @@ listbox.pack()
 
 - Tip : `리스트박스.delete(index)`를 통하여 `단일 항목`만 `삭제`할 수 있습니다.
 
+위의 예제는 5개의 항목을 추가한 후 `delete(1, 2)`로 `1번`과 `2번` 위치의 항목을 삭제하므로, 최종적으로 `1번`, `2번`, `3번`의 세 항목이 표시됩니다.
+
+- Tip : `index`에는 정수 외에도 `"end"`를 사용할 수 있습니다. `리스트박스.insert("end", "항목")`은 항목을 가장 마지막에 추가하며, `리스트박스.delete(0, "end")`는 모든 항목을 삭제합니다.
+
+- Tip : 선택된 항목의 `index`는 `리스트박스.curselection()`으로 얻을 수 있으며, `리스트박스.get(index)`로 해당 위치의 문자열을 가져올 수 있습니다.
+
+- Tip : 항목을 선택할 때 함수를 실행하려면 `리스트박스.bind("<<ListboxSelect>>", 함수)`를 사용합니다.
+
 <br>
 <br>
 
@@ -77,8 +85,10 @@ listbox.pack()
 |       insert(index, “항목”)      |                  `index` 위치에 항목 추가                  |
 | delete(start_index,   end_index) |        `start_index`부터 `end_index`까지의 항목 삭제       |
 |              size()              |                       항목 개수 반환                       |
-|          activate(index)         |                  `index` 위치에 항목 선택                  |
-|          curselection()          |                  선택된 항목을 튜플로 반환                 |
+|          activate(index)         |          `index` 위치의 항목을 활성(active) 상태로 설정          |
+|          curselection()          |             선택된 항목의 `index`를 튜플로 반환            |
+| selection_set(start_index, end_index) |        `start_index`부터 `end_index`까지의 항목 선택       |
+| selection_clear(start_index, end_index) |      `start_index`부터 `end_index`까지의 항목 선택 해제     |
 |    get(start_index, end_index)   |   `start_index`부터 `end_index`까지의 항목을 튜플로 반환   |
 |           index(index)           |                `index`에 대응하는 위치 획득                |
 |            nearest(y)            | 현재 보이는 리스트박스의 항목 중 y에 가장 가까운 값을 반환 |
@@ -131,12 +141,12 @@ listbox.pack()
 |:--------------:|:--------------------------------:|:----------------:|:------------------------------------------:|
 |      width     |            리스트박스의 너비           |         20        |                    [상수](#reference-1)                     |
 |      height     |            리스트박스의 높이           |         10        |                    [상수](#reference-1)                    |
-|     relief     |        리스트박스의 테두리 모양        |       flat       | flat, groove, raised, ridge, solid, sunken |
-| borderwidth=bd |        리스트박스의 테두리 두께        |         2        |                    상수                    |
-|  background=bg |           리스트박스의 배경 색상          | SystemButtonFace |                    color                   |
-|  foreground=fg |          리스트박스의 문자열 색상         | SystemButtonFace |                    color                   |
+|     relief     |        리스트박스의 테두리 모양        |       sunken       | flat, groove, raised, ridge, solid, sunken |
+| borderwidth=bd |        리스트박스의 테두리 두께        |         1        |                    상수                    |
+|  background=bg |           리스트박스의 배경 색상          | SystemWindow |                    color                   |
+|  foreground=fg |          리스트박스의 문자열 색상         | SystemButtonText |                    color                   |
 |  selectbackground |          리스트박스 항목의 블록처리 배경 색상         | SystemHighlight |                    color                   |
-|  selectforeground |          리스트박스 항목의 블록처리 문자열 색상         | SystemHighlight |                    color                   |
+|  selectforeground |          리스트박스 항목의 블록처리 문자열 색상         | SystemHighlightText |                    color                   |
 |  selectborderwidth |          리스트박스 항목의 블록처리 테두리 두께     | 0 |                    상수                   |
 
 <br>
@@ -158,8 +168,8 @@ listbox.pack()
 
 |        이름        |                   의미                   |       기본값       |           속성           |
 |:------------------:|:----------------------------------------:|:------------------:|:------------------------:|
-|        state       |                 상태 설정                 |       normal       | [normal](#reference-4), readonly, disabled |
-| disabledforeground | disabeld 상태일 때 리스트박스의 문자열 색상 | SystemDisabledText |           color          |
+|        state       |                 상태 설정                 |       normal       | [normal](#reference-4), disabled |
+| disabledforeground | disabled 상태일 때 리스트박스의 문자열 색상 | SystemDisabledText |           color          |
 
 <br>
 
@@ -167,9 +177,9 @@ listbox.pack()
 
 |         이름        |              의미              |       기본값      | 속성 |
 |:-------------------:|:------------------------------:|:-----------------:|:----:|
-|    highlightcolor   |    리스트박스가이 선택되었을 때 색상   | SystemWindowFrame |  color  |
-| highlightbackground | 리스트박스가이 선택되지 않았을 때 색상 |  SystemButtonFace |  color  |
-|  highlightthickness |    리스트박스가이 선택되었을 때 두께 [(두께 설정)](#reference-5)     |         0         | 상수 |
+|    highlightcolor   |    리스트박스가 선택되었을 때 색상   | SystemWindowFrame |  color  |
+| highlightbackground | 리스트박스가 선택되지 않았을 때 색상 |  SystemButtonFace |  color  |
+|  highlightthickness |    리스트박스가 선택되었을 때 두께 [(두께 설정)](#reference-5)     |         1         | 상수 |
 
 <br>
 
@@ -179,7 +189,7 @@ listbox.pack()
 |:-------------------:|:------------------------------:|:-----------------:|:----:|
 |    takefocus |    Tab 키를 이용하여 위젯 이동 허용 여부  | True |  Boolean |
 |    activestyle |    리스트박스의 선택된 항목의 표시 형태  | underline |  [underline, none, dotbox](#reference-6) |
-| selectmode | 리스트박스의 항목 선택 방법  |  browse |  [browse, single, mulitple, extended](#reference-7) |
+| selectmode | 리스트박스의 항목 선택 방법  |  browse |  [browse, single, multiple, extended](#reference-7) |
 
 <br>
 
@@ -211,7 +221,7 @@ listbox.pack()
 
 <a id="reference-7"></a>
 
-* activestyle 파리미터
+* activestyle 매개변수
     - dotbox : 선택된 항목에 점선 테두리 적용
     - underline : 선택된 항목의 문자열에 밑줄 적용
     - none : 선택된 항목에 블럭처리만 적용
@@ -220,4 +230,4 @@ listbox.pack()
     - browse : 단일 선택, 방향키 이동 시 선택
     - single : 단일 선택, 방향키 이동 후 스페이스바로 선택
     - multiple : 다중 선택, 마우스 클릭이나 방향키 이동 후 스페이스바로 선택
-    - extended : 다중 선택, 마우스 드래그나 쉬프트키 + 방향키 이동으로 선택
+    - extended : 다중 선택, 마우스 드래그나 쉬프트키 + 방향키 이동으로 선택 (Ctrl 키 + 클릭으로 개별 항목 추가 선택)

@@ -4,7 +4,7 @@ title: "Python tkinter 강좌 : 제 4강 - Entry"
 tagline: "Python tkinter Entry"
 image: /assets/images/tkinter.png
 tags: ['Tkinter']
-keywords: Python, Python tkinter, tkinter Entry
+keywords: Python, Python tkinter, tkinter Entry, tkinter 기입창, tkinter bind, tkinter 입력창, ttk Entry
 ref: Python-Tkinter
 category: Python
 permalink: /posts/Python-tkinter-4/
@@ -14,7 +14,7 @@ toc: true
 
 ## Entry(기입창)
 
-`Entry`을 이용하여 텍스트를 `입력`받거나 `출력`하기 위한 `기입창`을 생성할 수 있습니다
+`Entry`를 이용하여 한 줄의 텍스트를 `입력`받거나 `출력`하기 위한 `기입창`을 생성할 수 있습니다.
 
 <br>
 <br>
@@ -71,6 +71,14 @@ label.pack()
 
 - Tip : `4+4*cos(0.5)`을 입력시 `결과=7.51033...`이 반환됩니다.
 
+- Tip : `bind()`로 연결한 함수는 `event` 매개변수를 하나 전달받으므로, `def calc(event):`처럼 매개변수를 반드시 선언해야 합니다.
+
+- Tip : `entry.get()`은 항상 `문자열(str)`을 반환하므로, 숫자로 계산하려면 `int()`나 `float()`로 변환해야 합니다.
+
+- Tip : 위의 예제는 입력된 문자열을 `eval()`로 실행하므로 학습용으로만 사용하며, 실제 프로그램에서는 사용자 입력을 `eval()`로 실행하지 않습니다.
+
+- Tip : `tkinter.ttk.Entry`는 운영체제의 기본 테마가 적용되는 기입창이며, 사용 방법은 같습니다.
+
 <br>
 <br>
 
@@ -85,8 +93,8 @@ label.pack()
 |             icursor(index)             |                 `index` 앞에 키보드 커서 설정                 |
 |          select_adjust(index)          |              `index` 위치까지의 문자열을 블록처리             |
 | select_range(start_index,   end_index) |           `start_index`부터 `end_index`까지 블록처리          |
-|            select_to(index)            |              키보드 커서부터 `index`까지 블록처리             |
-|           select_from(index)           | 키보드 커서의 색인 위치를 `index` 위치에 문자로 설정하고 선택 |
+|            select_to(index)            |      `select_from()`으로 설정한 위치부터 `index`까지 블록처리      |
+|           select_from(index)           |          블록처리의 시작 위치(앵커)를 `index` 위치로 설정         |
 |            select_present()            |        블록처리 되어있는 경우 `True`, 아닐 경우 `False`       |
 |             select_clear()             |                         블록처리 해제                         |
 |                 xview()                |                        가로스크롤 연결                       |
@@ -105,6 +113,10 @@ label.pack()
         - `pages` : 위젯 너비로 스크롤
         <br>
         
+- Tip : `index`에는 `0`(맨 앞)과 같은 정수 외에도 `"end"`(맨 뒤), `"insert"`(키보드 커서 위치)를 사용할 수 있습니다. `entry.delete(0, "end")`는 기입창의 모든 문자열을 삭제합니다.
+
+- Tip : `entry.insert(0, "기본값")`을 이용하여 기입창에 `초기 문자열`을 표시할 수 있습니다.
+
 <br>
 <br>
 
@@ -116,7 +128,7 @@ label.pack()
 |:------------:|:-----------------------------------------:|:------:|:-----------------------------------:|
 |     show     |            기입창에 표시되는 문자           |    -   |                  [문자](#reference-1)                  |
 | textvariable |     기입창에 표시할 문자열을 가져올 변수    |    -   |                  -                  |
-|    justify   | 기입창의 문자열이 여러 줄 일 경우 정렬 방법 | center |         center, left, right         |
+|    justify   |      기입창의 문자열 정렬 방법      | left |         center, left, right         |
 
 <br>
 
@@ -124,17 +136,17 @@ label.pack()
 
 |      이름      |               의미               |      기본값      |                    속성                    |
 |:--------------:|:--------------------------------:|:----------------:|:------------------------------------------:|
-|      width     | 기입창의 너비 | 0 | 상수 |
-|     relief     | 기입창의 테두리 모양 | flat | flat, groove, raised, ridge, solid, sunken |
-| borderwidth=bd | 기입창의 테두리 두께 | 2 | 상수 |
-|  background=bg | 기입창의 배경 색상 | SystemButtonFace | color |
-|  foreground=fg | 기입창의 문자열 색상 | SystemButtonFace | color |
+|      width     | 기입창의 너비 | 20 | 상수 |
+|     relief     | 기입창의 테두리 모양 | sunken | flat, groove, raised, ridge, solid, sunken |
+| borderwidth=bd | 기입창의 테두리 두께 | 1 | 상수 |
+|  background=bg | 기입창의 배경 색상 | SystemWindow | color |
+|  foreground=fg | 기입창의 문자열 색상 | SystemWindowText | color |
 | insertwidth | 기입창의 키보드 커서 너비 | 2 | 상수 |
 | insertborderwidth | 기입창의 키보드 커서 테두리 두께 | 0 | 상수 |
 | insertbackground | 기입창의 키보드 커서 색상 | SystemWindowText | color |
 | selectborderwidth | 기입창의 문자열 블록처리 테두리 두께 | 0 | 상수 |
 | selectbackground | 기입창의 문자열 블록처리 배경 색상 | SystemHighlight | color |
-| selectforeground | 기입창의 문자열 블록처리 문자열 색상 | SystemHighlight | color |
+| selectforeground | 기입창의 문자열 블록처리 문자열 색상 | SystemHighlightText | color |
 
 <br>
 
@@ -142,8 +154,8 @@ label.pack()
 
 |   이름   |                           의미                          |     기본값    |                                          속성                                          |
 |:--------:|:-------------------------------------------------------:|:-------------:|:--------------------------------------------------------------------------------------:|
-|   font   | 기입창의 문자열 글꼴 설정 | TkDefaultFont | font |
-|  cursor  | 기입창의 마우스 커서 모양 | - | [커서 속성](#reference-2) |
+|   font   | 기입창의 문자열 글꼴 설정 | TkTextFont | font |
+|  cursor  | 기입창의 마우스 커서 모양 | xterm | [커서 속성](#reference-2) |
 |   xscrollcommand   | 기입창의 가로스크롤 위젯 적용 | - | Scrollbar위젯.set |
 
 <br>
@@ -154,8 +166,8 @@ label.pack()
 |:------------------:|:----------------------------------------:|:------------------:|:------------------------:|
 |        state       |                 상태 설정                 |       normal       | [normal](#reference-3), readonly, disabled |
 |  readonlybackground |   readonly 상태일 때 기입창의 배경 색상   |  SystemButtonFace  |           color          |
-|  disabledbackground |  disabeld 상태일 때 기입창의 배경 색상  |  SystemButtonFace  |           color          |
-| disabledforeground | disabeld 상태일 때 기입창의 문자열 색상 | SystemDisabledText |           color          |
+|  disabledbackground |  disabled 상태일 때 기입창의 배경 색상  |  SystemButtonFace  |           color          |
+| disabledforeground | disabled 상태일 때 기입창의 문자열 색상 | SystemDisabledText |           color          |
 
 <br>
 
@@ -185,7 +197,7 @@ label.pack()
 
 <a id="reference-2"></a>
 
-* `*` 입력 시, 입력되는 모든 문자는 `*` 처리되어 표시됨
+* `show="*"` 입력 시, 입력되는 모든 문자는 `*` 처리되어 표시됨 (비밀번호 입력창 등에 사용)
 
 <a id="reference-3"></a>
 
@@ -196,5 +208,7 @@ label.pack()
 <a id="reference-4"></a>
 
 * 기본 설정은 `normal` 상태의 설정을 의미함 (`bg`, `fg` 등의 설정)
+
+* `readonly` 상태는 키보드로 입력할 수 없지만 문자열을 선택·복사할 수 있으며, `insert()` 등의 메서드로도 수정할 수 없음
 
 * `highlightbackground`를 설정하였을 경우, 기입창이 선택되지 않았을 때에도 두께가 표시됨

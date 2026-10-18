@@ -4,7 +4,7 @@ title: "Python tkinter 강좌 : 제 14강 - Message"
 tagline: "Python tkinter Message"
 image: /assets/images/tkinter.png
 tags: ['Tkinter']
-keywords: Python, Python tkinter, tkinter Message
+keywords: Python, Python tkinter, tkinter Message, tkinter 메세지, tkinter 여러 줄 문자열, tkinter aspect
 ref: Python-Tkinter
 category: Python
 permalink: /posts/Python-tkinter-14/
@@ -41,7 +41,7 @@ window.mainloop()
 
 {% highlight Python %}
 
-message=tkinter.Message(window, text="메세지입니다.", width=100, relief="solid"
+message=tkinter.Message(window, text="메세지입니다.", width=100, relief="solid")
 message.pack()
 
 {% endhighlight %}
@@ -49,6 +49,14 @@ message.pack()
 `tkinter.Message(윈도우 창, 매개변수1, 매개변수2, 매개변수3, ...)`을 사용하여 해당 `윈도우 창`에 표시할 `메세지의 속성`을 설정할 수 있습니다.
 
 `매개변수`를 사용하여 `메세지의 속성`을 설정합니다.
+
+`Message`는 `Label`과 비슷하지만, 문자열이 `width`를 넘어가면 **자동으로 줄 내림**되어 여러 줄로 표시됩니다.
+
+`width`를 설정하지 않으면 `aspect` 비율에 맞춰 줄 내림이 이루어집니다.
+
+- Tip : `Label`은 문자열에 `\n`이 있을 때에만 줄이 바뀌지만, `Message`는 너비에 맞춰 자동으로 줄이 바뀝니다. 짧은 한 줄의 문자열에는 `Label`을, 긴 문단 형태의 문자열에는 `Message`를 사용합니다.
+
+- Tip : `textvariable`에 `tkinter.StringVar()`를 연결하면, 변수의 값을 변경할 때 메세지의 문자열도 함께 변경됩니다.
 
 <br>
 <br>
@@ -62,7 +70,7 @@ message.pack()
 |     text     |            메세지에 표시할 문자열           |    -   |                  -                  |
 | textvariable |     메세지에 표시할 문자열을 가져올 변수    |    -   |                  -                  |
 |    anchor    |     메세지안의 문자열의 위치    | center | n, ne, e, se, s, sw, w, nw, center  |
-|    justify   | 메세지의 문자열이 여러 줄 일 경우 정렬 방법 | center |         center, left, right         |
+|    justify   | 메세지의 문자열이 여러 줄 일 경우 정렬 방법 | left |         center, left, right         |
 
 <br>
 
@@ -70,12 +78,11 @@ message.pack()
 
 |      이름      |               의미               |      기본값      |                    속성                    |
 |:--------------:|:--------------------------------:|:----------------:|:------------------------------------------:|
-|      width     |            메세지의 최대 허용 너비           |         0        |                    상수                    |
-|     height     |            메세지의 최대 허용 높이           |         0        |                    상수                    |
+|      width     |            [메세지의 최대 허용 너비](#reference-1)           |         0        |                    상수                    |
 |     relief     |        메세지의 테두리 모양        |       flat       | flat, groove, raised, ridge, solid, sunken |
 |  borderwidth=bd |           메세지의 테두리 두께        | 1 |                    상수 |
 |  background=bg |           메세지의 배경 색상        | SystemButtonFace |                    color                 |
-|  foreground=fg |          메세지의 문자열 색상         | SystemButtonFace |                    color                   |
+|  foreground=fg |          메세지의 문자열 색상         | SystemButtonText |                    color                   |
 |      padx      | 메세지의 테두리와 내용의 가로 여백 |         -1        |                    상수                    |
 |      pady      | 메세지의 테두리와 내용의 세로 여백 |         -1       |                    상수                    |
 |      aspect  | [메시지의 높이에 대한 너비 비율](#reference-1)  |         150       |                    상수                    |
@@ -105,7 +112,7 @@ message.pack()
 
 |         이름        |              의미              |       기본값      | 속성 |
 |:-------------------:|:------------------------------:|:-----------------:|:----:|
-|    takefocus |    Tab 키를 이용하여 위젯 이동 허용 여부  | True |  Boolean |
+|    takefocus |    Tab 키를 이용하여 위젯 이동 허용 여부  | False |  Boolean |
 
 <br>
 
@@ -115,7 +122,9 @@ message.pack()
 
 <a id="reference-2"></a>
 
-* `aspect`를 150으로 설정하였을 경우, `100:150=높이:너비`를 의미함, width나 height가 설정된 경우 `aspect` 설정 값은 **무시됨**
+* `width`는 픽셀 단위이며, `0`으로 설정하면 `aspect` 비율에 따라 너비가 자동으로 결정됨
+
+* `aspect`를 150으로 설정하였을 경우, `100:150=높이:너비`를 의미함, `width`가 설정된 경우 `aspect` 설정 값은 **무시됨**
 
 <a id="reference-3"></a>
 

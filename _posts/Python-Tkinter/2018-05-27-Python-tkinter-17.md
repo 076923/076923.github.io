@@ -4,7 +4,7 @@ title: "Python tkinter 강좌 : 제 17강 - Scale"
 tagline: "Python tkinter Scale"
 image: /assets/images/tkinter.png
 tags: ['Tkinter']
-keywords: Python, Python tkinter, tkinter Scale
+keywords: Python, Python tkinter, tkinter Scale, tkinter 슬라이더, tkinter 수치 조정 바, tkinter ttk Scale
 ref: Python-Tkinter
 category: Python
 permalink: /posts/Python-tkinter-17/
@@ -70,7 +70,15 @@ label.pack()
 
 `수치 조정 바`를 생성 후,  `command` 매개변수를 `적용할 함수`와 연결합니다.
 
+`command`에 연결된 함수는 수치 조정 바의 값이 변경될 때마다 호출되며, **현재 값이 문자열 형태로 매개변수에 전달**됩니다.
+
+그러므로 연결할 함수는 **매개변수를 하나 받도록** 정의해야 하며, 예제의 `select(self)`에서 `self`에는 현재 값이 전달됩니다.
+
 - Tip : `scale.get()`는 현재 `수치 조정 바`에 표시된 값을 가져오며, `var.get()`은 `var`에 저장된 값을 가져옵니다.
+
+- Tip : `scale.get()`은 `resolution`이 정수일 경우 `int` 형식을, `resolution`이 소수(예: `0.5`)일 경우 `float` 형식을 반환합니다. 단, `command`에 전달되는 값은 항상 **문자열**이므로 계산에 사용하려면 `int()` 또는 `float()`로 변환해야 합니다.
+
+- Tip : `tkinter.ttk.Scale`도 사용할 수 있지만, `tickinterval`, `label`, `showvalue`, `resolution` 등의 매개변수를 지원하지 않습니다.
 
 <br>
 <br>
@@ -103,7 +111,8 @@ label.pack()
 | width | 수치 조정 바의 슬라이드 너비 | 15 | 상수 |
 | length | 수치 조정 바의 길이 | 100 | 상수 |
 | relief | 수치 조정 바의 테두리 모양 | flat | flat, groove, raised, ridge, solid, sunken |
-| borderwidth=bd | 수치 조정 바의 테두리 두께 | 0 | 상수 |
+| borderwidth=bd | 수치 조정 바의 테두리 두께 | 1 | 상수 |
+| foreground=fg | 수치 조정 바의 문자열 색상 | SystemButtonText | color |
 | background=bg | 수치 조정 바의 배경 색상 | SystemButtonFace | color |
 | troughcolor | 수치 조정 바의 내부 배경 색상  | SystemScrollbar | color |
 | orient | 수치 조정 바의 표시 방향   | vertical | vertical, horizontal |
@@ -119,10 +128,10 @@ label.pack()
 |:--------:|:-------------------------------------------------------:|:-------------:|:--------------------------------------------------------------------------------------:|
 |  font   |       수치 조정 바의 문자열 글꼴 설정              |    TkDefaultFont    |      font        |
 |  cursor  |      수치 조정 바의 마우스 커서 모양                 |       -       |                                    [커서 속성](#reference-2)                                   |
-|  digits |     수치 조정 바의 숫자 값을 문자열로 변활 할 때 사용할 숫자의 수   |    0    |      상수        |
+|  digits |     수치 조정 바의 숫자 값을 문자열로 변환할 때 사용할 유효 숫자의 수   |    0    |      상수        |
 |  from_  |      수치 조정 바의 최솟값   |    0    |      상수        |
 |  to |     수치 조정 바의 최댓값   |    100    |      상수        |
-|  resolution |   수치 조정 바의 간격   |    1    |      상수        |
+|  resolution |   수치 조정 바의 값 간격(단위), `-1`로 설정하면 제한 없음   |    1    |      상수        |
 
 <br>
 
@@ -149,9 +158,9 @@ label.pack()
 
 |         이름        |              의미              |         기본값        | 속성 |
 |:-------------------:|:------------------------------:|:-----------------:|:----:|
-|    takefocus |    Tab 키를 이용하여 위젯 이동 허용 여부  | False |  Boolean |
-|    command |    수치 조정 바가 active 상태일 때 실행하는 메서드(함수)   | - |  메서드, 함수 |
-|    variable | 수치 조정 바의 상태를 저장할 제어 변수  | - |  tkinter.IntVar(), tkinter.StringVar() |
+|    takefocus |    Tab 키를 이용하여 위젯 이동 허용 여부  | - |  Boolean |
+|    command |    수치 조정 바의 값이 변경될 때 실행하는 메서드(함수), 현재 값이 문자열로 전달됨   | - |  메서드, 함수 |
+|    variable | 수치 조정 바의 값을 저장할 제어 변수  | - |  tkinter.IntVar(), tkinter.DoubleVar(), tkinter.StringVar() |
 |    bigincrement | [수치 조정 바가 Tab된 상태에서 Ctrl 키를 이용하여 한 번에 이동할 양](#reference-4)  | 0 |  상수 |
 | repeatdelay | [버튼이 눌러진 상태에서 command 실행까지의 대기 시간](#reference-5)   |  300 |  상수(ms) |
 |  repeatinterval |    [버튼이 눌러진 상태에서 command 실행의 반복 시간](#reference-6)    |         100         | 상수(ms) |
@@ -178,7 +187,7 @@ label.pack()
 
 <a id="reference-5"></a>
 
-* `takefocus`가 `True`로 설정한 뒤, `Tab`이 된 상태에서 `Ctrl`키와 `좌우 방향키`를 동시에 눌러 `bigincrement` 의 값 만큼 한 번에 이동됨
+* `takefocus`를 `True`로 설정한 뒤, `Tab`이 된 상태에서 `Ctrl`키와 `좌우 방향키`를 동시에 눌러 `bigincrement` 의 값 만큼 한 번에 이동됨
 
 <a id="reference-6"></a>
 

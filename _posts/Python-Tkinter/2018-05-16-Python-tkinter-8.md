@@ -4,7 +4,7 @@ title: "Python tkinter 강좌 : 제 8강 - Menu"
 tagline: "Python tkinter Menu"
 image: /assets/images/tkinter.png
 tags: ['Tkinter']
-keywords: Python, Python tkinter, tkinter Menu
+keywords: Python, Python tkinter, tkinter Menu, tkinter 메뉴, tkinter add_command, tkinter add_cascade, tkinter tearoff
 ref: Python-Tkinter
 category: Python
 permalink: /posts/Python-tkinter-8/
@@ -14,7 +14,7 @@ toc: true
 
 ## Menu(메뉴)
 
-`Menu`을 이용하여 `자주 사용하는 기능` 등을 **다양한 선택사항으로 나누는** `메뉴`을 생성할 수 있습니다.
+`Menu`를 이용하여 `자주 사용하는 기능` 등을 **다양한 선택사항으로 나누는** `메뉴`를 생성할 수 있습니다.
 
 <br>
 <br>
@@ -44,7 +44,7 @@ menu_1.add_command(label="하위 메뉴 1-3", command=close)
 menubar.add_cascade(label="상위 메뉴 1", menu=menu_1)
 
 menu_2=tkinter.Menu(menubar, tearoff=0, selectcolor="red")
-menu_2.add_radiobutton(label="하위 메뉴 2-1", state="disable")
+menu_2.add_radiobutton(label="하위 메뉴 2-1", state="disabled")
 menu_2.add_radiobutton(label="하위 메뉴 2-2")
 menu_2.add_radiobutton(label="하위 메뉴 2-3")
 menubar.add_cascade(label="상위 메뉴 2", menu=menu_2)
@@ -80,7 +80,7 @@ menu_1.add_command(label="하위 메뉴 1-3", command=close)
 menubar.add_cascade(label="상위 메뉴 1", menu=menu_1)
 
 menu_2=tkinter.Menu(menubar, tearoff=0, selectcolor="red")
-menu_2.add_radiobutton(label="하위 메뉴 2-1", state="disable")
+menu_2.add_radiobutton(label="하위 메뉴 2-1", state="disabled")
 menu_2.add_radiobutton(label="하위 메뉴 2-2")
 menu_2.add_radiobutton(label="하위 메뉴 2-3")
 menubar.add_cascade(label="상위 메뉴 2", menu=menu_2)
@@ -115,6 +115,12 @@ print("Window Close")
 
 `window.destroy()`는 위젯을 파괴하고 `window.mainloop()` 이후의 코드를 실행시킵니다.
 
+- Tip : `tearoff=0`으로 설정하면 하위 메뉴 맨 위에 표시되는 `점선(분리선)`이 사라집니다. 점선을 클릭하면 하위 메뉴가 별도의 창으로 분리되므로, 일반적인 프로그램에서는 `tearoff=0`으로 설정합니다.
+
+- Tip : `add_radiobutton()`과 `add_checkbutton()`은 `Radiobutton`, `Checkbutton` 위젯과 같이 `variable`, `value`, `onvalue`, `offvalue` 매개변수로 제어 변수를 연결할 수 있습니다.
+
+- Tip : `add_command(label="저장", accelerator="Ctrl+S")`처럼 `accelerator` 매개변수를 사용하면 메뉴 항목 오른쪽에 단축키 문자열을 표시할 수 있습니다. 단, 문자열만 표시될 뿐 실제 단축키는 `window.bind("<Control-s>", 함수)`로 따로 연결해야 합니다.
+
 <br>
 <br>
 
@@ -133,11 +139,11 @@ print("Window Close")
 |           index(item)          |                       `item` 메뉴 항목의 `index` 위치 반환                      |
 |    insert_separator (index)    |                            `index` 위치에 구분선 생성                           |
 |          invoke(index)         |                             `index` 위치의 항목 실행                            |
-|           type(속성)           | 선택 유형 반환 (command, radiobutton, checkbutton, cascade, separator, tearoff) |
+|           type(index)          | `index` 위치 항목의 유형 반환 (command, radiobutton, checkbutton, cascade, separator, tearoff) |
 
 <br>
 
-- Tip : 매개변수 중, : `label=이름`을 이용하여 메뉴의 이름을 설정할 수 있습니다.
+- Tip : 매개변수 중 `label=이름`을 이용하여 메뉴의 이름을 설정할 수 있습니다.
 
 - Tip : `메뉴 이름.add_cascade(label="상위 메뉴 이름", menu=연결할 상위 메뉴)`를 이용하여 메뉴를 부착할 수 있습니다.
 
@@ -151,9 +157,9 @@ print("Window Close")
 |      이름      |               의미               |      기본값      |                    속성                    |
 |:--------------:|:--------------------------------:|:----------------:|:------------------------------------------:|
 |     relief     |        메뉴의 테두리 모양        |       flat       | flat, groove, raised, ridge, solid, sunken |
-|  background=bg |           메뉴의 배경 색상        | SystemButtonFace |                    color                 |
-|  foreground=fg |          메뉴의 문자열 색상         | SystemButtonFace |                    color                   |
-|  selectcolor |          하위 메뉴의 선택 표시(√) 색상         | SystemWindow |                    color                   |
+|  background=bg |           메뉴의 배경 색상        | SystemMenu |                    color                 |
+|  foreground=fg |          메뉴의 문자열 색상         | SystemMenuText |                    color                   |
+|  selectcolor |          하위 메뉴의 선택 표시(√) 색상         | SystemMenuText |                    color                   |
 
 <br>
 
@@ -172,8 +178,8 @@ print("Window Close")
 |:------------------:|:----------------------------------------:|:------------------:|:------------------------:|
 |  activeborderwidth |   active 상태일 때 메뉴의 테두리 두께   |  1   |           상수          |
 |  activebackground  |   active 상태일 때 메뉴의 배경 색상   |  SystemHighlight |           color          |
-|  activeforeground  |  active 상태일 때 메뉴의 문자열 색상  |  SystemButtonText  |           color          |
-| disabledforeground | disabeld 상태일 때 메뉴의 문자열 색상 | SystemDisabledText |           color          |
+|  activeforeground  |  active 상태일 때 메뉴의 문자열 색상  |  SystemHighlightText  |           color          |
+| disabledforeground | disabled 상태일 때 메뉴의 문자열 색상 | SystemDisabledText |           color          |
 
 <br>
 
@@ -181,10 +187,10 @@ print("Window Close")
 
 |         이름        |              의미              |       기본값      | 속성 |
 |:-------------------:|:------------------------------:|:-----------------:|:----:|
-|    postcommand |    메뉴가 선택되었을 때 실행하는 메서드(함수)  | - |  메서드, 함수 |
-|    tearoff |   하위메뉴의 분리 기능 사용 유/무   | False |  Boolean |
+|    postcommand |    메뉴가 화면에 표시되기 직전에 실행하는 메서드(함수)  | - |  메서드, 함수 |
+|    tearoff |   하위메뉴의 분리 기능 사용 유/무   | True |  Boolean |
 |    title |     하위메뉴의 분리 기능의 제목 | - | 문자열 |
-|    tearoffcommand |    메뉴의 위젯 일치화 여부 | - |  메서드, 함수 |
+|    tearoffcommand |    하위 메뉴가 분리될 때 실행하는 메서드(함수) | - |  메서드, 함수 |
 
 <br>
 

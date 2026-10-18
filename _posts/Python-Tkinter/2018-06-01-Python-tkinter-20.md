@@ -4,7 +4,7 @@ title: "Python tkinter 강좌 : 제 20강 - PanedWindow"
 tagline: "Python tkinter PanedWindow"
 image: /assets/images/tkinter.png
 tags: ['Tkinter']
-keywords: Python, Python tkinter, tkinter PanedWindow
+keywords: Python, Python tkinter, tkinter PanedWindow, tkinter 내부 윈도우, tkinter 분할 창, tkinter sash, tkinter ttk PanedWindow
 ref: Python-Tkinter
 category: Python
 permalink: /posts/Python-tkinter-20/
@@ -16,7 +16,7 @@ toc: true
 
 <img data-src="{{ site.images }}/assets/posts/Python/Tkinter/lecture-20/1.webp" class="lazyload" width="100%" height="100%"/>
 
-`PanedWindow`을 이용하여 **다른 위젯들을 포함**하고 **구역을 나눌 수 있는** `내부 윈도우`를 생성할 수 있습니다.
+`PanedWindow`를 이용하여 **다른 위젯들을 포함**하고 **구역을 나눌 수 있는** `내부 윈도우`를 생성할 수 있습니다.
 
 <br>
 <br>
@@ -83,6 +83,16 @@ panedwindow2.add(bottom)
 
 `내부 윈도우의 새시`를 이동하여 컨테이너를 움직일 수 있습니다.
 
+`새시(sash)`는 구역과 구역 사이의 **경계선**이며, 마우스로 드래그하여 각 구역의 크기를 조절할 수 있습니다.
+
+예제의 `panedwindow1`은 `orient`를 설정하지 않았으므로 기본값인 `horizontal`이 적용되어 위젯이 **좌우**로 나뉘며, `panedwindow2`는 `orient="vertical"`이므로 위젯이 **상하**로 나뉩니다.
+
+- Tip : 예제의 `tkinter.PanedWindow(relief="raised", bd=2)`처럼 첫 번째 매개변수인 `윈도우 창`을 생략하면 **기본 윈도우 창(Tk)**에 생성됩니다.
+
+- Tip : 내부 윈도우에 포함할 위젯은 `pack`, `grid`, `place`로 배치하지 않고, 반드시 `add` 메서드로 추가해야 합니다.
+
+- Tip : `tkinter.ttk.PanedWindow`도 동일한 용도로 사용할 수 있으며, `add(위젯, weight=1)`과 같이 `weight`로 창 크기가 변경될 때 각 구역이 늘어나는 비율을 설정합니다.
+
 <br>
 <br>
 
@@ -91,17 +101,24 @@ panedwindow2.add(bottom)
 |              이름              |       의미       |                       설명                      |
 |:------------------------------:|:----------------:|:-----------------------------------------------:|
 |     add(위젯, option)    |    위젯 추가   |       해당 `위젯`을 내부 윈도우에 추가       |
+|     remove(위젯) / forget(위젯)    |    위젯 제거   |       해당 `위젯`을 내부 윈도우에서 제거       |
+|     paneconfig(위젯, option)    |    위젯 설정 변경   |       추가된 `위젯`의 `option`을 변경       |
+|     panes()    |    위젯 목록 반환   |       내부 윈도우에 추가된 위젯의 목록을 반환       |
+|     sash_coord(index)    |    새시 좌표 반환   |       `index` 번째 새시의 (x, y) 좌표를 반환       |
+|     sash_place(index, x, y)    |    새시 위치 변경   |       `index` 번째 새시를 (x, y) 위치로 이동       |
 
 <br>
 
 * option
 
-  - after : 내부 윈도우의 위젯 순서를 앞에 배치, `panedwindow2.add(top, after=bottom)`
-  - before : 내부 윈도우의 위젯 순서를 뒤에 배치, `panedwindow2.add(bottom, before=top)`
+  - after : 해당 위젯의 **뒤**에 배치, `panedwindow2.add(top, after=bottom)`은 `bottom` 뒤에 `top`을 배치
+  - before : 해당 위젯의 **앞**에 배치, `panedwindow2.add(bottom, before=top)`은 `top` 앞에 `bottom`을 배치
   - width : 내부 윈도우 자식의 너비
   - height : 내부 윈도우 자식의 높이
-  - minsize : 내부 윈도우 새시의 최소 이동 제한 크기
-  - sticky : 할당된 공간 내에서의 위치 조정
+  - minsize : 해당 위젯 구역의 최소 크기, 새시를 이 크기보다 작게 이동할 수 없음
+  - sticky : 할당된 공간 내에서의 위치 조정, `n, e, w, s`의 조합 `(기본값 = nesw)`
+  - stretch : 창 크기가 변경될 때 늘어나는 구역 설정, `always, first, last, middle, never` `(기본값 = last)`
+  - hide : True일 경우, 해당 위젯을 내부 윈도우에서 숨김
   - padx : 내부 윈도우의 가로 여백	
   - pady : 내부 윈도우의 세로 여백	
 
@@ -120,16 +137,16 @@ panedwindow2.add(bottom)
 | width | [내부 윈도우의 너비](#reference-1) | 0 | 상수 |
 | height | [내부 윈도우의 높이](#reference-1) | 0 | 상수 |
 | relief | 내부 윈도우의 테두리 모양 | flat | flat, groove, raised, ridge, solid, sunken |
-| borderwidth=bd | 내부 윈도우의 테두리 두께 | 2 | 상수 |
+| borderwidth=bd | 내부 윈도우의 테두리 두께 | 1 | 상수 |
 | background=bg | 내부 윈도우의 배경 색상 | SystemButtonFace | color |
-| orient | 내부 윈도우의 표시 방향 | vertical | vertical, horizontal |
+| orient | 내부 윈도우의 표시 방향 | horizontal | vertical, horizontal |
 | sashwidth | 내부 윈도우 새시의 너비 | 3 | 상수 |
 | sashrelief | 내부 윈도우 새시의 테두리 모양 | flat | flat, groove, raised, ridge, solid, sunken |
 | sashpad | 내부 윈도우 새시의 여백 | 0 | 상수 |
 | showhandle | 내부 윈도우 새시의 손잡이 표시 유/무 | False | Boolean |
 | handlesize | 내부 윈도우 새시의 손잡이 크기 | 8 | 상수 |
 | handlepad | 내부 윈도우 새시의 손잡이 위치 | 8 | 상수 |
-| opaqueresize | 내부 윈도우 새시의 불투명바 제거 유/무 | True | Boolean |
+| opaqueresize | [새시를 드래그하는 동안 구역 크기를 즉시 변경할지 여부](#reference-3) | True | Boolean |
 
 <br>
 
@@ -149,6 +166,10 @@ panedwindow2.add(bottom)
 <a id="reference-2"></a>
 
 * 미 입력시, `width`와 `height`를 `자동 조절`
+
+<a id="reference-3"></a>
+
+* `opaqueresize`가 `False`일 경우, 드래그하는 동안에는 새시의 위치만 표시되고 **마우스를 뗄 때** 구역의 크기가 변경됨
 
 * cursor 매개변수
 

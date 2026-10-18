@@ -4,7 +4,7 @@ title: "Python tkinter 강좌 : 제 2강 - Label"
 tagline: "Python tkinter Label"
 image: /assets/images/tkinter.png
 tags: ['Tkinter']
-keywords: Python, Python tkinter, tkinter Label
+keywords: Python, Python tkinter, tkinter Label, tkinter 라벨, tkinter textvariable, ttk Label
 ref: Python-Tkinter
 category: Python
 permalink: /posts/Python-tkinter-2/
@@ -50,6 +50,16 @@ label.pack()
 
 `매개변수`를 사용하여 `라벨의 속성`을 설정합니다.
 
+위의 예제는 `파이썬` 문자열을 `빨간색(fg="red")`으로 표시하고, `테두리(relief="solid")`가 있는 `너비 10`, `높이 5`의 라벨을 생성합니다.
+
+- Tip : `width`와 `height`는 문자열을 표시할 때 `글자 수` 단위이며, 이미지를 표시할 때는 `픽셀` 단위입니다.
+
+- Tip : 라벨을 생성한 후에 속성을 변경하려면 `라벨이름.config(text="변경할 내용")`을 사용합니다.
+
+- Tip : `textvariable`에 `tkinter.StringVar()`를 연결하면, `변수이름.set("내용")`으로 값을 변경할 때마다 라벨의 문자열이 자동으로 갱신됩니다.
+
+- Tip : `tkinter.ttk.Label`은 운영체제의 기본 테마가 적용되는 라벨이며, 사용 방법은 거의 같지만 `fg`, `bg`와 같은 축약 이름은 사용할 수 없으므로 `foreground`, `background`로 작성해야 합니다.
+
 <br>
 <br>
 
@@ -76,7 +86,7 @@ label.pack()
 |     relief     |        라벨의 테두리 모양        |       flat       | flat, groove, raised, ridge, solid, sunken |
 | borderwidth=bd |        라벨의 테두리 두께        |         2        |                    상수                    |
 |  background=bg |           라벨의 배경 색상          | SystemButtonFace |                    color                   |
-|  foreground=fg |          라벨의 문자열 색상         | SystemButtonFace |                    color                   |
+|  foreground=fg |          라벨의 문자열 색상         | SystemButtonText |                    color                   |
 |      padx      | 라벨의 테두리와 내용의 가로 여백 |         1        |                    상수                    |
 |      pady      | 라벨의 테두리와 내용의 세로 여백 |         1        |                    상수                    |
 
@@ -101,7 +111,7 @@ label.pack()
 |        state       |                 상태 설정                 |       normal       | [normal](#reference-2), active, disabled |
 |  activebackground  |   active 상태일 때 라벨의 배경 색상   |  SystemButtonFace  |           color          |
 |  activeforeground  |  active 상태일 때 라벨의 문자열 색상  |  SystemButtonText  |           color          |
-| disabledforeground | disabeld 상태일 때 라벨의 문자열 색상 | SystemDisabledText |           color          |
+| disabledforeground | disabled 상태일 때 라벨의 문자열 색상 | SystemDisabledText |           color          |
 
 <br>
 

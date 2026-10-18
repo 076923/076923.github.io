@@ -4,7 +4,7 @@ title: "Python tkinter 강좌 : 제 3강 - Button"
 tagline: "Python tkinter Button"
 image: /assets/images/tkinter.png
 tags: ['Tkinter']
-keywords: Python, Python tkinter, tkinter Button
+keywords: Python, Python tkinter, tkinter Button, tkinter command, tkinter 버튼, ttk Button
 ref: Python-Tkinter
 category: Python
 permalink: /posts/Python-tkinter-3/
@@ -72,6 +72,14 @@ button.pack()
 
 매개변수 중 `command`를 이용하여 `사용자 정의 함수 : countUP`을 실행시킬 수 있습니다.
 
+버튼을 클릭할 때마다 `countUP` 함수가 실행되어 `count` 값이 1씩 증가하며, `label.config(text=...)`를 통해 라벨에 표시됩니다.
+
+- Tip : `command`에는 `command=countUP`처럼 **괄호 없이 함수 이름만** 전달합니다. `command=countUP()`으로 작성하면 버튼을 생성하는 시점에 함수가 한 번 실행되고, 그 반환값(`None`)이 `command`에 등록되어 버튼을 클릭해도 아무 동작도 하지 않습니다.
+
+- Tip : 함수에 매개변수를 전달해야 하는 경우 `람다(lambda)` 함수를 사용합니다. : [33강 바로가기][33강]
+
+- Tip : `tkinter.ttk.Button`은 운영체제의 기본 테마가 적용되는 버튼이며, `relief`, `bg` 등 외형 매개변수는 `style`로 설정해야 합니다.
+
 <br>
 <br>
 
@@ -85,6 +93,8 @@ button.pack()
 - Tip : `invoke()` : 버튼을 클릭했을 때와 동일한 실행
 
 - Tip : `flash()` : `normal` 상태 배경 색상과 `active` 상태 배경 색상 사이에서 깜빡임
+
+- Tip : `버튼이름.config(state="disabled")`로 버튼을 비활성화할 수 있으며, 비활성화된 버튼은 클릭해도 `command`가 실행되지 않습니다.
 
 <br>
 <br>
@@ -109,11 +119,11 @@ button.pack()
 |:--------------:|:--------------------------------:|:----------------:|:------------------------------------------:|
 |      width     |            버튼의 너비           |         0        |                    상수                    |
 |     height     |            버튼의 높이           |         0        |                    상수                    |
-|     relief     |        버튼의 테두리 모양        |       flat       | flat, groove, raised, ridge, solid, sunken |
-|     overrelief      |        버튼에 마우스를 올렸을 때 버튼의 테두리 모양        |       raised       | flat, groove, raised, ridge, solid, sunken |
+|     relief     |        버튼의 테두리 모양        |       raised       | flat, groove, raised, ridge, solid, sunken |
+|     overrelief      |        버튼에 마우스를 올렸을 때 버튼의 테두리 모양        |       -       | flat, groove, raised, ridge, solid, sunken |
 | borderwidth=bd |        버튼의 테두리 두께        |         2        |                    상수                    |
 |  background=bg |           버튼의 배경 색상        | SystemButtonFace |                    color                 |
-|  foreground=fg |          버튼의 문자열 색상         | SystemButtonFace |                    color                   |
+|  foreground=fg |          버튼의 문자열 색상         | SystemButtonText |                    color                   |
 |      padx      | 버튼의 테두리와 내용의 가로 여백 |         1        |                    상수                    |
 |      pady      | 버튼의 테두리와 내용의 세로 여백 |         1        |                    상수                    |
 
@@ -138,7 +148,7 @@ button.pack()
 |        state       |                 상태 설정                 |       normal       | [normal](#reference-2), active, disabled |
 |  activebackground  |   active 상태일 때 버튼의 배경 색상   |  SystemButtonFace  |           color          |
 |  activeforeground  |  active 상태일 때 버튼의 문자열 색상  |  SystemButtonText  |           color          |
-| disabledforeground | disabeld 상태일 때 버튼의 문자열 색상 | SystemDisabledText |           color          |
+| disabledforeground | disabled 상태일 때 버튼의 문자열 색상 | SystemDisabledText |           color          |
 
 <br>
 
@@ -148,7 +158,7 @@ button.pack()
 |:-------------------:|:------------------------------:|:-----------------:|:----:|
 |    highlightcolor   |    버튼이 선택되었을 때 색상   | SystemWindowFrame |  color  |
 | highlightbackground | 버튼이 선택되지 않았을 때 색상 |  SystemButtonFace |  color  |
-|  highlightthickness |    버튼이 선택되었을 때 두께 [(두께 설정)](#reference-3)     |         0         | 상수 |
+|  highlightthickness |    버튼이 선택되었을 때 두께 [(두께 설정)](#reference-3)     |         1         | 상수 |
 
 <br>
 
@@ -157,7 +167,7 @@ button.pack()
 |         이름        |              의미              |       기본값      | 속성 |
 |:-------------------:|:------------------------------:|:-----------------:|:----:|
 |    takefocus |    Tab 키를 이용하여 위젯 이동 허용 여부  | True |  Boolean |
-|    command |    버튼이 active 상태일 때 실행하는 메서드(함수)   | - |  메서드, 함수 |
+|    command |    버튼을 클릭했을 때 실행하는 메서드(함수)   | - |  메서드, 함수 |
 | repeatdelay | [버튼이 눌러진 상태에서 command 실행까지의 대기 시간](#reference-4)   |  0 |  상수(ms) |
 |  repeatinterval |    [버튼이 눌러진 상태에서 command 실행의 반복 시간](#reference-5)    |         0         | 상수(ms) |
 
@@ -188,3 +198,5 @@ button.pack()
 * `repeatdelay=1000`, `repeatinterval=100` 일 경우, **1초 후에 command가 실행되며 0.1초마다 버튼을 뗄 때까지** `command`가 계속 실행됨
 
 * `repeatinterval` 매개변수는 `repeatdelay` 매개변수와 **같이** 사용해야함
+
+[33강]: https://076923.github.io/posts/Python-tkinter-33/

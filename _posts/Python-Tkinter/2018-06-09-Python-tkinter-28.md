@@ -4,7 +4,7 @@ title: "Python tkinter 강좌 : 제 28강 - Notebook"
 tagline: "Python tkinter Notebook"
 image: /assets/images/tkinter.png
 tags: ['Tkinter']
-keywords: Python, Python tkinter, tkinter Notebook
+keywords: Python, Python tkinter, tkinter Notebook, tkinter ttk Notebook, tkinter 탭, tkinter NotebookTabChanged
 ref: Python-Tkinter
 category: Python
 permalink: /posts/Python-tkinter-28/
@@ -117,6 +117,12 @@ label4.pack()
 
 `프레임`을 이용하여 `탭 페이지`를 설정할 수 있습니다.
 
+`탭 메뉴.add(프레임, text="제목")`으로 페이지를 추가하면 `프레임`이 탭 메뉴 내부에 배치되며, 페이지에 표시할 위젯은 `프레임`을 부모로 생성합니다.
+
+`탭 메뉴.insert(위치, 프레임, text="제목")`으로 원하는 위치에 페이지를 삽입할 수 있으며, 예제에서는 `2번 위치`에 `페이지3`을 삽입하여 페이지가 `1, 2, 3, 4` 순서로 표시됩니다.
+
+- Tip : 페이지로 사용할 프레임은 `tkinter.Frame(notebook)`처럼 **탭 메뉴를 부모**로 생성하는 것이 일반적입니다.
+
 <br>
 <br>
 
@@ -131,8 +137,10 @@ label4.pack()
 |         forget(tabname)        |    페이지 삭제   |     탭 메뉴의 tabname 페이지를 삭제    |
 |          hide(tabname)         |    페이지 숨김   |     탭 메뉴의 tabname 페이지를 숨김    |
 |         select(tabname)        |    페이지 선택   |     탭 메뉴의 tabname 페이지를 선택    |
+|         select()        |    현재 페이지 반환   |     현재 선택된 페이지의 위젯 이름을 반환    |
 |         index(tabname)         | 페이지 위치 반환 | 탭 메뉴의 tabname 페이지의 위치를 반환 |
 |          tab(tabname)          | 페이지 설정 반환 | 탭 메뉴의 tabname 페이지의 설정을 반환 |
+|          tab(tabname, option=값)          | 페이지 설정 변경 | 탭 메뉴의 tabname 페이지의 설정을 변경 |
 |             tabs()             |    페이지 반환   |      탭 메뉴의 페이지 tabname 반환     |
 |       enable_traversal()       |  키 바인딩 허용  |       탭 메뉴의 키 바인딩을 허용       |
 
@@ -146,6 +154,11 @@ label4.pack()
 
     - `Ctrl + Tab` 을 이용하여 다음 페이지로 이동 가능
     - `Shift + Ctrl + Tab`을 이용하여 이전 페이지로 이동 가능
+    - `Alt + 밑줄 문자`를 이용하여 `underline`이 설정된 페이지로 이동 가능
+
+- Tip : `notebook.index("end")`로 페이지 개수를, `notebook.index("current")`로 현재 선택된 페이지의 위치를 확인할 수 있습니다.
+
+- Tip : 페이지가 바뀔 때 `<<NotebookTabChanged>>` 가상 이벤트가 발생하므로, `notebook.bind("<<NotebookTabChanged>>", 함수)`로 페이지 전환 시 실행할 함수를 설정할 수 있습니다.
 
 <br>
 
@@ -155,10 +168,11 @@ label4.pack()
 |:---------:|:------------------------------------------------------------:|:--------------------------------------:|
 |    text   |                   탭 페이지에 표시할 문자열                  |                 문자열                 |
 | underline |   탭 페이지의 문자열 중 index에 해당되는 문자에 밑줄 표시    |                  상수                  |
-|   sticky  |          탭 페이지의 할당된 공간 내에서의 위치 조정          |       n, e, w, s, ne, nw, se, sw       |
+|   sticky  |          탭 페이지의 할당된 공간 내에서의 위치 조정 (기본값 nsew)          |       n, e, w, s, ne, nw, se, sw, nsew       |
+|   padding  |          탭 페이지 내용과 탭 메뉴 사이의 여백          |       상수       |
 |   state   |                     탭 페이지의 상태 설정                    |        normal, disabled, hidden        |
 |   image   |                탭 페이지에 포함할 임의 이미지                |                    -                   |
-|  compound | 탭 페에지에 문자열과 이미지를 동시에 표시할 때 이미지의 위치 | none, center, left, right, top, bottom |
+|  compound | 탭 페이지에 문자열과 이미지를 동시에 표시할 때 이미지의 위치 | none, center, left, right, top, bottom |
 
 <br>
 <br>
