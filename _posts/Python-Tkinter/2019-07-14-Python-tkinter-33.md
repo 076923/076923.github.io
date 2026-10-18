@@ -3,8 +3,6 @@ layout: post
 title: "Python tkinter 강좌 : 제 33강 - 매개변수 전달"
 tagline: "Python tkinter command parameter"
 image: /assets/images/tkinter.png
-header:
-  image: /assets/patterns/asanoha-400px.png
 tags: ['Tkinter']
 keywords: Python, Python tkinter, Python tkinter command, Python tkinter parameter
 ref: Python-Tkinter

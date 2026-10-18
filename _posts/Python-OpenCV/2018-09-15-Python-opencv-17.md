@@ -3,8 +3,6 @@ layout: post
 title: "Python OpenCV 강좌 : 제 17강 - 채널 분리 & 병합"
 tagline: "Python OpenCV Split & Merge"
 image: /assets/images/opencv.png
-header:
-  image: /assets/patterns/asanoha-400px.png
 tags: ['OpenCV']
 keywords: Python, Python OpenCV, OpenCV Split, OpenCV Merge
 ref: Python-OpenCV

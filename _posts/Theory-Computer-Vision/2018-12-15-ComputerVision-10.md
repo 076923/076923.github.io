@@ -3,9 +3,7 @@ layout: post
 title: "Computer Vision Theory : 유사성 검출"
 tagline: "Similarity Detection"
 image: /assets/images/theory-cv.svg
-header:
-  image: /assets/patterns/asanoha-400px.png
-tags: ['ComputerVision']
+tags: ['Computer Vision']
 keywords: Computer Vision, OpenCV, Similarity Detection, Haar Cascade, Template Matching, Skin Color Detection
 ref: Theory-ComputerVision
 category: Theory

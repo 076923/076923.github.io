@@ -3,8 +3,6 @@ layout: post
 title: "Python OpenCV 강좌 : 제 39강 - 마우스 콜백"
 tagline: "Python OpenCV Mouse Callback"
 image: /assets/images/opencv.png
-header:
-  image: /assets/patterns/asanoha-400px.png
 tags: ['OpenCV']
 keywords: Python, Python OpenCV, OpenCV Mouse Callback, OpenCV setMouseCallback, OpenCV Mouse Event
 ref: Python-OpenCV

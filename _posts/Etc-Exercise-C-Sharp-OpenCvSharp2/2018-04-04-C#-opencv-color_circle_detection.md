@@ -3,12 +3,10 @@ layout: post
 title: "OpenCvSharp2 예제 : 원의 색상 검출"
 tagline: "C# OpenCvSharp2 Color Circle Detection"
 image: /assets/images/csharp.svg
-header:
-  image: /assets/patterns/asanoha-400px.png
 tags: ["OpenCvSharp2 : Exercise"]
 keywords: Visual Studio, OpenCV, OpenCvSharp2, Color Circle Detection
 ref: Exercise-C#-OpenCvSharp2
-category: Exercise
+category: Etc
 permalink: /exercise/C-opencv-color_circle_detection/
 comments: true
 toc: true

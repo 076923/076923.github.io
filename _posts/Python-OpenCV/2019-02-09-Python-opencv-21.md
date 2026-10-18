@@ -3,8 +3,6 @@ layout: post
 title: "Python OpenCV 강좌 : 제 21강 - 윤곽선 검출"
 tagline: "Python OpenCV Contour"
 image: /assets/images/opencv.png
-header:
-  image: /assets/patterns/asanoha-400px.png
 tags: ['OpenCV']
 keywords: Python, Python OpenCV, OpenCV Contour
 ref: Python-OpenCV

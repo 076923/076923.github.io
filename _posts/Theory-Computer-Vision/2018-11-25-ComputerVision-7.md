@@ -3,9 +3,7 @@ layout: post
 title: "Computer Vision Theory : 노이즈 제거 & 이미지 복원"
 tagline: "Noise Reduction & Image Restoration"
 image: /assets/images/theory-cv.svg
-header:
-  image: /assets/patterns/asanoha-400px.png
-tags: ['ComputerVision']
+tags: ['Computer Vision']
 keywords: Computer Vision, OpenCV, Noise Reduction, Image Restoration, Blur, Filtering, Morphology, Resize, Inpaint, Gamma Correct
 ref: Theory-ComputerVision
 category: Theory

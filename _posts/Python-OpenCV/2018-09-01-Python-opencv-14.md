@@ -3,8 +3,6 @@ layout: post
 title: "Python OpenCV 강좌 : 제 14강 - 가장자리 검출"
 tagline: "Python OpenCV Edge Image"
 image: /assets/images/opencv.png
-header:
-  image: /assets/patterns/asanoha-400px.png
 tags: ['OpenCV']
 keywords: Python, Python OpenCV, OpenCV Edge Image, OpenCV Canny, OpenCV Sobel, OpenCV Laplacian
 ref: Python-OpenCV

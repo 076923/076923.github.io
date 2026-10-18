@@ -3,8 +3,6 @@ layout: post
 title: "Python OpenCV 강좌 : 제 24강 - 블록 껍질"
 tagline: "Python OpenCV Convex Hull"
 image: /assets/images/opencv.png
-header:
-  image: /assets/patterns/asanoha-400px.png
 tags: ['OpenCV']
 keywords: Python, Python OpenCV, OpenCV ConvexHull, OpenCV Contours ConvexHull
 ref: Python-OpenCV

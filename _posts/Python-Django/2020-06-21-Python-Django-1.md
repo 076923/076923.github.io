@@ -3,8 +3,6 @@ layout: post
 title: "Python Django 강좌 : 제 1강 - 소개 및 설치"
 tagline: "Python Django Introduction and Installation"
 image: /assets/images/django.png
-header:
-  image: /assets/patterns/asanoha-400px.png
 tags: ['Django']
 keywords: Python, Python Django, Python Django 3, Python Django MTV, Python Django Model, Python Django Template, Python Django View, Python Django REST Framework,  Python DRF, Representational State Transfer
 ref: Python-Django

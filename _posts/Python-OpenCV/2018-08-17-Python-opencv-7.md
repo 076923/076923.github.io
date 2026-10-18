@@ -3,8 +3,6 @@ layout: post
 title: "Python OpenCV 강좌 : 제 7강 - 확대 & 축소"
 tagline: "Python OpenCV ZoomIn & ZoomOut"
 image: /assets/images/opencv.png
-header:
-  image: /assets/patterns/asanoha-400px.png
 tags: ['OpenCV']
 keywords: Python, Python OpenCV, OpenCV ZoomIn, OpenCV ZoomOut, Image Pyramid
 ref: Python-OpenCV

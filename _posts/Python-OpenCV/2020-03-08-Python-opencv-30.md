@@ -3,8 +3,6 @@ layout: post
 title: "Python OpenCV 강좌 : 제 30강 - 이미지 연산 (1)"
 tagline: "Python OpenCV Image Calculation (1)"
 image: /assets/images/opencv.png
-header:
-  image: /assets/patterns/asanoha-400px.png
 tags: ['OpenCV']
 keywords: Python, Python OpenCV, OpenCV Calculation, OpenCV add, OpenCV subtract, OpenCV multiply, OpenCV divide
 ref: Python-OpenCV

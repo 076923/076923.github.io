@@ -3,8 +3,6 @@ layout: post
 title: "Python Pytorch 강좌 : 제 1강 - PyTorch 소개 및 설치"
 tagline: "Python PyTorch Install"
 image: /assets/images/pytorch.webp
-header:
-  image: /assets/patterns/asanoha-400px.png
 tags: ['PyTorch']
 keywords: Python, Python Pytorch, Pytorch install, Pytorch CPU Install, Pytorch GPU Install
 ref: Python-PyTorch

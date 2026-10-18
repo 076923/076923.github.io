@@ -3,8 +3,6 @@ layout: post
 title: "Python OpenCV 강좌 : 제 32강 - 비트 연산"
 tagline: "Python OpenCV Bitwise"
 image: /assets/images/opencv.png
-header:
-  image: /assets/patterns/asanoha-400px.png
 tags: ['OpenCV']
 keywords: Python, Python OpenCV, OpenCV Bitwise, OpenCV AND, OpenCV OR, OpenCV XOR, OpenCV NOT
 ref: Python-OpenCV

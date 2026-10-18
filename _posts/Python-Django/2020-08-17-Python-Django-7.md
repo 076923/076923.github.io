@@ -3,8 +3,6 @@ layout: post
 title: "Python Django 강좌 : 제 7강 - Serializers"
 tagline: "Python Django serializers"
 image: /assets/images/django.png
-header:
-  image: /assets/patterns/asanoha-400px.png
 tags: ['Django']
 keywords: Python, Python Django, Python Django 3, Python Django Serializers, Python Django serializers.py, Python Django SerializerMethodField, Python Django validate, Python Django ValidationError, Python Django ModelSerializer, Python Django serializers.Field
 ref: Python-Django

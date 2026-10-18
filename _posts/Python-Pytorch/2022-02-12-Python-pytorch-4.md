@@ -3,8 +3,6 @@ layout: post
 title: "Python Pytorch 강좌 : 제 4강 - 손실 함수(Loss Function)"
 tagline: "Python PyTorch Loss Function"
 image: /assets/images/pytorch.webp
-header:
-  image: /assets/patterns/asanoha-400px.png
 tags: ['PyTorch']
 keywords: Python, Python Pytorch, Pytorch Loss Function, Pytorch Squared Error, Pytorch Sum of Squared for Error, Pytorch Mean Squared Error
 ref: Python-PyTorch

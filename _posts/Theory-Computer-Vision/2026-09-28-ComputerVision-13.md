@@ -3,9 +3,7 @@ layout: post
 title: "Computer Vision Theory : 3차원 비전"
 tagline: "3D Vision"
 image: /assets/images/theory-cv.svg
-header:
-  image: /assets/patterns/asanoha-400px.png
-tags: ['ComputerVision']
+tags: ['Computer Vision']
 keywords: Computer Vision, OpenCV, 3D Vision, Pinhole Camera Model, Intrinsic Parameter, Extrinsic Parameter, Camera Calibration, Lens Distortion, Stereo Vision, Epipolar Geometry, Disparity, Depth Map, Structure from Motion, SLAM
 ref: Theory-ComputerVision
 category: Theory

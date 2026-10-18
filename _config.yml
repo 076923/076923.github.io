@@ -52,12 +52,6 @@ comments:
     discussion_term      : # "pathname" (default), "url", "title", "og:title"
     reactions_enabled    : # '1' for enabled (default), '0' for disabled
     theme                : # "light" (default), "dark", "dark_dimmed", "transparent_dark", "preferred_color_scheme"
-  staticman:
-    branch               : # "master"
-    endpoint             : # "https://{your Staticman v3 API}/v3/entry/github/"
-reCaptcha:
-  siteKey                :
-  secret                 :
 atom_feed:
   path                   : # blank (default) uses feed.xml
   hide                   : # true, false (default)
@@ -83,7 +77,6 @@ baidu_site_verification  :
 analytics:
   provider               : "google" # false (default), "google", "google-universal", "google-gtag", "custom"
   google:
-    tracking_id          : "UA-106083039-1" 
     tag_id               : "G-HPQSBGGMQW"
     anonymize_ip         : # true, false (default)
 
@@ -168,6 +161,8 @@ exclude:
   - package.json
   - package-lock.json
   - Rakefile
+  - banner.js
+  - minimal-mistakes-jekyll.gemspec
   - README
   - tmp
   - /docs # ignore Minimal Mistakes /docs
@@ -221,14 +216,12 @@ timezone: Asia/Seoul
 # Plugins (previously gems:)
 plugins:
   - jekyll-paginate
-  - jekyll-gist
   - jekyll-feed
   - jekyll-include-cache
 
 # mimic GitHub Pages with --safe
 whitelist:
   - jekyll-paginate
-  - jekyll-gist
   - jekyll-feed
   - jekyll-include-cache
 

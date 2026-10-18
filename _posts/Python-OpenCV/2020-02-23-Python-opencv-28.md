@@ -3,8 +3,6 @@ layout: post
 title: "Python OpenCV 강좌 : 제 28강 - 직선 검출"
 tagline: "Python OpenCV Line Detection"
 image: /assets/images/opencv.png
-header:
-  image: /assets/patterns/asanoha-400px.png
 tags: ['OpenCV']
 keywords: Python, Python OpenCV, OpenCV Hough Transform, OpenCV Standard Hough Transform, OpenCV Multi-Scale Hough Transform, OpenCV Progressive Probabilistic Hough Transform
 ref: Python-OpenCV

@@ -3,8 +3,6 @@ layout: post
 title: "Python tkinter 강좌 : 제 9강 - Menubutton"
 tagline: "Python tkinter Menubutton"
 image: /assets/images/tkinter.png
-header:
-  image: /assets/patterns/asanoha-400px.png
 tags: ['Tkinter']
 keywords: Python, Python tkinter, tkinter Menubutton
 ref: Python-Tkinter

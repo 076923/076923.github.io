@@ -3,8 +3,6 @@ layout: post
 title: "Python OpenCV 강좌 : 제 36강 - 적응형 이진화"
 tagline: "Python OpenCV Adaptive Threshold"
 image: /assets/images/opencv.png
-header:
-  image: /assets/patterns/asanoha-400px.png
 tags: ['OpenCV']
 keywords: Python, Python OpenCV, OpenCV Adaptive Threshold, OpenCV ADAPTIVE_THRESH_MEAN_C, OpenCV ADAPTIVE_THRESH_GAUSSIAN_C
 ref: Python-OpenCV

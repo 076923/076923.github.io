@@ -3,9 +3,7 @@ layout: post
 title: "Computer Vision Theory : 이미지 연산"
 tagline: "Image Calculation"
 image: /assets/images/theory-cv.svg
-header:
-  image: /assets/patterns/asanoha-400px.png
-tags: ['ComputerVision']
+tags: ['Computer Vision']
 keywords: Computer Vision, OpenCV, Image Calculation
 ref: Theory-ComputerVision
 category: Theory

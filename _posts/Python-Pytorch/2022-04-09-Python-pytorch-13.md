@@ -3,8 +3,6 @@ layout: post
 title: "Python Pytorch 강좌 : 제 13강 - 다중 분류(Multiclass Classification)"
 tagline: "Python PyTorch Multi Class Classification"
 image: /assets/images/pytorch.webp
-header:
-  image: /assets/patterns/asanoha-400px.png
 tags: ['PyTorch']
 keywords: Python, Python Pytorch, Pytorch Multiclass Classification, Pytorch Softmax Function, Pytorch One hot encoding, Pytorch One hot vector, Pytorch Cross Entropy
 ref: Python-PyTorch

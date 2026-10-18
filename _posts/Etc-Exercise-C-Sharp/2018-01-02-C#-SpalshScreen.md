@@ -3,12 +3,10 @@ layout: post
 title: "C# 예제 : Splash Screen"
 tagline: "C# Create Splash Screen"
 image: /assets/images/csharp.svg
-header:
-  image: /assets/patterns/asanoha-400px.png
 tags: ["C# : Exercise"]
 keywords: C#, Visual Studio, Splash Screen
 ref: Exercise-C#
-category: Exercise
+category: Etc
 permalink: /exercise/C-spalshscreen/
 comments: true
 toc: true

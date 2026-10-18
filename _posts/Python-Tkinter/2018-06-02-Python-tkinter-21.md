@@ -3,8 +3,6 @@ layout: post
 title: "Python tkinter 강좌 : 제 21강 - Font"
 tagline: "Python tkinter Font"
 image: /assets/images/tkinter.png
-header:
-  image: /assets/patterns/asanoha-400px.png
 tags: ['Tkinter']
 keywords: Python, Python tkinter, tkinter Font
 ref: Python-Tkinter

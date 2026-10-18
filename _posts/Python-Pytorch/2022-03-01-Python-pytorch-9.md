@@ -3,8 +3,6 @@ layout: post
 title: "Python Pytorch 강좌 : 제 9강 - 모델(Model)"
 tagline: "Python PyTorch Model"
 image: /assets/images/pytorch.webp
-header:
-  image: /assets/patterns/asanoha-400px.png
 tags: ['PyTorch']
 keywords: Python, Python Pytorch, Pytorch Model, Pytorch nn.Module, Pytorch CustomDataset, Pytorch CustomModel
 ref: Python-PyTorch

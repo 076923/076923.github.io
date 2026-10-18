@@ -3,8 +3,6 @@ layout: post
 title: "Artificial Intelligence Theory : 활성화 함수(Activation Function)"
 tagline: "Activation Function"
 image: /assets/images/theory-ai.svg
-header:
-  image: /assets/patterns/asanoha-400px.png
 tags: ['AI']
 keywords: Artificial Intelligence, Activation Function, Step Function, Linear Function, Sigmoid Function, Tanh Function, Threshold Function, ReLU Function, ELU Function, PReLU Function, LeakyReLU Function, SiLU Function, Swish Function, GELU Function, Softmax Function, LogSoftmax Function
 ref: Theory-AI

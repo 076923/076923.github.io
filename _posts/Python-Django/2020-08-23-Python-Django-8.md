@@ -3,8 +3,6 @@ layout: post
 title: "Python Django 강좌 : 제 8강 - URL"
 tagline: "Python Django URL"
 image: /assets/images/django.png
-header:
-  image: /assets/patterns/asanoha-400px.png
 tags: ['Django']
 keywords: Python, Python Django, Python Django 3, Python Django URL, Python Django urls.py, Python Django Protocol, Python Django Host, Python Django Port, Python Django Resource Path, Python Django Query, Python Django Routing, Python Django django.conf.urls, Python Django ViewSet, Python Django urlpatterns, Python Django path, Python Django include
 ref: Python-Django

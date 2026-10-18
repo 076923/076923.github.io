@@ -858,6 +858,12 @@ Theory-NLP:
         url: "/posts/NLP-4/"
       - title: "어텐션(Attention)"
         url: "/posts/NLP-5/"
+      - title: "트랜스포머(Transformer)"
+        url: "/posts/NLP-6/"
+      - title: "사전 학습 언어 모델(Pre-trained Language Model)"
+        url: "/posts/NLP-7/"
+      - title: "대규모 언어 모델(Large Language Model)"
+        url: "/posts/NLP-8/"
 
 Exercise-C#:
   - title: "C# 예제 목록"

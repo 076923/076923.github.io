@@ -3,8 +3,6 @@ layout: post
 title: "Python OpenCV 강좌 : 제 31강 - 이미지 연산 (2)"
 tagline: "Python OpenCV Image Calculation (2)"
 image: /assets/images/opencv.png
-header:
-  image: /assets/patterns/asanoha-400px.png
 tags: ['OpenCV']
 keywords: Python, Python OpenCV, OpenCV Calculation, OpenCV max, OpenCV min, OpenCV absdiff, OpenCV compare
 ref: Python-OpenCV

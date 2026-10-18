@@ -3,8 +3,6 @@ layout: post
 title: "Python Django 강좌 : 제 10강 - Test"
 tagline: "Python Django Test & Debug"
 image: /assets/images/django.png
-header:
-  image: /assets/patterns/asanoha-400px.png
 tags: ['Django']
 keywords: Python, Python Django, Python Django 3, Python Django Test, Python Django Debug, Python Django Requests, Python Django Requests Post, Python Django Requests Get, Python Django Requests Put, Python Django Requests Delete, Python Django Postman, Python Django Postman Get, Python Django Postman Post, Python Django Postman Put,  Python Django Postman Delete, Python Django Postman Content-Type, Python Django Postman JSON
 ref: Python-Django

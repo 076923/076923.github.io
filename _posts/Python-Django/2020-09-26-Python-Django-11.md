@@ -3,8 +3,6 @@ layout: post
 title: "Python Django 강좌 : 제 11강 - Foreign Key (1)"
 tagline: "Python Django Foreign Key"
 image: /assets/images/django.png
-header:
-  image: /assets/patterns/asanoha-400px.png
 tags: ['Django']
 keywords: Python, Python Django, Python Django 3, Python Django Foreign Key, Python Django related_name, Python Django on_delete, Python Django db_column, Python Django CASCADE, Python Django PROTECT, Python Django SET_NULL, Python Django SET, Python Django DO_NOTHING, Python Django to_representation, Python Django self.fields
 ref: Python-Django

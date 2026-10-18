@@ -3,8 +3,6 @@ layout: post
 title: "Python OpenCV 강좌 : 제 25강 - 모멘트"
 tagline: "Python OpenCV Moments"
 image: /assets/images/opencv.png
-header:
-  image: /assets/patterns/asanoha-400px.png
 tags: ['OpenCV']
 keywords: Python, Python OpenCV, OpenCV Moments, Spatial Moments, Central Moments, Normalized Central Moments, Mass Center
 ref: Python-OpenCV

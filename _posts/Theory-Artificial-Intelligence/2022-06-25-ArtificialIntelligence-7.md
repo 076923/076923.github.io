@@ -3,8 +3,6 @@ layout: post
 title: "Artificial Intelligence Theory : 배치 정규화(Batch Normalization)"
 tagline: "Batch Normalization"
 image: /assets/images/theory-ai.svg
-header:
-  image: /assets/patterns/asanoha-400px.png
 tags: ['AI']
 keywords: Artificial Intelligence, Batch Normalization, Internal Covariate Shift, Layer Normalization
 ref: Theory-AI

@@ -3,8 +3,6 @@ layout: post
 title: "Python OpenCV 강좌 : 제 2강 - 카메라 출력"
 tagline: "Python OpenCV Using Camera"
 image: /assets/images/opencv.png
-header:
-  image: /assets/patterns/asanoha-400px.png
 tags: ['OpenCV']
 keywords: Python, Python OpenCV, OpenCV Using Camera
 ref: Python-OpenCV

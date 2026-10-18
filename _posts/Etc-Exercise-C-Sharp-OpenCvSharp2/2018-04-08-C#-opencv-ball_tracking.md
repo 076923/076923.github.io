@@ -3,12 +3,10 @@ layout: post
 title: "OpenCvSharp2 예제 : 볼 트래킹"
 tagline: "C# OpenCvSharp2 Ball Tracking"
 image: /assets/images/csharp.svg
-header:
-  image: /assets/patterns/asanoha-400px.png
 tags: ["OpenCvSharp2 : Exercise"]
 keywords: Visual Studio, OpenCV, OpenCvSharp2, Ball Tracking
 ref: Exercise-C#-OpenCvSharp2
-category: Exercise
+category: Etc
 permalink: /exercise/C-opencv-ball_tracking/
 comments: true
 toc: true

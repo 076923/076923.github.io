@@ -3,8 +3,6 @@ layout: post
 title: "Python OpenCV 강좌 : 제 34강 - 픽셀 접근"
 tagline: "Python OpenCV Pixel Access"
 image: /assets/images/opencv.png
-header:
-  image: /assets/patterns/asanoha-400px.png
 tags: ['OpenCV']
 keywords: Python, Python OpenCV, OpenCV Pixel Access
 ref: Python-OpenCV

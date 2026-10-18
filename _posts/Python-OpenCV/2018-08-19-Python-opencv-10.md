@@ -3,8 +3,6 @@ layout: post
 title: "Python OpenCV 강좌 : 제 10강 - 색상 공간 변환"
 tagline: "Python OpenCV Convert Color"
 image: /assets/images/opencv.png
-header:
-  image: /assets/patterns/asanoha-400px.png
 tags: ['OpenCV']
 keywords: Python, Python OpenCV, OpenCV Grayscale, OpenCV Convert Color
 ref: Python-OpenCV

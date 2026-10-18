@@ -1,79 +1,27 @@
 ---
 layout: null
+sitemap: false
 ---
-
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset
-      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	  xmlns:xhtml="http://www.w3.org/1999/xhtml"
-      xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd"
-      xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">	
-
-    {% assign lastmod = "2026-09-28T00:00:00+00:00" %}
-    <url>
-        <loc>https://076923.github.io/</loc>
-        <lastmod>{{ lastmod | date_to_xmlschema }}</lastmod>
-        <changefreq>always</changefreq>
-        <priority>1.0000</priority>
-    </url>
-    <url>
-        <loc>https://076923.github.io/rss.xml</loc>
-        <lastmod>{{ lastmod | date_to_xmlschema }}</lastmod>
-        <changefreq>always</changefreq>
-        <priority>0.8000</priority>
-    </url>
-    <url>
-        <loc>https://076923.github.io/feed.xml</loc>
-        <lastmod>{{ lastmod | date_to_xmlschema }}</lastmod>
-        <changefreq>always</changefreq>
-        <priority>0.8000</priority>
-    </url>
-    <url>
-        <loc>https://076923.github.io/docs/</loc>
-        <lastmod>{{ lastmod | date_to_xmlschema }}</lastmod>
-        <changefreq>always</changefreq>
-        <priority>0.8000</priority>
-    </url>
-    <url>
-        <loc>https://076923.github.io/posts/</loc>
-        <lastmod>{{ lastmod | date_to_xmlschema }}</lastmod>
-        <changefreq>always</changefreq>
-        <priority>0.8000</priority>
-    </url>
-    <url>
-        <loc>https://076923.github.io/categories/</loc>
-        <lastmod>{{ lastmod | date_to_xmlschema }}</lastmod>
-        <changefreq>always</changefreq>
-        <priority>0.8000</priority>
-    </url>
-    <url>
-        <loc>https://076923.github.io/guest/</loc>
-        <lastmod>{{ lastmod | date_to_xmlschema }}</lastmod>
-        <changefreq>always</changefreq>
-        <priority>0.8000</priority>
-    </url>
-    <url>
-        <loc>https://076923.github.io/about/</loc>
-        <lastmod>{{ lastmod | date_to_xmlschema }}</lastmod>
-        <changefreq>always</changefreq>
-        <priority>0.8000</priority>
-    </url>
-    {% for post in site.posts %}
-    <url>
-        <loc>{{ site.url }}{{ post.url }}</loc>
-        <lastmod>{{ lastmod | date_to_xmlschema }}</lastmod>
-
-        {% if post.sitemap.changefreq == null %}
-        <changefreq>daily</changefreq>
-        {% else %}
-        <changefreq>{{ post.sitemap.changefreq }}</changefreq>
-        {% endif %}
-
-        {% if post.sitemap.priority == null %}
-        <priority>0.7</priority>
-        {% else %}
-        <priority>{{ post.sitemap.priority }}</priority>
-        {% endif %}
-    </url>
-    {% endfor %}
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+{%- for post in site.posts -%}
+  {%- unless post.sitemap == false %}
+  <url>
+    <loc>{{ post.url | absolute_url | xml_escape }}</loc>
+    <lastmod>{{ post.last_modified_at | default: post.date | date_to_xmlschema }}</lastmod>
+  </url>
+  {%- endunless -%}
+{%- endfor -%}
+{%- for page in site.html_pages -%}
+  {%- assign prefix = page.url | slice: 0, 5 -%}
+  {%- comment -%} 404, 페이지네이션(/pageN/), sitemap: false 페이지는 제외 {%- endcomment -%}
+  {%- unless page.sitemap == false or page.name == "404.html" or page.name == "404.md" or prefix == "/page" %}
+  <url>
+    <loc>{{ page.url | absolute_url | xml_escape }}</loc>
+    {%- if page.last_modified_at %}
+    <lastmod>{{ page.last_modified_at | date_to_xmlschema }}</lastmod>
+    {%- endif %}
+  </url>
+  {%- endunless -%}
+{%- endfor %}
 </urlset>

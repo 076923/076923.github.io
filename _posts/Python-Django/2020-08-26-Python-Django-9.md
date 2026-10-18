@@ -3,8 +3,6 @@ layout: post
 title: "Python Django 강좌 : 제 9강 - Migration"
 tagline: "Python Django Migration"
 image: /assets/images/django.png
-header:
-  image: /assets/patterns/asanoha-400px.png
 tags: ['Django']
 keywords: Python, Python Django, Python Django 3, Python Django Migration, Python Django Schema, Python Django python manage.py migrate, Python Django python manage.py showmigrations, Python Django python manage.py makemigrations, Python Django no such column, Python Django 
 ref: Python-Django

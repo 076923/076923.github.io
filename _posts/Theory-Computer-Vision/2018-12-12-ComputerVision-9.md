@@ -3,9 +3,7 @@ layout: post
 title: "Computer Vision Theory : 특징 검출"
 tagline: "Feature Detection"
 image: /assets/images/theory-cv.svg
-header:
-  image: /assets/patterns/asanoha-400px.png
-tags: ['ComputerVision']
+tags: ['Computer Vision']
 keywords: Computer Vision, OpenCV, Feature Detection, Canny, Sobel, Harris Corner, Hough Transform, Feature Descriptor, SIFT, ORB
 ref: Theory-ComputerVision
 category: Theory

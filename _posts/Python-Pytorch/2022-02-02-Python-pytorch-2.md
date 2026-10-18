@@ -3,8 +3,6 @@ layout: post
 title: "Python Pytorch 강좌 : 제 2강 - 텐서(Tensor)"
 tagline: "Python PyTorch Tensor Structure"
 image: /assets/images/pytorch.webp
-header:
-  image: /assets/patterns/asanoha-400px.png
 tags: ['PyTorch']
 keywords: Python, Python Pytorch, Pytorch Tensor, Pytorch Tensor Structure
 ref: Python-PyTorch

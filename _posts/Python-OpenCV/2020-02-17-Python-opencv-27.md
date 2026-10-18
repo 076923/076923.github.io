@@ -3,8 +3,6 @@ layout: post
 title: "Python OpenCV 강좌 : 제 27강 - 모폴로지 연산"
 tagline: "Python OpenCV Morphological Calculate"
 image: /assets/images/opencv.png
-header:
-  image: /assets/patterns/asanoha-400px.png
 tags: ['OpenCV']
 keywords: Python, Python OpenCV, OpenCV morphologyEx, OpenCV MORPH_DILATE, OpenCV MORPH_ERODE, OpenCV MORPH_OPEN, OpenCV MORPH_CLOSE, OpenCV MORPH_GRADIENT, OpenCV MORPH_TOPHAT, OpenCV MORPH_BLACKHAT, OpenCV MORPH_HITMISS
 ref: Python-OpenCV

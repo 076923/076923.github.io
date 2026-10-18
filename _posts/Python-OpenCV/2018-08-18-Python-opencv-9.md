@@ -3,8 +3,6 @@ layout: post
 title: "Python OpenCV 강좌 : 제 9강 - 자르기"
 tagline: "Python OpenCV Slice"
 image: /assets/images/opencv.png
-header:
-  image: /assets/patterns/asanoha-400px.png
 tags: ['OpenCV']
 keywords: Python, Python OpenCV, OpenCV Slice
 ref: Python-OpenCV

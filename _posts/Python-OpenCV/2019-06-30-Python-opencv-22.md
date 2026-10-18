@@ -3,8 +3,6 @@ layout: post
 title: "Python OpenCV 강좌 : 제 22강 - 다각형 근사"
 tagline: "Python OpenCV Approx Poly"
 image: /assets/images/opencv.png
-header:
-  image: /assets/patterns/asanoha-400px.png
 tags: ['OpenCV']
 keywords: Python, Python OpenCV, OpenCV Approx Poly
 ref: Python-OpenCV

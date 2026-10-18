@@ -3,8 +3,6 @@ layout: post
 title: "Python OpenCV 강좌 : 제 33강 - 히스토그램"
 tagline: "Python OpenCV Histogram"
 image: /assets/images/opencv.png
-header:
-  image: /assets/patterns/asanoha-400px.png
 tags: ['OpenCV']
 keywords: Python, Python OpenCV, OpenCV Histogram, OpenCV BINS, OpenCV DIMS, OpenCV RANGE, OpenCV calcHist, OpenCV normalize
 ref: Python-OpenCV

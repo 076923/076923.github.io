@@ -3,8 +3,6 @@ layout: post
 title: "Python OpenCV 강좌 : 제 38강 - ORB(Oriented FAST and Rotated BRIEF)"
 tagline: "Python OpenCV Oriented FAST and Rotated BRIEF"
 image: /assets/images/opencv.png
-header:
-  image: /assets/patterns/asanoha-400px.png
 tags: ['OpenCV']
 keywords: Python, Python OpenCV, OpenCV ORB, OpenCV Oriented FAST and Rotated BRIEF, FAST(Features from Accelerated Segment Test), BRIEF(Binary Robust Independent Elementary Features), OpenCV Descriptor, OpenCV Key Point, OpenCV ORB_create, OpenCV detectAndCompute, OpenCV BFMatcher
 ref: Python-OpenCV

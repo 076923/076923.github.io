@@ -3,12 +3,10 @@ layout: post
 title: "C# 예제 : Input Box"
 tagline: "C# Create Input Box"
 image: /assets/images/csharp.svg
-header:
-  image: /assets/patterns/asanoha-400px.png
 tags: ["C# : Exercise"]
 keywords: C#, Visual Studio, Input Box, Input Box Image
 ref: Exercise-C#
-category: Exercise
+category: Etc
 permalink: /exercise/C-inputbox/
 comments: true
 toc: true

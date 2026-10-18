@@ -3,8 +3,6 @@ layout: post
 title: "Python Pytorch 강좌 : 제 3강 - 가설(Hypothesis)"
 tagline: "Python PyTorch Hypothesis"
 image: /assets/images/pytorch.webp
-header:
-  image: /assets/patterns/asanoha-400px.png
 tags: ['PyTorch']
 keywords: Python, Python Pytorch, Pytorch Hypothesis
 ref: Python-PyTorch

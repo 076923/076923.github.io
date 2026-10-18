@@ -3,8 +3,6 @@ layout: post
 title: "Python tkinter 강좌 : 제 2강 - Label"
 tagline: "Python tkinter Label"
 image: /assets/images/tkinter.png
-header:
-  image: /assets/patterns/asanoha-400px.png
 tags: ['Tkinter']
 keywords: Python, Python tkinter, tkinter Label
 ref: Python-Tkinter

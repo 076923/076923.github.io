@@ -3,8 +3,6 @@ layout: post
 title: "Python tkinter 강좌 : 제 4강 - Entry"
 tagline: "Python tkinter Entry"
 image: /assets/images/tkinter.png
-header:
-  image: /assets/patterns/asanoha-400px.png
 tags: ['Tkinter']
 keywords: Python, Python tkinter, tkinter Entry
 ref: Python-Tkinter

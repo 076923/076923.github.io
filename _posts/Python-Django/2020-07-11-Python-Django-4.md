@@ -3,8 +3,6 @@ layout: post
 title: "Python Django 강좌 : 제 4강 - 애플리케이션 생성"
 tagline: "Python Django Start App"
 image: /assets/images/django.png
-header:
-  image: /assets/patterns/asanoha-400px.png
 tags: ['Django']
 keywords: Python, Python Django, Python Django 3, Python Django startapp, Python Django INSTALLED_APPS, Python Django migrate, Python Django showmigrations
 ref: Python-Django

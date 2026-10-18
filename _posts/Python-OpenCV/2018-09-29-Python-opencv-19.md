@@ -3,8 +3,6 @@ layout: post
 title: "Python OpenCV 강좌 : 제 19강 - 기하학적 변환"
 tagline: "Python OpenCV Geometric Perspective"
 image: /assets/images/opencv.png
-header:
-  image: /assets/patterns/asanoha-400px.png
 tags: ['OpenCV']
 keywords: Python, Python OpenCV, OpenCV Geometric Perspective, OpenCV Affine Transformation, OpenCV Perspective Transformation, OpenCV getPerspectiveTransform, OpenCV warpPerspective
 ref: Python-OpenCV

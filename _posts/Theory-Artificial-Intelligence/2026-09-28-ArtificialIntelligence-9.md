@@ -3,8 +3,6 @@ layout: post
 title: "Artificial Intelligence Theory : 과대적합과 정칙화(Overfitting & Regularization)"
 tagline: "Overfitting & Regularization"
 image: /assets/images/theory-ai.svg
-header:
-  image: /assets/patterns/asanoha-400px.png
 tags: ['AI']
 keywords: Artificial Intelligence, Deep Learning, Overfitting, Underfitting, Generalization, Bias-Variance Tradeoff, Regularization, L1 Regularization, L2 Regularization, Weight Decay, Dropout, Early Stopping, Data Augmentation, Cross Validation
 ref: Theory-AI

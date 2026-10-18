@@ -3,9 +3,7 @@ layout: post
 title: "Computer Vision Theory : 전처리 알고리즘"
 tagline: "Preprocessing Algorithm"
 image: /assets/images/theory-cv.svg
-header:
-  image: /assets/patterns/asanoha-400px.png
-tags: ['ComputerVision']
+tags: ['Computer Vision']
 keywords: Computer Vision, OpenCV, Preprocessing Algorithm, Computer Vision Grayscale, Computer Vision Threshold, Computer Vision Binary, Computer Vision Zoom In, Computer Vision Zoom Out, Computer Vision Rotation, Computer Vision Transform
 ref: Theory-ComputerVision
 category: Theory

@@ -3,8 +3,6 @@ layout: post
 title: "Python Pytorch 강좌 : 제 7강 - 다중 선형 회귀(Multiple Linear Regression)"
 tagline: "Python PyTorch Optimization"
 image: /assets/images/pytorch.webp
-header:
-  image: /assets/patterns/asanoha-400px.png
 tags: ['PyTorch']
 keywords: Python, Python Pytorch, Python torch.nn, Python Multivariate Multiple Linear Regression
 ref: Python-PyTorch

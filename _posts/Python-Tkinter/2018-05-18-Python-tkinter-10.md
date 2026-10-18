@@ -3,8 +3,6 @@ layout: post
 title: "Python tkinter 강좌 : 제 10강 - 위젯 배치 : pack"
 tagline: "Python tkinter pack"
 image: /assets/images/tkinter.png
-header:
-  image: /assets/patterns/asanoha-400px.png
 tags: ['Tkinter']
 keywords: Python, Python tkinter, tkinter pack
 ref: Python-Tkinter

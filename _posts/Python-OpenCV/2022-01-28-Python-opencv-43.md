@@ -3,8 +3,6 @@ layout: post
 title: "Python OpenCV 강좌 : 제 43강 - K-최근접 이웃 알고리즘"
 tagline: "Python OpenCV K-Nearest Neighbor Algorithm"
 image: /assets/images/opencv.png
-header:
-  image: /assets/patterns/asanoha-400px.png
 tags: ['OpenCV']
 keywords: Python, Python OpenCV, OpenCV K-Nearest Neighbor, OpenCV KNearest, OpenCV KNN, OpenCV Fashion-MNIST
 ref: Python-OpenCV

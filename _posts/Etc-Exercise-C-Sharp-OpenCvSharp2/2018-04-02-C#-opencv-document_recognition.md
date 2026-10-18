@@ -3,12 +3,10 @@ layout: post
 title: "OpenCvSharp2 예제 : 명함(문서) 인식"
 tagline: "C# OpenCvSharp2 Document Recognition"
 image: /assets/images/csharp.svg
-header:
-  image: /assets/patterns/asanoha-400px.png
 tags: ["OpenCvSharp2 : Exercise"]
 keywords: Visual Studio, OpenCV, OpenCvSharp2, Document Recognition, Corner Detector, Dot Product
 ref: Exercise-C#-OpenCvSharp2
-category: Exercise
+category: Etc
 permalink: /exercise/C-opencv-document_recognition/
 comments: true
 toc: true

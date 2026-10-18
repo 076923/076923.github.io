@@ -3,8 +3,6 @@ layout: post
 title: "Python Django 강좌 : 제 5강 - Model"
 tagline: "Python Django Model"
 image: /assets/images/django.png
-header:
-  image: /assets/patterns/asanoha-400px.png
 tags: ['Django']
 keywords: Python, Python Django, Python Django 3, Python Django Model, Python Django model.py, Python Django Field, Python Django Field Options
 ref: Python-Django

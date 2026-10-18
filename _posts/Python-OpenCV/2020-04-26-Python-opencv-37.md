@@ -3,8 +3,6 @@ layout: post
 title: "Python OpenCV 강좌 : 제 37강 - 템플릿 매칭"
 tagline: "Python OpenCV Template Matching"
 image: /assets/images/opencv.png
-header:
-  image: /assets/patterns/asanoha-400px.png
 tags: ['OpenCV']
 keywords: Python, Python OpenCV, OpenCV Template Matching, OpenCV matchTemplate, OpenCV cv2.TM_SQDIFF, OpenCV cv2.TM_SQDIFF_NORMED, OpenCV cv2.TM_CCORR, OpenCV cv2.TM_CCORR_NORMED, OpenCV cv2.TM_CCOEFF, OpenCV cv2.TM_CCOEFF_NORMED
 ref: Python-OpenCV

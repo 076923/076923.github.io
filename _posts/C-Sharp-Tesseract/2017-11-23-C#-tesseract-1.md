@@ -3,8 +3,6 @@ layout: post
 title: "C# Tesseract 강좌 : 제 1강 - Tesseract 설치"
 tagline: "C# Tesseract 3.0.2 install"
 image: /assets/images/tesseract.PNG
-header:
-  image: /assets/patterns/asanoha-400px.png
 tags: ['Tesseract']
 keywords: C#, Visual Studio, tesseract, ocr, tesseract install
 ref: C#-Tesseract

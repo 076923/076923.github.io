@@ -3,8 +3,6 @@ layout: post
 title: "Python OpenCV 강좌 : 제 11강 - 역상"
 tagline: "Python OpenCV Reverse Image"
 image: /assets/images/opencv.png
-header:
-  image: /assets/patterns/asanoha-400px.png
 tags: ['OpenCV']
 keywords: Python, Python OpenCV, OpenCV Reverse Image, OpenCV Bitwise Not
 ref: Python-OpenCV

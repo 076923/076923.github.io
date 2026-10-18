@@ -3,8 +3,6 @@ layout: post
 title: "Python Pytorch 강좌 : 제 5강 - 최적화(Optimization)"
 tagline: "Python PyTorch Optimization"
 image: /assets/images/pytorch.webp
-header:
-  image: /assets/patterns/asanoha-400px.png
 tags: ['PyTorch']
 keywords: Python, Python Pytorch, Pytorch Optimization, Pytorch Learning Rate, Pytorch Saddle Point
 ref: Python-PyTorch

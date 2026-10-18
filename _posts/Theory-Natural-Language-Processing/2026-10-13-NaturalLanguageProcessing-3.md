@@ -3,9 +3,7 @@ layout: post
 title: "Natural Language Processing Theory : 단어 임베딩(Word Embedding)"
 tagline: "Word Embedding"
 image: /assets/images/theory-nlp.svg
-header:
-  image: /assets/patterns/asanoha-400px.png
-tags: ['NLP']
+tags: ['Natural Language Processing']
 keywords: Natural Language Processing, Word Representation, One-hot Encoding, Bag of Words, Document Term Matrix, TF-IDF, Distributional Hypothesis, Word Embedding, Word2Vec, CBOW, Skip-gram, Negative Sampling, GloVe, FastText, Cosine Similarity, Contextual Embedding
 ref: Theory-NLP
 category: Theory

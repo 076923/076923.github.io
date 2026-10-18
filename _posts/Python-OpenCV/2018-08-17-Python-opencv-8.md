@@ -3,8 +3,6 @@ layout: post
 title: "Python OpenCV 강좌 : 제 8강 - 크기 조절"
 tagline: "Python OpenCV Resize"
 image: /assets/images/opencv.png
-header:
-  image: /assets/patterns/asanoha-400px.png
 tags: ['OpenCV']
 keywords: Python, Python OpenCV, OpenCV Resize
 ref: Python-OpenCV

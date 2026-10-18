@@ -3,8 +3,6 @@ layout: post
 title: "C# Dynamixel 강좌 : 제 2강 - Dynamixel 설정"
 tagline: "C# Dynamixel Setting"
 image: /assets/images/robotis.png
-header:
-  image: /assets/patterns/asanoha-400px.png
 tags: ['Dynamixel']
 keywords: C#, Visual Studio, Dynamixel, Dynamixel Setting
 ref: C#-Dynamixel

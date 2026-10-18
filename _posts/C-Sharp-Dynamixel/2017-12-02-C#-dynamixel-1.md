@@ -3,8 +3,6 @@ layout: post
 title: "C# Dynamixel 강좌 : 제 1강 - Dynamixel 회로도"
 tagline: "C# Dynamixel Circuit"
 image: /assets/images/robotis.png
-header:
-  image: /assets/patterns/asanoha-400px.png
 tags: ['Dynamixel']
 keywords: C#, Visual Studio, Dynamixel, Dynamixel Circuit
 ref: C#-Dynamixel

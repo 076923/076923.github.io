@@ -3,9 +3,7 @@ layout: post
 title: "Natural Language Processing Theory : 텍스트 전처리와 토큰화(Text Preprocessing & Tokenization)"
 tagline: "Text Preprocessing & Tokenization"
 image: /assets/images/theory-nlp.svg
-header:
-  image: /assets/patterns/asanoha-400px.png
-tags: ['NLP']
+tags: ['Natural Language Processing']
 keywords: Natural Language Processing, Text Preprocessing, Normalization, Stopword, Stemming, Lemmatization, Tokenization, Word Tokenization, Character Tokenization, Subword Tokenization, Byte Pair Encoding, BPE, WordPiece, SentencePiece, Vocabulary, OOV, Morphological Analysis
 ref: Theory-NLP
 category: Theory

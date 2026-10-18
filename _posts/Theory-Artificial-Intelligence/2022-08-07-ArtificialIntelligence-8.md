@@ -3,8 +3,6 @@ layout: post
 title: "Artificial Intelligence Theory : 가중치 초기화(Weight Initialization)"
 tagline: "Weight Initialization"
 image: /assets/images/theory-ai.svg
-header:
-  image: /assets/patterns/asanoha-400px.png
 tags: ['AI']
 keywords: Artificial Intelligence, Weight Initialization, Scalar Initialization, Random Initialization, Uniform Initialization, Normal Initialization, Distribution Initialization, Xavier Initialization, Glorot initialization, He Initialization, Kaiming Initialization, Truncated Normal Distribution Initialization, Orthogonal Normal Distribution Initialization
 ref: Theory-AI

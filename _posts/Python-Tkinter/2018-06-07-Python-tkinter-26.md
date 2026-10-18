@@ -3,8 +3,6 @@ layout: post
 title: "Python tkinter 강좌 : 제 26강 - Combobox"
 tagline: "Python tkinter Combobox"
 image: /assets/images/tkinter.png
-header:
-  image: /assets/patterns/asanoha-400px.png
 tags: ['Tkinter']
 keywords: Python, Python tkinter, tkinter Combobox
 ref: Python-Tkinter

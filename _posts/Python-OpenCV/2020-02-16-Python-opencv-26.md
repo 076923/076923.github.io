@@ -3,8 +3,6 @@ layout: post
 title: "Python OpenCV 강좌 : 제 26강 - 모폴로지 변환"
 tagline: "Python OpenCV Morphological Transformation"
 image: /assets/images/opencv.png
-header:
-  image: /assets/patterns/asanoha-400px.png
 tags: ['OpenCV']
 keywords: Python, Python OpenCV, OpenCV Morphological, OpenCV getStructuringElement, OpenCV dilate, OpenCV erode, OpenCV kernel, Numpy concatenate
 ref: Python-OpenCV

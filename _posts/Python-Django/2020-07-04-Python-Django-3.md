@@ -3,8 +3,6 @@ layout: post
 title: "Python Django 강좌 : 제 3강 - 프로젝트 설정"
 tagline: "Python Django Project Settings"
 image: /assets/images/django.png
-header:
-  image: /assets/patterns/asanoha-400px.png
 tags: ['Django']
 keywords: Python, Python Django, Python Django 3, Python Django setting.py, Python Django BASE_DIR, Python Django SECRET_KEY, Python Django DEBUG, Python Django ALLOWED_HOSTS, Python Django INSTALLED_APPS, Python Django MIDDLEWARE, Python Django ROOT_URLCONF, Python Django TEMPLATES, Python Django WSGI_APPLICATION, Python Django DATABASES, Python Django AUTH_PASSWORD_VALIDATORS, Python Django LANGUAGE_CODE, Python Django TIME_ZONE, Python Django CORS, Python Django MySQL, Python Django PostgreSQL, Python Django AWS RDS
 ref: Python-Django

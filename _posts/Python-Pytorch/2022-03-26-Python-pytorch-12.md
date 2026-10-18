@@ -3,8 +3,6 @@ layout: post
 title: "Python Pytorch 강좌 : 제 12강 - 이진 분류(Binary Classification)"
 tagline: "Python PyTorch Binary Classification"
 image: /assets/images/pytorch.webp
-header:
-  image: /assets/patterns/asanoha-400px.png
 tags: ['PyTorch']
 keywords: Python, Python Pytorch, Pytorch Binary Classification, Pytorch Sigmoid Function, Pytorch Binary Cross Entropy
 ref: Python-PyTorch

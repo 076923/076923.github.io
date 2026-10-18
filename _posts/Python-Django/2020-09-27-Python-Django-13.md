@@ -3,8 +3,6 @@ layout: post
 title: "Python Django 강좌 : 제 13강 - Transaction"
 tagline: "Python Django Transaction"
 image: /assets/images/django.png
-header:
-  image: /assets/patterns/asanoha-400px.png
 tags: ['Django']
 keywords: Python, Python Django, Python Django 3, Python Django Transaction
 ref: Python-Django

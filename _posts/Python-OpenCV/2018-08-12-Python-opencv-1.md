@@ -3,8 +3,6 @@ layout: post
 title: "Python OpenCV 강좌 : 제 1강 - OpenCV 설치"
 tagline: "Python OpenCV Install"
 image: /assets/images/opencv.png
-header:
-  image: /assets/patterns/asanoha-400px.png
 tags: ['OpenCV']
 keywords: Python, Python OpenCV, OpenCV install
 ref: Python-OpenCV

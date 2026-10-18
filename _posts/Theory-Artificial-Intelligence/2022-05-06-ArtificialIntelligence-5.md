@@ -3,8 +3,6 @@ layout: post
 title: "Artificial Intelligence Theory : 순전파(Forward Propagation) & 역전파(Back Propagation)"
 tagline: "Forward Propagation & Back Propagation"
 image: /assets/images/theory-ai.svg
-header:
-  image: /assets/patterns/asanoha-400px.png
 tags: ['AI']
 keywords: Artificial Intelligence, Machine Learning, Deep Learning, Forward Propagation & Back Propagation, Solving Forward Propagation, Solving Back Propagation
 ref: Theory-AI

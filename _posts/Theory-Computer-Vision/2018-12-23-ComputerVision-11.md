@@ -3,9 +3,7 @@ layout: post
 title: "Computer Vision Theory : 이미지 인식"
 tagline: "Image Recognition"
 image: /assets/images/theory-cv.svg
-header:
-  image: /assets/patterns/asanoha-400px.png
-tags: ['ComputerVision']
+tags: ['Computer Vision']
 keywords: Computer Vision, OpenCV, Image Recognition, CNN, YOLO, SSD, Faster R-CNN, Segmentation, OCR, Face Embedding, Vision Transformer
 ref: Theory-ComputerVision
 category: Theory

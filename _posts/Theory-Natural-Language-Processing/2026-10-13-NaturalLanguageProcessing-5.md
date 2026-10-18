@@ -3,9 +3,7 @@ layout: post
 title: "Natural Language Processing Theory : 어텐션(Attention)"
 tagline: "Attention"
 image: /assets/images/theory-nlp.svg
-header:
-  image: /assets/patterns/asanoha-400px.png
-tags: ['NLP']
+tags: ['Natural Language Processing']
 keywords: Natural Language Processing, Sequence to Sequence, Seq2Seq, Encoder, Decoder, Context Vector, Teacher Forcing, Greedy Decoding, Beam Search, Attention, Bahdanau Attention, Luong Attention, Attention Weight, Query, Key, Value, Scaled Dot-Product Attention, Self-Attention
 ref: Theory-NLP
 category: Theory

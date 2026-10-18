@@ -3,8 +3,6 @@ layout: post
 title: "Python OpenCV 강좌 : 제 35강 - 트랙 바"
 tagline: "Python OpenCV Track Bar"
 image: /assets/images/opencv.png
-header:
-  image: /assets/patterns/asanoha-400px.png
 tags: ['OpenCV']
 keywords: Python, Python OpenCV, OpenCV Track Bar, OpenCV namedWindow, OpenCV createTrackbar, OpenCV setTrackbarPos, OpenCV getTrackbarPos
 ref: Python-OpenCV

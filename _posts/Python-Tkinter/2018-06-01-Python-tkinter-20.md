@@ -3,8 +3,6 @@ layout: post
 title: "Python tkinter 강좌 : 제 20강 - PanedWindow"
 tagline: "Python tkinter PanedWindow"
 image: /assets/images/tkinter.png
-header:
-  image: /assets/patterns/asanoha-400px.png
 tags: ['Tkinter']
 keywords: Python, Python tkinter, tkinter PanedWindow
 ref: Python-Tkinter

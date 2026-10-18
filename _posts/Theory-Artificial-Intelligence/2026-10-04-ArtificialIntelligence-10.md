@@ -3,8 +3,6 @@ layout: post
 title: "Artificial Intelligence Theory : 최적화 알고리즘(Optimizer)"
 tagline: "Optimizer"
 image: /assets/images/theory-ai.svg
-header:
-  image: /assets/patterns/asanoha-400px.png
 tags: ['AI']
 keywords: Artificial Intelligence, Deep Learning, Optimizer, Gradient Descent, Stochastic Gradient Descent, SGD, Mini-batch, Momentum, Nesterov, AdaGrad, RMSProp, Adam, AdamW, Learning Rate, Learning Rate Scheduler, Warmup, Cosine Annealing
 ref: Theory-AI

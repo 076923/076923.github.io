@@ -3,8 +3,6 @@ layout: post
 title: "Artificial Intelligence Theory : 인공 지능이란?"
 tagline: "Artificial Intelligence"
 image: /assets/images/theory-ai.svg
-header:
-  image: /assets/patterns/asanoha-400px.png
 tags: ['AI']
 keywords: Artificial Intelligence, Machine Learning, Deep Learning, Feature Engineering, Representation Learning
 ref: Theory-AI

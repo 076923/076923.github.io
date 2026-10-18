@@ -3,8 +3,6 @@ layout: post
 title: "Python Pytorch 강좌 : 제 11강 - 데이터 세트 분리(Data Set Split)"
 tagline: "Python PyTorch Data Set Split"
 image: /assets/images/pytorch.webp
-header:
-  image: /assets/patterns/asanoha-400px.png
 tags: ['PyTorch']
 keywords: Python, Python Pytorch, Pytorch Training Data, Pytorch Validation Data, Pytorch Testing Data, Pytorch random_split
 ref: Python-PyTorch

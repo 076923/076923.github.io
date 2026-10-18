@@ -3,8 +3,6 @@ layout: post
 title: "Python OpenCV 강좌 : 제 41강 - 색상 맵"
 tagline: "Python OpenCV Remapping"
 image: /assets/images/opencv.png
-header:
-  image: /assets/patterns/asanoha-400px.png
 tags: ['OpenCV']
 keywords: Python, Python OpenCV, OpenCV applyColorMap, OpenCV Lookup table
 ref: Python-OpenCV

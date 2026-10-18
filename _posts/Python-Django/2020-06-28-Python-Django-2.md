@@ -3,8 +3,6 @@ layout: post
 title: "Python Django 강좌 : 제 2강 - 프로젝트 생성"
 tagline: "Python Django Project Creation"
 image: /assets/images/django.png
-header:
-  image: /assets/patterns/asanoha-400px.png
 tags: ['Django']
 keywords: Python, Python Django, Python Django 3, Python Django startproject, Python Django asgi.py, Python Django settings.py, Python Django urls.py, Python Django wsgi.py, Python Django manage.py
 ref: Python-Django

@@ -3,8 +3,6 @@ layout: post
 title: "Python Pytorch 강좌 : 제 14강 - 퍼셉트론(Perceptron)"
 tagline: "Python PyTorch Perceptron"
 image: /assets/images/pytorch.webp
-header:
-  image: /assets/patterns/asanoha-400px.png
 tags: ['PyTorch']
 keywords: Python, Python Pytorch, Pytorch Perceptron, Pytorch Single Layer Perceptron, Pytorch Multi Layer Perceptron
 ref: Python-PyTorch

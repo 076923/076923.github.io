@@ -3,8 +3,6 @@ layout: post
 title: "Python Django 강좌 : 제 12강 - Foreign Key (2)"
 tagline: "Python Django Foreign Key"
 image: /assets/images/django.png
-header:
-  image: /assets/patterns/asanoha-400px.png
 tags: ['Django']
 keywords: Python, Python Django, Python Django 3, Python Django Foreign Key, Python Django Foreign Key insert, Python Django multiple insert
 ref: Python-Django

@@ -3,9 +3,7 @@ layout: post
 title: "Computer Vision Theory : 이미지와 동영상의 이해"
 tagline: "Understanding images and videos"
 image: /assets/images/theory-cv.svg
-header:
-  image: /assets/patterns/asanoha-400px.png
-tags: ['ComputerVision']
+tags: ['Computer Vision']
 keywords: Computer Vision, OpenCV, Understanding images and videos, Codec, Container, FourCC, FPS
 ref: Theory-ComputerVision
 category: Theory

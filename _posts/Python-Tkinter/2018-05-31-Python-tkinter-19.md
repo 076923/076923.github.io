@@ -3,8 +3,6 @@ layout: post
 title: "Python tkinter 강좌 : 제 19강 - LabelFrame"
 tagline: "Python tkinter LabelFrame"
 image: /assets/images/tkinter.png
-header:
-  image: /assets/patterns/asanoha-400px.png
 tags: ['Tkinter']
 keywords: Python, Python tkinter, tkinter LabelFrame
 ref: Python-Tkinter

@@ -3,9 +3,7 @@ layout: post
 title: "Computer Vision Theory : Digital Image Processing이란?"
 tagline: "Digital Image Processing이란?"
 image: /assets/images/theory-cv.svg
-header:
-  image: /assets/patterns/asanoha-400px.png
-tags: ['ComputerVision']
+tags: ['Computer Vision']
 keywords: Computer Vision, OpenCV, Digital Image Processing, Jet Propulsion Laboratory, Computer Vision RGB, Computer Vision xy
 ref: Theory-ComputerVision
 category: Theory

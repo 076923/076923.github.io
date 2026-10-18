@@ -3,8 +3,6 @@ layout: post
 title: "Python tkinter 강좌 : 제 13강 - Frame"
 tagline: "Python tkinter Frame"
 image: /assets/images/tkinter.png
-header:
-  image: /assets/patterns/asanoha-400px.png
 tags: ['Tkinter']
 keywords: Python, Python tkinter, tkinter Frame
 ref: Python-Tkinter

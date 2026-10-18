@@ -3,8 +3,6 @@ layout: post
 title: "Python OpenCV 강좌 : 제 20강 - 캡쳐 및 녹화"
 tagline: "Python OpenCV Capture & Record"
 image: /assets/images/opencv.png
-header:
-  image: /assets/patterns/asanoha-400px.png
 tags: ['OpenCV']
 keywords: Python, Python OpenCV, OpenCV Capture, OpenCV Record
 ref: Python-OpenCV

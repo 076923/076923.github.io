@@ -3,8 +3,6 @@ layout: post
 title: "Artificial Intelligence Theory : 비지도 학습(Unsupervised Learning)"
 tagline: "Unsupervised Learning"
 image: /assets/images/theory-ai.svg
-header:
-  image: /assets/patterns/asanoha-400px.png
 tags: ['AI']
 keywords: Artificial Intelligence, Machine Learning, Unsupervised Learning, Clustering, Outlier Detection, Anomaly Detection, Dimensionality Reduction, K-Means Clustering, Density-Based Spatial Clustering of applications with noise, DBSCAN, Time Series data, Cross-sectional data, 
 ref: Theory-AI

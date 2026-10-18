@@ -3,8 +3,6 @@ layout: post
 title: "Python tkinter 강좌 : 제 30강 - Treeview"
 tagline: "Python tkinter Treeview"
 image: /assets/images/tkinter.png
-header:
-  image: /assets/patterns/asanoha-400px.png
 tags: ['Tkinter']
 keywords: Python, Python tkinter, tkinter Treeview
 ref: Python-Tkinter

@@ -3,8 +3,6 @@ layout: post
 title: "Python OpenCV 강좌 : 제 23강 - 코너 검출"
 tagline: "Python OpenCV Good Features To Track"
 image: /assets/images/opencv.png
-header:
-  image: /assets/patterns/asanoha-400px.png
 tags: ['OpenCV']
 keywords: Python, Python OpenCV, OpenCV Corner, OpenCV goodFeaturesToTrack
 ref: Python-OpenCV

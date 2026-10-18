@@ -3,9 +3,7 @@ layout: post
 title: "Computer Vision Theory : 관심 영역 & 관심 채널"
 tagline: "Region Of Interest & Channel Of Interest"
 image: /assets/images/theory-cv.svg
-header:
-  image: /assets/patterns/asanoha-400px.png
-tags: ['ComputerVision']
+tags: ['Computer Vision']
 keywords: Computer Vision, OpenCV, Region Of Interest, Channel Of Interest, Mask
 ref: Theory-ComputerVision
 category: Theory

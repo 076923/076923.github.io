@@ -3,9 +3,7 @@ layout: post
 title: "Computer Vision Theory : 이미지 분할"
 tagline: "Image Segmentation"
 image: /assets/images/theory-cv.svg
-header:
-  image: /assets/patterns/asanoha-400px.png
-tags: ['ComputerVision']
+tags: ['Computer Vision']
 keywords: Computer Vision, OpenCV, Image Segmentation, Thresholding, Otsu, Region Growing, Watershed, GrabCut, K-Means, Superpixel, Semantic Segmentation, Instance Segmentation, Panoptic Segmentation, FCN, U-Net, Mask R-CNN, IoU, Dice
 ref: Theory-ComputerVision
 category: Theory

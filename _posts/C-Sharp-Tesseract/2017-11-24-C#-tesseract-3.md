@@ -3,8 +3,6 @@ layout: post
 title: "C# Tesseract 강좌 : 제 3강 - 한글 판독"
 tagline: "C# Tesseract Korea OCR"
 image: /assets/images/tesseract.PNG
-header:
-  image: /assets/patterns/asanoha-400px.png
 tags: ['Tesseract']
 keywords: C#, Visual Studio, tesseract, ocr, tesseract korea
 ref: C#-Tesseract

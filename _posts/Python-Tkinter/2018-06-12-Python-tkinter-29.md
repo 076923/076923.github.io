@@ -3,8 +3,6 @@ layout: post
 title: "Python tkinter 강좌 : 제 29강 - Sizegrip"
 tagline: "Python tkinter Sizegrip"
 image: /assets/images/tkinter.png
-header:
-  image: /assets/patterns/asanoha-400px.png
 tags: ['Tkinter']
 keywords: Python, Python tkinter, tkinter Sizegrip
 ref: Python-Tkinter

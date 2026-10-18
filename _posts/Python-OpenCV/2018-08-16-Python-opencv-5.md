@@ -3,8 +3,6 @@ layout: post
 title: "Python OpenCV 강좌 : 제 5강 - 대칭"
 tagline: "Python OpenCV Flip(Symmetry)"
 image: /assets/images/opencv.png
-header:
-  image: /assets/patterns/asanoha-400px.png
 tags: ['OpenCV']
 keywords: Python, Python OpenCV, OpenCV Flip, OpenCV Symmetry
 ref: Python-OpenCV

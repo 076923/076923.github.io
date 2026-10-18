@@ -3,8 +3,6 @@ layout: post
 title: "Python Pytorch 강좌 : 제 8강 - 데이터 세트(Data Set)"
 tagline: "Python PyTorch Data Set"
 image: /assets/images/pytorch.webp
-header:
-  image: /assets/patterns/asanoha-400px.png
 tags: ['PyTorch']
 keywords: Python, Python Pytorch, Pytorch Dataset, Pytorch TensorDataset, Pytorch DataLoader
 ref: Python-PyTorch

@@ -3,8 +3,6 @@ layout: post
 title: "Artificial Intelligence Theory : 지도 학습(Supervised Learning)"
 tagline: "Supervised Learning"
 image: /assets/images/theory-ai.svg
-header:
-  image: /assets/patterns/asanoha-400px.png
 tags: ['AI']
 keywords: Artificial Intelligence, Machine Learning, Regression, Univariate, Multivariate, Predictor Variable, Explanatory Variable, Outcome Variable, Response Variable, Classification, Logistic Regression, Softmax Regression, Model Evaluation, Confusion Matrix, Precision, Recall
 ref: Theory-AI

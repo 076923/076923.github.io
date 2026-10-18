@@ -3,8 +3,6 @@ layout: post
 title: "Python Pytorch 강좌 : 제 10강 - 모델 저장/불러오기(Model Save/Load)"
 tagline: "Python PyTorch Model Save/Load"
 image: /assets/images/pytorch.webp
-header:
-  image: /assets/patterns/asanoha-400px.png
 tags: ['PyTorch']
 keywords: Python, Python Pytorch, Pytorch Model, Pytorch Model Save, Pytorch Model Load, Pytorch Checkpoint
 ref: Python-PyTorch

@@ -3,9 +3,7 @@ layout: post
 title: "Natural Language Processing Theory : 순환 신경망(Recurrent Neural Network)"
 tagline: "Recurrent Neural Network"
 image: /assets/images/theory-nlp.svg
-header:
-  image: /assets/patterns/asanoha-400px.png
-tags: ['NLP']
+tags: ['Natural Language Processing']
 keywords: Natural Language Processing, Sequence Data, Recurrent Neural Network, RNN, Hidden State, Backpropagation Through Time, BPTT, Vanishing Gradient, Exploding Gradient, Gradient Clipping, LSTM, Long Short-Term Memory, Cell State, Gate, GRU, Gated Recurrent Unit, Bidirectional RNN, Stacked RNN
 ref: Theory-NLP
 category: Theory

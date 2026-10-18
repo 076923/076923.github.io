@@ -3,8 +3,6 @@ layout: post
 title: "C# Dynamixel 강좌 : 제 3강 - Dynamixel Serial 통신"
 tagline: "C# Using Dynamixel"
 image: /assets/images/robotis.png
-header:
-  image: /assets/patterns/asanoha-400px.png
 tags: ['Dynamixel']
 keywords: C#, Visual Studio, Dynamixel, Using Dynamixel
 ref: C#-Dynamixel

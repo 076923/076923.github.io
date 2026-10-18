@@ -3,9 +3,7 @@ layout: post
 title: "Natural Language Processing Theory : 자연어 처리란?"
 tagline: "Natural Language Processing"
 image: /assets/images/theory-nlp.svg
-header:
-  image: /assets/patterns/asanoha-400px.png
-tags: ['NLP']
+tags: ['Natural Language Processing']
 keywords: Natural Language Processing, NLP, Natural Language Understanding, Natural Language Generation, Ambiguity, Corpus, Tokenization, Rule-based, Statistical NLP, Word Embedding, Transformer, Large Language Model
 ref: Theory-NLP
 category: Theory

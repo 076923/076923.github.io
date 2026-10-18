@@ -3,8 +3,6 @@ layout: post
 title: "Python Pytorch 강좌 : 제 6강 - 단순 선형 회귀(Simple Linear Regression)"
 tagline: "Python PyTorch Optimization"
 image: /assets/images/pytorch.webp
-header:
-  image: /assets/patterns/asanoha-400px.png
 tags: ['PyTorch']
 keywords: Python, Python Pytorch, Pytorch Simple Linear Regression, Pytorch HyperParameter, Pytorch HyperParameter Tuning, Pytorch Epoch, Pytorch Forward Propagation, Pytorch Back Propagation, Pytorch Underfitting, Pytorch Overfitting, Pytorch learning_rate, Pytorch Stochastic Gradient Descent, Pytorch SGD, Pytorch Mini-batch, Pytorch optimizer.zero_grad(), Pytorch cost.backward(), Pytorch optimizer.step()
 ref: Python-PyTorch
