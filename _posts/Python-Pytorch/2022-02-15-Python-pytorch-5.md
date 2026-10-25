@@ -221,7 +221,7 @@ W_{i+1} & = W_{i} - \alpha \frac{\partial}{\partial W} MSE(W,\ b)\\\\
 & = W_{i} - \alpha \times \frac{2}{n} \sum_{i=1}^{n} [ \{ Y_{i} - (W_{i} \times x + b_{i}) \} \times (-x) ]\\\\
 & = W_{i} - \alpha \times \frac{2}{n} \sum_{i=1}^{n} \{ (Y_{i} - \hat{Y_{i}}) \times (-x) \}\\\\
 & = W_{i} - \alpha \times \frac{2}{n} \sum_{i=1}^{n} \{ (\hat{Y_{i}} - Y_{i}) \times x \}\\\\
-& = W_{i} - \alpha \times E[ (\hat{Y_{i}} - Y_{i}) \times x ]
+& = W_{i} - 2\alpha \times E[ (\hat{Y_{i}} - Y_{i}) \times x ]
 \end{align}
 $$
 </div>
@@ -230,7 +230,7 @@ $$
 
 위와 같은 방법으로 가중치를 갱신할 수 있습니다.
 
-**평균**을 계산하는 과정에서 $$ 2 $$의 값은 **갱신 과정에서 큰 영향을 미치지 않기 때문에 생략하기도 합니다.**
+**평균**을 계산하는 과정에서 생긴 상수 $$ 2 $$는 **학습률 $$ \alpha $$에 포함시켜 볼 수 있으므로 생략하기도 합니다.**
 
 <br>
 <br>
@@ -325,7 +325,7 @@ var c_data=[{x:cx,y:cy,mode:"lines",name:"Weight-Cost"},{x:[-0.079],y:[-0.04],mo
 function getrandom(num){var value=[];for(i=0;i<=num;i++){var rand=Math.random()*2-1;value.push(rand)}
 return value}
 var x=getrandom(1000);var y=getrandom(1000);var z=[];for(var i=0;i<=1000;i++){z.push(x[i]**2-y[i]**2)}
-var trace={opacity:0.5,color:'rgba(80,127,255,0.7)',type:'mesh3d',x:x,y:y,z:z,scene:"scene"};var point1={x:[0],y:[0],z:[0],marker:{color:'rgb(255, 34, 22)',size:2},mode:'markers',type:'scatter3d',name:'Saddle Point',};var point2={x:[0],y:[1],z:[-1],marker:{color:'rgb(33, 55, 255)',size:2},mode:'markers',type:'scatter3d',name:'Global Minmum Or Global Maximum'};var s_layout={showlegend:!0,legend:{x:1,xanchor:'right',y:1}};Plotly.newPlot('saddlePlot',[trace,point1,point2],s_layout)
+var trace={opacity:0.5,color:'rgba(80,127,255,0.7)',type:'mesh3d',x:x,y:y,z:z,scene:"scene"};var point1={x:[0],y:[0],z:[0],marker:{color:'rgb(255, 34, 22)',size:2},mode:'markers',type:'scatter3d',name:'Saddle Point',};var point2={x:[0],y:[1],z:[-1],marker:{color:'rgb(33, 55, 255)',size:2},mode:'markers',type:'scatter3d',name:'Global Minimum Or Global Maximum'};var s_layout={showlegend:!0,legend:{x:1,xanchor:'right',y:1}};Plotly.newPlot('saddlePlot',[trace,point1,point2],s_layout)
 </script>
 </center>
 

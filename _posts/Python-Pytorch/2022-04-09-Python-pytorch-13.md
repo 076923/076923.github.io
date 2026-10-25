@@ -129,12 +129,14 @@ CE & = -\sum_{c=1}^{C}L_{c}logP_{c}\\\\
 & = -(L_{1}logP_{1} + L_{2}logP_{2} + L_{3}logP_{3})\\\\
 & = -(0log0.00 + 0log0.07 + 1log0.93)\\\\
 & = -log0.93\\\\
-& \simeq 0.03
+& \simeq 0.07
 \end{align}
 $$
 </div>
 
-`교차 엔트로피(Cross Entropy)`를 통해 입력값을 세 번째 클래스로 학습했을 때, `오차(Cost)`를 계산한다면 $$ 0.03 $$이 됩니다.
+`교차 엔트로피(Cross Entropy)`를 통해 입력값을 세 번째 클래스로 학습했을 때, `오차(Cost)`를 계산한다면 $$ 0.07 $$이 됩니다.
+
+- Tip : 수식의 $$ log $$는 PyTorch와 동일하게 `자연로그(Natural Logarithm)`를 의미합니다.
 
 만약, 실젯값 세 번째 클래스가 아닌 두 번째 클래스였다면 다음과 같이 오차가 계산됩니다. ($$ L = [0, 1, 0] $$)
 
@@ -146,7 +148,7 @@ $$
 CE & = -(L_{1}logP_{1} + L_{2}logP_{2} + L_{3}logP_{3})\\\\
 & = -(0log0.00 + 1log0.07 + 0log0.93)\\\\
 & = -log0.07\\\\
-& \simeq 1.15
+& \simeq 2.66
 \end{align}
 $$
 </div>
@@ -188,11 +190,13 @@ $$ CE = -\frac{1}{n}\sum_{i=1}^{n}\sum_{c=1}^{C}L_{c}logP_{c} $$
 
 `a`, `b`, `c`는 삼각형의 변의 길이를 의미하며, `class`는 어떤 삼각형인지 의미합니다.
 
-클래스는 `예각삼각형(acute triangle)`, `정삼각형(right triangle)`, `둔각삼각형(obtuse triangle)`으로 구성되어 있습니다.
+클래스는 `예각삼각형(acute triangle)`, `직각삼각형(right triangle)`, `둔각삼각형(obtuse triangle)`으로 구성되어 있습니다.
 
-각 변의 길이는 원할한 학습을 위해 **길이가 짧은 순으로 정렬되어 있습니다.**
+CSV 파일의 변의 길이는 정렬되어 있지 않으므로, 원활한 학습을 위해 데이터 세트 클래스에서 **길이가 짧은 순으로 정렬해서 사용합니다.**
 
-`정삼각형(right triangle)`은 **각도가 90°에 근사한다면, 정삼각형으로 할당됐습니다.**
+`직각삼각형(right triangle)`은 **가장 큰 각도가 90°에 근사한다면, 직각삼각형으로 할당됐습니다.**
+
+- Tip : `둔각삼각형(obtuse triangle)` 500개 중 325개는 짧은 두 변의 합이 가장 긴 변보다 작거나 같아 실제로는 삼각형을 만들 수 없는 값입니다. 예제 데이터에서는 이러한 값도 `둔각삼각형(obtuse triangle)`으로 분류되어 있습니다.
 
 이 데이터를 활용하여 `다중 분류(Multiclass Classification)`를 `모델(Model)`로 구현해보도록 하겠습니다.
 
@@ -207,6 +211,7 @@ import torch
 import pandas as pd
 from torch import nn
 from torch import optim
+from torch.nn import functional as F
 from torch.utils.data import Dataset, DataLoader
 
 
@@ -216,8 +221,9 @@ class CustomDataset(Dataset):
         self.a = df.iloc[:, 0].values
         self.b = df.iloc[:, 1].values
         self.c = df.iloc[:, 2].values
-        self.y = df.iloc[:, 3].values
-        self.y = list(map(self.string_to_vector, self.y))
+        self.y = torch.tensor(
+            list(map(self.string_to_vector, df.iloc[:, 3].values)), dtype=torch.int64
+        )
         self.length = len(df)
 
     def string_to_vector(self, value):
@@ -225,8 +231,8 @@ class CustomDataset(Dataset):
         return data.get(value, None)
 
     def __getitem__(self, index):
-        x = torch.FloatTensor(sorted([self.a[index], self.b[index], self.c[index]]))
-        y = torch.LongTensor(self.y)[index]
+        x = torch.tensor(sorted([self.a[index], self.b[index], self.c[index]]), dtype=torch.float32)
+        y = self.y[index]
         return x, y
 
     def __len__(self):
@@ -235,7 +241,7 @@ class CustomDataset(Dataset):
 
 class CustomModel(nn.Module):
     def __init__(self):
-        super(CustomModel, self).__init__()
+        super().__init__()
 
         self.layer = nn.Sequential(
             nn.Linear(3, 3)
@@ -246,15 +252,18 @@ class CustomModel(nn.Module):
         return x
 
 
+torch.manual_seed(42)
+
 train_dataset = CustomDataset("./dataset.csv")
 train_dataloader = DataLoader(train_dataset, batch_size=128, shuffle=True, drop_last=True)
 
-device = "cuda" if torch.cuda.is_available() else "cpu"
+device = torch.accelerator.current_accelerator().type if torch.accelerator.is_available() else "cpu"
 model = CustomModel().to(device)
-criterion = nn.CrossEntropyLoss().to(device)
+criterion = nn.CrossEntropyLoss()
 optimizer = optim.SGD(model.parameters(), lr=0.001)
 
 for epoch in range(10000):
+    model.train()
     cost = 0.0
 
     for x, y in train_dataloader:
@@ -268,7 +277,7 @@ for epoch in range(10000):
         loss.backward()
         optimizer.step()
 
-        cost += loss
+        cost += loss.item()
 
     cost = cost / len(train_dataloader)
 
@@ -276,10 +285,10 @@ for epoch in range(10000):
         print(f"Epoch : {epoch+1:4d}, Cost : {cost:.3f}")
 
 
-with torch.no_grad():
-    model.eval()
+model.eval()
+with torch.inference_mode():
     classes = {0: "acute triangle", 1: "right triangle", 2: "obtuse triangle"}
-    inputs = torch.FloatTensor([
+    inputs = torch.tensor([
         [9.02, 9.77, 9.96], # 0 | acute triangle
         [8.01, 8.08, 8.32], # 0 | acute triangle
         [3.55, 5.15, 6.26], # 1 | right triangle
@@ -289,9 +298,9 @@ with torch.no_grad():
         [5.21, 5.38, 5.39], # 0 | acute triangle
         [3.85, 6.23, 7.32], # 1 | right triangle
         [4.16, 4.98, 8.54], # 2 | obtuse triangle
-    ]).to(device)
+    ], dtype=torch.float32).to(device)
     outputs = model(inputs)
-    
+
     print('---------')
     print(outputs)
     print(torch.round(F.softmax(outputs, dim=1), decimals=2))
@@ -302,38 +311,40 @@ with torch.no_grad():
 {% endhighlight %}
 **결과**
 :    
-Epoch : 1000, Cost : 0.222<br>
-Epoch : 2000, Cost : 0.140<br>
-Epoch : 3000, Cost : 0.103<br>
-Epoch : 4000, Cost : 0.080<br>
-Epoch : 5000, Cost : 0.065<br>
-Epoch : 6000, Cost : 0.056<br>
-Epoch : 7000, Cost : 0.049<br>
-Epoch : 8000, Cost : 0.043<br>
-Epoch : 9000, Cost : 0.038<br>
-Epoch : 10000, Cost : 0.035<br>
+Epoch : 1000, Cost : 0.194<br>
+Epoch : 2000, Cost : 0.126<br>
+Epoch : 3000, Cost : 0.093<br>
+Epoch : 4000, Cost : 0.074<br>
+Epoch : 5000, Cost : 0.062<br>
+Epoch : 6000, Cost : 0.052<br>
+Epoch : 7000, Cost : 0.046<br>
+Epoch : 8000, Cost : 0.041<br>
+Epoch : 9000, Cost : 0.036<br>
+Epoch : 10000, Cost : 0.033<br>
 \-\-\-\-\-\-\-\-\-<br>
-tensor([[ 14.0070,   7.2270,  -7.6265],<br>
-&emsp;&emsp;&emsp;&emsp;[ 12.6752,   6.1033,  -7.0592],<br>
-&emsp;&emsp;&emsp;&emsp;[  0.7832,   4.3076,   0.9737],<br>
-&emsp;&emsp;&emsp;&emsp;[  0.9755,   3.4801,   0.6885],<br>
-&emsp;&emsp;&emsp;&emsp;[ -7.1158,   4.7455,   9.4825],<br>
-&emsp;&emsp;&emsp;&emsp;[-15.8092,   3.2274,  17.0585],<br>
-&emsp;&emsp;&emsp;&emsp;[  8.2692,   4.3379,  -4.9598],<br>
-&emsp;&emsp;&emsp;&emsp;[  0.6708,   5.0402,   1.2550],<br>
-&emsp;&emsp;&emsp;&emsp;[ -4.6230,   4.3044,   6.8688]], device='cuda:0')<br>
+tensor([[ 15.5462,   8.6514,  -6.1401],<br>
+&emsp;&emsp;&emsp;&emsp;[ 13.8863,   7.3256,  -5.8250],<br>
+&emsp;&emsp;&emsp;&emsp;[  1.7802,   5.4522,   2.0373],<br>
+&emsp;&emsp;&emsp;&emsp;[  1.7123,   4.4524,   1.5531],<br>
+&emsp;&emsp;&emsp;&emsp;[ -5.3808,   6.2810,  11.0617],<br>
+&emsp;&emsp;&emsp;&emsp;[-14.1089,   4.7352,  18.6619],<br>
+&emsp;&emsp;&emsp;&emsp;[  8.9798,   5.2817,  -4.1127],<br>
+&emsp;&emsp;&emsp;&emsp;[  1.9048,   6.3386,   2.5002],<br>
+&emsp;&emsp;&emsp;&emsp;[ -3.2174,   5.6614,   8.2470]])<br>
 tensor([[1.0000, 0.0000, 0.0000],<br>
 &emsp;&emsp;&emsp;&emsp;[1.0000, 0.0000, 0.0000],<br>
-&emsp;&emsp;&emsp;&emsp;[0.0300, 0.9400, 0.0300],<br>
-&emsp;&emsp;&emsp;&emsp;[0.0700, 0.8700, 0.0500],<br>
+&emsp;&emsp;&emsp;&emsp;[0.0200, 0.9400, 0.0300],<br>
+&emsp;&emsp;&emsp;&emsp;[0.0600, 0.8900, 0.0500],<br>
 &emsp;&emsp;&emsp;&emsp;[0.0000, 0.0100, 0.9900],<br>
 &emsp;&emsp;&emsp;&emsp;[0.0000, 0.0000, 1.0000],<br>
 &emsp;&emsp;&emsp;&emsp;[0.9800, 0.0200, 0.0000],<br>
 &emsp;&emsp;&emsp;&emsp;[0.0100, 0.9700, 0.0200],<br>
-&emsp;&emsp;&emsp;&emsp;[0.0000, 0.0700, 0.9300]], device='cuda:0')<br>
-tensor([0, 0, 1, 1, 2, 2, 0, 1, 2], device='cuda:0')<br>
+&emsp;&emsp;&emsp;&emsp;[0.0000, 0.0700, 0.9300]])<br>
+tensor([0, 0, 1, 1, 2, 2, 0, 1, 2])<br>
 ['acute triangle', 'acute triangle', 'right triangle', 'right triangle', 'obtuse triangle', 'obtuse triangle', 'acute triangle', 'right triangle', 'obtuse triangle']<br>
 <br>
+
+- Tip : 결과는 CPU에서 실행한 값입니다. GPU 등 가속기에서 실행하면 텐서 출력에 `device='cuda:0'`과 같은 장치 정보가 함께 표시됩니다.
 
 ### 세부 코드
 
@@ -345,8 +356,9 @@ class CustomDataset(Dataset):
         self.a = df.iloc[:, 0].values
         self.b = df.iloc[:, 1].values
         self.c = df.iloc[:, 2].values
-        self.y = df.iloc[:, 3].values
-        self.y = list(map(self.string_to_vector, self.y))
+        self.y = torch.tensor(
+            list(map(self.string_to_vector, df.iloc[:, 3].values)), dtype=torch.int64
+        )
         self.length = len(df)
 
     def string_to_vector(self, value):
@@ -354,8 +366,8 @@ class CustomDataset(Dataset):
         return data.get(value, None)
 
     def __getitem__(self, index):
-        x = torch.FloatTensor(sorted([self.a[index], self.b[index], self.c[index]]))
-        y = torch.LongTensor(self.y)[index]
+        x = torch.tensor(sorted([self.a[index], self.b[index], self.c[index]]), dtype=torch.float32)
+        y = self.y[index]
         return x, y
 
     def __len__(self):
@@ -371,32 +383,61 @@ class CustomDataset(Dataset):
 
 `class` 값은 `문자열(string)`로 구성되어 있으므로, `string_to_vector` 메서드로 각 클래스를 **0, 1, 2**의 값으로 변경합니다.
 
-`호출 메서드(__getitem__)`에서 `x`는 **입력값(x1, x2, x3)**를 할당하고, `y`는 **실젯값(y)**를 반환합니다.
+**실젯값(y)**는 0 ~ 2의 범위를 갖는 클래스 색인이므로, **부호 있는 64 비트 정수(torch.int64)** 텐서로 선언합니다.
 
-**실젯값(y)**는 0 ~ 2의 범위를 갖는 텐서이므로, **부호 있는 64 비트 정수(LongTensor)**로 선언합니다.
+실젯값 텐서는 `초기화 메서드(__init__)`에서 한 번만 생성하고, `호출 메서드(__getitem__)`에서는 색인으로 값만 꺼냅니다.
+
+`호출 메서드(__getitem__)`에서 `x`는 세 변의 길이를 **짧은 순으로 정렬(sorted)**한 **입력값(a, b, c)**을 할당하고, `y`는 **실젯값(y)**을 반환합니다.
 
 <br>
 
 {% highlight Python %}
 
-criterion = nn.CrossEntropyLoss().to(device)
+criterion = nn.CrossEntropyLoss()
 
 {% endhighlight %}
 
 `교차 엔트로피 클래스(nn.CrossEntropyLoss)`로 `criterion` 인스턴스를 생성합니다.
 
-`교차 엔트로피 클래스(nn.CrossEntropyLoss)`는 `소프트맥스 함수(Softmax Function)`와 `원-핫 인코딩(One-hot Encoding)`을 자체적으로 수행합니다.
+`교차 엔트로피 클래스(nn.CrossEntropyLoss)`는 내부에서 `로그 소프트맥스(log_softmax)`를 적용한 뒤 `음의 로그 우도 손실(nn.NLLLoss)`을 계산합니다.
 
-즉, 학습에 적용되는 실젯값은 **상수(0, 1, 2, ...)**로 입력합니다.
+실젯값에 해당하는 클래스의 로그 확률만 선택해 계산하므로 `원-핫 인코딩(One-hot Encoding)`을 직접 적용한 것과 같은 결과가 됩니다.
+
+즉, 학습에 적용되는 실젯값은 **클래스 색인(0, 1, 2, ...)**으로 입력합니다.
+
+그러므로 **모델의 출력층에는 소프트맥스 함수를 적용하지 않고, 선형 변환의 결과인 로짓(Logit)을 그대로 비용 함수에 전달합니다.**
+
+모델에서 소프트맥스 함수를 적용한 값을 `nn.CrossEntropyLoss`에 전달하면 소프트맥스가 두 번 적용되어 손실을 올바르게 계산할 수 없습니다.
+
+{% highlight Python %}
+
+logits = torch.tensor([[10.0, 0.0, 0.0]])
+target = torch.tensor([0])
+
+print(criterion(logits, target))
+print(criterion(F.softmax(logits, dim=1), target))
+
+{% endhighlight %}
+**결과**
+:    
+tensor(9.0833e-05)<br>
+tensor(0.5515)<br>
+<br>
+
+첫 번째 클래스로 확실하게 예측했음에도 소프트맥스를 적용한 값을 전달하면 손실이 **0.5515**로 계산됩니다.
+
+소프트맥스를 거친 값은 0 ~ 1 범위로 제한되므로 다시 소프트맥스를 적용해도 확률 차이가 크게 벌어지지 않아, **손실이 0에 가까워질 수 없으며 학습이 느려집니다.**
+
+- Tip : `nn.CrossEntropyLoss`는 `[[1.0, 0.0, 0.0]]`처럼 클래스별 확률 형태의 실젯값도 입력받을 수 있습니다. 이 경우 실젯값은 `실수형(float)` 텐서로 전달합니다.
 
 <br>
 
 {% highlight Python %}
 
-with torch.no_grad():
-    model.eval()
+model.eval()
+with torch.inference_mode():
     classes = {0: "acute triangle", 1: "right triangle", 2: "obtuse triangle"}
-    inputs = torch.FloatTensor([
+    inputs = torch.tensor([
         [9.02, 9.77, 9.96], # 0 | acute triangle
         [8.01, 8.08, 8.32], # 0 | acute triangle
         [3.55, 5.15, 6.26], # 1 | right triangle
@@ -406,9 +447,9 @@ with torch.no_grad():
         [5.21, 5.38, 5.39], # 0 | acute triangle
         [3.85, 6.23, 7.32], # 1 | right triangle
         [4.16, 4.98, 8.54], # 2 | obtuse triangle
-    ]).to(device)
+    ], dtype=torch.float32).to(device)
     outputs = model(inputs)
-    
+
     print('---------')
     print(outputs)
     print(torch.round(F.softmax(outputs, dim=1), decimals=2))
@@ -420,7 +461,7 @@ with torch.no_grad():
 
 확률의 형태로 확인할수 있도록 `출력값(outputs)`에 `소프트맥스 함수(F.softmax)`를 적용합니다.
 
-`반올림 함수(torch.round)`로 소숫점 두 번째 자리까지 표현합니다.
+`반올림 함수(torch.round)`의 `decimals` 매개변수로 소수점 둘째 자리까지 표현합니다.
 
 `최댓값 색인위치(argmax)` 함수로 `출력값(outputs)`에서 가장 높은 값을 지니는 값만 추출합니다.
 
@@ -434,15 +475,15 @@ with torch.no_grad():
 
 # print(outputs)
 
-tensor([[ 14.0070,   7.2270,  -7.6265],
-        [ 12.6752,   6.1033,  -7.0592],
-        [  0.7832,   4.3076,   0.9737],
-        [  0.9755,   3.4801,   0.6885],
-        [ -7.0864,   4.7449,   9.4535],
-        [-15.8092,   3.2274,  17.0585],
-        [  8.2692,   4.3379,  -4.9598],
-        [  0.6708,   5.0402,   1.2550],
-        [ -4.6230,   4.3044,   6.8688]], device='cuda:0')
+tensor([[ 15.5462,   8.6514,  -6.1401],
+        [ 13.8863,   7.3256,  -5.8250],
+        [  1.7802,   5.4522,   2.0373],
+        [  1.7123,   4.4524,   1.5531],
+        [ -5.3808,   6.2810,  11.0617],
+        [-14.1089,   4.7352,  18.6619],
+        [  8.9798,   5.2817,  -4.1127],
+        [  1.9048,   6.3386,   2.5002],
+        [ -3.2174,   5.6614,   8.2470]])
 
 {% endhighlight %}
 
@@ -450,7 +491,7 @@ tensor([[ 14.0070,   7.2270,  -7.6265],
 
 가장 높은 값을 지닌 색인 위치가 해당 클래스로 인식된 경우입니다.
 
-`[ 14.0070,   7.2270,  -7.6265]`는 `14.0070`가 가장 높은 값이므로, `예각삼각형(acute triangle)`으로 예측되었다 볼 수 있습니다.
+`[ 15.5462,   8.6514,  -6.1401]`는 `15.5462`가 가장 높은 값이므로, `예각삼각형(acute triangle)`으로 예측되었다 볼 수 있습니다.
 
 <br>
 
@@ -460,19 +501,25 @@ tensor([[ 14.0070,   7.2270,  -7.6265],
 
 tensor([[1.0000, 0.0000, 0.0000],
         [1.0000, 0.0000, 0.0000],
-        [0.0300, 0.9400, 0.0300],
-        [0.0700, 0.8700, 0.0500],
+        [0.0200, 0.9400, 0.0300],
+        [0.0600, 0.8900, 0.0500],
         [0.0000, 0.0100, 0.9900],
         [0.0000, 0.0000, 1.0000],
         [0.9800, 0.0200, 0.0000],
         [0.0100, 0.9700, 0.0200],
-        [0.0000, 0.0700, 0.9300]], device='cuda:0')
+        [0.0000, 0.0700, 0.9300]])
 
 {% endhighlight %}
 
 `출력값(outputs)`을 통해 어떤 클래스로 계산되었는지 확인할 수 있지만, 얼마나 높은 확률로 예측되었는지는 확인하기 어렵습니다.
 
 `소프트맥스 함수(F.softmax)`를 적용하여 출력값의 예측 확률을 확인합니다.
+
+마지막 입력값 `[4.16, 4.98, 8.54]`는 **93%** 확률로 `둔각삼각형(obtuse triangle)`으로 예측되었습니다.
+
+소프트맥스 함수는 확률을 확인하기 위한 용도로 추론 단계에서만 적용하며, 학습할 때는 `nn.CrossEntropyLoss`에 로짓을 그대로 전달합니다.
+
+- Tip : 소프트맥스 함수는 값의 대소 관계를 바꾸지 않으므로, 소프트맥스를 적용하기 전과 후의 `argmax` 결과는 동일합니다.
 
 <br>
 
@@ -481,7 +528,7 @@ tensor([[1.0000, 0.0000, 0.0000],
 # print(outputs.argmax(1))
 # print(list(map(classes.get, outputs.argmax(1).tolist())))
 
-tensor([0, 0, 1, 1, 2, 2, 0, 1, 2], device='cuda:0')
+tensor([0, 0, 1, 1, 2, 2, 0, 1, 2])
 ['acute triangle', 'acute triangle', 'right triangle', 'right triangle', 'obtuse triangle', 'obtuse triangle', 'acute triangle', 'right triangle', 'obtuse triangle']
 
 {% endhighlight %}

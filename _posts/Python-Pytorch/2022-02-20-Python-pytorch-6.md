@@ -208,7 +208,9 @@ Epoch : 10000, Weight : 0.879, Bias : -0.436, Cost : 1.372<br>
 
 출력되는 결과를 통해 학습이 진행될 때마다 `가중치(Weight)`와 `편향(Bias)`이 조정되며 `비용(Cost)`이 감소되는 것을 확인할 수 있습니다.
 
-처음에 설정한 **초기 가중치, 편향, 학습률에서는 약 6,000회 가량 학습했을 때 더 이상 비용(Cost)이 줄어들지 않는 것을 확인할 수 있습니다.**
+처음에 설정한 **초기 가중치, 편향, 학습률에서는 약 6,000회 가량 학습했을 때 가중치와 편향이 더 이상 변하지 않고, 비용(Cost)도 더 이상 줄어들지 않는 것을 확인할 수 있습니다.**
+
+- Tip : 평균 제곱 오차를 미분하면 기울기에 상수 `2`가 곱해지지만, 위 예제는 이 상수를 생략하고 `학습률(learning_rate)`에 포함된 것으로 간주해 계산합니다.
 
 <br>
 <br>
@@ -219,7 +221,8 @@ Epoch : 10000, Weight : 0.879, Bias : -0.436, Cost : 1.372<br>
 
 비교를 위하여 `learning_rate = 0.005`일 때의 10회 학습 결과입니다.
 
-```
+{% highlight Python %}
+
 # learning_rate = 0.005
 Epoch :    1, Weight : 1.351, Bias : 0.066, Cost : 233.140
 Epoch :    2, Weight : 0.568, Bias : 0.027, Cost : 79.280
@@ -231,7 +234,7 @@ Epoch :    7, Weight : 0.874, Bias : 0.039, Cost : 1.759
 Epoch :    8, Weight : 0.845, Bias : 0.037, Cost : 1.538
 Epoch :    9, Weight : 0.862, Bias : 0.037, Cost : 1.463
 Epoch :   10, Weight : 0.852, Bias : 0.036, Cost : 1.438
-```
+{% endhighlight %}
 
 학습이 진행될수록 `비용(Cost)`이 점점 감소하면서 적절한 가중치(Weight)와 편향(Bias)을 찾아가는 것을 확인할 수 있습니다.
 
@@ -241,7 +244,8 @@ Epoch :   10, Weight : 0.852, Bias : 0.036, Cost : 1.438
 
 ### learning_rate = 0.001
 
-```
+{% highlight Python %}
+
 # learning_rate = 0.001
 Epoch :    1, Weight : 0.270, Bias : 0.013, Cost : 233.140
 Epoch :    2, Weight : 0.455, Bias : 0.022, Cost : 109.857
@@ -253,7 +257,7 @@ Epoch :    7, Weight : 0.795, Bias : 0.038, Cost : 3.859
 Epoch :    8, Weight : 0.814, Bias : 0.039, Cost : 2.565
 Epoch :    9, Weight : 0.827, Bias : 0.040, Cost : 1.959
 Epoch :   10, Weight : 0.836, Bias : 0.040, Cost : 1.676
-```
+{% endhighlight %}
 
 `learning_rate = 0.001`에서는 `learning_rate = 0.005`보다 더 천천히 `비용(Cost)`이 감소하는 것을 확인할 수 있습니다.
 
@@ -263,7 +267,8 @@ Epoch :   10, Weight : 0.836, Bias : 0.040, Cost : 1.676
 
 ### learning_rate = 0.006
 
-```
+{% highlight Python %}
+
 # learning_rate = 0.006
 Epoch :    1, Weight : 1.621, Bias : 0.079, Cost : 233.140
 Epoch :    2, Weight : 0.169, Bias : 0.007, Cost : 187.274
@@ -275,7 +280,7 @@ Epoch :    7, Weight : 1.251, Bias : 0.057, Cost : 63.112
 Epoch :    8, Weight : 0.502, Bias : 0.019, Cost : 50.901
 Epoch :    9, Weight : 1.173, Bias : 0.052, Cost : 41.108
 Epoch :   10, Weight : 0.572, Bias : 0.021, Cost : 33.253
-```
+{% endhighlight %}
 
 `learning_rate = 0.006`에서는 `비용(Cost)`이 감소하긴 하지만, `가중치(Weight)`나 `편향(Bias)`이 지그재그 형태로 움직이는 것을 확인할 수 있습니다.
 
@@ -285,7 +290,8 @@ Epoch :   10, Weight : 0.572, Bias : 0.021, Cost : 33.253
 
 ### learning_rate = 0.007
 
-```
+{% highlight Python %}
+
 # learning_rate = 0.007
 Epoch :    1, Weight : 1.892, Bias : 0.092, Cost : 233.140
 Epoch :    2, Weight : -0.400, Bias : -0.021, Cost : 341.523
@@ -297,7 +303,7 @@ Epoch :    7, Weight : 4.132, Bias : 0.198, Cost : 2318.076
 Epoch :    8, Weight : -3.114, Bias : -0.160, Cost : 3401.685
 Epoch :    9, Weight : 5.665, Bias : 0.272, Cost : 4992.152
 Epoch :   10, Weight : -4.971, Bias : -0.253, Cost : 7326.558
-```
+{% endhighlight %}
 
 `learning_rate = 0.007`에서는 `비용(Cost)`이 점점 증가하고 `가중치(Weight)`와 `편향(Bias)`이 점점 적절한 값에서 멀어지게 됩니다.
 
@@ -307,7 +313,8 @@ Epoch :   10, Weight : -4.971, Bias : -0.253, Cost : 7326.558
 
 ### weight = 100000.0, bias = 100000.0
 
-```
+{% highlight Python %}
+
 # weight = 100000.0
 # bias = 100000.0
 # learning_rate = 0.005
@@ -322,7 +329,7 @@ Epoch :    7, Weight : -6929.960, Bias : 93950.877, Cost : 7099764303.827
 Epoch :    8, Weight : -3289.340, Bias : 94018.261, Cost : 3780358039.956
 Epoch :    9, Weight : -5390.953, Bias : 93803.159, Cost : 2661760204.138
 Epoch :   10, Weight : -4164.103, Bias : 93752.008, Cost : 2282622976.588
-```
+{% endhighlight %}
 
 비교적 적절한 학습률인 `learning_rate = 0.005`일 때 초깃값을 매우 큰 값을 주는 경우, `비용(Cost)`이 감소하긴 하지만 매우 많은 학습(Epoch)을 요구하게 됩니다.
 
@@ -343,16 +350,16 @@ import torch
 from torch import optim
 
 
-x = torch.FloatTensor([
+x = torch.tensor([
     [1], [2], [3], [4], [5], [6], [7], [8], [9], [10],
     [11], [12], [13], [14], [15], [16], [17], [18], [19], [20],
     [21], [22], [23], [24], [25], [26], [27], [28], [29], [30]
-])
-y = torch.FloatTensor([
+], dtype=torch.float32)
+y = torch.tensor([
     [0.94], [1.98], [2.88], [3.92], [3.96], [4.55], [5.64], [6.3], [7.44], [9.1],
     [8.46], [9.5], [10.67], [11.16], [14], [11.83], [14.4], [14.25], [16.2], [16.32],
     [17.46], [19.8], [18], [21.34], [22], [22.5], [24.57], [26.04], [21.6], [28.8]
-])
+], dtype=torch.float32)
 
 weight = torch.zeros(1, requires_grad=True)
 bias = torch.zeros(1, requires_grad=True)
@@ -404,22 +411,26 @@ from torch import optim
 
 {% highlight Python %}
 
-x = torch.FloatTensor([
+x = torch.tensor([
     [1], [2], [3], [4], [5], [6], [7], [8], [9], [10],
     [11], [12], [13], [14], [15], [16], [17], [18], [19], [20],
     [21], [22], [23], [24], [25], [26], [27], [28], [29], [30]
-])
-y = torch.FloatTensor([
+], dtype=torch.float32)
+y = torch.tensor([
     [0.94], [1.98], [2.88], [3.92], [3.96], [4.55], [5.64], [6.3], [7.44], [9.1],
     [8.46], [9.5], [10.67], [11.16], [14], [11.83], [14.4], [14.25], [16.2], [16.32],
     [17.46], [19.8], [18], [21.34], [22], [22.5], [24.57], [26.04], [21.6], [28.8]
-])
+], dtype=torch.float32)
 
 {% endhighlight %}
 
 `NumPy` 예제에서 사용했던 데이터와 동일한 구조의 데이터를 사용합니다.
 
-단, `ndarray` 형식이 아닌, `FloatTensor`의 형식으로 적용합니다.
+단, `ndarray` 형식이 아닌, `torch.tensor` 함수로 생성한 `텐서(Tensor)` 형식으로 적용합니다.
+
+`자료형(dtype)`은 `torch.float32`로 지정해 32비트 부동 소수점 텐서로 생성합니다.
+
+- Tip : 이전 버전의 예제에서 자주 사용되던 `torch.FloatTensor`는 레거시 생성자이므로, `torch.tensor(data, dtype=torch.float32)`를 사용합니다.
 
 <br>
 
@@ -451,11 +462,13 @@ optimizer = optim.SGD([weight, bias], lr=learning_rate)
 
 최적화 함수는 `확률적 경사 하강법(optim.SGD)`을 적용합니다.
 
-`확률적 경사 하강법(Stochastic Gradient Descent)`는 모든 데이터에 대해 연산을 진행하지 않고, 일부 데이터만 계산하여 빠르게 최적화된 값을 찾는 방식입니다.
+`확률적 경사 하강법(Stochastic Gradient Descent)`은 모든 데이터에 대해 연산을 진행하지 않고, 일부 데이터만 계산하여 빠르게 최적화된 값을 찾는 방식입니다.
 
 즉, `미니 배치(Mini-Batch)`의 형태로 전체 데이터를 N 등분하여 학습을 진행합니다.
 
 확률적 경사 하강법의 매개변수로는 `최적화하려는 변수`와 `학습률`을 입력합니다.
+
+- Tip : `optim.SGD`는 입력된 기울기로 매개변수를 갱신하는 역할만 수행합니다. 이번 예제는 매번 전체 데이터(30개)로 기울기를 계산하므로 실제로는 `배치 경사 하강법`과 같으며, 미니 배치로 나누는 방법은 [제 8강 - 데이터 세트(Data Set)][8강]에서 다룹니다.
 
 <br>
 
@@ -527,7 +540,11 @@ Epoch : 10000, Weight : 0.879, Bias : -0.432, Cost : 1.372<br>
 
 출력되는 결과를 통해 학습이 진행될 때마다 `가중치(Weight)`와 `편향(Bias)`가 조정되며 `비용(Cost)`이 감소되는 것을 확인할 수 있습니다.
 
-학습률은 0.001로 기존 `경사 하강법(Stochastic Gradient Descent)`보다 낮은 학습률을 선택하였지만, 더 빠른 속도로 최적의 가중치와 편향을 찾는 것을 확인할 수 있습니다.
+`PyTorch`의 `역전파(backward)`는 평균 제곱 오차의 기울기를 상수 `2`까지 포함하여 정확히 계산합니다.
+
+그러므로 `PyTorch` 예제의 `learning_rate = 0.001`은 상수 `2`를 생략한 `NumPy` 예제의 `learning_rate = 0.002`와 같은 크기로 갱신되며, 실제로 두 예제의 출력 결과는 일치합니다.
+
+`NumPy` 예제의 `learning_rate = 0.005`보다 갱신 폭이 작으므로, 최적의 가중치와 편향에 조금 더 천천히 수렴하는 것을 확인할 수 있습니다.
 
 <br>
 <br>
@@ -558,7 +575,7 @@ Step [3] : Gradient : tensor([-540.4854]), Weight : 0.00000<br>
 Step [4] : Gradient : tensor([-540.4854]), Weight : 0.54049<br>
 Epoch :    2<br>
 Step [1] : Gradient : tensor([-540.4854]), Weight : 0.54049<br>
-Step [2] : Gradient : tensor([0.]), Weight : 0.54049<br>
+Step [2] : Gradient : None, Weight : 0.54049<br>
 Step [3] : Gradient : tensor([-198.9818]), Weight : 0.54049<br>
 Step [4] : Gradient : tensor([-198.9818]), Weight : 0.73947<br>
 ...<br>
@@ -576,9 +593,16 @@ Step [4] : Gradient : tensor([-198.9818]), Weight : 0.73947<br>
 
 `두 번째 에폭(epoch=2)`에서는 새로 계산한 기울기와 값이 있기 때문에 첫 번째 에폭에서 나온 결과로 학습을 수행합니다.
 
-`optimizer.zero_grad()`로 기울기를 0으로 초기화합니다.
+`optimizer.zero_grad()`로 기울기를 초기화합니다.
+
+PyTorch 2.0 이상에서는 `zero_grad`의 `set_to_none` 매개변수 기본값이 `참(True)`이므로, 기울기를 0으로 채우지 않고 `None`으로 설정합니다.
+
+그러므로 **Step [2]**의 기울기가 `tensor([0.])`이 아닌 `None`으로 출력되며, `optimizer.zero_grad(set_to_none=False)`로 호출하면 `tensor([0.])`이 출력됩니다.
+
+두 방식 모두 다음 `cost.backward()`에서 새로 계산된 기울기만 저장되므로 학습 결과는 동일하며, `None`으로 설정하는 방식이 메모리 사용과 연산 측면에서 더 효율적입니다.
 
 만약, `optimizer.zero_grad()`로 기울기를 초기화 해주지 않는다면 `-540.4854 + -198.9818` 연산으로 진행하게 되고, `-739.4672`의 기울기로 인해 연산이 틀어지게 됩니다.
 
 [2강]: https://076923.github.io/posts/AI-2/
 [5강]: https://076923.github.io/posts/Python-pytorch-5/
+[8강]: https://076923.github.io/posts/Python-pytorch-8/

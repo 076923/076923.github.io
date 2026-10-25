@@ -13,6 +13,7 @@ docs:
   - title: Books
     children:
       - title: "팀을 위한 클로드 코드 완벽 가이드"
+        url: "https://wikibook.co.kr/claude-code-teams/"
       - title: "데이터ㆍAI 시스템 아키텍트를 위한 실무 가이드"
         url: "https://wikibook.co.kr/data-ai-system/"
         external: "_blank"
@@ -179,6 +180,8 @@ Python:
         url: "/posts/Python-49/"
       - title: "제 50강 - 데이터 클래스"
         url: "/posts/Python-50/"
+  - title:
+    children:
       - title: "제 51강 - 비동기 처리"
         url: "/posts/Python-51/"
       - title: "제 52강 - 가상 환경"
@@ -474,6 +477,10 @@ Python-PyTorch:
         url: "/posts/Python-pytorch-13/"
       - title: "제 14강 - 퍼셉트론(Perceptron)"
         url: "/posts/Python-pytorch-14/"
+      - title: "제 15강 - 합성곱 신경망(Convolutional Neural Network)"
+        url: "/posts/Python-pytorch-15/"
+      - title: "제 16강 - 과대적합 방지(Regularization)"
+        url: "/posts/Python-pytorch-16/"
 
 C#:
   - title: "C# 강좌 목록"
@@ -820,6 +827,14 @@ Theory-AI:
         url: "/posts/AI-9/"
       - title: "최적화 알고리즘(Optimizer)"
         url: "/posts/AI-10/"
+  - title:
+    children:
+      - title: "손실 함수(Loss Function)"
+        url: "/posts/AI-11/"
+      - title: "합성곱 신경망(Convolutional Neural Network)"
+        url: "/posts/AI-12/"
+      - title: "생성 모델(Generative Model)"
+        url: "/posts/AI-13/"
 
 Theory-ComputerVision:
   - title: "컴퓨터 비전 이론 목록"
@@ -854,6 +869,10 @@ Theory-ComputerVision:
         url: "/posts/ComputerVision-13/"
       - title: "이미지 분할"
         url: "/posts/ComputerVision-14/"
+      - title: "객체 검출"
+        url: "/posts/ComputerVision-15/"
+      - title: "기하 변환과 이미지 정합"
+        url: "/posts/ComputerVision-16/"
 
 Theory-NLP:
   - title: "자연어 처리 이론 목록"
@@ -874,6 +893,10 @@ Theory-NLP:
         url: "/posts/NLP-7/"
       - title: "대규모 언어 모델(Large Language Model)"
         url: "/posts/NLP-8/"
+      - title: "검색 증강 생성(Retrieval-Augmented Generation)"
+        url: "/posts/NLP-9/"
+      - title: "효율적인 미세 조정과 추론(Efficient Fine-tuning & Inference)"
+        url: "/posts/NLP-10/"
 
 Exercise-C#:
   - title: "C# 예제 목록"

@@ -55,7 +55,9 @@ var x=[0,1,2,3,4,5,6,7],y=[0,0,0,0,1,1,1,1],data1=[{x:x,y:y,mode:"lines",name:"S
 
 활성화 함수는 비선형으로 이뤄져 있어, 활성화 함수를 적용하면 입력값에 대한 출력값이 `비선형(Nonlinear)`으로 변환됩니다.
 
-`시그모이드 함수(Sigmoid Function)`는 **S자형 곡선**의 모양의 형태로 반환값은 **0 ~ 1** 또는 **-1 ~ 1**의 범위를 갖습니다.
+`시그모이드 함수(Sigmoid Function)`는 **S자형 곡선**의 모양의 형태로 반환값은 **0 ~ 1**의 범위를 갖습니다.
+
+- Tip : 반환값이 **-1 ~ 1**의 범위를 갖는 S자형 곡선 함수는 `하이퍼볼릭 탄젠트 함수(Tanh Function)`입니다.
 
 시그모이드 함수의 수식은 다음과 같이 표현합니다.
 
@@ -94,13 +96,13 @@ $$
 
 시그모이드 함수는 유연한 미분 값 가지므로, 입력에 따라 값이 급격하게 변하지 않는 장점이 있습니다.
 
-또한, 출력값의 범위가 0 ~ 1 사이로 제한됨으로써 정규화 중 `기울기 폭주(Exploding Gradient)` 문제를 방지하고 미분식이 단순한 형태 지닙니다.
+또한, 출력값의 범위가 0 ~ 1 사이로 제한되어 출력값이 지나치게 커지지 않으며, 미분식이 $$ Sigmoid(x)(1 - Sigmoid(x)) $$로 단순한 형태를 지닙니다.
 
-하지만, 기울기 폭주를 방지하는 대신 `기울기 소실(Vanishing Gradient)` 문제 발생합니다.
+하지만, 시그모이드 함수의 미분값은 최대 **0.25**이며 입력값의 절댓값이 커질수록 0에 가까워지므로 `기울기 소실(Vanishing Gradient)` 문제가 발생합니다.
 
 `신경망(Neural Network)`은 `기울기(Gradient)`를 이용해 최적화된 값을 찾아 가는데, 계층(Layer)이 많아지면 점점 값이 0에 수렴되는 문제가 발생해 성능이 떨어지게 됩니다.
 
-그 외에도 Y값의 의 중심이 0이 아니므로 입력 데이터가 항상 양수인 경우라면, `기울기(Gradient)`는 모두 양수 또는 음수가 되어, 기울기가 지그재그 형태로 변동하는 문제점이 발생해 학습 효율성을 감소시킵니다.
+그 외에도 Y값의 중심이 0이 아니므로 입력 데이터가 항상 양수인 경우라면, `기울기(Gradient)`는 모두 양수 또는 음수가 되어, 기울기가 지그재그 형태로 변동하는 문제점이 발생해 학습 효율성을 감소시킵니다.
 
 <br>
 <br>
@@ -164,17 +166,19 @@ $$
 \begin{multline}
 \shoveleft BCE \ \text{#1} = - Y_{i} \cdot log (\hat{Y_{i}}) \\ 
 \shoveleft BCE \ \text{#1}_{1} = - 1 \cdot log(0.999999999999) \simeq 0\\ 
-\shoveleft BCE \ \text{#1}_{2} = - 1 \cdot log(0.000000000001) \simeq 12
+\shoveleft BCE \ \text{#1}_{2} = - 1 \cdot log(0.000000000001) \simeq 27.63
 \end{multline}
 $$
 
 $$
 \begin{multline}
 \shoveleft BCE \ \text{#2} = - (1 - Y_{i}) \cdot log (1 - \hat{Y_{i}}) \\
-\shoveleft BCE \ \text{#2}_{1} = - (1 - 0) \cdot log(0.999999999999) = 0\\ 
-\shoveleft BCE \ \text{#2}_{2} = - (1 - 0) \cdot log(0.000000000001) \simeq 12
+\shoveleft BCE \ \text{#2}_{1} = - (1 - 0) \cdot log(0.999999999999) \simeq 0\\ 
+\shoveleft BCE \ \text{#2}_{2} = - (1 - 0) \cdot log(0.000000000001) \simeq 27.63
 \end{multline}
 $$
+
+- Tip : 수식의 $$ log $$는 PyTorch와 동일하게 `자연로그(Natural Logarithm)`를 의미합니다.
 
 <br>
 
@@ -246,8 +250,8 @@ class CustomDataset(Dataset):
         self.length = len(df)
 
     def __getitem__(self, index):
-        x = torch.FloatTensor([self.x1[index], self.x2[index], self.x3[index]])
-        y = torch.FloatTensor([self.y[index]])
+        x = torch.tensor([self.x1[index], self.x2[index], self.x3[index]], dtype=torch.float32)
+        y = torch.tensor([self.y[index]], dtype=torch.float32)
         return x, y
 
     def __len__(self):
@@ -256,10 +260,10 @@ class CustomDataset(Dataset):
 
 class CustomModel(nn.Module):
     def __init__(self):
-        super(CustomModel, self).__init__()
+        super().__init__()
         self.layer = nn.Sequential(
-          nn.Linear(3, 1),
-          nn.Sigmoid()
+            nn.Linear(3, 1),
+            nn.Sigmoid()
         )
 
     def forward(self, x):
@@ -267,15 +271,18 @@ class CustomModel(nn.Module):
         return x
 
 
+torch.manual_seed(42)
+
 train_dataset = CustomDataset("./dataset.csv")
 train_dataloader = DataLoader(train_dataset, batch_size=128, shuffle=True, drop_last=True)
 
-device = "cuda" if torch.cuda.is_available() else "cpu"
+device = torch.accelerator.current_accelerator().type if torch.accelerator.is_available() else "cpu"
 model = CustomModel().to(device)
-criterion = nn.BCELoss().to(device)
-optimizer = optim.SGD(model.parameters(), lr=0.0001)
+criterion = nn.BCELoss()
+optimizer = optim.SGD(model.parameters(), lr=0.001)
 
 for epoch in range(10000):
+    model.train()
     cost = 0.0
 
     for x, y in train_dataloader:
@@ -289,7 +296,7 @@ for epoch in range(10000):
         loss.backward()
         optimizer.step()
 
-        cost += loss
+        cost += loss.item()
 
     cost = cost / len(train_dataloader)
 
@@ -297,62 +304,69 @@ for epoch in range(10000):
         print(f"Epoch : {epoch+1:4d}, Model : {list(model.parameters())}, Cost : {cost:.3f}")
 
 
-with torch.no_grad():
-    model.eval()
-    inputs = torch.FloatTensor(
-        [[89, 92, 75], [75, 64, 50], [38, 58, 63], [33, 42, 39], [23, 15, 32]]
+model.eval()
+with torch.inference_mode():
+    inputs = torch.tensor(
+        [[89, 92, 75], [75, 64, 50], [38, 58, 63], [33, 42, 39], [23, 15, 32]],
+        dtype=torch.float32,
     ).to(device)
     outputs = model(inputs)
 
     print("---------")
     print(outputs)
-    print(outputs >= torch.FloatTensor([0.5]).to(device))
+    print(outputs >= 0.5)
 
 
 {% endhighlight %}
 **결과**
 :    
 Epoch : 1000, Model : [Parameter containing:<br>
-tensor([[0.0067, 0.0040, 0.0061]], device='cuda:0', requires_grad=True), Parameter containing:<br>
-tensor([-0.5287], device='cuda:0', requires_grad=True)], Cost : 0.612<br>
+tensor([[0.0132, 0.0063, 0.0116]], requires_grad=True), Parameter containing:<br>
+tensor([-0.2699], requires_grad=True)], Cost : 0.874<br>
 Epoch : 2000, Model : [Parameter containing:<br>
-tensor([[0.0073, 0.0043, 0.0058]], device='cuda:0', requires_grad=True), Parameter containing:<br>
-tensor([-0.5963], device='cuda:0', requires_grad=True)], Cost : 0.608<br>
+tensor([[ 5.2746e-03, -5.1584e-05,  2.9904e-03]], requires_grad=True), Parameter containing:<br>
+tensor([-0.9867], requires_grad=True)], Cost : 0.702<br>
 Epoch : 3000, Model : [Parameter containing:<br>
-tensor([[0.0074, 0.0044, 0.0062]], device='cuda:0', requires_grad=True), Parameter containing:<br>
-tensor([-0.6629], device='cuda:0', requires_grad=True)], Cost : 0.604<br>
+tensor([[0.0178, 0.0191, 0.0165]], requires_grad=True), Parameter containing:<br>
+tensor([-1.6173], requires_grad=True)], Cost : 0.641<br>
 Epoch : 4000, Model : [Parameter containing:<br>
-tensor([[0.0079, 0.0046, 0.0067]], device='cuda:0', requires_grad=True), Parameter containing:<br>
-tensor([-0.7286], device='cuda:0', requires_grad=True)], Cost : 0.591<br>
+tensor([[0.0109, 0.0092, 0.0122]], requires_grad=True), Parameter containing:<br>
+tensor([-2.1755], requires_grad=True)], Cost : 0.488<br>
 Epoch : 5000, Model : [Parameter containing:<br>
-tensor([[0.0075, 0.0057, 0.0072]], device='cuda:0', requires_grad=True), Parameter containing:<br>
-tensor([-0.7934], device='cuda:0', requires_grad=True)], Cost : 0.588<br>
+tensor([[0.0207, 0.0200, 0.0199]], requires_grad=True), Parameter containing:<br>
+tensor([-2.6676], requires_grad=True)], Cost : 0.521<br>
 Epoch : 6000, Model : [Parameter containing:<br>
-tensor([[0.0083, 0.0058, 0.0074]], device='cuda:0', requires_grad=True), Parameter containing:<br>
-tensor([-0.8573], device='cuda:0', requires_grad=True)], Cost : 0.582<br>
+tensor([[0.0116, 0.0125, 0.0142]], requires_grad=True), Parameter containing:<br>
+tensor([-3.1085], requires_grad=True)], Cost : 0.538<br>
 Epoch : 7000, Model : [Parameter containing:<br>
-tensor([[0.0083, 0.0062, 0.0077]], device='cuda:0', requires_grad=True), Parameter containing:<br>
-tensor([-0.9203], device='cuda:0', requires_grad=True)], Cost : 0.580<br>
+tensor([[0.0203, 0.0211, 0.0224]], requires_grad=True), Parameter containing:<br>
+tensor([-3.5032], requires_grad=True)], Cost : 0.473<br>
 Epoch : 8000, Model : [Parameter containing:<br>
-tensor([[0.0089, 0.0062, 0.0082]], device='cuda:0', requires_grad=True), Parameter containing:<br>
-tensor([-0.9825], device='cuda:0', requires_grad=True)], Cost : 0.571<br>
+tensor([[0.0196, 0.0181, 0.0172]], requires_grad=True), Parameter containing:<br>
+tensor([-3.8611], requires_grad=True)], Cost : 0.489<br>
 Epoch : 9000, Model : [Parameter containing:<br>
-tensor([[0.0087, 0.0064, 0.0078]], device='cuda:0', requires_grad=True), Parameter containing:<br>
-tensor([-1.0438], device='cuda:0', requires_grad=True)], Cost : 0.566<br>
+tensor([[0.0286, 0.0295, 0.0291]], requires_grad=True), Parameter containing:<br>
+tensor([-4.1847], requires_grad=True)], Cost : 0.448<br>
 Epoch : 10000, Model : [Parameter containing:<br>
-tensor([[0.0093, 0.0068, 0.0082]], device='cuda:0', requires_grad=True), Parameter containing:<br>
-tensor([-1.1043], device='cuda:0', requires_grad=True)], Cost : 0.562<br>
+tensor([[0.0250, 0.0257, 0.0251]], requires_grad=True), Parameter containing:<br>
+tensor([-4.4838], requires_grad=True)], Cost : 0.383<br>
 \-\-\-\-\-\-\-\-\-<br>
-tensor([[0.7232],<br>
-&emsp;&emsp;&emsp;&emsp;[0.6073],<br>
-&emsp;&emsp;&emsp;&emsp;[0.5394],<br>
-&emsp;&emsp;&emsp;&emsp;[0.4518],<br>
-&emsp;&emsp;&emsp;&emsp;[0.3713]], device='cuda:0')<br>
+tensor([[0.8802],<br>
+&emsp;&emsp;&emsp;&emsp;[0.5733],<br>
+&emsp;&emsp;&emsp;&emsp;[0.3874],<br>
+&emsp;&emsp;&emsp;&emsp;[0.1683],<br>
+&emsp;&emsp;&emsp;&emsp;[0.0619]])<br>
 tensor([[ True],<br>
 &emsp;&emsp;&emsp;&emsp;[ True],<br>
-&emsp;&emsp;&emsp;&emsp;[ True],<br>
 &emsp;&emsp;&emsp;&emsp;[False],<br>
-&emsp;&emsp;&emsp;&emsp;[False]], device='cuda:0')<br>
+&emsp;&emsp;&emsp;&emsp;[False],<br>
+&emsp;&emsp;&emsp;&emsp;[False]])<br>
+<br>
+
+- Tip : 결과는 CPU에서 실행한 값입니다. GPU 등 가속기에서 실행하면 텐서 출력에 `device='cuda:0'`과 같은 장치 정보가 함께 표시되며, 연산 장치에 따라 소수점 아래 값이 조금 다를 수 있습니다.
+- Tip : 입력값이 0 ~ 100 범위로 크기 때문에 비용이 에폭마다 오르내리면서 감소합니다. 학습률을 0.0001로 낮추면 비용이 안정적으로 감소하지만 10,000 에폭으로는 학습이 충분하지 않아, 예제에서는 학습률을 0.001로 설정했습니다.
+- Tip : `torch.manual_seed(42)`로 가중치 초기값과 `shuffle=True`의 순서를 고정해 같은 환경에서 같은 결과를 얻을 수 있습니다.
+
 <br>
 
 ### 세부 코드
@@ -369,8 +383,8 @@ class CustomDataset(Dataset):
         self.length = len(df)
 
     def __getitem__(self, index):
-        x = torch.FloatTensor([self.x1[index], self.x2[index], self.x3[index]])
-        y = torch.FloatTensor([self.y[index]])
+        x = torch.tensor([self.x1[index], self.x2[index], self.x3[index]], dtype=torch.float32)
+        y = torch.tensor([self.y[index]], dtype=torch.float32)
         return x, y
 
     def __len__(self):
@@ -392,10 +406,10 @@ class CustomDataset(Dataset):
 
 class CustomModel(nn.Module):
     def __init__(self):
-        super(CustomModel, self).__init__()
+        super().__init__()
         self.layer = nn.Sequential(
-          nn.Linear(3, 1),
-          nn.Sigmoid()
+            nn.Linear(3, 1),
+            nn.Sigmoid()
         )
 
     def forward(self, x):
@@ -420,7 +434,7 @@ class CustomModel(nn.Module):
 
 {% highlight Python %}
 
-criterion = nn.BCELoss().to(device)
+criterion = nn.BCELoss()
 
 {% endhighlight %}
 
@@ -428,20 +442,25 @@ criterion = nn.BCELoss().to(device)
 
 `이진 교차 엔트로피 클래스(nn.BCELoss)`는 `비용 함수(Cost Function)`로 criterion 인스턴스에서 **순전파(Forward)**를 통해 나온 출력값과 실젯값을 비교하여 오차를 계산합니다.
 
+`nn.BCELoss`는 **0 ~ 1 범위의 확률값**을 입력받으므로, 모델의 마지막에 `시그모이드 함수(nn.Sigmoid)`를 적용해야 합니다.
+
+손실 함수는 학습할 매개변수가 없으므로 `.to(device)`로 장치를 옮기지 않아도 됩니다.
+
 <br>
 
 {% highlight Python %}
 
-with torch.no_grad():
-    model.eval()
-    inputs = torch.FloatTensor(
-        [[89, 92, 75], [75, 64, 50], [38, 58, 63], [33, 42, 39], [23, 15, 32]]
+model.eval()
+with torch.inference_mode():
+    inputs = torch.tensor(
+        [[89, 92, 75], [75, 64, 50], [38, 58, 63], [33, 42, 39], [23, 15, 32]],
+        dtype=torch.float32,
     ).to(device)
     outputs = model(inputs)
 
     print("---------")
     print(outputs)
-    print(outputs >= torch.FloatTensor([0.5]).to(device))
+    print(outputs >= 0.5)
 
 {% endhighlight %}
 
@@ -449,42 +468,121 @@ with torch.no_grad():
 
 예측값은 **0 ~ 1** 범위를 가지므로, 1에 가까울 수록 `참(True)`일 확률이 높아집니다.
 
+`model.eval()`로 모델을 평가 모드로 전환하고, `torch.inference_mode()` 블록 안에서 추론하여 불필요한 기울기 계산을 하지 않습니다.
+
 <br>
 
 ### 출력 결과
 
 {% highlight Python %}
 
-tensor([[0.7232],
-        [0.6073],
-        [0.5394],
-        [0.4518],
-        [0.3713]], device='cuda:0')
+tensor([[0.8802],
+        [0.5733],
+        [0.3874],
+        [0.1683],
+        [0.0619]])
 tensor([[ True],
         [ True],
-        [ True],
         [False],
-        [False]], device='cuda:0')
+        [False],
+        [False]])
 
 {% endhighlight %}
 
 |    입력값    |  평균 | 최솟값 | 실젯값 | 예측값(1) | 예측값(2)
 | :---------: | :----: | :---: | :----: |:----: |:----: |
-| [89, 92, 75] | 85.33 | 75 | True | 0.7232 | True |
-| [75, 64, 50] | 63.00 | 50 | True | 0.6073 | True |
-| [38, 58, 63] | 53.00 | 38 | False | 0.5394 | True |
-| [33, 42, 39] | 38.00 | 33 | False | 0.4518 | False |
-| [23, 15, 32] | 23.33 | 15 | False | 0.3713 | False |
+| [89, 92, 75] | 85.33 | 75 | True | 0.8802 | True |
+| [75, 64, 50] | 63.00 | 50 | True | 0.5733 | True |
+| [38, 58, 63] | 53.00 | 38 | False | 0.3874 | False |
+| [33, 42, 39] | 38.00 | 33 | False | 0.1683 | False |
+| [23, 15, 32] | 23.33 | 15 | False | 0.0619 | False |
 
 검증을 위해 무작위로 설정한 값은 표와 같습니다.
 
-첫 번째 데이터는 명확하게 `참(True)`으로 판단할 수 있는 데이터 구조를 갖기 때문에 예측값이 **0.7232**로 높게 계산되었습니다.
+첫 번째 데이터는 명확하게 `참(True)`으로 판단할 수 있는 데이터 구조를 갖기 때문에 예측값이 **0.8802**로 높게 계산되었습니다.
 
-반대로, 마지막 데이터는 `거짓(False)`으로 판단하기 쉬운 데이터 구조를 갖기 때문에 예측값이 **0.3713**으로 낮게 계산되었습니다.
+반대로, 마지막 데이터는 `거짓(False)`으로 판단하기 쉬운 데이터 구조를 갖기 때문에 예측값이 **0.0619**로 낮게 계산되었습니다.
 
-판단을 하기 어려운 중간 데이터는 참으로 판단되었지만, **0.5**에 근사한 예측값을 갖는 **0.5394**로 계산되었습니다.
+평균이 60을 조금 넘는 두 번째 데이터는 참으로 판단되었지만, **0.5**에 가까운 **0.5733**으로 계산되었습니다.
+
+세 번째 데이터는 평균이 53.00이며 최솟값이 40보다 작으므로 거짓이 정답이고, **0.3874**로 계산되어 올바르게 분류되었습니다.
 
 결과를 이분화하기 때문에, 참 또는 거짓으로 나눌 수 있지만, 0.5에 가까워질수록 결과가 정확하지 않습니다.
 
 `예측값(1)`을 활용하여 정확성을 판단하여 결과를 예측하는 것이 좋습니다.
+
+<br>
+<br>
+
+## 로짓을 입력받는 이진 교차 엔트로피(BCEWithLogitsLoss)
+
+`시그모이드 함수(nn.Sigmoid)` 뒤에 `이진 교차 엔트로피(nn.BCELoss)`를 연결하는 방식은 정상적으로 동작하지만, 수치 안정성 면에서는 `nn.BCEWithLogitsLoss` 사용이 권장됩니다.
+
+`nn.BCEWithLogitsLoss`는 시그모이드 함수와 이진 교차 엔트로피를 하나의 연산으로 결합한 클래스입니다.
+
+두 연산을 결합해 `로그-합-지수(log-sum-exp)` 기법으로 계산하므로, 시그모이드 함수와 `nn.BCELoss`를 따로 사용하는 것보다 수치적으로 안정적입니다.
+
+{% highlight Python %}
+
+import torch
+from torch import nn
+
+logit = torch.tensor([[200.0]], requires_grad=True)
+target = torch.tensor([[0.0]])
+
+loss = nn.BCELoss()(torch.sigmoid(logit), target)
+loss.backward()
+print(f"BCELoss           : {loss.item():.1f}, Gradient : {logit.grad.item():.1f}")
+
+logit.grad = None
+loss = nn.BCEWithLogitsLoss()(logit, target)
+loss.backward()
+print(f"BCEWithLogitsLoss : {loss.item():.1f}, Gradient : {logit.grad.item():.1f}")
+
+{% endhighlight %}
+**결과**
+:    
+BCELoss           : 100.0, Gradient : 0.0<br>
+BCEWithLogitsLoss : 200.0, Gradient : 1.0<br>
+<br>
+
+실젯값이 **0**인 데이터에 모델이 **200**이라는 매우 큰 값을 출력한 경우입니다.
+
+`float32`에서 `torch.sigmoid(200)`은 정확히 **1.0**이 되므로, $$ log(1 - 1.0) $$을 계산할 수 없습니다.
+
+`nn.BCELoss`는 이 문제를 막기 위해 로그 값을 **-100** 이상으로 제한하므로 손실이 **100.0**으로 잘리고, 시그모이드 함수가 포화되어 `기울기(Gradient)`가 **0**이 됩니다. 즉, 크게 틀렸음에도 학습이 진행되지 않습니다.
+
+반면에 `nn.BCEWithLogitsLoss`는 정확한 손실(**200.0**)과 기울기(**1.0**)를 계산합니다.
+
+`nn.BCEWithLogitsLoss`를 사용하려면 모델의 마지막 `시그모이드 함수(nn.Sigmoid)`를 제거하고 `로짓(Logit)`을 그대로 출력합니다.
+
+{% highlight Python %}
+
+class CustomModel(nn.Module):
+    def __init__(self):
+        super().__init__()
+        self.layer = nn.Sequential(
+            nn.Linear(3, 1)
+        )
+
+    def forward(self, x):
+        x = self.layer(x)
+        return x
+
+...
+
+criterion = nn.BCEWithLogitsLoss()
+
+...
+
+model.eval()
+with torch.inference_mode():
+    ...
+    outputs = torch.sigmoid(model(inputs))
+
+{% endhighlight %}
+
+학습 과정은 동일하며, 추론할 때 `torch.sigmoid`를 적용해 **0 ~ 1** 범위의 예측값으로 변환합니다.
+
+- Tip : 시그모이드 함수는 단조 증가 함수이므로, 확률값이 필요하지 않고 분류 결과만 필요하다면 `model(inputs) >= 0`으로도 동일한 결과를 얻을 수 있습니다.
 

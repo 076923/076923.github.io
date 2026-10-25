@@ -37,7 +37,7 @@ plotly: true
 
 `퍼셉트론(Perceptron)`은 `TLU(Threshold Logic Unit)` 형태를 기반으로 하며, `계단 함수(Step Function)`를 적용해 결과를 반환합니다.
 
-즉, `퍼셉트론(Perceptron)`은 `입력값(X)`과 노드(Node)`의 `가중치(Weight)`를 곱한 값을 모두 더했을때 `임곗값(Threshold)`보다 크면 1을 출력하고, 작다면 0을 출력합니다.
+즉, `퍼셉트론(Perceptron)`은 `입력값(X)`과 `노드(Node)`의 `가중치(Weight)`를 곱한 값을 모두 더했을때 `임곗값(Threshold)`보다 크면 1을 출력하고, 작다면 0을 출력합니다.
 
 그러므로 여러 입력값($$ x_{1}, x_{2}, x_{3} ... x_{n} $$)을 입력했을 때, **0이나 1** 또는 **-1에서 1 사이**의 값을 출력하는 모델을 의미합니다.
 
@@ -98,7 +98,7 @@ var x=[];var y=[];for(var i=-2;i<=2;i+=0.01){x.push(i);y.push(eval("-i+0.5"))}va
 
 `은닉층(Hidden Layer)`이 늘어나면 더 복잡한 구조의 문제를 해결할 수 있습니다.
 
-은닉층이 2개 이상 연결하다면, `심층 신경망(Deep Neural Network, DNN)`이라 부릅니다.
+은닉층이 2개 이상 연결된다면, `심층 신경망(Deep Neural Network, DNN)`이라 부릅니다.
 
 `다층 퍼셉트론(Multi Layer Perceptron)`은 학습 방법은 다음과 같습니다.
 
@@ -154,6 +154,8 @@ var x=[];var y=[];for(var i=-2;i<=2;i+=0.01){x.push(i);y.push(eval("-i+0.5"))}va
 
 `x1`, `x2`는 입력값을 의미하며, `y`는 XOR 게이트를 통과했을 때의 결과를 의미합니다.
 
+`pandas`는 `True`, `False`로 구성된 열을 `부울(bool)` 형식으로 읽으며, 텐서로 변환할 때 `dtype=torch.float32`를 지정해 **1.0**과 **0.0**으로 사용합니다.
+
 이 데이터를 활용하여 `단층 퍼셉트론(Single Layer Perceptron)`과 `다층 퍼셉트론(Multi Layer Perceptron)`을 적용한 `모델(Model)`로 구현해보도록 하겠습니다.
 
 - Tip : `활성화 함수(Activation Function)`를 `계단 함수(Step Function)`로 적용하면 퍼셉트론(Perceptron)으로 부르며, 계단 함수가 아니라면 `인공 신경망(Neural Network)`으로 부릅니다.
@@ -184,8 +186,8 @@ class CustomDataset(Dataset):
         self.length = len(df)
 
     def __getitem__(self, index):
-        x = torch.FloatTensor([self.x1[index], self.x2[index]])
-        y = torch.FloatTensor([self.y[index]])
+        x = torch.tensor([self.x1[index], self.x2[index]], dtype=torch.float32)
+        y = torch.tensor([self.y[index]], dtype=torch.float32)
         return x, y
 
     def __len__(self):
@@ -194,7 +196,7 @@ class CustomDataset(Dataset):
 
 class CustomModel(nn.Module):
     def __init__(self):
-        super(CustomModel, self).__init__()
+        super().__init__()
 
         self.layer = nn.Sequential(
             nn.Linear(2, 1),
@@ -206,15 +208,18 @@ class CustomModel(nn.Module):
         return x
 
 
+torch.manual_seed(42)
+
 train_dataset = CustomDataset("./dataset.csv")
 train_dataloader = DataLoader(train_dataset, batch_size=64, shuffle=True, drop_last=True)
 
-device = "cuda" if torch.cuda.is_available() else "cpu"
+device = torch.accelerator.current_accelerator().type if torch.accelerator.is_available() else "cpu"
 model = CustomModel().to(device)
-criterion = nn.BCELoss().to(device)
+criterion = nn.BCELoss()
 optimizer = optim.SGD(model.parameters(), lr=0.01)
 
 for epoch in range(10000):
+    model.train()
     cost = 0.0
 
     for x, y in train_dataloader:
@@ -228,7 +233,7 @@ for epoch in range(10000):
         loss.backward()
         optimizer.step()
 
-        cost += loss
+        cost += loss.item()
 
     cost = cost / len(train_dataloader)
 
@@ -236,27 +241,27 @@ for epoch in range(10000):
         print(f"Epoch : {epoch+1:4d}, Cost : {cost:.3f}")
 
 
-with torch.no_grad():
-    model.eval()
-    inputs = torch.FloatTensor([
+model.eval()
+with torch.inference_mode():
+    inputs = torch.tensor([
         [0, 0],
         [0, 1],
         [1, 0],
         [1, 1]
-    ]).to(device)
+    ], dtype=torch.float32).to(device)
     outputs = model(inputs)
-    
+
     print('---------')
     print(outputs)
-    print(outputs <= 0.5)
-    
+    print(outputs >= 0.5)
 
 {% endhighlight %}
-**결과**<br>
+**결과**
+:    
 Epoch : 1000, Cost : 0.692<br>
-Epoch : 2000, Cost : 0.692<br>
+Epoch : 2000, Cost : 0.693<br>
 Epoch : 3000, Cost : 0.692<br>
-Epoch : 4000, Cost : 0.693<br>
+Epoch : 4000, Cost : 0.692<br>
 Epoch : 5000, Cost : 0.692<br>
 Epoch : 6000, Cost : 0.692<br>
 Epoch : 7000, Cost : 0.692<br>
@@ -264,14 +269,14 @@ Epoch : 8000, Cost : 0.692<br>
 Epoch : 9000, Cost : 0.692<br>
 Epoch : 10000, Cost : 0.692<br>
 \-\-\-\-\-\-\-\-\-<br>
-tensor([[0.4675],<br>
-&emsp;&emsp;&emsp;&emsp;[0.4996],<br>
-&emsp;&emsp;&emsp;&emsp;[0.5041],<br>
-&emsp;&emsp;&emsp;&emsp;[0.5362]], device='cuda:0')<br>
-tensor([[ True],<br>
-&emsp;&emsp;&emsp;&emsp;[ True],<br>
+tensor([[0.4663],<br>
+&emsp;&emsp;&emsp;&emsp;[0.4990],<br>
+&emsp;&emsp;&emsp;&emsp;[0.5021],<br>
+&emsp;&emsp;&emsp;&emsp;[0.5348]])<br>
+tensor([[False],<br>
 &emsp;&emsp;&emsp;&emsp;[False],<br>
-&emsp;&emsp;&emsp;&emsp;[False]], device='cuda:0')<br>
+&emsp;&emsp;&emsp;&emsp;[ True],<br>
+&emsp;&emsp;&emsp;&emsp;[ True]])<br>
 <br>
 
 `단층 퍼셉트론(Single Layer Perceptron)`으로 `XOR` 문제를 해결하려고 한다면, `비용(Cost)`이 더 이상 감소되지 않는 것을 확인할 수 있습니다.
@@ -279,6 +284,10 @@ tensor([[ True],<br>
 하나의 `계층(Layer)`으로는 **XOR 게이트** 문제를 해결할 수 없어서 발생하는 문제입니다.
 
 모델에 값을 입력했을 때에도 출력값이 **0.5 내외로 출력되어 학습이 정상적으로 진행되지 않은 것을 확인할 수 있습니다.**
+
+`XOR` 게이트의 정답은 `[False, True, True, False]`이지만, 예측 결과는 `[False, False, True, True]`로 절반만 맞힙니다.
+
+- Tip : 결과는 CPU에서 실행한 값입니다. GPU 등 가속기에서 실행하면 텐서 출력에 `device='cuda:0'`과 같은 장치 정보가 함께 표시됩니다.
 
 <br>
 <br>
@@ -305,8 +314,8 @@ class CustomDataset(Dataset):
         self.length = len(df)
 
     def __getitem__(self, index):
-        x = torch.FloatTensor([self.x1[index], self.x2[index]])
-        y = torch.FloatTensor([self.y[index]])
+        x = torch.tensor([self.x1[index], self.x2[index]], dtype=torch.float32)
+        y = torch.tensor([self.y[index]], dtype=torch.float32)
         return x, y
 
     def __len__(self):
@@ -315,7 +324,7 @@ class CustomDataset(Dataset):
 
 class CustomModel(nn.Module):
     def __init__(self):
-        super(CustomModel, self).__init__()
+        super().__init__()
 
         self.layer1 = nn.Sequential(
             nn.Linear(2, 2),
@@ -332,15 +341,18 @@ class CustomModel(nn.Module):
         return x
 
 
+torch.manual_seed(42)
+
 train_dataset = CustomDataset("./dataset.csv")
 train_dataloader = DataLoader(train_dataset, batch_size=64, shuffle=True, drop_last=True)
 
-device = "cuda" if torch.cuda.is_available() else "cpu"
+device = torch.accelerator.current_accelerator().type if torch.accelerator.is_available() else "cpu"
 model = CustomModel().to(device)
-criterion = nn.BCELoss().to(device)
+criterion = nn.BCELoss()
 optimizer = optim.SGD(model.parameters(), lr=0.01)
 
 for epoch in range(10000):
+    model.train()
     cost = 0.0
 
     for x, y in train_dataloader:
@@ -354,7 +366,7 @@ for epoch in range(10000):
         loss.backward()
         optimizer.step()
 
-        cost += loss
+        cost += loss.item()
 
     cost = cost / len(train_dataloader)
 
@@ -362,42 +374,42 @@ for epoch in range(10000):
         print(f"Epoch : {epoch+1:4d}, Cost : {cost:.3f}")
 
 
-with torch.no_grad():
-    model.eval()
-    inputs = torch.FloatTensor([
+model.eval()
+with torch.inference_mode():
+    inputs = torch.tensor([
         [0, 0],
         [0, 1],
         [1, 0],
         [1, 1]
-    ]).to(device)
+    ], dtype=torch.float32).to(device)
     outputs = model(inputs)
-    
+
     print('---------')
     print(outputs)
-    print(outputs <= 0.5)
-    
+    print(outputs >= 0.5)
 
 {% endhighlight %}
-**결과**<br>
+**결과**
+:    
 Epoch : 1000, Cost : 0.693<br>
-Epoch : 2000, Cost : 0.691<br>
-Epoch : 3000, Cost : 0.631<br>
-Epoch : 4000, Cost : 0.433<br>
-Epoch : 5000, Cost : 0.108<br>
-Epoch : 6000, Cost : 0.045<br>
-Epoch : 7000, Cost : 0.027<br>
-Epoch : 8000, Cost : 0.019<br>
-Epoch : 9000, Cost : 0.015<br>
-Epoch : 10000, Cost : 0.012<br>
+Epoch : 2000, Cost : 0.692<br>
+Epoch : 3000, Cost : 0.676<br>
+Epoch : 4000, Cost : 0.498<br>
+Epoch : 5000, Cost : 0.148<br>
+Epoch : 6000, Cost : 0.052<br>
+Epoch : 7000, Cost : 0.030<br>
+Epoch : 8000, Cost : 0.021<br>
+Epoch : 9000, Cost : 0.016<br>
+Epoch : 10000, Cost : 0.013<br>
 \-\-\-\-\-\-\-\-\-<br>
-tensor([[0.0134],<br>
-&emsp;&emsp;&emsp;&emsp;[0.9890],<br>
-&emsp;&emsp;&emsp;&emsp;[0.9890],<br>
-&emsp;&emsp;&emsp;&emsp;[0.0130]], device='cuda:0')<br>
-tensor([[ True],<br>
-&emsp;&emsp;&emsp;&emsp;[False],<br>
-&emsp;&emsp;&emsp;&emsp;[False],<br>
-&emsp;&emsp;&emsp;&emsp;[ True]], device='cuda:0')<br>
+tensor([[0.0141],<br>
+&emsp;&emsp;&emsp;&emsp;[0.9884],<br>
+&emsp;&emsp;&emsp;&emsp;[0.9884],<br>
+&emsp;&emsp;&emsp;&emsp;[0.0136]])<br>
+tensor([[False],<br>
+&emsp;&emsp;&emsp;&emsp;[ True],<br>
+&emsp;&emsp;&emsp;&emsp;[ True],<br>
+&emsp;&emsp;&emsp;&emsp;[False]])<br>
 <br>
 
 `다층 퍼셉트론(Multi Layer Perceptron)`의 구조로 `계층(Layer)`을 두 개 사용하여 모델을 학습합니다.
@@ -405,5 +417,10 @@ tensor([[ True],<br>
 학습이 진행될 수록 `비용(Cost)`이 감소하는 것을 확인할 수 있습니다.
 
 또한, 모델에 값을 입력했을 때에도 **출력값이 0에 가까워지거나, 1에 가까워지는 것을 확인할 수 있으므로 학습이 정상적으로 진행된 것을 확인할 수 있습니다.**
+
+예측 결과도 `XOR` 게이트의 정답인 `[False, True, True, False]`와 일치합니다.
+
+- Tip : 다층 퍼셉트론은 가중치의 초기값에 따라 학습 초반에 비용이 한동안 줄어들지 않거나, 지역 최솟값에 머물러 XOR 문제를 풀지 못할 수 있습니다. 예제는 `torch.manual_seed(42)`로 초기값을 고정한 결과입니다.
+- Tip : `12강`에서 다룬 것처럼 마지막 `시그모이드 함수(nn.Sigmoid)`를 제거하고 `nn.BCEWithLogitsLoss`를 사용하면 수치적으로 더 안정적으로 학습할 수 있습니다. 이 경우 추론할 때 `torch.sigmoid`를 적용합니다.
 
 [강좌]: https://076923.github.io/posts/AI-5/

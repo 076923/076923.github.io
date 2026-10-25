@@ -43,7 +43,7 @@ import torch.nn.functional as F
 
 class Model(nn.Module):
     def __init__(self):
-        super(Model, self).__init__()
+        super().__init__()
         self.conv1 = nn.Conv2d(1, 20, 5)
         self.conv2 = nn.Conv2d(20, 20, 5)
 
@@ -60,9 +60,11 @@ class Model(nn.Module):
 
 초기화 이후에는 **학습에 사용되는 계층을 초기화 메서드에서 선언합니다.**
 
-`순방향 메서드(forward)`는 모델이 **데이터(x)**를 입력받아 학습을 진행하는 일련의 과정을 정의합니다.
+`순방향 메서드(forward)`는 모델이 **데이터(x)**를 입력받아 결과를 계산하는 일련의 과정을 정의합니다.
 
-모델 객체를 호출하는 순간 `순방향 메서드(forward)`의 정의 순서대로 학습이 수행됩니다.
+모델 객체를 `model(x)`처럼 호출하는 순간 `순방향 메서드(forward)`의 정의 순서대로 연산이 수행됩니다.
+
+- Tip : `model.forward(x)`를 직접 호출하지 않고 `model(x)`로 호출해야 모듈에 등록된 `훅(Hook)` 등이 함께 실행됩니다.
 
 <br>
 
@@ -110,13 +112,13 @@ from torch.utils.data import Dataset, DataLoader
 class CustomDataset(Dataset):
     def __init__(self, file_path):
         df = pd.read_csv(file_path)
-        self.x = df.iloc[:, 0].values
-        self.y = df.iloc[:, 1].values
+        self.x = df.iloc[:, 0].to_numpy()
+        self.y = df.iloc[:, 1].to_numpy()
         self.length = len(df)
 
     def __getitem__(self, index):
-        x = torch.FloatTensor([self.x[index] ** 2, self.x[index]])
-        y = torch.FloatTensor([self.y[index]])
+        x = torch.tensor([self.x[index] ** 2, self.x[index]], dtype=torch.float32)
+        y = torch.tensor([self.y[index]], dtype=torch.float32)
         return x, y
 
     def __len__(self):
@@ -125,7 +127,7 @@ class CustomDataset(Dataset):
 
 class CustomModel(nn.Module):
     def __init__(self):
-        super(CustomModel, self).__init__()
+        super().__init__()
         self.layer = nn.Linear(2, 1)
 
     def forward(self, x):
@@ -133,12 +135,22 @@ class CustomModel(nn.Module):
         return x
 
 
+torch.manual_seed(42)
+
 train_dataset = CustomDataset("./dataset.csv")
 train_dataloader = DataLoader(train_dataset, batch_size=128, shuffle=True, drop_last=True)
 
-device = "cuda" if torch.cuda.is_available() else "cpu"
+if torch.cuda.is_available():
+    device = "cuda"
+elif torch.backends.mps.is_available():
+    device = "mps"
+elif torch.xpu.is_available():
+    device = "xpu"
+else:
+    device = "cpu"
+
 model = CustomModel().to(device)
-criterion = nn.MSELoss().to(device)
+criterion = nn.MSELoss()
 optimizer = optim.SGD(model.parameters(), lr=0.0001)
 
 for epoch in range(10000):
@@ -155,7 +167,7 @@ for epoch in range(10000):
         loss.backward()
         optimizer.step()
 
-        cost += loss
+        cost += loss.item()
 
     cost = cost / len(train_dataloader)
 
@@ -163,9 +175,9 @@ for epoch in range(10000):
         print(f"Epoch : {epoch+1:4d}, Model : {list(model.parameters())}, Cost : {cost:.3f}")
 
 
-with torch.no_grad():
-    model.eval()
-    inputs = torch.FloatTensor([[1 ** 2, 1], [5 **2, 5], [11**2, 11]]).to(device)
+model.eval()
+with torch.inference_mode():
+    inputs = torch.tensor([[1 ** 2, 1], [5 ** 2, 5], [11 ** 2, 11]], dtype=torch.float32).to(device)
     outputs = model(inputs)
     print(outputs)
 
@@ -174,39 +186,38 @@ with torch.no_grad():
 **결과**
 :    
 Epoch : 1000, Model : [Parameter containing:<br>
-tensor([[ 3.1034, -1.7008]], device='cuda:0', requires_grad=True), Parameter containing:<br>
-tensor([0.2861], device='cuda:0', requires_grad=True)], Cost : 0.095<br>
+tensor([[ 3.1092, -1.6997]], requires_grad=True), Parameter containing:<br>
+tensor([-0.0733], requires_grad=True)], Cost : 0.209<br>
 Epoch : 2000, Model : [Parameter containing:<br>
-tensor([[ 3.1030, -1.7033]], device='cuda:0', requires_grad=True), Parameter containing:<br>
-tensor([0.3037], device='cuda:0', requires_grad=True)], Cost : 0.089<br>
+tensor([[ 3.1088, -1.7030]], requires_grad=True), Parameter containing:<br>
+tensor([-0.0249], requires_grad=True)], Cost : 0.204<br>
 Epoch : 3000, Model : [Parameter containing:<br>
-tensor([[ 3.1027, -1.7030]], device='cuda:0', requires_grad=True), Parameter containing:<br>
-tensor([0.3200], device='cuda:0', requires_grad=True)], Cost : 0.089<br>
+tensor([[ 3.1077, -1.7028]], requires_grad=True), Parameter containing:<br>
+tensor([0.0192], requires_grad=True)], Cost : 0.190<br>
 Epoch : 4000, Model : [Parameter containing:<br>
-tensor([[ 3.1026, -1.7032]], device='cuda:0', requires_grad=True), Parameter containing:<br>
-tensor([0.3349], device='cuda:0', requires_grad=True)], Cost : 0.085<br>
+tensor([[ 3.1068, -1.7027]], requires_grad=True), Parameter containing:<br>
+tensor([0.0596], requires_grad=True)], Cost : 0.159<br>
 Epoch : 5000, Model : [Parameter containing:<br>
-tensor([[ 3.1025, -1.7034]], device='cuda:0', requires_grad=True), Parameter containing:<br>
-tensor([0.3485], device='cuda:0', requires_grad=True)], Cost : 0.087<br>
+tensor([[ 3.1066, -1.7030]], requires_grad=True), Parameter containing:<br>
+tensor([0.0965], requires_grad=True)], Cost : 0.145<br>
 Epoch : 6000, Model : [Parameter containing:<br>
-tensor([[ 3.1023, -1.7031]], device='cuda:0', requires_grad=True), Parameter containing:<br>
-tensor([0.3609], device='cuda:0', requires_grad=True)], Cost : 0.078<br>
+tensor([[ 3.1056, -1.7028]], requires_grad=True), Parameter containing:<br>
+tensor([0.1304], requires_grad=True)], Cost : 0.130<br>
 Epoch : 7000, Model : [Parameter containing:<br>
-tensor([[ 3.1018, -1.7031]], device='cuda:0', requires_grad=True), Parameter containing:<br>
-tensor([0.3722], device='cuda:0', requires_grad=True)], Cost : 0.078<br>
+tensor([[ 3.1054, -1.7032]], requires_grad=True), Parameter containing:<br>
+tensor([0.1614], requires_grad=True)], Cost : 0.129<br>
 Epoch : 8000, Model : [Parameter containing:<br>
-tensor([[ 3.1018, -1.7032]], device='cuda:0', requires_grad=True), Parameter containing:<br>
-tensor([0.3826], device='cuda:0', requires_grad=True)], Cost : 0.089<br>
+tensor([[ 3.1052, -1.7030]], requires_grad=True), Parameter containing:<br>
+tensor([0.1898], requires_grad=True)], Cost : 0.117<br>
 Epoch : 9000, Model : [Parameter containing:<br>
-tensor([[ 3.1015, -1.7030]], device='cuda:0', requires_grad=True), Parameter containing:<br>
-tensor([0.3922], device='cuda:0', requires_grad=True)], Cost : 0.079<br>
+tensor([[ 3.1047, -1.7028]], requires_grad=True), Parameter containing:<br>
+tensor([0.2156], requires_grad=True)], Cost : 0.108<br>
 Epoch : 10000, Model : [Parameter containing:<br>
-tensor([[ 3.1015, -1.7032]], device='cuda:0', requires_grad=True), Parameter containing:<br>
-tensor([0.4008], device='cuda:0', requires_grad=True)], Cost : 0.078<br>
-tensor([[  1.7992],<br>
-&emsp;&emsp;&emsp;&emsp;[ 69.4222],<br>
-&emsp;&emsp;&emsp;&emsp;[356.9461]], device='cuda:0')<br>
-
+tensor([[ 3.1042, -1.7031]], requires_grad=True), Parameter containing:<br>
+tensor([0.2391], requires_grad=True)], Cost : 0.106<br>
+tensor([[  1.6402],<br>
+&emsp;&emsp;&emsp;&emsp;[ 69.3279],<br>
+&emsp;&emsp;&emsp;&emsp;[357.1102]])<br>
 <br>
 
 ### 세부 코드
@@ -234,13 +245,13 @@ from torch.utils.data import Dataset, DataLoader
 class CustomDataset(Dataset):
     def __init__(self, file_path):
         df = pd.read_csv(file_path)
-        self.x = df.iloc[:, 0].values
-        self.y = df.iloc[:, 1].values
+        self.x = df.iloc[:, 0].to_numpy()
+        self.y = df.iloc[:, 1].to_numpy()
         self.length = len(df)
 
     def __getitem__(self, index):
-        x = torch.FloatTensor([self.x[index] ** 2, self.x[index]])
-        y = torch.FloatTensor([self.y[index]])
+        x = torch.tensor([self.x[index] ** 2, self.x[index]], dtype=torch.float32)
+        y = torch.tensor([self.y[index]], dtype=torch.float32)
         return x, y
 
     def __len__(self):
@@ -254,9 +265,13 @@ class CustomDataset(Dataset):
 
 `self.x`와 `self.y`에 각각 `x` 값과 `y` 값을 할당합니다.
 
+`to_numpy()` 메서드는 `pandas`의 `Series`를 `NumPy` 배열로 변환하며, `pandas`에서 `values` 속성보다 권장되는 방식입니다.
+
 `호출 메서드(__getitem__)`에서 `x`값과 `y`값을 반환합니다.
 
 결괏값은 이차 방정식($$ y = W_{1}x^2 + W_{2}x + b $$) 형태이므로, 반환되는 `x` 값은 $$ x^2, x $$의 구조로 반환합니다.
+
+반환값은 `torch.tensor` 함수의 `자료형(dtype)`을 `torch.float32`로 지정해 모델의 매개변수와 같은 자료형으로 생성합니다.
 
 `길이 반환 메서드(__len__ )`로 현재 데이터의 길이를 반환합니다.
 
@@ -268,7 +283,7 @@ class CustomDataset(Dataset):
 
 class CustomModel(nn.Module):
     def __init__(self):
-        super(CustomModel, self).__init__()
+        super().__init__()
         self.layer = nn.Linear(2, 1)
 
     def forward(self, x):
@@ -293,10 +308,14 @@ class CustomModel(nn.Module):
 
 {% highlight Python %}
 
+torch.manual_seed(42)
+
 train_dataset = CustomDataset("./dataset.csv")
 train_dataloader = DataLoader(train_dataset, batch_size=128, shuffle=True, drop_last=True)
 
 {% endhighlight %}
+
+가중치 초기화와 `데이터 순서 변경(shuffle)`에 난수가 사용되므로, `torch.manual_seed`로 시드를 고정해 실행할 때마다 같은 결과가 나오도록 합니다.
 
 `훈련 데이터 세트(train_dataset)`로 `CSV` 파일에서 데이터를 불러옵니다.
 
@@ -308,22 +327,30 @@ train_dataloader = DataLoader(train_dataset, batch_size=128, shuffle=True, drop_
 
 {% highlight Python %}
 
-device = "cuda" if torch.cuda.is_available() else "cpu"
+if torch.cuda.is_available():
+    device = "cuda"
+elif torch.backends.mps.is_available():
+    device = "mps"
+elif torch.xpu.is_available():
+    device = "xpu"
+else:
+    device = "cpu"
+
 model = CustomModel().to(device)
-criterion = nn.MSELoss().to(device)
+criterion = nn.MSELoss()
 optimizer = optim.SGD(model.parameters(), lr=0.0001)
 
 {% endhighlight %}
 
 이번 강좌에서는 `GPU`를 통해 학습을 진행할 예정이므로 `장치(device)`를 설정합니다.
 
-`GPU` 환경이 지원되지 않는 경우, `CPU` 환경에서 실행됩니다.
+NVIDIA GPU는 `cuda`, Apple Silicon의 GPU는 `mps`, Intel GPU는 `xpu` 장치를 사용하며, 사용 가능한 `GPU`가 없는 경우 `CPU` 환경에서 실행됩니다.
 
 `모델(model)`을 선언하고 `사용자 정의 모델(CustomModel)`를 할당합니다.
 
 모델 인스턴스에 `GPU` 연산이 적용될 수 있도록 `to` 메서드를 적용합니다.
 
-`비용 함수(criterion)`도 `GPU` 연산을 적용합니다.
+`비용 함수(nn.MSELoss)`는 학습 가능한 매개변수가 없으므로 `to` 메서드를 적용하지 않아도 되며, 입력된 텐서의 장치에서 연산됩니다.
 
 `최적화 함수(optimizer)`의 `최적화하려는 변수`에 `모델 매개 변수(model.parameters)`로 할당하여 모델에 사용된 매개 변수들을 최적화합니다.
 
@@ -347,7 +374,7 @@ for epoch in range(10000):
         loss.backward()
         optimizer.step()
 
-        cost += loss
+        cost += loss.item()
 
     cost = cost / len(train_dataloader)
 
@@ -360,6 +387,8 @@ for epoch in range(10000):
 
 차이점으로는 학습에 사용되는 `x`와 `y`에 `GPU` 장치를 적용하기 위해 `to` 메서드를 적용합니다.
 
+`비용(cost)`에는 `loss.item()`으로 꺼낸 Python 실수를 누적하여, 배치마다 생성되는 연산 그래프가 남지 않도록 합니다.
+
 <br>
 
 #### 학습 결과
@@ -367,50 +396,54 @@ for epoch in range(10000):
 {% highlight Python %}
 
 Epoch : 1000, Model : [Parameter containing:
-tensor([[ 3.1034, -1.7008]], device='cuda:0', requires_grad=True), Parameter containing:
-tensor([0.2861], device='cuda:0', requires_grad=True)], Cost : 0.095
+tensor([[ 3.1092, -1.6997]], requires_grad=True), Parameter containing:
+tensor([-0.0733], requires_grad=True)], Cost : 0.209
 
 Epoch : 2000, Model : [Parameter containing:
-tensor([[ 3.1030, -1.7033]], device='cuda:0', requires_grad=True), Parameter containing:
-tensor([0.3037], device='cuda:0', requires_grad=True)], Cost : 0.089
+tensor([[ 3.1088, -1.7030]], requires_grad=True), Parameter containing:
+tensor([-0.0249], requires_grad=True)], Cost : 0.204
 
 Epoch : 3000, Model : [Parameter containing:
-tensor([[ 3.1027, -1.7030]], device='cuda:0', requires_grad=True), Parameter containing:
-tensor([0.3200], device='cuda:0', requires_grad=True)], Cost : 0.089
+tensor([[ 3.1077, -1.7028]], requires_grad=True), Parameter containing:
+tensor([0.0192], requires_grad=True)], Cost : 0.190
 
 Epoch : 4000, Model : [Parameter containing:
-tensor([[ 3.1026, -1.7032]], device='cuda:0', requires_grad=True), Parameter containing:
-tensor([0.3349], device='cuda:0', requires_grad=True)], Cost : 0.085
+tensor([[ 3.1068, -1.7027]], requires_grad=True), Parameter containing:
+tensor([0.0596], requires_grad=True)], Cost : 0.159
 
 Epoch : 5000, Model : [Parameter containing:
-tensor([[ 3.1025, -1.7034]], device='cuda:0', requires_grad=True), Parameter containing:
-tensor([0.3485], device='cuda:0', requires_grad=True)], Cost : 0.087
+tensor([[ 3.1066, -1.7030]], requires_grad=True), Parameter containing:
+tensor([0.0965], requires_grad=True)], Cost : 0.145
 
 Epoch : 6000, Model : [Parameter containing:
-tensor([[ 3.1023, -1.7031]], device='cuda:0', requires_grad=True), Parameter containing:
-tensor([0.3609], device='cuda:0', requires_grad=True)], Cost : 0.078
+tensor([[ 3.1056, -1.7028]], requires_grad=True), Parameter containing:
+tensor([0.1304], requires_grad=True)], Cost : 0.130
 
 Epoch : 7000, Model : [Parameter containing:
-tensor([[ 3.1018, -1.7031]], device='cuda:0', requires_grad=True), Parameter containing:
-tensor([0.3722], device='cuda:0', requires_grad=True)], Cost : 0.078
+tensor([[ 3.1054, -1.7032]], requires_grad=True), Parameter containing:
+tensor([0.1614], requires_grad=True)], Cost : 0.129
 
 Epoch : 8000, Model : [Parameter containing:
-tensor([[ 3.1018, -1.7032]], device='cuda:0', requires_grad=True), Parameter containing:
-tensor([0.3826], device='cuda:0', requires_grad=True)], Cost : 0.089
+tensor([[ 3.1052, -1.7030]], requires_grad=True), Parameter containing:
+tensor([0.1898], requires_grad=True)], Cost : 0.117
 
 Epoch : 9000, Model : [Parameter containing:
-tensor([[ 3.1015, -1.7030]], device='cuda:0', requires_grad=True), Parameter containing:
-tensor([0.3922], device='cuda:0', requires_grad=True)], Cost : 0.079
+tensor([[ 3.1047, -1.7028]], requires_grad=True), Parameter containing:
+tensor([0.2156], requires_grad=True)], Cost : 0.108
 
 Epoch : 10000, Model : [Parameter containing:
-tensor([[ 3.1015, -1.7032]], device='cuda:0', requires_grad=True), Parameter containing:
-tensor([0.4008], device='cuda:0', requires_grad=True)], Cost : 0.078
+tensor([[ 3.1042, -1.7031]], requires_grad=True), Parameter containing:
+tensor([0.2391], requires_grad=True)], Cost : 0.106
 
 {% endhighlight %}
 
-총 10,000번의 학습을 진행하였을 때 `가중치(Weight)`는 각각 `3.1015`, `-1.7032`로 계산되며 `편향(Bias)`은 `0.4008`의 값을 반환하는 것을 확인할 수 있습니다.
+총 10,000번의 학습을 진행하였을 때 `가중치(Weight)`는 각각 `3.1042`, `-1.7031`로 계산되며 `편향(Bias)`은 `0.2391`의 값을 반환하는 것을 확인할 수 있습니다.
 
 데이터 세트는 $$ y = 3.1x^2 - 1.7x + \text{random}(0.01, 0.99) $$로 구성되어 있으므로, 학습이 원활하게 진행된 것을 확인할 수 있습니다.
+
+`편향(Bias)`은 학습률이 낮아 천천히 증가하고 있으므로, 학습을 더 진행하면 무작위 값의 평균에 더 가까워집니다.
+
+- Tip : 위 결과는 `CPU`에서 실행한 결과입니다. `GPU`에서 실행하면 매개변수에 `device='cuda:0'`과 같은 장치 정보가 함께 출력되며, 난수 생성 방식과 연산 방식의 차이로 결괏값이 조금 다를 수 있습니다.
 
 <br>
 
@@ -418,9 +451,9 @@ tensor([0.4008], device='cuda:0', requires_grad=True)], Cost : 0.078
 
 {% highlight Python %}
 
-with torch.no_grad():
-    model.eval()
-    inputs = torch.FloatTensor([[1 ** 2, 1], [5 **2, 5], [11**2, 11]]).to(device)
+model.eval()
+with torch.inference_mode():
+    inputs = torch.tensor([[1 ** 2, 1], [5 ** 2, 5], [11 ** 2, 11]], dtype=torch.float32).to(device)
     outputs = model(inputs)
     print(outputs)
 
@@ -430,13 +463,19 @@ with torch.no_grad():
 
 테스트 데이터 세트가 존재하지 않으므로 임의의 값을 입력하여 결과를 확인합니다.
 
-`torch.no_grad`를 통해 기울기 계산을 비활성화 합니다.
+먼저 `model.eval()`을 호출하여 모델을 평가 모드로 변경합니다.
+
+평가 모드는 `드롭아웃(Dropout)`이나 `배치 정규화(Batch Normalization)`처럼 학습과 추론에서 다르게 동작하는 계층을 추론용 동작으로 바꿉니다.
+
+현재 모델은 `선형 변환 함수(nn.Linear)`만 사용하므로 결과가 달라지지 않지만, 이러한 계층이 포함된 모델에서 평가 모드로 변경하지 않으면 추론할 때마다 일관성 없는 결과를 반환할 수 있습니다.
+
+다음으로 `torch.inference_mode`를 통해 기울기 계산을 비활성화 합니다.
 
 `자동 미분(autograd)` 기능을 사용하지 않도록 설정하여 메모리 사용량을 줄여 `추론(inference)`에 적합한 상태로 변경합니다.
 
-`model.eval()`을 호출하여 모델을 평가 모드로 변경합니다.
+`torch.inference_mode`는 `torch.no_grad`와 같이 기울기 계산을 비활성화하며, 추가로 텐서의 버전 추적 등을 생략해 추론에 더 최적화되어 있습니다.
 
-모델을 평가 모드로 변경하지 않는다면, 추론 결과가 일관성 없는 결과를 반환합니다.
+단, `torch.inference_mode`에서 생성된 텐서는 이후 `자동 미분(autograd)`이 기록되는 연산에 사용할 수 없으므로, 추론 결과를 다시 학습에 사용해야 한다면 `torch.no_grad`를 사용합니다.
 
 추론에 사용할 `테스트 데이터(inputs)`를 정의합니다.
 
@@ -448,9 +487,9 @@ with torch.no_grad():
 
 {% highlight Python %}
 
-tensor([[  1.7992],
-        [ 69.4222],
-        [356.9461]], device='cuda:0')
+tensor([[  1.6402],
+        [ 69.3279],
+        [357.1102]])
 
 {% endhighlight %}
 

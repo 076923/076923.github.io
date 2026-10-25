@@ -70,19 +70,25 @@ PyTorch에서 사용되는 `데이터 세트(Dataset)`는 학습에 필요한 `�
 
 {% highlight Python %}
 
-class Dataset:
+from torch.utils.data import Dataset
 
-    def __init__(self, data, *arg, **kwargs):
-        self.data = data
+
+class CustomDataset(Dataset):
+    def __init__(self, *tensors):
+        self.tensors = tensors
 
     def __getitem__(self, index):
-        return tuple(data[index] for data in data.tensors)
+        return tuple(tensor[index] for tensor in self.tensors)
 
     def __len__(self):
-        return self.data[0].size(0)
+        return self.tensors[0].size(0)
 
 
 {% endhighlight %}
+
+`데이터 세트(Dataset)` 클래스를 상속받아 `사용자 정의 데이터 세트(CustomDataset)`를 정의합니다.
+
+위 예제는 입력된 여러 개의 텐서에서 같은 `색인(index)`의 값을 묶어서 반환하는 구조로, 뒤에서 사용할 `텐서 데이터 세트(TensorDataset)`와 같은 방식으로 동작합니다.
 
 `초기화 메서드(__init__ )`는 입력된 데이터의 전처리를 과정을 수행하는 메서드입니다.
 
@@ -141,15 +147,17 @@ PyTorch에서는 `데이터 세트(Dataset)`와 `데이터 로더(Dataloader)`�
 import torch
 from torch import nn
 from torch import optim
-from torch.utils.data import TensorDataset, DataLoader 
+from torch.utils.data import TensorDataset, DataLoader
 
 
-train_x = torch.FloatTensor([
+torch.manual_seed(42)
+
+train_x = torch.tensor([
     [1, 2], [2, 3], [3, 4], [4, 5], [5, 6], [6, 7]
-])
-train_y = torch.FloatTensor([
+], dtype=torch.float32)
+train_y = torch.tensor([
     [0.1, 1.5], [1, 2.8], [1.9, 4.1], [2.8, 5.4], [3.7, 6.7], [4.6, 8]
-])
+], dtype=torch.float32)
 
 train_dataset = TensorDataset(train_x, train_y)
 train_dataloader = DataLoader(train_dataset, batch_size=2, shuffle=True, drop_last=True)
@@ -160,26 +168,47 @@ optimizer = optim.SGD(model.parameters(), lr=0.001)
 
 for epoch in range(20000):
     cost = 0.0
-    
+
     for batch in train_dataloader:
         x, y = batch
         output = model(x)
-        
+
         loss = criterion(output, y)
-        
+
         optimizer.zero_grad()
         loss.backward()
         optimizer.step()
-        
-        cost += loss
+
+        cost += loss.item()
 
     cost = cost / len(train_dataloader)
-    
+
     if (epoch + 1) % 1000 == 0:
         print(f"Epoch : {epoch+1:4d}, Model : {list(model.parameters())}, Cost : {cost:.3f}")
 
 
 {% endhighlight %}
+**결과**
+:    
+Epoch : 1000, Model : [Parameter containing:<br>
+tensor([[0.6039, 0.0863],<br>
+&emsp;&emsp;&emsp;&emsp;[0.3172, 0.8330]], requires_grad=True)], Cost : 0.115<br>
+Epoch : 2000, Model : [Parameter containing:<br>
+tensor([[ 0.8289, -0.0955],<br>
+&emsp;&emsp;&emsp;&emsp;[ 0.4779,  0.7031]], requires_grad=True)], Cost : 0.073<br>
+...<br>
+Epoch : 10000, Model : [Parameter containing:<br>
+tensor([[ 1.5613, -0.6879],<br>
+&emsp;&emsp;&emsp;&emsp;[ 1.0010,  0.2801]], requires_grad=True)], Cost : 0.002<br>
+...<br>
+Epoch : 20000, Model : [Parameter containing:<br>
+tensor([[ 1.6861, -0.7887],<br>
+&emsp;&emsp;&emsp;&emsp;[ 1.0900,  0.2081]], requires_grad=True)], Cost : 0.000<br>
+<br>
+
+`데이터 순서 변경(shuffle)`과 가중치 초기화에 난수가 사용되므로, `torch.manual_seed(42)`로 시드를 고정해 같은 결과가 재현되도록 하였습니다.
+
+20,000번을 학습하면 `가중치(Weight)`가 [제 7강 - 다중 선형 회귀(Multiple Linear Regression)][7강]에서 정의한 `[[1.7, -0.8], [1.1, 0.2]]`에 가까워지는 것을 확인할 수 있습니다.
 
 <br>
 
@@ -187,7 +216,7 @@ for epoch in range(20000):
 
 {% highlight Python %}
 
-from torch.utils.data import TensorDataset, DataLoader 
+from torch.utils.data import TensorDataset, DataLoader
 
 {% endhighlight %}
 
@@ -265,7 +294,7 @@ for epoch in range(20000):
     loss.backward()
     optimizer.step()
 
-    cost += loss
+    cost += loss.item()
 
 cost = cost / len(train_dataloader)
 
@@ -273,8 +302,12 @@ cost = cost / len(train_dataloader)
 
 `손실(loss)` 값을 계산하고, 배치마다 `비용(cost)`에 `손실(loss)` 값을 누적해서 더합니다.
 
+이때 `loss.item()`으로 텐서의 값을 Python 실수로 꺼내어 더합니다. `loss` 텐서를 그대로 더하면 각 배치의 연산 그래프가 `비용(cost)`에 연결된 채로 남아 불필요한 메모리를 사용하게 됩니다.
+
 `비용(cost)`의 평균값을 계산하기 위해 `훈련용 데이터 로더(train_dataloader)`의 길이 만큼 나눕니다.
 
 `데이터 로더(Dataloader)`를 활용하게 되면 자연스럽게 `배치(batch)` 구조로 코드가 변경되게 됩니다.
 
 학습에 사용되는 데이터의 구조나 형태가 변경되더라도, 실제 학습에 사용되는 코드는 변경되지 않게 되어 각 모듈에 집중할 수 있게 됩니다.
+
+[7강]: https://076923.github.io/posts/Python-pytorch-7/

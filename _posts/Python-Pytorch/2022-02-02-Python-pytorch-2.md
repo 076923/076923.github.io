@@ -20,9 +20,9 @@ toc: true
 
 `NumPy`와 공통점은 `수학 계산`, `선형 대수` 연산을 비롯해 `전치(Transposing)`, `인덱싱(Indexing)`, `슬라이싱(slicing)`, `임의 샘플링(random sampling)` 등 다양한 텐서 연산을 진행할 수 있습니다.
 
-`NumPy`와의 차이점은 `CPU`에서 사용하는 텐서와 `GPU`에서 사용하는 텐서의 선언 방식의 차이가 있습니다.
+`NumPy`와의 차이점은 텐서가 `장치(device)` 속성을 가진다는 점입니다.
 
-`GPU 가속(GPU Acceleration)`을 적용할 수 있으므로 `CPU 텐서`와 `GPU 텐서`로 나눠지고, 각각의 텐서를 **상호 변환**하거나 **GPU 사용 유/무**를 설정합니다.
+`GPU 가속(GPU Acceleration)`을 적용할 수 있으므로 텐서가 `CPU`와 `GPU` 중 어느 장치에 있는지 지정하고, `to()` 메서드로 장치 간에 **상호 변환**합니다.
 
 <br>
 <br>
@@ -82,38 +82,36 @@ toc: true
 
 ## 텐서 유형
 
-| 데이터 형식 | 의미 | 자료형 | CPU 텐서 | GPU 텐서 |
-| :--------: | :---: | :---: | :-------: | :------: |
-| Byte | 부호 없는 8 비트 정수	| torch.uint8 | torch.ByteTensor | torch.cuda.ByteTensor |
-| Short | 부호 있는 16 비트 정수 | torch.short | torch.ShortTensor | torch.cuda.ShortTensor |
-| Int | 부호 있는 32 비트 정수 | torch.int | torch.IntTensor | torch.cuda.IntTensor |
-| Long | 부호 있는 64 비트 정수 | torch.long | torch.LongTensor | torch.cuda.LongTensor |
-| Binary16 | 16 비트 부동 소수점 | torch.half | torch.HalfTensor | torch.cuda.HalfTensor |
-| Brain Floating Point | 16 비트 부동 소수점 | torch.bfloat16 | torch.BFloat16Tensor | torch.cuda.BFloat16Tensor |
-| Float | 32 비트 부동 소수점 | torch.float | torch.FloatTensor | torch.cuda.FloatTensor |
-| Double | 32 비트 부동 소수점 | torch.double | torch.DoubleTensor | torch.cuda.DoubleTensor |
-| Boolean | 논리 형식 | torch.bool | torch.BoolTensor | torch.cuda.BoolTensor |
-| Int8 | 부호 있는 8 비트 정수 | torch.int8 | torch.CharTensor | torch.CharTensor |
-| Int16 | 부호 있는 16 비트 정수 | torch.int16 | torch.ShortTensor | torch.cuda.ShortTensor |
-| Int32 | 부호 있는 32 비트 정수 | torch.int32 | torch.IntTensor | torch.cuda.IntTensor |
-| Int64 | 부호 있는 64 비트 정수 | torch.int64 | torch.LongTensor | torch.cuda.LongTensor |
-| Float16 | 16 비트 부동 소수점 | torch.float16 | torch.HalfTensor | torch.cuda.HalfTensor |
-| Float32 | 32 비트 부동 소수점 | torch.float32 | torch.FloatTensor | torch.cuda.FloatTens |
-| Float64 | 64 비트 부동 소수점 | torch.float64 | torch.DoubleTensor | torch.cuda.DoubleTensor |
-| Complex32 | 32 비트 복합 형식 | torch.complex32 | | |
-| Complex64 | 64 비트 복합 형식 | torch.complex64 | | |
-| Complex128 | 128 비트 복합 형식 | torch.complex128 | | |
-| Complex128 | 128 비트 복합 형식 | torch.cdouble | | |
-| Quantized Int | 양자화된 부호 있는 4비트 정수 | torch.quint4x2 | torch.ByteTensor | |
-| Quantized Int | 양자화된 부호 없는 8 비트 정수 | torch.quint8 | torch.ByteTensor | |
-| Quantized Int | 양자화된 부호 있는 8 비트 정수 | torch.qint8 | torch.CharTensor | |
-| Quantized Int | 양자화된 부호 있는 32 비트 정수 | torch.qfint32 | torch.IntTensor | |
+| 데이터 형식 | 의미 | 자료형(dtype) | 별칭 |
+| :--------: | :---: | :---: | :---: |
+| Boolean | 논리 형식 | torch.bool | |
+| UInt8 | 부호 없는 8 비트 정수 | torch.uint8 | |
+| Int8 | 부호 있는 8 비트 정수 | torch.int8 | |
+| Int16 | 부호 있는 16 비트 정수 | torch.int16 | torch.short |
+| Int32 | 부호 있는 32 비트 정수 | torch.int32 | torch.int |
+| Int64 | 부호 있는 64 비트 정수 | torch.int64 | torch.long |
+| Float16 | 16 비트 부동 소수점 | torch.float16 | torch.half |
+| Brain Floating Point | 16 비트 부동 소수점 | torch.bfloat16 | |
+| Float32 | 32 비트 부동 소수점 | torch.float32 | torch.float |
+| Float64 | 64 비트 부동 소수점 | torch.float64 | torch.double |
+| Complex32 | 32 비트 복소수 | torch.complex32 | torch.chalf |
+| Complex64 | 64 비트 복소수 | torch.complex64 | torch.cfloat |
+| Complex128 | 128 비트 복소수 | torch.complex128 | torch.cdouble |
+| Quantized UInt4 | 양자화된 부호 없는 4 비트 정수 | torch.quint4x2 | |
+| Quantized UInt8 | 양자화된 부호 없는 8 비트 정수 | torch.quint8 | |
+| Quantized Int8 | 양자화된 부호 있는 8 비트 정수 | torch.qint8 | |
+| Quantized Int32 | 양자화된 부호 있는 32 비트 정수 | torch.qint32 | |
 
-`PyTorch`에서 지원하는 텐서의 유형은 위와 같습니다.
+`PyTorch`에서 지원하는 대표적인 텐서의 자료형은 위와 같습니다.
 
-그 중, `IntTensor`, `LongTensor`, `FloatTensor`가 가장 많이 활용됩니다.
+그 중, `torch.int64`, `torch.float32`가 가장 많이 활용되며, 정수 목록으로 텐서를 만들면 `torch.int64`, 실수 목록으로 만들면 `torch.float32`가 할당됩니다.
 
-또한, `torch.Tensor`의 기본 유형은 `torch.FloatTensor(torch.float32)`를 따릅니다.
+또한, 부동 소수점 텐서의 기본 자료형은 `torch.float32`를 따르며, `torch.get_default_dtype()`으로 확인할 수 있습니다.
+
+`GPU`에서는 메모리 사용량과 연산량을 줄이기 위해 `torch.float16`이나 `torch.bfloat16`도 많이 사용됩니다.
+
+- Tip : 예전에는 `torch.FloatTensor`, `torch.cuda.FloatTensor`처럼 자료형과 장치마다 별도의 텐서 클래스를 사용했지만, 현재는 `torch.tensor(..., dtype=...)`로 **자료형**을, `device` 매개변수나 `to()` 메서드로 **장치**를 지정합니다.
+- Tip : 양자화 자료형은 모델 `양자화(Quantization)`에서 사용하는 특수한 자료형입니다.
 
 <br>
 <br>
@@ -127,9 +125,10 @@ toc: true
 import torch
 
 print(torch.tensor([1, 2, 3]))
-print(torch.Tensor([[1, 2, 3], [4, 5, 6]]))
-print(torch.LongTensor([1, 2, 3]))
-print(torch.FloatTensor([1, 2, 3]))
+print(torch.tensor([[1, 2, 3], [4, 5, 6]], dtype=torch.float32))
+print(torch.tensor([1, 2, 3], dtype=torch.int64))
+print(torch.tensor([1, 2, 3], dtype=torch.float32))
+print(torch.Tensor([1, 2, 3]))
 
 {% endhighlight %}
 **결과**
@@ -139,20 +138,23 @@ tensor([[1., 2., 3.],<br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[4., 5., 6.]])<br>
 tensor([1, 2, 3])<br>
 tensor([1., 2., 3.])<br>
+tensor([1., 2., 3.])<br>
 <br>
 
 `PyTorch`에서 `텐서(Tensor)`는 `torch.tensor()` 또는 `torch.Tensor()`를 통해 생성할 수 있습니다.
 
 `torch.tensor()`는 **입력된 데이터를 복사하여 텐서(Tensor)로 변환하는 함수입니다.**
 
-즉, 데이터를 복사하기 때문에 값이 무조건 존재해야 하며 입력된 데이터의 형식에 가장 적합한 텐서 자료형으로 변환합니다.
+즉, 데이터를 복사하기 때문에 값이 무조건 존재해야 하며, `dtype`을 지정하지 않으면 입력된 데이터의 형식에 가장 적합한 자료형으로 변환합니다.
+
+`dtype` 매개변수에 자료형을 할당하면 원하는 자료형으로 텐서를 생성할 수 있습니다.
 
 `torch.Tensor()`는 **텐서(Tensor)의 기본형으로 텐서 인스턴스를 생성하는 클래스입니다.**
 
-인스턴스를 생성하기 때문에 값을 입력하지 않는 경우, 비어있는 텐서를 생성합니다.
+입력된 데이터의 형식과 관계없이 기본 자료형(`torch.float32`)으로 생성되며, 값을 입력하지 않는 경우 비어있는 텐서를 생성합니다.
 
-- Tip : 가능한 자료형이 명확하게 표현되는 클래스 형태의 `torch.Tensor()`를 사용하는 것이 좋습니다.
-- Tip : `torch.tensor()`는 비어있는 구조로 생성이 되지 않으며 자동으로 자료형을 할당하기 때문에 의도하지 않는 자료형으로 변경될 수 있습니다.
+- Tip : 데이터로 텐서를 생성할 때는 `torch.tensor()`에 `dtype`을 명시하는 방법을 권장합니다.
+- Tip : `dtype`을 생략하면 입력 데이터에 따라 자료형이 자동으로 정해지므로, 정수 목록을 입력하면 의도와 달리 `torch.int64`가 될 수 있습니다.
 
 <br>
 
@@ -162,6 +164,7 @@ tensor([1., 2., 3.])<br>
 
 import torch
 
+torch.manual_seed(0)
 tensor = torch.rand(1, 2)
 
 print(tensor)
@@ -172,7 +175,7 @@ print(tensor.device)
 {% endhighlight %}
 **결과**
 :    
-tensor([[0.8522, 0.3964]])<br>
+tensor([[0.4963, 0.7682]])<br>
 torch.Size([1, 2])<br>
 torch.float32<br>
 cpu<br>
@@ -184,9 +187,11 @@ cpu<br>
 
 `자료형(dtype)`은 **텐서의 데이터 구조를 의미합니다.**
 
-`장치(device)`는 **텐서의 GPU 가속 유/무를 의미합니다.**
+`장치(device)`는 **텐서가 저장되고 연산되는 장치(CPU, GPU 등)를 의미합니다.**
 
-텐서 연산을 진행할 때, 위 세 가지 속성 중 하나라도 맞지 않는다면 동작하지 않습니다.
+텐서 연산을 진행할 때, 위 세 가지 속성이 서로 맞지 않는다면 오류가 발생할 수 있습니다. 특히 **서로 다른 장치에 있는 텐서끼리는 연산할 수 없습니다.**
+
+- Tip : `torch.manual_seed()`로 난수 생성기의 시드를 고정하면 매번 같은 난수 결과를 얻을 수 있습니다.
 
 <br>
 
@@ -196,6 +201,7 @@ cpu<br>
 
 import torch
 
+torch.manual_seed(0)
 tensor = torch.rand(1, 2)
 print(tensor)
 
@@ -205,9 +211,9 @@ print(tensor)
 {% endhighlight %}
 **결과**
 :    
-tensor([[0.6499, 0.3419]])<br>
-tensor([[0.6499],<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[0.3419]])<br>
+tensor([[0.4963, 0.7682]])<br>
+tensor([[0.4963],<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[0.7682]])<br>
 <br>
 
 텐서의 차원 변환은 `reshape()` 메서드를 활용하여 변환이 가능합니다.
@@ -222,18 +228,26 @@ tensor([[0.6499],<br>
 
 import torch
 
-print(torch.rand((3, 3), dtype=torch.float))
+torch.manual_seed(0)
+print(torch.rand((3, 3), dtype=torch.float32))
+print(torch.tensor([1, 2, 3]).to(torch.float64))
 
 {% endhighlight %}
 **결과**
 :    
-tensor([[0.6837, 0.7457, 0.9212],<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[0.3221, 0.9590, 0.1553],<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[0.7908, 0.4360, 0.7417]])<br>
+tensor([[0.4963, 0.7682, 0.0885],<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[0.1320, 0.3074, 0.6341],<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[0.4901, 0.8964, 0.4556]])<br>
+tensor([1., 2., 3.], dtype=torch.float64)<br>
+<br>
 
 텐서 함수나 메서드 등을 통해 텐서를 생성할 때는 `데이터 형식(dtype)`을 선언하여 명확하게 데이터를 표현합니다.
 
 인자로 주어진 **값의 속성(형태, 자료형 등)**을 유지하지만, 위 예시와 같이 모호한 경우에는 명확하게 구현하려는 데이터 형태를 표현하는 것이 좋습니다.
+
+이미 생성된 텐서의 자료형은 `to()` 메서드에 자료형을 전달하여 변환할 수 있습니다.
+
+- Tip : `torch.float32`, `torch.int64`, `torch.bool`이 아닌 텐서는 출력할 때 `dtype`이 함께 표시됩니다.
 
 <br>
 
@@ -243,33 +257,43 @@ tensor([[0.6837, 0.7457, 0.9212],<br>
 
 import torch
 
-device = 'cuda' if torch.cuda.is_available() else 'cpu'
-cpu = torch.FloatTensor([1, 2, 3])
-gpu = torch.cuda.FloatTensor([1, 2, 3])
-tensor = torch.rand((1, 1), device=device)
+if torch.cuda.is_available():
+    device = "cuda"
+elif torch.backends.mps.is_available():
+    device = "mps"
+else:
+    device = "cpu"
+
+cpu = torch.tensor([1, 2, 3], dtype=torch.float32)
+tensor = torch.tensor([1, 2, 3], dtype=torch.float32, device=device)
+rand = torch.rand((1, 1), device=device)
 
 print(device)
 print(cpu)
-print(gpu)
 print(tensor)
+print(rand.device)
 
 {% endhighlight %}
 **결과**
 :    
-cuda<br>
+cpu<br>
 tensor([1., 2., 3.])<br>
-tensor([1., 2., 3.], device='cuda:0')<br>
-tensor([[0.1998]], device='cuda:0')<br>
+tensor([1., 2., 3.])<br>
+cpu<br>
+<br>
 
 텐서의 `장치(device)`를 설정하는 방법으로는 `device` 매개변수에 장치 속성을 할당합니다.
 
-`torch.cuda.is_available()` 함수로 `CUDA` 사용 유/무를 확인할 수 있으므로, 해당 변수를 선언해서 장치를 통일시킬 수 있습니다.
+`torch.cuda.is_available()` 함수로 `CUDA` 사용 유/무를, `torch.backends.mps.is_available()` 함수로 Apple Silicon의 `MPS` 사용 유/무를 확인할 수 있으므로, 사용 가능한 장치를 변수에 저장해서 장치를 통일시킬 수 있습니다.
 
-`Tensor` 클래스 선언의 경우 `device` 매개변수가 존재하지만, `CUDA`용 클래스가 별도로 존재하므로 `torch.cuda.Tensor` 클래스를 사용합니다.
+위 결과는 **GPU가 없는 환경에서 실행한 결과입니다.** `CUDA`를 사용할 수 있는 환경이라면 `device`가 `cuda`가 되며, `tensor`는 `tensor([1., 2., 3.], device='cuda:0')`, `rand.device`는 `cuda:0`으로 출력됩니다.
 
-특정 데이터에서 복사하여 텐서를 적용하는 경우 `device` 매개변수에 장치값을 할당합니다.
+`cuda:0`의 `0`은 장치의 번호를 의미하며, GPU가 여러 개인 경우 `cuda:1`과 같이 특정 GPU를 지정할 수 있습니다.
 
-- Tip : `device` 속성에는 cpu, cuda, mkldnn, opengl, opencl, ideep, hip, msnpu, xla 등이 있습니다.
+`torch.tensor()`나 `torch.rand()`처럼 텐서를 생성하는 함수는 대부분 `device` 매개변수를 지원하므로, 생성할 때부터 원하는 장치에 텐서를 할당할 수 있습니다.
+
+- Tip : `PyTorch 2.6` 이상에서는 `torch.accelerator.current_accelerator()`로 현재 사용 가능한 가속 장치(`cuda`, `mps`, `xpu` 등)를 확인할 수도 있습니다. 가속 장치가 없다면 `None`을 반환합니다.
+- Tip : `torch.device`는 장치 종류로 `cpu`, `cuda`, `mps`, `xpu`, `meta`, `xla`, `hip`, `ipu`, `hpu`, `mtia`, `maia`, `lazy`, `vulkan`, `privateuseone` 등을 받습니다. 단, 이름을 받는다고 해서 해당 장치를 사용할 수 있는 것은 아니며, 일반적으로는 `cpu`, `cuda`, `mps`, `xpu`를 사용합니다.
 
 <br>
 
@@ -279,26 +303,33 @@ tensor([[0.1998]], device='cuda:0')<br>
 
 import torch
 
-cpu = torch.FloatTensor([1, 2, 3])
-gpu = cpu.cuda()
-gpu2cpu = gpu.cpu()
+device = "cuda" if torch.cuda.is_available() else "cpu"
+
+cpu = torch.tensor([1, 2, 3], dtype=torch.float32)
+moved = cpu.to(device)
+back = moved.to("cpu")
 
 print(cpu)
-print(gpu)
-print(gpu2cpu)
+print(moved)
+print(back)
 
 {% endhighlight %}
 **결과**
 :    
 tensor([1., 2., 3.])<br>
-tensor([1., 2., 3.], device='cuda:0')<br>
 tensor([1., 2., 3.])<br>
+tensor([1., 2., 3.])<br>
+<br>
 
-`장치(device)`간 상호 변환은 `cuda()`와 `cpu()` 메서드를 통해 변환할 수 있습니다.
+`장치(device)`간 상호 변환은 `to()` 메서드를 통해 변환할 수 있습니다.
 
-`cuda()` 메서드는 `cpu` 장치로 선언된 값을 `gpu`로 변환합니다.
+`to(device)`는 텐서를 지정한 장치로 옮긴 **새로운 텐서를 반환하며**, 이미 해당 장치에 있다면 원래 텐서를 그대로 반환합니다.
 
-`cpu()` 메서드는 `gpu` 장치로 선언된 값을 `cpu`로 변환합니다.
+위 결과는 **GPU가 없는 환경에서 실행하여** 세 텐서가 모두 `cpu`에 있습니다. `CUDA`를 사용할 수 있는 환경이라면 `moved`는 `tensor([1., 2., 3.], device='cuda:0')`로 출력되고, `back`은 다시 `cpu` 텐서가 됩니다.
+
+`cuda()`와 `cpu()` 메서드로도 변환할 수 있지만, `to(device)`를 사용하면 장치에 따라 코드를 바꾸지 않아도 되므로 `to()` 메서드를 주로 사용합니다.
+
+- Tip : `to()` 메서드는 `tensor.to(device, dtype=torch.float16)`처럼 장치와 자료형을 한 번에 변환할 수도 있습니다.
 
 <br>
 
@@ -309,9 +340,11 @@ tensor([1., 2., 3.])<br>
 import torch
 import numpy as np
 
-print(torch.tensor(np.array([1, 2, 3], dtype=np.uint8)))
-print(torch.Tensor(np.array([1, 2, 3], dtype=np.uint8)))
-print(torch.from_numpy(np.array([1, 2, 3], dtype=np.uint8)))
+ndarray = np.array([1, 2, 3], dtype=np.uint8)
+
+print(torch.tensor(ndarray))
+print(torch.Tensor(ndarray))
+print(torch.from_numpy(ndarray))
 
 {% endhighlight %}
 **결과**
@@ -327,6 +360,10 @@ tensor([1, 2, 3], dtype=torch.uint8)<br>
 
 `torch.Tensor()` 클래스나 `torch.tensor()`, `torch.from_numpy()` 함수를 통해서 `텐서(Tensor)`로 변환할 수 있습니다. 
 
+`torch.tensor()`와 `torch.from_numpy()`는 `ndarray`의 자료형을 유지하지만, `torch.Tensor()`는 기본 자료형(`torch.float32`)으로 변환합니다.
+
+- Tip : `torch.tensor()`는 데이터를 복사하지만, `torch.from_numpy()`는 `ndarray`와 메모리를 공유합니다. 그러므로 원본 `ndarray`의 값을 수정하면 `from_numpy()`로 만든 텐서의 값도 함께 바뀝니다.
+
 <br>
 
 ### Tensor 변환
@@ -335,15 +372,19 @@ tensor([1, 2, 3], dtype=torch.uint8)<br>
 
 import torch
 
-tensor = torch.cuda.FloatTensor([1, 2, 3])
+device = "cuda" if torch.cuda.is_available() else "cpu"
+
+tensor = torch.tensor([1, 2, 3], dtype=torch.float32, device=device, requires_grad=True)
 ndarray = tensor.detach().cpu().numpy()
 
 print(ndarray)
+print(type(ndarray))
 
 {% endhighlight %}
 **결과**
 :    
 [1. 2. 3.]<br>
+&lt;class 'numpy.ndarray'&gt;<br>
 <br>
 
 `텐서(Tensor)`를 `NumPy`로 변환할 때는 `detach()` 메서드를 적용한 후에 변환하는 것이 좋습니다.
@@ -354,4 +395,6 @@ print(ndarray)
 
 `detach()` 메서드는 이 연산을 분리하여 텐서로 변환합니다.
 
+`requires_grad=True`로 연산을 기록하는 텐서에 바로 `numpy()` 메서드를 호출하면 `RuntimeError`가 발생합니다.
 
+또한, `NumPy`는 `CPU` 메모리의 데이터만 다룰 수 있으므로 `GPU` 텐서는 `cpu()` 메서드로 `CPU`로 옮긴 다음 변환합니다.

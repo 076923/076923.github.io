@@ -38,16 +38,18 @@ from torch import nn
 from torch import optim
 
 
-x = torch.FloatTensor([
+torch.manual_seed(42)
+
+x = torch.tensor([
     [1], [2], [3], [4], [5], [6], [7], [8], [9], [10],
     [11], [12], [13], [14], [15], [16], [17], [18], [19], [20],
     [21], [22], [23], [24], [25], [26], [27], [28], [29], [30]
-])
-y = torch.FloatTensor([
+], dtype=torch.float32)
+y = torch.tensor([
     [0.94], [1.98], [2.88], [3.92], [3.96], [4.55], [5.64], [6.3], [7.44], [9.1],
     [8.46], [9.5], [10.67], [11.16], [14], [11.83], [14.4], [14.25], [16.2], [16.32],
     [17.46], [19.8], [18], [21.34], [22], [22.5], [24.57], [26.04], [21.6], [28.8]
-])
+], dtype=torch.float32)
 
 model = nn.Linear(1, 1)
 criterion = nn.MSELoss()
@@ -69,35 +71,35 @@ for epoch in range(10000):
 **결과**
 :    
 Epoch : 1000, Model : [Parameter containing:<br>
-tensor([[0.8721]], requires_grad=True), Parameter containing:<br>
-tensor([-0.2968], requires_grad=True)], Cost : 1.377<br>
+tensor([[0.8400]], requires_grad=True), Parameter containing:<br>
+tensor([0.3534], requires_grad=True)], Cost : 1.520<br>
 Epoch : 2000, Model : [Parameter containing:<br>
-tensor([[0.8746]], requires_grad=True), Parameter containing:<br>
-tensor([-0.3493], requires_grad=True)], Cost : 1.374<br>
+tensor([[0.8547]], requires_grad=True), Parameter containing:<br>
+tensor([0.0553], requires_grad=True)], Cost : 1.430<br>
 Epoch : 3000, Model : [Parameter containing:<br>
-tensor([[0.8762]], requires_grad=True), Parameter containing:<br>
-tensor([-0.3820], requires_grad=True)], Cost : 1.373<br>
+tensor([[0.8639]], requires_grad=True), Parameter containing:<br>
+tensor([-0.1303], requires_grad=True)], Cost : 1.394<br>
 Epoch : 4000, Model : [Parameter containing:<br>
-tensor([[0.8772]], requires_grad=True), Parameter containing:<br>
+tensor([[0.8695]], requires_grad=True), Parameter containing:<br>
+tensor([-0.2457], requires_grad=True)], Cost : 1.381<br>
 Epoch : 5000, Model : [Parameter containing:<br>
-tensor([[0.8779]], requires_grad=True), Parameter containing:<br>
-tensor([-0.4151], requires_grad=True)], Cost : 1.372<br>
+tensor([[0.8731]], requires_grad=True), Parameter containing:<br>
+tensor([-0.3176], requires_grad=True)], Cost : 1.376<br>
 Epoch : 6000, Model : [Parameter containing:<br>
-tensor([[0.8783]], requires_grad=True), Parameter containing:<br>
-tensor([-0.4229], requires_grad=True)], Cost : 1.372<br>
+tensor([[0.8753]], requires_grad=True), Parameter containing:<br>
+tensor([-0.3623], requires_grad=True)], Cost : 1.373<br>
 Epoch : 7000, Model : [Parameter containing:<br>
-tensor([[0.8785]], requires_grad=True), Parameter containing:<br>
-tensor([-0.4279], requires_grad=True)], Cost : 1.372<br>
+tensor([[0.8766]], requires_grad=True), Parameter containing:<br>
+tensor([-0.3901], requires_grad=True)], Cost : 1.373<br>
 Epoch : 8000, Model : [Parameter containing:<br>
-tensor([[0.8787]], requires_grad=True), Parameter containing:<br>
-tensor([-0.4309], requires_grad=True)], Cost : 1.372<br>
+tensor([[0.8775]], requires_grad=True), Parameter containing:<br>
+tensor([-0.4074], requires_grad=True)], Cost : 1.372<br>
 Epoch : 9000, Model : [Parameter containing:<br>
-tensor([[0.8787]], requires_grad=True), Parameter containing:<br>
-tensor([-0.4328], requires_grad=True)], Cost : 1.372<br>
+tensor([[0.8780]], requires_grad=True), Parameter containing:<br>
+tensor([-0.4182], requires_grad=True)], Cost : 1.372<br>
 Epoch : 10000, Model : [Parameter containing:<br>
-tensor([[0.8788]], requires_grad=True), Parameter containing:<br>
-tensor([-0.4340], requires_grad=True)], Cost : 1.372<br>
-
+tensor([[0.8784]], requires_grad=True), Parameter containing:<br>
+tensor([-0.4249], requires_grad=True)], Cost : 1.372<br>
 <br>
 
 #### 세부 코드
@@ -260,12 +262,14 @@ from torch import nn
 from torch import optim
 
 
-x = torch.FloatTensor([
+torch.manual_seed(42)
+
+x = torch.tensor([
     [1, 2], [2, 3], [3, 4], [4, 5], [5, 6], [6, 7]
-])
-y = torch.FloatTensor([
+], dtype=torch.float32)
+y = torch.tensor([
     [0.1, 1.5], [1.0, 2.8], [1.9, 4.1], [2.8, 5.4], [3.7, 6.7], [4.6, 8.0]
-])
+], dtype=torch.float32)
 
 model = nn.Linear(2, 2)
 criterion = nn.MSELoss()
@@ -287,58 +291,57 @@ for epoch in range(10000):
 **결과**
 :    
 Epoch : 1000, Model : [Parameter containing:<br>
-tensor([[0.5695, 0.1465],<br>
-&emsp;&emsp;&emsp;&emsp;[0.8522, 0.3354]], requires_grad=True), Parameter containing:<br>
-tensor([-0.1738,  0.3367], requires_grad=True)], Cost : 0.079<br>
+tensor([[0.4317, 0.2903],<br>
+&emsp;&emsp;&emsp;&emsp;[0.1915, 0.9226]], requires_grad=True), Parameter containing:<br>
+tensor([-0.3427,  0.0586], requires_grad=True)], Cost : 0.113<br>
 Epoch : 2000, Model : [Parameter containing:<br>
-tensor([[0.6457, 0.1072],<br>
-&emsp;&emsp;&emsp;&emsp;[0.8988, 0.3113]], requires_grad=True), Parameter containing:<br>
-tensor([-0.2894,  0.2661], requires_grad=True)], Cost : 0.051<br>
+tensor([[0.5055, 0.2522],<br>
+&emsp;&emsp;&emsp;&emsp;[0.2685, 0.8828]], requires_grad=True), Parameter containing:<br>
+tensor([-0.4545, -0.0582], requires_grad=True)], Cost : 0.072<br>
 Epoch : 3000, Model : [Parameter containing:<br>
-tensor([[0.7067, 0.0757],<br>
-&emsp;&emsp;&emsp;&emsp;[0.9360, 0.2921]], requires_grad=True), Parameter containing:<br>
-tensor([-0.3818,  0.2097], requires_grad=True)], Cost : 0.032<br>
+tensor([[0.5645, 0.2218],<br>
+&emsp;&emsp;&emsp;&emsp;[0.3301, 0.8510]], requires_grad=True), Parameter containing:<br>
+tensor([-0.5439, -0.1517], requires_grad=True)], Cost : 0.046<br>
 Epoch : 4000, Model : [Parameter containing:<br>
-tensor([[0.7554, 0.0506],<br>
-&emsp;&emsp;&emsp;&emsp;[0.9658, 0.2768]], requires_grad=True), Parameter containing:<br>
-tensor([-0.4557,  0.1645], requires_grad=True)], Cost : 0.021<br>
+tensor([[0.6116, 0.1975],<br>
+&emsp;&emsp;&emsp;&emsp;[0.3794, 0.8256]], requires_grad=True), Parameter containing:<br>
+tensor([-0.6154, -0.2263], requires_grad=True)], Cost : 0.029<br>
 Epoch : 5000, Model : [Parameter containing:<br>
-tensor([[0.7944, 0.0305],<br>
-&emsp;&emsp;&emsp;&emsp;[0.9896, 0.2645]], requires_grad=True), Parameter containing:<br>
-tensor([-0.5147,  0.1284], requires_grad=True)], Cost : 0.013<br>
+tensor([[0.6493, 0.1780],<br>
+&emsp;&emsp;&emsp;&emsp;[0.4188, 0.8052]], requires_grad=True), Parameter containing:<br>
+tensor([-0.6725, -0.2861], requires_grad=True)], Cost : 0.019<br>
 Epoch : 6000, Model : [Parameter containing:<br>
-tensor([[0.8255, 0.0144],<br>
-&emsp;&emsp;&emsp;&emsp;[1.0086, 0.2546]], requires_grad=True), Parameter containing:<br>
-tensor([-0.5620,  0.0996], requires_grad=True)], Cost : 0.008<br>
+tensor([[0.6794, 0.1624],<br>
+&emsp;&emsp;&emsp;&emsp;[0.4503, 0.7890]], requires_grad=True), Parameter containing:<br>
+tensor([-0.7182, -0.3338], requires_grad=True)], Cost : 0.012<br>
 Epoch : 7000, Model : [Parameter containing:<br>
-tensor([[0.8504, 0.0015],<br>
-&emsp;&emsp;&emsp;&emsp;[1.0239, 0.2468]], requires_grad=True), Parameter containing:<br>
-tensor([-0.5997,  0.0765], requires_grad=True)], Cost : 0.005<br>
+tensor([[0.7035, 0.1500],<br>
+&emsp;&emsp;&emsp;&emsp;[0.4754, 0.7760]], requires_grad=True), Parameter containing:<br>
+tensor([-0.7547, -0.3720], requires_grad=True)], Cost : 0.008<br>
 Epoch : 8000, Model : [Parameter containing:<br>
-tensor([[ 0.8703, -0.0087],<br>
-&emsp;&emsp;&emsp;&emsp;[ 1.0360,  0.2405]], requires_grad=True), Parameter containing:<br>
-tensor([-0.6299,  0.0581], requires_grad=True)], Cost : 0.003<br>
+tensor([[0.7228, 0.1401],<br>
+&emsp;&emsp;&emsp;&emsp;[0.4956, 0.7656]], requires_grad=True), Parameter containing:<br>
+tensor([-0.7839, -0.4025], requires_grad=True)], Cost : 0.005<br>
 Epoch : 9000, Model : [Parameter containing:<br>
-tensor([[ 0.8862, -0.0170],<br>
-&emsp;&emsp;&emsp;&emsp;[ 1.0457,  0.2355]], requires_grad=True), Parameter containing:<br>
-tensor([-0.6540,  0.0433], requires_grad=True)], Cost : 0.002<br>
+tensor([[0.7382, 0.1321],<br>
+&emsp;&emsp;&emsp;&emsp;[0.5116, 0.7573]], requires_grad=True), Parameter containing:<br>
+tensor([-0.8073, -0.4269], requires_grad=True)], Cost : 0.003<br>
 Epoch : 10000, Model : [Parameter containing:<br>
-tensor([[ 0.8990, -0.0235],<br>
-&emsp;&emsp;&emsp;&emsp;[ 1.0535,  0.2315]], requires_grad=True), Parameter containing:<br>
-tensor([-0.6733,  0.0315], requires_grad=True)], Cost : 0.001<br>
-
+tensor([[0.7505, 0.1258],<br>
+&emsp;&emsp;&emsp;&emsp;[0.5245, 0.7507]], requires_grad=True), Parameter containing:<br>
+tensor([-0.8260, -0.4464], requires_grad=True)], Cost : 0.002<br>
 <br>
 
 #### 세부 코드
 
 {% highlight Python %}
 
-x = torch.FloatTensor([
+x = torch.tensor([
     [1, 2], [2, 3], [3, 4], [4, 5], [5, 6], [6, 7]
-])
-y = torch.FloatTensor([
+], dtype=torch.float32)
+y = torch.tensor([
     [0.1, 1.5], [1.0, 2.8], [1.9, 4.1], [2.8, 5.4], [3.7, 6.7], [4.6, 8.0]
-])
+], dtype=torch.float32)
 
 {% endhighlight %}
 
@@ -363,9 +366,9 @@ model = nn.Linear(2, 2)
 {% highlight Python %}
 
 Epoch : 10000, Model : [Parameter containing:
-tensor([[ 0.8990, -0.0235],
-        [ 1.0535,  0.2315]], requires_grad=True), Parameter containing:
-tensor([-0.6733,  0.0315], requires_grad=True)], Cost : 0.001
+tensor([[0.7505, 0.1258],
+        [0.5245, 0.7507]], requires_grad=True), Parameter containing:
+tensor([-0.8260, -0.4464], requires_grad=True)], Cost : 0.002
 
 {% endhighlight %}
 
@@ -373,8 +376,8 @@ tensor([-0.6733,  0.0315], requires_grad=True)], Cost : 0.001
 
 $$
 \begin{multline}
-\shoveleft Weight = \begin{bmatrix}w_1 & w_2 \\w_3 & w_4 \\\end{bmatrix} = \begin{bmatrix}0.8990 & -0.0235 \\1.0535 & 0.2315 \\\end{bmatrix}\\
-\shoveleft Bias = \begin{bmatrix}b_1 \\b_2 \\\end{bmatrix} = \begin{bmatrix}-0.6733 \\0.0315 \\\end{bmatrix}
+\shoveleft Weight = \begin{bmatrix}w_1 & w_2 \\w_3 & w_4 \\\end{bmatrix} = \begin{bmatrix}0.7505 & 0.1258 \\0.5245 & 0.7507 \\\end{bmatrix}\\
+\shoveleft Bias = \begin{bmatrix}b_1 \\b_2 \\\end{bmatrix} = \begin{bmatrix}-0.8260 \\-0.4464 \\\end{bmatrix}
 \end{multline} 
 $$
 
@@ -384,8 +387,8 @@ $$
 
 |  x1   |  x2   |  y1   |  y2   |  $$ \hat{y_{1}} $$  |  $$ \hat{y_{2}} $$   |
 | :---: | :---: | :---: | :---: | :---: | :---: |
-|   1   |   2   |  0.1  |  1.5  |  0.2  |  1.5  |
-|   2   |   3   |  1.0  |  2.8  |  1.1  |  2.8  |
+|   1   |   2   |  0.1  |  1.5  |  0.2  |  1.6  |
+|   2   |   3   |  1.0  |  2.8  |  1.1  |  2.9  |
 |   3   |   4   |  1.9  |  4.1  |  1.9  |  4.1  |
 |   4   |   5   |  2.8  |  5.4  |  2.8  |  5.4  |
 |   5   |   6   |  3.7  |  6.7  |  3.7  |  6.7  |
@@ -395,11 +398,13 @@ $$
 
 <br>
 
-`비용(Cost)`는 **0.001**로 학습이 적절히 진행된 것을 확인할 수 있습니다.
+`비용(Cost)`은 **0.002**로 학습이 적절히 진행된 것을 확인할 수 있습니다.
 
 `y1`과 `y2`를 계산하기 위해 적용한 실젯값과 예측값이 동일하거나 유사한 값으로 반환되었습니다.
 
-`새로운 값(x1=16, x2=17 등)`을 입력해도 실젯값과 큰 차이를 보이지 않는 것을 알 수 있습니다.
+`새로운 값(x1=16, x2=17)`을 입력하면 실젯값 `(13.6, 21.0)`에 대해 `(13.32, 20.71)`을 반환하여 큰 차이를 보이지 않는 것을 알 수 있습니다.
+
+- Tip : `nn.Linear`의 가중치와 편향은 무작위 값으로 초기화되므로 실행할 때마다 결과가 달라집니다. 예제는 `torch.manual_seed(42)`로 난수 시드를 고정해 같은 결과가 재현되도록 하였습니다.
 
 위와 같이 **학습은 비용(Cost)를 줄이는 방향으로 학습이 진행**되므로 예상되는 `가중치(Weight)`와 `편향(Bias)`이 전혀 다른 값으로 생성될 수 있지만, 결괏값은 최대한 유사하게 반영됩니다.
 
@@ -415,16 +420,18 @@ model = nn.Linear(2, 2, bias=False)
 **결과**
 :    
 Epoch : 10000, Model : [Parameter containing:<br>
-tensor([[ 1.1172, -0.3289],<br>
-&emsp;&emsp;&emsp;&emsp;[ 0.8934,  0.3670]], requires_grad=True)], Cost : 0.024<br>
+tensor([[ 1.0565, -0.2798],<br>
+&emsp;&emsp;&emsp;&emsp;[ 0.6404,  0.5716]], requires_grad=True)], Cost : 0.039<br>
 Epoch : 50000, Model : [Parameter containing:<br>
-tensor([[ 1.6671, -0.7734],<br>
-&emsp;&emsp;&emsp;&emsp;[ 1.0802,  0.2160]], requires_grad=True)], Cost : 0.000<br>
+tensor([[ 1.6694, -0.7753],<br>
+&emsp;&emsp;&emsp;&emsp;[ 1.0782,  0.2177]], requires_grad=True)], Cost : 0.000<br>
 <br>
 
 이번에는 `선형 변환 함수(nn.Linear)`에서 `편향 유/무(bias)`를 `거짓(False)` 값으로 적용했을 때의 결과를 확인해보도록 하겠습니다.
 
-각각 10,000번, 50,000 번을 학습했을 때의 결과는 위와 같습니다.
+`에폭(Epoch)`을 50,000으로 늘려 학습했을 때, 10,000번째와 50,000번째 결과는 위와 같습니다.
+
+50,000번을 학습하면 `가중치(Weight)`가 앞서 정의한 `[[1.7, -0.8], [1.1, 0.2]]`에 가까워지는 것을 확인할 수 있습니다.
 
 두 학습 모두 `비용(Cost)`이 낮은 것을 확인할 수 있습니다.
 
