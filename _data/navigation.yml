@@ -219,6 +219,10 @@ Python-Django:
         url: "/posts/Python-Django-12/"
       - title: "제 13강 - Transaction"
         url: "/posts/Python-Django-13/"
+      - title: "제 14강 - Router"
+        url: "/posts/Python-Django-14/"
+      - title: "제 15강 - Authentication & Permission"
+        url: "/posts/Python-Django-15/"
        
 Python-Numpy:
   - title: "Numpy 강좌 목록"
@@ -835,6 +839,10 @@ Theory-AI:
         url: "/posts/AI-12/"
       - title: "생성 모델(Generative Model)"
         url: "/posts/AI-13/"
+      - title: "전이 학습과 자기 지도 학습(Transfer Learning & Self-Supervised Learning)"
+        url: "/posts/AI-14/"
+      - title: "앙상블 학습(Ensemble Learning)"
+        url: "/posts/AI-15/"
 
 Theory-ComputerVision:
   - title: "컴퓨터 비전 이론 목록"
