@@ -16,10 +16,10 @@ minimal_mistakes_skin    : "default" # "air", "aqua", "contrast", "dark", "dirt"
 
 # Site Settings
 locale                   : "ko-KR"
-title                    : "YUN DAE HEE"
+title                    : "076923"
 title_separator          : "-"
-subtitle                 : "Daehee YUN Tech Blog"
-name                     : "DAE HEE YUN"
+subtitle                 : "Daehee Yun's Tech Blog"
+name                     : "Daehee Yun"
 description              : "Tech Blog"
 url                      : "https://076923.github.io"
 baseurl                  : # the subpath of your site, e.g. "/blog"
@@ -83,7 +83,7 @@ analytics:
 
 # Site Author
 author:
-  name             : "YUN DAE HEE"
+  name             : "Daehee Yun"
   avatar           : # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
   bio              : ""
   location         : "Korea"
