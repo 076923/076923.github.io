@@ -11,6 +11,7 @@ Tesseract: /assets/images/tesseract.png
 AI: /assets/images/theory-ai.svg
 Computer Vision: /assets/images/theory-cv.svg
 Natural Language Processing: /assets/images/theory-nlp.svg
+Recommender System: /assets/images/theory-recsys.svg
 GMap.NET: /assets/images/gmap.png
 MySQL: /assets/images/mysql.png
 PyTorch: /assets/images/pytorch.webp

@@ -14,6 +14,7 @@ docs:
     children:
       - title: "팀을 위한 클로드 코드 완벽 가이드"
         url: "https://wikibook.co.kr/claude-code-teams/"
+        external: "_blank"
       - title: "데이터ㆍAI 시스템 아키텍트를 위한 실무 가이드"
         url: "https://wikibook.co.kr/data-ai-system/"
         external: "_blank"
@@ -29,25 +30,26 @@ docs:
 
   - title: Lectures
     children:
+      - title: "Data Wiki"
+        url: "https://www.diki.kr/"
+        external: "_blank"
       - title: "Inflearn"
         url: "https://www.inflearn.com/course/c-opencv/"
         external: "_blank"
       - title: "Documentation"
-        url: "/docs/index"
+        url: "https://076923.github.io/docs/index"
+        external: "_blank"
 
   - title: Utilities
     children:
-      - title: "Python OpenCV Utils"
-        url: "https://pypi.org/project/python-opencv-utils/"
+      - title: "Vecscope"
+        url: "https://076923.github.io/vecscope/"
+        external: "_blank"
+      - title: "Python OpenCV Utilities"
+        url: "https://076923.github.io/cv2-utils/"
         external: "_blank"
       - title: "VSCode Python Image Preview"
         url: "https://marketplace.visualstudio.com/items?itemName=076923.python-image-preview"
-        external: "_blank"
-      - title: "Tensorflow 2.x Object Detection"
-        url: "https://github.com/076923/Tensorflow-2.0-Object-Detection-API"
-        external: "_blank"
-      - title: "AWS Lambda Python OpenCV Layer"
-        url: "https://github.com/076923/aws-lambda-python-opencv-layer"
         external: "_blank"
 
   - title: Content
@@ -905,6 +907,20 @@ Theory-NLP:
         url: "/posts/NLP-9/"
       - title: "효율적인 미세 조정과 추론(Efficient Fine-tuning & Inference)"
         url: "/posts/NLP-10/"
+
+Theory-RecSys:
+  - title: "추천 시스템 이론 목록"
+    children:
+      - title: "추천 시스템이란?"
+        url: "/posts/RecSys-1/"
+      - title: "콘텐츠 기반 필터링(Content-based Filtering)"
+        url: "/posts/RecSys-2/"
+      - title: "협업 필터링(Collaborative Filtering)"
+        url: "/posts/RecSys-3/"
+      - title: "행렬 분해(Matrix Factorization)"
+        url: "/posts/RecSys-4/"
+      - title: "암시적 피드백(Implicit Feedback)"
+        url: "/posts/RecSys-5/"
 
 Exercise-C#:
   - title: "C# 예제 목록"
